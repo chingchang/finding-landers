@@ -18,14 +18,16 @@ Top candidate per piece and strip, from `suggestions.json` (score is calibrated;
 
 | site | piece | strip | top candidate |
 |---|---|---|---|
-| schiaparelli | heat_shield | ESP_073625_1780 | sheet 7.01 at 89 m |
-| schiaparelli | crash_scar, backshell | ESP_048041_1780 | sheet 6.43 at 334 m |
-| schiaparelli | parachute | ESP_048041_1780 | sheet 6.43 at 1085 m |
-| curiosity | all five pieces | ESP_030313_1755 | the same sheet 5.59, 138 m from the parachute anchor |
-| phoenix | lander, backshell, heat_shield | ESP_017716_2485 | dark -0.34 (91 to 404 m) |
-| viking1 | lander | ESP_046170_2025 | dark 0.18 at 934 m |
-| spirit | lander | ESP_025815_1655 | sheet 2.67 at 901 m |
-| pathfinder | lander | ESP_022038_1995 | shadow -0.68 at 1400 m |
+| schiaparelli | heat_shield | second date | sheet 7.01 at 89 m |
+| schiaparelli | crash_scar, backshell | first date | sheet 6.43 at 334 m |
+| schiaparelli | parachute | first date | sheet 6.43 at 1085 m |
+| curiosity | all five pieces | | the same sheet 5.59, 138 m from the parachute anchor |
+| phoenix | lander, backshell, heat_shield | first date | dark -0.34 (91 to 404 m) |
+| viking1 | lander | | dark 0.18 at 934 m |
+| spirit | lander | | sheet 2.67 at 901 m |
+| pathfinder | lander | | shadow -0.68 at 1400 m |
+
+(Strips are named by site and date order here; the suggestion files key them by id.)
 
 ## What the sheets show
 
