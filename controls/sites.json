@@ -1,0 +1,182 @@
+{
+  "note": "Published landing-site coordinates, planetocentric latitude and east longitude, precision about 1 km. Not an answer key: pixel positions of each piece are recorded by a person in tuning.json and heldout.json. Groups decided 2026-10-28: tuning (6), heldout (3), spare (2, not scored and not tuned on; available if a tuning site fails), final_exam (Beagle 2). Change only before the first tuning run.",
+  "sites": [
+    {
+      "name": "schiaparelli",
+      "group": "tuning",
+      "lat": -2.07,
+      "lon_e": 353.79,
+      "strips": [
+        "ESP_048041_1780",
+        "ESP_073625_1780"
+      ],
+      "pieces": [
+        "crash_scar",
+        "parachute",
+        "backshell",
+        "heat_shield"
+      ]
+    },
+    {
+      "name": "curiosity",
+      "group": "tuning",
+      "lat": -4.59,
+      "lon_e": 137.44,
+      "strips": [
+        "ESP_030313_1755"
+      ],
+      "pieces": [
+        "parachute",
+        "backshell",
+        "heat_shield",
+        "descent_stage",
+        "rover"
+      ]
+    },
+    {
+      "name": "phoenix",
+      "group": "tuning",
+      "lat": 68.22,
+      "lon_e": 234.25,
+      "strips": [
+        "ESP_017716_2485",
+        "ESP_053451_2485"
+      ],
+      "pieces": [
+        "lander",
+        "backshell",
+        "parachute",
+        "heat_shield"
+      ]
+    },
+    {
+      "name": "viking1",
+      "group": "tuning",
+      "lat": 22.27,
+      "lon_e": 312.05,
+      "strips": [
+        "ESP_046170_2025"
+      ],
+      "pieces": [
+        "lander"
+      ]
+    },
+    {
+      "name": "spirit",
+      "group": "tuning",
+      "lat": -14.57,
+      "lon_e": 175.47,
+      "strips": [
+        "ESP_025815_1655"
+      ],
+      "pieces": [
+        "lander",
+        "parachute",
+        "backshell",
+        "heat_shield"
+      ]
+    },
+    {
+      "name": "pathfinder",
+      "group": "tuning",
+      "lat": 19.13,
+      "lon_e": 326.79,
+      "strips": [
+        "ESP_022038_1995"
+      ],
+      "pieces": [
+        "lander",
+        "backshell",
+        "parachute",
+        "heat_shield"
+      ]
+    },
+    {
+      "name": "perseverance",
+      "group": "heldout",
+      "lat": 18.44,
+      "lon_e": 77.45,
+      "strips": [
+        "ESP_068822_1985"
+      ],
+      "pieces": [
+        "parachute",
+        "backshell",
+        "heat_shield",
+        "descent_stage",
+        "rover"
+      ]
+    },
+    {
+      "name": "insight",
+      "group": "heldout",
+      "lat": 4.5,
+      "lon_e": 135.62,
+      "strips": [
+        "ESP_087360_1845"
+      ],
+      "pieces": [
+        "lander",
+        "backshell",
+        "parachute",
+        "heat_shield"
+      ]
+    },
+    {
+      "name": "zhurong",
+      "group": "heldout",
+      "lat": 25.07,
+      "lon_e": 109.93,
+      "strips": [
+        "ESP_075625_2055"
+      ],
+      "pieces": [
+        "lander",
+        "parachute",
+        "backshell",
+        "heat_shield",
+        "rover"
+      ]
+    },
+    {
+      "name": "viking2",
+      "group": "spare",
+      "lat": 47.64,
+      "lon_e": 134.29,
+      "strips": [
+        "ESP_077167_2285"
+      ],
+      "pieces": [
+        "lander"
+      ]
+    },
+    {
+      "name": "opportunity",
+      "group": "spare",
+      "lat": -1.95,
+      "lon_e": 354.47,
+      "strips": [
+        "ESP_050177_1780"
+      ],
+      "pieces": [
+        "heat_shield",
+        "parachute",
+        "backshell"
+      ]
+    },
+    {
+      "name": "beagle2",
+      "group": "final_exam",
+      "lat": 11.53,
+      "lon_e": 90.43,
+      "strips": [
+        "ESP_037145_1915",
+        "ESP_039308_1915",
+        "ESP_040363_1915"
+      ],
+      "pieces": [
+        "lander"
+      ]
+    }
+  ]
+}

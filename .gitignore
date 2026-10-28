@@ -1,0 +1,29 @@
+# data: 47 GB of HiRISE strips live here; never committed
+HiRISE/strips/
+HiRISE/download.log
+*.JP2
+*.jp2
+*.IMG
+
+# secrets and local state
+.env
+.env.*
+.claude/*.local.md
+.claude/settings.local.json
+
+# outputs
+out/
+*.log
+
+# python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# os
+.DS_Store
+
+controls/heldout.json

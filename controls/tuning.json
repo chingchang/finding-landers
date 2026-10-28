@@ -1,0 +1,245 @@
+{
+  "rule": "Answer key for the tuning sites. Readable by anyone and anything. Pixel positions (line, sample) are filled in by a person by eye from a 512 px crop at the published position; published coordinates are a starting point, not an answer. The scoring script reports, per piece, the rank of the true object in the candidate list and which branch found it.",
+  "sealed_on": null,
+  "sealed_by": null,
+  "sites": [
+    {
+      "name": "schiaparelli",
+      "strips": [
+        "ESP_048041_1780",
+        "ESP_073625_1780"
+      ],
+      "lat_published": -2.07,
+      "lon_e_published": 353.79,
+      "pieces": [
+        {
+          "piece": "crash_scar",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "parachute",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "backshell",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "curiosity",
+      "strips": [
+        "ESP_030313_1755"
+      ],
+      "lat_published": -4.59,
+      "lon_e_published": 137.44,
+      "pieces": [
+        {
+          "piece": "parachute",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "backshell",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "descent_stage",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "rover",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "phoenix",
+      "strips": [
+        "ESP_017716_2485",
+        "ESP_053451_2485"
+      ],
+      "lat_published": 68.22,
+      "lon_e_published": 234.25,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "backshell",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "parachute",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "viking1",
+      "strips": [
+        "ESP_046170_2025"
+      ],
+      "lat_published": 22.27,
+      "lon_e_published": 312.05,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "spirit",
+      "strips": [
+        "ESP_025815_1655"
+      ],
+      "lat_published": -14.57,
+      "lon_e_published": 175.47,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "parachute",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "backshell",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "pathfinder",
+      "strips": [
+        "ESP_022038_1995"
+      ],
+      "lat_published": 19.13,
+      "lon_e_published": 326.79,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "backshell",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "parachute",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": ""
+        }
+      ]
+    }
+  ]
+}
