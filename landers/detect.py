@@ -25,7 +25,7 @@ from dataclasses import asdict, dataclass, field
 import numpy as np
 from scipy import ndimage
 
-from landers import geo
+from landers import geo, shape
 from landers.label import StripLabel
 from landers.strip import Strip, Window
 
@@ -37,6 +37,7 @@ class DetectorConfig:
     version: str = "v0.1"
     frozen: bool = False
     calibration: str | None = None  # path of a landers.calibrate JSON; scores are then on the common scale
+    min_calibrated_score: float = -3.0  # with a calibration, drop candidates rarer than 1000 false alarms/km2
     tile: int = 2048
     overlap: int = 128
     background_px: int = 65  # annulus outer size for the local mean and std
@@ -195,9 +196,10 @@ def _along_across(points: np.ndarray, r: float, c: float, drow: float, dcol: flo
     return v[:, 0] * drow + v[:, 1] * dcol, np.abs(v[:, 0] * dcol - v[:, 1] * drow)
 
 
-def _principal_axis_alignment(lab: np.ndarray, comp: Component, drow: float, dcol: float) -> float:
+def _principal_axis_alignment(lab: np.ndarray, comp: Component, drow: float, dcol: float, sl=None) -> float:
     """|cos| between the component's long axis and the shadow direction, times its elongation (0 if round)."""
-    rr, cc = np.nonzero(lab == comp.label)
+    sub = lab[sl] if sl is not None else lab
+    rr, cc = np.nonzero(sub == comp.label)
     if len(rr) < 6:
         return 0.0
     cov = np.cov(np.vstack([rr, cc]).astype(float))
@@ -223,7 +225,11 @@ def block_mean(data: np.ndarray, valid: np.ndarray, n: int):
 def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candidate]:
     scale = lbl.scale_m
     z = local_z(win.data, win.valid, cfg.background_px, cfg.smooth_sigma, cfg.inner_px)
-    bright, _ = components(z > cfg.z_bright, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px)
+    grad = shape.gradient_magnitude(z)
+    bright, b_lab = components(
+        z > cfg.z_bright, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px
+    )
+    b_slices = ndimage.find_objects(b_lab) if bright else []
     small_dark, _ = components(
         z < cfg.z_shadow_dark, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px
     )
@@ -231,6 +237,9 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
         z < cfg.z_dark_compact, z, area_range_px(cfg.dark_compact_size_m, scale), win.valid, cfg.edge_margin_px
     )
     dark, _ = components(z < cfg.z_dark, z, area_range_px(cfg.dark_size_m, scale), win.valid, cfg.edge_margin_px)
+    dc_slices = ndimage.find_objects(dc_lab) if dark_compact else []
+    b_rank = shape.tile_ranks([k.peak for k in bright])
+    dc_rank = shape.tile_ranks([k.peak for k in dark_compact])
 
     out: list[Candidate] = []
     can_shadow = lbl.incidence_deg >= cfg.shadow_min_incidence_deg
@@ -239,13 +248,16 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
     lmax = geo.shadow_length_px(lbl, cfg.shadow_heights_m[1])
     dark_pts = np.array([(k.row, k.col) for k in small_dark]) if small_dark else np.zeros((0, 2))
 
-    for k in bright:
-        cand = Candidate(win.row0 + k.row, win.col0 + k.col, k.peak, "bright", GRADE_LOOK, k.area)
+    for i, k in enumerate(bright):
+        feats = shape.component_features(b_lab, k.label, z, grad, b_slices[k.label - 1])
+        feats["tile_rank"] = b_rank[i]
+        cand = Candidate(win.row0 + k.row, win.col0 + k.col, k.peak, "bright", GRADE_LOOK, k.area, dict(feats))
         if can_shadow and len(dark_pts):
             along, across = _along_across(dark_pts, k.row, k.col, drow, dcol)
             ok = (along > k.radius * 0.5) & (along <= lmax + k.radius + 2) & (across <= max(3.0, k.radius + 2))
             if ok.any():
                 j = int(np.argmax(np.where(ok, -across, -np.inf)))
+                shadow_peak = small_dark[j].peak
                 cand = Candidate(
                     cand.row,
                     cand.col,
@@ -254,21 +266,24 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
                     GRADE_LOOK,
                     k.area,
                     {
+                        **feats,
                         "shadow_len_px": round(float(along[j]), 1),
                         "shadow_len_min_px": round(lmin, 1),
                         "shadow_len_max_px": round(lmax, 1),
+                        "shadow_ratio": round(shadow_peak / k.peak, 3) if k.peak > 0 else 0.0,
                     },
                 )
         out.append(cand)
 
-    for k in dark_compact:
+    for i, k in enumerate(dark_compact):
         fill = k.area / float(k.bbox_h * k.bbox_w)
         if fill < cfg.compact_fill:
             continue
-        extra = {"fill": round(fill, 2)}
+        extra = shape.component_features(dc_lab, k.label, z, grad, dc_slices[k.label - 1])
+        extra["tile_rank"] = dc_rank[i]
         score = k.peak
         if can_shadow:
-            align = _principal_axis_alignment(dc_lab, k, drow, dcol)
+            align = _principal_axis_alignment(dc_lab, k, drow, dcol, dc_slices[k.label - 1])
             extra["shadow_alignment"] = round(align, 2)
             if align > 0.3:
                 score *= 1.3
@@ -305,19 +320,33 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
 
 
 def dedupe(cands: list[Candidate], radius: float = 6.0) -> list[Candidate]:
-    """Overlapping tiles see the same object twice; keep the higher-scoring copy and note the other branches."""
+    """Overlapping tiles see the same object twice; keep the higher-scoring copy and note the other branches.
+    A grid hash keeps this linear in the number of candidates."""
     cands = sorted(cands, key=lambda c: -c.score)
     kept: list[Candidate] = []
-    pts: list[tuple[float, float]] = []
+    cells: dict[tuple[int, int], list[int]] = {}
+    cell = max(radius, 1.0)
     for c in cands:
-        hit = next((i for i, (r, k) in enumerate(pts) if math.hypot(c.row - r, c.col - k) <= radius), None)
+        gr, gc = int(c.row // cell), int(c.col // cell)
+        hit = None
+        for dr in (-1, 0, 1):
+            for dc in (-1, 0, 1):
+                for i in cells.get((gr + dr, gc + dc), ()):
+                    k = kept[i]
+                    if math.hypot(c.row - k.row, c.col - k.col) <= radius:
+                        hit = i
+                        break
+                if hit is not None:
+                    break
+            if hit is not None:
+                break
         if hit is not None:
             also = kept[hit].extra.setdefault("also", [])
             if c.branch != kept[hit].branch and c.branch not in also:
                 also.append(c.branch)
             continue
+        cells.setdefault((gr, gc), []).append(len(kept))
         kept.append(c)
-        pts.append((c.row, c.col))
     return kept
 
 
@@ -342,7 +371,7 @@ def detect_strip(strip: Strip, cfg: DetectorConfig, max_tiles: int | None = None
         if cal is not None:
             from landers.calibrate import apply
 
-            tile_cands = apply(tile_cands, cal)
+            tile_cands = [c for c in apply(tile_cands, cal) if c.score >= cfg.min_calibrated_score]
         cands.extend(tile_cands)
         n += 1
         if progress:
@@ -375,7 +404,7 @@ def _worker_tile(bounds):
     if cal is not None:
         from landers.calibrate import apply
 
-        cands = apply(cands, cal)
+        cands = [c for c in apply(cands, cal) if c.score >= cfg.min_calibrated_score]
     return cands
 
 

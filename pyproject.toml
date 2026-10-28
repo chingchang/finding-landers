@@ -25,6 +25,7 @@ packages = ["landers"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+markers = ["slow: reads large windows from real strips"]
 
 [tool.ruff]
 line-length = 120

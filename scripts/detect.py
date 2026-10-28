@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
@@ -24,6 +25,9 @@ DEFAULT_CAL = config.REPO_ROOT / "landers" / "calibration_v0.json"
 
 
 def git_commit() -> str:
+    """The commit the run's code comes from; LANDERS_COMMIT overrides it when running from a frozen export."""
+    if os.environ.get("LANDERS_COMMIT"):
+        return os.environ["LANDERS_COMMIT"]
     try:
         r = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, cwd=config.REPO_ROOT)
         dirty = subprocess.run(

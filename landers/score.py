@@ -279,3 +279,67 @@ def format_injection_report(r: dict) -> str:
         br = ", ".join(f"{b}={n}" for b, n in sorted(row["branches"].items(), key=lambda x: -x[1])) or "-"
         lines.append(f"{row['kind']:14s} {row['size_bin']:10s} {row['n']:4d} {row['found']:6d} {rec:>7s}  {br}")
     return "\n".join(lines)
+
+
+# ---------------------------------------------------------------- shape feature separation
+
+
+def _auc(pos: list[float], neg: list[float]) -> float | None:
+    """Probability that a random hit scores above a random false alarm on this feature (ties count half)."""
+    if not pos or not neg:
+        return None
+    neg_sorted = sorted(neg)
+    import bisect
+
+    total = 0.0
+    for p in pos:
+        lo = bisect.bisect_left(neg_sorted, p)
+        hi = bisect.bisect_right(neg_sorted, p)
+        total += lo + 0.5 * (hi - lo)
+    return round(total / (len(pos) * len(neg)), 3)
+
+
+def feature_separation(detections: list[dict], truths: list[dict], radius_px: float) -> dict:
+    """For each kind and branch, the AUC of every recorded feature between detections that match an
+    injected object of that kind and false alarms of the same branch. 0.5 is no separation; values far
+    from 0.5 either way mean the feature separates (below 0.5: hits score lower)."""
+    by_tile: dict = {}
+    for t in truths:
+        by_tile.setdefault(t["tile"], []).append(t)
+    hits: dict = {}
+    falses: dict = {}
+    for d in detections:
+        feats = d.get("features") or {}
+        if not feats:
+            continue
+        kind = None
+        for t in by_tile.get(d["tile"], []):
+            if math.hypot(float(d["row"]) - float(t["row"]), float(d["col"]) - float(t["col"])) <= radius_px:
+                kind = t["kind"]
+                break
+        if kind is None:
+            falses.setdefault(d["branch"], []).append(feats)
+        else:
+            hits.setdefault((kind, d["branch"]), []).append(feats)
+    rows = []
+    for (kind, branch), hs in sorted(hits.items()):
+        fs = falses.get(branch, [])
+        names = sorted({k for f in hs + fs for k in f})
+        aucs = {}
+        for name in names:
+            pos = [float(f[name]) for f in hs if name in f]
+            neg = [float(f[name]) for f in fs if name in f]
+            aucs[name] = _auc(pos, neg)
+        rows.append({"kind": kind, "branch": branch, "n_hits": len(hs), "n_false": len(fs), "auc": aucs})
+    return {"rows": rows}
+
+
+def format_feature_report(r: dict) -> str:
+    lines = [
+        "feature separation (AUC hit vs false alarm; 0.5 = none):",
+        f"{'kind':14s} {'branch':13s} {'hits':>5s} {'false':>6s}  features",
+    ]
+    for row in r["rows"]:
+        feats = "  ".join(f"{k}={v}" for k, v in row["auc"].items() if v is not None)
+        lines.append(f"{row['kind']:14s} {row['branch']:13s} {row['n_hits']:5d} {row['n_false']:6d}  {feats}")
+    return "\n".join(lines)

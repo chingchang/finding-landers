@@ -27,7 +27,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from landers import config  # noqa: E402
 from landers.detect import DetectorConfig, detect_tile, load_calibration  # noqa: E402
 from landers.inject import InjectConfig, inject  # noqa: E402
-from landers.score import format_injection_report, load_json, match_radius_px, recall_at_false_alarm_rate  # noqa: E402
+from landers.score import (  # noqa: E402
+    feature_separation,
+    format_feature_report,
+    format_injection_report,
+    load_json,
+    match_radius_px,
+    recall_at_false_alarm_rate,
+)
+from landers.shape import FEATURES  # noqa: E402
 from landers.strip import Strip  # noqa: E402
 
 
@@ -52,6 +60,9 @@ def main(argv=None) -> int:
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--tile-phase", type=int, default=0, choices=(0, 1), help="which of two interleaved tile sets")
     ap.add_argument("--calibration", default=None, help="apply this calibration before scoring")
+    ap.add_argument(
+        "--features", action="store_true", help="report how each shape feature separates hits from false alarms"
+    )
     ap.add_argument("--run", default=time.strftime("%Y%m%d-%H%M%S"))
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
     a = ap.parse_args(argv)
@@ -98,8 +109,18 @@ def main(argv=None) -> int:
             if cal is not None:
                 tile_cands = apply(tile_cands, cal)
             for c in tile_cands:
+                feats = {k: c.extra[k] for k in FEATURES if k in c.extra}
+                if "shadow_ratio" in c.extra:
+                    feats["shadow_ratio"] = c.extra["shadow_ratio"]
                 detections.append(
-                    {"tile": tile_id, "row": c.row - r0, "col": c.col - c0, "score": c.score, "branch": c.branch}
+                    {
+                        "tile": tile_id,
+                        "row": c.row - r0,
+                        "col": c.col - c0,
+                        "score": c.score,
+                        "branch": c.branch,
+                        "features": feats,
+                    }
                 )
             for o in objs:
                 d = o.to_json()
@@ -125,10 +146,15 @@ def main(argv=None) -> int:
             "truths": truths,
         }
     )
+    if a.features:
+        result["features"] = feature_separation(detections, truths, radius_px or 20.0)
     out = Path(a.out) / f"inject_{a.run}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, indent=1))
     print(format_injection_report(result))
+    if a.features:
+        print()
+        print(format_feature_report(result["features"]))
     print(f"\nwritten: {out}")
     return 0
 
