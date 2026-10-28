@@ -15,6 +15,35 @@
         "parachute",
         "backshell",
         "heat_shield"
+      ],
+      "pieces_refined": [
+        {
+          "piece": "crash_scar",
+          "lat": -2.07,
+          "lon_e": 353.79,
+          "precision_m": 600,
+          "basis": "ESA, CTX-based; HiRISE monitoring images are centred near -2.05, a 1.2 km discrepancy that is unresolved",
+          "source": "https://www.esa.int/About_Us/ESAC/Mars_Reconnaissance_Orbiter_views_Schiaparelli_landing_site",
+          "note": "dark patch about 15 x 40 m; use the strip centre as the first guess"
+        },
+        {
+          "piece": "parachute",
+          "lat": -2.085,
+          "lon_e": 353.79,
+          "precision_m": 300,
+          "basis": "about 0.9 km south of the impact (offset-derived); 12 m bright canopy with the 2.4 m backshell just south of it",
+          "source": "https://www.esa.int/Enabling_Support/Operations/Detailed_images_of_Schiaparelli_and_its_descent_hardware_on_Mars",
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "lat": -2.07,
+          "lon_e": 353.814,
+          "precision_m": 300,
+          "basis": "about 1.4 km east of the impact (offset-derived)",
+          "source": "https://www.esa.int/Enabling_Support/Operations/Detailed_images_of_Schiaparelli_and_its_descent_hardware_on_Mars",
+          "note": ""
+        }
       ]
     },
     {
@@ -31,6 +60,44 @@
         "heat_shield",
         "descent_stage",
         "rover"
+      ],
+      "pieces_refined": [
+        {
+          "piece": "rover",
+          "lat": -4.5895,
+          "lon_e": 137.4417,
+          "precision_m": 6,
+          "basis": "Bradbury Landing, MARDI tied to the HiRISE base (cartographic)",
+          "source": "https://planetary.org/articles/08061740-curiosity-press-briefing-notes",
+          "note": "rover position at the time of ESP_030313_1755 differs; the landing point is where the descent hardware is measured from"
+        },
+        {
+          "piece": "parachute",
+          "lat": -4.5968,
+          "lon_e": 137.4343,
+          "precision_m": 250,
+          "basis": "615 m SW of the landing point (offset-derived)",
+          "source": "https://www.jpl.nasa.gov/images/pia16001-scene-of-a-martian-landing/",
+          "note": "backshell beside it"
+        },
+        {
+          "piece": "descent_stage",
+          "lat": -4.5817,
+          "lon_e": 137.4339,
+          "precision_m": 250,
+          "basis": "650 m NW of the landing point (offset-derived); dark impact marks",
+          "source": "https://www.jpl.nasa.gov/images/pia16001-scene-of-a-martian-landing/",
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "lat": -4.6038,
+          "lon_e": 137.4561,
+          "precision_m": 300,
+          "basis": "1200 m SE per the landing briefing, 1500 m per PIA16001 (offset-derived; disputed)",
+          "source": "https://www.jpl.nasa.gov/images/pia16001-scene-of-a-martian-landing/",
+          "note": "if absent at 1200 m try 1500 m: -4.6074, 137.4597"
+        }
       ]
     },
     {
@@ -47,6 +114,35 @@
         "backshell",
         "parachute",
         "heat_shield"
+      ],
+      "pieces_refined": [
+        {
+          "piece": "lander",
+          "lat": 68.21883,
+          "lon_e": 234.25078,
+          "precision_m": 100,
+          "basis": "Odyssey/MRO Doppler (inertial), IAU 2000 areocentric; HiRISE frame offset unknown",
+          "source": "https://www.planetary.org/articles/1470",
+          "note": "a second published value sits about 80 m west (68.21894, 234.2487)"
+        },
+        {
+          "piece": "backshell",
+          "lat": 68.2137,
+          "lon_e": 234.2508,
+          "precision_m": 150,
+          "basis": "about 300 m south of the lander (offset-derived); parachute beside it, which later drifted east",
+          "source": "https://pds-rings.seti.org/press_releases/pages/PIA11xxx/PIA11172.html",
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "lat": 68.217,
+          "lon_e": 234.2556,
+          "precision_m": 200,
+          "basis": "southeast of the lander, about halfway to the backshell (offset-derived, rough); dark impact spot with a bounce mark west of it",
+          "source": "https://pds-rings.seti.org/press_releases/pages/PIA11xxx/PIA11172.html",
+          "note": ""
+        }
       ]
     },
     {
@@ -59,6 +155,26 @@
       ],
       "pieces": [
         "lander"
+      ],
+      "pieces_refined": [
+        {
+          "piece": "lander",
+          "lat": 22.269,
+          "lon_e": 312.049,
+          "precision_m": 60,
+          "basis": "radio tracking (Folkner et al. 1997), inertial frame; HiRISE frame may differ by 100 to 300 m",
+          "source": "https://ode.rsl.wustl.edu/mars/pagehelp/Content/Missions_Instruments/Landing_Sites.htm",
+          "note": "ESP_046170_2025 is centred on the hardware (22.267 N, 312.048 E). Grid tile 79 shows a bright compact object with an east shadow at about line 40615, sample 14620: likely the lander, confirm by eye."
+        },
+        {
+          "piece": "backshell",
+          "lat": null,
+          "lon_e": null,
+          "precision_m": null,
+          "basis": "about 260 m from the lander, bearing not published; heat shield about 4x farther",
+          "source": "https://www.jpl.nasa.gov/news/nasa-mars-orbiter-photographs-spirit-and-vikings-on-the-ground/",
+          "note": "search the tiles around the lander"
+        }
       ]
     },
     {
@@ -74,6 +190,35 @@
         "parachute",
         "backshell",
         "heat_shield"
+      ],
+      "pieces_refined": [
+        {
+          "piece": "lander",
+          "lat": -14.5692,
+          "lon_e": 175.4729,
+          "precision_m": 10,
+          "basis": "cartographic (Arvidson et al. 2004), tied to the MOC/MOLA base; use this, not the Doppler value",
+          "source": "https://ode.rsl.wustl.edu/mars/pagehelp/Content/Missions_Instruments/Landing_Sites.htm",
+          "note": ""
+        },
+        {
+          "piece": "heat_shield",
+          "lat": null,
+          "lon_e": null,
+          "precision_m": null,
+          "basis": "bright spot on the north rim of Bonneville crater, about 300 to 400 m NE of the lander",
+          "source": "https://www.uahirise.org/ESP_025815_1655",
+          "note": ""
+        },
+        {
+          "piece": "parachute",
+          "lat": null,
+          "lon_e": null,
+          "precision_m": null,
+          "basis": "no published distance; outside the colour swath of ESP_025815_1655",
+          "source": "https://www.uahirise.org/PSP_001513_1655",
+          "note": "may be hard to locate; optional"
+        }
       ]
     },
     {
@@ -89,6 +234,26 @@
         "backshell",
         "parachute",
         "heat_shield"
+      ],
+      "pieces_refined": [
+        {
+          "piece": "lander",
+          "lat": 19.095,
+          "lon_e": 326.747,
+          "precision_m": 60,
+          "basis": "radio tracking (Folkner et al. 1997), inertial; observation centres lie about 1 km east, frame offset unknown",
+          "source": "https://ode.rsl.wustl.edu/mars/pagehelp/Content/Missions_Instruments/Landing_Sites.htm",
+          "note": "ESP_022038_1995 is 50 cm/px (2x2 binned); PSP_001890_1995 is the 25 cm/px image if ever downloaded"
+        },
+        {
+          "piece": "backshell",
+          "lat": null,
+          "lon_e": null,
+          "precision_m": null,
+          "basis": "south of the lander, behind a ridge; parachute beside it",
+          "source": "https://hirise.lpl.arizona.edu/PSP_001890_1995",
+          "note": ""
+        }
       ]
     },
     {
@@ -178,5 +343,6 @@
         "lander"
       ]
     }
-  ]
+  ],
+  "refined_note": "pieces_refined (2026-10-28): best published position per piece, planetocentric latitude and east longitude. precision_m is the honest radius to search; offset-derived values carry 200 to 300 m. Radio-tracked positions can sit 100 to 300 m from the HiRISE map frame, so centre the crop here, then find the object by eye. HiRISE control images are aimed at the hardware: the strip's own centre line and sample is also a good first guess."
 }
