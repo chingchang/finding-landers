@@ -11,6 +11,13 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 2. [ ] Contact sheets for the key: top 50 candidates within 1.5 km of each refined position in
    controls/sites.json, numbered with line and sample, plus a suggestions file. The agent does not write
    tuning.json.
+   Feedback (oracle, 10-28 16:40): three things make the sheets usable by eye. (a) Stretch each grid with one
+   global stretch per grid, not per tile; a per-tile stretch saturates the top 0.1 percent of every tile, so
+   brightness cannot be compared across tiles and the brightest object in the area does not stand out.
+   (b) On polar ground every polygon edge is a bright streak with a dark trough beside it, so rank by the
+   shadow side from the label (SUB_SOLAR_AZIMUTH), not by brightness alone: a bright compact blob with dark
+   pixels on the anti-sun side only. (c) For Schiaparelli the published position is 600 m precision and the
+   monitoring strips are centred about 1.2 km from it, so use a 3 km area around each strip's own centre.
 3. [ ] Key filled by a person from the sheets and grids, in a private copy. Copied to controls/tuning.json and
    committed only after item 1 is committed.
 4. [ ] First score: baseline v1 against the key. This is the blind number; report it as such.
