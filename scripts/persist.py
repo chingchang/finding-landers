@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from landers import config, persist  # noqa: E402
 from landers.detect import DetectorConfig, detect_tile, load_calibration  # noqa: E402
 from landers.inject import InjectConfig, inject  # noqa: E402
+from landers.persist import Node  # noqa: E402
 from landers.score import load_json, match_radius_px  # noqa: E402
 from landers.strip import Strip  # noqa: E402
 
@@ -47,6 +48,14 @@ def main(argv=None) -> int:
     ap.add_argument("--sites", default=str(config.REPO_ROOT / "controls" / "sites.json"))
     ap.add_argument("--thresholds", default=str(config.REPO_ROOT / "controls" / "thresholds.json"))
     ap.add_argument("--spacing", type=int, default=4096)
+    ap.add_argument(
+        "--radius-px",
+        type=float,
+        default=8.0,
+        help="a candidate is seen when the other date has one of its family within this; "
+        "registration spread is about 5 px and true matches sit within 8 px (default 8)",
+    )
+    ap.add_argument("--reuse-nodes", default=None, help="a previous persist_*.json: reuse its registration nodes")
     ap.add_argument("--inject-check", type=int, default=0, help="tiles of A to inject into and map to B")
     ap.add_argument("--out", default=None)
     a = ap.parse_args(argv)
@@ -77,14 +86,19 @@ def main(argv=None) -> int:
     t0 = time.time()
     for src, dst in ((ida, idb), (idb, ida)):
         sa, sb = strips[src], strips[dst]
-        print(f"registering {dst} to {src} ...", flush=True)
-        nodes = persist.offset_field(
-            sa, sb, spacing=a.spacing, progress=lambda n, k: print(f"\r  nodes {n} ok {k}", end="", flush=True)
-        )
-        print()
+        prev = load_json(a.reuse_nodes)["directions"].get(f"{src}->{dst}") if a.reuse_nodes else None
+        if prev:
+            nodes = [Node(**n) for n in prev["nodes"]]
+            print(f"reusing {len(nodes)} registration nodes for {dst} to {src}")
+        else:
+            print(f"registering {dst} to {src} ...", flush=True)
+            nodes = persist.offset_field(
+                sa, sb, spacing=a.spacing, progress=lambda n, k: print(f"\r  nodes {n} ok {k}", end="", flush=True)
+            )
+            print()
         summ = persist.nodes_summary(nodes)
         print(f"  {summ}")
-        radius = match_radius_px(thresholds, sa.label.scale_m)
+        radius = a.radius_px
         cands = copy.deepcopy(run["strips"][src]["candidates"])
         counts = persist.annotate(cands, run["strips"][dst]["candidates"], sa, sb, nodes, radius)
         branches = by_branch(cands)
@@ -136,6 +150,8 @@ def main(argv=None) -> int:
             print(f"  inject check: {n_obj} injected objects detected in {src}, {n_seen} wrongly seen in {dst}")
         result["directions"][f"{src}->{dst}"] = direction
     result["seconds"] = round(time.time() - t0)
+    result["radius_px"] = a.radius_px
+    result["score_match_radius_px"] = match_radius_px(thresholds, strips[ida].label.scale_m)
     out = Path(a.out) if a.out else Path(a.candidates).parent / f"persist_{name}.json"
     out.write_text(json.dumps(result, indent=1))
     print(f"written: {out}")
