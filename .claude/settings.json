@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(controls/heldout.json)",
+      "Read(controls/tuning.private.json)",
+      "Read(**/controls/heldout.json)",
+      "Read(**/controls/tuning.private.json)",
+      "Read(/Users/ching/finding-landers/controls/heldout.json)",
+      "Read(/Users/ching/finding-landers/controls/tuning.private.json)",
+      "Read(/Users/ching/ccd/**)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/.env)",
+      "Edit(controls/thresholds.json)",
+      "Write(controls/thresholds.json)",
+      "Edit(controls/heldout.json)",
+      "Write(controls/heldout.json)",
+      "Edit(controls/tuning.json)",
+      "Write(controls/tuning.json)",
+      "Bash(git push*)",
+      "Bash(curl *)",
+      "Bash(wget *)"
+    ]
+  }
+}
