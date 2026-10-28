@@ -1,0 +1,104 @@
+import dataclasses
+
+import numpy as np
+import pytest
+
+from landers import config, detect, geo
+from landers.label import StripLabel
+from landers.strip import Strip, Window
+from tests.conftest import needs_data
+
+
+def fake_label(**over) -> StripLabel:
+    base = dict(
+        observation_id="X",
+        rationale="",
+        lines=4000,
+        samples=4000,
+        scale_m=0.25,
+        projection="EQUIRECTANGULAR",
+        center_lat=0.0,
+        center_lon=180.0,
+        line_offset=0.0,
+        sample_offset=0.0,
+        map_resolution=237102.0,
+        radius_m=3396190.0,
+        min_lat=0,
+        max_lat=0,
+        west_lon=0,
+        east_lon=0,
+        incidence_deg=50.0,
+        sub_solar_azimuth_deg=170.0,
+        north_azimuth_deg=270.0,
+        solar_longitude_deg=0.0,
+        start_time="",
+    )
+    base.update(over)
+    return StripLabel(**base)
+
+
+def synthetic_tile(seed=0, size=512, bright_at=(200, 300), dark_scar_at=(400, 120)):
+    rng = np.random.default_rng(seed)
+    img = 500 + 20 * rng.standard_normal((size, size)).astype(np.float32)
+    lbl = fake_label()
+    drow, dcol = geo.shadow_direction(lbl)
+    shadow = geo.shadow_length_px(lbl, 1.5)
+    r, c = bright_at
+    yy, xx = np.mgrid[:size, :size]
+    img[(yy - r) ** 2 + (xx - c) ** 2 <= 3**2] += 250  # a 1.5 m bright object
+    sr, sc = r + drow * (shadow / 2 + 3), c + dcol * (shadow / 2 + 3)
+    for t in np.linspace(0, 1, 40):  # its shadow, a dark streak along the shadow direction
+        pr, pc = r + drow * (3 + t * shadow), c + dcol * (3 + t * shadow)
+        img[int(round(pr)) - 1 : int(round(pr)) + 2, int(round(pc)) - 1 : int(round(pc)) + 2] -= 150
+    r2, c2 = dark_scar_at
+    img[(yy - r2) ** 2 + (xx - c2) ** 2 <= 12**2] -= 120  # a 6 m dark scar
+    data = np.clip(img, 1, 1021).astype(np.uint16)
+    valid = np.ones_like(data, dtype=bool)
+    valid[:, :40] = False  # a no-data margin like the slanted footprint edge
+    data[:, :40] = 0
+    return Window(1000, 2000, data, valid), lbl, (sr, sc)
+
+
+def test_branches_find_planted_objects():
+    win, lbl, _ = synthetic_tile()
+    cands = detect.detect_tile(win, lbl, detect.DetectorConfig())
+    by_branch = {}
+    for c in cands:
+        by_branch.setdefault(c.branch, []).append(c)
+    shadow = [c for c in by_branch.get("shadow", []) if abs(c.row - 1200) < 3 and abs(c.col - 2300) < 3]
+    assert shadow, [(c.branch, c.row, c.col) for c in cands]
+    assert 0 < shadow[0].extra["shadow_len_px"] <= shadow[0].extra["shadow_len_max_px"] + 6
+    dark = [c for c in by_branch.get("dark", []) if abs(c.row - 1400) < 3 and abs(c.col - 2120) < 3]
+    assert dark
+    assert all(c.col >= 2000 + 40 for c in cands)  # nothing on the no-data margin
+    assert all(c.grade == "needs second look" for c in cands)
+
+
+def test_no_shadow_branch_when_sun_is_high():
+    win, lbl, _ = synthetic_tile()
+    lbl = dataclasses.replace(lbl, incidence_deg=31.0)
+    cands = detect.detect_tile(win, lbl, detect.DetectorConfig())
+    assert not [c for c in cands if c.branch == "shadow"]
+    assert [c for c in cands if c.branch == "bright" and abs(c.row - 1200) < 3]
+
+
+def test_dedupe_keeps_best():
+    a = detect.Candidate(10, 10, 5.0, "bright", "needs second look", 9)
+    b = detect.Candidate(12, 11, 7.0, "shadow", "needs second look", 9)
+    c = detect.Candidate(100, 100, 1.0, "dark", "needs second look", 200)
+    kept = detect.dedupe([a, b, c])
+    assert [k.branch for k in kept] == ["shadow", "dark"]
+
+
+@needs_data
+def test_label_shadow_direction_agrees_with_real_ground():
+    """On the Viking 1 strip, bright rocks must have dark patches on the label's shadow side far more
+    often than on the opposite side. Pins the PDS azimuth convention used in geo.shadow_direction."""
+    if config.find_strip("ESP_046170_2025") is None:
+        pytest.skip("Viking 1 strip not on disk")
+    strip = Strip.open("ESP_046170_2025")
+    r, c = strip.shape[0] // 2, strip.shape[1] // 2
+    win = strip.read(r - 1024, r + 1024, c - 1024, c + 1024)
+    along, against = detect.shadow_direction_evidence(win, strip.label, detect.DetectorConfig())
+    assert along > 20, (along, against)
+    assert along > 2 * against, (along, against)
