@@ -18,6 +18,10 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    shadow side from the label (SUB_SOLAR_AZIMUTH), not by brightness alone: a bright compact blob with dark
    pixels on the anti-sun side only. (c) For Schiaparelli the published position is 600 m precision and the
    monitoring strips are centred about 1.2 km from it, so use a 3 km area around each strip's own centre.
+   Feedback (oracle, 10-28 16:20): the baseline report names the tuning strips, as a reproducible report must,
+   and scripts/leakcheck.sh flags every observation id outside its allowlist, so the two cannot both pass.
+   Allow observation ids under docs/reports/ (reports are for people and must say which strip a number came
+   from); keep the sealed-site name and coordinate rules everywhere, reports included.
 3. [ ] Key filled by a person from the sheets and grids, in a private copy. Copied to controls/tuning.json and
    committed only after item 1 is committed.
 4. [ ] First score: baseline v1 against the key. This is the blind number; report it as such.
