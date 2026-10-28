@@ -25,6 +25,7 @@ from PIL import Image, ImageDraw
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from landers import config, geo  # noqa: E402
+from landers.sheets import grid_layout  # noqa: E402
 from landers.strip import Strip  # noqa: E402
 
 CREDIT = "NASA/JPL/University of Arizona"
@@ -81,10 +82,11 @@ def render(strip: Strip, row: float, col: float, size: int, reduce: int, out: Pa
 
 def render_grid(strip: Strip, row: float, col: float, span_m: float, tile: int, out_dir: Path, title: str) -> int:
     """Full-resolution ``tile`` px tiles covering ``span_m`` metres around (row, col), numbered row-major
-    from 1, plus an index image at reduced resolution with the numbers drawn in. Returns the tile count."""
-    n = -(-int(round(span_m / strip.label.scale_m)) // tile)
-    size = n * tile
-    w = strip.read_centered(row, col, size)
+    from 1, plus an index image at reduced resolution with the numbers drawn in. Returns the tile count.
+    The layout comes from ``sheets.grid_layout`` so contact sheets can name the tile a candidate sits in."""
+    lay = grid_layout(row, col, strip.label.scale_m, span_m, tile)
+    n, size = lay.n, lay.size
+    w = strip.read(lay.row0, lay.row0 + size, lay.col0, lay.col0 + size)
     img8 = to_uint8(w.data, w.valid)
     out_dir.mkdir(parents=True, exist_ok=True)
     k = 0

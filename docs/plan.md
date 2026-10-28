@@ -6,9 +6,9 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 
 ## Now (in order; the agent keeps the status)
 
-1. [running] Baseline v1: the calibrated detector over all six tuning strips, saved under out/baseline_v1/
+1. [done] Baseline v1: the calibrated detector over all six tuning strips, saved under out/baseline_v1/
    with the commit hash. Never rerun after the key is filled. The first score against the key comes from it.
-2. [ ] Contact sheets for the key: top 50 candidates within 1.5 km of each refined position in
+2. [done] Contact sheets for the key: top 50 candidates within 1.5 km of each refined position in
    controls/sites.json, numbered with line and sample, plus a suggestions file. The agent does not write
    tuning.json.
 3. [ ] Key filled by a person from the sheets and grids, in a private copy. Copied to controls/tuning.json and
@@ -47,7 +47,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   a person, versioned.
 - A frozen tag before the held-out run and before the search. Nothing changes after a frozen run starts; a fix
   goes in a later tag and both numbers are shown.
-- Frost-season Phoenix strips (ESP_033724_2485, ESP_068169_2485) are not used. Pathfinder is 50 cm/px.
+- The two frost-season Phoenix strips (named in docs/data.md) are not used. Pathfinder is 50 cm/px.
 
 ## Backlog (ideas with a when)
 

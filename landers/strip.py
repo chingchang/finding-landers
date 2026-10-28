@@ -27,6 +27,7 @@ class Window:
     col0: int
     data: np.ndarray  # uint16 (rows, cols)
     valid: np.ndarray  # bool, same shape
+    step: int = 1  # image pixels per data pixel (1 at full resolution)
 
     @property
     def shape(self):
@@ -73,6 +74,23 @@ class Strip:
     def read_centered(self, row: float, col: float, size: int) -> Window:
         r0, c0 = int(round(row)) - size // 2, int(round(col)) - size // 2
         return self.read(r0, r0 + size, c0, c0 + size)
+
+    def read_reduced(self, row0: int, row1: int, col0: int, col1: int, step: int) -> Window:
+        """[row0:row1, col0:col1] at one pixel per ``step`` image pixels (a power of two), decoded from the
+        JPEG 2000 resolution levels, so a 3 km square at 2 m/px costs seconds, not a 300 MB read.
+
+        ``Window.row0``/``col0`` are full-resolution coordinates; data pixel (i, j) sits at image pixel
+        (row0 + i * step, col0 + j * step)."""
+        if step < 1 or step & (step - 1):
+            raise ValueError(f"step must be a power of two, not {step}")
+        row0, col0 = max(row0, 0), max(col0, 0)
+        row1, col1 = min(row1, self.label.lines), min(col1, self.label.samples)
+        if row1 <= row0 or col1 <= col0:
+            raise ValueError("empty window")
+        data = np.asarray(self._jp2[row0:row1:step, col0:col1:step])
+        if data.ndim == 3:
+            data = data[..., 0]
+        return Window(row0, col0, data, valid_mask(data), step)
 
     @cached_property
     def overview(self) -> Window:
