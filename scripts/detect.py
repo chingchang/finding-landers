@@ -10,16 +10,31 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from landers import config  # noqa: E402
-from landers.detect import DetectorConfig, detect_strip  # noqa: E402
+from landers.detect import DetectorConfig, detect_strip, detect_strip_parallel  # noqa: E402
 from landers.strip import Strip  # noqa: E402
 
 DEFAULT_CAL = config.REPO_ROOT / "landers" / "calibration_v0.json"
+
+
+def git_commit() -> str:
+    try:
+        r = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, cwd=config.REPO_ROOT)
+        dirty = subprocess.run(
+            ["git", "status", "--porcelain", "--untracked-files=no"],
+            capture_output=True,
+            text=True,
+            cwd=config.REPO_ROOT,
+        )
+        return r.stdout.strip() + ("-dirty" if dirty.stdout.strip() else "")
+    except OSError:
+        return "unknown"
 
 
 def main(argv=None) -> int:
@@ -36,6 +51,7 @@ def main(argv=None) -> int:
         help="calibration JSON from scripts/calibrate.py (default: landers/calibration_v0.json if present)",
     )
     ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
+    ap.add_argument("--jobs", type=int, default=1, help="worker processes per strip (3 at most on 8 GB)")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
     a = ap.parse_args(argv)
 
@@ -50,17 +66,35 @@ def main(argv=None) -> int:
             ids.extend(s["strips"])
     if not ids:
         ap.error("no strips given")
-    cfg = DetectorConfig(frozen=a.frozen, calibration=None if a.no_calibration else a.calibration)
-    result = {"run": a.run, "detector": cfg.to_json(), "strips": {}}
+    cal = None if a.no_calibration else a.calibration
+    cfg = DetectorConfig(frozen=a.frozen, calibration=cal)
+    if cal:  # record the calibration by its path inside the repo, not this machine's
+        cfg.calibration = (
+            str(Path(cal).resolve().relative_to(config.REPO_ROOT))
+            if Path(cal).resolve().is_relative_to(config.REPO_ROOT)
+            else cal
+        )
+        cfg_run = DetectorConfig(frozen=a.frozen, calibration=str(Path(cal).resolve()))
+    else:
+        cfg_run = cfg
+    result = {
+        "run": a.run,
+        "detector": cfg.to_json(),
+        "git_commit": git_commit(),
+        "started": time.strftime("%Y-%m-%dT%H:%M:%S"),
+        "strips": {},
+    }
     for sid in ids:
         if config.find_strip(sid) is None:
             print(f"{sid}: not on disk, skipped")
             continue
         strip = Strip.open(sid)
         t = time.time()
-        entry = detect_strip(
-            strip, cfg, a.max_tiles, progress=lambda n, k, sid=sid: print(f"\r{sid} tiles={n} cands={k}", end="")
-        )
+        prog = lambda n, k, sid=sid: print(f"\r{sid} tiles={n} cands={k}", end="", flush=True)  # noqa: E731
+        if a.jobs > 1:
+            entry = detect_strip_parallel(strip, cfg_run, a.jobs, a.max_tiles, progress=prog)
+        else:
+            entry = detect_strip(strip, cfg_run, a.max_tiles, progress=prog)
         print(f"\r{sid}: {len(entry['candidates'])} candidates from {entry['tiles']} tiles in {time.time() - t:.0f}s")
         result["strips"][sid] = entry
     out = Path(a.out) / f"candidates_{a.run}.json"

@@ -356,6 +356,55 @@ def detect_strip(strip: Strip, cfg: DetectorConfig, max_tiles: int | None = None
     }
 
 
+_WORKER: dict = {}
+
+
+def _worker_init(observation_id: str, cfg_json: dict):
+    from landers.strip import Strip as _Strip
+
+    _WORKER["strip"] = _Strip.open(observation_id)
+    _WORKER["cfg"] = DetectorConfig(**{k: (tuple(v) if isinstance(v, list) else v) for k, v in cfg_json.items()})
+    _WORKER["cal"] = load_calibration(_WORKER["cfg"])
+
+
+def _worker_tile(bounds):
+    r0, r1, c0, c1 = bounds
+    strip, cfg, cal = _WORKER["strip"], _WORKER["cfg"], _WORKER["cal"]
+    win = strip.read(r0, r1, c0, c1)
+    cands = detect_tile(win, strip.label, cfg)
+    if cal is not None:
+        from landers.calibrate import apply
+
+        cands = apply(cands, cal)
+    return cands
+
+
+def detect_strip_parallel(
+    strip: Strip, cfg: DetectorConfig, jobs: int, max_tiles: int | None = None, progress=None
+) -> dict:
+    """Same result as ``detect_strip`` with ``jobs`` worker processes, each holding its own open strip.
+    About 1.5 GB per worker at peak, so three is the most this 8 GB machine should run."""
+    import multiprocessing as mp
+
+    tiles = list(strip.tiles(cfg.tile, cfg.overlap))
+    if max_tiles is not None:
+        tiles = tiles[:max_tiles]
+    cands: list[Candidate] = []
+    ctx = mp.get_context("spawn")
+    with ctx.Pool(jobs, initializer=_worker_init, initargs=(strip.label.observation_id, cfg.to_json())) as pool:
+        for n, part in enumerate(pool.imap(_worker_tile, tiles, chunksize=1), start=1):
+            cands.extend(part)
+            if progress:
+                progress(n, len(cands))
+    cands = dedupe(cands)
+    return {
+        "valid_area_km2": round(strip.valid_area_km2(), 3),
+        "scale_m": strip.label.scale_m,
+        "tiles": len(tiles),
+        "candidates": [c.to_json() for c in cands],
+    }
+
+
 def shadow_direction_evidence(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> tuple[int, int]:
     """Diagnostic: how many bright patches have a dark patch just *along* vs just *against* the label's
     shadow direction. Rocks cast shadows, so the along count should win clearly on any real ground.
