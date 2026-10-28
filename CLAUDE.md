@@ -8,6 +8,7 @@ field are retracted for a single unearned claim, and the work here is judged the
 
 ## Read first
 
+- docs/plan.md: the order of work, the timing rules and the backlog. Take the first open item under Now.
 - docs/data.md: what the images are, what is on disk, more data you may fetch, and the control sites (which
   are for tuning, which are held out, and how that is kept honest).
 
@@ -49,4 +50,4 @@ for what did not, and move winners into the main package through a normal change
 ## Tell me
 
 End each piece of work with what you did, what you decided and why, and what you would do next, in a short
-report file next to the work.
+report under docs/reports/, and mark the item's status in docs/plan.md.
