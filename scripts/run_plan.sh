@@ -1,0 +1,38 @@
+#!/bin/bash
+# Runs the plan unattended: one fresh Claude Code session per open item in docs/plan.md, until the items run
+# out, something needs a person, or the cap is hit. Start it in Terminal before you leave:
+#
+#   cd ~/finding-landers/.claude/worktrees/repo-overview-plan-e248f3   # the agent's worktree
+#   caffeinate -i scripts/run_plan.sh 6        # at most 6 items; caffeinate keeps the Mac awake
+#
+# Stops on: a red check, an item the agent marked [blocked] (needs a person), a refused tier-1 change, or the
+# item cap. Nothing is pushed. Each item lands as a commit on the branch with a report under docs/reports/.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+MAX_ITEMS="${1:-6}"
+ITEM_TURNS="${ITEM_TURNS:-200}"
+ITEM_USD="${ITEM_USD:-15}"
+mkdir -p out/plan_runs
+TOOLS='Read,Edit,Write,Grep,Glob,Bash(uv run *),Bash(uv sync*),Bash(python3 *),Bash(scripts/*),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(git add *),Bash(git commit *),Bash(git merge main*),Bash(git merge --no-edit main*),Bash(ls *),Bash(mkdir *),Bash(wc *),Bash(cat *),Bash(head *),Bash(tail *)'
+
+for i in $(seq 1 "$MAX_ITEMS"); do
+  stamp=$(date +%Y%m%d-%H%M%S)
+  if ! grep -qE '^\s*[0-9]+\. \[ \]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
+  if grep -qiE '\[blocked' docs/plan.md; then echo "an item is marked blocked; needs a person"; exit 3; fi
+  prompt="No human is watching. Merge main into this branch first (git merge --no-edit main). Then read CLAUDE.md
+and docs/plan.md, and take the first open item under Now that is marked [ ]. If it is item 3 (the key) or
+anything that needs a person (money, a push, a frozen tag, a tier-1 file), mark it [blocked: reason] and stop.
+Otherwise mark it [running], do it, make scripts/leakcheck.sh and the tests green, commit on this branch with
+a message starting with the item number, write the report under docs/reports/, mark the item [done], and stop.
+Do only that one item. Do not push."
+  echo "== item run $i ($stamp)"
+  if ! claude -p "$prompt" --permission-mode acceptEdits --permission-prompts none \
+       --allowedTools "$TOOLS" --max-turns "$ITEM_TURNS" --max-budget-usd "$ITEM_USD" \
+       --output-format json > "out/plan_runs/$stamp.json"; then
+    echo "session ended non-zero (cap or error); see out/plan_runs/$stamp.json"; exit 2
+  fi
+  if ! (uv run pytest -q >/dev/null 2>&1 && scripts/leakcheck.sh >/dev/null 2>&1); then
+    echo "check is red after the session; stopping"; exit 4
+  fi
+done
+echo "item cap reached"
