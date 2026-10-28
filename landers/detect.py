@@ -1,14 +1,17 @@
 """Physical tests, version 0. No model is involved anywhere in this module.
 
-Three branches run per tile and every candidate carries the branch that made it:
+Branches run per tile; every candidate carries the branch that made it:
 
-- ``bright``: a compact patch brighter than its surroundings (local z-score over a ring background),
+- ``bright``: a compact patch brighter than its surroundings (local z-score over an annulus),
   1 to 10 m across. Landers, backshells and parachutes are bright; so are many rocks.
-- ``dark``: a compact patch darker than its surroundings, 2.5 to 50 m across (crash scars, blast zones,
-  the dark side of a disturbed area).
 - ``shadow``: a ``bright`` candidate with a dark patch adjacent to it in the direction shadows fall, at a
   distance consistent with an object 0.5 to 3 m tall under this strip's sun. The label gives the sun
   azimuth and incidence; nothing else about the image is used.
+- ``sheet``: a bright, flat patch 8 to 25 m across, found at 1 m/px, no shadow required. Parachutes.
+- ``dark_compact``: a compact dark patch 1 to 4 m across. Backshells and heat shields, which are dark
+  on the ground; a shadow is optional and, when the patch is stretched along the shadow direction,
+  raises the score.
+- ``dark``: a dark patch 2.5 to 50 m across (crash scars, blast zones).
 
 Grades here can only be "needs second look" (passes a physical test on one date) or "likely natural";
 "candidate" needs a second date, which is the persistence step and not part of this module.
@@ -26,22 +29,40 @@ from landers import geo
 from landers.label import StripLabel
 from landers.strip import Strip, Window
 
+GRADE_LOOK = "needs second look"
+
 
 @dataclass
 class DetectorConfig:
-    version: str = "v0"
+    version: str = "v0.1"
     frozen: bool = False
     tile: int = 2048
     overlap: int = 128
-    background_px: int = 65  # window for the local mean and std
+    background_px: int = 65  # annulus outer size for the local mean and std
+    inner_px: int = 15
     smooth_sigma: float = 0.7
-    z_bright: float = 4.0
-    z_dark: float = -3.5
-    bright_area_px: tuple[int, int] = (6, 1600)  # 1 m .. 10 m across at 25 cm/px
-    dark_area_px: tuple[int, int] = (100, 40000)  # 2.5 m .. 50 m across
-    shadow_heights_m: tuple[float, float] = (0.5, 3.0)
-    shadow_min_incidence_deg: float = 35.0  # below this shadows are too short to test (Opportunity strip)
     edge_margin_px: int = 8
+    # bright / shadow
+    z_bright: float = 4.0
+    bright_size_m: tuple[float, float] = (1.0, 10.0)
+    shadow_heights_m: tuple[float, float] = (0.5, 3.0)
+    shadow_min_incidence_deg: float = 35.0  # below this shadows are too short to test
+    z_shadow_dark: float = -3.5
+    # sheet (parachute): detected at full-res pixels * sheet_reduce
+    sheet_reduce: int = 4
+    sheet_background_px: int = 65
+    sheet_inner_px: int = 31
+    sheet_sigma: float = 1.0
+    z_sheet: float = 3.0
+    sheet_size_m: tuple[float, float] = (8.0, 25.0)
+    sheet_flatness: float = 0.45  # mean z / peak z inside the patch; a point-like peak is not a sheet
+    # dark compact (backshell, heat shield)
+    z_dark_compact: float = -4.0
+    dark_compact_size_m: tuple[float, float] = (1.0, 4.0)
+    compact_fill: float = 0.45  # area / bounding box area
+    # dark disturbance (scar)
+    z_dark: float = -3.5
+    dark_size_m: tuple[float, float] = (2.5, 50.0)
 
     def to_json(self) -> dict:
         return asdict(self)
@@ -63,6 +84,29 @@ class Candidate:
         d["col"] = round(d["col"], 1)
         d["score"] = round(d["score"], 3)
         return d
+
+
+@dataclass
+class Component:
+    row: float
+    col: float
+    peak: float
+    mean: float
+    area: int
+    bbox_h: int
+    bbox_w: int
+    label: int
+
+    @property
+    def radius(self) -> float:
+        return math.sqrt(self.area / math.pi)
+
+
+def area_range_px(size_m: tuple[float, float], scale_m: float, lo_frac: float = 0.4, hi_frac: float = 1.3):
+    """Pixel-area bounds for objects ``size_m`` across; ``lo_frac`` admits elongated shapes."""
+    amin = lo_frac * math.pi * (size_m[0] / scale_m / 2) ** 2
+    amax = hi_frac * math.pi * (size_m[1] / scale_m / 2) ** 2
+    return max(4, int(round(amin))), int(round(amax))
 
 
 def local_z(
@@ -105,18 +149,22 @@ def local_z(
     return z.astype(np.float32)
 
 
-def _components(mask: np.ndarray, zmap: np.ndarray, area: tuple[int, int], valid: np.ndarray, margin: int):
+def components(mask: np.ndarray, zmap: np.ndarray, area: tuple[int, int], valid: np.ndarray, margin: int):
+    """Connected components of ``mask`` with area in range, away from the tile edge and from no-data."""
     lab, n = ndimage.label(mask)
     if n == 0:
-        return []
+        return [], lab
     idx = np.arange(1, n + 1)
     areas = ndimage.sum(np.ones_like(lab, dtype=np.int32), lab, idx)
     keep = (areas >= area[0]) & (areas <= area[1])
-    out = []
+    out: list[Component] = []
     if not keep.any():
-        return out
-    peaks = ndimage.maximum(np.abs(zmap), lab, idx)
-    centroids = ndimage.center_of_mass(np.abs(zmap), lab, idx)
+        return out, lab
+    absz = np.abs(zmap)
+    peaks = ndimage.maximum(absz, lab, idx)
+    means = ndimage.mean(absz, lab, idx)
+    centroids = ndimage.center_of_mass(absz, lab, idx)
+    slices = ndimage.find_objects(lab)
     h, w = mask.shape
     bad_edge = ndimage.binary_dilation(~valid, iterations=margin) if (~valid).any() else None
     for i in np.nonzero(keep)[0]:
@@ -125,41 +173,85 @@ def _components(mask: np.ndarray, zmap: np.ndarray, area: tuple[int, int], valid
             continue
         if bad_edge is not None and bad_edge[int(r), int(c)]:
             continue
-        out.append((float(r), float(c), float(peaks[i]), int(areas[i]), int(i + 1)))
-    return out
+        sl = slices[i]
+        out.append(
+            Component(
+                float(r),
+                float(c),
+                float(peaks[i]),
+                float(means[i]),
+                int(areas[i]),
+                sl[0].stop - sl[0].start,
+                sl[1].stop - sl[1].start,
+                int(i + 1),
+            )
+        )
+    return out, lab
+
+
+def _along_across(points: np.ndarray, r: float, c: float, drow: float, dcol: float):
+    v = points - np.array([r, c])
+    return v[:, 0] * drow + v[:, 1] * dcol, np.abs(v[:, 0] * dcol - v[:, 1] * drow)
+
+
+def _principal_axis_alignment(lab: np.ndarray, comp: Component, drow: float, dcol: float) -> float:
+    """|cos| between the component's long axis and the shadow direction, times its elongation (0 if round)."""
+    rr, cc = np.nonzero(lab == comp.label)
+    if len(rr) < 6:
+        return 0.0
+    cov = np.cov(np.vstack([rr, cc]).astype(float))
+    evals, evecs = np.linalg.eigh(cov)
+    if evals[1] <= 0:
+        return 0.0
+    elong = 1.0 - math.sqrt(max(evals[0], 0.0) / evals[1])
+    axis = evecs[:, 1]
+    return float(abs(axis[0] * drow + axis[1] * dcol) * elong)
+
+
+def block_mean(data: np.ndarray, valid: np.ndarray, n: int):
+    """Mean over valid pixels in n x n blocks; a block is valid when more than half its pixels are."""
+    h, w = (data.shape[0] // n) * n, (data.shape[1] // n) * n
+    v = valid[:h, :w].reshape(h // n, n, w // n, n).astype(np.float64)
+    x = data[:h, :w].reshape(h // n, n, w // n, n).astype(np.float64) * v
+    cnt = v.sum(axis=(1, 3))
+    with np.errstate(divide="ignore", invalid="ignore"):
+        m = np.where(cnt > 0, x.sum(axis=(1, 3)) / np.maximum(cnt, 1), 0.0)
+    return m, cnt > (n * n) / 2
 
 
 def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candidate]:
-    z = local_z(win.data, win.valid, cfg.background_px, cfg.smooth_sigma)
-    bright = _components(z > cfg.z_bright, z, cfg.bright_area_px, win.valid, cfg.edge_margin_px)
-    dark = _components(z < cfg.z_dark, z, cfg.dark_area_px, win.valid, cfg.edge_margin_px)
-    # small dark patches too (shadows are a few px): separate pass with the bright size range
-    small_dark = _components(z < cfg.z_dark, z, cfg.bright_area_px, win.valid, cfg.edge_margin_px)
+    scale = lbl.scale_m
+    z = local_z(win.data, win.valid, cfg.background_px, cfg.smooth_sigma, cfg.inner_px)
+    bright, _ = components(z > cfg.z_bright, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px)
+    small_dark, _ = components(
+        z < cfg.z_shadow_dark, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px
+    )
+    dark_compact, dc_lab = components(
+        z < cfg.z_dark_compact, z, area_range_px(cfg.dark_compact_size_m, scale), win.valid, cfg.edge_margin_px
+    )
+    dark, _ = components(z < cfg.z_dark, z, area_range_px(cfg.dark_size_m, scale), win.valid, cfg.edge_margin_px)
 
     out: list[Candidate] = []
     can_shadow = lbl.incidence_deg >= cfg.shadow_min_incidence_deg
     drow, dcol = geo.shadow_direction(lbl)
     lmin = geo.shadow_length_px(lbl, cfg.shadow_heights_m[0])
     lmax = geo.shadow_length_px(lbl, cfg.shadow_heights_m[1])
-    dark_pts = np.array([(r, c) for r, c, *_ in small_dark]) if small_dark else np.zeros((0, 2))
+    dark_pts = np.array([(k.row, k.col) for k in small_dark]) if small_dark else np.zeros((0, 2))
 
-    for r, c, peak, area, _ in bright:
-        cand = Candidate(win.row0 + r, win.col0 + c, peak, "bright", "needs second look", area)
+    for k in bright:
+        cand = Candidate(win.row0 + k.row, win.col0 + k.col, k.peak, "bright", GRADE_LOOK, k.area)
         if can_shadow and len(dark_pts):
-            v = dark_pts - np.array([r, c])
-            along = v[:, 0] * drow + v[:, 1] * dcol
-            across = np.abs(v[:, 0] * dcol - v[:, 1] * drow)
-            radius = math.sqrt(area / math.pi)
-            ok = (along > radius * 0.5) & (along <= lmax + radius + 2) & (across <= max(3.0, radius + 2))
+            along, across = _along_across(dark_pts, k.row, k.col, drow, dcol)
+            ok = (along > k.radius * 0.5) & (along <= lmax + k.radius + 2) & (across <= max(3.0, k.radius + 2))
             if ok.any():
                 j = int(np.argmax(np.where(ok, -across, -np.inf)))
                 cand = Candidate(
                     cand.row,
                     cand.col,
-                    peak * 1.5,
+                    k.peak * 1.5,
                     "shadow",
-                    "needs second look",
-                    area,
+                    GRADE_LOOK,
+                    k.area,
                     {
                         "shadow_len_px": round(float(along[j]), 1),
                         "shadow_len_min_px": round(lmin, 1),
@@ -167,18 +259,61 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
                     },
                 )
         out.append(cand)
-    for r, c, peak, area, _ in dark:
-        out.append(Candidate(win.row0 + r, win.col0 + c, peak * 0.5, "dark", "needs second look", area))
+
+    for k in dark_compact:
+        fill = k.area / float(k.bbox_h * k.bbox_w)
+        if fill < cfg.compact_fill:
+            continue
+        extra = {"fill": round(fill, 2)}
+        score = k.peak
+        if can_shadow:
+            align = _principal_axis_alignment(dc_lab, k, drow, dcol)
+            extra["shadow_alignment"] = round(align, 2)
+            if align > 0.3:
+                score *= 1.3
+        out.append(Candidate(win.row0 + k.row, win.col0 + k.col, score, "dark_compact", GRADE_LOOK, k.area, extra))
+
+    for k in dark:
+        out.append(Candidate(win.row0 + k.row, win.col0 + k.col, k.peak * 0.5, "dark", GRADE_LOOK, k.area))
+
+    # sheets at reduced resolution
+    n = cfg.sheet_reduce
+    if min(win.shape) >= n * cfg.sheet_background_px:
+        d_r, v_r = block_mean(win.data, win.valid, n)
+        z_r = local_z(d_r, v_r, cfg.sheet_background_px, cfg.sheet_sigma, cfg.sheet_inner_px, margin=2)
+        sheets, _ = components(
+            z_r > cfg.z_sheet, z_r, area_range_px(cfg.sheet_size_m, scale * n), v_r, max(2, cfg.edge_margin_px // n)
+        )
+        max_extent = cfg.sheet_size_m[1] * 1.4 / (scale * n)
+        for k in sheets:
+            flat = k.mean / k.peak if k.peak > 0 else 0.0
+            if flat < cfg.sheet_flatness or max(k.bbox_h, k.bbox_w) > max_extent:
+                continue
+            out.append(
+                Candidate(
+                    win.row0 + k.row * n + n / 2 - 0.5,
+                    win.col0 + k.col * n + n / 2 - 0.5,
+                    k.mean,
+                    "sheet",
+                    GRADE_LOOK,
+                    k.area * n * n,
+                    {"flatness": round(flat, 2), "extent_m": round(max(k.bbox_h, k.bbox_w) * scale * n, 1)},
+                )
+            )
     return out
 
 
 def dedupe(cands: list[Candidate], radius: float = 6.0) -> list[Candidate]:
-    """Overlapping tiles see the same object twice; keep the higher-scoring copy."""
+    """Overlapping tiles see the same object twice; keep the higher-scoring copy and note the other branches."""
     cands = sorted(cands, key=lambda c: -c.score)
     kept: list[Candidate] = []
     pts: list[tuple[float, float]] = []
     for c in cands:
-        if any(math.hypot(c.row - r, c.col - k) <= radius for r, k in pts):
+        hit = next((i for i, (r, k) in enumerate(pts) if math.hypot(c.row - r, c.col - k) <= radius), None)
+        if hit is not None:
+            also = kept[hit].extra.setdefault("also", [])
+            if c.branch != kept[hit].branch and c.branch not in also:
+                also.append(c.branch)
             continue
         kept.append(c)
         pts.append((c.row, c.col))
@@ -200,6 +335,7 @@ def detect_strip(strip: Strip, cfg: DetectorConfig, max_tiles: int | None = None
     cands = dedupe(cands)
     return {
         "valid_area_km2": round(strip.valid_area_km2(), 3),
+        "scale_m": strip.label.scale_m,
         "tiles": n,
         "candidates": [c.to_json() for c in cands],
     }
@@ -209,22 +345,19 @@ def shadow_direction_evidence(win: Window, lbl: StripLabel, cfg: DetectorConfig)
     """Diagnostic: how many bright patches have a dark patch just *along* vs just *against* the label's
     shadow direction. Rocks cast shadows, so the along count should win clearly on any real ground.
     Uses looser thresholds than the detector because it wants statistics over many ordinary rocks."""
-    z = local_z(win.data, win.valid, cfg.background_px, cfg.smooth_sigma)
-    area = (4, cfg.bright_area_px[1])
-    bright = _components(z > 3.0, z, area, win.valid, cfg.edge_margin_px)
-    dark = _components(z < -2.5, z, area, win.valid, cfg.edge_margin_px)
+    z = local_z(win.data, win.valid, cfg.background_px, cfg.smooth_sigma, cfg.inner_px)
+    area = (4, area_range_px(cfg.bright_size_m, lbl.scale_m)[1])
+    bright, _ = components(z > 3.0, z, area, win.valid, cfg.edge_margin_px)
+    dark, _ = components(z < -2.5, z, area, win.valid, cfg.edge_margin_px)
     if not bright or not dark:
         return 0, 0
     drow, dcol = geo.shadow_direction(lbl)
     lmax = geo.shadow_length_px(lbl, cfg.shadow_heights_m[1])
-    dp = np.array([(r, c) for r, c, *_ in dark])
+    dp = np.array([(k.row, k.col) for k in dark])
     along_n = against_n = 0
-    for r, c, _, a, _ in bright:
-        v = dp - np.array([r, c])
-        along = v[:, 0] * drow + v[:, 1] * dcol
-        across = np.abs(v[:, 0] * dcol - v[:, 1] * drow)
-        radius = math.sqrt(a / math.pi)
-        near = across <= max(3.0, radius + 2)
-        along_n += int(((along > radius * 0.5) & (along <= lmax + radius + 2) & near).any())
-        against_n += int(((along < -radius * 0.5) & (along >= -(lmax + radius + 2)) & near).any())
+    for k in bright:
+        along, across = _along_across(dp, k.row, k.col, drow, dcol)
+        near = across <= max(3.0, k.radius + 2)
+        along_n += int(((along > k.radius * 0.5) & (along <= lmax + k.radius + 2) & near).any())
+        against_n += int(((along < -k.radius * 0.5) & (along >= -(lmax + k.radius + 2)) & near).any())
     return along_n, against_n

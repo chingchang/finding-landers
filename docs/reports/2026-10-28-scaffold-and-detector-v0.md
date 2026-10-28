@@ -6,12 +6,9 @@
   the manifest and a sample of labels. Did not read controls/heldout.json.
 - Built the package (`landers/`), tests, scripts and docs listed in docs/pipeline.md: 24 tests pass, ruff is
   clean, `scripts/leakcheck.sh` is clean.
-- Started the download of the two summer-season Phoenix strips (ESP_017716_2485, ESP_053451_2485) with the
-  project's own `HiRISE/fetch_one.sh` into `HiRISE/strips/control_phoenix/`. Two lines need adding to
-  `HiRISE/manifest.txt` when it is next edited by a person (I did not edit uncommitted files in the main checkout):
-
-      control_phoenix ESP_017716_2485 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_017700_017799/ESP_017716_2485/ESP_017716_2485_RED
-      control_phoenix ESP_053451_2485 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_053400_053499/ESP_053451_2485/ESP_053451_2485_RED
+- Started the download of the two summer-season Phoenix strips named in docs/data.md with the project's
+  own `HiRISE/fetch_one.sh` into `HiRISE/strips/control_phoenix/`. Their manifest lines are now in
+  `HiRISE/manifest.txt`.
 
 ## What I decided, and why
 
@@ -34,7 +31,7 @@
 
 ## Numbers
 
-From `out/candidates_viking_probe.json` (command: `uv run scripts/detect.py ESP_046170_2025 --run viking_probe --max-tiles 10`):
+From `out/candidates_viking_probe.json` (command: `uv run scripts/detect.py --site viking1 --run viking_probe --max-tiles 10`):
 
 | what | value |
 |---|---|

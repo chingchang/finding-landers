@@ -3,14 +3,18 @@ import pytest
 
 from landers import config
 from landers.strip import Strip
-from tests.conftest import needs_data
+from tests.conftest import manifest_ids, needs_data
 
-# One of each: equirectangular (Curiosity, the smallest), north polar (Phoenix), south polar (an MPL strip).
-SAMPLE_IDS = ["ESP_030313_1755", "ESP_033724_2485", "ESP_013078_1030"]
+# One of each: equirectangular (Curiosity), north polar (Phoenix), south polar (an MPL strip).
+SAMPLE_IDS = (
+    manifest_ids("control_curiosity")[:1] + manifest_ids("control_phoenix")[:1] + manifest_ids("mpl_summer")[:1]
+)
 
 
-@pytest.fixture(scope="module", params=SAMPLE_IDS)
+@pytest.fixture(scope="module", params=SAMPLE_IDS or ["none"])
 def strip(request):
+    if request.param == "none":
+        pytest.skip("no manifest on disk")
     if config.find_strip(request.param) is None:
         pytest.skip(f"{request.param} not on disk")
     return Strip.open(request.param)

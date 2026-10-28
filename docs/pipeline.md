@@ -2,8 +2,9 @@
 
 ```
 landers/        the package: label.py (PDS3 labels), geo.py (lat/lon <-> pixel), strip.py (windowed JP2 reads,
-                tiles, valid mask), detect.py (physical tests), score.py (the number)
-scripts/        crop_site.py, detect.py, score.py, leakcheck.sh
+                tiles, valid mask), detect.py (physical tests), inject.py (synthetic objects in real tiles),
+                score.py (the number, and recall at a fixed false-alarm rate)
+scripts/        crop_site.py, detect.py, inject.py, score.py, leakcheck.sh
 tests/          pytest; data tests skip unless LANDERS_DATA points at a directory with strips/
 controls/       sites.json (published positions, groups), tuning.json (answer key, filled by a person),
                 thresholds.json (pass/fail numbers, created by a person), heldout.json (sealed, gitignored)
@@ -16,13 +17,21 @@ out/            every run's output; never committed
 Setup: `uv sync`. Data: `export LANDERS_DATA=/path/to/HiRISE` (default `<repo>/HiRISE`).
 
 ```
-uv run pytest                                    # 24 tests, about 8 s with the strips on disk
-scripts/leakcheck.sh                             # no image ids or sealed-site coordinates in code or results
+uv run pytest                                    # 30 tests, about 20 s with the strips on disk
+scripts/leakcheck.sh                             # scans every tracked file except docs/data.md, controls/,
+                                                 # HiRISE/manifest.txt for image ids and sealed-site facts
 uv run scripts/crop_site.py viking1              # 1 km crop at the published position, PDS line/sample grid
+uv run scripts/crop_site.py viking1 --grid       # 144 numbered full-res 512 px tiles over 1.5 km + index.png
 uv run scripts/crop_site.py viking1 --size 512 --center LINE,SAMPLE
 uv run scripts/detect.py --site viking1 --run try1 [--max-tiles N]
 uv run scripts/score.py out/candidates_try1.json # needs controls/thresholds.json and a filled tuning.json
+uv run scripts/inject.py --site viking1 --site curiosity --tiles 6 --per-kind 3 --run inj1
+                                                 # recall by size and branch at the thresholds' false-alarm rate
 ```
+
+Branches: `bright` (1 to 10 m), `shadow` (bright with a shadow of the right length), `sheet` (8 to 25 m,
+flat, at 1 m/px), `dark_compact` (1 to 4 m, compact; stretched along the shadow direction scores higher),
+`dark` (2.5 to 50 m).
 
 Pixel conventions: the package uses 0-based numpy (row, col) of pixel centres; `controls/*.json` and the crop
 grid use PDS line and sample (1-based). `row = line - 1`.

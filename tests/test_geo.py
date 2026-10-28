@@ -40,12 +40,11 @@ def test_equirectangular_matches_label_to_a_metre(all_labels):
             assert abs(ours - theirs) < 3e-5, (lbl.observation_id, ours, theirs)
 
 
-def test_shadow_geometry_viking1(all_labels):
-    # Viking 1 strip: incidence 49.6 deg, so a 2 m lander casts a shadow about 2.35 m = 9.4 px.
+def test_shadow_geometry(all_labels):
+    # shadow length = height * tan(incidence) / scale; direction is a unit vector
     for p in all_labels:
-        if "ESP_046170_2025" in p.name:
-            lbl = StripLabel.read(p)
-            assert 9 < geo.shadow_length_px(lbl, 2.0) < 10
-            d = geo.shadow_direction(lbl)
-            assert abs(np.hypot(*d) - 1) < 1e-9
-            return
+        lbl = StripLabel.read(p)
+        expect = 2.0 * np.tan(np.radians(lbl.incidence_deg)) / lbl.scale_m
+        assert abs(geo.shadow_length_px(lbl, 2.0) - expect) < 1e-9
+        d = geo.shadow_direction(lbl)
+        assert abs(np.hypot(*d) - 1) < 1e-9

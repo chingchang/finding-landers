@@ -17,7 +17,7 @@ def test_repo_is_clean():
 @pytest.mark.skipif(not SITES.exists(), reason="controls/sites.json not in this checkout")
 def test_detects_an_id(tmp_path):
     bad = ROOT / "experiments" / "_leak_probe.py"
-    bad.write_text("x = 'ESP_000000_0000'\n")
+    bad.write_text("x = '" + "ESP_" + "000000_0000'\n")
     try:
         r = subprocess.run([str(ROOT / "scripts" / "leakcheck.sh")], capture_output=True, text=True)
     finally:

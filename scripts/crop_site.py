@@ -3,6 +3,10 @@
     uv run scripts/crop_site.py viking1                 # 4096 px at the published position, shown 4x reduced
     uv run scripts/crop_site.py viking1 --size 512      # full resolution, 512 px
     uv run scripts/crop_site.py viking1 --center 41234,15210 --size 512
+    uv run scripts/crop_site.py viking1 --grid                # 1.5 km of numbered full-res 512 px tiles
+
+Grid mode writes out/crops/<site>_<id>_grid/: an index image of the whole area with every tile's number
+drawn on it, and tile_NNN.png at full resolution, each labelled with its number and its PDS line/sample range.
 
 The grid labels are PDS line and sample (1-based), which is what controls/tuning.json records. Sites in the
 heldout and final_exam groups are refused unless --heldout-run is given by the person running that evaluation.
@@ -75,6 +79,66 @@ def render(strip: Strip, row: float, col: float, size: int, reduce: int, out: Pa
     return out
 
 
+def render_grid(strip: Strip, row: float, col: float, span_m: float, tile: int, out_dir: Path, title: str) -> int:
+    """Full-resolution ``tile`` px tiles covering ``span_m`` metres around (row, col), numbered row-major
+    from 1, plus an index image at reduced resolution with the numbers drawn in. Returns the tile count."""
+    n = -(-int(round(span_m / strip.label.scale_m)) // tile)
+    size = n * tile
+    w = strip.read_centered(row, col, size)
+    img8 = to_uint8(w.data, w.valid)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    k = 0
+    for i in range(n):
+        for j in range(n):
+            k += 1
+            r0, c0 = i * tile, j * tile
+            sub = img8[r0 : r0 + tile, c0 : c0 + tile]
+            if sub.size == 0:
+                continue
+            im = Image.fromarray(sub).convert("RGB")
+            d = ImageDraw.Draw(im)
+            for g in range(0, im.width, 128):
+                d.line([(g, 0), (g, im.height)], fill=(120, 90, 0), width=1)
+                d.line([(0, g), (im.width, g)], fill=(120, 90, 0), width=1)
+            l0, s0 = w.row0 + r0 + 1, w.col0 + c0 + 1
+            footer = Image.new("RGB", (im.width, 36), (0, 0, 0))
+            fd = ImageDraw.Draw(footer)
+            fd.text(
+                (4, 2),
+                f"#{k}  lines {l0}-{l0 + sub.shape[0] - 1}  samples {s0}-{s0 + sub.shape[1] - 1}  grid 128 px",
+                fill=(255, 255, 255),
+            )
+            fd.text((4, 18), f"Credit: {CREDIT}. {strip.label.scale_m:.2f} m/px.", fill=(200, 200, 200))
+            canvas = Image.new("RGB", (im.width, im.height + 36))
+            canvas.paste(im, (0, 0))
+            canvas.paste(footer, (0, im.height))
+            canvas.save(out_dir / f"tile_{k:03d}.png")
+    reduce = max(1, size // 1536)
+    idx = Image.fromarray(
+        to_uint8(
+            block_reduce(w.data.astype(np.float32), reduce), block_reduce(w.valid.astype(np.float32), reduce) > 0.5
+        )
+    ).convert("RGB")
+    d = ImageDraw.Draw(idx)
+    step = tile // reduce
+    k = 0
+    for i in range(n):
+        for j in range(n):
+            k += 1
+            x, y = j * step, i * step
+            d.rectangle([x, y, x + step - 1, y + step - 1], outline=(255, 200, 0))
+            d.text((x + 3, y + 2), str(k), fill=(255, 255, 0))
+    footer = Image.new("RGB", (idx.width, 36), (0, 0, 0))
+    fd = ImageDraw.Draw(footer)
+    fd.text((4, 2), f"{title}  {n}x{n} tiles of {tile} px ({tile * strip.label.scale_m:.0f} m)", fill=(255, 255, 255))
+    fd.text((4, 18), f"Credit: {CREDIT}. {strip.label.scale_m * reduce:.2f} m/px shown.", fill=(200, 200, 200))
+    canvas = Image.new("RGB", (idx.width, idx.height + 36))
+    canvas.paste(idx, (0, 0))
+    canvas.paste(footer, (0, idx.height))
+    canvas.save(out_dir / "index.png")
+    return k
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("site")
@@ -85,6 +149,9 @@ def main(argv=None) -> int:
     ap.add_argument("--strip", default=None, help="one observation id of the site (default: all on disk)")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out" / "crops"))
     ap.add_argument("--heldout-run", action="store_true", help="a person is running the held-out evaluation")
+    ap.add_argument("--grid", action="store_true", help="numbered full-resolution 512 px tiles over --grid-m metres")
+    ap.add_argument("--grid-m", type=float, default=1500.0)
+    ap.add_argument("--tile", type=int, default=512)
     a = ap.parse_args(argv)
 
     sites = {s["name"]: s for s in json.loads(Path(a.sites).read_text())["sites"]}
@@ -116,9 +183,14 @@ def main(argv=None) -> int:
             continue
         centre = f"centre line {row + 1:.0f} sample {col + 1:.0f}"
         title = f"{a.site} {sid}  {centre}  ({how})  incidence {strip.label.incidence_deg:.1f} deg"
-        out = Path(a.out) / f"{a.site}_{sid}_{a.size}px_r{reduce}.png"
-        render(strip, row, col, a.size, reduce, out, title)
-        print(f"{sid}: wrote {out}  centre line {row + 1:.1f} sample {col + 1:.1f}")
+        if a.grid:
+            out_dir = Path(a.out) / f"{a.site}_{sid}_grid"
+            k = render_grid(strip, row, col, a.grid_m, a.tile, out_dir, title)
+            print(f"{sid}: wrote {k} tiles and index.png to {out_dir}  centre line {row + 1:.1f} sample {col + 1:.1f}")
+        else:
+            out = Path(a.out) / f"{a.site}_{sid}_{a.size}px_r{reduce}.png"
+            render(strip, row, col, a.size, reduce, out, title)
+            print(f"{sid}: wrote {out}  centre line {row + 1:.1f} sample {col + 1:.1f}")
         wrote += 1
     return 0 if wrote else 1
 

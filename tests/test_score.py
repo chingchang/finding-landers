@@ -52,3 +52,42 @@ def test_ranks_false_alarms_and_skips():
 def test_empty_run_is_not_decidable():
     s = score({"strips": {}}, ANSWERS, THRESH)
     assert s.recall_at_n is None and s.passed is None
+
+
+def test_match_radius_in_metres_scales_per_strip():
+    from landers.score import match_radius_px
+
+    assert match_radius_px({"match_radius_m": 5.0}, 0.25) == 20.0
+    assert match_radius_px({"match_radius_m": 5.0}, 0.5) == 10.0
+    assert match_radius_px({"match_radius_px": 7}, 0.25) == 7.0
+    thr = dict(THRESH)
+    del thr["match_radius_px"]
+    thr["match_radius_m"] = 5.0
+    cands = {"run": "t", "strips": {"S1": dict(CANDS["strips"]["S1"], scale_m=0.5)}}
+    s = score(cands, ANSWERS, thr)
+    by = {(p.site, p.piece): p for p in s.pieces}
+    assert by[("siteA", "lander")].rank is None  # 11.2 px away, radius now 10 px at 50 cm/px
+
+
+def test_recall_at_false_alarm_rate_threshold():
+    from landers.score import format_injection_report, recall_at_false_alarm_rate
+
+    truths = [
+        {"tile": "a", "row": 100, "col": 100, "kind": "sheet", "size_m": 10},
+        {"tile": "a", "row": 500, "col": 500, "kind": "dark_compact", "size_m": 2.5},
+        {"tile": "b", "row": 100, "col": 100, "kind": "blob_shadow", "size_m": 4},
+    ]
+    dets = [
+        {"tile": "a", "row": 102, "col": 101, "score": 9, "branch": "sheet"},
+        {"tile": "a", "row": 900, "col": 900, "score": 8, "branch": "bright"},  # false alarm 1
+        {"tile": "b", "row": 101, "col": 99, "score": 7, "branch": "shadow"},
+        {"tile": "a", "row": 300, "col": 300, "score": 6, "branch": "bright"},  # false alarm 2 -> threshold
+        {"tile": "a", "row": 501, "col": 500, "score": 5, "branch": "dark_compact"},  # below threshold
+    ]
+    r = recall_at_false_alarm_rate(dets, truths, area_km2=1.0, radius_px=5.0, fa_per_km2=1.0)
+    assert r["false_alarms_allowed"] == 1 and r["score_threshold"] == 6 and r["false_alarms_kept"] == 1
+    assert r["recall_overall"] == round(2 / 3, 3)
+    rows = {(x["kind"], x["size_bin"]): x for x in r["rows"]}
+    assert rows[("sheet", "8-12 m")]["branches"] == {"sheet": 1}
+    assert rows[("dark_compact", "2-3 m")]["found"] == 0
+    assert "recall overall" in format_injection_report(r)

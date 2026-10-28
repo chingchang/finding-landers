@@ -6,7 +6,7 @@ import pytest
 from landers import config, detect, geo
 from landers.label import StripLabel
 from landers.strip import Strip, Window
-from tests.conftest import needs_data
+from tests.conftest import needs_data, site_strips
 
 
 def fake_label(**over) -> StripLabel:
@@ -94,11 +94,55 @@ def test_dedupe_keeps_best():
 def test_label_shadow_direction_agrees_with_real_ground():
     """On the Viking 1 strip, bright rocks must have dark patches on the label's shadow side far more
     often than on the opposite side. Pins the PDS azimuth convention used in geo.shadow_direction."""
-    if config.find_strip("ESP_046170_2025") is None:
+    ids = site_strips("viking1")
+    if not ids or config.find_strip(ids[0]) is None:
         pytest.skip("Viking 1 strip not on disk")
-    strip = Strip.open("ESP_046170_2025")
+    strip = Strip.open(ids[0])
     r, c = strip.shape[0] // 2, strip.shape[1] // 2
     win = strip.read(r - 1024, r + 1024, c - 1024, c + 1024)
     along, against = detect.shadow_direction_evidence(win, strip.label, detect.DetectorConfig())
     assert along > 20, (along, against)
     assert along > 2 * against, (along, against)
+
+
+def test_sheet_and_dark_compact_branches():
+    rng = np.random.default_rng(1)
+    size = 1024
+    img = 500 + 20 * rng.standard_normal((size, size)).astype(np.float32)
+    lbl = fake_label()
+    yy, xx = np.mgrid[:size, :size]
+    # a flat bright ellipse 16 m x 8 m (64 x 32 px): a parachute
+    img[((yy - 300) / 32.0) ** 2 + ((xx - 400) / 16.0) ** 2 <= 1.0] *= 1.35
+    # a dark disc 2.5 m (10 px) across: a heat shield
+    img[(yy - 700) ** 2 + (xx - 650) ** 2 <= 5**2] *= 0.6
+    data = np.clip(img, 1, 1021).astype(np.uint16)
+    win = Window(0, 0, data, np.ones_like(data, dtype=bool))
+    cands = detect.detect_tile(win, lbl, detect.DetectorConfig())
+    sheets = [c for c in cands if c.branch == "sheet" and abs(c.row - 300) < 8 and abs(c.col - 400) < 8]
+    assert sheets, [(c.branch, round(c.row), round(c.col)) for c in cands]
+    assert 10 < sheets[0].extra["extent_m"] < 25
+    darks = [c for c in cands if c.branch == "dark_compact" and abs(c.row - 700) < 4 and abs(c.col - 650) < 4]
+    assert darks, [(c.branch, round(c.row), round(c.col)) for c in cands]
+    assert darks[0].extra["fill"] >= 0.45
+
+
+def test_injected_objects_are_recovered_on_synthetic_ground():
+    from landers import inject as inj
+    from landers.score import recall_at_false_alarm_rate
+
+    rng = np.random.default_rng(2)
+    size = 2048
+    data = np.clip(500 + 20 * rng.standard_normal((size, size)), 1, 1021).astype(np.uint16)
+    win = Window(0, 0, data, np.ones_like(data, dtype=bool))
+    lbl = fake_label()
+    injected, objs = inj.inject(win, lbl, inj.InjectConfig(), rng, per_kind=4)
+    assert len(objs) == 12 and {o.kind for o in objs} == set(inj.KINDS)
+    assert injected.data.shape == win.shape and (injected.data != win.data).any()
+    cands = detect.detect_tile(injected, lbl, detect.DetectorConfig())
+    dets = [{"tile": "t", "row": c.row, "col": c.col, "score": c.score, "branch": c.branch} for c in cands]
+    truths = [dict(o.to_json(), tile="t") for o in objs]
+    area = size * size * lbl.scale_m**2 / 1e6
+    r = recall_at_false_alarm_rate(dets, truths, area, radius_px=20.0, fa_per_km2=2.0)
+    assert r["recall_overall"] >= 0.75, r
+    kinds_found = {row["kind"] for row in r["rows"] if row["found"]}
+    assert kinds_found == set(inj.KINDS), r["rows"]

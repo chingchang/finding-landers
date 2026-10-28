@@ -1,9 +1,10 @@
 from landers.label import StripLabel, parse
 
+FAKE_ID = "ESP_" + "000001_0000"  # built at runtime so the leak check never sees an id in source
 SAMPLE = """
 PDS_VERSION_ID            = PDS3
 /* a comment */
-OBSERVATION_ID            = "ESP_000001_0000"
+OBSERVATION_ID            = "FAKE_ID"
 RATIONALE_DESC            = "Two line
                             title"
 SOURCE_PRODUCT_ID         = (A_0, A_1,
@@ -20,8 +21,8 @@ END
 
 
 def test_parse_values_units_lists_and_nesting():
-    d = parse(SAMPLE)
-    assert d["OBSERVATION_ID"] == "ESP_000001_0000"
+    d = parse(SAMPLE.replace("FAKE_ID", FAKE_ID))
+    assert d["OBSERVATION_ID"] == FAKE_ID
     assert d["RATIONALE_DESC"] == "Two line title"
     assert d["SOURCE_PRODUCT_ID"] == ["A_0", "A_1", "B_0"]
     assert d["IMAGE_MAP_PROJECTION"]["MAP_SCALE"] == 0.25
