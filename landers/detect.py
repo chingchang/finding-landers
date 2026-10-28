@@ -36,6 +36,7 @@ GRADE_LOOK = "needs second look"
 class DetectorConfig:
     version: str = "v0.1"
     frozen: bool = False
+    calibration: str | None = None  # path of a landers.calibrate JSON; scores are then on the common scale
     tile: int = 2048
     overlap: int = 128
     background_px: int = 65  # annulus outer size for the local mean and std
@@ -320,15 +321,29 @@ def dedupe(cands: list[Candidate], radius: float = 6.0) -> list[Candidate]:
     return kept
 
 
+def load_calibration(cfg: DetectorConfig):
+    if not cfg.calibration:
+        return None
+    from landers.calibrate import Calibration
+
+    return Calibration.load(cfg.calibration)
+
+
 def detect_strip(strip: Strip, cfg: DetectorConfig, max_tiles: int | None = None, progress=None) -> dict:
     """Run every branch over the strip's valid footprint. Returns the per-strip entry of a candidates file."""
+    cal = load_calibration(cfg)
     cands: list[Candidate] = []
     n = 0
     for r0, r1, c0, c1 in strip.tiles(cfg.tile, cfg.overlap):
         if max_tiles is not None and n >= max_tiles:
             break
         win = strip.read(r0, r1, c0, c1)
-        cands.extend(detect_tile(win, strip.label, cfg))
+        tile_cands = detect_tile(win, strip.label, cfg)
+        if cal is not None:
+            from landers.calibrate import apply
+
+            tile_cands = apply(tile_cands, cal)
+        cands.extend(tile_cands)
         n += 1
         if progress:
             progress(n, len(cands))

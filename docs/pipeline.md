@@ -27,11 +27,20 @@ uv run scripts/detect.py --site viking1 --run try1 [--max-tiles N]
 uv run scripts/score.py out/candidates_try1.json # needs controls/thresholds.json and a filled tuning.json
 uv run scripts/inject.py --site viking1 --site curiosity --tiles 6 --per-kind 3 --run inj1
                                                  # recall by size and branch at the thresholds' false-alarm rate
+uv run scripts/inject.py ... --tile-phase 0 --run fit   # then:
+uv run scripts/calibrate.py out/inject_fit.json --version v1 --out landers/calibration_v1.json
+uv run scripts/inject.py ... --tile-phase 1 --calibration landers/calibration_v1.json --run eval
+                                                 # fit on one tile set, measure on the other
 ```
 
 Branches: `bright` (1 to 10 m), `shadow` (bright with a shadow of the right length), `sheet` (8 to 25 m,
 flat, at 1 m/px), `dark_compact` (1 to 4 m, compact; stretched along the shadow direction scores higher),
 `dark` (2.5 to 50 m).
+
+Scores: each branch's raw score is on its own scale, so the detector maps them through
+`landers/calibration_v0.json` to one scale, minus log10 of that branch's false-alarm rate per km2 at that raw
+score on real tuning ground (`landers/calibrate.py`). A calibration is fitted only from uncalibrated
+injection runs, and never on the tiles it is then measured on.
 
 Pixel conventions: the package uses 0-based numpy (row, col) of pixel centres; `controls/*.json` and the crop
 grid use PDS line and sample (1-based). `row = line - 1`.

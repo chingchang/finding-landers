@@ -19,6 +19,8 @@ from landers import config  # noqa: E402
 from landers.detect import DetectorConfig, detect_strip  # noqa: E402
 from landers.strip import Strip  # noqa: E402
 
+DEFAULT_CAL = config.REPO_ROOT / "landers" / "calibration_v0.json"
+
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -28,6 +30,12 @@ def main(argv=None) -> int:
     ap.add_argument("--run", default=time.strftime("%Y%m%d-%H%M%S"))
     ap.add_argument("--max-tiles", type=int, default=None)
     ap.add_argument("--frozen", action="store_true", help="mark this run's detector as frozen (person only)")
+    ap.add_argument(
+        "--calibration",
+        default=str(DEFAULT_CAL) if DEFAULT_CAL.exists() else None,
+        help="calibration JSON from scripts/calibrate.py (default: landers/calibration_v0.json if present)",
+    )
+    ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
     a = ap.parse_args(argv)
 
@@ -42,7 +50,7 @@ def main(argv=None) -> int:
             ids.extend(s["strips"])
     if not ids:
         ap.error("no strips given")
-    cfg = DetectorConfig(frozen=a.frozen)
+    cfg = DetectorConfig(frozen=a.frozen, calibration=None if a.no_calibration else a.calibration)
     result = {"run": a.run, "detector": cfg.to_json(), "strips": {}}
     for sid in ids:
         if config.find_strip(sid) is None:
