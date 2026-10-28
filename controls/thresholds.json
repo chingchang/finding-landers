@@ -1,0 +1,9 @@
+{
+  "version": 0,
+  "decided_by": "Ching Chang",
+  "decided_on": "2026-10-28",
+  "basis": "docs/proposals/thresholds-v0.md, with the match radius in metres so 50 cm/px strips are scored the same way",
+  "match_radius_m": 5.0,
+  "top_n": 20,
+  "pass": {"min_recall_at_n": 0.8, "max_false_alarms_per_km2": 2.0}
+}
