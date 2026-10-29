@@ -16,6 +16,8 @@ Component features (``component_features``):
 - ``elongation``: 1 - sqrt(minor/major) of the second moments (0 for a disc).
 - ``edge_sharpness``: mean |gradient of z| on the boundary over the peak |z| (crisp edges score higher).
 - ``tile_rank``: how many components of the same sign in the tile have a higher peak (0 = the strongest).
+- ``tile_count``: how many components of the same sign the tile holds (v0.3), so a rule on ``tile_rank`` can
+  ask how busy the ground is; a tile top among three is not a tile top among three hundred.
 
 Shadow-side features (``shadow_features``), from the label's sun azimuth and incidence only: the mean z in
 a band as wide as the object, at each pixel step outward from its edge, on the anti-sun side (where a

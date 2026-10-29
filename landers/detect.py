@@ -20,6 +20,11 @@ v0.2 (plan item 6): saturated pixels are data at the top of the range rather tha
 branches (v0.1 lost saturated hardware to the no-data margin); every bright, shadow and dark_compact candidate
 carries the shadow-side, isolation and saturation features of ``landers.shape``; and a versioned rules file may
 add to the calibrated score of candidates that pass a feature test (``finish_tile``).
+
+v0.3 (plan item 8): features only, no score moves. The ``dark`` branch records the same component, shadow-side
+and isolation features as ``dark_compact`` (dust-covered hardware sits there and no rule could reach it), and
+every featured candidate records ``tile_count``, the number of components of its sign in the tile, so a rule
+on ``tile_rank`` can be conditioned on how busy the ground is.
 """
 
 from __future__ import annotations
@@ -39,7 +44,7 @@ GRADE_LOOK = "needs second look"
 
 @dataclass
 class DetectorConfig:
-    version: str = "v0.2"
+    version: str = "v0.3"
     frozen: bool = False
     calibration: str | None = None  # path of a landers.calibrate JSON; scores are then on the common scale
     min_calibrated_score: float = -3.0  # with a calibration, drop candidates rarer than 1000 false alarms/km2
@@ -252,12 +257,15 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
     dark_compact, dc_lab = components(
         z < cfg.z_dark_compact, z, area_range_px(cfg.dark_compact_size_m, scale), usable, cfg.edge_margin_px
     )
-    dark, _ = components(z < cfg.z_dark, z, area_range_px(cfg.dark_size_m, scale), usable, cfg.edge_margin_px)
+    dark, d_lab = components(z < cfg.z_dark, z, area_range_px(cfg.dark_size_m, scale), usable, cfg.edge_margin_px)
     dc_slices = ndimage.find_objects(dc_lab) if dark_compact else []
+    d_slices = ndimage.find_objects(d_lab) if dark else []
     b_rank = shape.tile_ranks([k.peak for k in bright])
     dc_rank = shape.tile_ranks([k.peak for k in dark_compact])
+    d_rank = shape.tile_ranks([k.peak for k in dark])
     b_iso = shape.isolation([(k.row, k.col) for k in bright])
     dc_iso = shape.isolation([(k.row, k.col) for k in dark_compact])
+    d_iso = shape.isolation([(k.row, k.col) for k in dark])
 
     out: list[Candidate] = []
     can_shadow = lbl.incidence_deg >= cfg.shadow_min_incidence_deg
@@ -274,6 +282,7 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
     for i, k in enumerate(bright):
         feats = shape.component_features(b_lab, k.label, z, grad, b_slices[k.label - 1])
         feats["tile_rank"] = b_rank[i]
+        feats["tile_count"] = len(bright)
         feats["isolation_px"] = b_iso[i]
         feats["saturated_px"] = shape.saturated_count(sat, b_lab, k.label, b_slices[k.label - 1])
         feats.update(side_feats(k))
@@ -307,6 +316,7 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
             continue
         extra = shape.component_features(dc_lab, k.label, z, grad, dc_slices[k.label - 1])
         extra["tile_rank"] = dc_rank[i]
+        extra["tile_count"] = len(dark_compact)
         extra["isolation_px"] = dc_iso[i]
         extra.update(side_feats(k))
         score = k.peak
@@ -317,8 +327,13 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
                 score *= 1.3
         out.append(Candidate(win.row0 + k.row, win.col0 + k.col, score, "dark_compact", GRADE_LOOK, k.area, extra))
 
-    for k in dark:
-        out.append(Candidate(win.row0 + k.row, win.col0 + k.col, k.peak * 0.5, "dark", GRADE_LOOK, k.area))
+    for i, k in enumerate(dark):
+        extra = shape.component_features(d_lab, k.label, z, grad, d_slices[k.label - 1])
+        extra["tile_rank"] = d_rank[i]
+        extra["tile_count"] = len(dark)
+        extra["isolation_px"] = d_iso[i]
+        extra.update(side_feats(k))
+        out.append(Candidate(win.row0 + k.row, win.col0 + k.col, k.peak * 0.5, "dark", GRADE_LOOK, k.area, extra))
 
     # sheets at reduced resolution
     n = cfg.sheet_reduce

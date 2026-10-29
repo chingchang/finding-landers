@@ -70,6 +70,18 @@ def test_branches_find_planted_objects():
     assert 0 < shadow[0].extra["shadow_len_px"] <= shadow[0].extra["shadow_len_max_px"] + 6
     dark = [c for c in by_branch.get("dark", []) if abs(c.row - 1400) < 3 and abs(c.col - 2120) < 3]
     assert dark
+    # v0.3: the dark branch carries the same features as dark_compact, and every featured candidate says
+    # how many components of its sign share the tile
+    e = dark[0].extra
+    assert {"circularity", "tile_rank", "tile_count", "isolation_px", "two_sided", "shadow_height_m"} <= set(e)
+    assert e["tile_count"] == len(by_branch["dark"]) and 0 <= e["tile_rank"] < e["tile_count"]
+    assert 0.0 < e["fill"] <= 1.0 and e["shadow_run_px"] >= 0
+    n_bright = len(by_branch.get("bright", [])) + len(by_branch.get("shadow", []))  # shadow is a bright component
+    for branch in ("bright", "shadow"):
+        assert all(c.extra["tile_count"] == n_bright for c in by_branch.get(branch, []))
+    # dark_compact components below the fill test never become candidates but still count
+    n_dc = len(by_branch.get("dark_compact", []))
+    assert all(c.extra["tile_count"] >= n_dc for c in by_branch.get("dark_compact", []))
     assert all(c.col >= 2000 + 40 for c in cands)  # nothing on the no-data margin
     assert all(c.grade == "needs second look" for c in cands)
 
