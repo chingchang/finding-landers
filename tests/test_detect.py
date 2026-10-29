@@ -170,6 +170,37 @@ def test_finish_tile_rules_match_rescore(tmp_path):
     assert any(c.extra.get("shape_pass") for c in ruled)
 
 
+def test_per_strip_finish_matches_offline_fit_and_records_curves():
+    """v0.4: in per-strip mode the strip's raw candidates fit their own curve, then calibrate, floor and rule;
+    the entry records the curves so the scores can be reproduced from raw scores."""
+    import json
+
+    from landers.calibrate import Calibration
+    from landers.shape import ShapeRules
+
+    rule = {
+        "name": "sat",
+        "branches": ["bright"],
+        "gain": 2.0,
+        "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+    }
+    rules = ShapeRules.from_json({"version": "t", "rules": [rule]})
+    raw = [detect.Candidate(i, i, 4.0 + i, "bright", "g", 9, {"saturated_px": int(i == 5)}) for i in range(10)]
+    raw += [detect.Candidate(100 + i, 0, 2.0 + 0.1 * i, "dark", "g", 50, {}) for i in range(30)]
+    cfg = detect.DetectorConfig(calibration_mode="per_strip", calibration_top_exclude=2)
+    assert detect.load_calibration(detect.DetectorConfig(calibration="x.json", calibration_mode="per_strip")) is None
+    out, curves = detect.finish_strip(raw, 5.0, cfg, rules)
+    cal = Calibration.from_json(json.loads(json.dumps(curves)))
+    assert set(cal.branches) == {"bright", "dark"} and cal.branches["bright"].n == 10
+    for c in out:
+        gain = 2.0 if c.extra.get("shape_pass") else 0.0
+        assert abs(c.score - gain - cal.calibrated(c.branch, c.extra["raw_score"])) < 2e-3
+        assert c.score - gain >= cfg.min_calibrated_score
+    assert any(c.extra.get("shape_pass") == ["sat"] for c in out)
+    # the dark candidates sit at 6 per km2 or more, never rarer than the floor's 1000 per km2: all kept
+    assert sum(1 for c in out if c.branch == "dark") == 30
+
+
 def test_no_shadow_branch_when_sun_is_high():
     win, lbl, _ = synthetic_tile()
     lbl = dataclasses.replace(lbl, incidence_deg=31.0)

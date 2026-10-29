@@ -85,6 +85,15 @@ def main(argv=None) -> int:
     )
     ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
     ap.add_argument(
+        "--per-strip",
+        action="store_true",
+        help="v0.4: calibrate each strip from its own candidate population after the raw pass (landers/calibrate.py "
+        "fit_strip) instead of the table; the fitted curves are recorded in the strip's entry",
+    )
+    ap.add_argument(
+        "--top-exclude", type=int, default=0, help="per-strip: top candidates per branch left out of the knots"
+    )
+    ap.add_argument(
         "--shape-rules",
         default=str(DEFAULT_RULES) if DEFAULT_RULES.exists() else None,
         help="shape rules JSON (landers/shape.py); default: the newest landers/shape_v*.json if any",
@@ -107,21 +116,24 @@ def main(argv=None) -> int:
             ids.extend(s["strips"])
     if not ids:
         ap.error("no strips given")
-    cal = None if a.no_calibration else a.calibration
+    cal = None if (a.no_calibration or a.per_strip) else a.calibration
     rules = None if a.no_shape_rules else a.shape_rules
     saturated_is_data = not a.legacy_saturation
+    mode = {"calibration_mode": "per_strip", "calibration_top_exclude": a.top_exclude} if a.per_strip else {}
     # cfg is what the file records (paths inside the repo); cfg_run is what runs (absolute paths)
     cfg = DetectorConfig(
         frozen=a.frozen,
         calibration=repo_relative(cal) if cal else None,
         shape_rules=repo_relative(rules) if rules else None,
         saturated_is_data=saturated_is_data,
+        **mode,
     )
     cfg_run = DetectorConfig(
         frozen=a.frozen,
         calibration=str(Path(cal).resolve()) if cal else None,
         shape_rules=str(Path(rules).resolve()) if rules else None,
         saturated_is_data=saturated_is_data,
+        **mode,
     )
     result = {
         "run": a.run,

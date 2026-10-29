@@ -248,6 +248,38 @@ def test_reference_rules_are_not_new_and_a_changed_threshold_is():
     assert tune.new_rules(same, None) == ["sat"]
 
 
+def test_a_detector_change_is_judged_from_the_candidate_runs_with_rules_re_measured():
+    """A detector change gives new runs; the candidate board comes from them and the reference's own rules
+    are re-measured on the new key run and held to the pass-fraction bar."""
+    sat = ShapeRules.from_json(rules_json("sat", "saturated_px", ">=", 1))
+    new_key = key_run()
+    new_key["strips"]["A"]["candidates"][0]["score"] = 5.0  # the new detector lifts the lander on strip A
+    new_inj = injection_run()
+    new_inj["detections"][0]["score"] = 2.5  # the planted lander now clears the threshold
+    r = tune.compare(
+        "det", key_run(), ANSWERS, THRESHOLDS, injection_run(), sat, None, cand_key_cands=new_key, cand_inj_run=new_inj
+    )
+    assert r["detector_change"] and r["new_rules"] == []
+    assert r["key"]["ranks"]["one/lander"]["reference"] == 5 and r["key"]["ranks"]["one/lander"]["candidate"] == 1
+    assert r["injection"]["pieces"]["one/lander"] == {"kind": "hardware", "n": 1, "reference": 0, "candidate": 1}
+    assert r["keep"], [c for c in r["checks"] if not c["pass"]]
+    assert any(c["check"].startswith("re-measured rule sat") for c in r["checks"])
+    # the same change under a rule most false alarms pass: held to the bar although the rule is not new
+    dull = ShapeRules.from_json(rules_json("dull", "edge_sharpness", "<=", 0.2))
+    r2 = tune.compare(
+        "det2",
+        key_run(),
+        ANSWERS,
+        THRESHOLDS,
+        injection_run(),
+        dull,
+        dull,
+        cand_key_cands=new_key,
+        cand_inj_run=new_inj,
+    )
+    assert any(c["check"].startswith("re-measured rule dull") and not c["pass"] for c in r2["checks"])
+
+
 def test_judging_from_a_ruled_run_is_refused():
     run = injection_run()
     run["detector"]["shape_rules"] = "landers/shape_v1.json"

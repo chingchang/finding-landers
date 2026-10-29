@@ -111,6 +111,12 @@ def main(argv=None) -> int:
     ap.add_argument("--calibration", default=str(DEFAULT_CAL) if DEFAULT_CAL.exists() else None)
     ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
     ap.add_argument(
+        "--strip-calibration",
+        default=None,
+        help="per-strip curves from scripts/calibrate_strips.py (v0.4 calibration_mode per_strip): each tile is "
+        "calibrated by its target strip's own curves, fitted on other tiles of that strip",
+    )
+    ap.add_argument(
         "--shape-rules",
         default=str(DEFAULT_RULES) if DEFAULT_RULES else None,
         help="shape rules JSON added to the calibrated score (default: the newest landers/shape_v*.json, as "
@@ -129,12 +135,20 @@ def main(argv=None) -> int:
     answers = load_json(a.answers)
     fa = a.fa_per_km2 if a.fa_per_km2 is not None else float(thresholds["pass"]["max_false_alarms_per_km2"])
     cfg = tp.TransplantConfig()
-    cal_path = None if a.no_calibration else a.calibration
+    cal_path = None if (a.no_calibration or a.strip_calibration) else a.calibration
     rules_path = None if a.no_shape_rules else a.shape_rules
     dcfg = DetectorConfig(calibration=cal_path, shape_rules=rules_path)
     cal = load_calibration(dcfg)
     rules = load_shape_rules(dcfg)
-    if cal is not None:
+    strip_cals = None
+    if a.strip_calibration:
+        from landers.calibrate import StripCalibrations
+
+        strip_cals = StripCalibrations.load(a.strip_calibration)
+        dcfg.calibration_mode = "per_strip"
+        dcfg.calibration_top_exclude = strip_cals.top_exclude
+        dcfg.calibration = repo_relative(a.strip_calibration)
+    elif cal is not None:
         dcfg.calibration = repo_relative(cal_path)
     if rules is not None:
         dcfg.shape_rules = repo_relative(rules_path)
@@ -210,6 +224,9 @@ def main(argv=None) -> int:
     tile_bounds: dict[str, tuple[str, tuple[int, int, int, int]]] = {}
     open_targets: dict[str, Strip] = {}
     for tid in sorted({t for ts in targets_of.values() for t in ts}):
+        if strip_cals is not None and tid not in strip_cals.strips:
+            print(f"{tid}: no per-strip curves in {a.strip_calibration}", file=sys.stderr)
+            return 2
         strip = Strip.open(tid)
         open_targets[tid] = strip
         tile_plan[tid] = pick_tiles(strip, dcfg, a.tiles_per_strip, a.min_valid, rng)
@@ -251,7 +268,8 @@ def main(argv=None) -> int:
             continue
         rng.shuffle(idxs)
         planted, placed = tp.place_in_tile(win, strip.label, cuts, idxs, rng, cfg, key)
-        cands = finish_tile(detect_tile(planted, strip.label, dcfg), dcfg, cal, rules)
+        tile_cal = strip_cals.strips[tid] if strip_cals is not None else cal
+        cands = finish_tile(detect_tile(planted, strip.label, dcfg), dcfg, tile_cal, rules)
         for c in cands:
             d = {
                 "tile": key,

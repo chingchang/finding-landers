@@ -164,8 +164,11 @@ def kind_row(board: dict, kind: str) -> dict | None:
 # ---------------------------------------------------------------- the verdict
 
 
-def verdict(ref_key: Score, cand_key: Score, ref_inj: dict, cand_inj: dict, new_rule_rows: list[dict]) -> dict:
+def verdict(
+    ref_key: Score, cand_key: Score, ref_inj: dict, cand_inj: dict, new_rule_rows: list[dict], fresh=None
+) -> dict:
     checks = []
+    fresh = set(r["name"] for r in new_rule_rows) if fresh is None else set(fresh)
 
     def check(name: str, ok: bool, ref, cand):
         checks.append({"check": name, "pass": bool(ok), "reference": ref, "candidate": cand})
@@ -190,8 +193,9 @@ def verdict(ref_key: Score, cand_key: Score, ref_inj: dict, cand_inj: dict, new_
     check("no recorded piece leaves the top N", not left, sorted(pieces_in_top(ref_key)), left)
     for row in new_rule_rows:
         frac = row["pooled"]["fraction"]
+        tag = "new rule" if row["name"] in fresh else "re-measured rule"
         check(
-            f"new rule {row['name']} passes at most {BAR['max_rule_pass_fraction']} of false alarms",
+            f"{tag} {row['name']} passes at most {BAR['max_rule_pass_fraction']} of false alarms",
             frac is not None and frac <= BAR["max_rule_pass_fraction"],
             BAR["max_rule_pass_fraction"],
             frac,
@@ -211,38 +215,60 @@ def compare(
     reference: ShapeRules | None,
     candidate: ShapeRules | None,
     refit_reference: bool = False,
+    cand_key_cands: dict | None = None,
+    cand_inj_run: dict | None = None,
 ) -> dict:
     """Both boards under the reference rules and under the candidate rules (gains refit on the key run's
-    false alarms), and the verdict. ``candidate`` None judges the reference against no rules at all."""
+    false alarms), and the verdict. ``candidate`` None judges the reference against no rules at all.
+
+    A detector change is judged by giving the new runs as ``cand_key_cands`` and ``cand_inj_run``: the
+    candidate boards come from them, and the candidate rules (the reference's own rules when none are given)
+    are re-measured on the new key run, as the bar asks after any detector change. Every re-measured rule
+    is then also held to the pass-fraction bar, whether or not its test is new."""
+    detector_change = cand_key_cands is not None or cand_inj_run is not None
+    cand_key_cands = key_cands if cand_key_cands is None else cand_key_cands
+    cand_inj_run = inj_run if cand_inj_run is None else cand_inj_run
+    if detector_change and candidate is None and reference is not None:
+        candidate = ShapeRules.from_json(reference.to_json())
     ref_rows: list[dict] = []
     if reference is not None and refit_reference:
         reference, ref_rows = fit(key_cands, answers, thresholds, reference)
     cand_rows: list[dict] = []
     if candidate is not None:
-        candidate, cand_rows = fit(key_cands, answers, thresholds, candidate)
+        candidate, cand_rows = fit(cand_key_cands, answers, thresholds, candidate)
     ref_key = key_board(key_cands, answers, thresholds, reference)
-    cand_key = key_board(key_cands, answers, thresholds, candidate)
+    cand_key = key_board(cand_key_cands, answers, thresholds, candidate)
     ref_inj = injection_board(inj_run, thresholds, reference)
-    cand_inj = injection_board(inj_run, thresholds, candidate)
+    cand_inj = injection_board(cand_inj_run, thresholds, candidate)
     fresh = new_rules(candidate, reference) if candidate is not None else []
-    v = verdict(ref_key, cand_key, ref_inj, cand_inj, [r for r in cand_rows if r["name"] in fresh])
+    held = [r for r in cand_rows if r["name"] in fresh or detector_change]
+    v = verdict(ref_key, cand_key, ref_inj, cand_inj, held, fresh)
     ranks = {}
-    for p, q in zip(ref_key.pieces, cand_key.pieces, strict=True):
-        ranks[f"{p.site}/{p.piece}"] = {"kind": p.kind, "reference": p.rank, "candidate": q.rank, "branch": q.branch}
+    cand_by_piece = {(q.site, q.piece): q for q in cand_key.pieces}
+    for p in ref_key.pieces:
+        q = cand_by_piece.get((p.site, p.piece))
+        ranks[f"{p.site}/{p.piece}"] = {
+            "kind": p.kind,
+            "reference": p.rank,
+            "candidate": q.rank if q else None,
+            "branch": q.branch if q else None,
+        }
     inj_pieces = {}
+    cand_rows_by_bin = {x["size_bin"]: x for x in cand_inj["score"]["rows"]}
     for r_row in ref_inj["score"]["rows"]:
-        c_row = next(x for x in cand_inj["score"]["rows"] if x["size_bin"] == r_row["size_bin"])
+        c_row = cand_rows_by_bin.get(r_row["size_bin"])
         inj_pieces[r_row["size_bin"]] = {
             "kind": r_row["kind"],
             "n": r_row["n"],
             "reference": r_row["found"],
-            "candidate": c_row["found"],
+            "candidate": c_row["found"] if c_row else None,
         }
     return {
         "name": name,
         "keep": v["keep"],
         "checks": v["checks"],
         "bar": BAR,
+        "detector_change": detector_change,
         "reference_rules": reference.to_json() if reference is not None else None,
         "candidate_rules": candidate.to_json() if candidate is not None else None,
         "new_rules": fresh,
@@ -292,7 +318,9 @@ def format_compare(r: dict) -> str:
     lines.append("")
     for row in r["rule_rows"]["candidate"]:
         po = row["pooled"]
-        tag = "new" if row["name"] in r["new_rules"] else "as reference"
+        tag = (
+            "new" if row["name"] in r["new_rules"] else ("re-measured" if r.get("detector_change") else "as reference")
+        )
         lines.append(
             f"rule {row['test']} [{','.join(row['branches'])}] ({tag}): false alarms pass "
             f"{po['n_pass']}/{po['n_false']} = {po['fraction']}, gain {row['gain_if_adopted']}, "
