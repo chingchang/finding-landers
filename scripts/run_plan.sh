@@ -4,12 +4,16 @@
 #
 #   cd ~/finding-landers/.claude/worktrees/repo-overview-plan-e248f3   # the agent's worktree
 #   caffeinate -i scripts/run_plan.sh 6        # at most 6 items; caffeinate keeps the Mac awake
+#   ITEM=9 caffeinate -i scripts/run_plan.sh   # one named item, for a second worktree running in parallel
 #
 # Stops on: a red check, an item the agent marked [blocked] (needs a person), a refused tier-1 change, or the
 # item cap. Nothing is pushed. Each item lands as a commit on the branch with a report under docs/reports/.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 MAX_ITEMS="${1:-6}"
+ITEM="${ITEM:-}"              # ITEM=9 scripts/run_plan.sh  runs only that item (for a second worktree)
+if [ -n "$ITEM" ]; then MAX_ITEMS=1; PICK="item $ITEM under Now; if it is not marked [ ], stop"
+else PICK="the first open item under Now that is marked [ ]"; fi
 ITEM_TURNS="${ITEM_TURNS:-200}"
 ITEM_USD="${ITEM_USD:-15}"
 mkdir -p out/plan_runs
@@ -20,7 +24,7 @@ for i in $(seq 1 "$MAX_ITEMS"); do
   if ! grep -qE '^\s*[0-9]+\. \[ \]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
   if grep -qiE '\[blocked' docs/plan.md; then echo "an item is marked blocked; needs a person"; exit 3; fi
   prompt="No human is watching. Merge main into this branch first (git merge --no-edit main). Then read CLAUDE.md
-and docs/plan.md, and take the first open item under Now that is marked [ ]. If it is item 3 (the key) or
+and docs/plan.md, and take $PICK. If it is item 3 (the key) or
 anything that needs a person (money, a push, a frozen tag, a tier-1 file), mark it [blocked: reason] and stop.
 Otherwise mark it [running], do it, make scripts/leakcheck.sh and the tests green, commit on this branch with
 a message starting with the item number, write the report under docs/reports/, mark the item [done], and stop.
