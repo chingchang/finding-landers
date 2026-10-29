@@ -113,3 +113,26 @@ injection scoreboard, one change at a time.
 Item 7, transplant injection, which is also the test for the two sheet questions above. If a person adopts
 the proposal, `landers/shape_v1.json` is the fitted file `out/shape_v1/v02b_rules_fitted_rules.json`
 with the two unadopted rules removed, and `scripts/detect.py` picks it up by default.
+
+## Addendum (2026-10-29, later): the same runs under the 18-piece key
+
+While item 6 ran, `controls/tuning.json` grew from 13 to 18 recorded pieces: the Spirit piece recorded as
+the lander was corrected to the parachute, a new Spirit lander and backshell were recorded, and three
+Pathfinder pieces were added. Every number above is against the 13-piece key. The two v02b files were
+rescored, nothing re-detected, with the same thresholds v1; the earlier score files are kept and these are
+written beside them under `out/shape_v1/key18/`.
+
+| variant | recall@20 | hardware | fabric | file |
+|---|---|---|---|---|
+| v02b, no rule | 0.17 (3 of 18) | 2 of 12 | 1 of 4 | `out/shape_v1/key18/score_v02b_features.json` |
+| v02b, saturation rule | 0.33 (6 of 18) | 5 of 12 | 1 of 4 | `out/shape_v1/key18/score_v02b_features_shape_v1sat.json` |
+
+Median false alarms per km2 are 708.24 in both, as before. The new pieces: the Spirit backshell is at
+rank 1 in the shadow branch with or without the rule; the Pathfinder backshell goes from rank 2226 to 3
+with it (a saturated bright candidate); the Spirit lander at its corrected position sits at 268 without
+and 345 with; the Pathfinder lander and parachute have no candidate within the match radius. The piece
+that the rule pushed from rank 22 to 109 is, under the corrected key, the Spirit parachute, not the lander.
+Marks stay at 0 of 2.
+
+A person adopted the rule as `landers/shape_v1.json` on 2026-10-29 (commit 6338420), quoting these
+numbers; `scripts/detect.py` now applies it by default.
