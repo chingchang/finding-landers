@@ -232,21 +232,32 @@ def _bin_of(kind: str, size_m: float) -> str:
 
 
 def recall_at_false_alarm_rate(
-    detections: list[dict], truths: list[dict], area_km2: float, radius_px: float, fa_per_km2: float
+    detections: list[dict],
+    truths: list[dict],
+    area_km2: float,
+    radius_px: float,
+    fa_per_km2: float,
+    group=None,
 ) -> dict:
     """``detections``: candidates with ``tile``, ``row``, ``col``, ``score``, ``branch`` (tile-local
     coordinates). ``truths``: injected objects with ``tile``, ``row``, ``col``, ``kind``, ``size_m``.
     Finds the score threshold that keeps unmatched detections at or under ``fa_per_km2 * area_km2`` and
-    reports recall at that threshold by kind, size bin and the branch that found each object."""
+    reports recall at that threshold by kind, size bin and the branch that found each object.
+
+    A truth may carry its own ``radius_px`` (a mark is matched wider than a lander); ``group`` maps a
+    truth to the (kind, bin) pair its row is counted under, default the kind and its size bin."""
     by_tile: dict = {}
     for t in truths:
         by_tile.setdefault(t["tile"], []).append(t)
+
+    def radius_of(t: dict) -> float:
+        return float(t.get("radius_px", radius_px))
 
     def matches(d: dict):
         return [
             t
             for t in by_tile.get(d["tile"], [])
-            if math.hypot(float(d["row"]) - float(t["row"]), float(d["col"]) - float(t["col"])) <= radius_px
+            if math.hypot(float(d["row"]) - float(t["row"]), float(d["col"]) - float(t["col"])) <= radius_of(t)
         ]
 
     dets = sorted(detections, key=lambda d: -float(d["score"]))
@@ -264,7 +275,7 @@ def recall_at_false_alarm_rate(
 
     per: dict[str, dict] = {}
     for t in truths:
-        key = (t["kind"], _bin_of(t["kind"], float(t["size_m"])))
+        key = group(t) if group is not None else (t["kind"], _bin_of(t["kind"], float(t["size_m"])))
         slot = per.setdefault(
             f"{key[0]} {key[1]}", {"kind": key[0], "bin": key[1], "n": 0, "found": 0, "branches": Counter()}
         )
@@ -273,7 +284,7 @@ def recall_at_false_alarm_rate(
         for d in kept:
             if d["tile"] != t["tile"]:
                 continue
-            if math.hypot(float(d["row"]) - float(t["row"]), float(d["col"]) - float(t["col"])) <= radius_px:
+            if math.hypot(float(d["row"]) - float(t["row"]), float(d["col"]) - float(t["col"])) <= radius_of(t):
                 if best is None or float(d["score"]) > float(best["score"]):
                     best = d
         if best is not None:

@@ -40,7 +40,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 6. [ ] Shape features into the score, only where real pieces sit in the top few percent of that feature's
    false alarms on the same strip; each threshold recorded and versioned. Two-sided shadow test (dark on the
    anti-sun side and not dark on the sun side), shadow length consistent with a 1 to 3 m height, isolation.
-7. [ ] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
+7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
 8. [ ] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md; tuning

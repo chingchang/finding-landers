@@ -3,9 +3,10 @@
 ```
 landers/        the package: label.py (PDS3 labels), geo.py (lat/lon <-> pixel), strip.py (windowed JP2 reads,
                 tiles, valid mask), detect.py (physical tests), inject.py (synthetic objects in real tiles),
+                transplant.py (real pieces cut from tuning strips and planted into search-strip tiles),
                 score.py (the number, and recall at a fixed false-alarm rate), models/ (SAM, Wonder, Spark
                 behind one client; docs/models.md), board/ (the case board; docs/board.md)
-scripts/        crop_site.py, detect.py, inject.py, score.py, leakcheck.sh, models_*.py, board.py
+scripts/        crop_site.py, detect.py, inject.py, transplant.py, score.py, leakcheck.sh, models_*.py, board.py
 tests/          pytest; data tests skip unless LANDERS_DATA points at a directory with strips/
 controls/       sites.json (published positions, groups), tuning.json (answer key, filled by a person),
                 thresholds.json (pass/fail numbers, created by a person), heldout.json (sealed, gitignored)
@@ -44,6 +45,13 @@ uv run scripts/calibrate.py out/inject_fit.json --version v1 --out landers/calib
 uv run scripts/inject.py ... --tile-phase 1 --calibration landers/calibration_v1.json --run eval
                                                  # fit on one tile set, measure on the other
 uv run scripts/inject.py ... --features          # AUC of each shape feature, hits vs false alarms
+uv run scripts/transplant.py --run t1 [--copies 6 --nearest 4 --tiles-per-strip 6 --seed 0]
+                                                 # the tuning scoreboard: every recorded piece cut at full
+                                                 # resolution from its tuning strip, planted (rotated to the
+                                                 # target's shadow direction) into search-strip tiles with the
+                                                 # nearest incidence, plus sham cuts of empty ground; recall by
+                                                 # piece, kind and site at the thresholds' false-alarm rate;
+                                                 # out/transplant_<run>/ holds the JSON and two sheets
 ```
 
 Branches: `bright` (1 to 10 m), `shadow` (bright with a shadow of the right length), `sheet` (8 to 25 m,

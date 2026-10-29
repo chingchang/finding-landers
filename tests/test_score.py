@@ -156,7 +156,7 @@ def test_match_radius_and_recall_by_kind():
                 "valid_area_km2": 1.0,
                 "scale_m": 0.25,
                 "candidates": [
-                    {"row": 1050, "col": 2000, "score": 9.0, "branch": "dark"},  # 50 px from the scar: in at 80, out at 20
+                    {"row": 1050, "col": 2000, "score": 9.0, "branch": "dark"},  # 50 px from the scar: in at 80
                     {"row": 5050, "col": 6000, "score": 8.0, "branch": "dark"},  # 50 px from the lander: out
                 ],
             }
