@@ -10,6 +10,8 @@ dependencies = [
   "scikit-image>=0.22",
   "glymur>=0.13",
   "pillow>=10",
+  "openai>=3.41.0",
+  "meta-sam-parser>=0.1.0",
 ]
 
 [dependency-groups]
