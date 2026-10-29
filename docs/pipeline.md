@@ -3,8 +3,9 @@
 ```
 landers/        the package: label.py (PDS3 labels), geo.py (lat/lon <-> pixel), strip.py (windowed JP2 reads,
                 tiles, valid mask), detect.py (physical tests), inject.py (synthetic objects in real tiles),
-                score.py (the number, and recall at a fixed false-alarm rate)
-scripts/        crop_site.py, detect.py, inject.py, score.py, leakcheck.sh
+                score.py (the number, and recall at a fixed false-alarm rate), models/ (SAM, Wonder, Spark
+                behind one client; docs/models.md), board/ (the case board; docs/board.md)
+scripts/        crop_site.py, detect.py, inject.py, score.py, leakcheck.sh, models_*.py, board.py
 tests/          pytest; data tests skip unless LANDERS_DATA points at a directory with strips/
 controls/       sites.json (published positions, groups), tuning.json (answer key, filled by a person),
                 thresholds.json (pass/fail numbers, created by a person), heldout.json (sealed, gitignored)
@@ -33,6 +34,9 @@ uv run scripts/persist.py out/<run>/candidates_<run>.json --site schiaparelli [-
                                                  # seen on both dates -> grade "candidate"; radius 8 px;
                                                  # --reuse-nodes <previous persist json> skips registration
 uv run scripts/score.py out/candidates_try1.json # needs controls/thresholds.json and a filled tuning.json
+uv run scripts/board.py out/<run>/candidates_<run>.json [--blind] [--score ...] [--coverage ...]
+                                                 # the case board, HTML from results files only (docs/board.md);
+                                                 # --demo out/board_demo builds it on the fake backend's outputs
 uv run scripts/inject.py --site viking1 --site curiosity --tiles 6 --per-kind 3 --run inj1
                                                  # recall by size and branch at the thresholds' false-alarm rate
 uv run scripts/inject.py ... --tile-phase 0 --run fit   # then:

@@ -91,8 +91,10 @@ added is the scoring machinery around it.
    can list candidates, fetch one, read the thresholds, propose an exploratory check, and record a verdict that
    may keep or lower a grade and must cite evidence. Bounded follow-ups (a zoom pass, a second-date check, more
    votes) if time allows.
-8. **Case board** (the renderer is built in the old draft and will be ported). Fixed vocabulary, every number
-   traced to a results file, a coverage map of what was searched on how many dates.
+8. **Case board** (built; plan item 12a, `docs/board.md`). Fixed vocabulary, every value on the page tagged
+   with the file and path it was copied from and checked by a test, the grade chain per candidate with any
+   raise flagged, the ledger, the coverage map as item 11a writes it, and a blind variant that passes the leak
+   guard and can be published.
 
 ## Who sees the answers
 
