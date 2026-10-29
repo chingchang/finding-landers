@@ -1,0 +1,18 @@
+{
+  "version": "e7_sheet_peaked",
+  "basis": "Item 8 draft, 2026-10-29. A sheet that is not too flat: flatness (mean z over peak z inside the patch) at most 0.55. The three recorded canopies read 0.45, 0.46 and 0.61 while natural bright patches are smooth (q0.05 of sheet false alarms is 0.59); the injection hits sit at a median of 0.615 against the false alarms' 0.94. A canopy has folds and a saturated centre; a bright patch of ground has neither. Kept beside the adopted saturation rule.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "sheet_peaked",
+      "branches": ["sheet"],
+      "conditions": [{"feature": "flatness", "op": "<=", "threshold": 0.55}],
+      "basis": "a canopy has folds and a bright centre; a bright patch of ground is smooth"
+    }
+  ]
+}

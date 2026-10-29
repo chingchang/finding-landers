@@ -331,6 +331,8 @@ def test_script_builds_the_demo_and_the_page(tmp_path):
             str(tmp_path / "demo" / "candidates_demo.json"),
             "--models",
             str(tmp_path / "demo" / "models"),
+            "--coverage",
+            str(tmp_path / "demo" / "search" / "coverage.json"),  # not the default: a real one may exist in out/
             "--blind",
             "--out",
             str(tmp_path / "b.html"),

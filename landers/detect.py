@@ -16,10 +16,10 @@ Branches run per tile; every candidate carries the branch that made it:
 Grades here can only be "needs second look" (passes a physical test on one date) or "likely natural";
 "candidate" needs a second date, which is the persistence step and not part of this module.
 
-v0.2 (plan item 6): saturated pixels are data at the top of the range rather than no-data in the small-object branches (v0.1 lost
-saturated hardware to the no-data margin); every bright, shadow and dark_compact candidate carries the
-shadow-side, isolation and saturation features of ``landers.shape``; and a versioned rules file may add to
-the calibrated score of candidates that pass a feature test (``finish_tile``).
+v0.2 (plan item 6): saturated pixels are data at the top of the range rather than no-data in the small-object
+branches (v0.1 lost saturated hardware to the no-data margin); every bright, shadow and dark_compact candidate
+carries the shadow-side, isolation and saturation features of ``landers.shape``; and a versioned rules file may
+add to the calibrated score of candidates that pass a feature test (``finish_tile``).
 """
 
 from __future__ import annotations

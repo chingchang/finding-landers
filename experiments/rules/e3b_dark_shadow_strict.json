@@ -1,0 +1,21 @@
+{
+  "version": "e3b_dark_shadow_strict",
+  "basis": "Item 8 draft, 2026-10-29. e3 with the contrast raised from 3.0 to 3.5 (q0.999 of dark_compact false alarms is 3.87): e3 lifted a recorded heat shield from rank 1198 to 7 on the key but raised the injection threshold enough to lose one fabric planting. Kept beside the adopted saturation rule.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "dark_shadow",
+      "branches": ["dark_compact"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 3.5},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "basis": "a dark object that still casts a shadow of the right length stands above the ground; a dark patch in the ground does not"
+    }
+  ]
+}

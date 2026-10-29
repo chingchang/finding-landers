@@ -1,0 +1,21 @@
+{
+  "version": "e3_dark_shadow",
+  "basis": "Item 8 draft, 2026-10-29. A dark compact candidate with its own shadow: two_sided at or above 3.0 (q0.99 of dark_compact false alarms is 2.55, q0.999 3.87) and a shadow run reading as 0.5 to 3 m. Dust-covered hardware is dark but still stands above the ground and casts a shadow; a dark polygon trough does not. Kept beside the adopted saturation rule.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "dark_shadow",
+      "branches": ["dark_compact"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 3.0},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "basis": "a dark object that still casts a shadow of the right length stands above the ground; a dark patch in the ground does not"
+    }
+  ]
+}

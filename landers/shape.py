@@ -268,7 +268,10 @@ class ShapeRules:
 
     @classmethod
     def load(cls, path: str | Path) -> ShapeRules:
-        d = json.loads(Path(path).read_text())
+        return cls.from_json(json.loads(Path(path).read_text()))
+
+    @classmethod
+    def from_json(cls, d: dict) -> ShapeRules:
         rules = [
             Rule(
                 r["name"],
@@ -281,6 +284,9 @@ class ShapeRules:
             for r in d["rules"]
         ]
         return cls(d["version"], rules, d.get("basis", ""))
+
+    def to_json(self) -> dict:
+        return {"version": self.version, "basis": self.basis, "rules": [r.to_json() for r in self.rules]}
 
     def adjust(self, branch: str, extra: dict) -> tuple[float, list[str]]:
         """Total gain for a candidate and the names of the rules it passed."""

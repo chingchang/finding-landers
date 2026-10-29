@@ -1,0 +1,44 @@
+{
+  "version": "shape_v2",
+  "basis": "PROPOSAL, not adopted. Written by the tuning loop (docs/plan.md item 8) on 2026-10-29 as a copy of out/tune/e9_all_three/e9_all_three_fitted_rules.json; see docs/proposals/shape-rules-v2.md. The saturation rule is landers/shape_v1.json unchanged. Three rules are added, each measured on the bright, shadow or dark_compact false alarms of the eight tuning strips in out/shape_v1/candidates_v02b_features.json and judged on both scoreboards by scripts/tune.py. Every gain is minus log10 of the measured pass fraction. Re-measure and re-version whenever the detector changes.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "false_alarm_pass_fraction": 0.003,
+      "gain": 2.524,
+      "basis": "landers/shape_v1.json: at least one pixel at the sensor's saturation; natural ground at HiRISE exposure rarely saturates, bright hardware often does"
+    },
+    {
+      "name": "shadow_strong",
+      "branches": ["bright"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 4.0},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "false_alarm_pass_fraction": 0.00093,
+      "gain": 3.03,
+      "basis": "dark on the anti-sun side only, far beyond what polygon troughs and slopes produce, with a length that reads as a 0.5 to 3 m object; bright branch only, the shadow branch already selects on this"
+    },
+    {
+      "name": "dark_shadow",
+      "branches": ["dark_compact"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 3.5},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "false_alarm_pass_fraction": 0.0015,
+      "gain": 2.825,
+      "basis": "a dark object that still casts a shadow of the right length stands above the ground; a dark patch in the ground does not"
+    },
+    {
+      "name": "tile_top",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "tile_rank", "op": "<=", "threshold": 0}],
+      "false_alarm_pass_fraction": 0.03537,
+      "gain": 1.451,
+      "basis": "the brightest compact object within its 2048 px detector tile; a test of the surroundings rather than the object, see the proposal's caveats"
+    }
+  ]
+}

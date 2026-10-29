@@ -1,0 +1,18 @@
+{
+  "version": "e4_tile_top",
+  "basis": "Item 8 draft, 2026-10-29. The strongest bright component in its 2048 px tile (tile_rank 0): about 1 percent of bright false alarms on the tuning strips, and five of the six recorded bright pieces. Not a physical test of the object itself but of its surroundings: hardware is the brightest thing within half a kilometre far more often than a rock is. Kept beside the adopted saturation rule.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "tile_top",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "tile_rank", "op": "<=", "threshold": 0}],
+      "basis": "the brightest compact object within its 512 m tile"
+    }
+  ]
+}

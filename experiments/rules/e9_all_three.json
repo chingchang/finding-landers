@@ -1,0 +1,36 @@
+{
+  "version": "e9_all_three",
+  "basis": "Item 8 draft, 2026-10-29. Every rule that passed the bar in this session (e2 shadow_strong, e3b dark_shadow at 3.5, e4 tile_top) with the adopted saturation rule, judged as one change.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "shadow_strong",
+      "branches": ["bright"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 4.0},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "basis": "dark on the anti-sun side only, far beyond what polygon troughs and slopes produce, with a length that reads as a 0.5 to 3 m object"
+    },
+    {
+      "name": "dark_shadow",
+      "branches": ["dark_compact"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 3.5},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "basis": "a dark object that still casts a shadow of the right length stands above the ground; a dark patch in the ground does not"
+    },
+    {
+      "name": "tile_top",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "tile_rank", "op": "<=", "threshold": 0}],
+      "basis": "the brightest compact object within its 512 m tile"
+    }
+  ]
+}

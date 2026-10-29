@@ -12,3 +12,15 @@ One line per idea that did not move the score. Winners go into the main package 
   baseline v1) fails the flatness test (0.35 against 0.46 with the v0.1 mask) and the backshell goes unmatched.
   Reverted for the sheet branch only. `out/shape_v1/sheet_saturation_schiaparelli_parachute.txt`,
   `out/shape_v1/score_v02_features.json` against `score_v02b_features.json`.
+- 2026-10-29, item 8: rule `crisp` (edge_sharpness >= 0.27, bright and shadow): 0.0534 of false alarms pass, just
+  over the bar; key 7 of 18 but injection hardware 31 to 30 and fabric 10 to 8 as the threshold rose 0.276 to
+  0.611. Reverted. `out/tune/e1_crisp/tune_e1_crisp.json`.
+- 2026-10-29, item 8: rule `dark_shadow` at two_sided >= 3.0 (dark_compact): 0.0033 pass, Phoenix heat shield
+  1198 to 7 on the key, but one fabric planting lost on injection (0.38 to 0.37). Reverted; the 3.5 version
+  passed and is in the proposal. `out/tune/e3_dark_shadow/tune_e3_dark_shadow.json`.
+- 2026-10-29, item 8: `saturated` threshold raised to 5 pixels in place of 1: 0.00061 pass, gain 3.217; key
+  unchanged at 6 of 18 (Spirit parachute 109 to 41, Pathfinder backshell 3 to 1) but one Phoenix backshell
+  planting lost on injection (hardware 31 to 30). Reverted. `out/tune/e5_sat5/tune_e5_sat5.json`.
+- 2026-10-29, item 8: rule `sheet_peaked` (flatness <= 0.55, sheet): 0.0274 pass, passes the bar but moves no
+  number on either board and raises the sham hits from 1 to 2 of 108. Not kept.
+  `out/tune/e7_sheet_peaked/tune_e7_sheet_peaked.json`.

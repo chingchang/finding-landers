@@ -120,7 +120,8 @@ def test_partly_saturated_sheet_is_still_a_sheet():
     lbl = fake_label()
 
     def sheets(cfg):
-        return [c for c in detect.detect_tile(win, lbl, cfg) if c.branch == "sheet" and abs(c.row - 250) < 12 and abs(c.col - 250) < 12]
+        found = detect.detect_tile(win, lbl, cfg)
+        return [c for c in found if c.branch == "sheet" and abs(c.row - 250) < 12 and abs(c.col - 250) < 12]
 
     found = sheets(detect.DetectorConfig())
     assert found and found[0].extra["flatness"] >= detect.DetectorConfig().sheet_flatness

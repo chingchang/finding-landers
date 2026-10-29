@@ -1,0 +1,12 @@
+{
+  "version": "e5_sat5",
+  "basis": "Item 8 draft, 2026-10-29. The adopted saturation rule with its threshold raised from one saturated pixel to five, to cut the cost the rule's own proposal recorded (88 false alarms on one strip with a median of 2 saturated pixels overtaking a recorded piece) while keeping every recorded saturated piece (6 to 69 pixels). Replaces the adopted rule rather than adding to it, so it is judged as a new rule.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 5}],
+      "basis": "at least five pixels at the sensor's saturation; a single saturated pixel is a bright rock facet, a patch of them is metal or a canopy"
+    }
+  ]
+}

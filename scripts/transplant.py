@@ -26,12 +26,19 @@ from PIL import Image, ImageDraw
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from landers import config  # noqa: E402
 from landers import transplant as tp  # noqa: E402
-from landers.detect import DetectorConfig, detect_tile, load_calibration  # noqa: E402
+from landers.detect import DetectorConfig, detect_tile, finish_tile, load_calibration, load_shape_rules  # noqa: E402
 from landers.score import format_injection_report, load_json, match_radius_px, recall_at_false_alarm_rate  # noqa: E402
 from landers.sheets import CREDIT, apply_stretch, stretch_limits  # noqa: E402
 from landers.strip import Strip  # noqa: E402
 
 DEFAULT_CAL = config.REPO_ROOT / "landers" / "calibration_v0.json"
+_RULE_FILES = sorted((config.REPO_ROOT / "landers").glob("shape_v*.json"))
+DEFAULT_RULES = _RULE_FILES[-1] if _RULE_FILES else None
+
+
+def repo_relative(path: str) -> str:
+    p = Path(path).resolve()
+    return str(p.relative_to(config.REPO_ROOT)) if p.is_relative_to(config.REPO_ROOT) else path
 
 
 def pick_tiles(strip: Strip, dcfg: DetectorConfig, n: int, min_valid: float, rng: np.random.Generator):
@@ -103,6 +110,14 @@ def main(argv=None) -> int:
     ap.add_argument("--fa-per-km2", type=float, default=None, help="default: thresholds pass.max_false_alarms_per_km2")
     ap.add_argument("--calibration", default=str(DEFAULT_CAL) if DEFAULT_CAL.exists() else None)
     ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
+    ap.add_argument(
+        "--shape-rules",
+        default=str(DEFAULT_RULES) if DEFAULT_RULES else None,
+        help="shape rules JSON added to the calibrated score (default: the newest landers/shape_v*.json, as "
+        "scripts/detect.py); every detection records its features either way, so scripts/tune.py can apply "
+        "other rules to an unruled run without re-detecting",
+    )
+    ap.add_argument("--no-shape-rules", action="store_true", help="record shape features, add nothing to the score")
     ap.add_argument("--no-sham", action="store_true", help="skip the sham (empty) cuts")
     ap.add_argument("--only", action="append", default=[], help="site/piece to cut (repeatable); default all")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
@@ -115,16 +130,14 @@ def main(argv=None) -> int:
     fa = a.fa_per_km2 if a.fa_per_km2 is not None else float(thresholds["pass"]["max_false_alarms_per_km2"])
     cfg = tp.TransplantConfig()
     cal_path = None if a.no_calibration else a.calibration
-    dcfg = DetectorConfig(calibration=cal_path)
+    rules_path = None if a.no_shape_rules else a.shape_rules
+    dcfg = DetectorConfig(calibration=cal_path, shape_rules=rules_path)
     cal = load_calibration(dcfg)
+    rules = load_shape_rules(dcfg)
     if cal is not None:
-        from landers.calibrate import apply
-
-        dcfg.calibration = (
-            str(Path(cal_path).resolve().relative_to(config.REPO_ROOT))
-            if Path(cal_path).resolve().is_relative_to(config.REPO_ROOT)
-            else cal_path
-        )
+        dcfg.calibration = repo_relative(cal_path)
+    if rules is not None:
+        dcfg.shape_rules = repo_relative(rules_path)
     rng = np.random.default_rng(a.seed)
 
     allowed = tp.tuning_sources(sites)
@@ -238,9 +251,7 @@ def main(argv=None) -> int:
             continue
         rng.shuffle(idxs)
         planted, placed = tp.place_in_tile(win, strip.label, cuts, idxs, rng, cfg, key)
-        cands = detect_tile(planted, strip.label, dcfg)
-        if cal is not None:
-            cands = [c for c in apply(cands, cal) if c.score >= dcfg.min_calibrated_score]
+        cands = finish_tile(detect_tile(planted, strip.label, dcfg), dcfg, cal, rules)
         for c in cands:
             d = {
                 "tile": key,
@@ -252,6 +263,9 @@ def main(argv=None) -> int:
             }
             if "raw_score" in c.extra:
                 d["raw_score"] = c.extra["raw_score"]
+            feats = {k: v for k, v in c.extra.items() if k != "raw_score"}
+            if feats:
+                d["features"] = feats
             detections.append(d)
         placements.extend(placed)
         for p in placed:

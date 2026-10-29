@@ -1,0 +1,27 @@
+{
+  "version": "e8_shadow_strong_tile_top",
+  "basis": "Item 8 draft, 2026-10-29. The two rules that each passed the bar alone (e2 shadow_strong, e4 tile_top) together with the adopted saturation rule, judged as one change.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "shadow_strong",
+      "branches": ["bright"],
+      "conditions": [
+        {"feature": "two_sided", "op": ">=", "threshold": 4.0},
+        {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}
+      ],
+      "basis": "dark on the anti-sun side only, far beyond what polygon troughs and slopes produce, with a length that reads as a 0.5 to 3 m object"
+    },
+    {
+      "name": "tile_top",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "tile_rank", "op": "<=", "threshold": 0}],
+      "basis": "the brightest compact object within its 512 m tile"
+    }
+  ]
+}

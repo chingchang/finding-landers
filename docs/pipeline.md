@@ -6,10 +6,11 @@ landers/        the package: label.py (PDS3 labels), geo.py (lat/lon <-> pixel),
                 the versioned rules that put some into the score), features_eval.py (where the real pieces sit
                 among false alarms; reads the key, so it is scoring-side), inject.py (synthetic objects in real
                 tiles), transplant.py (real pieces cut from tuning strips and planted into search-strip tiles),
-                score.py (the number, and recall at a fixed false-alarm rate), models/ (SAM, Wonder, Spark
-                behind one client; docs/models.md), board/ (the case board; docs/board.md)
-scripts/        crop_site.py, detect.py, feature_percentiles.py, rescore.py, inject.py, transplant.py, score.py,
-                leakcheck.sh, models_*.py, board.py
+                score.py (the number, and recall at a fixed false-alarm rate), tune.py (the tuning loop's
+                judge: one rules change on both scoreboards against the item 8 bar), models/ (SAM, Wonder,
+                Spark behind one client; docs/models.md), board/ (the case board; docs/board.md)
+scripts/        crop_site.py, detect.py, feature_percentiles.py, rescore.py, inject.py, transplant.py, tune.py,
+                score.py, leakcheck.sh, models_*.py, board.py
 tests/          pytest; data tests skip unless LANDERS_DATA points at a directory with strips/
 controls/       sites.json (published positions, groups), tuning.json (answer key, filled by a person),
                 thresholds.json (pass/fail numbers, created by a person), heldout.json (sealed, gitignored)
@@ -62,7 +63,16 @@ uv run scripts/transplant.py --run t1 [--copies 6 --nearest 4 --tiles-per-strip 
                                                  # target's shadow direction) into search-strip tiles with the
                                                  # nearest incidence, plus sham cuts of empty ground; recall by
                                                  # piece, kind and site at the thresholds' false-alarm rate;
-                                                 # out/transplant_<run>/ holds the JSON and two sheets
+                                                 # out/transplant_<run>/ holds the JSON and two sheets; the
+                                                 # newest landers/shape_v*.json is applied unless --no-shape-rules;
+                                                 # every detection records its features either way
+uv run scripts/tune.py --name <idea> --rules experiments/rules/<idea>.json
+                                                 # the tuning loop: the candidate rules (tests only; gains are
+                                                 # re-measured on the key run's false alarms) against the newest
+                                                 # landers/shape_v*.json on both boards, rescored from recorded
+                                                 # features (--key-candidates, an unruled tuning-strip run;
+                                                 # --injection, an unruled transplant run); KEEP or REVERT by the
+                                                 # item 8 bar; out/tune/<idea>/; a KEEP is a proposal, never in place
 ```
 
 Branches: `bright` (1 to 10 m), `shadow` (bright with a shadow of the right length), `sheet` (8 to 25 m,
@@ -79,7 +89,9 @@ a physical test on recorded features (two-sided shadow contrast, shadow height, 
 fraction `p` of that branch's false alarms on the tuning strips that pass it; a passing candidate gains
 `-log10(p)` on the calibrated scale, a failing one keeps its score. Thresholds are physical or round numbers,
 written before the false-alarm distributions were seen; the pass fractions are measured by
-`scripts/feature_percentiles.py` and copied into the file with the run they came from.
+`scripts/feature_percentiles.py` and copied into the file with the run they came from. The tuning loop
+(`scripts/tune.py`, docs/plan.md item 8) tries one rules change at a time against both scoreboards and the
+bar written in the plan; what passes goes to docs/proposals/ as a `shape_v<n>.json` copy for a person.
 
 A baseline run that the key will be filled from lives under `out/baseline_v1/` with its commit hash in
 `COMMIT` and in the run file, and is never rerun once the key is filled. Run it from a frozen export of the

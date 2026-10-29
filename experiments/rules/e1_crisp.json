@@ -1,0 +1,18 @@
+{
+  "version": "e1_crisp",
+  "basis": "Item 8 draft, 2026-10-29. Crisp edges: mean gradient of z on the boundary over the peak z at or above 0.27, bright and shadow branches. Threshold read off the pooled false-alarm quantiles of out/shape_v1/candidates_v02b_features.json (experiments/feature_quantiles.py): q0.95 = 0.265 on bright; three recorded pieces sit above it. Kept beside the adopted saturation rule.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+      "basis": "landers/shape_v1.json"
+    },
+    {
+      "name": "crisp",
+      "branches": ["bright", "shadow"],
+      "conditions": [{"feature": "edge_sharpness", "op": ">=", "threshold": 0.27}],
+      "basis": "a metal edge is a step at the pixel scale; a natural bright patch grades into its ground"
+    }
+  ]
+}
