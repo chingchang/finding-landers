@@ -1,0 +1,90 @@
+{
+  "version": "shape_v2",
+  "basis": "Adopted 2026-10-29 02:40 from docs/proposals/shape-rules-v2.md after the first tuning-loop session (plan item 8). Four rules: saturated (unchanged from shape_v1) and three added by the loop: shadow_strong (bright candidates with a strong one-sided shadow of a height in 0.5 to 3 m), dark_shadow (dark compact candidates with their own shadow of that height) and tile_top (the strongest bright component in its 2048 px tile). Each gain is minus log10 of the rule's measured pass fraction among the bright, shadow or dark_compact false alarms of the eight tuning strips (out/shape_v1/candidates_v02b_features.json). Measured together: key recall@20 8 of 18 (hardware 7 of 12) against 6 of 18 for shape_v1; transplant injection hardware 35 of 72 against 31, fabric 9 of 24 against 10. tile_top is a test of the neighbourhood rather than the object and is kept on the condition that the leave-one-site-out check in plan item 8 confirms its lift on sites it was not fitted on; if not, it is withdrawn before the frozen tag and the other three stay. Re-measure and re-version whenever the detector changes.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": [
+        "bright",
+        "shadow"
+      ],
+      "conditions": [
+        {
+          "feature": "saturated_px",
+          "op": ">=",
+          "threshold": 1
+        }
+      ],
+      "false_alarm_pass_fraction": 0.003,
+      "gain": 2.524,
+      "basis": "landers/shape_v1.json: at least one pixel at the sensor's saturation; natural ground at HiRISE exposure rarely saturates, bright hardware often does"
+    },
+    {
+      "name": "shadow_strong",
+      "branches": [
+        "bright"
+      ],
+      "conditions": [
+        {
+          "feature": "two_sided",
+          "op": ">=",
+          "threshold": 4.0
+        },
+        {
+          "feature": "shadow_height_m",
+          "op": "in",
+          "threshold": [
+            0.5,
+            3.0
+          ]
+        }
+      ],
+      "false_alarm_pass_fraction": 0.00093,
+      "gain": 3.03,
+      "basis": "dark on the anti-sun side only, far beyond what polygon troughs and slopes produce, with a length that reads as a 0.5 to 3 m object; bright branch only, the shadow branch already selects on this"
+    },
+    {
+      "name": "dark_shadow",
+      "branches": [
+        "dark_compact"
+      ],
+      "conditions": [
+        {
+          "feature": "two_sided",
+          "op": ">=",
+          "threshold": 3.5
+        },
+        {
+          "feature": "shadow_height_m",
+          "op": "in",
+          "threshold": [
+            0.5,
+            3.0
+          ]
+        }
+      ],
+      "false_alarm_pass_fraction": 0.0015,
+      "gain": 2.825,
+      "basis": "a dark object that still casts a shadow of the right length stands above the ground; a dark patch in the ground does not"
+    },
+    {
+      "name": "tile_top",
+      "branches": [
+        "bright",
+        "shadow"
+      ],
+      "conditions": [
+        {
+          "feature": "tile_rank",
+          "op": "<=",
+          "threshold": 0
+        }
+      ],
+      "false_alarm_pass_fraction": 0.03537,
+      "gain": 1.451,
+      "basis": "the brightest compact object within its 2048 px detector tile; a test of the surroundings rather than the object, see the proposal's caveats"
+    }
+  ],
+  "adopted_by": "Ching Chang",
+  "adopted_on": "2026-10-29"
+}
