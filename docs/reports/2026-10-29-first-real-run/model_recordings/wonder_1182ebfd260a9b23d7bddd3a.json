@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c8101f0415f8fa12a9b9fe33d9e3f86ac81a2f54934bccee66dbec092cffc66b",
+        "bytes": 64055
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "93cb7d382c9a56f3d92e70a55ba90183e6761f4da5c5c1bc63b4a8ec82b184b3",
+        "bytes": 7971
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.31,
+   "place": "",
+   "recognised": false,
+   "shows": "A dark, grainy, almost black surface filling the frame. Near the centre is a large, very bright, roughly triangular patch with mottled, speckled internal brightness and irregular edges, brightest at a"
+  },
+  "raw": "{\"confidence\": 0.31, \"place\": \"\", \"recognised\": false, \"shows\": \"A dark, grainy, almost black surface filling the frame. Near the centre is a large, very bright, roughly triangular patch with mottled, speckled internal brightness and irregular edges, brightest at a\" }",
+  "input_tokens": 300,
+  "output_tokens": 2138
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "source": "out/models",
+ "marker": "[sealed site name]",
+ "files": {
+  "ledger.json": {
+   "redactions": 0
+  },
+  "probe_ESP_017716_2485.json": {
+   "redactions": 0
+  },
+  "probe_ESP_017716_2485_key.json": {
+   "redactions": 0
+  },
+  "probe_ESP_030313_1755.json": {
+   "redactions": 3
+  },
+  "probe_ESP_030313_1755_key.json": {
+   "redactions": 1
+  },
+  "votes_ESP_030313_1755.json": {
+   "redactions": 0
+  },
+  "sam_ESP_030313_1755.json": {
+   "redactions": 0
+  },
+  "review_ESP_030313_1755.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_06df3b4323e37be94d310ff9.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_0f2f3650d631f8ef65edf524.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_132883f9ffbb5e3b7a93b45d.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_17ad5b8e98856a327233a28f.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_28f514d507ad3581a0bb3b20.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_3881d7aa3328e621b654b0b1.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_489d3a4ccca346cf2b9559f0.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_48b80675f2f5be9dfcf3e016.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_66ffc6876ff67855d38e05b6.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_825f4f06b5bb09be6189ab43.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_89002b07eb01ce3a730455c3.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_91357c5fb524bdfca8ccf20b.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_aaec59fd17323faa1ff83f10.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_af88b393b8fb23cd1256c943.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_b2204071d4a6de05898b5046.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_b8e57b3fa43d76c1113b4ea7.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_bf1e72c14837e09ae028ac72.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_d0b7eb91bff2e969c1d659a8.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_d122fb0ebac9a479f2b7ca29.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_df4b8a7d745eb308c9759489.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_f0bfb5cb57c0d404dd1bf5e3.json": {
+   "redactions": 0
+  },
+  "model_recordings/sam_f29cfb2f65688db5d77d5d39.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_019a4821fc34c722f8ba211c.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_1fd1af35073632f1411eeda6.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_33e65cbe271b9e60bfcae13e.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_42d0df3560acfe8efd24e646.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_441ad82a590294e74b3bc328.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_64c8b1969f5f8138aa4e4775.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_6cadfb3331d3b8ebb6d32137.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_6e9080a9eb31ce30790a8c84.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_96fd9b1592095de6284216da.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_cd8d85a2b4a30fb70610a276.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_eb88c463a774620ceb61ec8f.json": {
+   "redactions": 0
+  },
+  "model_recordings/spark_ece73b926b5c22495a017f94.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_01d55fd72e50872673cd4f4e.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_01e0e4f56dbc97a59f73f806.json": {
+   "redactions": 4
+  },
+  "model_recordings/wonder_0ba0d360ec37903db567bb6c.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_1182ebfd260a9b23d7bddd3a.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_1584c05deb0071e495146adc.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_2ae007ff698fecdd829ea837.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_34fd33efefc82009b3e4386f.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_3b09a8f4e7ccf23af0d0b2e8.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_4306bd7bd45d0e679aad0e92.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_49118eb0161533975833e153.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_50fe47d1cdac985c9c895cc7.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_5d5d1ad3a0ac5e415f33a66a.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_5f624881c635ca00128a4df1.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_61d5013173cdad88658c8622.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_64c5ddbc8ea0e3d8822558f9.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_6bcd6310a582711b49f23cad.json": {
+   "redactions": 2
+  },
+  "model_recordings/wonder_780ad6ef15e341c32fb629c3.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_82afd58510f0ac765088fa90.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_8a8c9f146952978155ee5e74.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_9952c9a1ef88c197c8e965c1.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_9ca0f1fe410c114741dde8cb.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_9e6de127e3237f8b1c1e2ce5.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_a39307df784a98dc0f7f2971.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_a41eafc4412f5420c4e79f10.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_a5ad6cee35630153990b60b4.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_a6cda477888da84b058a4458.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_a8ae5296cf07e6852c34633d.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_b26028e48cf515a9fcb336be.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_b42fe60eaea7a8c9d13f73f4.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_ba7952e843e5ae5af0a45c2e.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_d807b212ba1c38a18aed30ed.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_dc14fe7bc3ae2f399a843fb4.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_e0b2fa33a72647b6d2f2fd9a.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_f6880a8c93a1b0b250015889.json": {
+   "redactions": 0
+  }
+ },
+ "total_redactions": 10
+}

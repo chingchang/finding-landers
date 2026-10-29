@@ -1,0 +1,177 @@
+{
+ "run": "key_pieces",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": true,
+     "place": "Jezero Crater, Mars",
+     "shows": "The discarded supersonic parachute and backshell of the NASA Mars 2020 [sealed site name] rover, collapsed on the Martian surface and imaged from orbit by the HiRISE camera on the Mars Reconnaissance Orbjet",
+     "confidence": 0.45,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 1,
+    "max_confidence": 0.45,
+    "claims": [
+     "Jezero Crater, Mars"
+    ]
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.999,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale orbital view of mottled, uneven planetary terrain. Near the centre is a small, irregular bright-white patch containing a compact black irregular mark. A diffuse darker smudge extends south/s",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale orbital view of mottled, cratered terrain with several soft-rimmed depressions. Near the centre is an irregular dark patch containing a small, bright, roughly circular white feature in the 4",
+     "confidence": 0.25,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c003",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Unknown",
+     "shows": "Grainy greyscale orbital view of mottled light-grey planetary ground with an irregular, fuzzy dark patch in the centre, extending to the left, and a separate small dark patch at upper left. Two pinpr\u4f55",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  }
+ ]
+}

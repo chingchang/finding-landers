@@ -44,6 +44,7 @@ def main(argv=None) -> int:
     ap.add_argument("--reference-strip", default=None)
     ap.add_argument("--backend", choices=BACKENDS, default="fake")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--tag", default="", help="suffix for the output and manifest names (one ledger, several runs)")
     ap.add_argument("--out-dir", default="out/models")
     a = ap.parse_args(argv)
 
@@ -65,11 +66,11 @@ def main(argv=None) -> int:
     out = Path(a.out_dir)
     kind = "probe" if a.probe else "votes"
     run.write_json(
-        out / f"{kind}_{a.strip}.json",
+        out / f"{kind}_{a.strip}{a.tag}.json",
         {"run": data.get("run"), "backend": client.backend.name, "seed": a.seed, "records": recs},
     )
     run.write_json(
-        out / f"manifest_{a.strip}.json",
+        out / f"manifest_{a.strip}{a.tag}.json",
         {
             "strip": a.strip,
             "ids": {run.candidate_id(i): {"row": c["row"], "col": c["col"]} for i, c in enumerate(cands)},

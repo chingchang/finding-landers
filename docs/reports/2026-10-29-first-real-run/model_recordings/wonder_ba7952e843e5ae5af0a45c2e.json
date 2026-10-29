@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d38adb609be33fd0d3b219d130ffa686bd9e82540efce2470947b91e378a279c",
+        "bytes": 69186
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "3850d8ecffd95ff074ffa693665127c4719101d70cdbe03dc8a5c0309cbe87ac",
+        "bytes": 7461
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.65,
+   "place": "Abydos site on Comet 67P/Churyumov-Gerasimenko, in shadow in a crack at the foot of a cliff",
+   "recognised": true,
+   "shows": "The Philae lander of ESA's Rosetta mission, photographed by Rosetta's OSIRIS camera in September 2016 after its location was found: its bright body and legs glinting against the dark, rough cometary ["
+  },
+  "raw": "{\"confidence\": 0.65, \"place\": \"Abydos site on Comet 67P/Churyumov-Gerasimenko, in shadow in a crack at the foot of a cliff\", \"recognised\": true, \"shows\": \"The Philae lander of ESA's Rosetta mission, photographed by Rosetta's OSIRIS camera in September 2016 after its location was found: its bright body and legs glinting against the dark, rough cometary [\"\n}",
+  "input_tokens": 300,
+  "output_tokens": 1588
+ }
+}

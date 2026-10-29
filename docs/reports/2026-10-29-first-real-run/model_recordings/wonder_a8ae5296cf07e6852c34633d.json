@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9a9e82b089ba7dc762268d7b15697a70cc9bd1e72dd6a1fad612d1aa02e30707",
+        "bytes": 90684
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "e03edb4e37556e054b784b3040e6115e45834e94aaf46060b6292038bf0595ba",
+        "bytes": 8684
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0,
+   "place": "unknown",
+   "recognised": false,
+   "shows": "Grayscale orbital view of mottled, uneven planetary terrain. Near the centre is a small, irregular bright-white patch containing a compact black irregular mark. A diffuse darker smudge extends south/s"
+  },
+  "raw": "{\"confidence\": 0, \"place\": \"unknown\", \"recognised\": false, \"shows\": \"Grayscale orbital view of mottled, uneven planetary terrain. Near the centre is a small, irregular bright-white patch containing a compact black irregular mark. A diffuse darker smudge extends south/s\"\n}",
+  "input_tokens": 300,
+  "output_tokens": 1857
+ }
+}

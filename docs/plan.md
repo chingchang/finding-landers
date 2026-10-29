@@ -72,7 +72,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    keep or lower only, every verdict citing evidence; a dry-run mode that writes the requests it would
    send; the prompt leak test. Runs in its own worktree (branch claude/model-layer) and touches only
    landers/models/, scripts/models_*.py, their tests and docs; everything green with no network.
-9b. [ ] First real run, after MODEL_API_KEY is in the environment and a person asks: recognition probe on
+9b. [done, see docs/reports/2026-10-29-first-real-run.md] First real run, after MODEL_API_KEY is in the environment and a person asks: recognition probe on
    Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
    ledger and tool log committed with the report; grades can only go down.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then

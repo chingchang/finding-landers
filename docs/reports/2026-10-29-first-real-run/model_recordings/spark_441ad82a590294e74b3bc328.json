@@ -1,0 +1,605 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   },
+   {
+    "role": "assistant",
+    "content": "Grading your strip candidates \u2014 gathering the evidence to review.",
+    "tool_calls": [
+     {
+      "id": "call_0a6d22ca-09cd-423a-b290-923583031d97",
+      "type": "function",
+      "function": {
+       "name": "list_candidates",
+       "arguments": "{\"strip_key\":\"strip_a\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_0a6d22ca-09cd-423a-b290-923583031d97",
+    "content": "{\"strip_key\": \"strip_a\", \"candidates\": [{\"id\": \"c000\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 6.876, \"area_px\": 2464, \"shape\": {\"raw_score\": 10.81}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.6, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.12, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.71, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.52, \"area_px\": 4347, \"area_m2\": 271.69, \"equiv_diameter_m\": 18.6, \"centroid_row\": 118.4, \"centroid_col\": 118.5, \"pieces\": 21, \"major_m\": 20.21, \"minor_m\": 17.79, \"elongation\": 0.12, \"fill\": 0.625, \"circularity\": 0.354, \"touches_box_edge\": false, \"edge_contrast\": 2.71}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The enlarged centre shows a diffuse, irregular bright patch with granular fuzzy edges and no crisp geometric outline or adjacent shadow from a raised body.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The centre patch has irregular, diffuse fuzzy edges, no straight or crisp outline, and no cast shadow from a raised body, blending with the surrounding rippled dark ground.\"}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows only diffuse grainy ripple texture continuous with its surroundings, with no crisp outline or distinct shadow of a raised object.\"}]}, {\"id\": \"c001\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 6.752, \"area_px\": 3792, \"shape\": {\"raw_score\": 10.697}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 19.47, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.506, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 4.93, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.734, \"area_px\": 4762, \"area_m2\": 297.62, \"equiv_diameter_m\": 19.47, \"centroid_row\": 121.9, \"centroid_col\": 123.3, \"pieces\": 5, \"major_m\": 31.31, \"minor_m\": 15.48, \"elongation\": 0.506, \"fill\": 0.374, \"circularity\": 0.358, \"touches_box_edge\": true, \"edge_contrast\": 4.93}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The enlarged pixels show an irregular, mottled bright patch with diffuse edges and no crisp straight seams or cast shadow from a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The enlarged centre shows a diffuse, mottled bright patch with irregular feathered edges and similar sunlit patches nearby, with no straight edges, geometric outline, or distinct raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows an irregular, mottled bright clump with feathered fractal edges and no straight crisp outline, symmetry, or distinct raised-body shadow, consistent with a sunlit rough rock or frost outcrop.\"}]}, {\"id\": \"c002\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.586, \"area_px\": 1840, \"shape\": {\"raw_score\": 9.64}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 24.31, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.155, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.94, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.594, \"area_px\": 7429, \"area_m2\": 464.31, \"equiv_diameter_m\": 24.31, \"centroid_row\": 131.4, \"centroid_col\": 127.3, \"pieces\": 13, \"major_m\": 26.78, \"minor_m\": 22.64, \"elongation\": 0.155, \"fill\": 0.832, \"circularity\": 0.41, \"touches_box_edge\": true, \"edge_contrast\": 1.94}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The central object is a saturated-white triangular facet with straight, crisp edges and an adjacent curved band, casting a distinct dark shadow and unlike the low-contrast irregular bumps in the reference terrain.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.78, \"reason\": \"The centre object is a sharply delimited, saturated-white angular patch with a smooth interior and a dark fold-like shadow line, unlike the mottled rocky texture in the reference image.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.75, \"reason\": \"The centre object has straight crisp edges, a flat uniformly bright triangular surface with a central fold, and a dark shadow along its right edge, sharply unlike the dark textured ground and reference terrain.\"}]}, {\"id\": \"c003\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.117, \"area_px\": 1376, \"shape\": {\"raw_score\": 9.215}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.11, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.27, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.47, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.59, \"area_px\": 2870, \"area_m2\": 179.38, \"equiv_diameter_m\": 15.11, \"centroid_row\": 123.4, \"centroid_col\": 122.6, \"pieces\": 25, \"major_m\": 18.11, \"minor_m\": 13.22, \"elongation\": 0.27, \"fill\": 0.642, \"circularity\": 0.412, \"touches_box_edge\": false, \"edge_contrast\": 3.47}}, {\"id\": \"c004\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.029, \"area_px\": 1168, \"shape\": {\"raw_score\": 9.135}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 11.93, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.446, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.58, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.629, \"area_px\": 1788, \"area_m2\": 111.75, \"equiv_diameter_m\": 11.93, \"centroid_row\": 125.1, \"centroid_col\": 125.6, \"pieces\": 12, \"major_m\": 16.64, \"minor_m\": 9.22, \"elongation\": 0.446, \"fill\": 0.542, \"circularity\": 0.374, \"touches_box_edge\": false, \"edge_contrast\": 3.58}}, {\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.541, \"area_px\": 1328, \"shape\": {\"raw_score\": 7.786}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.4, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.047, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.34, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.715, \"area_px\": 6307, \"area_m2\": 394.19, \"equiv_diameter_m\": 22.4, \"centroid_row\": 127.7, \"centroid_col\": 125.3, \"pieces\": 6, \"major_m\": 23.37, \"minor_m\": 22.28, \"elongation\": 0.047, \"fill\": 0.894, \"circularity\": 0.488, \"touches_box_edge\": true, \"edge_contrast\": 0.34}}, {\"id\": \"c006\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.487, \"area_px\": 2048, \"shape\": {\"raw_score\": 7.737}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 17.02, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.479, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.6, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.633, \"area_px\": 3639, \"area_m2\": 227.44, \"equiv_diameter_m\": 17.02, \"centroid_row\": 126.0, \"centroid_col\": 123.8, \"pieces\": 45, \"major_m\": 25.47, \"minor_m\": 13.28, \"elongation\": 0.479, \"fill\": 0.471, \"circularity\": 0.136, \"touches_box_edge\": false, \"edge_contrast\": 2.6}}, {\"id\": \"c007\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.106, \"area_px\": 416, \"shape\": {\"raw_score\": 7.391}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 9.95, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.428, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 1.3, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.57, \"area_px\": 1244, \"area_m2\": 77.75, \"equiv_diameter_m\": 9.95, \"centroid_row\": 126.3, \"centroid_col\": 127.8, \"pieces\": 7, \"major_m\": 13.4, \"minor_m\": 7.67, \"elongation\": 0.428, \"fill\": 0.575, \"circularity\": 0.467, \"touches_box_edge\": false, \"edge_contrast\": 1.3}}, {\"id\": \"c008\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 3.105, \"area_px\": 148, \"shape\": {\"circularity\": 1.0, \"fill\": 0.705, \"elongation\": 0.258, \"edge_sharpness\": 0.15, \"tile_rank\": 0, \"raw_score\": 14.643}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 6.05, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"pass\", \"value\": 0.116, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 9.0, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.789, \"area_px\": 460, \"area_m2\": 28.75, \"equiv_diameter_m\": 6.05, \"centroid_row\": 127.9, \"centroid_col\": 128.8, \"pieces\": 2, \"major_m\": 6.47, \"minor_m\": 5.72, \"elongation\": 0.116, \"fill\": 0.708, \"circularity\": 1.0, \"touches_box_edge\": false, \"edge_contrast\": 9.0}}, {\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.054, \"area_px\": 1888, \"shape\": {\"raw_score\": 7.345}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 24.57, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.31, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.6, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.688, \"area_px\": 7587, \"area_m2\": 474.19, \"equiv_diameter_m\": 24.57, \"centroid_row\": 128.2, \"centroid_col\": 129.0, \"pieces\": 4, \"major_m\": 29.83, \"minor_m\": 20.58, \"elongation\": 0.31, \"fill\": 0.744, \"circularity\": 0.461, \"touches_box_edge\": true, \"edge_contrast\": 1.6}}, {\"id\": \"c010\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 2.907, \"area_px\": 14, \"shape\": {\"circularity\": 1.0, \"fill\": 0.5, \"elongation\": 0.703, \"edge_sharpness\": 0.327, \"tile_rank\": 0, \"raw_score\": 12.744}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.43, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.435, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 3.22, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.754, \"area_px\": 74, \"area_m2\": 4.62, \"equiv_diameter_m\": 2.43, \"centroid_row\": 128.2, \"centroid_col\": 127.7, \"pieces\": 1, \"major_m\": 3.26, \"minor_m\": 1.84, \"elongation\": 0.435, \"fill\": 0.673, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 3.22}}, {\"id\": \"c011\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.859, \"area_px\": 1440, \"shape\": {\"raw_score\": 7.167}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.16, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.146, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"fail\", \"value\": 0.79, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.664, \"area_px\": 4142, \"area_m2\": 258.88, \"equiv_diameter_m\": 18.16, \"centroid_row\": 128.4, \"centroid_col\": 132.7, \"pieces\": 11, \"major_m\": 20.41, \"minor_m\": 17.44, \"elongation\": 0.146, \"fill\": 0.664, \"circularity\": 0.364, \"touches_box_edge\": false, \"edge_contrast\": 0.79}}, {\"id\": \"c012\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.611, \"area_px\": 576, \"shape\": {\"raw_score\": 6.943}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 9.66, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.183, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.4, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.645, \"area_px\": 1173, \"area_m2\": 73.31, \"equiv_diameter_m\": 9.66, \"centroid_row\": 131.4, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 10.92, \"minor_m\": 8.92, \"elongation\": 0.183, \"fill\": 0.699, \"circularity\": 0.711, \"touches_box_edge\": false, \"edge_contrast\": 3.4}}, {\"id\": \"c013\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.522, \"area_px\": 4080, \"shape\": {\"raw_score\": 6.862}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 35.01, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.302, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 2.63, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.762, \"area_px\": 15403, \"area_m2\": 962.69, \"equiv_diameter_m\": 35.01, \"centroid_row\": 128.0, \"centroid_col\": 129.5, \"pieces\": 5, \"major_m\": 42.23, \"minor_m\": 29.46, \"elongation\": 0.302, \"fill\": 0.743, \"circularity\": 0.329, \"touches_box_edge\": true, \"edge_contrast\": 2.63}}, {\"id\": \"c014\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.472, \"area_px\": 1648, \"shape\": {\"raw_score\": 6.817}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.2, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.221, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.84, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.699, \"area_px\": 2904, \"area_m2\": 181.5, \"equiv_diameter_m\": 15.2, \"centroid_row\": 129.3, \"centroid_col\": 116.1, \"pieces\": 5, \"major_m\": 19.08, \"minor_m\": 14.87, \"elongation\": 0.221, \"fill\": 0.553, \"circularity\": 0.428, \"touches_box_edge\": false, \"edge_contrast\": 2.84}}, {\"id\": \"c015\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.311, \"area_px\": 2240, \"shape\": {\"raw_score\": 6.67}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.23, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.596, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.79, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.844, \"area_px\": 4175, \"area_m2\": 260.94, \"equiv_diameter_m\": 18.23, \"centroid_row\": 128.3, \"centroid_col\": 119.1, \"pieces\": 2, \"major_m\": 29.82, \"minor_m\": 12.04, \"elongation\": 0.596, \"fill\": 0.488, \"circularity\": 0.674, \"touches_box_edge\": false, \"edge_contrast\": 3.79}}, {\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.108, \"area_px\": 1248, \"shape\": {\"raw_score\": 6.487}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 15.8, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.274, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 2.49, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.707, \"area_px\": 3139, \"area_m2\": 196.19, \"equiv_diameter_m\": 15.8, \"centroid_row\": 126.0, \"centroid_col\": 127.2, \"pieces\": 5, \"major_m\": 20.18, \"minor_m\": 14.65, \"elongation\": 0.274, \"fill\": 0.558, \"circularity\": 0.39, \"touches_box_edge\": true, \"edge_contrast\": 2.49}}, {\"id\": \"c017\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.036, \"area_px\": 1936, \"shape\": {\"raw_score\": 6.421}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.4, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.328, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.07, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.598, \"area_px\": 6308, \"area_m2\": 394.25, \"equiv_diameter_m\": 22.4, \"centroid_row\": 123.6, \"centroid_col\": 132.3, \"pieces\": 8, \"major_m\": 28.45, \"minor_m\": 19.1, \"elongation\": 0.328, \"fill\": 0.693, \"circularity\": 0.264, \"touches_box_edge\": true, \"edge_contrast\": 1.07}}, {\"id\": \"c018\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": 1.979, \"area_px\": 37, \"shape\": {\"circularity\": 1.0, \"fill\": 0.755, \"elongation\": 0.097, \"edge_sharpness\": 0.292, \"tile_rank\": 0, \"shadow_len_px\": 5.8, \"raw_score\": 25.265}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 3.36, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.165, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.37, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.688, \"area_px\": 142, \"area_m2\": 8.88, \"equiv_diameter_m\": 3.36, \"centroid_row\": 127.2, \"centroid_col\": 128.4, \"pieces\": 1, \"major_m\": 3.71, \"minor_m\": 3.1, \"elongation\": 0.165, \"fill\": 0.724, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 1.37}}, {\"id\": \"c019\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 1.895, \"area_px\": 3504, \"shape\": {\"raw_score\": 6.293}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 20.12, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.258, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.17, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.754, \"area_px\": 5086, \"area_m2\": 317.88, \"equiv_diameter_m\": 20.12, \"centroid_row\": 128.9, \"centroid_col\": 128.2, \"pieces\": 10, \"major_m\": 25.91, \"minor_m\": 19.23, \"elongation\": 0.258, \"fill\": 0.403, \"circularity\": 0.399, \"touches_box_edge\": false, \"edge_contrast\": 2.17}}]}"
+   },
+   {
+    "role": "assistant",
+    "content": "Seen the initial grades \u2014 now pulling the thresholds to judge each case.",
+    "tool_calls": [
+     {
+      "id": "call_e2cdbd2c-4688-4b8e-9439-18480603426f",
+      "type": "function",
+      "function": {
+       "name": "read_thresholds",
+       "arguments": "{}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_e2cdbd2c-4688-4b8e-9439-18480603426f",
+    "content": "{\"version\": 1, \"basis\": \"docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.\", \"match_radius_m\": 5.0, \"match_radius_m_by_kind\": {\"mark\": 20.0}, \"piece_kinds\": {\"hardware\": [\"lander\", \"backshell\", \"heat_shield\", \"rover\"], \"fabric\": [\"parachute\"], \"mark\": [\"crash_scar\", \"descent_stage\"]}, \"top_n\": 20, \"pass\": {\"min_recall_at_n\": 0.8, \"max_false_alarms_per_km2\": 2.0}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Thresholds noted \u2014 now collecting full evidence for every candidate.",
+    "tool_calls": [
+     {
+      "id": "call_30e7c3b3-1f3a-4105-ab40-c56efcae9ba7",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c000\"}"
+      }
+     },
+     {
+      "id": "call_dfb88519-df6e-4cae-8795-f1cf445cea7b",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c001\"}"
+      }
+     },
+     {
+      "id": "call_6708d5fe-e238-4251-b3ea-f2c5ecf80282",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c002\"}"
+      }
+     },
+     {
+      "id": "call_9fa60ed2-d088-4770-8cb5-c506e2026d14",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c003\"}"
+      }
+     },
+     {
+      "id": "call_df473c36-8b5b-4d85-ae9e-931bfc1981a9",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c004\"}"
+      }
+     },
+     {
+      "id": "call_c38fac6e-7947-4d24-83aa-f9ffbbed715c",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c005\"}"
+      }
+     },
+     {
+      "id": "call_6fa53162-fe7e-4dc0-8acd-de3b39af5d72",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c006\"}"
+      }
+     },
+     {
+      "id": "call_d7bc0ea3-1226-4a3d-a9bd-98bd280b6c1c",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c007\"}"
+      }
+     },
+     {
+      "id": "call_a6187280-645b-4bd5-94a5-d475b07d28b0",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c008\"}"
+      }
+     },
+     {
+      "id": "call_fe071027-658b-425a-ada8-0e28c4aa43b8",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c009\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_30e7c3b3-1f3a-4105-ab40-c56efcae9ba7",
+    "content": "{\"id\": \"c000\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 6.876, \"area_px\": 2464, \"shape\": {\"raw_score\": 10.81}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.6, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.12, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.71, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.52, \"area_px\": 4347, \"area_m2\": 271.69, \"equiv_diameter_m\": 18.6, \"centroid_row\": 118.4, \"centroid_col\": 118.5, \"pieces\": 21, \"major_m\": 20.21, \"minor_m\": 17.79, \"elongation\": 0.12, \"fill\": 0.625, \"circularity\": 0.354, \"touches_box_edge\": false, \"edge_contrast\": 2.71}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The enlarged centre shows a diffuse, irregular bright patch with granular fuzzy edges and no crisp geometric outline or adjacent shadow from a raised body.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The centre patch has irregular, diffuse fuzzy edges, no straight or crisp outline, and no cast shadow from a raised body, blending with the surrounding rippled dark ground.\"}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows only diffuse grainy ripple texture continuous with its surroundings, with no crisp outline or distinct shadow of a raised object.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_dfb88519-df6e-4cae-8795-f1cf445cea7b",
+    "content": "{\"id\": \"c001\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 6.752, \"area_px\": 3792, \"shape\": {\"raw_score\": 10.697}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 19.47, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.506, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 4.93, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.734, \"area_px\": 4762, \"area_m2\": 297.62, \"equiv_diameter_m\": 19.47, \"centroid_row\": 121.9, \"centroid_col\": 123.3, \"pieces\": 5, \"major_m\": 31.31, \"minor_m\": 15.48, \"elongation\": 0.506, \"fill\": 0.374, \"circularity\": 0.358, \"touches_box_edge\": true, \"edge_contrast\": 4.93}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The enlarged pixels show an irregular, mottled bright patch with diffuse edges and no crisp straight seams or cast shadow from a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The enlarged centre shows a diffuse, mottled bright patch with irregular feathered edges and similar sunlit patches nearby, with no straight edges, geometric outline, or distinct raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows an irregular, mottled bright clump with feathered fractal edges and no straight crisp outline, symmetry, or distinct raised-body shadow, consistent with a sunlit rough rock or frost outcrop.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_6708d5fe-e238-4251-b3ea-f2c5ecf80282",
+    "content": "{\"id\": \"c002\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.586, \"area_px\": 1840, \"shape\": {\"raw_score\": 9.64}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 24.31, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.155, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.94, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.594, \"area_px\": 7429, \"area_m2\": 464.31, \"equiv_diameter_m\": 24.31, \"centroid_row\": 131.4, \"centroid_col\": 127.3, \"pieces\": 13, \"major_m\": 26.78, \"minor_m\": 22.64, \"elongation\": 0.155, \"fill\": 0.832, \"circularity\": 0.41, \"touches_box_edge\": true, \"edge_contrast\": 1.94}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The central object is a saturated-white triangular facet with straight, crisp edges and an adjacent curved band, casting a distinct dark shadow and unlike the low-contrast irregular bumps in the reference terrain.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.78, \"reason\": \"The centre object is a sharply delimited, saturated-white angular patch with a smooth interior and a dark fold-like shadow line, unlike the mottled rocky texture in the reference image.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.75, \"reason\": \"The centre object has straight crisp edges, a flat uniformly bright triangular surface with a central fold, and a dark shadow along its right edge, sharply unlike the dark textured ground and reference terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_9fa60ed2-d088-4770-8cb5-c506e2026d14",
+    "content": "{\"id\": \"c003\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.117, \"area_px\": 1376, \"shape\": {\"raw_score\": 9.215}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.11, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.27, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.47, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.59, \"area_px\": 2870, \"area_m2\": 179.38, \"equiv_diameter_m\": 15.11, \"centroid_row\": 123.4, \"centroid_col\": 122.6, \"pieces\": 25, \"major_m\": 18.11, \"minor_m\": 13.22, \"elongation\": 0.27, \"fill\": 0.642, \"circularity\": 0.412, \"touches_box_edge\": false, \"edge_contrast\": 3.47}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_df473c36-8b5b-4d85-ae9e-931bfc1981a9",
+    "content": "{\"id\": \"c004\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.029, \"area_px\": 1168, \"shape\": {\"raw_score\": 9.135}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 11.93, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.446, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.58, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.629, \"area_px\": 1788, \"area_m2\": 111.75, \"equiv_diameter_m\": 11.93, \"centroid_row\": 125.1, \"centroid_col\": 125.6, \"pieces\": 12, \"major_m\": 16.64, \"minor_m\": 9.22, \"elongation\": 0.446, \"fill\": 0.542, \"circularity\": 0.374, \"touches_box_edge\": false, \"edge_contrast\": 3.58}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_c38fac6e-7947-4d24-83aa-f9ffbbed715c",
+    "content": "{\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.541, \"area_px\": 1328, \"shape\": {\"raw_score\": 7.786}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.4, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.047, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.34, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.715, \"area_px\": 6307, \"area_m2\": 394.19, \"equiv_diameter_m\": 22.4, \"centroid_row\": 127.7, \"centroid_col\": 125.3, \"pieces\": 6, \"major_m\": 23.37, \"minor_m\": 22.28, \"elongation\": 0.047, \"fill\": 0.894, \"circularity\": 0.488, \"touches_box_edge\": true, \"edge_contrast\": 0.34}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_6fa53162-fe7e-4dc0-8acd-de3b39af5d72",
+    "content": "{\"id\": \"c006\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.487, \"area_px\": 2048, \"shape\": {\"raw_score\": 7.737}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 17.02, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.479, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.6, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.633, \"area_px\": 3639, \"area_m2\": 227.44, \"equiv_diameter_m\": 17.02, \"centroid_row\": 126.0, \"centroid_col\": 123.8, \"pieces\": 45, \"major_m\": 25.47, \"minor_m\": 13.28, \"elongation\": 0.479, \"fill\": 0.471, \"circularity\": 0.136, \"touches_box_edge\": false, \"edge_contrast\": 2.6}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_d7bc0ea3-1226-4a3d-a9bd-98bd280b6c1c",
+    "content": "{\"id\": \"c007\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.106, \"area_px\": 416, \"shape\": {\"raw_score\": 7.391}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 9.95, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.428, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 1.3, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.57, \"area_px\": 1244, \"area_m2\": 77.75, \"equiv_diameter_m\": 9.95, \"centroid_row\": 126.3, \"centroid_col\": 127.8, \"pieces\": 7, \"major_m\": 13.4, \"minor_m\": 7.67, \"elongation\": 0.428, \"fill\": 0.575, \"circularity\": 0.467, \"touches_box_edge\": false, \"edge_contrast\": 1.3}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_a6187280-645b-4bd5-94a5-d475b07d28b0",
+    "content": "{\"id\": \"c008\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 3.105, \"area_px\": 148, \"shape\": {\"circularity\": 1.0, \"fill\": 0.705, \"elongation\": 0.258, \"edge_sharpness\": 0.15, \"tile_rank\": 0, \"raw_score\": 14.643}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 6.05, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"pass\", \"value\": 0.116, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 9.0, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.789, \"area_px\": 460, \"area_m2\": 28.75, \"equiv_diameter_m\": 6.05, \"centroid_row\": 127.9, \"centroid_col\": 128.8, \"pieces\": 2, \"major_m\": 6.47, \"minor_m\": 5.72, \"elongation\": 0.116, \"fill\": 0.708, \"circularity\": 1.0, \"touches_box_edge\": false, \"edge_contrast\": 9.0}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_fe071027-658b-425a-ada8-0e28c4aa43b8",
+    "content": "{\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.054, \"area_px\": 1888, \"shape\": {\"raw_score\": 7.345}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 24.57, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.31, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.6, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.688, \"area_px\": 7587, \"area_m2\": 474.19, \"equiv_diameter_m\": 24.57, \"centroid_row\": 128.2, \"centroid_col\": 129.0, \"pieces\": 4, \"major_m\": 29.83, \"minor_m\": 20.58, \"elongation\": 0.31, \"fill\": 0.744, \"circularity\": 0.461, \"touches_box_edge\": true, \"edge_contrast\": 1.6}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Halfway through the evidence haul \u2014 fetching the remaining candidates.",
+    "tool_calls": [
+     {
+      "id": "call_1bf38115-f129-4e81-8783-a0ea83a5569f",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c010\"}"
+      }
+     },
+     {
+      "id": "call_f3f3a0f5-4572-4348-9ee4-46ced0a27672",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c011\"}"
+      }
+     },
+     {
+      "id": "call_f4eae655-c365-4442-8db3-3a088feaf3f5",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c012\"}"
+      }
+     },
+     {
+      "id": "call_36b274d9-dc9c-44bb-99d2-ec93974a3ee7",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c013\"}"
+      }
+     },
+     {
+      "id": "call_481491da-da59-48a0-9a71-066af9e53b93",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c014\"}"
+      }
+     },
+     {
+      "id": "call_e26e83d9-592b-454d-a355-0d66e4d31f31",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c015\"}"
+      }
+     },
+     {
+      "id": "call_dc19da51-eb26-4db9-9abb-723a45f63df7",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c016\"}"
+      }
+     },
+     {
+      "id": "call_a01c67b8-1459-4118-b22d-85d6c6e4f20c",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c017\"}"
+      }
+     },
+     {
+      "id": "call_4d164cb3-e417-4547-83a5-22ea1b0ee7ba",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c018\"}"
+      }
+     },
+     {
+      "id": "call_175369f5-31e2-498e-b4b9-c93a221918be",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c019\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_1bf38115-f129-4e81-8783-a0ea83a5569f",
+    "content": "{\"id\": \"c010\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 2.907, \"area_px\": 14, \"shape\": {\"circularity\": 1.0, \"fill\": 0.5, \"elongation\": 0.703, \"edge_sharpness\": 0.327, \"tile_rank\": 0, \"raw_score\": 12.744}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.43, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.435, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 3.22, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.754, \"area_px\": 74, \"area_m2\": 4.62, \"equiv_diameter_m\": 2.43, \"centroid_row\": 128.2, \"centroid_col\": 127.7, \"pieces\": 1, \"major_m\": 3.26, \"minor_m\": 1.84, \"elongation\": 0.435, \"fill\": 0.673, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 3.22}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_f3f3a0f5-4572-4348-9ee4-46ced0a27672",
+    "content": "{\"id\": \"c011\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.859, \"area_px\": 1440, \"shape\": {\"raw_score\": 7.167}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.16, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.146, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"fail\", \"value\": 0.79, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.664, \"area_px\": 4142, \"area_m2\": 258.88, \"equiv_diameter_m\": 18.16, \"centroid_row\": 128.4, \"centroid_col\": 132.7, \"pieces\": 11, \"major_m\": 20.41, \"minor_m\": 17.44, \"elongation\": 0.146, \"fill\": 0.664, \"circularity\": 0.364, \"touches_box_edge\": false, \"edge_contrast\": 0.79}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_f4eae655-c365-4442-8db3-3a088feaf3f5",
+    "content": "{\"id\": \"c012\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.611, \"area_px\": 576, \"shape\": {\"raw_score\": 6.943}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 9.66, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.183, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.4, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.645, \"area_px\": 1173, \"area_m2\": 73.31, \"equiv_diameter_m\": 9.66, \"centroid_row\": 131.4, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 10.92, \"minor_m\": 8.92, \"elongation\": 0.183, \"fill\": 0.699, \"circularity\": 0.711, \"touches_box_edge\": false, \"edge_contrast\": 3.4}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_36b274d9-dc9c-44bb-99d2-ec93974a3ee7",
+    "content": "{\"id\": \"c013\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.522, \"area_px\": 4080, \"shape\": {\"raw_score\": 6.862}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 35.01, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.302, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 2.63, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.762, \"area_px\": 15403, \"area_m2\": 962.69, \"equiv_diameter_m\": 35.01, \"centroid_row\": 128.0, \"centroid_col\": 129.5, \"pieces\": 5, \"major_m\": 42.23, \"minor_m\": 29.46, \"elongation\": 0.302, \"fill\": 0.743, \"circularity\": 0.329, \"touches_box_edge\": true, \"edge_contrast\": 2.63}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_481491da-da59-48a0-9a71-066af9e53b93",
+    "content": "{\"id\": \"c014\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.472, \"area_px\": 1648, \"shape\": {\"raw_score\": 6.817}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.2, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.221, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.84, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.699, \"area_px\": 2904, \"area_m2\": 181.5, \"equiv_diameter_m\": 15.2, \"centroid_row\": 129.3, \"centroid_col\": 116.1, \"pieces\": 5, \"major_m\": 19.08, \"minor_m\": 14.87, \"elongation\": 0.221, \"fill\": 0.553, \"circularity\": 0.428, \"touches_box_edge\": false, \"edge_contrast\": 2.84}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_e26e83d9-592b-454d-a355-0d66e4d31f31",
+    "content": "{\"id\": \"c015\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.311, \"area_px\": 2240, \"shape\": {\"raw_score\": 6.67}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.23, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.596, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.79, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.844, \"area_px\": 4175, \"area_m2\": 260.94, \"equiv_diameter_m\": 18.23, \"centroid_row\": 128.3, \"centroid_col\": 119.1, \"pieces\": 2, \"major_m\": 29.82, \"minor_m\": 12.04, \"elongation\": 0.596, \"fill\": 0.488, \"circularity\": 0.674, \"touches_box_edge\": false, \"edge_contrast\": 3.79}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_dc19da51-eb26-4db9-9abb-723a45f63df7",
+    "content": "{\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.108, \"area_px\": 1248, \"shape\": {\"raw_score\": 6.487}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 15.8, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.274, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 2.49, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.707, \"area_px\": 3139, \"area_m2\": 196.19, \"equiv_diameter_m\": 15.8, \"centroid_row\": 126.0, \"centroid_col\": 127.2, \"pieces\": 5, \"major_m\": 20.18, \"minor_m\": 14.65, \"elongation\": 0.274, \"fill\": 0.558, \"circularity\": 0.39, \"touches_box_edge\": true, \"edge_contrast\": 2.49}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_a01c67b8-1459-4118-b22d-85d6c6e4f20c",
+    "content": "{\"id\": \"c017\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.036, \"area_px\": 1936, \"shape\": {\"raw_score\": 6.421}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.4, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.328, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.07, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.598, \"area_px\": 6308, \"area_m2\": 394.25, \"equiv_diameter_m\": 22.4, \"centroid_row\": 123.6, \"centroid_col\": 132.3, \"pieces\": 8, \"major_m\": 28.45, \"minor_m\": 19.1, \"elongation\": 0.328, \"fill\": 0.693, \"circularity\": 0.264, \"touches_box_edge\": true, \"edge_contrast\": 1.07}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_4d164cb3-e417-4547-83a5-22ea1b0ee7ba",
+    "content": "{\"id\": \"c018\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": 1.979, \"area_px\": 37, \"shape\": {\"circularity\": 1.0, \"fill\": 0.755, \"elongation\": 0.097, \"edge_sharpness\": 0.292, \"tile_rank\": 0, \"shadow_len_px\": 5.8, \"raw_score\": 25.265}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 3.36, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.165, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.37, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.688, \"area_px\": 142, \"area_m2\": 8.88, \"equiv_diameter_m\": 3.36, \"centroid_row\": 127.2, \"centroid_col\": 128.4, \"pieces\": 1, \"major_m\": 3.71, \"minor_m\": 3.1, \"elongation\": 0.165, \"fill\": 0.724, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 1.37}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_175369f5-31e2-498e-b4b9-c93a221918be",
+    "content": "{\"id\": \"c019\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 1.895, \"area_px\": 3504, \"shape\": {\"raw_score\": 6.293}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 20.12, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.258, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.17, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.754, \"area_px\": 5086, \"area_m2\": 317.88, \"equiv_diameter_m\": 20.12, \"centroid_row\": 128.9, \"centroid_col\": 128.2, \"pieces\": 10, \"major_m\": 25.91, \"minor_m\": 19.23, \"elongation\": 0.258, \"fill\": 0.403, \"circularity\": 0.399, \"touches_box_edge\": false, \"edge_contrast\": 2.17}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Evidence review complete \u2014 now recording verdicts for each candidate.",
+    "tool_calls": [
+     {
+      "id": "call_bf9de929-7996-4703-90b3-6ef89567c94f",
+      "type": "function",
+      "function": {
+       "name": "record_verdict",
+       "arguments": "{\"action\":\"lower\",\"cites\":[\"votes\",\"sam\"],\"id\":\"c000\",\"reason\":\"Three advisory votes describe a diffuse irregular patch with no crisp outline and mask has 21 pieces at confidence 0.52 with equiv diameter 18.6.\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_bf9de929-7996-4703-90b3-6ef89567c94f",
+    "content": "{\"recorded\": true, \"id\": \"c000\", \"action\": \"lower\"}"
+   },
+   {
+    "role": "assistant",
+    "content": "First verdict logged \u2014 now resolving the uncertain cases with extra checks.",
+    "tool_calls": [
+     {
+      "id": "call_364e3bc8-a4a3-40d7-bb1e-5e93ed152efc",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c001\",\"kind\":\"second_date_check\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_364e3bc8-a4a3-40d7-bb1e-5e93ed152efc",
+    "content": "{\"id\": \"c001\", \"kind\": \"second_date_check\", \"result\": {\"available\": false, \"note\": \"no second date in this run\"}}"
+   },
+   {
+    "role": "assistant",
+    "content": null,
+    "tool_calls": [
+     {
+      "id": "call_5548616c-79a0-436d-9e3c-3c6a4bac393b",
+      "type": "function",
+      "function": {
+       "name": "record_verdict",
+       "arguments": "{\"action\":\"lower\",\"cites\":[\"votes\",\"sam\",\"tests\"],\"id\":\"c001\",\"reason\":\"Three votes describe diffuse mottled patch with no straight edges and mask touches_box_edge true with equiv_diameter_m 19.47 and edge_contrast 4.93.\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_5548616c-79a0-436d-9e3c-3c6a4bac393b",
+    "content": "{\"recorded\": true, \"id\": \"c001\", \"action\": \"lower\"}"
+   },
+   {
+    "role": "assistant",
+    "content": null,
+    "tool_calls": [
+     {
+      "id": "call_841a955d-ac61-48f3-ab77-0e4b2bf7e973",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c002\",\"kind\":\"zoom_pass\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_841a955d-ac61-48f3-ab77-0e4b2bf7e973",
+    "content": "{\"id\": \"c002\", \"kind\": \"zoom_pass\", \"result\": {\"found\": true, \"confidence\": 0.488, \"area_px\": 6803, \"area_m2\": 425.19, \"equiv_diameter_m\": 23.27, \"centroid_row\": 256.0, \"centroid_col\": 257.2, \"pieces\": 19, \"major_m\": 27.55, \"minor_m\": 20.92, \"elongation\": 0.241, \"fill\": 0.595, \"circularity\": 0.224, \"touches_box_edge\": false, \"edge_contrast\": 2.0, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 23.27, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.241, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.0, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}}}"
+   },
+   {
+    "role": "assistant",
+    "content": null,
+    "tool_calls": [
+     {
+      "id": "call_7f1b376f-b523-42f9-a8c3-4e6e700d0a9f",
+      "type": "function",
+      "function": {
+       "name": "record_verdict",
+       "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"tests\",\"sam\"],\"id\":\"c002\",\"reason\":\"Advisory votes report hardware with confidences 0.72 and 0.78 and mask shows equiv_diameter_m 24.31 with edge_contrast 1.94.\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_7f1b376f-b523-42f9-a8c3-4e6e700d0a9f",
+    "content": "{\"recorded\": true, \"id\": \"c002\", \"action\": \"keep\"}"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "Strong hardware signals preserved \u2014 now adjudicating the remaining detections.",
+  "tool_calls": [
+   {
+    "id": "call_02b42b06-e0c4-44de-8975-f3430b3dff52",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"tests\",\"sam\"],\"id\":\"c003\",\"reason\":\"Tests show sam_size pass at 15.11 and sam_edge pass at 3.47 with mask confidence 0.59 and pieces 25.\"}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 18008,
+  "output_tokens": 2343
+ }
+}

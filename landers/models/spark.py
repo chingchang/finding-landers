@@ -30,6 +30,7 @@ from landers.models.wonder import GRADES
 ACTIONS = ("keep", "lower")
 CHECK_KINDS = ("zoom_pass", "second_date_check", "more_votes")
 MAX_TURNS = 12
+THRESHOLD_PROVENANCE = ("decided_by", "decided_on")
 
 SYSTEM_PROMPT = (
     "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. "
@@ -245,7 +246,9 @@ class EvidenceStore:
         return self.records.get(id) or {"error": f"unknown candidate id {id}"}
 
     def read_thresholds(self) -> dict:
-        return self.thresholds
+        """The thresholds without their provenance: who decided them and when is a date and a name, which
+        the leak guard refuses in a prompt (the first dry run on a real strip stopped on ``decided_on``)."""
+        return {k: v for k, v in self.thresholds.items() if k not in THRESHOLD_PROVENANCE}
 
     def request_check(self, id: str, kind: str) -> dict:
         if id not in self.records:

@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c9e850edfb23e0b046027fb7c261c0d98eec0753d59cef7c3d110e697478b25f",
+        "bytes": 76958
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9559ddcfcaad992a6748287b8e070d323cc1992e7923d664b9d4e539736a63f6",
+        "bytes": 8347
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0,
+   "place": "unknown",
+   "recognised": false,
+   "shows": "Grayscale orbital views of rough, mottled, irregularly ridged/hummocky planetary terrain with pervasive light-and-dark texture and no large distinct crater, channel, or other named landmark visible. A"
+  },
+  "raw": "{\"confidence\": 0, \"place\": \"unknown\", \"recognised\": false, \"shows\": \"Grayscale orbital views of rough, mottled, irregularly ridged/hummocky planetary terrain with pervasive light-and-dark texture and no large distinct crater, channel, or other named landmark visible. A\" }",
+  "input_tokens": 300,
+  "output_tokens": 892
+ }
+}

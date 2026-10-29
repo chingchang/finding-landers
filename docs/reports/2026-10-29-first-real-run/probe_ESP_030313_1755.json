@@ -1,0 +1,307 @@
+{
+ "run": "v02b_features_shape_v1sat",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Unknown",
+     "shows": "A dark, grainy surface covered in closely spaced, roughly parallel rippled or dune-like ridges, with a single bright, irregular, elongated white patch near the centre oriented diagonally.",
+     "confidence": 0.24,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "A grayscale overhead view of dark, grainy ground covered with closely spaced, wavy parallel ridges. Near the centre is a single bright, irregular, diffuse white patch. The enlarged centre view shows a",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "A dark grey, grainy and rippled/mottled textured ground filling the frame, with transverse wavy ridges most prominent in the upper-right. A single bright white, irregular amorphous patch is visible in",
+     "confidence": 0.25,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "A dark, grainy, almost black surface filling the frame. Near the centre is a large, very bright, roughly triangular patch with mottled, speckled internal brightness and irregular edges, brightest at a",
+     "confidence": 0.31,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": true,
+     "place": "Abydos site on Comet 67P/Churyumov-Gerasimenko, in shadow in a crack at the foot of a cliff",
+     "shows": "The Philae lander of ESA's Rosetta mission, photographed by Rosetta's OSIRIS camera in September 2016 after its location was found: its bright body and legs glinting against the dark, rough cometary [",
+     "confidence": 0.65,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    },
+    {
+     "recognised": true,
+     "place": "A steep scarp in the north polar layered deposits of Mars, imaged from orbit by NASA's Mars Reconnaissance Orbiter HiRISE camera",
+     "shows": "A martian avalanche in progress: bright, billowing clouds of fine ice and dust kicked up at the base of the dark polar cliff, with a second smaller avalanche cloud along the same scarp to the lower\u76f8\u5834",
+     "confidence": 0.6,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 2,
+    "max_confidence": 0.65,
+    "claims": [
+     "A steep scarp in the north polar layered deposits of Mars, imaged from orbit by NASA's Mars Reconnaissance Orbiter HiRISE camera",
+     "Abydos site on Comet 67P/Churyumov-Gerasimenko, in shadow in a crack at the foot of a cliff"
+    ]
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": true,
+     "place": "Jezero Crater, Mars, near the Mars 2020 [sealed site name] landing site",
+     "shows": "The bright conical backshell and its collapsed parachute from NASA's Mars 2020 / [sealed site name] descent system on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE",
+     "confidence": 0.5,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "A small, bright white, irregular roughly triangular object near the centre of a dark grey, mottled and grainy surface. The object is overexposed, with a darker diagonal band or shadow across its upper",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     }
+    },
+    {
+     "recognised": true,
+     "place": "Abydos site on Comet 67P/Churyumov\u2013Gerasimenko",
+     "shows": "The ESA Philae lander wedged in a dark crevice, with its bright body and legs visible, imaged by Rosetta's OSIRIS camera",
+     "confidence": 0.65,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 2,
+    "max_confidence": 0.65,
+    "claims": [
+     "Abydos site on Comet 67P/Churyumov\u2013Gerasimenko",
+     "Jezero Crater, Mars, near the Mars 2020 [sealed site name] landing site"
+    ]
+   }
+  }
+ ]
+}

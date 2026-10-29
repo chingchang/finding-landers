@@ -1,0 +1,128 @@
+# Recognition probes
+probe_ESP_017716_2485.json: strip ESP_017716_2485, 3 crops positions, 9 answers, 0 recognised
+  c000 no recorded piece within 20 px: 0 of 3 recognised, max confidence 0.0
+    recognised=False confidence=0.0 place='unknown'
+      shows='Grayscale orbital views of rough, mottled, irregularly ridged/hummocky planetary terrain with pervasive light-and-dark texture and no large distinct crater, channel, or other named landmark visible. A'
+    recognised=False confidence=0.15 place='unknown'
+      shows='Grayscale orbital views of rough, mottled, lumpy ground covered with short interconnected ridges, bumps and shallow depressions. Near the centre is a tiny few-pixel black-and-white speck that stands",'
+    recognised=False confidence=0.2 place='unknown'
+      shows='Grayscale, very grainy mottled ground texture filling the frame, with irregular dark pits and depressions scattered among lighter, interwoven, lumpy ridge-like areas. The 4x centre enlargement showsσσ'
+  c001 no recorded piece within 20 px: 0 of 3 recognised, max confidence 0.0
+    recognised=False confidence=0.0 place=''
+      shows='Grayscale, rough, mottled and knobbly planetary terrain filling the frame. Near the centre is a bright, irregular, high-albedo patch, with a smaller fainter bright patch to its southwest. The enlarged'
+    recognised=False confidence=0.22 place='Not recognised'
+      shows='Grayscale orbital view of rough, mottled planetary terrain covered in many small dark pits, bumps and irregular shadows. Near the centre, slightly below mid-frame, is an anomalously bright, overexosed'
+    recognised=False confidence=0.0 place='unknown'
+      shows='Grayscale overhead ground texture filling the frame. The surface is mottled and grainy, with numerous small irregular dark pits, shadows and lighter mounds/hummocks distributed across it, and no sharp'
+  c002 no recorded piece within 20 px: 0 of 3 recognised, max confidence 0.0
+    recognised=False confidence=0.18 place='Not identified'
+      shows='Grayscale, mottled and rough-textured ground filling the frame, with no horizon or distinct landmarks. Near the centre is a small, bright, irregular roughly triangular white patch, with an elongated,.'
+    recognised=False confidence=0.2 place='Unknown - not recognised'
+      shows='Grayscale orbital view of rough, mottled, irregularly cracked/polygonal planetary terrain. Near the centre is a small dark elongated patch immediately adjacent to a bright white patch, surrounded by p'
+    recognised=False confidence=0.24 place=''
+      shows='Grayscale, grainy orbital view of mottled, irregular polygonal/pitted planetary terrain filling the frame. Slightly west of centre is a small, intensely bright white patch with an adjacent dark, elong'
+probe_ESP_017716_2485_key.json: strip ESP_017716_2485, 3 crops positions, 3 answers, 0 recognised
+  c000 phoenix:lander: 0 of 1 recognised, max confidence 0.0
+    recognised=False confidence=0.2 place=''
+      shows='Grayscale orbital view of rough, mottled, high-contrast textured ground with irregular bumps, ridges and depressions across the frame. Near the centre is a single prominent, very dark, irregularly lob'
+  c001 phoenix:backshell: 0 of 1 recognised, max confidence 0.0
+    recognised=False confidence=0.25 place='unknown'
+      shows='A grayscale overhead view of rough, mottled, fractured-looking terrain. Near the centre is a very small irregular black patch with two bright white spots along its upper edge, enlarged in the second, '
+  c002 phoenix:heat_shield: 0 of 1 recognised, max confidence 0.0
+    recognised=False confidence=0.2 place='unknown'
+      shows="Grayscale, grainy, mottled rough ground covered throughout with intermingled light and dark speckles and short irregular markings. A small, very dark, irregular roughly rounded blob is just below the'"
+probe_ESP_030313_1755.json: strip ESP_030313_1755, 3 crops positions, 9 answers, 4 recognised
+  c000 no recorded piece within 20 px: 0 of 3 recognised, max confidence 0.0
+    recognised=False confidence=0.24 place='Unknown'
+      shows='A dark, grainy surface covered in closely spaced, roughly parallel rippled or dune-like ridges, with a single bright, irregular, elongated white patch near the centre oriented diagonally.'
+    recognised=False confidence=0.0 place=''
+      shows='A grayscale overhead view of dark, grainy ground covered with closely spaced, wavy parallel ridges. Near the centre is a single bright, irregular, diffuse white patch. The enlarged centre view shows a'
+    recognised=False confidence=0.25 place='Not recognised'
+      shows='A dark grey, grainy and rippled/mottled textured ground filling the frame, with transverse wavy ridges most prominent in the upper-right. A single bright white, irregular amorphous patch is visible in'
+  c001 no recorded piece within 20 px: 2 of 3 recognised, max confidence 0.65
+    recognised=False confidence=0.31 place=''
+      shows='A dark, grainy, almost black surface filling the frame. Near the centre is a large, very bright, roughly triangular patch with mottled, speckled internal brightness and irregular edges, brightest at a'
+    recognised=True confidence=0.65 place='Abydos site on Comet 67P/Churyumov-Gerasimenko, in shadow in a crack at the foot of a cliff'
+      shows="The Philae lander of ESA's Rosetta mission, photographed by Rosetta's OSIRIS camera in September 2016 after its location was found: its bright body and legs glinting against the dark, rough cometary ["
+    recognised=True confidence=0.6 place="A steep scarp in the north polar layered deposits of Mars, imaged from orbit by NASA's Mars Reconnaissance Orbiter HiRISE camera"
+      shows='A martian avalanche in progress: bright, billowing clouds of fine ice and dust kicked up at the base of the dark polar cliff, with a second smaller avalanche cloud along the same scarp to the lower相場'
+  c002 curiosity:parachute (6.8 px): 2 of 3 recognised, max confidence 0.65
+    recognised=True confidence=0.5 place='Jezero Crater, Mars, near the Mars 2020 [sealed site name] landing site'
+      shows="The bright conical backshell and its collapsed parachute from NASA's Mars 2020 / [sealed site name] descent system on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE"
+    recognised=False confidence=0.15 place=''
+      shows='A small, bright white, irregular roughly triangular object near the centre of a dark grey, mottled and grainy surface. The object is overexposed, with a darker diagonal band or shadow across its upper'
+    recognised=True confidence=0.65 place='Abydos site on Comet 67P/Churyumov–Gerasimenko'
+      shows="The ESA Philae lander wedged in a dark crevice, with its bright body and legs visible, imaged by Rosetta's OSIRIS camera"
+probe_ESP_030313_1755_key.json: strip ESP_030313_1755, 4 crops positions, 4 answers, 1 recognised
+  c000 curiosity:parachute: 1 of 1 recognised, max confidence 0.45
+    recognised=True confidence=0.45 place='Jezero Crater, Mars'
+      shows='The discarded supersonic parachute and backshell of the NASA Mars 2020 [sealed site name] rover, collapsed on the Martian surface and imaged from orbit by the HiRISE camera on the Mars Reconnaissance Orbjet'
+  c001 curiosity:backshell: 0 of 1 recognised, max confidence 0.0
+    recognised=False confidence=0.0 place='unknown'
+      shows='Grayscale orbital view of mottled, uneven planetary terrain. Near the centre is a small, irregular bright-white patch containing a compact black irregular mark. A diffuse darker smudge extends south/s'
+  c002 curiosity:heat_shield: 0 of 1 recognised, max confidence 0.0
+    recognised=False confidence=0.25 place=''
+      shows='Grayscale orbital view of mottled, cratered terrain with several soft-rimmed depressions. Near the centre is an irregular dark patch containing a small, bright, roughly circular white feature in the 4'
+  c003 curiosity:descent_stage: 0 of 1 recognised, max confidence 0.0
+    recognised=False confidence=0.15 place='Unknown'
+      shows='Grainy greyscale orbital view of mottled light-grey planetary ground with an irregular, fuzzy dark patch in the centre, extending to the left, and a separate small dark patch at upper left. Two pinpr何'
+
+# SAM
+sam_ESP_030313_1755.json: 20 records, found 20, limits {'max_elongation': 0.6, 'min_confidence': 0.3, 'min_edge_contrast': 1.0}
+confidence min 0.52 median 0.688 max 0.844
+touches_box_edge: 9 of 20
+mask pieces min 1 median 5.5 max 45
+outcomes {'sam_size': {'pass': 11, 'unsure': 9}, 'sam_shape': {'not run': 17, 'pass': 1, 'unsure': 2}, 'sam_edge': {'pass': 10, 'unsure': 9, 'fail': 1}}
+id branch box_px conf equiv_diameter_m elongation edge_contrast touches pieces tests | recorded piece
+  c000 sheet 115 0.52 18.6 0.12 2.71 False 21 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c001 sheet 141 0.734 19.47 0.506 4.93 True 5 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | -
+  c002 sheet 99 0.594 24.31 0.155 1.94 True 13 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | curiosity:parachute (6.8 px)
+  c003 sheet 85 0.59 15.11 0.27 3.47 False 25 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c004 sheet 79 0.629 11.93 0.446 3.58 False 12 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c005 sheet 85 0.715 22.4 0.047 0.34 True 6 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | -
+  c006 sheet 105 0.633 17.02 0.479 2.6 False 45 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c007 sheet 49 0.57 9.95 0.428 1.3 False 7 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c008 bright 29 0.789 6.05 0.116 9.0 False 2 {'sam_size': 'pass', 'sam_shape': 'pass', 'sam_edge': 'pass'} | -
+  c009 sheet 101 0.688 24.57 0.31 1.6 True 4 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | -
+  c010 bright 11 0.754 2.43 0.435 3.22 True 1 {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} | -
+  c011 sheet 87 0.664 18.16 0.146 0.79 False 11 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'fail'} | -
+  c012 sheet 57 0.645 9.66 0.183 3.4 False 1 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c013 sheet 147 0.762 35.01 0.302 2.63 True 5 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | -
+  c014 sheet 93 0.699 15.2 0.221 2.84 False 5 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c015 sheet 109 0.844 18.23 0.596 3.79 False 2 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+  c016 sheet 81 0.707 15.8 0.274 2.49 True 5 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | -
+  c017 sheet 101 0.598 22.4 0.328 1.07 True 8 {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} | -
+  c018 shadow 15 0.688 3.36 0.165 1.37 True 1 {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} | -
+  c019 sheet 135 0.754 20.12 0.258 2.17 False 10 {'sam_size': 'pass', 'sam_shape': 'not run', 'sam_edge': 'pass'} | -
+
+# Votes
+c000 sheet -: needs second look -> needs second look | kept: 1 natural, 0 hardware at or above 0.7
+    natural 0.62 tokens {'input': 497, 'output': 626} :: The enlarged centre shows a diffuse, irregular bright patch with granular fuzzy edges and no crisp geometric outline or adjacent shadow from a raised body.
+    natural 0.7 tokens {'input': 497, 'output': 646} :: The centre patch has irregular, diffuse fuzzy edges, no straight or crisp outline, and no cast shadow from a raised body, blending with the surrounding rippled dark ground.
+    natural 0.65 tokens {'input': 497, 'output': 841} :: The enlarged centre shows only diffuse grainy ripple texture continuous with its surroundings, with no crisp outline or distinct shadow of a raised object.
+c001 sheet -: needs second look -> needs second look | kept: 1 natural, 0 hardware at or above 0.7
+    natural 0.62 tokens {'input': 497, 'output': 858} :: The enlarged pixels show an irregular, mottled bright patch with diffuse edges and no crisp straight seams or cast shadow from a raised object.
+    natural 0.7 tokens {'input': 497, 'output': 670} :: The enlarged centre shows a diffuse, mottled bright patch with irregular feathered edges and similar sunlit patches nearby, with no straight edges, geometric outline, or distinct raised-body shadow.
+    natural 0.65 tokens {'input': 497, 'output': 883} :: The enlarged centre shows an irregular, mottled bright clump with feathered fractal edges and no straight crisp outline, symmetry, or distinct raised-body shadow, consistent with a sunlit rough rock or frost outcrop.
+c002 sheet curiosity:parachute (6.8 px): needs second look -> needs second look | kept: 0 natural, 3 hardware at or above 0.7
+    hardware 0.72 tokens {'input': 497, 'output': 870} :: The central object is a saturated-white triangular facet with straight, crisp edges and an adjacent curved band, casting a distinct dark shadow and unlike the low-contrast irregular bumps in the reference terrain.
+    hardware 0.78 tokens {'input': 497, 'output': 668} :: The centre object is a sharply delimited, saturated-white angular patch with a smooth interior and a dark fold-like shadow line, unlike the mottled rocky texture in the reference image.
+    hardware 0.75 tokens {'input': 497, 'output': 723} :: The centre object has straight crisp edges, a flat uniformly bright triangular surface with a central fold, and a dark shadow along its right edge, sharply unlike the dark textured ground and reference terrain.
+
+# Review
+stopped: turn cap after 12 turns; 5 verdicts; final none
+grades lowered: 2 {'c000': {'before': 'needs second look', 'after': 'likely natural', 'reviewed': True}, 'c001': {'before': 'needs second look', 'after': 'likely natural', 'reviewed': True}}
+  c000 -: lower cites ['votes', 'sam'] :: Three advisory votes describe a diffuse irregular patch with no crisp outline and mask has 21 pieces at confidence 0.52 with equiv diameter 18.6.
+  c001 -: lower cites ['votes', 'sam', 'tests'] :: Three votes describe diffuse mottled patch with no straight edges and mask touches_box_edge true with equiv_diameter_m 19.47 and edge_contrast 4.93.
+  c002 curiosity:parachute (6.8 px): keep cites ['votes', 'tests', 'sam'] :: Advisory votes report hardware with confidences 0.72 and 0.78 and mask shows equiv_diameter_m 24.31 with edge_contrast 1.94.
+  c003 -: keep cites ['tests', 'sam'] :: Tests show sam_size pass at 15.11 and sam_edge pass at 3.47 with mask confidence 0.59 and pieces 25.
+  c004 -: keep cites ['tests', 'sam'] :: Tests show sam_size pass at 11.93 and sam_edge pass at 3.58 with mask confidence 0.629 and pieces 12.
+checks ordered: [('c001', 'second_date_check', 'ran'), ('c002', 'zoom_pass', 'ran'), ('c005', 'zoom_pass', 'ran')]
+tool calls: {'list_candidates': 1, 'read_thresholds': 1, 'get_candidate': 20, 'record_verdict': 5, 'request_check': 3}
+
+# Ledger
+caps {'sam': 80, 'wonder': 100, 'spark': 40}; total_cost_usd 1.1896
+  sam: units 22 ok 22 failed 0 refused 0 tokens in 0 out 0 cost_usd 0.055
+  wonder: units 34 ok 34 failed 0 refused 0 tokens in 11973 out 39408 cost_usd 0.8361
+  spark: units 12 ok 12 failed 0 refused 0 tokens in 172476 out 19503 cost_usd 0.2985
+published files 76, redactions 10 in ['probe_ESP_030313_1755.json', 'probe_ESP_030313_1755_key.json', 'model_recordings/wonder_01e0e4f56dbc97a59f73f806.json', 'model_recordings/wonder_6bcd6310a582711b49f23cad.json']
