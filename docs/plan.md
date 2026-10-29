@@ -47,23 +47,25 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
-8. [done, see docs/reports/2026-10-29-tuning-loop-2.md; the first session is docs/reports/2026-10-29-tuning-loop.md] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md per idea that
-   did not move the score; tuning tiles only. The scoreboard is transplant injection as item 7 left it
-   (`scripts/transplant.py` with the same tile list, seed and command as out/transplant_t1; out/transplant_t1
-   is the number to beat) plus the 18-piece key under thresholds v1 and landers/shape_v1.json. A change is
-   kept only if: hardware recall@20 on the key does not drop, injection recall at 2 per km2 does not drop,
-   no recorded piece leaves the top 20, and any new rule passes at most 5 percent of same-branch false
-   alarms on the tuning strips; a rule's pass fraction and gain are re-measured and the rules file
-   re-versioned whenever the detector changes. Rules and thresholds the loop wants adopted go to
-   docs/proposals/, adopted by a person; the loop may add rules to a new landers/shape_v<n>.json only as a
-   proposal copy under docs/proposals/, never in place.
-   Second session, done: (a) the leave-one-site-out check (`scripts/loso.py`): saturated, shadow_strong and
-   dark_shadow hold; tile_top's lift holds but its pass fraction is a property of the ground, withdrawal
-   proposed in docs/proposals/shape-rules-v3-loso.md (shape_v3.json) for a person before the frozen tag.
-   (b) Detector v0.3 records features in the dark branch and tile_count; every rule re-measured to the same
-   numbers. (c) The shape_v2 reference is set (out/transplant_t3) and two ideas were reverted. Left for a
-   later session, if time: a second injection seed; leave-one-site-out on the rules' thresholds, not only
-   their gains; the sheet flatness threshold.
+8. [ ] Tuning loop, third and last session, detector changes only, then the freeze. Two levers, each judged by
+   scripts/tune.py on both boards against the shape_v3 reference (rerun the key pass and the transplant command
+   once with shape_v3 to set it), each a fresh key pass and transplant run, kept only under the item 8 bar
+   (hardware recall@20 and injection recall may not drop, no recorded piece leaves the top 20, rules re-measured
+   and re-versioned after any detector change; proposals to docs/proposals/, adopted by a person):
+   (a) Calibration per terrain. One calibrated threshold means 0.01 candidates per km2 on the Phoenix strips
+   and 11 to 16 on Schiaparelli (docs/reports/2026-10-28-first-score.md). Fit the calibration so that a
+   calibrated score means the same false-alarm rate on every strip: per strip from its own candidate
+   population (the recorded pieces are a negligible fraction of it), or per terrain class if that is more
+   stable under leave-one-site-out. Measure what it does to the Schiaparelli heat shield and crash scar
+   (ranks 31,800 and 51,700 among that strip's dark candidates) and to the Phoenix pieces.
+   (b) The fabric branch. Fabric is 1 of 4 on the key (the Schiaparelli parachute found only as a bright
+   fragment at rank 760, Spirit's at 109, Pathfinder's not at all) and 10 of 24 on injection. Revisit the
+   sheet branch's flatness test and its handling of saturated and dust-reddened canopies against the four
+   recorded parachutes and the injected fabric; the earlier finding that saturated pixels as data broke the
+   flatness test is in docs/experiments.md.
+   Then stop: write the report, and leave the detector as it stands for the frozen tag. The earlier sessions
+   are docs/reports/2026-10-29-tuning-loop.md and -2.md; their leftovers (second injection seed,
+   leave-one-site-out on thresholds, sheet flatness threshold) fold into (b) or the backlog.
 9. [done, see docs/reports/2026-10-28-model-layer.md] Model layer, built blind, no key and no network: read docs/models.md first. One interface for
    SAM 3.1, Muse Wonder and Muse Spark with a fake backend (deterministic) and a recorded backend; the
    ledger with hard caps and cost estimate; SAM box-prompt requests and mask parsing feeding the size and
@@ -140,3 +142,6 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 - 2026-10-29 (02:40): landers/shape_v2.json adopted, all three new rules (docs/proposals/shape-rules-v2.md): key
   8 of 18, hardware 7 of 12, injection hardware 35 of 72, fabric 9 of 24. tile_top is conditional on the
   leave-one-site-out check written into item 8.
+- 2026-10-29 (08:20): landers/shape_v3.json adopted (tile_top withdrawn after the leave-one-site-out check). One
+  more tuning session, detector changes only (calibration per terrain, the fabric branch), then the frozen tag
+  tonight; the search runs on the frozen detector from Thursday night.

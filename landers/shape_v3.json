@@ -1,0 +1,73 @@
+{
+  "version": "shape_v3",
+  "basis": "Adopted 2026-10-29 08:20 from docs/proposals/shape-rules-v3-loso.md: landers/shape_v2.json with tile_top withdrawn. The leave-one-site-out check (out/loso/shape_v2/loso_shape_v2.json, scripts/loso.py) showed every rule's lift holds on sites it was not fitted on, and that tile_top's pass fraction is a property of the ground (0.006 to 0.454 by strip, over the 5 percent bar on five of eight strips), so what it rewards changes with the terrain. Withdrawing it leaves the key at 8 of 18 (hardware 7 of 12) and moves injection hardware from 35 to 32 of 72, fabric from 9 to 10 of 24. The three remaining rules are physical tests with stable pass fractions. Re-measure and re-version whenever the detector changes.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": [
+        "bright",
+        "shadow"
+      ],
+      "conditions": [
+        {
+          "feature": "saturated_px",
+          "op": ">=",
+          "threshold": 1
+        }
+      ],
+      "false_alarm_pass_fraction": 0.003,
+      "gain": 2.524,
+      "basis": "landers/shape_v1.json: at least one pixel at the sensor's saturation; natural ground at HiRISE exposure rarely saturates, bright hardware often does"
+    },
+    {
+      "name": "shadow_strong",
+      "branches": [
+        "bright"
+      ],
+      "conditions": [
+        {
+          "feature": "two_sided",
+          "op": ">=",
+          "threshold": 4.0
+        },
+        {
+          "feature": "shadow_height_m",
+          "op": "in",
+          "threshold": [
+            0.5,
+            3.0
+          ]
+        }
+      ],
+      "false_alarm_pass_fraction": 0.00093,
+      "gain": 3.03,
+      "basis": "dark on the anti-sun side only, far beyond what polygon troughs and slopes produce, with a length that reads as a 0.5 to 3 m object; bright branch only, the shadow branch already selects on this"
+    },
+    {
+      "name": "dark_shadow",
+      "branches": [
+        "dark_compact"
+      ],
+      "conditions": [
+        {
+          "feature": "two_sided",
+          "op": ">=",
+          "threshold": 3.5
+        },
+        {
+          "feature": "shadow_height_m",
+          "op": "in",
+          "threshold": [
+            0.5,
+            3.0
+          ]
+        }
+      ],
+      "false_alarm_pass_fraction": 0.0015,
+      "gain": 2.825,
+      "basis": "a dark object that still casts a shadow of the right length stands above the ground; a dark patch in the ground does not"
+    }
+  ],
+  "adopted_by": "Ching Chang",
+  "adopted_on": "2026-10-29"
+}
