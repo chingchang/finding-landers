@@ -14,11 +14,11 @@
       "pieces": [
         {
           "piece": "crash_scar",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_048041_1780",
+          "line": 26449,
+          "sample": 17484,
+          "size_m": 20.0,
+          "note": "dark impact patch about 20 x 12 m with the curved dark arc to its upper right, identical in shape to the caption's enlargement; parachute 900 m south, heat shield 1.34 km east. caption registration: the HiRISE annotated image of this strip (ESP_048041_1780-2.jpg) registered to a 3.6 km half-res region by SIFT, 152 inliers, rotation -4.3 deg"
         },
         {
           "piece": "parachute",
@@ -39,10 +39,10 @@
         {
           "piece": "heat_shield",
           "strip": "ESP_048041_1780",
-          "line": 26038,
-          "sample": 23210,
+          "line": 24170,
+          "sample": 22350,
           "size_m": 2.4,
-          "note": "dark round object about 3.5 m with a bright crescent on its east side, 1.43 km east and 100 m north of the impact patch; matches ESA's 1.4 km east; lower confidence than the other three"
+          "note": "bright debris (28 px, z 13.6) inside an 80 px dark halo, the caption's top-right inset; 1.34 km east of the scar. The earlier pick at line 26038 sample 23210 was a bright-rimmed crater and was wrong. caption registration: the HiRISE annotated image of this strip (ESP_048041_1780-2.jpg) registered to a 3.6 km half-res region by SIFT, 152 inliers, rotation -4.3 deg"
         }
       ]
     },
@@ -107,19 +107,19 @@
       "pieces": [
         {
           "piece": "lander",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_017716_2485",
+          "line": 23810,
+          "sample": 32209,
+          "size_m": 2.5,
+          "note": "dark 6 px spot with a faint bright edge, 7 px from the registered caption position; the caption says the lander is dust-covered on this date with its shadows mostly absent. caption registration: the HiRISE captioned image of this strip (ESP_017716_2485_cut.jpg, main panel from PSP_009290_2485) registered to a 3 km half-res region by SIFT, 134 inliers, rotation 116.8 deg; box centres mapped to strip pixels, then refined to the nearest compact blob"
         },
         {
           "piece": "backshell",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_017716_2485",
+          "line": 23504,
+          "sample": 30930,
+          "size_m": 2.6,
+          "note": "bright 12 px object with a 70 px saturated-black shadow; registration puts the caption's backshell 4 px from here. Was listed as the possible lander. caption registration: the HiRISE captioned image of this strip (ESP_017716_2485_cut.jpg, main panel from PSP_009290_2485) registered to a 3 km half-res region by SIFT, 134 inliers, rotation 116.8 deg; box centres mapped to strip pixels, then refined to the nearest compact blob"
         },
         {
           "piece": "parachute",
@@ -131,11 +131,11 @@
         },
         {
           "piece": "heat_shield",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_017716_2485",
+          "line": 24188,
+          "sample": 31505,
+          "size_m": 2.6,
+          "note": "dark 5 px spot 16 px from the registered caption position; the caption shows it as a tiny dark dot on this date. caption registration: the HiRISE captioned image of this strip (ESP_017716_2485_cut.jpg, main panel from PSP_009290_2485) registered to a 3 km half-res region by SIFT, 134 inliers, rotation 116.8 deg; box centres mapped to strip pixels, then refined to the nearest compact blob"
         }
       ]
     },
@@ -243,6 +243,6 @@
     }
   ],
   "filled_on": "2026-10-28",
-  "filled_by": "Ching Chang, by eye from raw-pixel crops",
-  "pieces_filled": 9
+  "filled_by": "Ching Chang, by eye from raw-pixel crops; Schiaparelli and Phoenix positions checked by registering the HiRISE captioned images to the strips",
+  "pieces_filled": 13
 }
