@@ -74,6 +74,89 @@ def test_branches_find_planted_objects():
     assert all(c.grade == "needs second look" for c in cands)
 
 
+def test_shadow_side_features_on_planted_object():
+    win, lbl, _ = synthetic_tile()
+    cands = detect.detect_tile(win, lbl, detect.DetectorConfig())
+    (c,) = [c for c in cands if c.branch in ("bright", "shadow") and abs(c.row - 1200) < 3 and abs(c.col - 2300) < 3]
+    e = c.extra
+    assert e["two_sided"] > 1.0 and e["anti_sun_min_z"] < -2.0 and e["sun_min_z"] > -2.0
+    assert 0.5 < e["shadow_height_m"] < 3.0 and e["shadow_run_px"] > 0
+    assert e["isolation_px"] > 50 and e["saturated_px"] == 0
+    assert all("isolation_px" in k.extra and "two_sided" in k.extra for k in cands if k.branch == "dark_compact")
+
+
+def test_saturated_object_is_data_not_a_hole():
+    """v0.1 masked saturated pixels as no-data and lost saturated hardware; v0.2 keeps them."""
+    rng = np.random.default_rng(3)
+    size = 512
+    img = 500 + 20 * rng.standard_normal((size, size)).astype(np.float32)
+    data = np.clip(img, 1, 1021).astype(np.uint16)
+    yy, xx = np.mgrid[:size, :size]
+    data[(yy - 250) ** 2 + (xx - 250) ** 2 <= 3**2] = 1023  # a 1.5 m saturated object
+    win = Window(0, 0, data, np.ones_like(data, dtype=bool) & (data < 1022))
+    lbl = fake_label()
+    found = [
+        c
+        for c in detect.detect_tile(win, lbl, detect.DetectorConfig())
+        if abs(c.row - 250) < 3 and abs(c.col - 250) < 3
+    ]
+    assert found and found[0].branch in ("bright", "shadow") and found[0].extra["saturated_px"] >= 20
+    legacy = detect.detect_tile(win, lbl, detect.DetectorConfig(saturated_is_data=False))
+    assert not [c for c in legacy if c.branch in ("bright", "shadow") and abs(c.row - 250) < 3 and abs(c.col - 250) < 3]
+
+
+def test_partly_saturated_sheet_is_still_a_sheet():
+    """A flat bright sheet with a saturated patch inside: the sheet branch keeps saturated pixels out of its
+    block means (the v0.1 mask), so the sheet stays flat and is found; with them in, the patch makes a peak and
+    the flatness test drops it. This is the recorded Schiaparelli canopy in miniature."""
+    rng = np.random.default_rng(4)
+    size = 512
+    img = 500 + 20 * rng.standard_normal((size, size)).astype(np.float32)
+    data = np.clip(img, 1, 1021).astype(np.uint16)
+    data[226:274, 226:274] = 620  # a 12 m square sheet
+    yy, xx = np.mgrid[:size, :size]
+    data[(yy - 232) ** 2 + (xx - 268) ** 2 <= 3**2] = 1023  # a saturated patch inside it, off centre
+    win = Window(0, 0, data, (data < 1022))
+    lbl = fake_label()
+
+    def sheets(cfg):
+        return [c for c in detect.detect_tile(win, lbl, cfg) if c.branch == "sheet" and abs(c.row - 250) < 12 and abs(c.col - 250) < 12]
+
+    found = sheets(detect.DetectorConfig())
+    assert found and found[0].extra["flatness"] >= detect.DetectorConfig().sheet_flatness
+    assert not sheets(detect.DetectorConfig(sheet_saturated_is_data=True))
+
+
+def test_finish_tile_rules_match_rescore(tmp_path):
+    import json
+
+    from landers.shape import ShapeRules, apply_rules_json
+
+    rules_path = tmp_path / "rules.json"
+    rules_path.write_text(
+        json.dumps(
+            {
+                "version": "shape_t",
+                "rules": [
+                    {
+                        "name": "shadow",
+                        "branches": ["bright", "shadow"],
+                        "conditions": [{"feature": "two_sided", "op": ">=", "threshold": 1.0}],
+                        "gain": 1.5,
+                    }
+                ],
+            }
+        )
+    )
+    win, lbl, _ = synthetic_tile()
+    cfg = detect.DetectorConfig(shape_rules=str(rules_path))
+    raw = detect.detect_tile(win, lbl, cfg)
+    ruled = detect.finish_tile(raw, cfg, None, detect.load_shape_rules(cfg))
+    again = [apply_rules_json(c.to_json(), ShapeRules.load(rules_path)) for c in raw]
+    assert [round(c.score, 3) for c in ruled] == [round(float(c["score"]), 3) for c in again]
+    assert any(c.extra.get("shape_pass") for c in ruled)
+
+
 def test_no_shadow_branch_when_sun_is_high():
     win, lbl, _ = synthetic_tile()
     lbl = dataclasses.replace(lbl, incidence_deg=31.0)

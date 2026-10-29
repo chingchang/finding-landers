@@ -148,9 +148,7 @@ def main(argv=None) -> int:
             "n_above_operating_threshold": above,
             "above_per_km2": None if above is None or area <= 0 else round(above / area, 2),
             "pieces_above_operating_threshold": sum(
-                1
-                for p in pieces
-                if p["strip"] == sid and p["matched"] and p["matched"]["above_operating_threshold"]
+                1 for p in pieces if p["strip"] == sid and p["matched"] and p["matched"]["above_operating_threshold"]
             ),
             "pieces_recorded": sum(1 for p in pieces if p["strip"] == sid),
         }
@@ -171,7 +169,9 @@ def main(argv=None) -> int:
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(out, indent=1))
 
-    print(f"{'site':13s} {'piece':14s} {'rank':>6s} {'local':>6s} {'brrank':>6s} {'score':>6s} {'raw':>6s}  branch   >op  nearest(m, branch, score)")
+    print(
+        f"{'site':13s} {'piece':14s} {'rank':>6s} {'local':>6s} {'brrank':>6s} {'score':>6s} {'raw':>6s}  branch   >op  nearest(m, branch, score)"
+    )
     for p in pieces:
         m = p["matched"]
         nn = p["nearest_any"]
@@ -182,13 +182,17 @@ def main(argv=None) -> int:
                 f"{m['score']:6.2f} {str(m['raw_score']):>6s}  {m['branch']:12s} {str(m['above_operating_threshold']):5s} {near}"
             )
         else:
-            print(f"{p['site']:13s} {p['piece']:14s} {'-':>6s} {'-':>6s} {'-':>6s} {'-':>6s} {'-':>6s}  {'-':12s} {'-':5s} {near}")
+            print(
+                f"{p['site']:13s} {p['piece']:14s} {'-':>6s} {'-':>6s} {'-':>6s} {'-':>6s} {'-':>6s}  {'-':12s} {'-':5s} {near}"
+            )
     print()
     print("recall at N (whole-strip rank):", {n: f"{v['found']}/{v['of']}" for n, v in recall_at.items()})
     print()
     print(f"{'strip':16s} {'cands':>7s} {'>op':>6s} {'>op/km2':>8s} {'pieces>op':>10s}")
     for sid, s in per_strip.items():
-        print(f"{sid:16s} {s['n_candidates']:7d} {str(s['n_above_operating_threshold']):>6s} {str(s['above_per_km2']):>8s} {s['pieces_above_operating_threshold']:4d}/{s['pieces_recorded']}")
+        print(
+            f"{sid:16s} {s['n_candidates']:7d} {str(s['n_above_operating_threshold']):>6s} {str(s['above_per_km2']):>8s} {s['pieces_above_operating_threshold']:4d}/{s['pieces_recorded']}"
+        )
     print(f"\nwritten: {a.out}")
     return 0
 

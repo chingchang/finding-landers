@@ -15,6 +15,11 @@ Branches run per tile; every candidate carries the branch that made it:
 
 Grades here can only be "needs second look" (passes a physical test on one date) or "likely natural";
 "candidate" needs a second date, which is the persistence step and not part of this module.
+
+v0.2 (plan item 6): saturated pixels are data at the top of the range rather than no-data in the small-object branches (v0.1 lost
+saturated hardware to the no-data margin); every bright, shadow and dark_compact candidate carries the
+shadow-side, isolation and saturation features of ``landers.shape``; and a versioned rules file may add to
+the calibrated score of candidates that pass a feature test (``finish_tile``).
 """
 
 from __future__ import annotations
@@ -27,17 +32,28 @@ from scipy import ndimage
 
 from landers import geo, shape
 from landers.label import StripLabel
-from landers.strip import Strip, Window
+from landers.strip import SATURATED, Strip, Window
 
 GRADE_LOOK = "needs second look"
 
 
 @dataclass
 class DetectorConfig:
-    version: str = "v0.1"
+    version: str = "v0.2"
     frozen: bool = False
     calibration: str | None = None  # path of a landers.calibrate JSON; scores are then on the common scale
     min_calibrated_score: float = -3.0  # with a calibration, drop candidates rarer than 1000 false alarms/km2
+    shape_rules: str | None = None  # path of a landers.shape rules JSON; passed rules add to the calibrated score
+    # v0.2: saturated pixels (1022, 1023) are data at the top of the range, not holes. v0.1 masked them with
+    # the no-data margin, which hid saturated hardware (bright metal, canopies) from every branch.
+    saturated_is_data: bool = True
+    # The sheet branch keeps v0.1's mask: its test is flatness (mean z over peak z), and a saturated pixel is a
+    # ceiling, not a brightness, so a partly saturated canopy looks peaked and fails the test when saturated
+    # pixels enter the block means (measured on a recorded canopy: flatness 0.46 kept with the v0.1 mask,
+    # 0.35 dropped with saturated pixels as data; out/shape_v1/sheet_saturation_schiaparelli_parachute.txt).
+    # A fully saturated sheet is then invisible to this branch; that case waits for transplant injection.
+    sheet_saturated_is_data: bool = False
+    band_dark_z: float = -2.0  # a band mean below this counts as shadow in shape.shadow_features
     tile: int = 2048
     overlap: int = 128
     background_px: int = 65  # annulus outer size for the local mean and std
@@ -224,22 +240,24 @@ def block_mean(data: np.ndarray, valid: np.ndarray, n: int):
 
 def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candidate]:
     scale = lbl.scale_m
-    z = local_z(win.data, win.valid, cfg.background_px, cfg.smooth_sigma, cfg.inner_px)
+    sat = win.data >= SATURATED
+    usable = (win.valid | sat) if cfg.saturated_is_data else win.valid
+    z = local_z(win.data, usable, cfg.background_px, cfg.smooth_sigma, cfg.inner_px)
     grad = shape.gradient_magnitude(z)
-    bright, b_lab = components(
-        z > cfg.z_bright, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px
-    )
+    bright, b_lab = components(z > cfg.z_bright, z, area_range_px(cfg.bright_size_m, scale), usable, cfg.edge_margin_px)
     b_slices = ndimage.find_objects(b_lab) if bright else []
     small_dark, _ = components(
-        z < cfg.z_shadow_dark, z, area_range_px(cfg.bright_size_m, scale), win.valid, cfg.edge_margin_px
+        z < cfg.z_shadow_dark, z, area_range_px(cfg.bright_size_m, scale), usable, cfg.edge_margin_px
     )
     dark_compact, dc_lab = components(
-        z < cfg.z_dark_compact, z, area_range_px(cfg.dark_compact_size_m, scale), win.valid, cfg.edge_margin_px
+        z < cfg.z_dark_compact, z, area_range_px(cfg.dark_compact_size_m, scale), usable, cfg.edge_margin_px
     )
-    dark, _ = components(z < cfg.z_dark, z, area_range_px(cfg.dark_size_m, scale), win.valid, cfg.edge_margin_px)
+    dark, _ = components(z < cfg.z_dark, z, area_range_px(cfg.dark_size_m, scale), usable, cfg.edge_margin_px)
     dc_slices = ndimage.find_objects(dc_lab) if dark_compact else []
     b_rank = shape.tile_ranks([k.peak for k in bright])
     dc_rank = shape.tile_ranks([k.peak for k in dark_compact])
+    b_iso = shape.isolation([(k.row, k.col) for k in bright])
+    dc_iso = shape.isolation([(k.row, k.col) for k in dark_compact])
 
     out: list[Candidate] = []
     can_shadow = lbl.incidence_deg >= cfg.shadow_min_incidence_deg
@@ -248,9 +266,17 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
     lmax = geo.shadow_length_px(lbl, cfg.shadow_heights_m[1])
     dark_pts = np.array([(k.row, k.col) for k in small_dark]) if small_dark else np.zeros((0, 2))
 
+    def side_feats(k: Component) -> dict:
+        return shape.shadow_features(
+            z, k.row, k.col, k.radius, drow, dcol, lmax, scale, lbl.incidence_deg, cfg.band_dark_z
+        )
+
     for i, k in enumerate(bright):
         feats = shape.component_features(b_lab, k.label, z, grad, b_slices[k.label - 1])
         feats["tile_rank"] = b_rank[i]
+        feats["isolation_px"] = b_iso[i]
+        feats["saturated_px"] = shape.saturated_count(sat, b_lab, k.label, b_slices[k.label - 1])
+        feats.update(side_feats(k))
         cand = Candidate(win.row0 + k.row, win.col0 + k.col, k.peak, "bright", GRADE_LOOK, k.area, dict(feats))
         if can_shadow and len(dark_pts):
             along, across = _along_across(dark_pts, k.row, k.col, drow, dcol)
@@ -281,6 +307,8 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
             continue
         extra = shape.component_features(dc_lab, k.label, z, grad, dc_slices[k.label - 1])
         extra["tile_rank"] = dc_rank[i]
+        extra["isolation_px"] = dc_iso[i]
+        extra.update(side_feats(k))
         score = k.peak
         if can_shadow:
             align = _principal_axis_alignment(dc_lab, k, drow, dcol, dc_slices[k.label - 1])
@@ -295,7 +323,8 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
     # sheets at reduced resolution
     n = cfg.sheet_reduce
     if min(win.shape) >= n * cfg.sheet_background_px:
-        d_r, v_r = block_mean(win.data, win.valid, n)
+        sheet_usable = usable if cfg.sheet_saturated_is_data else win.valid
+        d_r, v_r = block_mean(win.data, sheet_usable, n)
         z_r = local_z(d_r, v_r, cfg.sheet_background_px, cfg.sheet_sigma, cfg.sheet_inner_px, margin=2)
         sheets, _ = components(
             z_r > cfg.z_sheet, z_r, area_range_px(cfg.sheet_size_m, scale * n), v_r, max(2, cfg.edge_margin_px // n)
@@ -358,20 +387,33 @@ def load_calibration(cfg: DetectorConfig):
     return Calibration.load(cfg.calibration)
 
 
+def load_shape_rules(cfg: DetectorConfig):
+    return shape.ShapeRules.load(cfg.shape_rules) if cfg.shape_rules else None
+
+
+def finish_tile(cands: list[Candidate], cfg: DetectorConfig, cal, rules) -> list[Candidate]:
+    """Calibrate, drop what is below the floor, then add the shape-rule gains (in that order, so the
+    floor is a property of the branch score alone and ``scripts/rescore.py`` can reproduce the rules)."""
+    if cal is not None:
+        from landers.calibrate import apply
+
+        cands = [c for c in apply(cands, cal) if c.score >= cfg.min_calibrated_score]
+    if rules is not None:
+        cands = shape.apply_rules(cands, rules)
+    return cands
+
+
 def detect_strip(strip: Strip, cfg: DetectorConfig, max_tiles: int | None = None, progress=None) -> dict:
     """Run every branch over the strip's valid footprint. Returns the per-strip entry of a candidates file."""
     cal = load_calibration(cfg)
+    rules = load_shape_rules(cfg)
     cands: list[Candidate] = []
     n = 0
     for r0, r1, c0, c1 in strip.tiles(cfg.tile, cfg.overlap):
         if max_tiles is not None and n >= max_tiles:
             break
         win = strip.read(r0, r1, c0, c1)
-        tile_cands = detect_tile(win, strip.label, cfg)
-        if cal is not None:
-            from landers.calibrate import apply
-
-            tile_cands = [c for c in apply(tile_cands, cal) if c.score >= cfg.min_calibrated_score]
+        tile_cands = finish_tile(detect_tile(win, strip.label, cfg), cfg, cal, rules)
         cands.extend(tile_cands)
         n += 1
         if progress:
@@ -394,18 +436,14 @@ def _worker_init(observation_id: str, cfg_json: dict):
     _WORKER["strip"] = _Strip.open(observation_id)
     _WORKER["cfg"] = DetectorConfig(**{k: (tuple(v) if isinstance(v, list) else v) for k, v in cfg_json.items()})
     _WORKER["cal"] = load_calibration(_WORKER["cfg"])
+    _WORKER["rules"] = load_shape_rules(_WORKER["cfg"])
 
 
 def _worker_tile(bounds):
     r0, r1, c0, c1 = bounds
-    strip, cfg, cal = _WORKER["strip"], _WORKER["cfg"], _WORKER["cal"]
+    strip, cfg = _WORKER["strip"], _WORKER["cfg"]
     win = strip.read(r0, r1, c0, c1)
-    cands = detect_tile(win, strip.label, cfg)
-    if cal is not None:
-        from landers.calibrate import apply
-
-        cands = [c for c in apply(cands, cal) if c.score >= cfg.min_calibrated_score]
-    return cands
+    return finish_tile(detect_tile(win, strip.label, cfg), cfg, _WORKER["cal"], _WORKER["rules"])
 
 
 def detect_strip_parallel(
