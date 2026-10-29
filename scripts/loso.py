@@ -27,8 +27,9 @@ from landers.shape import ShapeRules  # noqa: E402
 
 _RULE_FILES = sorted((config.REPO_ROOT / "landers").glob("shape_v*.json"))
 DEFAULT_RULES = _RULE_FILES[-1] if _RULE_FILES else None
-DEFAULT_KEY = config.REPO_ROOT / "out" / "shape_v1" / "candidates_v02b_features.json"
-DEFAULT_INJECTION = config.REPO_ROOT / "out" / "transplant_t2" / "transplant_t2.json"
+# detector v0.3 runs, as scripts/tune.py (same candidates as the v0.2 runs, plus dark-branch features)
+DEFAULT_KEY = config.REPO_ROOT / "out" / "shape_v3" / "candidates_v03_features.json"
+DEFAULT_INJECTION = config.REPO_ROOT / "out" / "transplant_t4" / "transplant_t4.json"
 
 
 def main(argv=None) -> int:
