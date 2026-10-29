@@ -68,11 +68,14 @@ added is the scoring machinery around it.
 
 1. **Data layer** (built). Label parser, latitude and longitude to pixel for both HiRISE projections, windowed
    reads of the JPEG 2000 so a strip is never loaded whole, the valid-area mask.
-2. **Physical detector** (built, v0.1). Five branches, each tagging its candidates: a bright compact object
+2. **Physical detector** (built, v0.2). Five branches, each tagging its candidates: a bright compact object
    (1 to 10 m), a bright object with a shadow of the right length for this strip's sun angle, a bright flat sheet
    (8 to 25 m, the parachute), a dark compact object (1 to 4 m, backshell and heat shield), a dark patch (2.5 to
    50 m, a crash). Each branch's raw score is mapped to a common scale, minus log10 of that branch's false-alarm
-   rate per km² on real ground, so one threshold means the same thing in every branch.
+   rate per km² on real ground, so one threshold means the same thing in every branch. Every small-object
+   candidate carries shape and shadow-side features (two-sided shadow contrast, shadow height, isolation,
+   saturation); a versioned rules file adds a measured gain to the calibrated score of candidates that pass a
+   physical test, and never takes anything away.
 3. **Persistence** (built). Two dates of the same ground are registered by phase correlation (the labels alone
    disagree by tens of metres; after registration, 5 px). A candidate seen in the same place on both dates, within
    8 px, is persistent. Hard parts (lander, backshell, heat shield, fragments) must persist to become a
