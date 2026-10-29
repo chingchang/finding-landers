@@ -27,10 +27,11 @@ every featured candidate records ``tile_count``, the number of components of its
 on ``tile_rank`` can be conditioned on how busy the ground is.
 
 v0.4 (plan item 8a): calibration per strip. With ``calibration_mode = "per_strip"`` the branches run raw over
-the whole strip, the strip's own candidate population fits the rarity curve of every branch
-(``landers.calibrate.fit_strip``), and only then are the scores calibrated, floored and ruled. A calibrated
-score then means the same false-alarm rate on every strip, which one table fitted on equatorial ground did
-not give on polar ground. The fitted curves are recorded in the strip's entry so the run can be rescored.
+the whole strip, the strip's own candidate population (each object once per branch) fits the rarity curve of
+every branch (``landers.calibrate.fit_strip``), and only then are the scores calibrated, deduplicated across
+branches on the common scale, floored and ruled (``finish_strip``). A calibrated score then means the same
+false-alarm rate on every strip, which one table fitted on equatorial ground did not give on polar ground.
+The fitted curves are recorded in the strip's entry so the run can be rescored.
 """
 
 from __future__ import annotations
@@ -435,20 +436,30 @@ def finish_tile(cands: list[Candidate], cfg: DetectorConfig, cal, rules) -> list
 
 
 def finish_strip(cands: list[Candidate], area_km2: float, cfg: DetectorConfig, rules) -> tuple[list[Candidate], dict]:
-    """Per-strip mode: fit the strip's own rarity curves on its raw, deduplicated candidates, then calibrate,
-    floor and rule them as ``finish_tile`` would. Returns the candidates and the fitted curves (recorded in
-    the strip's entry so ``scripts/rescore.py`` can reproduce the scores)."""
-    from landers.calibrate import fit_strip
+    """Per-strip mode, on the raw candidates of every tile: deduplicate within each branch (raw scores are
+    comparable there, and the overlap between tiles must not count an object twice in its branch's
+    population), fit the strip's own rarity curves, calibrate, then deduplicate across branches on the
+    common scale (as the table mode does after ``finish_tile``), floor and rule. Returns the candidates and
+    the fitted curves (recorded in the strip's entry so the scores can be reproduced from the raw ones)."""
+    from landers.calibrate import apply, fit_strip
 
-    cal = fit_strip(cands, area_km2, "per_strip", cfg.calibration_top_exclude)
-    return finish_tile(cands, cfg, cal, rules), cal.to_json()
+    by_branch: dict[str, list[Candidate]] = {}
+    for c in cands:
+        by_branch.setdefault(c.branch, []).append(c)
+    once = [c for group in by_branch.values() for c in dedupe(group)]
+    cal = fit_strip(once, area_km2, "per_strip", cfg.calibration_top_exclude)
+    scored = dedupe(apply(once, cal))
+    kept = [c for c in scored if c.score >= cfg.min_calibrated_score]
+    if rules is not None:
+        kept = shape.apply_rules(kept, rules)
+    return kept, cal.to_json()
 
 
 def _strip_entry(strip: Strip, cfg: DetectorConfig, cands: list[Candidate], n_tiles: int, rules) -> dict:
     area = round(strip.valid_area_km2(), 3)
     entry = {"valid_area_km2": area, "scale_m": strip.label.scale_m, "tiles": n_tiles}
     if per_strip(cfg):
-        cands, curves = finish_strip(dedupe(cands), area, cfg, rules)
+        cands, curves = finish_strip(cands, area, cfg, rules)
         entry["calibration"] = curves
     else:
         cands = dedupe(cands)
