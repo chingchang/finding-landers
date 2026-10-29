@@ -14,6 +14,7 @@
 # up to RETRIES times per item. A usage limit is handled the same way with a LIMIT_WAIT_MIN pause between
 # tries. The model: out/queue/model holding one line (opus, sonnet, or a full model id) puts every later
 # session and retry on that model; no file means the account's default. MODEL=... in the environment wins.
+# A new run of an item first resumes the newest session if it died that way, even one an older copy started.
 set -euo pipefail
 # Run from a private copy: a merge that rewrites this file while a session is running must not reach the
 # running script (bash reads a script as it goes).
@@ -96,6 +97,17 @@ is watching. A command that was running at that moment was killed. Check git sta
 out/ for what finished, re-run only what was cut off (use --resume where the script offers it), then
 continue the item from where you left off and finish as instructed before."
   resume=""; attempt=0
+  # A session that died on a network drop or a usage limit (including one started by an older copy of this
+  # script) is resumed rather than replaced, so the agent continues from its last step instead of re-reading
+  # the repo: the newest session file, if it ended in such an error within the last 12 hours and has an id.
+  last="$(ls out/plan_runs/*.json 2>/dev/null | sort | tail -1 || true)"
+  if [ -n "$last" ] && [ -s "$last" ] && is_error "$last" && [ -n "$(find "$last" -mmin -720 2>/dev/null)" ]; then
+    k="$(run_kind "$last")"; sid="$(session_of "$last")"
+    if [ "$k" != other ] && [ -n "$sid" ]; then
+      resume="$sid"; echo "resuming session $sid, which ended on a $k error ($last)"
+      [ "$k" = network ] && { wait_for_network || { echo "no network for $NET_WAIT_MIN minutes"; exit 2; }; }
+    fi
+  fi
   while :; do
     stamp=$(date +%Y%m%d-%H%M%S); f="out/plan_runs/$stamp.json"
     pick_model
