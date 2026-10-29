@@ -44,7 +44,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    meets the draft's bar, so none is in the score. The saturation rule (0.003 of false alarms, recall@20 0.31
    against 0.15 when rescored) waits for a person in docs/proposals/shape-rules-v1.md. The sheet branch keeps
    the v0.1 saturation mask; a fully saturated sheet is a question for item 7.
-7. [ ] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
+7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
 8. [ ] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md; tuning
