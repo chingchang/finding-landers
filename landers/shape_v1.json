@@ -1,0 +1,25 @@
+{
+  "version": "shape_v1",
+  "basis": "Adopted from docs/proposals/shape-rules-v1.md after plan item 6. One rule, saturated: a bright or shadow candidate with at least one pixel at the sensor's saturation gains 2.518 on the calibrated scale, minus log10 of the fraction of bright and shadow false alarms on the eight tuning strips that carry one (165 of 54427, measured on out/shape_v1/candidates_v02b_features.json by scripts/feature_percentiles.py). The threshold of one pixel was written before the distributions were seen. Rescored against the 18-piece key: recall@20 6 of 18 with the rule against 3 of 18 without; hardware 5 of 12 against 2 of 12; cost, the Spirit parachute from rank 22 to 109. The shadow_two_sided and isolated rules from the same draft were measured and refused (pass fractions 0.11 and 0.35). Re-measure and re-version whenever the detector changes.",
+  "rules": [
+    {
+      "name": "saturated",
+      "branches": [
+        "bright",
+        "shadow"
+      ],
+      "conditions": [
+        {
+          "feature": "saturated_px",
+          "op": ">=",
+          "threshold": 1
+        }
+      ],
+      "false_alarm_pass_fraction": 0.00303,
+      "gain": 2.518,
+      "basis": "at least one pixel at the sensor's saturation; natural ground at HiRISE exposure rarely saturates, bright hardware often does"
+    }
+  ],
+  "adopted_by": "Ching Chang",
+  "adopted_on": "2026-10-29"
+}

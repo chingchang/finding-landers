@@ -47,8 +47,16 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
-8. [ ] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md; tuning
-   tiles only; proposals for thresholds in docs/proposals/, adopted by a person.
+8. [ ] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md per idea that
+   did not move the score; tuning tiles only. The scoreboard is transplant injection as item 7 left it
+   (`scripts/transplant.py` with the same tile list, seed and command as out/transplant_t1; out/transplant_t1
+   is the number to beat) plus the 18-piece key under thresholds v1 and landers/shape_v1.json. A change is
+   kept only if: hardware recall@20 on the key does not drop, injection recall at 2 per km2 does not drop,
+   no recorded piece leaves the top 20, and any new rule passes at most 5 percent of same-branch false
+   alarms on the tuning strips; a rule's pass fraction and gain are re-measured and the rules file
+   re-versioned whenever the detector changes. Rules and thresholds the loop wants adopted go to
+   docs/proposals/, adopted by a person; the loop may add rules to a new landers/shape_v<n>.json only as a
+   proposal copy under docs/proposals/, never in place.
 9. [done, see docs/reports/2026-10-28-model-layer.md] Model layer, built blind, no key and no network: read docs/models.md first. One interface for
    SAM 3.1, Muse Wonder and Muse Spark with a fake backend (deterministic) and a recorded backend; the
    ledger with hard caps and cost estimate; SAM box-prompt requests and mask parsing feeding the size and
@@ -116,3 +124,9 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   2 of 13 under v1 (3 of 13 under v0); both are kept (docs/reports/2026-10-28-first-score-rescored.md).
   The key holds 13 of 22 pieces; the Schiaparelli and Phoenix positions were checked against the HiRISE
   captioned images by registration, which corrected one piece.
+- 2026-10-29 (02:00): landers/shape_v1.json adopted (the saturation rule from docs/proposals/shape-rules-v1.md;
+  6 of 18 against 3 of 18 on the key). The tuning bar for item 8 is the one written in item 8. The 46
+  search-strip tiles listed in out/transplant_t1 are the injection tuning ground: a fixed, listed set,
+  0.3 percent of the search area, chosen by sun angle; the search still runs the frozen detector over every
+  tile including these, and the small chance that a real piece sits in one of them and is tuned against is
+  accepted and written here. Nothing else from the search area is used for tuning.
