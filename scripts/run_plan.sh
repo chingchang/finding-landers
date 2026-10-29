@@ -28,7 +28,9 @@ for i in $(seq 1 "$MAX_ITEMS"); do
   stamp=$(date +%Y%m%d-%H%M%S)
   if ! grep -qE '^\s*[0-9]+b?\. \[( |running)\]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
   if grep -qiE '\[blocked' docs/plan.md; then echo "an item is marked blocked; needs a person"; exit 3; fi
-  prompt="No human is watching. Merge main into this branch first (git merge --no-edit main). Then read CLAUDE.md
+  prompt="No human is watching. Merge main into this branch first (git merge --no-edit main); if git refuses
+because of uncommitted changes left by an earlier session, commit them first as work in progress (git add -A;
+git commit -m 'wip: carried over from a session that ended early'), then merge. Then read CLAUDE.md
 and docs/plan.md, and take $PICK. If it is item 3 (the key) or
 anything that needs a person (money, a push, a frozen tag, a tier-1 file), mark it [blocked: reason] and stop.
 Otherwise mark it [running], do it, make scripts/leakcheck.sh and the tests green, commit on this branch with
