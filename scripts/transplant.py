@@ -124,6 +124,17 @@ def main(argv=None) -> int:
         "other rules to an unruled run without re-detecting",
     )
     ap.add_argument("--no-shape-rules", action="store_true", help="record shape features, add nothing to the score")
+    ap.add_argument(
+        "--sheet-flatness",
+        type=float,
+        default=None,
+        help="item 8b: the sheet branch's flatness threshold (default 0.45)",
+    )
+    ap.add_argument(
+        "--sheet-saturated-as-data",
+        action="store_true",
+        help="item 8b: saturated pixels are data in the sheet branch too (default: v0.1 mask, see DetectorConfig)",
+    )
     ap.add_argument("--no-sham", action="store_true", help="skip the sham (empty) cuts")
     ap.add_argument("--only", action="append", default=[], help="site/piece to cut (repeatable); default all")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
@@ -135,9 +146,13 @@ def main(argv=None) -> int:
     answers = load_json(a.answers)
     fa = a.fa_per_km2 if a.fa_per_km2 is not None else float(thresholds["pass"]["max_false_alarms_per_km2"])
     cfg = tp.TransplantConfig()
-    cal_path = None if (a.no_calibration or a.strip_calibration) else a.calibration
+    cal_path = None if a.no_calibration else a.calibration  # with --strip-calibration: the fallback table
     rules_path = None if a.no_shape_rules else a.shape_rules
     dcfg = DetectorConfig(calibration=cal_path, shape_rules=rules_path)
+    if a.sheet_flatness is not None:
+        dcfg.sheet_flatness = a.sheet_flatness
+    if a.sheet_saturated_as_data:
+        dcfg.sheet_saturated_is_data = True
     cal = load_calibration(dcfg)
     rules = load_shape_rules(dcfg)
     strip_cals = None
@@ -145,9 +160,11 @@ def main(argv=None) -> int:
         from landers.calibrate import StripCalibrations
 
         strip_cals = StripCalibrations.load(a.strip_calibration)
+        strip_cals.attach_fallback(cal)
         dcfg.calibration_mode = "per_strip"
         dcfg.calibration_top_exclude = strip_cals.top_exclude
-        dcfg.calibration = repo_relative(a.strip_calibration)
+        dcfg.calibration_min_population = strip_cals.min_population
+        dcfg.calibration = repo_relative(cal_path) if cal is not None else None
     elif cal is not None:
         dcfg.calibration = repo_relative(cal_path)
     if rules is not None:
@@ -352,6 +369,7 @@ def main(argv=None) -> int:
         "run": a.run,
         "kind": "transplant",
         "detector": dcfg.to_json(),
+        "strip_calibration": repo_relative(a.strip_calibration) if a.strip_calibration else None,
         "transplant": cfg.to_json(),
         "seed": a.seed,
         "copies": a.copies,

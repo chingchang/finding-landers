@@ -47,7 +47,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
-8. [running] Tuning loop, third and last session, detector changes only, then the freeze. Two levers, each judged by
+8. [done, see docs/reports/2026-10-29-tuning-loop-3.md] Tuning loop, third and last session, detector changes only, then the freeze. Two levers, each judged by
    scripts/tune.py on both boards against the shape_v3 reference (rerun the key pass and the transplant command
    once with shape_v3 to set it), each a fresh key pass and transplant run, kept only under the item 8 bar
    (hardware recall@20 and injection recall may not drop, no recorded piece leaves the top 20, rules re-measured

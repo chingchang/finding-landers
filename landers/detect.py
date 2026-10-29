@@ -55,10 +55,11 @@ class DetectorConfig:
     frozen: bool = False
     calibration: str | None = None  # path of a landers.calibrate JSON; scores are then on the common scale
     # "table": the file above, one curve per branch for every strip. "per_strip": the curve is fitted from
-    # each strip's own candidate population after the raw pass (v0.4); ``calibration`` is then unused by
-    # scripts/detect.py and names the per-strip curves file for runs over tiles of several strips.
+    # each strip's own candidate population after the raw pass (v0.4); the table above is then the fallback
+    # for a branch whose population on the strip is under ``calibration_min_population``.
     calibration_mode: str = "table"
     calibration_top_exclude: int = 0  # per_strip: top candidates of each branch scored by the extrapolated tail
+    calibration_min_population: int = 0  # per_strip: a branch with fewer candidates than this uses the table
     min_calibrated_score: float = -3.0  # with a calibration, drop candidates rarer than 1000 false alarms/km2
     shape_rules: str | None = None  # path of a landers.shape rules JSON; passed rules add to the calibrated score
     # v0.2: saturated pixels (1022, 1023) are data at the top of the range, not holes. v0.1 masked them with
@@ -419,6 +420,16 @@ def load_calibration(cfg: DetectorConfig):
     return Calibration.load(cfg.calibration)
 
 
+def load_fallback(cfg: DetectorConfig):
+    """Per-strip mode: the table that scores a branch too thin on a strip for a curve of its own (None when
+    the config names no table; such branches then score the floor constant)."""
+    if not cfg.calibration or not per_strip(cfg):
+        return None
+    from landers.calibrate import Calibration
+
+    return Calibration.load(cfg.calibration)
+
+
 def load_shape_rules(cfg: DetectorConfig):
     return shape.ShapeRules.load(cfg.shape_rules) if cfg.shape_rules else None
 
@@ -435,19 +446,29 @@ def finish_tile(cands: list[Candidate], cfg: DetectorConfig, cal, rules) -> list
     return cands
 
 
-def finish_strip(cands: list[Candidate], area_km2: float, cfg: DetectorConfig, rules) -> tuple[list[Candidate], dict]:
+def finish_strip(
+    cands: list[Candidate], area_km2: float, cfg: DetectorConfig, rules, fallback=None
+) -> tuple[list[Candidate], dict]:
     """Per-strip mode, on the raw candidates of every tile: deduplicate within each branch (raw scores are
     comparable there, and the overlap between tiles must not count an object twice in its branch's
-    population), fit the strip's own rarity curves, calibrate, then deduplicate across branches on the
-    common scale (as the table mode does after ``finish_tile``), floor and rule. Returns the candidates and
-    the fitted curves (recorded in the strip's entry so the scores can be reproduced from the raw ones)."""
+    population), fit the strip's own rarity curves (a branch under ``calibration_min_population`` is scored
+    by ``fallback``, the table), calibrate, then deduplicate across branches on the common scale (as the
+    table mode does after ``finish_tile``), floor and rule. Returns the candidates and the fitted curves
+    (recorded in the strip's entry so the scores can be reproduced from the raw ones)."""
     from landers.calibrate import apply, fit_strip
 
     by_branch: dict[str, list[Candidate]] = {}
     for c in cands:
         by_branch.setdefault(c.branch, []).append(c)
     once = [c for group in by_branch.values() for c in dedupe(group)]
-    cal = fit_strip(once, area_km2, "per_strip", cfg.calibration_top_exclude)
+    cal = fit_strip(
+        once,
+        area_km2,
+        "per_strip",
+        cfg.calibration_top_exclude,
+        min_population=cfg.calibration_min_population,
+        fallback=fallback,
+    )
     scored = dedupe(apply(once, cal))
     kept = [c for c in scored if c.score >= cfg.min_calibrated_score]
     if rules is not None:
@@ -459,7 +480,7 @@ def _strip_entry(strip: Strip, cfg: DetectorConfig, cands: list[Candidate], n_ti
     area = round(strip.valid_area_km2(), 3)
     entry = {"valid_area_km2": area, "scale_m": strip.label.scale_m, "tiles": n_tiles}
     if per_strip(cfg):
-        cands, curves = finish_strip(cands, area, cfg, rules)
+        cands, curves = finish_strip(cands, area, cfg, rules, load_fallback(cfg))
         entry["calibration"] = curves
     else:
         cands = dedupe(cands)

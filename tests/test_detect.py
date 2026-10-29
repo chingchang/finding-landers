@@ -226,6 +226,32 @@ def test_per_strip_dedupes_within_branch_before_the_fit_and_across_branches_on_t
         assert abs(c.score - cal.calibrated(c.branch, c.extra["raw_score"])) < 2e-3
 
 
+def test_per_strip_thin_branch_scores_by_the_fallback_table(tmp_path):
+    """With calibration_min_population, a branch too thin on the strip for a curve is scored by the table the
+    config names; the entry's curves record which branches were thin."""
+    import json
+
+    from landers.calibrate import fit_scores
+
+    table = fit_scores({"bright": [float(s) for s in range(4, 30)], "sheet": [3.0, 4.0, 5.0]}, 20.0, "v0")
+    table.save(tmp_path / "table.json")
+    cfg = detect.DetectorConfig(
+        calibration=str(tmp_path / "table.json"), calibration_mode="per_strip", calibration_min_population=10
+    )
+    fallback = detect.load_fallback(cfg)
+    assert fallback is not None and fallback.version == "v0"
+    assert detect.load_fallback(detect.DetectorConfig(calibration=str(tmp_path / "table.json"))) is None
+    raw = [detect.Candidate(10 * i, 0, 4.0 + 0.5 * i, "bright", "g", 9) for i in range(40)]
+    raw += [detect.Candidate(1000, 1000, 4.6, "sheet", "g", 400), detect.Candidate(2000, 2000, 3.5, "sheet", "g", 400)]
+    out, curves = detect.finish_strip(raw, 5.0, cfg, None, fallback)
+    assert curves["thin"] == {"sheet": 2} and curves["fallback"] == "v0" and set(curves["branches"]) == {"bright"}
+    sheets = [c for c in out if c.branch == "sheet"]
+    assert len(sheets) == 2
+    for c in sheets:
+        assert abs(c.score - table.calibrated("sheet", c.extra["raw_score"])) < 2e-3
+    json.dumps(curves)  # the entry is serialisable as written
+
+
 def test_no_shadow_branch_when_sun_is_high():
     win, lbl, _ = synthetic_tile()
     lbl = dataclasses.replace(lbl, incidence_deg=31.0)

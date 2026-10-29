@@ -43,7 +43,9 @@ def pick_tiles(strip: Strip, dcfg: DetectorConfig, n: int, min_valid: float, exc
     return [tiles[i] for i in sorted(set(int(i) for i in idx))]
 
 
-def fit_strip_from_tiles(strip: Strip, bounds: list[tuple], dcfg: DetectorConfig, min_valid: float, top_exclude: int):
+def fit_strip_from_tiles(
+    strip: Strip, bounds: list[tuple], dcfg: DetectorConfig, min_valid: float, top_exclude: int, min_population: int = 0
+):
     """Raw detections over the tiles, pooled per branch, fitted as one curve for the strip."""
     by_branch: dict[str, list[float]] = {}
     area = 0.0
@@ -58,7 +60,9 @@ def fit_strip_from_tiles(strip: Strip, bounds: list[tuple], dcfg: DetectorConfig
         used.append([r0, r1, c0, c1])
     if area <= 0:
         return None, used, by_branch
-    cal = fit_scores(by_branch, area, "per_strip", len(used), [], top_exclude=top_exclude)
+    cal = fit_scores(
+        by_branch, area, "per_strip", len(used), [], top_exclude=top_exclude, min_population=min_population
+    )
     return cal, used, by_branch
 
 
@@ -70,9 +74,22 @@ def main(argv=None) -> int:
     ap.add_argument("--tiles", type=int, default=12, help="tiles per strip")
     ap.add_argument("--min-valid", type=float, default=0.7)
     ap.add_argument("--top-exclude", type=int, default=0)
+    ap.add_argument(
+        "--min-population",
+        type=int,
+        default=0,
+        help="a branch with fewer candidates than this on a strip gets no curve; the run that applies the file "
+        "scores it by its table (scripts/transplant.py --calibration)",
+    )
     ap.add_argument("--name", required=True)
     ap.add_argument(
         "--refit-from", default=None, help="an earlier output: refit its raw scores with this --top-exclude"
+    )
+    ap.add_argument(
+        "--pooled",
+        action="store_true",
+        help="with --refit-from: one curve set from every strip's raw scores pooled (a terrain-class table), "
+        "written under each strip id so the same file format applies it",
     )
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out" / "strip_cal"))
     a = ap.parse_args(argv)
@@ -105,7 +122,7 @@ def main(argv=None) -> int:
             continue
         strip = Strip.open(sid)
         bounds = pick_tiles(strip, dcfg, a.tiles, a.min_valid, exclude.get(sid, set()))
-        cal, used, by_branch = fit_strip_from_tiles(strip, bounds, dcfg, a.min_valid, a.top_exclude)
+        cal, used, by_branch = fit_strip_from_tiles(strip, bounds, dcfg, a.min_valid, a.top_exclude, a.min_population)
         if cal is None:
             print(f"{sid}: no valid tile; skipped")
             continue
@@ -128,6 +145,7 @@ def main(argv=None) -> int:
         a.top_exclude,
         basis=f"scripts/calibrate_strips.py: {a.tiles} tiles per strip, raw detector {dcfg.version}, "
         + (f"excluding the planted tiles of {a.from_transplant}" if a.from_transplant else "no tiles excluded"),
+        min_population=a.min_population,
     )
     out_dir = Path(a.out) / a.name
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -146,11 +164,38 @@ def refit(a) -> int:
     """The same strips and tiles, refitted from the recorded raw scores with another ``top_exclude``."""
     d = load_json(a.refit_from)
     strips = {}
-    for sid, by_branch in d["raw_scores"].items():
-        area = float(d["strips"][sid]["area_km2"])
-        strips[sid] = fit_scores(by_branch, area, "per_strip", len(d["fit_tiles"][sid]), [], top_exclude=a.top_exclude)
+    if a.pooled:
+        pooled: dict[str, list[float]] = {}
+        area = 0.0
+        n_tiles = 0
+        for sid, by_branch in d["raw_scores"].items():
+            for b, v in by_branch.items():
+                pooled.setdefault(b, []).extend(v)
+            area += float(d["strips"][sid]["area_km2"])
+            n_tiles += len(d["fit_tiles"][sid])
+        one = fit_scores(
+            pooled, area, "pooled", n_tiles, [], top_exclude=a.top_exclude, min_population=a.min_population
+        )
+        strips = {sid: one for sid in d["raw_scores"]}
+    else:
+        for sid, by_branch in d["raw_scores"].items():
+            area = float(d["strips"][sid]["area_km2"])
+            strips[sid] = fit_scores(
+                by_branch,
+                area,
+                "per_strip",
+                len(d["fit_tiles"][sid]),
+                [],
+                top_exclude=a.top_exclude,
+                min_population=a.min_population,
+            )
     sc = StripCalibrations(
-        f"per_strip_{a.name}", strips, a.top_exclude, basis=f"{d['basis']}; refit from {a.refit_from}"
+        f"{'pooled' if a.pooled else 'per_strip'}_{a.name}",
+        strips,
+        a.top_exclude,
+        basis=f"{d['basis']}; refit from {a.refit_from}"
+        + ("; one curve set pooled over the strips" if a.pooled else ""),
+        min_population=a.min_population,
     )
     out_dir = Path(a.out) / a.name
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -159,7 +204,9 @@ def refit(a) -> int:
     for k in ("fit_tiles", "raw_counts", "raw_scores"):
         new[k] = d[k]
     out.write_text(json.dumps(new, indent=1))
-    print(f"refit {len(strips)} strips with top_exclude {a.top_exclude}; written: {out}")
+    how = "pooled over" if a.pooled else "per strip for"
+    print(f"refit {how} {len(strips)} strips, top_exclude {a.top_exclude}, min_population {a.min_population}")
+    print(f"written: {out}")
     return 0
 
 
