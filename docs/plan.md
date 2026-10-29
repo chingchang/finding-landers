@@ -60,8 +60,18 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     Beagle 2, once. A miss at Beagle 2 is a reported result.
 11. [ ] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
     for every survivor; a coverage map (what was searched on how many dates) as a result in its own right.
+11a. [ ] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
+   disk (id, date, Ls, incidence, map scale, valid area), which pairs overlap and by how much, the 2007 PSP
+   strips first; a coverage map on the polar grid (valid area per strip, number of dates per cell) as a
+   figure and a JSON; a tiling plan with tile counts and a time estimate from baseline v1's tiles per
+   second (out/baseline_v1/run.log). Outputs under out/search/, a report, and a `scripts/search.py` that
+   item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
 12. [ ] Write-up and video: one solved case re-found blind, then the open case with coverage and the graded
     list; every number from a results file.
+12a. [ ] The case board, parallel with items 6 to 8: a static HTML page built from results files only
+   (candidates with grades, test outcomes, persistence, SAM measurements, votes, verdicts, the ledger and
+   the coverage map), fixed vocabulary, every number traced to the file it came from, built and tested on
+   the fake backend's outputs; no model call. Touches only landers/board/, scripts/board.py, tests, docs.
 
 ## Timing rules
 

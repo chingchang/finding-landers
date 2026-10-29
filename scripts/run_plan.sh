@@ -19,6 +19,8 @@ else PICK="the first item under Now marked [running] if there is one (an earlier
 export CLAUDE_CODE_DISABLE_BACKGROUND_TASKS=1
 export BASH_DEFAULT_TIMEOUT_MS="${BASH_DEFAULT_TIMEOUT_MS:-3600000}"
 export BASH_MAX_TIMEOUT_MS="${BASH_MAX_TIMEOUT_MS:-7200000}"
+# A worktree has no HiRISE/ of its own: point the data layer at the main checkout's unless already set.
+COMMON="$(git rev-parse --git-common-dir 2>/dev/null)"; [ -n "$COMMON" ] && export LANDERS_DATA="${LANDERS_DATA:-$(cd "$COMMON/.." && pwd)/HiRISE}"
 ITEM_TURNS="${ITEM_TURNS:-200}"
 ITEM_USD="${ITEM_USD:-15}"
 mkdir -p out/plan_runs
@@ -26,7 +28,7 @@ TOOLS='Read,Edit,Write,Grep,Glob,Bash(uv run *),Bash(uv sync*),Bash(python3 *),B
 
 for i in $(seq 1 "$MAX_ITEMS"); do
   stamp=$(date +%Y%m%d-%H%M%S)
-  if ! grep -qE '^\s*[0-9]+b?\. \[( |running)\]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
+  if ! grep -qE '^\s*[0-9]+[a-z]?\. \[( |running)\]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
   if grep -qiE '\[blocked' docs/plan.md; then echo "an item is marked blocked; needs a person"; exit 3; fi
   prompt="No human is watching. Merge main into this branch first (git merge --no-edit main); if git refuses
 because of uncommitted changes left by an earlier session, commit them first as work in progress (git add -A;
