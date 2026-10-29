@@ -149,3 +149,8 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   v1), pushed. Item 8's third session kept nothing (docs/reports/2026-10-29-tuning-loop-3.md). Item 11 starts now
   on the frozen detector; item 10 runs after it, once the held-out key is sealed. In item 11 the model calls on
   survivors cost money: stop before them and mark the item blocked for a person.
+- 2026-10-29 (17:20): held-out key sealed after the tag and before any held-out run: controls/heldout.json (not in
+  git) holds 11 positions over the three held-out sites and the Beagle 2 lander on its three strips; sha256
+  9b54704be5ba929ce996d7b0a77c89ac61565057d9c4e27cfa8448d4283da372. Pieces with no position, excluded from
+  recall: the InSight backshell and parachute (they fall in a CCD gap of the held-out strip) and the Zhurong rover
+  (it had driven off). Held-out strip crops used to seal it were never seen by an agent.
