@@ -45,7 +45,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
 8. [ ] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md; tuning
    tiles only; proposals for thresholds in docs/proposals/, adopted by a person.
-9. [running] Model layer, built blind, no key and no network: read docs/models.md first. One interface for
+9. [done, see docs/reports/2026-10-28-model-layer.md] Model layer, built blind, no key and no network: read docs/models.md first. One interface for
    SAM 3.1, Muse Wonder and Muse Spark with a fake backend (deterministic) and a recorded backend; the
    ledger with hard caps and cost estimate; SAM box-prompt requests and mask parsing feeding the size and
    shape tests; the blind-crop builder (augmentations, reference crops, nothing identifying) and the Wonder
