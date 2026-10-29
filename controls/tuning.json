@@ -168,26 +168,26 @@
         {
           "piece": "lander",
           "strip": "ESP_025815_1655",
-          "line": 18215,
-          "sample": 7914,
+          "line": 19937,
+          "sample": 9275,
           "size_m": 3.0,
-          "note": "bright white triangular platform; sheet pick #4, 205 m from the cartographic position"
+          "note": "bright compact object (3 px at 2 m/px, z 7.1) at the caption's box b, with the dark arc of Sleepy Hollow to its northwest as the caption says; 650 m from the object previously recorded here. caption registration: the HiRISE captioned overview of the site (PSP_001513_1655_cut_b.jpg, boxes a, b, c) registered to a 6 km region at 2 m/px by SIFT (155 inliers) and refined per box by template matching; the object then located as the brightest compact blob within 28 m at 2 m/px; precision about 2 m, to be refined at full resolution"
         },
         {
           "piece": "parachute",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_025815_1655",
+          "line": 18214,
+          "sample": 7912,
+          "size_m": 12.0,
+          "note": "the bright T-shaped fabric at the caption's box a (parachute and nearby backshell); this object was recorded as the lander until 2026-10-28 22:50 and was found by the sheet branch at rank 21. caption registration: the HiRISE captioned overview of the site (PSP_001513_1655_cut_b.jpg, boxes a, b, c) registered to a 6 km region at 2 m/px by SIFT (155 inliers) and refined per box by template matching; the object then located as the brightest compact blob within 28 m at 2 m/px; precision about 2 m, to be refined at full resolution"
         },
         {
           "piece": "backshell",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_025815_1655",
+          "line": 18194,
+          "sample": 7848,
+          "size_m": 2.6,
+          "note": "bright compact object 17 m west of the parachute, inside the caption's box a. caption registration: the HiRISE captioned overview of the site (PSP_001513_1655_cut_b.jpg, boxes a, b, c) registered to a 6 km region at 2 m/px by SIFT (155 inliers) and refined per box by template matching; the object then located as the brightest compact blob within 28 m at 2 m/px; precision about 2 m, to be refined at full resolution"
         },
         {
           "piece": "heat_shield",
@@ -209,27 +209,27 @@
       "pieces": [
         {
           "piece": "lander",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_022038_1995",
+          "line": 11000,
+          "sample": 4789,
+          "size_m": 4.0,
+          "note": "bright spot with dark surroundings where the close-up's MPF leader line ends; lander with its airbags. caption registration: the HiRISE hardware close-up (MPF_parts_2.jpg, leader lines from the labels) registered to the 1 m/px grid index by SIFT (four scales agree to 5 m) and template matching (corr 0.64 to 0.70); the object then located as the brightest compact blob within 16 m; precision about 2 m, to be refined at full resolution"
         },
         {
           "piece": "backshell",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_022038_1995",
+          "line": 11515,
+          "sample": 4940,
+          "size_m": 2.6,
+          "note": "bright dot with a dark shadow pixel 17 m south-west of the parachute, the second leader line. caption registration: the HiRISE hardware close-up (MPF_parts_2.jpg, leader lines from the labels) registered to the 1 m/px grid index by SIFT (four scales agree to 5 m) and template matching (corr 0.64 to 0.70); the object then located as the brightest compact blob within 16 m; precision about 2 m, to be refined at full resolution"
         },
         {
           "piece": "parachute",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_022038_1995",
+          "line": 11487,
+          "sample": 4964,
+          "size_m": 12.0,
+          "note": "bright streak where the close-up's backshell/parachute leader line ends (the longer of its two lines). caption registration: the HiRISE hardware close-up (MPF_parts_2.jpg, leader lines from the labels) registered to the 1 m/px grid index by SIFT (four scales agree to 5 m) and template matching (corr 0.64 to 0.70); the object then located as the brightest compact blob within 16 m; precision about 2 m, to be refined at full resolution"
         },
         {
           "piece": "heat_shield",
@@ -244,5 +244,5 @@
   ],
   "filled_on": "2026-10-28",
   "filled_by": "Ching Chang, by eye from raw-pixel crops; Schiaparelli and Phoenix positions checked by registering the HiRISE captioned images to the strips",
-  "pieces_filled": 13
+  "pieces_filled": 18
 }
