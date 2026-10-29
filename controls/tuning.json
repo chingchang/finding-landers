@@ -22,27 +22,27 @@
         },
         {
           "piece": "parachute",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_048041_1780",
+          "line": 29990,
+          "sample": 18115,
+          "size_m": 12.0,
+          "note": "bright saturated canopy about 30 px across; sheet pick #1 of the parachute sheet (1085 m from the offset-derived anchor)"
         },
         {
           "piece": "backshell",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_048041_1780",
+          "line": 30011,
+          "sample": 18113,
+          "size_m": 2.4,
+          "note": "small bright object with a shadow just south of the canopy"
         },
         {
           "piece": "heat_shield",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_048041_1780",
+          "line": 26038,
+          "sample": 23210,
+          "size_m": 2.4,
+          "note": "dark round object about 3.5 m with a bright crescent on its east side, 1.43 km east and 100 m north of the impact patch; matches ESA's 1.4 km east; lower confidence than the other three"
         }
       ]
     },
@@ -56,35 +56,35 @@
       "pieces": [
         {
           "piece": "parachute",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_030313_1755",
+          "line": 11077,
+          "sample": 5379,
+          "size_m": 16.0,
+          "note": "grid tile 65 (parachute grid): bright white canopy about 30 px across at the tile's lower right; centre of the bright patch"
         },
         {
           "piece": "backshell",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_030313_1755",
+          "line": 10921,
+          "sample": 5447,
+          "size_m": 3.0,
+          "note": "grid tile 66: bright ring with a dark centre, about 12 px, 45 m NE of the canopy"
         },
         {
           "piece": "heat_shield",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_030313_1755",
+          "line": 11333,
+          "sample": 13380,
+          "size_m": 4.5,
+          "note": "heat-shield grid tile 47: bright compact object with a dark halo near the tile's top edge; about 1500 m SE of the landing point, matching PIA16001's 1500 m figure"
         },
         {
           "piece": "descent_stage",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_030313_1755",
+          "line": 9328,
+          "sample": 5127,
+          "size_m": 12.0,
+          "note": "parachute grid tile 29: dark fan-shaped blast mark about 40 m long with bright debris specks at its east end; 640 m west of the landing point (the offset-derived grid for this piece was 440 m north of it)"
         },
         {
           "piece": "rover",
@@ -149,11 +149,11 @@
       "pieces": [
         {
           "piece": "lander",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_046170_2025",
+          "line": 40615,
+          "sample": 14620,
+          "size_m": 3.0,
+          "note": "grid tile 79 of the 1.5 km grid: compact bright object with an east-side shadow, 190 m from the strip centre; confirm by eye"
         }
       ]
     },
@@ -167,11 +167,11 @@
       "pieces": [
         {
           "piece": "lander",
-          "strip": null,
-          "line": null,
-          "sample": null,
-          "size_m": null,
-          "note": ""
+          "strip": "ESP_025815_1655",
+          "line": 18215,
+          "sample": 7914,
+          "size_m": 3.0,
+          "note": "bright white triangular platform; sheet pick #4, 205 m from the cartographic position"
         },
         {
           "piece": "parachute",
@@ -241,5 +241,8 @@
         }
       ]
     }
-  ]
+  ],
+  "filled_on": "2026-10-28",
+  "filled_by": "Ching Chang, by eye from raw-pixel crops",
+  "pieces_filled": 9
 }
