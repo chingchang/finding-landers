@@ -37,9 +37,13 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    only. Hard parts (lander, backshell, heat shield, fragments) must sit in the same place on both dates to
    reach "candidate". Sheets get a 50 m radius and are never marked "likely natural" for moving or vanishing.
    Absent on a later date is weak evidence (burial) and returns unsure, never fail.
-6. [running] Shape features into the score, only where real pieces sit in the top few percent of that feature's
+6. [done, see docs/reports/2026-10-29-shape-rules.md] Shape features into the score, only where real pieces sit in the top few percent of that feature's
    false alarms on the same strip; each threshold recorded and versioned. Two-sided shadow test (dark on the
    anti-sun side and not dark on the sun side), shadow length consistent with a 1 to 3 m height, isolation.
+   Features recorded (detector v0.2); three rules drafted blind and measured on the eight tuning strips; none
+   meets the draft's bar, so none is in the score. The saturation rule (0.003 of false alarms, recall@20 0.31
+   against 0.15 when rescored) waits for a person in docs/proposals/shape-rules-v1.md. The sheet branch keeps
+   the v0.1 saturation mask; a fully saturated sheet is a question for item 7.
 7. [ ] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
@@ -84,6 +88,9 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   test (different camera, format and light). After the submission.
 - Early-spring MPL strips (mpl_other) as a thermal test: hardware defrosts before the ground. After the
   search, if time.
+- Sheet branch and saturation: the one recorded saturated canopy sits 0.01 above the flatness threshold on its
+  tile, and a fully saturated sheet is invisible to the branch. Measure both with transplant injection (item 7)
+  before touching the flatness test.
 - SAM terrain vocabulary for polar ground ("polygon", "frost", "rock", "ripple") chosen on one real MPL tile
   and recorded with the tile id. With item 9.
 

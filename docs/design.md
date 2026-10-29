@@ -75,7 +75,8 @@ added is the scoring machinery around it.
    rate per km² on real ground, so one threshold means the same thing in every branch. Every small-object
    candidate carries shape and shadow-side features (two-sided shadow contrast, shadow height, isolation,
    saturation); a versioned rules file adds a measured gain to the calibrated score of candidates that pass a
-   physical test, and never takes anything away.
+   physical test, and never takes anything away. Saturated pixels count as data in the small-object branches and
+   stay out of the sheet branch, whose test is flatness.
 3. **Persistence** (built). Two dates of the same ground are registered by phase correlation (the labels alone
    disagree by tens of metres; after registration, 5 px). A candidate seen in the same place on both dates, within
    8 px, is persistent. Hard parts (lander, backshell, heat shield, fragments) must persist to become a
