@@ -145,3 +145,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 - 2026-10-29 (08:20): landers/shape_v3.json adopted (tile_top withdrawn after the leave-one-site-out check). One
   more tuning session, detector changes only (calibration per terrain, the fabric branch), then the frozen tag
   tonight; the search runs on the frozen detector from Thursday night.
+- 2026-10-29 (16:10): tag frozen-v1 at 4f4253e (detector v0.4 in table mode, landers/shape_v3.json, thresholds
+  v1), pushed. Item 8's third session kept nothing (docs/reports/2026-10-29-tuning-loop-3.md). Item 11 starts now
+  on the frozen detector; item 10 runs after it, once the held-out key is sealed. In item 11 the model calls on
+  survivors cost money: stop before them and mark the item blocked for a person.
