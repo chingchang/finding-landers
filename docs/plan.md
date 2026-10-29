@@ -68,7 +68,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
 12. [ ] Write-up and video: one solved case re-found blind, then the open case with coverage and the graded
     list; every number from a results file.
-12a. [ ] The case board, parallel with items 6 to 8: a static HTML page built from results files only
+12a. [running] The case board, parallel with items 6 to 8: a static HTML page built from results files only
    (candidates with grades, test outcomes, persistence, SAM measurements, votes, verdicts, the ledger and
    the coverage map), fixed vocabulary, every number traced to the file it came from, built and tested on
    the fake backend's outputs; no model call. Touches only landers/board/, scripts/board.py, tests, docs.
