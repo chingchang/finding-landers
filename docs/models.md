@@ -125,3 +125,37 @@ A dry-run mode writes every request that would be sent to `out/model_requests/` 
 The leak test is a unit test and a runtime assertion: no request body, image name or prompt contains an
 observation id pattern, a latitude or longitude, a date or a site name from `controls/sites.json`. The
 request builder refuses to build one that does.
+
+## As built (plan item 9, blind; docs/reports/2026-10-28-model-layer.md)
+
+The layer lives in `landers/models/`: `leak` (the guard), `ledger`, `backend` (requests, results, the four
+backends and the `ModelClient` that every call goes through), `sam`, `crops`, `wonder`, `spark`, `run` (the
+passes, written against a pixel reader so the tests run on arrays). The scripts are `scripts/models_sam.py`,
+`scripts/models_wonder.py` (`--probe` for the recognition probe) and `scripts/models_review.py`, each with
+`--backend fake|dry-run|recorded|real`, writing under `out/models/` with the ledger at `out/models/ledger.json`.
+
+Decisions taken while building, and what the first real run (9b) must check:
+
+- The `openai` and `meta-sam-parser` packages are not dependencies yet; this item ran with no network. The
+  real backend imports them lazily and says what to install. Before 9b a person runs
+  `uv add openai meta-sam-parser` (network) with the key exported.
+- The box-prompt string is built in `landers.models.sam.build_object_prompt` from the grammar above
+  (`<0f>` then `<id><box token>` per object, comma separated). The dry-run backend writes the exact
+  string; 9b's first SAM call confirms the separator and the `<0f>` prefix, and the result is parsed only
+  through `meta_sam_parser`. The record attribute names used in `RealBackend.sam` (`kind`, `object_id`,
+  `box`, `mask`) are from this document and are the first thing to check against a real response.
+- Structured outputs are sent as `response_format.json_schema` with `strict: true`; if the API returns 400
+  on that key, drop it (the schemas already have `additionalProperties: false` and full `required`).
+- The real backend is always wrapped in the recorded backend, so every paid response is saved under
+  `out/models/model_recordings/` by request hash and a rerun costs nothing.
+- The leak guard's published-coordinate rule applies to values with three or more decimals. A two-decimal
+  value (1 km precision) collides with ordinary measurements too often to abort a run on, and alone it
+  locates nothing; `scripts/leakcheck.sh` keeps the stricter rule for committed files.
+- Candidate ids in prompts are `c000`, `c001`, ... by rank; strips are `strip_a`. The mapping to pixel
+  positions is a manifest under `out/models/`, never committed and never sent.
+- The SAM tests' size limits are the detector's per-branch ranges; the two new limits (elongation, edge
+  contrast) are proposed in `docs/proposals/sam-tests-v0.md` and wait for a person.
+- Votes lower a grade one step when at least two of three say natural at confidence 0.7 or more and none
+  says hardware at that confidence (`landers.models.wonder.VoteRule`, recorded with every vote record).
+  Spark's `record_verdict` rejects a raise, an empty citation, a cited field that does not exist, a number
+  not present in the evidence record, and the words discovered, confirmed and proven.
