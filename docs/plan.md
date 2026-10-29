@@ -45,11 +45,17 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
 8. [ ] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md; tuning
    tiles only; proposals for thresholds in docs/proposals/, adopted by a person.
-9. [ ] Model layer, after MODEL_API_KEY is in the environment and a person asks: SAM 3.1 box prompts at zoom
-   for size and shape of every survivor; Muse Wonder advisory votes (recorded, never gating) with the
-   recognition probe run first on Curiosity and Phoenix; Muse Spark review that can keep or lower a grade,
-   never raise it, with every call through a ledger with a hard cap. First real run: one tuning site, 20 SAM
-   calls, 9 Wonder votes, one Spark review.
+9. [done, see docs/reports/2026-10-28-model-layer.md] Model layer, built blind, no key and no network: read docs/models.md first. One interface for
+   SAM 3.1, Muse Wonder and Muse Spark with a fake backend (deterministic) and a recorded backend; the
+   ledger with hard caps and cost estimate; SAM box-prompt requests and mask parsing feeding the size and
+   shape tests; the blind-crop builder (augmentations, reference crops, nothing identifying) and the Wonder
+   vote with a strict schema; the recognition-probe harness; the Spark review loop with its five tools,
+   keep or lower only, every verdict citing evidence; a dry-run mode that writes the requests it would
+   send; the prompt leak test. Runs in its own worktree (branch claude/model-layer) and touches only
+   landers/models/, scripts/models_*.py, their tests and docs; everything green with no network.
+9b. [ ] First real run, after MODEL_API_KEY is in the environment and a person asks: recognition probe on
+   Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
+   ledger and tool log committed with the report; grades can only go down.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
     Beagle 2, once. A miss at Beagle 2 is a reported result.
 11. [ ] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
@@ -88,3 +94,8 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   false-alarm rarity scale fitted on phase 0 tiles and measured on phase 1; Wonder advisory, never gating;
   "candidate" requires two dates; the parachute may already be dust-covered after seven years, so the hard
   metal is the long-lived signature; wind moves fabric and foil, never metal.
+- 2026-10-28 (evening): thresholds v1 adopted from docs/proposals/scoring-v1.md: one candidate matches at
+  most one piece; pieces scored as hardware, fabric or mark; marks matched at 20 m. The first score reads
+  2 of 13 under v1 (3 of 13 under v0); both are kept (docs/reports/2026-10-28-first-score-rescored.md).
+  The key holds 13 of 22 pieces; the Schiaparelli and Phoenix positions were checked against the HiRISE
+  captioned images by registration, which corrected one piece.

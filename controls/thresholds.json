@@ -1,9 +1,30 @@
 {
-  "version": 0,
+  "version": 1,
   "decided_by": "Ching Chang",
   "decided_on": "2026-10-28",
-  "basis": "docs/proposals/thresholds-v0.md, with the match radius in metres so 50 cm/px strips are scored the same way",
+  "basis": "docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.",
   "match_radius_m": 5.0,
+  "match_radius_m_by_kind": {
+    "mark": 20.0
+  },
+  "piece_kinds": {
+    "hardware": [
+      "lander",
+      "backshell",
+      "heat_shield",
+      "rover"
+    ],
+    "fabric": [
+      "parachute"
+    ],
+    "mark": [
+      "crash_scar",
+      "descent_stage"
+    ]
+  },
   "top_n": 20,
-  "pass": {"min_recall_at_n": 0.8, "max_false_alarms_per_km2": 2.0}
+  "pass": {
+    "min_recall_at_n": 0.8,
+    "max_false_alarms_per_km2": 2.0
+  }
 }
