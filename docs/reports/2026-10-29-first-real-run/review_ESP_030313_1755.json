@@ -1,0 +1,930 @@
+{
+ "strip_key": "strip_a",
+ "turns": 12,
+ "stopped": "turn cap",
+ "verdicts": {
+  "c000": {
+   "action": "lower",
+   "cites": [
+    "votes",
+    "sam"
+   ],
+   "reason": "Three advisory votes describe a diffuse irregular patch with no crisp outline and mask has 21 pieces at confidence 0.52 with equiv diameter 18.6."
+  },
+  "c001": {
+   "action": "lower",
+   "cites": [
+    "votes",
+    "sam",
+    "tests"
+   ],
+   "reason": "Three votes describe diffuse mottled patch with no straight edges and mask touches_box_edge true with equiv_diameter_m 19.47 and edge_contrast 4.93."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "tests",
+    "sam"
+   ],
+   "reason": "Advisory votes report hardware with confidences 0.72 and 0.78 and mask shows equiv_diameter_m 24.31 with edge_contrast 1.94."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "sam"
+   ],
+   "reason": "Tests show sam_size pass at 15.11 and sam_edge pass at 3.47 with mask confidence 0.59 and pieces 25."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "sam"
+   ],
+   "reason": "Tests show sam_size pass at 11.93 and sam_edge pass at 3.58 with mask confidence 0.629 and pieces 12."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  }
+ },
+ "final": null,
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 19016
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1485
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1568
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1621
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 821
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 823
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 824
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 822
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 814
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 909
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 822
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 824
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 816
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 827
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 820
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 822
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 823
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 823
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 936
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 824
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "sam"
+    ],
+    "id": "c000",
+    "reason": "Three advisory votes describe a diffuse irregular patch with no crisp outline and mask has 21 pieces at confidence 0.52 with equiv diameter 18.6."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "request_check",
+   "args": {
+    "id": "c001",
+    "kind": "second_date_check"
+   },
+   "result": {
+    "id": "c001",
+    "kind": "second_date_check",
+    "result": {
+     "available": false,
+     "note": "no second date in this run"
+    }
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "sam",
+     "tests"
+    ],
+    "id": "c001",
+    "reason": "Three votes describe diffuse mottled patch with no straight edges and mask touches_box_edge true with equiv_diameter_m 19.47 and edge_contrast 4.93."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "request_check",
+   "args": {
+    "id": "c002",
+    "kind": "zoom_pass"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 677
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "sam"
+    ],
+    "id": "c002",
+    "reason": "Advisory votes report hardware with confidences 0.72 and 0.78 and mask shows equiv_diameter_m 24.31 with edge_contrast 1.94."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "sam"
+    ],
+    "id": "c003",
+    "reason": "Tests show sam_size pass at 15.11 and sam_edge pass at 3.47 with mask confidence 0.59 and pieces 25."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 11,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "sam"
+    ],
+    "id": "c004",
+    "reason": "Tests show sam_size pass at 11.93 and sam_edge pass at 3.58 with mask confidence 0.629 and pieces 12."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 12,
+   "tool": "request_check",
+   "args": {
+    "id": "c005",
+    "kind": "zoom_pass"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 678
+   }
+  }
+ ],
+ "strip": "ESP_030313_1755",
+ "ids": {
+  "c000": {
+   "row": 27926.5,
+   "col": 4266.9
+  },
+  "c001": {
+   "row": 26429.9,
+   "col": 14880.1
+  },
+  "c002": {
+   "row": 11081.1,
+   "col": 5373.5
+  },
+  "c003": {
+   "row": 25924.5,
+   "col": 3270.2
+  },
+  "c004": {
+   "row": 25579.8,
+   "col": 3699.1
+  },
+  "c005": {
+   "row": 17939.6,
+   "col": 13513.3
+  },
+  "c006": {
+   "row": 26558.1,
+   "col": 3499.7
+  },
+  "c007": {
+   "row": 27221.4,
+   "col": 3150.8
+  },
+  "c008": {
+   "row": 10920.7,
+   "col": 5446.6
+  },
+  "c009": {
+   "row": 18771.1,
+   "col": 7972.6
+  },
+  "c010": {
+   "row": 3730.2,
+   "col": 5708.6
+  },
+  "c011": {
+   "row": 17911.1,
+   "col": 13556.7
+  },
+  "c012": {
+   "row": 25394.3,
+   "col": 8132.7
+  },
+  "c013": {
+   "row": 25657.5,
+   "col": 8527.2
+  },
+  "c014": {
+   "row": 25340.0,
+   "col": 8538.2
+  },
+  "c015": {
+   "row": 25692.1,
+   "col": 9697.4
+  },
+  "c016": {
+   "row": 25233.4,
+   "col": 8076.4
+  },
+  "c017": {
+   "row": 18510.7,
+   "col": 9710.7
+  },
+  "c018": {
+   "row": 16539.1,
+   "col": 12384.1
+  },
+  "c019": {
+   "row": 19236.7,
+   "col": 13254.4
+  }
+ },
+ "checks": [
+  {
+   "id": "c001",
+   "kind": "second_date_check",
+   "result": {
+    "available": false,
+    "note": "no second date in this run"
+   }
+  },
+  {
+   "id": "c002",
+   "kind": "zoom_pass",
+   "result": {
+    "found": true,
+    "confidence": 0.488,
+    "area_px": 6803,
+    "area_m2": 425.19,
+    "equiv_diameter_m": 23.27,
+    "centroid_row": 256.0,
+    "centroid_col": 257.2,
+    "pieces": 19,
+    "major_m": 27.55,
+    "minor_m": 20.92,
+    "elongation": 0.241,
+    "fill": 0.595,
+    "circularity": 0.224,
+    "touches_box_edge": false,
+    "edge_contrast": 2.0,
+    "tests": {
+     "sam_size": {
+      "outcome": "pass",
+      "value": 23.27,
+      "limit": [
+       8.0,
+       25.0
+      ],
+      "unit": "m, equivalent diameter"
+     },
+     "sam_shape": {
+      "outcome": "not run",
+      "value": 0.241,
+      "limit": null,
+      "unit": "no shape claim for this branch"
+     },
+     "sam_edge": {
+      "outcome": "pass",
+      "value": 2.0,
+      "limit": 1.0,
+      "unit": "sigma of the surrounding ring"
+     }
+    }
+   }
+  },
+  {
+   "id": "c005",
+   "kind": "zoom_pass",
+   "result": {
+    "found": true,
+    "confidence": 0.59,
+    "area_px": 4723,
+    "area_m2": 295.19,
+    "equiv_diameter_m": 19.39,
+    "centroid_row": 252.6,
+    "centroid_col": 258.7,
+    "pieces": 10,
+    "major_m": 22.71,
+    "minor_m": 18.08,
+    "elongation": 0.204,
+    "fill": 0.603,
+    "circularity": 0.314,
+    "touches_box_edge": false,
+    "edge_contrast": 0.35,
+    "tests": {
+     "sam_size": {
+      "outcome": "pass",
+      "value": 19.39,
+      "limit": [
+       8.0,
+       25.0
+      ],
+      "unit": "m, equivalent diameter"
+     },
+     "sam_shape": {
+      "outcome": "not run",
+      "value": 0.204,
+      "limit": null,
+      "unit": "no shape claim for this branch"
+     },
+     "sam_edge": {
+      "outcome": "fail",
+      "value": 0.35,
+      "limit": 1.0,
+      "unit": "sigma of the surrounding ring"
+     }
+    }
+   }
+  }
+ ],
+ "reasoning": []
+}

@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "933f9f66800d1b3a818d48f9b42b7c5cab9354a496cf22c82f19c38a2e5d7160",
+        "bytes": 80784
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "93a651aa92a7bf762dffc5cac0aa312014ea678cbc0caad01aad076673cb2eec",
+        "bytes": 7968
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.22,
+   "place": "Not recognised",
+   "recognised": false,
+   "shows": "Grayscale orbital view of rough, mottled planetary terrain covered in many small dark pits, bumps and irregular shadows. Near the centre, slightly below mid-frame, is an anomalously bright, overexosed"
+  },
+  "raw": "{\"confidence\": 0.22, \"place\": \"Not recognised\", \"recognised\": false, \"shows\": \"Grayscale orbital view of rough, mottled planetary terrain covered in many small dark pits, bumps and irregular shadows. Near the centre, slightly below mid-frame, is an anomalously bright, overexosed\" }",
+  "input_tokens": 300,
+  "output_tokens": 910
+ }
+}

@@ -159,3 +159,26 @@ Decisions taken while building, and what the first real run (9b) must check:
   says hardware at that confidence (`landers.models.wonder.VoteRule`, recorded with every vote record).
   Spark's `record_verdict` rejects a raise, an empty citation, a cited field that does not exist, a number
   not present in the evidence record, and the words discovered, confirmed and proven.
+
+## As run (plan item 9b, the first real calls; docs/reports/2026-10-29-first-real-run.md)
+
+What the real API returned on 2026-10-29, where it differs from the text above:
+
+- `meta-sam-parser` 0.1.0 is async only: `parse_responses_stream` takes an async iterable and
+  `final_result()` is awaited. `landers.models.backend.parse_sam_events` collects the SDK's stream into a
+  list and replays it on a private event loop. Its box records carry `left`, `top`, `right`, `bottom`
+  (right and bottom half-open), `object_id` as a decimal string and `confidence`; a mask record carries
+  `mask` (payload, width, height) and `bounds`, and the raster covers only the bounds, at the box's own
+  size (a 14 px box came back as a 14 by 14 raster), so `place_mask` scales it to the bounds and pastes it
+  into the image. `sam_result_from_records` does the mapping and is unit tested on constructed records.
+- The box-prompt string, the `<0f>` prefix, the comma separator, `metadata.include_confidence` as the
+  string `"true"` and `response_format.json_schema.strict: true` were all accepted as written; no 400.
+  Every response carried `c` on the box and the mask.
+- Wonder's `usage.prompt_tokens` came back as 497 for every vote with three 256 px images; the ledger
+  records what the API reports, so its Wonder estimate is lower than the per-image rule above would give.
+  Spark returned no `reasoning_content`.
+- `read_thresholds` drops `decided_by` and `decided_on` from `controls/thresholds.json`: the first dry run on
+  a real strip stopped on the date (the leak guard refuses any date in a prompt).
+- Published copies: `scripts/models_publish.py` copies a run's records and recordings out of `out/` with
+  every sealed-site name replaced by `[sealed site name]` and the count recorded, because a vision model's
+  free text can name any mission (one did). Manifests and input lists stay under `out/`.

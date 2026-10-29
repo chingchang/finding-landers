@@ -1,0 +1,133 @@
+{
+ "run": "key_pieces",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale orbital view of rough, mottled, high-contrast textured ground with irregular bumps, ridges and depressions across the frame. Near the centre is a single prominent, very dark, irregularly lob",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "A grayscale overhead view of rough, mottled, fractured-looking terrain. Near the centre is a very small irregular black patch with two bright white spots along its upper edge, enlarged in the second, ",
+     "confidence": 0.25,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale, grainy, mottled rough ground covered throughout with intermingled light and dark speckles and short irregular markings. A small, very dark, irregular roughly rounded blob is just below the'",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 1,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  }
+ ]
+}

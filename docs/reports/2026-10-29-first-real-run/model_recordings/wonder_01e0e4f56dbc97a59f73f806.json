@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "57984d8ffe2f23700f87e700dd5d77de2d7ee28fded80f51eb41c693e3e34cf5",
+        "bytes": 63333
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "80583f014c33985c7ad616aec042abcc19f924e80df55b49f09d6754b294bf38",
+        "bytes": 7583
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.5,
+   "place": "Jezero Crater, Mars, near the Mars 2020 [sealed site name] landing site",
+   "recognised": true,
+   "shows": "The bright conical backshell and its collapsed parachute from NASA's Mars 2020 / [sealed site name] descent system on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE"
+  },
+  "raw": "{\"confidence\": 0.5, \"place\": \"Jezero Crater, Mars, near the Mars 2020 [sealed site name] landing site\", \"recognised\": true, \"shows\": \"The bright conical backshell and its collapsed parachute from NASA's Mars 2020 / [sealed site name] descent system on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE\"}",
+  "input_tokens": 300,
+  "output_tokens": 1960
+ }
+}

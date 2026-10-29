@@ -1,0 +1,301 @@
+{
+ "run": "v02b_features_shape_v1sat",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale orbital views of rough, mottled, irregularly ridged/hummocky planetary terrain with pervasive light-and-dark texture and no large distinct crater, channel, or other named landmark visible. A",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale orbital views of rough, mottled, lumpy ground covered with short interconnected ridges, bumps and shallow depressions. Near the centre is a tiny few-pixel black-and-white speck that stands\",",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    },
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale, very grainy mottled ground texture filling the frame, with irregular dark pits and depressions scattered among lighter, interwoven, lumpy ridge-like areas. The 4x centre enlargement shows\u03c3\u03c3",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale, rough, mottled and knobbly planetary terrain filling the frame. Near the centre is a bright, irregular, high-albedo patch, with a smaller fainter bright patch to its southwest. The enlarged",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Grayscale orbital view of rough, mottled planetary terrain covered in many small dark pits, bumps and irregular shadows. Near the centre, slightly below mid-frame, is an anomalously bright, overexosed",
+     "confidence": 0.22,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale overhead ground texture filling the frame. The surface is mottled and grainy, with numerous small irregular dark pits, shadows and lighter mounds/hummocks distributed across it, and no sharp",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": false
+    }
+   ],
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Not identified",
+     "shows": "Grayscale, mottled and rough-textured ground filling the frame, with no horizon or distinct landmarks. Near the centre is a small, bright, irregular roughly triangular white patch, with an elongated,.",
+     "confidence": 0.18,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Unknown - not recognised",
+     "shows": "Grayscale orbital view of rough, mottled, irregularly cracked/polygonal planetary terrain. Near the centre is a small dark elongated patch immediately adjacent to a bright white patch, surrounded by p",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale, grainy orbital view of mottled, irregular polygonal/pitted planetary terrain filling the frame. Slightly west of centre is a small, intensely bright white patch with an adjacent dark, elong",
+     "confidence": 0.24,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  }
+ ]
+}

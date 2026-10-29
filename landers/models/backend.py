@@ -452,7 +452,7 @@ class RealBackend:
 
     def sam(self, req: SamRequest) -> SamResult:  # pragma: no cover - network
         try:
-            from meta_sam_parser import decode_mask_to_raster, image_segmentation_format, parse_responses_stream
+            from meta_sam_parser import decode_mask_to_raster
         except ImportError as e:
             raise RuntimeError("the real SAM backend needs meta-sam-parser: uv add meta-sam-parser") from e
         try:
@@ -460,28 +460,8 @@ class RealBackend:
             events = list(stream)
         except Exception as e:
             self._raise_for(e)
-        result = parse_responses_stream(events, image_segmentation_format()).final_result()
-        raw = "".join(
-            getattr(ev, "delta", "") or "" for ev in events if getattr(ev, "type", "") == "response.output_text.delta"
-        )
-        boxes: dict[int, tuple[Box, float]] = {}
-        masks: dict[int, np.ndarray] = {}
-        for rec in getattr(result, "records", result):
-            oid = int(rec.object_id)
-            if rec.kind == "box":
-                b = rec.box
-                boxes[oid] = (
-                    Box(int(b.x1), int(b.y1), int(b.x2), int(b.y2)),
-                    float(getattr(rec, "confidence", getattr(b, "c", 0.0)) or 0.0),
-                )
-            elif rec.kind == "mask":
-                small = np.asarray(decode_mask_to_raster(rec.mask), bool)
-                masks[oid] = scale_mask(small, req.height, req.width)
-        objs = []
-        for oid in sorted(set(boxes) | set(masks)):
-            box, conf = boxes.get(oid, (Box(0, 0, req.width - 1, req.height - 1), 0.0))
-            objs.append(SamObject(oid, box, conf, masks.get(oid, np.zeros((req.height, req.width), bool))))
-        return SamResult(objs, raw_text=raw)
+        result = parse_sam_events(events)
+        return sam_result_from_records(result.records, req.width, req.height, decode_mask_to_raster, result.raw_output)
 
     def wonder(self, req: WonderRequest) -> WonderResult:  # pragma: no cover - network
         try:
@@ -523,11 +503,78 @@ class RealBackend:
 
 
 def scale_mask(small: np.ndarray, height: int, width: int) -> np.ndarray:
-    """Nearest-neighbour scaling of a mask to the image size (the API returns a smaller raster)."""
+    """Nearest-neighbour scaling of a mask to ``height`` by ``width``."""
     h, w = small.shape
     rows = np.minimum((np.arange(height) * h) // max(height, 1), h - 1)
     cols = np.minimum((np.arange(width) * w) // max(width, 1), w - 1)
     return small[rows][:, cols]
+
+
+def place_mask(small: np.ndarray, bounds, height: int, width: int) -> np.ndarray:
+    """A full-image mask from a box-local raster: the API's mask covers only ``bounds`` (half-open
+    ``left``, ``top``, ``right``, ``bottom`` in image pixels, as ``meta_sam_parser`` reports them), so the
+    raster is scaled to the bounds' size and pasted there; everything outside is False."""
+    full = np.zeros((height, width), bool)
+    top, left, bottom, right = int(bounds.top), int(bounds.left), int(bounds.bottom), int(bounds.right)
+    if bottom <= top or right <= left or not small.size:
+        return full
+    scaled = scale_mask(np.asarray(small, bool), bottom - top, right - left)  # the whole bounds, then clip
+    t, l_ = max(top, 0), max(left, 0)
+    b, r = min(bottom, height), min(right, width)
+    if b > t and r > l_:
+        full[t:b, l_:r] = scaled[t - top : b - top, l_ - left : r - left]
+    return full
+
+
+def parse_sam_events(events: list):
+    """Run ``meta_sam_parser`` over an already collected list of Responses events. The parser is
+    async-only, so the events are replayed through an async generator on a private event loop."""
+    import asyncio
+
+    from meta_sam_parser import image_segmentation_format, parse_responses_stream
+
+    async def replay():
+        for ev in events:
+            yield ev
+
+    async def parse():
+        return await parse_responses_stream(replay(), image_segmentation_format()).final_result()
+
+    return asyncio.run(parse())
+
+
+def sam_result_from_records(records, width: int, height: int, decode, raw_text: str = "") -> SamResult:
+    """``SamObject`` records from the parser's records (``kind`` box or mask; ``object_id`` a decimal
+    string; a box's ``right`` and ``bottom`` half-open; a mask record's ``mask`` decoded by ``decode``
+    into row-major 0/1 bytes of ``mask.height`` by ``mask.width`` covering ``bounds``). A later mask for
+    the same object replaces an earlier one; a box's confidence is kept when the mask carries none."""
+    boxes: dict[int, Box] = {}
+    confs: dict[int, float] = {}
+    masks: dict[int, np.ndarray] = {}
+    for rec in records:
+        kind = getattr(rec, "kind", None)
+        if kind not in ("box", "mask"):
+            continue
+        oid = int(rec.object_id)
+        conf = getattr(rec, "confidence", None)
+        if conf is not None:
+            confs[oid] = float(conf)
+        if kind == "box":
+            boxes[oid] = Box(
+                int(rec.left),
+                int(rec.top),
+                min(int(rec.right) - 1, width - 1),
+                min(int(rec.bottom) - 1, height - 1),
+            )
+        else:
+            raw = np.frombuffer(bytes(decode(rec.mask)), np.uint8)
+            small = raw.reshape(int(rec.mask.height), int(rec.mask.width)) != 0
+            masks[oid] = place_mask(small, rec.bounds, height, width)
+    objs = []
+    for oid in sorted(set(boxes) | set(masks)):
+        box = boxes.get(oid, Box(0, 0, width - 1, height - 1))
+        objs.append(SamObject(oid, box, confs.get(oid, 0.0), masks.get(oid, np.zeros((height, width), bool))))
+    return SamResult(objs, raw_text=raw_text)
 
 
 def make_backend(kind: str, directory: Path | None = None, env: dict | None = None) -> Backend:

@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "af1f5a09c991adf9438b58e5cf8388c69d554bc670300af394d1f133167d2721",
+        "bytes": 80936
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fa619c8972bedc561b1a150c8a1ea8b8d5352bda56623d790aad97a1537cc01d",
+        "bytes": 7818
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.0,
+   "place": "unknown",
+   "recognised": false,
+   "shows": "Grayscale overhead ground texture filling the frame. The surface is mottled and grainy, with numerous small irregular dark pits, shadows and lighter mounds/hummocks distributed across it, and no sharp"
+  },
+  "raw": "{\n  \"confidence\": 0.0,\n  \"place\": \"unknown\",\n  \"recognised\": false,\n  \"shows\": \"Grayscale overhead ground texture filling the frame. The surface is mottled and grainy, with numerous small irregular dark pits, shadows and lighter mounds/hummocks distributed across it, and no sharp\" \n}",
+  "input_tokens": 300,
+  "output_tokens": 771
+ }
+}

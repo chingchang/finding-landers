@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "bc554cbe8ee02364a9608fe4b39d82f73ccf27023c5a812072de0d804b6cb2b5",
+        "bytes": 74223
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a58603a97174692d706bfa618c367f2945adf30827607063c6c6a228a860a6e5",
+        "bytes": 8069
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.24,
+   "place": "",
+   "recognised": false,
+   "shows": "Grayscale, grainy orbital view of mottled, irregular polygonal/pitted planetary terrain filling the frame. Slightly west of centre is a small, intensely bright white patch with an adjacent dark, elong"
+  },
+  "raw": "{\"confidence\": 0.24, \"place\": \"\", \"recognised\": false, \"shows\": \"Grayscale, grainy orbital view of mottled, irregular polygonal/pitted planetary terrain filling the frame. Slightly west of centre is a small, intensely bright white patch with an adjacent dark, elong\"}",
+  "input_tokens": 300,
+  "output_tokens": 1580
+ }
+}

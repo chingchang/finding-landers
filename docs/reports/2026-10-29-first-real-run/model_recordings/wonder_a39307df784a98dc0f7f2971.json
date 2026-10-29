@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "b26c184ef46f7f67ea2a9b28e77699d28c013851e260f4b8d8aadbd198a1f1a4",
+        "bytes": 81438
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "e0338e94acbe0a4328479664bc4880d5ea26c63a2c830adf22320e03b02219e7",
+        "bytes": 8259
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.25,
+   "place": "",
+   "recognised": false,
+   "shows": "Grayscale orbital view of mottled, cratered terrain with several soft-rimmed depressions. Near the centre is an irregular dark patch containing a small, bright, roughly circular white feature in the 4"
+  },
+  "raw": "{\"confidence\": 0.25, \"place\": \"\", \"recognised\": false, \"shows\": \"Grayscale orbital view of mottled, cratered terrain with several soft-rimmed depressions. Near the centre is an irregular dark patch containing a small, bright, roughly circular white feature in the 4\"\n}",
+  "input_tokens": 300,
+  "output_tokens": 1452
+ }
+}
