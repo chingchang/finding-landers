@@ -16,7 +16,7 @@ Branches run per tile; every candidate carries the branch that made it:
 Grades here can only be "needs second look" (passes a physical test on one date) or "likely natural";
 "candidate" needs a second date, which is the persistence step and not part of this module.
 
-v0.2 (plan item 6): saturated pixels are data at the top of the range rather than no-data (v0.1 lost
+v0.2 (plan item 6): saturated pixels are data at the top of the range rather than no-data in the small-object branches (v0.1 lost
 saturated hardware to the no-data margin); every bright, shadow and dark_compact candidate carries the
 shadow-side, isolation and saturation features of ``landers.shape``; and a versioned rules file may add to
 the calibrated score of candidates that pass a feature test (``finish_tile``).
@@ -47,6 +47,12 @@ class DetectorConfig:
     # v0.2: saturated pixels (1022, 1023) are data at the top of the range, not holes. v0.1 masked them with
     # the no-data margin, which hid saturated hardware (bright metal, canopies) from every branch.
     saturated_is_data: bool = True
+    # The sheet branch keeps v0.1's mask: its test is flatness (mean z over peak z), and a saturated pixel is a
+    # ceiling, not a brightness, so a partly saturated canopy looks peaked and fails the test when saturated
+    # pixels enter the block means (measured on a recorded canopy: flatness 0.46 kept with the v0.1 mask,
+    # 0.35 dropped with saturated pixels as data; out/shape_v1/sheet_saturation_schiaparelli_parachute.txt).
+    # A fully saturated sheet is then invisible to this branch; that case waits for transplant injection.
+    sheet_saturated_is_data: bool = False
     band_dark_z: float = -2.0  # a band mean below this counts as shadow in shape.shadow_features
     tile: int = 2048
     overlap: int = 128
@@ -317,7 +323,8 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
     # sheets at reduced resolution
     n = cfg.sheet_reduce
     if min(win.shape) >= n * cfg.sheet_background_px:
-        d_r, v_r = block_mean(win.data, usable, n)
+        sheet_usable = usable if cfg.sheet_saturated_is_data else win.valid
+        d_r, v_r = block_mean(win.data, sheet_usable, n)
         z_r = local_z(d_r, v_r, cfg.sheet_background_px, cfg.sheet_sigma, cfg.sheet_inner_px, margin=2)
         sheets, _ = components(
             z_r > cfg.z_sheet, z_r, area_range_px(cfg.sheet_size_m, scale * n), v_r, max(2, cfg.edge_margin_px // n)

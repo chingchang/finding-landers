@@ -105,6 +105,28 @@ def test_saturated_object_is_data_not_a_hole():
     assert not [c for c in legacy if c.branch in ("bright", "shadow") and abs(c.row - 250) < 3 and abs(c.col - 250) < 3]
 
 
+def test_partly_saturated_sheet_is_still_a_sheet():
+    """A flat bright sheet with a saturated patch inside: the sheet branch keeps saturated pixels out of its
+    block means (the v0.1 mask), so the sheet stays flat and is found; with them in, the patch makes a peak and
+    the flatness test drops it. This is the recorded Schiaparelli canopy in miniature."""
+    rng = np.random.default_rng(4)
+    size = 512
+    img = 500 + 20 * rng.standard_normal((size, size)).astype(np.float32)
+    data = np.clip(img, 1, 1021).astype(np.uint16)
+    data[226:274, 226:274] = 620  # a 12 m square sheet
+    yy, xx = np.mgrid[:size, :size]
+    data[(yy - 232) ** 2 + (xx - 268) ** 2 <= 3**2] = 1023  # a saturated patch inside it, off centre
+    win = Window(0, 0, data, (data < 1022))
+    lbl = fake_label()
+
+    def sheets(cfg):
+        return [c for c in detect.detect_tile(win, lbl, cfg) if c.branch == "sheet" and abs(c.row - 250) < 12 and abs(c.col - 250) < 12]
+
+    found = sheets(detect.DetectorConfig())
+    assert found and found[0].extra["flatness"] >= detect.DetectorConfig().sheet_flatness
+    assert not sheets(detect.DetectorConfig(sheet_saturated_is_data=True))
+
+
 def test_finish_tile_rules_match_rescore(tmp_path):
     import json
 
