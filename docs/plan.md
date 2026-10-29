@@ -22,7 +22,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    and scripts/leakcheck.sh flags every observation id outside its allowlist, so the two cannot both pass.
    Allow observation ids under docs/reports/ (reports are for people and must say which strip a number came
    from); keep the sealed-site name and coordinate rules everywhere, reports included.
-2b. [ ] Sheets, second pass, rebuilt from the baseline v1 lists without changing them: one global stretch
+2b. [done, see docs/reports/2026-10-28-contact-sheets-second-pass.md] Sheets, second pass, rebuilt from the baseline v1 lists without changing them: one global stretch
    per sheet and per grid (not per thumbnail); a second ranking beside the score, the two-sided shadow test
    from the label azimuth (dark on the anti-sun side, not dark on the sun side); for Schiaparelli a 3 km area
    around each strip's own centre; and scripts/leakcheck.sh allowing observation ids under docs/reports/
