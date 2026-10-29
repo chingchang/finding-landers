@@ -34,13 +34,27 @@ import json
 import math
 import statistics
 from collections import Counter
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 DEFAULT_SCALE_M = 0.25
 
 
-def match_radius_px(thresholds: dict, scale_m: float) -> float:
+def piece_kind(piece: str, thresholds: dict) -> str:
+    """The kind a piece is scored as: ``piece_kinds`` in the thresholds file maps kind -> piece names
+    (hardware, fabric, mark). A piece named nowhere is hardware."""
+    for kind, names in thresholds.get("piece_kinds", {}).items():
+        if piece in names:
+            return kind
+    return "hardware"
+
+
+def match_radius_px(thresholds: dict, scale_m: float, kind: str | None = None) -> float:
+    """Match radius in pixels. ``match_radius_m_by_kind`` overrides ``match_radius_m`` for a kind (a mark's
+    recorded point is one place on a 20 to 40 m feature); both are metres, divided by the strip's scale."""
+    by_kind = thresholds.get("match_radius_m_by_kind", {})
+    if kind is not None and kind in by_kind:
+        return float(by_kind[kind]) / float(scale_m)
     if "match_radius_m" in thresholds:
         return float(thresholds["match_radius_m"]) / float(scale_m)
     return float(thresholds["match_radius_px"])
@@ -54,6 +68,7 @@ class PieceResult:
     rank: int | None
     branch: str | None
     distance_px: float | None
+    kind: str = "hardware"
 
 
 @dataclass
@@ -77,6 +92,8 @@ class Score:
     pieces: list[PieceResult]
     strips: list[StripResult]
     skipped: list[str]
+    recall_by_kind: dict = field(default_factory=dict)
+    matching: str = "one_to_one"
 
     def to_json(self) -> str:
         return json.dumps(asdict(self), indent=1)
@@ -87,14 +104,17 @@ def _sorted_candidates(strip_entry: dict) -> list[dict]:
 
 
 def score(candidates: dict, answers: dict, thresholds: dict) -> Score:
+    """One candidate matches at most one piece: candidates are taken in score order and each goes to the
+    nearest still-unmatched piece within that piece's radius; a piece's rank is the rank of the first
+    candidate assigned to it. Before thresholds version 1 the same candidate could serve several pieces."""
     top_n = int(thresholds["top_n"])
     strips = candidates.get("strips", {})
     pieces: list[PieceResult] = []
     skipped: list[str] = []
-    truth_by_strip: dict[str, list[tuple[float, float]]] = {}
+    truth_by_strip: dict[str, list[tuple[int, float, float, float]]] = {}  # (piece index, row, col, radius)
 
-    def radius_for(sid: str) -> float:
-        return match_radius_px(thresholds, strips.get(sid, {}).get("scale_m", DEFAULT_SCALE_M))
+    def scale_of(sid: str) -> float:
+        return float(strips.get(sid, {}).get("scale_m", DEFAULT_SCALE_M))
 
     for site in answers["sites"]:
         for pc in site["pieces"]:
@@ -102,29 +122,37 @@ def score(candidates: dict, answers: dict, thresholds: dict) -> Score:
                 skipped.append(f"{site['name']}/{pc['piece']}: position not recorded")
                 continue
             sid = pc["strip"]
+            kind = piece_kind(pc["piece"], thresholds)
             row, col = float(pc["line"]) - 1.0, float(pc["sample"]) - 1.0
-            truth_by_strip.setdefault(sid, []).append((row, col))
+            pieces.append(PieceResult(site["name"], pc["piece"], sid, None, None, None, kind))
             if sid not in strips:
                 skipped.append(f"{site['name']}/{pc['piece']}: strip {sid} not in this run")
-                pieces.append(PieceResult(site["name"], pc["piece"], sid, None, None, None))
                 continue
-            radius = radius_for(sid)
-            rank = branch = dist = None
-            for i, c in enumerate(_sorted_candidates(strips[sid]), start=1):
-                d = math.hypot(float(c["row"]) - row, float(c["col"]) - col)
-                if d <= radius:
-                    rank, branch, dist = i, c.get("branch"), d
-                    break
-            pieces.append(PieceResult(site["name"], pc["piece"], sid, rank, branch, dist))
+            truth_by_strip.setdefault(sid, []).append(
+                (len(pieces) - 1, row, col, match_radius_px(thresholds, scale_of(sid), kind))
+            )
 
     strip_results: list[StripResult] = []
     for sid, entry in strips.items():
-        cands = entry.get("candidates", [])
+        cands = _sorted_candidates(entry)
         truths = truth_by_strip.get(sid, [])
-        radius = radius_for(sid)
-        hits = sum(
-            1 for c in cands if any(math.hypot(float(c["row"]) - r, float(c["col"]) - k) <= radius for r, k in truths)
-        )
+        unmatched = list(truths)
+        hits = 0
+        for i, c in enumerate(cands, start=1):
+            crow, ccol = float(c["row"]), float(c["col"])
+            if any(math.hypot(crow - r, ccol - k) <= rad for _, r, k, rad in truths):
+                hits += 1
+            if not unmatched:
+                continue
+            best = None
+            for j, (idx, r, k, rad) in enumerate(unmatched):
+                d = math.hypot(crow - r, ccol - k)
+                if d <= rad and (best is None or d < best[0]):
+                    best = (d, j, idx)
+            if best is not None:
+                d, j, idx = best
+                pieces[idx].rank, pieces[idx].branch, pieces[idx].distance_px = i, c.get("branch"), d
+                unmatched.pop(j)
         area = float(entry.get("valid_area_km2") or 0.0)
         fa = len(cands) - hits
         strip_results.append(StripResult(sid, len(cands), hits, fa, area, (fa / area) if area > 0 else None))
@@ -132,13 +160,21 @@ def score(candidates: dict, answers: dict, thresholds: dict) -> Score:
     scored = [p for p in pieces if p.strip in strips]
     found = [p for p in scored if p.rank is not None and p.rank <= top_n]
     recall = (len(found) / len(scored)) if scored else None
+    by_kind: dict = {}
+    for p in scored:
+        d = by_kind.setdefault(p.kind, {"recorded": 0, "found": 0, "recall": None})
+        d["recorded"] += 1
+        if p.rank is not None and p.rank <= top_n:
+            d["found"] += 1
+    for d in by_kind.values():
+        d["recall"] = d["found"] / d["recorded"] if d["recorded"] else None
     fas = [s.false_alarms_per_km2 for s in strip_results if s.false_alarms_per_km2 is not None]
     med_fa = statistics.median(fas) if fas else None
     passed = None
     if recall is not None and med_fa is not None and "pass" in thresholds:
         p = thresholds["pass"]
         passed = recall >= float(p["min_recall_at_n"]) and med_fa <= float(p["max_false_alarms_per_km2"])
-    return Score(recall, top_n, len(scored), len(found), med_fa, passed, pieces, strip_results, skipped)
+    return Score(recall, top_n, len(scored), len(found), med_fa, passed, pieces, strip_results, skipped, by_kind)
 
 
 def load_json(path: str | Path) -> dict:
@@ -154,12 +190,18 @@ def format_report(s: Score) -> str:
         f"recall@{s.top_n} = {r} ({s.n_pieces_found}/{s.n_pieces_recorded} recorded pieces)   "
         f"median false alarms/km2 = {fa}   {verdict}"
     )
+    if s.recall_by_kind:
+        parts = []
+        for kind, d in sorted(s.recall_by_kind.items()):
+            r_k = "n/a" if d["recall"] is None else f"{d['recall']:.2f}"
+            parts.append(f"{kind} {r_k} ({d['found']}/{d['recorded']})")
+        lines.append("by kind: " + "   ".join(parts) + f"   [matching: {s.matching}]")
     lines.append("")
-    lines.append(f"{'site':14s} {'piece':14s} {'rank':>5s} {'dist px':>8s}  branch")
+    lines.append(f"{'site':14s} {'piece':14s} {'kind':9s} {'rank':>5s} {'dist px':>8s}  branch")
     for p in s.pieces:
         rank = "-" if p.rank is None else str(p.rank)
         dist = "-" if p.distance_px is None else f"{p.distance_px:.1f}"
-        lines.append(f"{p.site:14s} {p.piece:14s} {rank:>5s} {dist:>8s}  {p.branch or '-'}")
+        lines.append(f"{p.site:14s} {p.piece:14s} {p.kind:9s} {rank:>5s} {dist:>8s}  {p.branch or '-'}")
     lines.append("")
     lines.append(f"{'strip':16s} {'cands':>6s} {'hits':>5s} {'false':>6s} {'km2':>7s} {'FA/km2':>7s}")
     for t in s.strips:

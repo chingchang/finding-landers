@@ -88,3 +88,8 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   false-alarm rarity scale fitted on phase 0 tiles and measured on phase 1; Wonder advisory, never gating;
   "candidate" requires two dates; the parachute may already be dust-covered after seven years, so the hard
   metal is the long-lived signature; wind moves fabric and foil, never metal.
+- 2026-10-28 (evening): thresholds v1 adopted from docs/proposals/scoring-v1.md: one candidate matches at
+  most one piece; pieces scored as hardware, fabric or mark; marks matched at 20 m. The first score reads
+  2 of 13 under v1 (3 of 13 under v0); both are kept (docs/reports/2026-10-28-first-score-rescored.md).
+  The key holds 13 of 22 pieces; the Schiaparelli and Phoenix positions were checked against the HiRISE
+  captioned images by registration, which corrected one piece.

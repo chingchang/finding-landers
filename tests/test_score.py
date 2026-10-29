@@ -91,3 +91,80 @@ def test_recall_at_false_alarm_rate_threshold():
     assert rows[("sheet", "8-12 m")]["branches"] == {"sheet": 1}
     assert rows[("dark_compact", "2-3 m")]["found"] == 0
     assert "recall overall" in format_injection_report(r)
+
+
+def test_one_candidate_matches_at_most_one_piece():
+    answers = {
+        "sites": [
+            {
+                "name": "siteA",
+                "pieces": [
+                    {"piece": "parachute", "strip": "S1", "line": 1001, "sample": 2001},
+                    {"piece": "backshell", "strip": "S1", "line": 1011, "sample": 2001},  # 10 px away
+                ],
+            }
+        ]
+    }
+    cands = {
+        "run": "t",
+        "strips": {
+            "S1": {
+                "valid_area_km2": 1.0,
+                "candidates": [
+                    {"row": 1002, "col": 2000, "score": 9.0, "branch": "sheet"},  # 2 px from the parachute
+                    {"row": 100, "col": 100, "score": 5.0, "branch": "bright"},
+                ],
+            }
+        },
+    }
+    s = score(cands, answers, THRESH)
+    by = {p.piece: p for p in s.pieces}
+    assert by["parachute"].rank == 1
+    assert by["backshell"].rank is None  # the one candidate is taken; it does not count twice
+    assert s.strips[0].n_true_hits == 1 and s.strips[0].false_alarms == 1  # a candidate near truth is not a false alarm
+    assert s.recall_by_kind["hardware"] == {"recorded": 2, "found": 1, "recall": 0.5}
+    assert s.matching == "one_to_one"
+
+
+def test_match_radius_and_recall_by_kind():
+    from landers.score import match_radius_px, piece_kind
+
+    thr = {
+        "match_radius_m": 5.0,
+        "match_radius_m_by_kind": {"mark": 20.0},
+        "piece_kinds": {"hardware": ["lander"], "fabric": ["parachute"], "mark": ["crash_scar"]},
+        "top_n": 3,
+        "pass": {"min_recall_at_n": 0.5, "max_false_alarms_per_km2": 2.0},
+    }
+    assert piece_kind("crash_scar", thr) == "mark" and piece_kind("heat_shield", thr) == "hardware"
+    assert match_radius_px(thr, 0.25, "mark") == 80.0 and match_radius_px(thr, 0.25, "hardware") == 20.0
+    answers = {
+        "sites": [
+            {
+                "name": "siteA",
+                "pieces": [
+                    {"piece": "crash_scar", "strip": "S1", "line": 1001, "sample": 2001},
+                    {"piece": "lander", "strip": "S1", "line": 5001, "sample": 6001},
+                ],
+            }
+        ]
+    }
+    cands = {
+        "run": "t",
+        "strips": {
+            "S1": {
+                "valid_area_km2": 1.0,
+                "scale_m": 0.25,
+                "candidates": [
+                    {"row": 1050, "col": 2000, "score": 9.0, "branch": "dark"},  # 50 px from the scar: in at 80, out at 20
+                    {"row": 5050, "col": 6000, "score": 8.0, "branch": "dark"},  # 50 px from the lander: out
+                ],
+            }
+        },
+    }
+    s = score(cands, answers, thr)
+    by = {p.piece: p for p in s.pieces}
+    assert by["crash_scar"].rank == 1 and by["crash_scar"].kind == "mark"
+    assert by["lander"].rank is None
+    assert s.recall_by_kind["mark"]["found"] == 1 and s.recall_by_kind["hardware"]["found"] == 0
+    assert "by kind:" in format_report(s)
