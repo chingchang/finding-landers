@@ -22,14 +22,16 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    and scripts/leakcheck.sh flags every observation id outside its allowlist, so the two cannot both pass.
    Allow observation ids under docs/reports/ (reports are for people and must say which strip a number came
    from); keep the sealed-site name and coordinate rules everywhere, reports included.
-2b. [ ] Sheets, second pass, rebuilt from the baseline v1 lists without changing them: one global stretch
+2b. [done, see docs/reports/2026-10-28-contact-sheets-second-pass.md] Sheets, second pass, rebuilt from the baseline v1 lists without changing them: one global stretch
    per sheet and per grid (not per thumbnail); a second ranking beside the score, the two-sided shadow test
    from the label azimuth (dark on the anti-sun side, not dark on the sun side); for Schiaparelli a 3 km area
    around each strip's own centre; and scripts/leakcheck.sh allowing observation ids under docs/reports/
    only, with the sealed-site name and coordinate rules kept everywhere. Reports may then name strips.
 3. [person] Key filled by a person from the sheets and grids, in a private copy. Copied to controls/tuning.json and
    committed only after item 1 is committed.
-4. [ ] First score: baseline v1 against the key. This is the blind number; report it as such.
+4. [done, see docs/reports/2026-10-28-first-score.md] First score: baseline v1 against the key. This is the blind number; report it as such.
+   Scored with the key at 13 of 22 pieces; a person may rescore when more pieces are filled (same command,
+   same baseline file). docs/proposals/scoring-v1.md waits for a person.
 5. [done, see docs/reports/2026-10-28-persistence.md] Persistence: local registration (phase correlation on a 512 px window) between the two Schiaparelli
    dates and the two Phoenix dates; measured offsets in a report; a persistence branch that matches position
    only. Hard parts (lander, backshell, heat shield, fragments) must sit in the same place on both dates to
