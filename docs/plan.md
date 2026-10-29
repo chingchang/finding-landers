@@ -63,7 +63,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   a person, versioned.
 - A frozen tag before the held-out run and before the search. Nothing changes after a frozen run starts; a fix
   goes in a later tag and both numbers are shown.
-- Frost-season Phoenix strips (ESP_033724_2485, ESP_068169_2485) are not used. Pathfinder is 50 cm/px.
+- The two frost-season Phoenix strips (named in docs/data.md) are not used. Pathfinder is 50 cm/px.
 
 ## Backlog (ideas with a when)
 
