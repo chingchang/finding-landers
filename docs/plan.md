@@ -47,7 +47,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
-8. [ ] Tuning loop (second session; the first is reported in docs/reports/2026-10-29-tuning-loop.md), unattended: one change, score, keep or revert, one line in docs/experiments.md per idea that
+8. [running] Tuning loop (second session; the first is reported in docs/reports/2026-10-29-tuning-loop.md), unattended: one change, score, keep or revert, one line in docs/experiments.md per idea that
    did not move the score; tuning tiles only. The scoreboard is transplant injection as item 7 left it
    (`scripts/transplant.py` with the same tile list, seed and command as out/transplant_t1; out/transplant_t1
    is the number to beat) plus the 18-piece key under thresholds v1 and landers/shape_v1.json. A change is
