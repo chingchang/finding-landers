@@ -60,7 +60,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     Beagle 2, once. A miss at Beagle 2 is a reported result.
 11. [ ] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
     for every survivor; a coverage map (what was searched on how many dates) as a result in its own right.
-11a. [ ] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
+11a. [done, see docs/reports/2026-10-28-search-bookkeeping.md] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
    disk (id, date, Ls, incidence, map scale, valid area), which pairs overlap and by how much, the 2007 PSP
    strips first; a coverage map on the polar grid (valid area per strip, number of dates per cell) as a
    figure and a JSON; a tiling plan with tile counts and a time estimate from baseline v1's tiles per
