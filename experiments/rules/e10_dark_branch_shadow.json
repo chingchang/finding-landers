@@ -1,0 +1,11 @@
+{
+  "version": "e10_dark_branch_shadow",
+  "basis": "shape_v2 plus the dark_shadow test on the dark branch (2.5 to 50 m dark patches), which records features from detector v0.3: two_sided >= 3.0 and shadow height 0.5 to 3 m. From experiments/dark_features.py: 0.00159 of dark false alarms pass; no recorded dark-branch piece does (Phoenix lander two_sided 1.02, height 0.21 m).",
+  "rules": [
+    {"name": "saturated", "branches": ["bright", "shadow"], "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}]},
+    {"name": "shadow_strong", "branches": ["bright"], "conditions": [{"feature": "two_sided", "op": ">=", "threshold": 4.0}, {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}]},
+    {"name": "dark_shadow", "branches": ["dark_compact"], "conditions": [{"feature": "two_sided", "op": ">=", "threshold": 3.5}, {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}]},
+    {"name": "tile_top", "branches": ["bright", "shadow"], "conditions": [{"feature": "tile_rank", "op": "<=", "threshold": 0}]},
+    {"name": "dark_branch_shadow", "branches": ["dark"], "conditions": [{"feature": "two_sided", "op": ">=", "threshold": 3.0}, {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}]}
+  ]
+}

@@ -70,9 +70,13 @@ Spirit strip's count carrying the other seven. A single gain of 1.45 then over-r
 bright false alarms on a quiet strip and under-rewards on a busy one. The other three rules sit under the
 bar on every strip, by a factor of at least six.
 
-Its lift is real but small and bought on injection (polar tiles with hundreds of bright components, where
-the test is strict), not on the key. The search area is that polar ground, so keeping it would likely help
-the search list; the held-out sites (item 10) are not polar and are where a quiet strip would be hurt.
+Its lift is real but small and bought on injection, not on the key, and it is the same ground effect. The
+shape_v2 proposal said the injection tiles hold hundreds of bright components each, so the test would be
+strict there; detector v0.3's `tile_count` says otherwise (`experiments/injection_tile_count.py` on
+`out/transplant_t4/transplant_t4.json`): of the 43 injection tiles with a bright detection, 26 hold fewer
+than 10 bright components (median 4, a few hold hundreds), and the plantings `tile_top` lifts sit in tiles
+with 1 to 6. The rule rewards being on quiet ground, where a planted piece and the handful of false alarms
+beside it are all lifted together.
 
 ## Options
 
@@ -88,6 +92,7 @@ the search list; the held-out sites (item 10) are not polar and are where a quie
    without tile_top above says the same.
 2. **Keep shape_v2** as adopted, on the plan's written condition (lift holds), accepting the per-strip
    instability and the fabric planting lost. The check's output states both facts either way.
-3. **A conditioned form** (tile_top only where the tile holds at least N bright components) is not
-   measurable on the current runs: no feature records the tile's component count. Detector v0.3 (this
-   session) records one (`tile_count`), so the loop can try it after the next key run.
+3. **A conditioned form** (tile_top only where the tile holds at least 10 bright components) was tried
+   on the v0.3 runs (`out/tune/e11_tile_top_busy/tune_e11_tile_top_busy.json`): 0.0145 of false alarms
+   pass, under the bar on every strip, key unchanged at 8 of 18, but the injection lift goes with the quiet
+   tiles (hardware 32 of 72 against 35). Reverted; it is in docs/experiments.md.

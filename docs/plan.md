@@ -47,7 +47,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 7. [done, see docs/reports/2026-10-29-transplant-injection.md] Transplant injection: cut each confirmed piece at full resolution from its tuning strip and plant it
    into MPL-strip tiles with matched incidence; score as injection. Nothing cut from, or planted into, a
    held-out site. This becomes the main scoreboard for tuning; the six real sites stay a constraint.
-8. [running] Tuning loop (second session; the first is reported in docs/reports/2026-10-29-tuning-loop.md), unattended: one change, score, keep or revert, one line in docs/experiments.md per idea that
+8. [done, see docs/reports/2026-10-29-tuning-loop-2.md; the first session is docs/reports/2026-10-29-tuning-loop.md] Tuning loop, unattended: one change, score, keep or revert, one line in docs/experiments.md per idea that
    did not move the score; tuning tiles only. The scoreboard is transplant injection as item 7 left it
    (`scripts/transplant.py` with the same tile list, seed and command as out/transplant_t1; out/transplant_t1
    is the number to beat) plus the 18-piece key under thresholds v1 and landers/shape_v1.json. A change is
@@ -57,13 +57,13 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    re-versioned whenever the detector changes. Rules and thresholds the loop wants adopted go to
    docs/proposals/, adopted by a person; the loop may add rules to a new landers/shape_v<n>.json only as a
    proposal copy under docs/proposals/, never in place.
-   Next session: (a) the leave-one-site-out check on shape_v2's rules, tile_top above all: for each tuning site,
-   re-fit each rule's pass fraction and gain on the other five sites' false alarms and score the held-back
-   site's pieces; a rule keeps its place only if its lift holds on sites it was not fitted on, and a rule
-   that fails is withdrawn in a proposal for a person before the frozen tag. (b) Record shape features in
-   the dark branch, so rules can reach the pieces that sit there, then re-measure every rule. (c) Continue
-   the one-change loop against the shape_v2 reference (rerun the transplant command once with shape_v2
-   in-process to set it).
+   Second session, done: (a) the leave-one-site-out check (`scripts/loso.py`): saturated, shadow_strong and
+   dark_shadow hold; tile_top's lift holds but its pass fraction is a property of the ground, withdrawal
+   proposed in docs/proposals/shape-rules-v3-loso.md (shape_v3.json) for a person before the frozen tag.
+   (b) Detector v0.3 records features in the dark branch and tile_count; every rule re-measured to the same
+   numbers. (c) The shape_v2 reference is set (out/transplant_t3) and two ideas were reverted. Left for a
+   later session, if time: a second injection seed; leave-one-site-out on the rules' thresholds, not only
+   their gains; the sheet flatness threshold.
 9. [done, see docs/reports/2026-10-28-model-layer.md] Model layer, built blind, no key and no network: read docs/models.md first. One interface for
    SAM 3.1, Muse Wonder and Muse Spark with a fake backend (deterministic) and a recorded backend; the
    ledger with hard caps and cost estimate; SAM box-prompt requests and mask parsing feeding the size and

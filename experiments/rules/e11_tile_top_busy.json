@@ -1,0 +1,10 @@
+{
+  "version": "e11_tile_top_busy",
+  "basis": "shape_v2 with tile_top conditioned on a busy tile: tile_rank <= 0 and tile_count >= 10 (bright, shadow). From experiments/dark_features.py on out/shape_v3/candidates_v03_features.json: on the quiet strips most tile tops sit in tiles with fewer than 10 bright components, which is where the unconditioned rule's pass fraction climbed to 0.18 and 0.45.",
+  "rules": [
+    {"name": "saturated", "branches": ["bright", "shadow"], "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}]},
+    {"name": "shadow_strong", "branches": ["bright"], "conditions": [{"feature": "two_sided", "op": ">=", "threshold": 4.0}, {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}]},
+    {"name": "dark_shadow", "branches": ["dark_compact"], "conditions": [{"feature": "two_sided", "op": ">=", "threshold": 3.5}, {"feature": "shadow_height_m", "op": "in", "threshold": [0.5, 3.0]}]},
+    {"name": "tile_top_busy", "branches": ["bright", "shadow"], "conditions": [{"feature": "tile_rank", "op": "<=", "threshold": 0}, {"feature": "tile_count", "op": ">=", "threshold": 10}]}
+  ]
+}
