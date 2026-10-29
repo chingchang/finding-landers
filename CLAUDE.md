@@ -11,6 +11,7 @@ field are retracted for a single unearned claim, and the work here is judged the
 - docs/plan.md: the order of work, the timing rules and the backlog. Take the first open item under Now.
 - docs/data.md: what the images are, what is on disk, more data you may fetch, and the control sites (which
   are for tuning, which are held out, and how that is kept honest).
+- docs/design.md: the pipeline end to end, which stages exist, and who sees the answers.
 
 ## What done means
 

@@ -111,7 +111,7 @@ against the key at all, and their value is reported with and without them.
 
 ## How the key is used, and why not one site at a time
 
-The alternative you raised, reveal one answer, improve, reveal the next, is a cross-validation scheme. We do a
+The alternative, reveal one answer, improve, reveal the next, is a cross-validation scheme. We do a
 simpler split that gives the same protection with less bookkeeping:
 
 - **Tuning sites (6).** All of their answers are available at once, from the moment the key is filled. The
