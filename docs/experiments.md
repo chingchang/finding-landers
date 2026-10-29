@@ -36,3 +36,19 @@ One line per idea that did not move the score. Winners go into the main package 
   shadow) in place of `tile_top`: 0.0145 pass, under the bar on every strip, key unchanged at 8 of 18, but
   injection hardware 35 to 32: the plantings tile_top lifts sit in tiles with 1 to 6 bright components.
   Reverted. `out/tune/e11_tile_top_busy/tune_e11_tile_top_busy.json`, `experiments/injection_tile_count.py`.
+- 2026-10-29, item 8 (third session): calibration per strip (detector v0.4, top 20 of each branch scored by the
+  tail). The scale becomes uniform over the eight tuning strips and the key goes 8 to 9 of 18, but injection
+  hardware falls 32 to 29 of 72, fabric 10 to 7, and sham hits rise 1 to 4 of 108: on quiet polar strips a
+  branch has too few candidates for a curve and every one of them ties at "rare". Reverted.
+  `out/tune/v04_per_strip/tune_v04_per_strip.json`, `out/shape_v4/per_strip_rates.json`.
+- 2026-10-29, item 8 (third session): the same with a branch under 50 candidates on a strip scored by the v0
+  table: injection hardware 31 of 72, fabric 8 of 24, sham 1 of 108. Reverted.
+  `out/tune/v04_min50_injection_only/tune_v04_min50_injection_only.json`.
+- 2026-10-29, item 8 (third session): one curve set pooled over the nine polar search strips (a terrain-class
+  table): injection hardware 30 of 72, fabric 5 of 24. Reverted. `out/tune/a3_pooled_injection/`.
+- 2026-10-29, item 8 (third session): sheet flatness threshold 0.35 or 0.30 in place of 0.45: injection equal
+  (hardware 32, fabric 10, sham 1); 0.40 loses one fabric planting. Moves nothing, not kept, no key pass spent.
+  `out/tune/b1_flat035_injection/`, `b2_flat030_injection/`, `b3_flat040_injection/`.
+- 2026-10-29, item 8 (third session): saturated pixels as data in the sheet branch: the injection detections
+  are the same 8119 as without, so no planted canopy is saturated on these tiles and the board cannot judge it.
+  Not kept. `out/tune/b4_sheetsat_injection/`.

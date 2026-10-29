@@ -42,14 +42,21 @@ def main(argv=None) -> int:
     ap.add_argument("--no-reference-rules", action="store_true")
     ap.add_argument("--key-candidates", default=str(DEFAULT_KEY), help="unruled candidates file, tuning strips")
     ap.add_argument("--injection", default=str(DEFAULT_INJECTION), help="unruled transplant run with features")
+    ap.add_argument(
+        "--candidate-key-candidates",
+        default=None,
+        help="a detector change: the new unruled key run; the candidate board is scored from it and the rules "
+        "(the reference's own unless --rules) are re-measured on it",
+    )
+    ap.add_argument("--candidate-injection", default=None, help="a detector change: the new unruled transplant run")
     ap.add_argument("--answers", default=str(config.REPO_ROOT / "controls" / "tuning.json"))
     ap.add_argument("--thresholds", default=str(config.REPO_ROOT / "controls" / "thresholds.json"))
     ap.add_argument("--refit-reference", action="store_true", help="re-measure the reference's gains too")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out" / "tune"))
     a = ap.parse_args(argv)
 
-    for p in (a.key_candidates, a.injection):
-        if not Path(p).exists():
+    for p in (a.key_candidates, a.injection, a.candidate_key_candidates, a.candidate_injection):
+        if p and not Path(p).exists():
             print(f"missing: {p}", file=sys.stderr)
             return 2
     reference = None if a.no_reference_rules or not a.reference_rules else ShapeRules.load(a.reference_rules)
@@ -63,10 +70,14 @@ def main(argv=None) -> int:
         reference,
         candidate,
         refit_reference=a.refit_reference,
+        cand_key_cands=load_json(a.candidate_key_candidates) if a.candidate_key_candidates else None,
+        cand_inj_run=load_json(a.candidate_injection) if a.candidate_injection else None,
     )
     r["inputs"] = {
         "key_candidates": a.key_candidates,
         "injection": a.injection,
+        "candidate_key_candidates": a.candidate_key_candidates,
+        "candidate_injection": a.candidate_injection,
         "reference_rules": None if reference is None else a.reference_rules,
         "candidate_rules": a.rules,
         "answers": a.answers,

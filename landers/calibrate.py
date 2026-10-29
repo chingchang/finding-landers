@@ -12,6 +12,20 @@ linearly in log-rate using the slope of the top of the distribution; below the l
 and a tiny raw-score term keeps the ranking.
 
 Nothing here identifies an image: the table holds scores and areas only.
+
+Per-strip calibration (plan item 8a). A table fitted on one kind of ground does not mean the same thing on
+another: the v0 table, fitted on equatorial tuning tiles, leaves 0.01 candidates per km2 above its 2 per km2
+operating point on polar ground and 11 to 16 on Schiaparelli (docs/reports/2026-10-28-first-score.md).
+``fit_strip`` fits the same curve from a strip's own candidate population, branch by branch, so a calibrated
+score is the rarity of that raw score *on that strip*. Any real hardware is a negligible fraction of the
+population (a few pieces among tens of thousands of candidates), so the population is taken as false alarms.
+``top_exclude`` leaves the top few candidates of each branch out of the knots and scores them by the
+extrapolated tail, so a candidate far above its branch's crowd is scored by how far, not capped at one per
+strip area. ``min_population`` is the smallest branch population a strip's own curve may be fitted from: a
+branch with fewer candidates than that on the strip gets no curve of its own, and its candidates are scored
+by the ``fallback`` table (the v0 table) instead. Without it, a quiet strip (a few candidates in several
+km2, or none) gives every candidate the floor constant, so they all tie at "rare" and the scale has no
+resolution there (docs/reports/2026-10-29-tuning-loop-3.md).
 """
 
 from __future__ import annotations
@@ -55,10 +69,15 @@ class Calibration:
     sites: list[str]
     branches: dict[str, BranchCurve] = field(default_factory=dict)
     floor_log_rate: float = 0.0  # log10(0.5 / area): the rate below one false alarm in the fitted area
+    min_population: int = 0  # branches with fewer candidates than this got no curve (see ``thin``)
+    thin: dict[str, int] = field(default_factory=dict)  # branch -> population, for the branches left without a curve
+    fallback: Calibration | None = None  # scores a branch with no curve here; attached by the caller, not serialised
 
     def calibrated(self, branch: str, raw: float) -> float:
         curve = self.branches.get(branch)
         if curve is None or not curve.scores:
+            if self.fallback is not None:
+                return self.fallback.calibrated(branch, raw)
             # no false alarm of this branch was seen on the fitted ground: as rare as the floor allows
             return -self.floor_log_rate + TIE_BREAK * raw
         return curve.calibrated(raw)
@@ -70,6 +89,9 @@ class Calibration:
             "n_tiles": self.n_tiles,
             "sites": self.sites,
             "floor_log_rate": round(self.floor_log_rate, 4),
+            "min_population": self.min_population,
+            "thin": dict(self.thin),
+            "fallback": self.fallback.version if self.fallback is not None else None,
             "branches": {
                 b: {
                     "scores": [round(x, 4) for x in c.scores],
@@ -86,13 +108,11 @@ class Calibration:
 
     @classmethod
     def load(cls, path: str | Path) -> Calibration:
-        d = json.loads(Path(path).read_text())
-        cal = cls(
-            d["version"], float(d["area_km2"]), int(d["n_tiles"]), list(d["sites"]), {}, float(d["floor_log_rate"])
-        )
-        for b, c in d["branches"].items():
-            cal.branches[b] = BranchCurve(list(c["scores"]), list(c["log_rates"]), float(c["slope"]), int(c["n"]))
-        return cal
+        return _calibration_from_json(json.loads(Path(path).read_text()))
+
+    @classmethod
+    def from_json(cls, d: dict) -> Calibration:
+        return _calibration_from_json(d)
 
 
 def _match(d: dict, truths_by_tile: dict, radius_px: float) -> bool:
@@ -126,12 +146,59 @@ def fit(runs: list[dict], version: str, min_slope: float = 0.15) -> Calibration:
         for d in run["detections"]:
             if not _match(d, tb, radius):
                 false_by_branch.setdefault(d["branch"], []).append(float(d["score"]))
+    return fit_scores(false_by_branch, area, version, n_tiles, sorted(sites), min_slope)
+
+
+def fit_strip(
+    cands: list,
+    area_km2: float,
+    version: str = "per_strip",
+    top_exclude: int = 0,
+    min_slope: float = 0.15,
+    min_population: int = 0,
+    fallback: Calibration | None = None,
+) -> Calibration:
+    """The curve of one strip from its own candidates (``Candidate`` objects with raw scores, or candidate
+    dicts carrying ``extra.raw_score``), every candidate counted as a false alarm. ``top_exclude`` keeps the
+    top that many of each branch out of the knots; they are scored by the extrapolated tail. A branch with
+    fewer than ``min_population`` candidates gets no curve and is scored by ``fallback``."""
+    by_branch: dict[str, list[float]] = {}
+    for c in cands:
+        if isinstance(c, dict):
+            raw = (c.get("extra") or {}).get("raw_score", c.get("score"))
+            branch = c["branch"]
+        else:
+            raw, branch = c.extra.get("raw_score", c.score), c.branch
+        by_branch.setdefault(branch, []).append(float(raw))
+    cal = fit_scores(by_branch, area_km2, version, 0, [], min_slope, top_exclude, min_population)
+    cal.fallback = fallback
+    return cal
+
+
+def fit_scores(
+    false_by_branch: dict[str, list[float]],
+    area: float,
+    version: str,
+    n_tiles: int = 0,
+    sites: list[str] | None = None,
+    min_slope: float = 0.15,
+    top_exclude: int = 0,
+    min_population: int = 0,
+) -> Calibration:
+    """The curve per branch from raw false-alarm scores over ``area`` km2 (see the module docstring)."""
     if area <= 0:
         raise ValueError("no area in the runs")
-    cal = Calibration(version, area, n_tiles, sorted(sites), {}, math.log10(0.5 / area))
+    cal = Calibration(version, area, n_tiles, list(sites or []), {}, math.log10(0.5 / area), min_population)
     for b, scores in false_by_branch.items():
+        if len(scores) < min_population:
+            cal.thin[b] = len(scores)
+            continue
         s = np.array(sorted(scores, reverse=True))
+        n_total = len(s)
         counts = np.arange(1, len(s) + 1)
+        if top_exclude > 0 and len(s) > top_exclude + 2:
+            # the rate with raw >= s stays what the whole population says; only the knots above are dropped
+            s, counts = s[top_exclude:], counts[top_exclude:]
         # collapse ties to the last index of each distinct score (rate with raw >= s)
         uniq, last = np.unique(s[::-1], return_index=True)
         uniq = uniq[::-1]
@@ -149,7 +216,68 @@ def fit(runs: list[dict], version: str, min_slope: float = 0.15) -> Calibration:
         else:
             slope = -min_slope
         slope = min(slope, -min_slope)
-        cal.branches[b] = BranchCurve(uniq.tolist(), log_rates.tolist(), slope, len(s))
+        cal.branches[b] = BranchCurve(uniq.tolist(), log_rates.tolist(), slope, n_total)
+    return cal
+
+
+class StripCalibrations:
+    """Curves fitted per strip (``scripts/calibrate_strips.py``), keyed by observation id, for runs that
+    detect on tiles of several strips (the transplant board). The file names strips, so it lives under
+    ``out/`` and is never committed."""
+
+    def __init__(
+        self,
+        version: str,
+        strips: dict[str, Calibration],
+        top_exclude: int = 0,
+        basis: str = "",
+        min_population: int = 0,
+    ):
+        self.version = version
+        self.strips = strips
+        self.top_exclude = top_exclude
+        self.basis = basis
+        self.min_population = min_population
+
+    def attach_fallback(self, table: Calibration | None) -> None:
+        """Score the branches that got no curve on a strip by ``table`` (see ``fit_strip``)."""
+        for c in self.strips.values():
+            c.fallback = table
+
+    def to_json(self) -> dict:
+        return {
+            "version": self.version,
+            "top_exclude": self.top_exclude,
+            "min_population": self.min_population,
+            "basis": self.basis,
+            "strips": {sid: c.to_json() for sid, c in self.strips.items()},
+        }
+
+    def save(self, path: str | Path) -> None:
+        Path(path).write_text(json.dumps(self.to_json(), indent=1))
+
+    @classmethod
+    def load(cls, path: str | Path) -> StripCalibrations:
+        d = json.loads(Path(path).read_text())
+        strips = {sid: _calibration_from_json(c) for sid, c in d["strips"].items()}
+        return cls(
+            d["version"], strips, int(d.get("top_exclude", 0)), d.get("basis", ""), int(d.get("min_population", 0))
+        )
+
+
+def _calibration_from_json(d: dict) -> Calibration:
+    cal = Calibration(
+        d["version"],
+        float(d["area_km2"]),
+        int(d["n_tiles"]),
+        list(d["sites"]),
+        {},
+        float(d["floor_log_rate"]),
+        int(d.get("min_population", 0)),
+        {b: int(n) for b, n in (d.get("thin") or {}).items()},
+    )
+    for b, c in d["branches"].items():
+        cal.branches[b] = BranchCurve(list(c["scores"]), list(c["log_rates"]), float(c["slope"]), int(c["n"]))
     return cal
 
 

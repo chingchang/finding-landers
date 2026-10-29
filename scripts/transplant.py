@@ -111,6 +111,12 @@ def main(argv=None) -> int:
     ap.add_argument("--calibration", default=str(DEFAULT_CAL) if DEFAULT_CAL.exists() else None)
     ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
     ap.add_argument(
+        "--strip-calibration",
+        default=None,
+        help="per-strip curves from scripts/calibrate_strips.py (v0.4 calibration_mode per_strip): each tile is "
+        "calibrated by its target strip's own curves, fitted on other tiles of that strip",
+    )
+    ap.add_argument(
         "--shape-rules",
         default=str(DEFAULT_RULES) if DEFAULT_RULES else None,
         help="shape rules JSON added to the calibrated score (default: the newest landers/shape_v*.json, as "
@@ -118,6 +124,17 @@ def main(argv=None) -> int:
         "other rules to an unruled run without re-detecting",
     )
     ap.add_argument("--no-shape-rules", action="store_true", help="record shape features, add nothing to the score")
+    ap.add_argument(
+        "--sheet-flatness",
+        type=float,
+        default=None,
+        help="item 8b: the sheet branch's flatness threshold (default 0.45)",
+    )
+    ap.add_argument(
+        "--sheet-saturated-as-data",
+        action="store_true",
+        help="item 8b: saturated pixels are data in the sheet branch too (default: v0.1 mask, see DetectorConfig)",
+    )
     ap.add_argument("--no-sham", action="store_true", help="skip the sham (empty) cuts")
     ap.add_argument("--only", action="append", default=[], help="site/piece to cut (repeatable); default all")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
@@ -129,12 +146,26 @@ def main(argv=None) -> int:
     answers = load_json(a.answers)
     fa = a.fa_per_km2 if a.fa_per_km2 is not None else float(thresholds["pass"]["max_false_alarms_per_km2"])
     cfg = tp.TransplantConfig()
-    cal_path = None if a.no_calibration else a.calibration
+    cal_path = None if a.no_calibration else a.calibration  # with --strip-calibration: the fallback table
     rules_path = None if a.no_shape_rules else a.shape_rules
     dcfg = DetectorConfig(calibration=cal_path, shape_rules=rules_path)
+    if a.sheet_flatness is not None:
+        dcfg.sheet_flatness = a.sheet_flatness
+    if a.sheet_saturated_as_data:
+        dcfg.sheet_saturated_is_data = True
     cal = load_calibration(dcfg)
     rules = load_shape_rules(dcfg)
-    if cal is not None:
+    strip_cals = None
+    if a.strip_calibration:
+        from landers.calibrate import StripCalibrations
+
+        strip_cals = StripCalibrations.load(a.strip_calibration)
+        strip_cals.attach_fallback(cal)
+        dcfg.calibration_mode = "per_strip"
+        dcfg.calibration_top_exclude = strip_cals.top_exclude
+        dcfg.calibration_min_population = strip_cals.min_population
+        dcfg.calibration = repo_relative(cal_path) if cal is not None else None
+    elif cal is not None:
         dcfg.calibration = repo_relative(cal_path)
     if rules is not None:
         dcfg.shape_rules = repo_relative(rules_path)
@@ -210,6 +241,9 @@ def main(argv=None) -> int:
     tile_bounds: dict[str, tuple[str, tuple[int, int, int, int]]] = {}
     open_targets: dict[str, Strip] = {}
     for tid in sorted({t for ts in targets_of.values() for t in ts}):
+        if strip_cals is not None and tid not in strip_cals.strips:
+            print(f"{tid}: no per-strip curves in {a.strip_calibration}", file=sys.stderr)
+            return 2
         strip = Strip.open(tid)
         open_targets[tid] = strip
         tile_plan[tid] = pick_tiles(strip, dcfg, a.tiles_per_strip, a.min_valid, rng)
@@ -251,7 +285,8 @@ def main(argv=None) -> int:
             continue
         rng.shuffle(idxs)
         planted, placed = tp.place_in_tile(win, strip.label, cuts, idxs, rng, cfg, key)
-        cands = finish_tile(detect_tile(planted, strip.label, dcfg), dcfg, cal, rules)
+        tile_cal = strip_cals.strips[tid] if strip_cals is not None else cal
+        cands = finish_tile(detect_tile(planted, strip.label, dcfg), dcfg, tile_cal, rules)
         for c in cands:
             d = {
                 "tile": key,
@@ -334,6 +369,7 @@ def main(argv=None) -> int:
         "run": a.run,
         "kind": "transplant",
         "detector": dcfg.to_json(),
+        "strip_calibration": repo_relative(a.strip_calibration) if a.strip_calibration else None,
         "transplant": cfg.to_json(),
         "seed": a.seed,
         "copies": a.copies,

@@ -170,6 +170,88 @@ def test_finish_tile_rules_match_rescore(tmp_path):
     assert any(c.extra.get("shape_pass") for c in ruled)
 
 
+def test_per_strip_finish_matches_offline_fit_and_records_curves():
+    """v0.4: in per-strip mode the strip's raw candidates fit their own curve, then calibrate, floor and rule;
+    the entry records the curves so the scores can be reproduced from raw scores."""
+    import json
+
+    from landers.calibrate import Calibration
+    from landers.shape import ShapeRules
+
+    rule = {
+        "name": "sat",
+        "branches": ["bright"],
+        "gain": 2.0,
+        "conditions": [{"feature": "saturated_px", "op": ">=", "threshold": 1}],
+    }
+    rules = ShapeRules.from_json({"version": "t", "rules": [rule]})
+    sat = {"saturated_px": 1}
+    raw = [detect.Candidate(10 * i, 10 * i, 4.0 + i, "bright", "g", 9, sat if i == 5 else {}) for i in range(10)]
+    raw += [detect.Candidate(100 + 10 * i, 0, 2.0 + 0.1 * i, "dark", "g", 50) for i in range(30)]
+    cfg = detect.DetectorConfig(calibration_mode="per_strip", calibration_top_exclude=2)
+    assert detect.load_calibration(detect.DetectorConfig(calibration="x.json", calibration_mode="per_strip")) is None
+    out, curves = detect.finish_strip(raw, 5.0, cfg, rules)
+    cal = Calibration.from_json(json.loads(json.dumps(curves)))
+    assert set(cal.branches) == {"bright", "dark"} and cal.branches["bright"].n == 10
+    for c in out:
+        gain = 2.0 if c.extra.get("shape_pass") else 0.0
+        assert abs(c.score - gain - cal.calibrated(c.branch, c.extra["raw_score"])) < 2e-3
+        assert c.score - gain >= cfg.min_calibrated_score
+    assert any(c.extra.get("shape_pass") == ["sat"] for c in out)
+    # the dark candidates sit at 6 per km2 or more, never rarer than the floor's 1000 per km2: all kept
+    assert sum(1 for c in out if c.branch == "dark") == 30
+
+
+def test_per_strip_dedupes_within_branch_before_the_fit_and_across_branches_on_the_common_scale():
+    """Two tiles overlap, so one object appears twice in its branch's raw list: it must count once in the
+    population. Where a bright and a dark_compact candidate sit on the same spot, the copy that survives is the
+    rarer one on the strip, not the one with the larger raw number (raw scales differ between branches)."""
+    cfg = detect.DetectorConfig(calibration_mode="per_strip")
+    # 40 bright candidates, raw 5..9, the top one duplicated by the tile overlap
+    raw = [detect.Candidate(10 * i, 500, 5.0 + 0.1 * i, "bright", "g", 9) for i in range(40)]
+    raw.append(detect.Candidate(390.5, 500.5, 8.9, "bright", "g", 9))
+    # 5 dark_compact candidates, raw 3..4 (small numbers); the top one on the same spot as a middling bright
+    raw += [detect.Candidate(1000 + 10 * i, 0, 3.0 + 0.25 * i, "dark_compact", "g", 9) for i in range(4)]
+    raw.append(detect.Candidate(200.0, 500.0, 4.0, "dark_compact", "g", 9))  # same spot as bright i = 20
+    out, curves = detect.finish_strip(raw, 2.0, cfg, None)
+    assert curves["branches"]["bright"]["n"] == 40 and curves["branches"]["dark_compact"]["n"] == 5
+    at_spot = [c for c in out if abs(c.row - 200) < 1 and abs(c.col - 500) < 1]
+    assert len(at_spot) == 1 and at_spot[0].branch == "dark_compact" and at_spot[0].extra["also"] == ["bright"]
+    assert sum(1 for c in out if c.branch == "bright") == 39 and len(out) == 44
+    # every surviving score is the calibrated raw score of that candidate
+    from landers.calibrate import Calibration
+
+    cal = Calibration.from_json(curves)
+    for c in out:
+        assert abs(c.score - cal.calibrated(c.branch, c.extra["raw_score"])) < 2e-3
+
+
+def test_per_strip_thin_branch_scores_by_the_fallback_table(tmp_path):
+    """With calibration_min_population, a branch too thin on the strip for a curve is scored by the table the
+    config names; the entry's curves record which branches were thin."""
+    import json
+
+    from landers.calibrate import fit_scores
+
+    table = fit_scores({"bright": [float(s) for s in range(4, 30)], "sheet": [3.0, 4.0, 5.0]}, 20.0, "v0")
+    table.save(tmp_path / "table.json")
+    cfg = detect.DetectorConfig(
+        calibration=str(tmp_path / "table.json"), calibration_mode="per_strip", calibration_min_population=10
+    )
+    fallback = detect.load_fallback(cfg)
+    assert fallback is not None and fallback.version == "v0"
+    assert detect.load_fallback(detect.DetectorConfig(calibration=str(tmp_path / "table.json"))) is None
+    raw = [detect.Candidate(10 * i, 0, 4.0 + 0.5 * i, "bright", "g", 9) for i in range(40)]
+    raw += [detect.Candidate(1000, 1000, 4.6, "sheet", "g", 400), detect.Candidate(2000, 2000, 3.5, "sheet", "g", 400)]
+    out, curves = detect.finish_strip(raw, 5.0, cfg, None, fallback)
+    assert curves["thin"] == {"sheet": 2} and curves["fallback"] == "v0" and set(curves["branches"]) == {"bright"}
+    sheets = [c for c in out if c.branch == "sheet"]
+    assert len(sheets) == 2
+    for c in sheets:
+        assert abs(c.score - table.calibrated("sheet", c.extra["raw_score"])) < 2e-3
+    json.dumps(curves)  # the entry is serialisable as written
+
+
 def test_no_shadow_branch_when_sun_is_high():
     win, lbl, _ = synthetic_tile()
     lbl = dataclasses.replace(lbl, incidence_deg=31.0)

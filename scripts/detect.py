@@ -85,12 +85,38 @@ def main(argv=None) -> int:
     )
     ap.add_argument("--no-calibration", action="store_true", help="raw branch scores")
     ap.add_argument(
+        "--per-strip",
+        action="store_true",
+        help="v0.4: calibrate each strip from its own candidate population after the raw pass (landers/calibrate.py "
+        "fit_strip) instead of the table; the fitted curves are recorded in the strip's entry",
+    )
+    ap.add_argument(
+        "--top-exclude", type=int, default=0, help="per-strip: top candidates per branch left out of the knots"
+    )
+    ap.add_argument(
+        "--min-population",
+        type=int,
+        default=0,
+        help="per-strip: a branch with fewer candidates than this on a strip is scored by the --calibration table",
+    )
+    ap.add_argument(
         "--shape-rules",
         default=str(DEFAULT_RULES) if DEFAULT_RULES.exists() else None,
         help="shape rules JSON (landers/shape.py); default: the newest landers/shape_v*.json if any",
     )
     ap.add_argument("--no-shape-rules", action="store_true", help="record shape features, add nothing to the score")
     ap.add_argument("--legacy-saturation", action="store_true", help="v0.1 behaviour: saturated pixels are no-data")
+    ap.add_argument(
+        "--sheet-flatness",
+        type=float,
+        default=None,
+        help="item 8b: the sheet branch's flatness threshold (default 0.45)",
+    )
+    ap.add_argument(
+        "--sheet-saturated-as-data",
+        action="store_true",
+        help="item 8b: saturated pixels are data in the sheet branch too",
+    )
     ap.add_argument("--jobs", type=int, default=1, help="worker processes per strip (3 at most on 8 GB)")
     ap.add_argument("--out", default=str(config.REPO_ROOT / "out"))
     ap.add_argument("--resume", action="store_true", help="skip strips already in out/candidates_<run>.json")
@@ -107,21 +133,36 @@ def main(argv=None) -> int:
             ids.extend(s["strips"])
     if not ids:
         ap.error("no strips given")
-    cal = None if a.no_calibration else a.calibration
+    cal = None if a.no_calibration else a.calibration  # per-strip: the fallback table for thin branches
     rules = None if a.no_shape_rules else a.shape_rules
     saturated_is_data = not a.legacy_saturation
+    mode = (
+        {
+            "calibration_mode": "per_strip",
+            "calibration_top_exclude": a.top_exclude,
+            "calibration_min_population": a.min_population,
+        }
+        if a.per_strip
+        else {}
+    )
+    if a.sheet_flatness is not None:
+        mode["sheet_flatness"] = a.sheet_flatness
+    if a.sheet_saturated_as_data:
+        mode["sheet_saturated_is_data"] = True
     # cfg is what the file records (paths inside the repo); cfg_run is what runs (absolute paths)
     cfg = DetectorConfig(
         frozen=a.frozen,
         calibration=repo_relative(cal) if cal else None,
         shape_rules=repo_relative(rules) if rules else None,
         saturated_is_data=saturated_is_data,
+        **mode,
     )
     cfg_run = DetectorConfig(
         frozen=a.frozen,
         calibration=str(Path(cal).resolve()) if cal else None,
         shape_rules=str(Path(rules).resolve()) if rules else None,
         saturated_is_data=saturated_is_data,
+        **mode,
     )
     result = {
         "run": a.run,
