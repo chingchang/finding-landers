@@ -13,7 +13,7 @@ cd "$(dirname "$0")/.."
 MAX_ITEMS="${1:-6}"
 ITEM="${ITEM:-}"              # ITEM=9 scripts/run_plan.sh  runs only that item (for a second worktree)
 if [ -n "$ITEM" ]; then MAX_ITEMS=1; PICK="item $ITEM under Now; it may be marked [ ] or [running] (an earlier session ended before finishing; continue from the branch's state); if it is marked [done] or [blocked, stop"
-else PICK="the first open item under Now that is marked [ ]"; fi
+else PICK="the first item under Now marked [running] if there is one (an earlier session ended before finishing it; continue from the branch's state), otherwise the first item marked [ ]"; fi
 # Long runs. A background shell does not survive the session's end (5 s grace in -p mode), so background
 # tasks are off and a foreground command may run for up to two hours.
 export CLAUDE_CODE_DISABLE_BACKGROUND_TASKS=1
@@ -26,7 +26,7 @@ TOOLS='Read,Edit,Write,Grep,Glob,Bash(uv run *),Bash(uv sync*),Bash(python3 *),B
 
 for i in $(seq 1 "$MAX_ITEMS"); do
   stamp=$(date +%Y%m%d-%H%M%S)
-  if ! grep -qE '^\s*[0-9]+\. \[ \]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
+  if ! grep -qE '^\s*[0-9]+b?\. \[( |running)\]' docs/plan.md; then echo "no open items in docs/plan.md"; exit 0; fi
   if grep -qiE '\[blocked' docs/plan.md; then echo "an item is marked blocked; needs a person"; exit 3; fi
   prompt="No human is watching. Merge main into this branch first (git merge --no-edit main). Then read CLAUDE.md
 and docs/plan.md, and take $PICK. If it is item 3 (the key) or
