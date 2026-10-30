@@ -1,0 +1,599 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   },
+   {
+    "role": "assistant",
+    "content": "Grading every strip_a candidate \u2014 collecting the evidence.",
+    "tool_calls": [
+     {
+      "id": "call_5e0db83b-4236-45d2-812d-0230983d8fec",
+      "type": "function",
+      "function": {
+       "name": "list_candidates",
+       "arguments": "{\"strip_key\":\"strip_a\"}"
+      }
+     },
+     {
+      "id": "call_aa0a6f9b-ce8e-4925-aea2-9c637b9d633b",
+      "type": "function",
+      "function": {
+       "name": "read_thresholds",
+       "arguments": "{}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_5e0db83b-4236-45d2-812d-0230983d8fec",
+    "content": "{\"strip_key\": \"strip_a\", \"candidates\": [{\"id\": \"c000\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 8.4, \"area_px\": 896, \"shape\": {\"raw_score\": 12.192}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 16.62, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.027, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.36, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.738, \"area_px\": 3473, \"area_m2\": 217.06, \"equiv_diameter_m\": 16.62, \"centroid_row\": 127.8, \"centroid_col\": 122.8, \"pieces\": 3, \"major_m\": 17.06, \"minor_m\": 16.6, \"elongation\": 0.027, \"fill\": 0.774, \"circularity\": 0.739, \"touches_box_edge\": true, \"edge_contrast\": -0.36}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a circular bowl with a dark shadowed interior, bright sunlit inner wall and raised rim, with two smaller similar pits nearby, matching a small natural impact crater rather than a crisp manufactured object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The dark circular bowl with a bright sunlit inner rim and two smaller similar pits to its southwest matches a small crater cluster, with no crisp geometric outline or detached shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a circular dark interior paired with an opposing bright arc and soft, grainy edges, consistent with a sunlit small crater rather than a crisp-edged raised object.\"}]}, {\"id\": \"c001\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 8.044, \"area_px\": 1984, \"shape\": {\"raw_score\": 11.869}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 23.64, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.065, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.32, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.455, \"area_px\": 7023, \"area_m2\": 438.94, \"equiv_diameter_m\": 23.64, \"centroid_row\": 132.0, \"centroid_col\": 118.4, \"pieces\": 8, \"major_m\": 24.82, \"minor_m\": 23.19, \"elongation\": 0.065, \"fill\": 0.725, \"circularity\": 0.677, \"touches_box_edge\": true, \"edge_contrast\": -0.32}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a round dark depression with a soft, bright sunlit rim and diffuse shadow merging into the surrounding texture, with no crisp straight edges or distinct manufactured outline in the enlarged view.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a roughly circular depression with a bright sunlit rim on one side and a dark shadowed interior on the other, with diffuse edges grading into the surrounding grainy terrain and no crisp geometric outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular bowl with a bright sunlit inner rim opposite a dark shadowed interior and diffuse irregular ejecta, with no straight edges or crisp raised-body outline in the enlarged pixels.\"}]}, {\"id\": \"c002\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 7.012, \"area_px\": 1344, \"shape\": {\"raw_score\": 10.934}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 21.11, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.067, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.46, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.598, \"area_px\": 5599, \"area_m2\": 349.94, \"equiv_diameter_m\": 21.11, \"centroid_row\": 129.0, \"centroid_col\": 123.4, \"pieces\": 3, \"major_m\": 22.1, \"minor_m\": 20.62, \"elongation\": 0.067, \"fill\": 0.843, \"circularity\": 0.571, \"touches_box_edge\": true, \"edge_contrast\": -0.46}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The center shows a grainy dark bowl with a diffuse bright crescent on one side and irregular margins blending into the surrounding regolith, consistent with a shadowed crater interior and sunlit rim rather than a crisp-edged raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a roughly circular dark pit with a bright, gradational sunlit rim and diffuse bright ejecta fading into the surrounding textured plains, with no crisp straight edges or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a diffuse oval depression with a bright sunlit rim on one side and soft dark shading on the other, with grainy texture and no straight edges or crisp raised-body shadow, matching a small crater.\"}]}, {\"id\": \"c003\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 6.295, \"area_px\": 1168, \"shape\": {\"raw_score\": 10.283}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 18.51, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.048, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.62, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.562, \"area_px\": 4307, \"area_m2\": 269.19, \"equiv_diameter_m\": 18.51, \"centroid_row\": 128.6, \"centroid_col\": 120.8, \"pieces\": 5, \"major_m\": 19.26, \"minor_m\": 18.33, \"elongation\": 0.048, \"fill\": 0.787, \"circularity\": 0.662, \"touches_box_edge\": true, \"edge_contrast\": -0.62}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a circular bowl with a dark shadowed half and a bright sunlit inner crescent rim, matching a small crater depression with no crisp straight edges or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre feature is a soft-edged circular bowl with a bright sunlit inner wall on one side and dark shadowing inside, and no external cast shadow or crisp straight manufactured edges, matching a small crater.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular bowl with a black shadowed interior contiguous with a bright sunlit inner-wall crescent inside the same round rim, typical of a small crater in the pitted surrounding terrain.\"}]}, {\"id\": \"c004\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.994, \"area_px\": 800, \"shape\": {\"raw_score\": 10.011}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 14.96, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.155, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.54, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.523, \"area_px\": 2811, \"area_m2\": 175.69, \"equiv_diameter_m\": 14.96, \"centroid_row\": 134.0, \"centroid_col\": 121.7, \"pieces\": 4, \"major_m\": 16.68, \"minor_m\": 14.1, \"elongation\": 0.155, \"fill\": 0.756, \"circularity\": 0.511, \"touches_box_edge\": true, \"edge_contrast\": 0.54}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre feature is a circular bowl with a black shadowed interior and a bright sunlit crescent rim, matching the smaller crater below it and lacking any crisp angular outline or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.78, \"reason\": \"The centre shows only the same speckled, vertically streaked texture as the surrounding ground, with no crisp outline, distinct albedo, or shadow of a raised body.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a dark circular depression with a bright sunlit inner rim, matching the smaller craters above and below in the same rippled terrain.\"}]}, {\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.689, \"area_px\": 1392, \"shape\": {\"raw_score\": 9.734}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 21.14, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.228, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.09, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.668, \"area_px\": 5615, \"area_m2\": 350.94, \"equiv_diameter_m\": 21.14, \"centroid_row\": 129.2, \"centroid_col\": 122.9, \"pieces\": 3, \"major_m\": 24.45, \"minor_m\": 18.87, \"elongation\": 0.228, \"fill\": 0.796, \"circularity\": 0.633, \"touches_box_edge\": true, \"edge_contrast\": -0.09}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The central feature is a circular depression with a dark shadowed interior on one side and a bright sunlit inner rim on the opposite side, matching a small crater rather than a crisp hardware outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a circular bright rim on the sunlit side grading into a dark bowl interior, with no straight edges, crisp outline, or detached shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.84, \"reason\": \"The center shows a circular bright crescent opposite a dark bowl, with diffuse grainy edges matching a sunlit crater rim and shadowed interior rather than a crisp manufactured outline.\"}]}, {\"id\": \"c006\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.591, \"area_px\": 1040, \"shape\": {\"raw_score\": 9.645}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 17.55, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.199, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.33, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.77, \"area_px\": 3869, \"area_m2\": 241.81, \"equiv_diameter_m\": 17.55, \"centroid_row\": 130.2, \"centroid_col\": 123.5, \"pieces\": 3, \"major_m\": 19.94, \"minor_m\": 15.96, \"elongation\": 0.199, \"fill\": 0.768, \"circularity\": 0.509, \"touches_box_edge\": true, \"edge_contrast\": -0.33}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a round dark bowl with a bright sunlit rim arc and diffuse grainy edges matching the surrounding cratered texture, with no crisp straight manufactured outline or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a rounded dark shadowed depression abutting a bright curved sunlit rim blending into the speckled terrain, with no straight edges or detached shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows two round bowl-shaped depressions with bright sunlit inner walls and dark shadowed interiors matching the surrounding small craters, with no straight edges, crisp outline, or distinct raised-body shadow.\"}]}, {\"id\": \"c007\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.564, \"area_px\": 992, \"shape\": {\"raw_score\": 9.62}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 14.01, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.078, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.32, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.762, \"area_px\": 2468, \"area_m2\": 154.25, \"equiv_diameter_m\": 14.01, \"centroid_row\": 128.4, \"centroid_col\": 121.0, \"pieces\": 3, \"major_m\": 14.75, \"minor_m\": 13.6, \"elongation\": 0.078, \"fill\": 0.698, \"circularity\": 0.807, \"touches_box_edge\": true, \"edge_contrast\": -0.32}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a soft, irregular dark pit beside a bright crescent rim, consistent with shadow and sunlit wall of a small natural crater rather than a crisp geometric hardware outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.86, \"reason\": \"The centre shows a grainy dark oval bowl beside a diffuse bright arc with feathered edges matching the surrounding terrain texture, consistent with a small crater or shadowed rock rather than a crisp manufactured outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.8, \"reason\": \"The object is a round dark depression with a soft, irregular bright sunlit rim on one side and no crisp straight edges, matching small natural craters and rocks in the reference terrain.\"}]}, {\"id\": \"c008\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.342, \"area_px\": 1280, \"shape\": {\"raw_score\": 9.419}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 20.26, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.047, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.43, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.676, \"area_px\": 5157, \"area_m2\": 322.31, \"equiv_diameter_m\": 20.26, \"centroid_row\": 128.4, \"centroid_col\": 122.7, \"pieces\": 11, \"major_m\": 21.06, \"minor_m\": 20.06, \"elongation\": 0.047, \"fill\": 0.848, \"circularity\": 0.554, \"touches_box_edge\": true, \"edge_contrast\": -0.43}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a smooth circular bowl with a dark shadowed interior on one side and a bright sunlit inner rim on the opposite side, grading into the surrounding terrain with no crisp artificial edges.\"}, {\"verdict\": \"natural\", \"confidence\": 0.92, \"reason\": \"The centre shows a circular bowl with a bright crescent on the sunlit inner wall and a dark shadowed interior opposite, typical of a small impact crater and lacking any straight, crisp hardware edges or raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The circular form shows a bright sunlit rim on one side grading into shadow on the opposite interior wall, typical of a small crater bowl with no straight edges, flat facets, or detached cast shadow.\"}]}, {\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.186, \"area_px\": 1488, \"shape\": {\"raw_score\": 9.277}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.15, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.276, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"fail\", \"value\": -0.03, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.738, \"area_px\": 2885, \"area_m2\": 180.31, \"equiv_diameter_m\": 15.15, \"centroid_row\": 125.9, \"centroid_col\": 112.7, \"pieces\": 32, \"major_m\": 18.1, \"minor_m\": 13.11, \"elongation\": 0.276, \"fill\": 0.672, \"circularity\": 0.71, \"touches_box_edge\": false, \"edge_contrast\": -0.03}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular dark shadowed depression paired with a bright sunlit crescent rim, matching a small impact crater amid similar smaller craters.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a round black shadow paired with a bright crescent rim, forming a sunlit crater-like bowl with no straight edges or crisp manufactured outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular dark bowl with a bright sunlit crescent rim on one side, matching a small crater's shadow and illumination and the other dark pits nearby.\"}]}, {\"id\": \"c010\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.067, \"area_px\": 400, \"shape\": {\"raw_score\": 9.17}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 7.67, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.432, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.13, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.637, \"area_px\": 740, \"area_m2\": 46.25, \"equiv_diameter_m\": 7.67, \"centroid_row\": 123.0, \"centroid_col\": 135.3, \"pieces\": 2, \"major_m\": 14.0, \"minor_m\": 7.95, \"elongation\": 0.432, \"fill\": 0.374, \"circularity\": 0.318, \"touches_box_edge\": true, \"edge_contrast\": -1.13}}, {\"id\": \"c011\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.915, \"area_px\": 1152, \"shape\": {\"raw_score\": 9.032}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 17.21, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.291, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.38, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.676, \"area_px\": 3721, \"area_m2\": 232.56, \"equiv_diameter_m\": 17.21, \"centroid_row\": 131.6, \"centroid_col\": 118.8, \"pieces\": 7, \"major_m\": 20.85, \"minor_m\": 14.78, \"elongation\": 0.291, \"fill\": 0.699, \"circularity\": 0.676, \"touches_box_edge\": true, \"edge_contrast\": -0.38}}, {\"id\": \"c012\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.795, \"area_px\": 320, \"shape\": {\"raw_score\": 8.923}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 11.08, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.149, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.03, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.566, \"area_px\": 1542, \"area_m2\": 96.38, \"equiv_diameter_m\": 11.08, \"centroid_row\": 128.6, \"centroid_col\": 126.7, \"pieces\": 1, \"major_m\": 12.15, \"minor_m\": 10.35, \"elongation\": 0.149, \"fill\": 0.834, \"circularity\": 0.975, \"touches_box_edge\": true, \"edge_contrast\": -0.03}}, {\"id\": \"c013\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.784, \"area_px\": 912, \"shape\": {\"raw_score\": 8.913}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 16.34, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.052, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.1, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.551, \"area_px\": 3354, \"area_m2\": 209.62, \"equiv_diameter_m\": 16.34, \"centroid_row\": 127.5, \"centroid_col\": 120.8, \"pieces\": 6, \"major_m\": 17.17, \"minor_m\": 16.27, \"elongation\": 0.052, \"fill\": 0.759, \"circularity\": 0.708, \"touches_box_edge\": true, \"edge_contrast\": 0.1}}, {\"id\": \"c014\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.692, \"area_px\": 1040, \"shape\": {\"raw_score\": 8.83}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 17.36, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.12, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.12, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.605, \"area_px\": 3789, \"area_m2\": 236.81, \"equiv_diameter_m\": 17.36, \"centroid_row\": 125.9, \"centroid_col\": 122.0, \"pieces\": 5, \"major_m\": 18.85, \"minor_m\": 16.59, \"elongation\": 0.12, \"fill\": 0.797, \"circularity\": 0.616, \"touches_box_edge\": true, \"edge_contrast\": -0.12}}, {\"id\": \"c015\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.657, \"area_px\": 2320, \"shape\": {\"raw_score\": 8.797}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 25.93, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.021, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.1, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.547, \"area_px\": 8450, \"area_m2\": 528.12, \"equiv_diameter_m\": 25.93, \"centroid_row\": 131.7, \"centroid_col\": 120.2, \"pieces\": 11, \"major_m\": 26.51, \"minor_m\": 25.96, \"elongation\": 0.021, \"fill\": 0.79, \"circularity\": 0.489, \"touches_box_edge\": true, \"edge_contrast\": 0.1}}, {\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.448, \"area_px\": 896, \"shape\": {\"raw_score\": 8.608}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 15.09, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.215, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.14, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.652, \"area_px\": 2860, \"area_m2\": 178.75, \"equiv_diameter_m\": 15.09, \"centroid_row\": 130.3, \"centroid_col\": 121.8, \"pieces\": 3, \"major_m\": 17.42, \"minor_m\": 13.66, \"elongation\": 0.215, \"fill\": 0.711, \"circularity\": 0.872, \"touches_box_edge\": true, \"edge_contrast\": -0.14}}, {\"id\": \"c017\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.418, \"area_px\": 1024, \"shape\": {\"raw_score\": 8.581}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 12.46, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.6, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.84, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.77, \"area_px\": 1950, \"area_m2\": 121.88, \"equiv_diameter_m\": 12.46, \"centroid_row\": 119.7, \"centroid_col\": 141.0, \"pieces\": 3, \"major_m\": 23.97, \"minor_m\": 9.58, \"elongation\": 0.6, \"fill\": 0.377, \"circularity\": 0.371, \"touches_box_edge\": true, \"edge_contrast\": -0.84}}, {\"id\": \"c018\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.387, \"area_px\": 2032, \"shape\": {\"raw_score\": 8.553}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.24, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.307, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.05, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.508, \"area_px\": 6215, \"area_m2\": 388.44, \"equiv_diameter_m\": 22.24, \"centroid_row\": 132.8, \"centroid_col\": 115.9, \"pieces\": 20, \"major_m\": 27.2, \"minor_m\": 18.85, \"elongation\": 0.307, \"fill\": 0.697, \"circularity\": 0.432, \"touches_box_edge\": true, \"edge_contrast\": -0.05}}, {\"id\": \"c019\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.367, \"area_px\": 1920, \"shape\": {\"raw_score\": 8.534}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.78, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.145, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.21, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.621, \"area_px\": 6520, \"area_m2\": 407.5, \"equiv_diameter_m\": 22.78, \"centroid_row\": 129.5, \"centroid_col\": 118.3, \"pieces\": 12, \"major_m\": 25.31, \"minor_m\": 21.64, \"elongation\": 0.145, \"fill\": 0.724, \"circularity\": 0.303, \"touches_box_edge\": true, \"edge_contrast\": 0.21}}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_aa0a6f9b-ce8e-4925-aea2-9c637b9d633b",
+    "content": "{\"version\": 1, \"basis\": \"docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.\", \"match_radius_m\": 5.0, \"match_radius_m_by_kind\": {\"mark\": 20.0}, \"piece_kinds\": {\"hardware\": [\"lander\", \"backshell\", \"heat_shield\", \"rover\"], \"fabric\": [\"parachute\"], \"mark\": [\"crash_scar\", \"descent_stage\"]}, \"top_n\": 20, \"pass\": {\"min_recall_at_n\": 0.8, \"max_false_alarms_per_km2\": 2.0}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Seen the shortlist \u2014 now pulling the full file for individual review.",
+    "tool_calls": [
+     {
+      "id": "call_f916a75a-fdd3-4c7c-b607-b46710c6b8ad",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c000\"}"
+      }
+     },
+     {
+      "id": "call_4558c8f3-96dc-4363-b020-3fcbde53dc73",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c001\"}"
+      }
+     },
+     {
+      "id": "call_04f54670-17b9-4505-8ccd-4f19953be54a",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c002\"}"
+      }
+     },
+     {
+      "id": "call_1c02f583-514f-4148-83cf-1009d719dd93",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c003\"}"
+      }
+     },
+     {
+      "id": "call_123353fa-01e9-42d0-ab54-2b1a838d6314",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c004\"}"
+      }
+     },
+     {
+      "id": "call_d5c9f0e1-6052-4ded-a3ab-1ad71f320dbe",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c005\"}"
+      }
+     },
+     {
+      "id": "call_bbfe2a7e-b3cb-4ce6-b8c1-d97565ce33ed",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c006\"}"
+      }
+     },
+     {
+      "id": "call_343bf487-bb8e-4724-aafb-696e38320df2",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c007\"}"
+      }
+     },
+     {
+      "id": "call_795c2d82-77d9-4c14-bc18-d8f9893e59d8",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c008\"}"
+      }
+     },
+     {
+      "id": "call_189bead2-4094-49cf-a1cb-494cb30c0d71",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c009\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_f916a75a-fdd3-4c7c-b607-b46710c6b8ad",
+    "content": "{\"id\": \"c000\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 8.4, \"area_px\": 896, \"shape\": {\"raw_score\": 12.192}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 16.62, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.027, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.36, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.738, \"area_px\": 3473, \"area_m2\": 217.06, \"equiv_diameter_m\": 16.62, \"centroid_row\": 127.8, \"centroid_col\": 122.8, \"pieces\": 3, \"major_m\": 17.06, \"minor_m\": 16.6, \"elongation\": 0.027, \"fill\": 0.774, \"circularity\": 0.739, \"touches_box_edge\": true, \"edge_contrast\": -0.36}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a circular bowl with a dark shadowed interior, bright sunlit inner wall and raised rim, with two smaller similar pits nearby, matching a small natural impact crater rather than a crisp manufactured object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The dark circular bowl with a bright sunlit inner rim and two smaller similar pits to its southwest matches a small crater cluster, with no crisp geometric outline or detached shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a circular dark interior paired with an opposing bright arc and soft, grainy edges, consistent with a sunlit small crater rather than a crisp-edged raised object.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_4558c8f3-96dc-4363-b020-3fcbde53dc73",
+    "content": "{\"id\": \"c001\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 8.044, \"area_px\": 1984, \"shape\": {\"raw_score\": 11.869}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 23.64, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.065, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.32, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.455, \"area_px\": 7023, \"area_m2\": 438.94, \"equiv_diameter_m\": 23.64, \"centroid_row\": 132.0, \"centroid_col\": 118.4, \"pieces\": 8, \"major_m\": 24.82, \"minor_m\": 23.19, \"elongation\": 0.065, \"fill\": 0.725, \"circularity\": 0.677, \"touches_box_edge\": true, \"edge_contrast\": -0.32}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a round dark depression with a soft, bright sunlit rim and diffuse shadow merging into the surrounding texture, with no crisp straight edges or distinct manufactured outline in the enlarged view.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a roughly circular depression with a bright sunlit rim on one side and a dark shadowed interior on the other, with diffuse edges grading into the surrounding grainy terrain and no crisp geometric outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular bowl with a bright sunlit inner rim opposite a dark shadowed interior and diffuse irregular ejecta, with no straight edges or crisp raised-body outline in the enlarged pixels.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_04f54670-17b9-4505-8ccd-4f19953be54a",
+    "content": "{\"id\": \"c002\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 7.012, \"area_px\": 1344, \"shape\": {\"raw_score\": 10.934}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 21.11, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.067, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.46, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.598, \"area_px\": 5599, \"area_m2\": 349.94, \"equiv_diameter_m\": 21.11, \"centroid_row\": 129.0, \"centroid_col\": 123.4, \"pieces\": 3, \"major_m\": 22.1, \"minor_m\": 20.62, \"elongation\": 0.067, \"fill\": 0.843, \"circularity\": 0.571, \"touches_box_edge\": true, \"edge_contrast\": -0.46}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The center shows a grainy dark bowl with a diffuse bright crescent on one side and irregular margins blending into the surrounding regolith, consistent with a shadowed crater interior and sunlit rim rather than a crisp-edged raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a roughly circular dark pit with a bright, gradational sunlit rim and diffuse bright ejecta fading into the surrounding textured plains, with no crisp straight edges or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a diffuse oval depression with a bright sunlit rim on one side and soft dark shading on the other, with grainy texture and no straight edges or crisp raised-body shadow, matching a small crater.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_1c02f583-514f-4148-83cf-1009d719dd93",
+    "content": "{\"id\": \"c003\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 6.295, \"area_px\": 1168, \"shape\": {\"raw_score\": 10.283}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 18.51, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.048, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.62, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.562, \"area_px\": 4307, \"area_m2\": 269.19, \"equiv_diameter_m\": 18.51, \"centroid_row\": 128.6, \"centroid_col\": 120.8, \"pieces\": 5, \"major_m\": 19.26, \"minor_m\": 18.33, \"elongation\": 0.048, \"fill\": 0.787, \"circularity\": 0.662, \"touches_box_edge\": true, \"edge_contrast\": -0.62}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a circular bowl with a dark shadowed half and a bright sunlit inner crescent rim, matching a small crater depression with no crisp straight edges or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre feature is a soft-edged circular bowl with a bright sunlit inner wall on one side and dark shadowing inside, and no external cast shadow or crisp straight manufactured edges, matching a small crater.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular bowl with a black shadowed interior contiguous with a bright sunlit inner-wall crescent inside the same round rim, typical of a small crater in the pitted surrounding terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_123353fa-01e9-42d0-ab54-2b1a838d6314",
+    "content": "{\"id\": \"c004\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.994, \"area_px\": 800, \"shape\": {\"raw_score\": 10.011}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 14.96, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.155, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.54, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.523, \"area_px\": 2811, \"area_m2\": 175.69, \"equiv_diameter_m\": 14.96, \"centroid_row\": 134.0, \"centroid_col\": 121.7, \"pieces\": 4, \"major_m\": 16.68, \"minor_m\": 14.1, \"elongation\": 0.155, \"fill\": 0.756, \"circularity\": 0.511, \"touches_box_edge\": true, \"edge_contrast\": 0.54}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre feature is a circular bowl with a black shadowed interior and a bright sunlit crescent rim, matching the smaller crater below it and lacking any crisp angular outline or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.78, \"reason\": \"The centre shows only the same speckled, vertically streaked texture as the surrounding ground, with no crisp outline, distinct albedo, or shadow of a raised body.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a dark circular depression with a bright sunlit inner rim, matching the smaller craters above and below in the same rippled terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_d5c9f0e1-6052-4ded-a3ab-1ad71f320dbe",
+    "content": "{\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.689, \"area_px\": 1392, \"shape\": {\"raw_score\": 9.734}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 21.14, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.228, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.09, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.668, \"area_px\": 5615, \"area_m2\": 350.94, \"equiv_diameter_m\": 21.14, \"centroid_row\": 129.2, \"centroid_col\": 122.9, \"pieces\": 3, \"major_m\": 24.45, \"minor_m\": 18.87, \"elongation\": 0.228, \"fill\": 0.796, \"circularity\": 0.633, \"touches_box_edge\": true, \"edge_contrast\": -0.09}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The central feature is a circular depression with a dark shadowed interior on one side and a bright sunlit inner rim on the opposite side, matching a small crater rather than a crisp hardware outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a circular bright rim on the sunlit side grading into a dark bowl interior, with no straight edges, crisp outline, or detached shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.84, \"reason\": \"The center shows a circular bright crescent opposite a dark bowl, with diffuse grainy edges matching a sunlit crater rim and shadowed interior rather than a crisp manufactured outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_bbfe2a7e-b3cb-4ce6-b8c1-d97565ce33ed",
+    "content": "{\"id\": \"c006\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.591, \"area_px\": 1040, \"shape\": {\"raw_score\": 9.645}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 17.55, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.199, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.33, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.77, \"area_px\": 3869, \"area_m2\": 241.81, \"equiv_diameter_m\": 17.55, \"centroid_row\": 130.2, \"centroid_col\": 123.5, \"pieces\": 3, \"major_m\": 19.94, \"minor_m\": 15.96, \"elongation\": 0.199, \"fill\": 0.768, \"circularity\": 0.509, \"touches_box_edge\": true, \"edge_contrast\": -0.33}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a round dark bowl with a bright sunlit rim arc and diffuse grainy edges matching the surrounding cratered texture, with no crisp straight manufactured outline or detached raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a rounded dark shadowed depression abutting a bright curved sunlit rim blending into the speckled terrain, with no straight edges or detached shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows two round bowl-shaped depressions with bright sunlit inner walls and dark shadowed interiors matching the surrounding small craters, with no straight edges, crisp outline, or distinct raised-body shadow.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_343bf487-bb8e-4724-aafb-696e38320df2",
+    "content": "{\"id\": \"c007\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.564, \"area_px\": 992, \"shape\": {\"raw_score\": 9.62}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 14.01, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.078, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.32, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.762, \"area_px\": 2468, \"area_m2\": 154.25, \"equiv_diameter_m\": 14.01, \"centroid_row\": 128.4, \"centroid_col\": 121.0, \"pieces\": 3, \"major_m\": 14.75, \"minor_m\": 13.6, \"elongation\": 0.078, \"fill\": 0.698, \"circularity\": 0.807, \"touches_box_edge\": true, \"edge_contrast\": -0.32}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a soft, irregular dark pit beside a bright crescent rim, consistent with shadow and sunlit wall of a small natural crater rather than a crisp geometric hardware outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.86, \"reason\": \"The centre shows a grainy dark oval bowl beside a diffuse bright arc with feathered edges matching the surrounding terrain texture, consistent with a small crater or shadowed rock rather than a crisp manufactured outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.8, \"reason\": \"The object is a round dark depression with a soft, irregular bright sunlit rim on one side and no crisp straight edges, matching small natural craters and rocks in the reference terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_795c2d82-77d9-4c14-bc18-d8f9893e59d8",
+    "content": "{\"id\": \"c008\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.342, \"area_px\": 1280, \"shape\": {\"raw_score\": 9.419}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 20.26, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.047, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.43, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.676, \"area_px\": 5157, \"area_m2\": 322.31, \"equiv_diameter_m\": 20.26, \"centroid_row\": 128.4, \"centroid_col\": 122.7, \"pieces\": 11, \"major_m\": 21.06, \"minor_m\": 20.06, \"elongation\": 0.047, \"fill\": 0.848, \"circularity\": 0.554, \"touches_box_edge\": true, \"edge_contrast\": -0.43}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a smooth circular bowl with a dark shadowed interior on one side and a bright sunlit inner rim on the opposite side, grading into the surrounding terrain with no crisp artificial edges.\"}, {\"verdict\": \"natural\", \"confidence\": 0.92, \"reason\": \"The centre shows a circular bowl with a bright crescent on the sunlit inner wall and a dark shadowed interior opposite, typical of a small impact crater and lacking any straight, crisp hardware edges or raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The circular form shows a bright sunlit rim on one side grading into shadow on the opposite interior wall, typical of a small crater bowl with no straight edges, flat facets, or detached cast shadow.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_189bead2-4094-49cf-a1cb-494cb30c0d71",
+    "content": "{\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 5.186, \"area_px\": 1488, \"shape\": {\"raw_score\": 9.277}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.15, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.276, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"fail\", \"value\": -0.03, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.738, \"area_px\": 2885, \"area_m2\": 180.31, \"equiv_diameter_m\": 15.15, \"centroid_row\": 125.9, \"centroid_col\": 112.7, \"pieces\": 32, \"major_m\": 18.1, \"minor_m\": 13.11, \"elongation\": 0.276, \"fill\": 0.672, \"circularity\": 0.71, \"touches_box_edge\": false, \"edge_contrast\": -0.03}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular dark shadowed depression paired with a bright sunlit crescent rim, matching a small impact crater amid similar smaller craters.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a round black shadow paired with a bright crescent rim, forming a sunlit crater-like bowl with no straight edges or crisp manufactured outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a circular dark bowl with a bright sunlit crescent rim on one side, matching a small crater's shadow and illumination and the other dark pits nearby.\"}]}"
+   },
+   {
+    "role": "assistant",
+    "content": "First batch done \u2014 fetching the remaining files.",
+    "tool_calls": [
+     {
+      "id": "call_86b38fc5-64eb-4c7f-8813-71b07fa70b63",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c010\"}"
+      }
+     },
+     {
+      "id": "call_4d70ace1-9302-4e6d-87e5-3107448ffb05",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c011\"}"
+      }
+     },
+     {
+      "id": "call_d067473f-29fc-4bd9-9eb4-e1289bd6208f",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c012\"}"
+      }
+     },
+     {
+      "id": "call_0650040a-afc8-4890-8612-79b80dbfbec0",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c013\"}"
+      }
+     },
+     {
+      "id": "call_87dcfa2e-fbbe-4ae0-abf1-fbf6efb2e2f2",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c014\"}"
+      }
+     },
+     {
+      "id": "call_b5ab5e47-48c1-4334-a022-1f43ae644c50",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c015\"}"
+      }
+     },
+     {
+      "id": "call_872f56c0-e085-40c2-9141-f595d5a1b45e",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c016\"}"
+      }
+     },
+     {
+      "id": "call_548f05a9-4f74-4dc6-b5fb-7ce798ba4596",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c017\"}"
+      }
+     },
+     {
+      "id": "call_a1237057-6561-4f51-bf22-275a927a5b5e",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c018\"}"
+      }
+     },
+     {
+      "id": "call_390bf465-9fe0-4242-b8c9-b852cece07fe",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c019\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_86b38fc5-64eb-4c7f-8813-71b07fa70b63",
+    "content": "{\"id\": \"c010\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.067, \"area_px\": 400, \"shape\": {\"raw_score\": 9.17}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 7.67, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.432, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.13, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.637, \"area_px\": 740, \"area_m2\": 46.25, \"equiv_diameter_m\": 7.67, \"centroid_row\": 123.0, \"centroid_col\": 135.3, \"pieces\": 2, \"major_m\": 14.0, \"minor_m\": 7.95, \"elongation\": 0.432, \"fill\": 0.374, \"circularity\": 0.318, \"touches_box_edge\": true, \"edge_contrast\": -1.13}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_4d70ace1-9302-4e6d-87e5-3107448ffb05",
+    "content": "{\"id\": \"c011\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.915, \"area_px\": 1152, \"shape\": {\"raw_score\": 9.032}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 17.21, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.291, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.38, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.676, \"area_px\": 3721, \"area_m2\": 232.56, \"equiv_diameter_m\": 17.21, \"centroid_row\": 131.6, \"centroid_col\": 118.8, \"pieces\": 7, \"major_m\": 20.85, \"minor_m\": 14.78, \"elongation\": 0.291, \"fill\": 0.699, \"circularity\": 0.676, \"touches_box_edge\": true, \"edge_contrast\": -0.38}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_d067473f-29fc-4bd9-9eb4-e1289bd6208f",
+    "content": "{\"id\": \"c012\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.795, \"area_px\": 320, \"shape\": {\"raw_score\": 8.923}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 11.08, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.149, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.03, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.566, \"area_px\": 1542, \"area_m2\": 96.38, \"equiv_diameter_m\": 11.08, \"centroid_row\": 128.6, \"centroid_col\": 126.7, \"pieces\": 1, \"major_m\": 12.15, \"minor_m\": 10.35, \"elongation\": 0.149, \"fill\": 0.834, \"circularity\": 0.975, \"touches_box_edge\": true, \"edge_contrast\": -0.03}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_0650040a-afc8-4890-8612-79b80dbfbec0",
+    "content": "{\"id\": \"c013\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.784, \"area_px\": 912, \"shape\": {\"raw_score\": 8.913}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 16.34, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.052, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.1, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.551, \"area_px\": 3354, \"area_m2\": 209.62, \"equiv_diameter_m\": 16.34, \"centroid_row\": 127.5, \"centroid_col\": 120.8, \"pieces\": 6, \"major_m\": 17.17, \"minor_m\": 16.27, \"elongation\": 0.052, \"fill\": 0.759, \"circularity\": 0.708, \"touches_box_edge\": true, \"edge_contrast\": 0.1}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_87dcfa2e-fbbe-4ae0-abf1-fbf6efb2e2f2",
+    "content": "{\"id\": \"c014\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.692, \"area_px\": 1040, \"shape\": {\"raw_score\": 8.83}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 17.36, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.12, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.12, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.605, \"area_px\": 3789, \"area_m2\": 236.81, \"equiv_diameter_m\": 17.36, \"centroid_row\": 125.9, \"centroid_col\": 122.0, \"pieces\": 5, \"major_m\": 18.85, \"minor_m\": 16.59, \"elongation\": 0.12, \"fill\": 0.797, \"circularity\": 0.616, \"touches_box_edge\": true, \"edge_contrast\": -0.12}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_b5ab5e47-48c1-4334-a022-1f43ae644c50",
+    "content": "{\"id\": \"c015\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.657, \"area_px\": 2320, \"shape\": {\"raw_score\": 8.797}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 25.93, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.021, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.1, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.547, \"area_px\": 8450, \"area_m2\": 528.12, \"equiv_diameter_m\": 25.93, \"centroid_row\": 131.7, \"centroid_col\": 120.2, \"pieces\": 11, \"major_m\": 26.51, \"minor_m\": 25.96, \"elongation\": 0.021, \"fill\": 0.79, \"circularity\": 0.489, \"touches_box_edge\": true, \"edge_contrast\": 0.1}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_872f56c0-e085-40c2-9141-f595d5a1b45e",
+    "content": "{\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.448, \"area_px\": 896, \"shape\": {\"raw_score\": 8.608}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 15.09, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.215, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.14, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.652, \"area_px\": 2860, \"area_m2\": 178.75, \"equiv_diameter_m\": 15.09, \"centroid_row\": 130.3, \"centroid_col\": 121.8, \"pieces\": 3, \"major_m\": 17.42, \"minor_m\": 13.66, \"elongation\": 0.215, \"fill\": 0.711, \"circularity\": 0.872, \"touches_box_edge\": true, \"edge_contrast\": -0.14}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_548f05a9-4f74-4dc6-b5fb-7ce798ba4596",
+    "content": "{\"id\": \"c017\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.418, \"area_px\": 1024, \"shape\": {\"raw_score\": 8.581}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 12.46, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.6, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.84, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.77, \"area_px\": 1950, \"area_m2\": 121.88, \"equiv_diameter_m\": 12.46, \"centroid_row\": 119.7, \"centroid_col\": 141.0, \"pieces\": 3, \"major_m\": 23.97, \"minor_m\": 9.58, \"elongation\": 0.6, \"fill\": 0.377, \"circularity\": 0.371, \"touches_box_edge\": true, \"edge_contrast\": -0.84}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_a1237057-6561-4f51-bf22-275a927a5b5e",
+    "content": "{\"id\": \"c018\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.387, \"area_px\": 2032, \"shape\": {\"raw_score\": 8.553}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.24, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.307, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.05, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.508, \"area_px\": 6215, \"area_m2\": 388.44, \"equiv_diameter_m\": 22.24, \"centroid_row\": 132.8, \"centroid_col\": 115.9, \"pieces\": 20, \"major_m\": 27.2, \"minor_m\": 18.85, \"elongation\": 0.307, \"fill\": 0.697, \"circularity\": 0.432, \"touches_box_edge\": true, \"edge_contrast\": -0.05}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_390bf465-9fe0-4242-b8c9-b852cece07fe",
+    "content": "{\"id\": \"c019\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.367, \"area_px\": 1920, \"shape\": {\"raw_score\": 8.534}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.78, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.145, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.21, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.621, \"area_px\": 6520, \"area_m2\": 407.5, \"equiv_diameter_m\": 22.78, \"centroid_row\": 129.5, \"centroid_col\": 118.3, \"pieces\": 12, \"major_m\": 25.31, \"minor_m\": 21.64, \"elongation\": 0.145, \"fill\": 0.724, \"circularity\": 0.303, \"touches_box_edge\": true, \"edge_contrast\": 0.21}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Evidence assembled \u2014 deciding if closer checks are needed.",
+    "tool_calls": [
+     {
+      "id": "call_14b2c800-4c8b-491e-8a8a-b8af633698e0",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c010\",\"kind\":\"more_votes\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_14b2c800-4c8b-491e-8a8a-b8af633698e0",
+    "content": "{\"id\": \"c010\", \"kind\": \"more_votes\", \"result\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The central circle shows smooth crater-bowl shading with a deep shadow on its left interior and a bright sunlit rim on its right, identical in form to the smaller crater above it and lacking any crisp manufactured edge or raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 763}}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a roughly circular bright-lit wall and dark shadowed bowl with an irregular grainy rim identical in tone and texture to the smaller crater nearby, with no crisp outline or cast shadow of a raised object.\", \"off_schema\": false, \"augmentation\": {\"drow\": -14, \"dcol\": -27, \"flip_h\": true, \"flip_v\": false, \"lo_pct\": 1.0, \"hi_pct\": 99.0}, \"tokens\": {\"input\": 373, \"output\": 498}}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre feature is a circular bowl with a dark shadowed interior and bright opposite inner wall, matching a small crater under angled sunlight with no straight edges or separate raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": 8, \"dcol\": -27, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 372}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 3 natural at or above 0.7, none hardware\"}}"
+   },
+   {
+    "role": "assistant",
+    "content": "One follow-up complete \u2014 now checking what remains.",
+    "tool_calls": [
+     {
+      "id": "call_324b0f30-c0bb-4dc9-a2a5-404c69e47c41",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c010\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_324b0f30-c0bb-4dc9-a2a5-404c69e47c41",
+    "content": "{\"id\": \"c010\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.067, \"area_px\": 400, \"shape\": {\"raw_score\": 9.17}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 7.67, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.432, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.13, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.637, \"area_px\": 740, \"area_m2\": 46.25, \"equiv_diameter_m\": 7.67, \"centroid_row\": 123.0, \"centroid_col\": 135.3, \"pieces\": 2, \"major_m\": 14.0, \"minor_m\": 7.95, \"elongation\": 0.432, \"fill\": 0.374, \"circularity\": 0.318, \"touches_box_edge\": true, \"edge_contrast\": -1.13}, \"checks\": {\"more_votes\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The central circle shows smooth crater-bowl shading with a deep shadow on its left interior and a bright sunlit rim on its right, identical in form to the smaller crater above it and lacking any crisp manufactured edge or raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 763}}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre shows a roughly circular bright-lit wall and dark shadowed bowl with an irregular grainy rim identical in tone and texture to the smaller crater nearby, with no crisp outline or cast shadow of a raised object.\", \"off_schema\": false, \"augmentation\": {\"drow\": -14, \"dcol\": -27, \"flip_h\": true, \"flip_v\": false, \"lo_pct\": 1.0, \"hi_pct\": 99.0}, \"tokens\": {\"input\": 373, \"output\": 498}}, {\"verdict\": \"natural\", \"confidence\": 0.88, \"reason\": \"The centre feature is a circular bowl with a dark shadowed interior and bright opposite inner wall, matching a small crater under angled sunlight with no straight edges or separate raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": 8, \"dcol\": -27, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 372}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 3 natural at or above 0.7, none hardware\"}}}"
+   },
+   {
+    "role": "assistant",
+    "content": "That check points toward natural \u2014 now resolving the other uncertain candidates.",
+    "tool_calls": [
+     {
+      "id": "call_e7ce4375-701a-4f30-aacf-8ddee829c6c2",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c011\",\"kind\":\"more_votes\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_e7ce4375-701a-4f30-aacf-8ddee829c6c2",
+    "content": "{\"id\": \"c011\", \"kind\": \"more_votes\", \"result\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a round dark pit with a soft bright crescent rim and shadowed interior matching the surrounding small craters, with no crisp straight edges or raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 383}}, {\"verdict\": \"natural\", \"confidence\": 0.82, \"reason\": \"The centre shows an irregular dark shadowed depression with a bright rim on one side, matching the small craters scattered in the surrounding terrain rather than a crisp manufactured outline.\", \"off_schema\": false, \"augmentation\": {\"drow\": -13, \"dcol\": -24, \"flip_h\": true, \"flip_v\": false, \"lo_pct\": 2.0, \"hi_pct\": 98.0}, \"tokens\": {\"input\": 373, \"output\": 552}}, {\"verdict\": \"natural\", \"confidence\": 0.8, \"reason\": \"The feature shows a circular dark pit with a bright sunlit crescent rim blending into the surrounding mottled terrain, with no crisp manufactured edges or detached shadow of a raised body.\", \"off_schema\": false, \"augmentation\": {\"drow\": -2, \"dcol\": 23, \"flip_h\": true, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 789}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 3 natural at or above 0.7, none hardware\"}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Two reviews down \u2014 continuing through the remaining uncertain cases.",
+    "tool_calls": [
+     {
+      "id": "call_6386109c-39fe-4afc-b31b-50061f9c3d0b",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c012\",\"kind\":\"more_votes\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_6386109c-39fe-4afc-b31b-50061f9c3d0b",
+    "content": "{\"id\": \"c012\", \"kind\": \"more_votes\", \"result\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.89, \"reason\": \"The central feature is a circular bowl with a dark shadowed wall opposite a bright sunlit wall, matching the other small craters scattered across the grainy terrain.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 477}}, {\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The central circular pit shows a black shadowed half and a bright sunlit inner wall, matching a small crater depression like the other pits in the surrounding terrain.\", \"off_schema\": false, \"augmentation\": {\"drow\": 19, \"dcol\": -2, \"flip_h\": false, \"flip_v\": true, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 390}}, {\"verdict\": \"natural\", \"confidence\": 0.82, \"reason\": \"The centre feature is an irregular rounded mound with a smooth bright-to-dark terminator and no straight or crisp manufactured edges, blending into the surrounding pitted rocky terrain.\", \"off_schema\": false, \"augmentation\": {\"drow\": 28, \"dcol\": -3, \"flip_h\": true, \"flip_v\": true, \"lo_pct\": 2.0, \"hi_pct\": 98.0}, \"tokens\": {\"input\": 373, \"output\": 1093}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 3 natural at or above 0.7, none hardware\"}}"
+   },
+   {
+    "role": "assistant",
+    "content": "Making steady progress \u2014 pulling the next advisory votes.",
+    "tool_calls": [
+     {
+      "id": "call_2126292e-5f09-4f3b-b586-db934e16729a",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c013\",\"kind\":\"more_votes\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_2126292e-5f09-4f3b-b586-db934e16729a",
+    "content": "{\"id\": \"c013\", \"kind\": \"more_votes\", \"result\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.92, \"reason\": \"The centre shows a soft, grainy circular bowl with a dark interior and a sunlit bright crescent rim, matching a small natural crater with no crisp straight hardware edges or raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 392}}, {\"verdict\": \"natural\", \"confidence\": 0.9, \"reason\": \"The centre shows a circular depression with a bright crescent on one inner wall and deep shadow on the opposite wall, consistent with a small crater and with no straight, crisp manufactured edges or raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": -4, \"dcol\": -3, \"flip_h\": true, \"flip_v\": true, \"lo_pct\": 2.0, \"hi_pct\": 98.0}, \"tokens\": {\"input\": 373, \"output\": 449}}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The centre shows a circular depression with a dark interior and a bright sunlit rim blending into the surrounding terrain, typical of a small crater.\", \"off_schema\": false, \"augmentation\": {\"drow\": -17, \"dcol\": 32, \"flip_h\": false, \"flip_v\": true, \"lo_pct\": 0.2, \"hi_pct\": 99.8}, \"tokens\": {\"input\": 373, \"output\": 381}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 3 natural at or above 0.7, none hardware\"}}"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "Halfway through the follow-ups \u2014 requesting the next set.",
+  "tool_calls": [
+   {
+    "id": "call_756c2aee-510a-4a18-9a93-ba884fff409e",
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "arguments": "{\"id\":\"c014\",\"kind\":\"more_votes\"}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 22161,
+  "output_tokens": 81
+ }
+}

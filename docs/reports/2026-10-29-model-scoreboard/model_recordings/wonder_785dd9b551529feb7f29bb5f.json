@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "b3260bd9d8cd42b2fbd1668afa13f7b92677d89e137641f93462c6a3d0d476c8",
+        "bytes": 73142
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "617d201a4c0a15d48fa455fc9b63a356777247929fcad58689d3df49f4d81666",
+        "bytes": 8188
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.65,
+   "reason": "The centre is only a few-pixel irregular black blob on a bright rocky patch, with no crisp geometric outline, metallic contrast, or distinct raised-body shadow to distinguish it from surrounding rock shadows.",
+   "verdict": "unsure"
+  },
+  "raw": "{\"confidence\": 0.65, \"reason\": \"The centre is only a few-pixel irregular black blob on a bright rocky patch, with no crisp geometric outline, metallic contrast, or distinct raised-body shadow to distinguish it from surrounding rock shadows.\", \"verdict\": \"unsure\"}",
+  "input_tokens": 373,
+  "output_tokens": 1180
+ }
+}

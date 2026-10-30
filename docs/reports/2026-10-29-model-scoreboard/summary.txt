@@ -1,0 +1,54 @@
+# Model-layer scoreboard from docs/reports/2026-10-29-model-scoreboard
+inputs out/scoreboard/inputs/candidates_frozen_v1.json (rules landers/shape_v3.json); key controls/tuning.json
+ledger: total $6.7124; sam 161 images (refused 0, $0.4025); wonder 260 calls (refused 27, $3.9503); spark 89 turns (refused 0, $2.3596)
+
+ESP_030313_1755: review turn cap after 12 turns, 5 verdicts, checks {'zoom_pass': 1, 'more_votes': 1}; votes on 10 ids; top 20 = 2 on a piece + 18 false alarms
+  false alarms: lowered 6 (votes 4, review 2), kept by review 0, kept by votes only 2, unassessed 10
+  rank  3 c002 curiosity:parachute (sheet): needs second look -> needs second look [kept by review]
+    votes: hardware 0.80, hardware 0.86, hardware 0.72; sam {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} d=24.31 m; checks ['zoom_pass']
+    verdict keep cites ['votes', 'tests']: Hardware votes describe crisp straight edges and shadow unlike surrounding terrain with passing size and edge tests on zoom.
+  rank  8 c007 curiosity:backshell (bright): needs second look -> needs second look [kept by votes only]
+    votes: hardware 0.85, natural 0.78, hardware 0.72; sam {'sam_size': 'pass', 'sam_shape': 'pass', 'sam_edge': 'pass'} d=6.05 m; checks ['more_votes']
+    more votes: natural 0.72, natural 0.65, natural 0.65; rule says needs second look
+ESP_025815_1655: review turn cap after 12 turns, 0 verdicts, checks {'more_votes': 7}; votes on 10 ids; top 20 = 1 on a piece + 19 false alarms
+  false alarms: lowered 3 (votes 3, review 0), kept by review 0, kept by votes only 6, unassessed 10
+  rank  1 c000 spirit:backshell (shadow): needs second look -> needs second look [kept by votes only]
+    votes: hardware 0.70, hardware 0.68, natural 0.65; sam {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} d=5.37 m; checks []
+ESP_022038_1995: review turn cap after 12 turns, 2 verdicts, checks {'more_votes': 16}; votes on 10 ids; top 20 = 1 on a piece + 19 false alarms
+  false alarms: lowered 4 (votes 4, review 0), kept by review 1, kept by votes only 4, unassessed 10
+  rank  4 c003 pathfinder:backshell (bright): needs second look -> needs second look [kept by votes only]
+    votes: unsure 0.60, unsure 0.60, hardware 0.82; sam {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} d=4.89 m; checks ['more_votes']
+    more votes: unsure 0.55, natural 0.72, unsure 0.55; rule says needs second look
+ESP_048041_1780: review turn cap after 12 turns, 8 verdicts, checks {'more_votes': 1}; votes on 10 ids; top 20 = 1 on a piece + 19 false alarms
+  false alarms: lowered 9 (votes 9, review 0), kept by review 0, kept by votes only 0, unassessed 10
+  rank  8 c007 schiaparelli:parachute+schiaparelli:backshell (sheet): needs second look -> needs second look [kept by review]
+    votes: natural 0.62, hardware 0.88, hardware 0.78; sam {'sam_size': 'unsure', 'sam_shape': 'not run', 'sam_edge': 'unsure'} d=8.37 m; checks ['more_votes']
+    more votes: hardware 0.82, hardware 0.80, hardware 0.88; rule says needs second look
+    verdict keep cites ['votes', 'persistence']: Hardware-leaning advisory votes are balanced by single-date persistence, so the current grade is retained without raising.
+ESP_073625_1780: review turn cap after 12 turns, 0 verdicts, checks {'more_votes': 8}; votes on 10 ids; top 20 = 0 on a piece + 20 false alarms
+  false alarms: lowered 10 (votes 10, review 0), kept by review 0, kept by votes only 0, unassessed 10
+ESP_017716_2485: review turn cap after 12 turns, 8 verdicts, checks {'second_date_check': 1}; votes on 3 ids; top 20 = 2 on a piece + 18 false alarms
+  false alarms: lowered 2 (votes 1, review 1), kept by review 4, kept by votes only 0, unassessed 12
+  rank  2 c001 phoenix:backshell (bright): needs second look -> needs second look [kept by review]
+    votes: hardware 0.75, natural 0.65, natural 0.65; sam {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} d=1.69 m; checks []
+    verdict keep cites ['tests', 'persistence', 'votes']: All physical tests remain unsure with single-date persistence and split advisory votes, so continued review is warranted.
+  rank  5 c004 phoenix:heat_shield (dark_compact): needs second look -> needs second look [kept by review]
+    votes: not run; sam {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} d=1.81 m; checks []
+    verdict keep cites ['tests', 'persistence', 'sam']: All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted.
+ESP_053451_2485: review final answer after 10 turns, 20 verdicts, checks {'second_date_check': 1}; votes on 0 ids; top 20 = 0 on a piece + 20 false alarms
+  false alarms: lowered 0 (votes 0, review 0), kept by review 20, kept by votes only 0, unassessed 0
+ESP_046170_2025: review final answer after 7 turns, 20 verdicts, checks {'second_date_check': 1}; votes on 0 ids; top 20 = 1 on a piece + 19 false alarms
+  false alarms: lowered 0 (votes 0, review 0), kept by review 19, kept by votes only 0, unassessed 0
+  rank  3 c002 viking1:lander (shadow): needs second look -> needs second look [kept by review]
+    votes: not run; sam {'sam_size': 'unsure', 'sam_shape': 'unsure', 'sam_edge': 'unsure'} d=2.11 m; checks []
+    verdict keep cites ['tests', 'persistence', 'sam']: Tests remain unsure with single-date persistence and edge-touching mask, so grade stays.
+
+# Totals over 8 strips, 160 top-20 ids
+on a piece: 8 ids covering 9 pieces ['curiosity:backshell', 'curiosity:parachute', 'pathfinder:backshell', 'phoenix:backshell', 'phoenix:heat_shield', 'schiaparelli:backshell', 'schiaparelli:parachute', 'spirit:backshell', 'viking1:lander']
+pieces lowered: 0 []
+false alarms: 152; {'lowered': 34, 'kept by votes only': 12, 'unassessed': 62, 'kept by review': 44}; lowered by votes 31, by review 3, by both 0
+votes cast on 53 ids, 47 of them false alarms
+checks ordered by the reviews: {'zoom_pass': 1, 'more_votes': 33, 'second_date_check': 3}; more-votes checks whose rule said likely natural 20, of which the id was not lowered 20
+cost: $6.7124 by the ledger; $0.1974 per false alarm lowered
+SAM tests on false alarms: {'sam_size': {'pass': 18, 'unsure': 134}, 'sam_edge': {'pass': 12, 'unsure': 134, 'fail': 6}, 'sam_shape': {'not run': 72, 'unsure': 80}}
+SAM tests on piece ids: {'sam_size': {'unsure': 7, 'pass': 1}, 'sam_edge': {'unsure': 7, 'pass': 1}, 'sam_shape': {'not run': 2, 'pass': 1, 'unsure': 5}}

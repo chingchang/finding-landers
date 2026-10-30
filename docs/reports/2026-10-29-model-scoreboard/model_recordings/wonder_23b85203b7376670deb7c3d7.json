@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "584e2e8546c017f5df5a21d25aad026612c99017079d43dd7d6f19fc11091863",
+        "bytes": 105835
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "87df95c062de59f80bb82dbea04d6e0684c87b8bf9c17d75c7aa287eacb9d7d2",
+        "bytes": 8751
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.9,
+   "reason": "The central feature shows a bright sunlit rim and dark bowl interior matching the smaller adjacent crater and other pits across the terrain, indicating a crater depression rather than raised hardware.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.9, \"reason\": \"The central feature shows a bright sunlit rim and dark bowl interior matching the smaller adjacent crater and other pits across the terrain, indicating a crater depression rather than raised hardware.\", \"verdict\": \"natural\"}",
+  "input_tokens": 373,
+  "output_tokens": 408
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "7c3e4fb31502344ec42be86802902e62029d10df2189d4cf85b3b9788e8db0aa",
+        "bytes": 81928
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9498fbd2b43271e35bcaa18210387f0892e3b6e887496c0fb5fd323cfad1a4c3",
+        "bytes": 8361
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.62,
+   "reason": "The enlarged centre shows a sharply defined round black disk with a single bright glint pixel, standing out crisply from the diffuse grainy terrain with no crater rim or slope shading.",
+   "verdict": "hardware"
+  },
+  "raw": "{\"confidence\": 0.62, \"reason\": \"The enlarged centre shows a sharply defined round black disk with a single bright glint pixel, standing out crisply from the diffuse grainy terrain with no crater rim or slope shading.\", \"verdict\": \"hardware\"}",
+  "input_tokens": 373,
+  "output_tokens": 1108
+ }
+}

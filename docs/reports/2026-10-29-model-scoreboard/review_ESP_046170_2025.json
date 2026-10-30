@@ -1,0 +1,1417 @@
+{
+ "strip_key": "strip_a",
+ "turns": 7,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c006": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c009": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c010": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c011": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c014": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Physical tests pass with single-date persistence and no second date available, so grade stays."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c016": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c017": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c018": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 18594
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 937
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 933
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 944
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 911
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 946
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 909
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 945
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 944
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 943
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 948
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 945
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 820
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 942
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 941
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 945
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 911
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c014",
+    "kind": "second_date_check"
+   },
+   "result": {
+    "id": "c014",
+    "kind": "second_date_check",
+    "result": {
+     "available": false,
+     "note": "no second date in this run"
+    }
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c000",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c001",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c002",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c003",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c004",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c005",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c006",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c007",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c008",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c009",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c010",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c011",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c012",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c013",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c014",
+    "reason": "Physical tests pass with single-date persistence and no second date available, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c015",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c016",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c017",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c018",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c019",
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "strip": "ESP_046170_2025",
+ "ids": {
+  "c000": {
+   "row": 27691.5,
+   "col": 20348.7
+  },
+  "c001": {
+   "row": 40387.0,
+   "col": 13579.6
+  },
+  "c002": {
+   "row": 40615.4,
+   "col": 14618.2
+  },
+  "c003": {
+   "row": 43510.7,
+   "col": 5237.1
+  },
+  "c004": {
+   "row": 71706.4,
+   "col": 22568.1
+  },
+  "c005": {
+   "row": 27561.8,
+   "col": 19690.8
+  },
+  "c006": {
+   "row": 79274.5,
+   "col": 23048.1
+  },
+  "c007": {
+   "row": 15967.7,
+   "col": 10686.4
+  },
+  "c008": {
+   "row": 76808.5,
+   "col": 19212.5
+  },
+  "c009": {
+   "row": 17512.2,
+   "col": 17288.5
+  },
+  "c010": {
+   "row": 19310.5,
+   "col": 16927.0
+  },
+  "c011": {
+   "row": 18464.6,
+   "col": 14124.3
+  },
+  "c012": {
+   "row": 19323.2,
+   "col": 16708.6
+  },
+  "c013": {
+   "row": 26248.8,
+   "col": 19850.7
+  },
+  "c014": {
+   "row": 72119.8,
+   "col": 15611.4
+  },
+  "c015": {
+   "row": 11386.8,
+   "col": 12599.0
+  },
+  "c016": {
+   "row": 18887.7,
+   "col": 17528.3
+  },
+  "c017": {
+   "row": 18971.6,
+   "col": 3851.6
+  },
+  "c018": {
+   "row": 65987.2,
+   "col": 22892.3
+  },
+  "c019": {
+   "row": 78547.1,
+   "col": 15013.8
+  }
+ },
+ "checks": [
+  {
+   "id": "c014",
+   "kind": "second_date_check",
+   "result": {
+    "available": false,
+    "note": "no second date in this run"
+   }
+  }
+ ],
+ "reasoning": []
+}

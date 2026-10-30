@@ -1,0 +1,304 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   },
+   {
+    "role": "assistant",
+    "content": "Grading every strip_a candidate \u2014 collecting the evidence.",
+    "tool_calls": [
+     {
+      "id": "call_5e0db83b-4236-45d2-812d-0230983d8fec",
+      "type": "function",
+      "function": {
+       "name": "list_candidates",
+       "arguments": "{\"strip_key\":\"strip_a\"}"
+      }
+     },
+     {
+      "id": "call_aa0a6f9b-ce8e-4925-aea2-9c637b9d633b",
+      "type": "function",
+      "function": {
+       "name": "read_thresholds",
+       "arguments": "{}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_5e0db83b-4236-45d2-812d-0230983d8fec",
+    "content": "{\"strip_key\": \"strip_a\", \"candidates\": [{\"id\": \"c000\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 5.896, \"area_px\": 35, \"shape\": {\"circularity\": 1.0, \"fill\": 0.714, \"elongation\": 0.221, \"edge_sharpness\": 0.283, \"tile_rank\": 0, \"raw_score\": 42.284}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 3.19, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.128, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 7.77, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.84, \"area_px\": 128, \"area_m2\": 8.0, \"equiv_diameter_m\": 3.19, \"centroid_row\": 128.8, \"centroid_col\": 127.8, \"pieces\": 1, \"major_m\": 3.44, \"minor_m\": 3.0, \"elongation\": 0.128, \"fill\": 0.821, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 7.77}}, {\"id\": \"c001\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 4.637, \"area_px\": 3728, \"shape\": {\"raw_score\": 8.779}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 22.62, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.226, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.88, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.656, \"area_px\": 6432, \"area_m2\": 402.0, \"equiv_diameter_m\": 22.62, \"centroid_row\": 128.2, \"centroid_col\": 125.3, \"pieces\": 47, \"major_m\": 26.32, \"minor_m\": 20.37, \"elongation\": 0.226, \"fill\": 0.6, \"circularity\": 0.33, \"touches_box_edge\": false, \"edge_contrast\": 2.88}}, {\"id\": \"c002\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 1.15, \"area_px\": 21, \"shape\": {\"circularity\": 1.0, \"fill\": 0.75, \"elongation\": 0.511, \"edge_sharpness\": 0.199, \"tile_rank\": 16, \"shadow_alignment\": 0.1, \"raw_score\": 6.103}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.88, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.326, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.69, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.773, \"area_px\": 104, \"area_m2\": 6.5, \"equiv_diameter_m\": 2.88, \"centroid_row\": 127.7, \"centroid_col\": 127.8, \"pieces\": 1, \"major_m\": 3.54, \"minor_m\": 2.38, \"elongation\": 0.326, \"fill\": 0.727, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.69}}, {\"id\": \"c003\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.95, \"area_px\": 6, \"shape\": {\"circularity\": 1.0, \"fill\": 1.0, \"elongation\": 0.388, \"edge_sharpness\": 0.206, \"tile_rank\": 76, \"shadow_alignment\": 0.03, \"raw_score\": 5.576}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.78, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.187, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.17, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.805, \"area_px\": 40, \"area_m2\": 2.5, \"equiv_diameter_m\": 1.78, \"centroid_row\": 127.6, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 2.02, \"minor_m\": 1.64, \"elongation\": 0.187, \"fill\": 0.816, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.17}}, {\"id\": \"c004\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.902, \"area_px\": 12, \"shape\": {\"circularity\": 1.0, \"fill\": 0.6, \"elongation\": 0.504, \"edge_sharpness\": 0.204, \"tile_rank\": 59, \"shadow_alignment\": 0.25, \"raw_score\": 5.418}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.2, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.242, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.07, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.734, \"area_px\": 61, \"area_m2\": 3.81, \"equiv_diameter_m\": 2.2, \"centroid_row\": 128.2, \"centroid_col\": 127.8, \"pieces\": 1, \"major_m\": 2.56, \"minor_m\": 1.94, \"elongation\": 0.242, \"fill\": 0.753, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -1.07}}, {\"id\": \"c005\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.834, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.151, \"tile_rank\": 32, \"shadow_alignment\": 0.0, \"raw_score\": 5.194}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.81, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.166, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.59, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.785, \"area_px\": 41, \"area_m2\": 2.56, \"equiv_diameter_m\": 1.81, \"centroid_row\": 128.0, \"centroid_col\": 128.0, \"pieces\": 1, \"major_m\": 1.99, \"minor_m\": 1.66, \"elongation\": 0.166, \"fill\": 0.837, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.59}}, {\"id\": \"c006\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.812, \"area_px\": 6, \"shape\": {\"circularity\": 1.0, \"fill\": 1.0, \"elongation\": 0.388, \"edge_sharpness\": 0.173, \"tile_rank\": 240, \"shadow_alignment\": 0.03, \"raw_score\": 5.13}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.78, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.187, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.29, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.781, \"area_px\": 40, \"area_m2\": 2.5, \"equiv_diameter_m\": 1.78, \"centroid_row\": 127.9, \"centroid_col\": 127.6, \"pieces\": 1, \"major_m\": 2.02, \"minor_m\": 1.64, \"elongation\": 0.187, \"fill\": 0.816, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -1.29}}, {\"id\": \"c007\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.778, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.152, \"tile_rank\": 118, \"shadow_alignment\": 0.0, \"raw_score\": 5.028}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.76, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.233, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.65, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.789, \"area_px\": 39, \"area_m2\": 2.44, \"equiv_diameter_m\": 1.76, \"centroid_row\": 128.1, \"centroid_col\": 127.8, \"pieces\": 1, \"major_m\": 2.04, \"minor_m\": 1.56, \"elongation\": 0.233, \"fill\": 0.796, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.65}}, {\"id\": \"c008\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.757, \"area_px\": 15, \"shape\": {\"circularity\": 1.0, \"fill\": 0.625, \"elongation\": 0.566, \"edge_sharpness\": 0.127, \"tile_rank\": 211, \"shadow_alignment\": 0.16, \"raw_score\": 4.968}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.41, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.148, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -0.99, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.766, \"area_px\": 73, \"area_m2\": 4.56, \"equiv_diameter_m\": 2.41, \"centroid_row\": 128.2, \"centroid_col\": 128.2, \"pieces\": 1, \"major_m\": 2.69, \"minor_m\": 2.29, \"elongation\": 0.148, \"fill\": 0.811, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -0.99}}, {\"id\": \"c009\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.756, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.188, \"tile_rank\": 105, \"shadow_alignment\": 0.0, \"raw_score\": 4.964}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.6, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.418, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -4.4, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.773, \"area_px\": 32, \"area_m2\": 2.0, \"equiv_diameter_m\": 1.6, \"centroid_row\": 128.5, \"centroid_col\": 128.0, \"pieces\": 1, \"major_m\": 2.12, \"minor_m\": 1.24, \"elongation\": 0.418, \"fill\": 0.762, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -4.4}}, {\"id\": \"c010\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.748, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.224, \"tile_rank\": 61, \"shadow_alignment\": 0.0, \"raw_score\": 4.939}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.69, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.13, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.69, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.758, \"area_px\": 36, \"area_m2\": 2.25, \"equiv_diameter_m\": 1.69, \"centroid_row\": 128.1, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 1.84, \"minor_m\": 1.6, \"elongation\": 0.13, \"fill\": 0.735, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -1.69}}, {\"id\": \"c011\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.716, \"area_px\": 14, \"shape\": {\"circularity\": 1.0, \"fill\": 0.667, \"elongation\": 0.7, \"edge_sharpness\": 0.115, \"tile_rank\": 115, \"shadow_alignment\": 0.12, \"raw_score\": 4.843}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.85, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.115, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -1.53, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.777, \"area_px\": 102, \"area_m2\": 6.38, \"equiv_diameter_m\": 2.85, \"centroid_row\": 128.5, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 3.08, \"minor_m\": 2.73, \"elongation\": 0.115, \"fill\": 0.927, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -1.53}}, {\"id\": \"c012\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.706, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.149, \"tile_rank\": 249, \"shadow_alignment\": 0.0, \"raw_score\": 4.806}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.87, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.129, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -3.68, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.797, \"area_px\": 44, \"area_m2\": 2.75, \"equiv_diameter_m\": 1.87, \"centroid_row\": 127.8, \"centroid_col\": 128.0, \"pieces\": 1, \"major_m\": 2.03, \"minor_m\": 1.76, \"elongation\": 0.129, \"fill\": 0.898, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -3.68}}, {\"id\": \"c013\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.705, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.15, \"tile_rank\": 166, \"shadow_alignment\": 0.0, \"raw_score\": 4.802}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.81, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.209, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.08, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.766, \"area_px\": 41, \"area_m2\": 2.56, \"equiv_diameter_m\": 1.81, \"centroid_row\": 128.4, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 2.07, \"minor_m\": 1.64, \"elongation\": 0.209, \"fill\": 0.837, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.08}}, {\"id\": \"c014\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.694, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.175, \"tile_rank\": 121, \"shadow_alignment\": 0.0, \"raw_score\": 4.77}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.78, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.133, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.12, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.797, \"area_px\": 40, \"area_m2\": 2.5, \"equiv_diameter_m\": 1.78, \"centroid_row\": 128.1, \"centroid_col\": 128.1, \"pieces\": 1, \"major_m\": 1.93, \"minor_m\": 1.67, \"elongation\": 0.133, \"fill\": 0.816, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.12}}, {\"id\": \"c015\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.653, \"area_px\": 6, \"shape\": {\"circularity\": 1.0, \"fill\": 0.667, \"elongation\": 0.261, \"edge_sharpness\": 0.136, \"tile_rank\": 166, \"shadow_alignment\": 0.17, \"raw_score\": 4.617}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.91, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.041, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -3.13, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.84, \"area_px\": 46, \"area_m2\": 2.88, \"equiv_diameter_m\": 1.91, \"centroid_row\": 128.0, \"centroid_col\": 127.8, \"pieces\": 1, \"major_m\": 1.99, \"minor_m\": 1.91, \"elongation\": 0.041, \"fill\": 0.939, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -3.13}}, {\"id\": \"c016\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": 0.584, \"area_px\": 5, \"shape\": {\"circularity\": 1.0, \"fill\": 0.833, \"elongation\": 0.423, \"edge_sharpness\": 0.122, \"tile_rank\": 292, \"shadow_alignment\": 0.0, \"raw_score\": 4.386}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 1.83, \"limit\": [1.0, 4.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.057, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -2.85, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.82, \"area_px\": 42, \"area_m2\": 2.62, \"equiv_diameter_m\": 1.83, \"centroid_row\": 128.1, \"centroid_col\": 127.7, \"pieces\": 1, \"major_m\": 1.91, \"minor_m\": 1.8, \"elongation\": 0.057, \"fill\": 0.857, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -2.85}}, {\"id\": \"c017\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": 0.501, \"area_px\": 69, \"shape\": {\"circularity\": 1.0, \"fill\": 0.697, \"elongation\": 0.19, \"edge_sharpness\": 0.185, \"tile_rank\": 0, \"raw_score\": 5.652}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 4.75, \"limit\": [2.5, 50.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.047, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -4.09, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.801, \"area_px\": 284, \"area_m2\": 17.75, \"equiv_diameter_m\": 4.75, \"centroid_row\": 127.5, \"centroid_col\": 128.1, \"pieces\": 1, \"major_m\": 4.93, \"minor_m\": 4.7, \"elongation\": 0.047, \"fill\": 0.747, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -4.09}}, {\"id\": \"c018\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": 0.431, \"area_px\": 71, \"shape\": {\"circularity\": 1.0, \"fill\": 0.71, \"elongation\": 0.111, \"edge_sharpness\": 0.201, \"tile_rank\": 0, \"raw_score\": 5.365}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 4.59, \"limit\": [2.5, 50.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.147, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": -1.89, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.773, \"area_px\": 265, \"area_m2\": 16.56, \"equiv_diameter_m\": 4.59, \"centroid_row\": 128.3, \"centroid_col\": 127.4, \"pieces\": 1, \"major_m\": 5.01, \"minor_m\": 4.28, \"elongation\": 0.147, \"fill\": 0.82, \"circularity\": 1.0, \"touches_box_edge\": false, \"edge_contrast\": -1.89}}, {\"id\": \"c019\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": 0.425, \"area_px\": 69, \"shape\": {\"circularity\": 1.0, \"fill\": 0.69, \"elongation\": 0.218, \"edge_sharpness\": 0.185, \"tile_rank\": 0, \"raw_score\": 5.346}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 4.41, \"limit\": [2.5, 50.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.088, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": -3.43, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.812, \"area_px\": 244, \"area_m2\": 15.25, \"equiv_diameter_m\": 4.41, \"centroid_row\": 127.2, \"centroid_col\": 128.0, \"pieces\": 1, \"major_m\": 4.64, \"minor_m\": 4.23, \"elongation\": 0.088, \"fill\": 0.755, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": -3.43}}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_aa0a6f9b-ce8e-4925-aea2-9c637b9d633b",
+    "content": "{\"version\": 1, \"basis\": \"docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.\", \"match_radius_m\": 5.0, \"match_radius_m_by_kind\": {\"mark\": 20.0}, \"piece_kinds\": {\"hardware\": [\"lander\", \"backshell\", \"heat_shield\", \"rover\"], \"fabric\": [\"parachute\"], \"mark\": [\"crash_scar\", \"descent_stage\"]}, \"top_n\": 20, \"pass\": {\"min_recall_at_n\": 0.8, \"max_false_alarms_per_km2\": 2.0}}"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "First pass done \u2014 now pulling detailed records for each candidate.",
+  "tool_calls": [
+   {
+    "id": "call_3922ccf0-20b9-439a-99dd-932145101e45",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c000\"}"
+    }
+   },
+   {
+    "id": "call_f70ce6e0-1655-431d-956a-0ffaba4605a6",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c001\"}"
+    }
+   },
+   {
+    "id": "call_109ac83b-e774-4094-a87d-cf2f6a0e79aa",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c002\"}"
+    }
+   },
+   {
+    "id": "call_779261ac-c5d9-47c3-a97e-0bcad7e391df",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c003\"}"
+    }
+   },
+   {
+    "id": "call_ea38d3db-5824-4bd0-843c-e653f75314de",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c004\"}"
+    }
+   },
+   {
+    "id": "call_e60b929b-68e0-4bb5-bae1-43c71f403fea",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c005\"}"
+    }
+   },
+   {
+    "id": "call_72fec841-4e7d-4c33-ab74-8b84ba7b5392",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c006\"}"
+    }
+   },
+   {
+    "id": "call_e575ebdd-6396-4312-87c3-58da498fdb77",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c007\"}"
+    }
+   },
+   {
+    "id": "call_ddd2ee2a-fed6-42bd-99de-54cb91fce6a9",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c008\"}"
+    }
+   },
+   {
+    "id": "call_17946e9d-1d94-4373-a5d7-eb68f2cd14ec",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c009\"}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 9061,
+  "output_tokens": 785
+ }
+}

@@ -1,0 +1,1357 @@
+{
+ "strip_key": "strip_a",
+ "turns": 10,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Size and edge tests show pass outcomes but persistence remains single-date so grade is retained."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c006": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c009": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c010": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c011": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c014": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c016": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c017": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  },
+  "c018": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Size and edge tests show pass outcomes but persistence remains single-date so grade is retained."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence"
+   ],
+   "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 18712
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 820
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 944
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 942
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 943
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 945
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 943
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 946
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 948
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 941
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 942
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 947
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 946
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 945
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 944
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 946
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 944
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 909
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c001",
+    "kind": "second_date_check"
+   },
+   "result": {
+    "id": "c001",
+    "kind": "second_date_check",
+    "result": {
+     "available": false,
+     "note": "no second date in this run"
+    }
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c000",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c001",
+    "reason": "Size and edge tests show pass outcomes but persistence remains single-date so grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c002",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c003",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c004",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c005",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c006",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c007",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c008",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c009",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c010",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c011",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c012",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c013",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c014",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c015",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c016",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c017",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c018",
+    "reason": "Size and edge tests show pass outcomes but persistence remains single-date so grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "id": "c019",
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "strip": "ESP_053451_2485",
+ "ids": {
+  "c000": {
+   "row": 28434.5,
+   "col": 58009.2
+  },
+  "c001": {
+   "row": 31005.4,
+   "col": 54488.4
+  },
+  "c002": {
+   "row": 30050.3,
+   "col": 44981.0
+  },
+  "c003": {
+   "row": 38249.5,
+   "col": 65213.0
+  },
+  "c004": {
+   "row": 9680.5,
+   "col": 9724.1
+  },
+  "c005": {
+   "row": 5109.4,
+   "col": 17409.2
+  },
+  "c006": {
+   "row": 39771.5,
+   "col": 63880.0
+  },
+  "c007": {
+   "row": 9515.2,
+   "col": 8132.6
+  },
+  "c008": {
+   "row": 34106.1,
+   "col": 49501.4
+  },
+  "c009": {
+   "row": 35518.4,
+   "col": 50107.2
+  },
+  "c010": {
+   "row": 17103.4,
+   "col": 16245.2
+  },
+  "c011": {
+   "row": 40803.1,
+   "col": 71795.3
+  },
+  "c012": {
+   "row": 41493.2,
+   "col": 64005.4
+  },
+  "c013": {
+   "row": 40351.4,
+   "col": 57819.2
+  },
+  "c014": {
+   "row": 46549.4,
+   "col": 58666.2
+  },
+  "c015": {
+   "row": 44797.2,
+   "col": 62330.8
+  },
+  "c016": {
+   "row": 40127.6,
+   "col": 66315.8
+  },
+  "c017": {
+   "row": 37837.7,
+   "col": 65631.1
+  },
+  "c018": {
+   "row": 31400.5,
+   "col": 26112.7
+  },
+  "c019": {
+   "row": 36848.1,
+   "col": 32220.5
+  }
+ },
+ "checks": [
+  {
+   "id": "c001",
+   "kind": "second_date_check",
+   "result": {
+    "available": false,
+    "note": "no second date in this run"
+   }
+  }
+ ],
+ "reasoning": []
+}

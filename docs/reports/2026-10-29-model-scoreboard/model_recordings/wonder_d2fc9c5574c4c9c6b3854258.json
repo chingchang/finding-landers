@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5b7231eb556a60ba8897f3154286a1c8c1d2187e7bbd3a6abc664c2d6dc8f04c",
+        "bytes": 76472
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f49e55aa2fbaf093d884d1b8b6e0b5c36303d7c5fbb39bc3c4db0308a0044463",
+        "bytes": 8228
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.78,
+   "reason": "The central bright blob has irregular, lobed, non-geometric edges with no distinct raised-body shadow and matches other light-toned patches nearby, consistent with a natural rock outcrop.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.78, \"reason\": \"The central bright blob has irregular, lobed, non-geometric edges with no distinct raised-body shadow and matches other light-toned patches nearby, consistent with a natural rock outcrop.\", \"verdict\": \"natural\"}",
+  "input_tokens": 373,
+  "output_tokens": 524
+ }
+}

@@ -1,0 +1,2065 @@
+{
+ "strip_key": "strip_a",
+ "turns": 12,
+ "stopped": "turn cap",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "checks",
+    "tests",
+    "persistence"
+   ],
+   "reason": "Advisory votes remain split between hardware and natural with unsure physical tests and one date only, so needs second look is retained."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "tests",
+    "persistence"
+   ],
+   "reason": "All advisory votes describe diffuse mottled texture without crisp outline or raised-body shadow, so likely natural is retained."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c006": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c007": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  }
+ },
+ "final": null,
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 25809
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1706
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1648
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1641
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1702
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1665
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1698
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1588
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1673
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1746
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1535
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 911
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 915
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 914
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 914
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 910
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "request_check",
+   "args": {
+    "id": "c000",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1354
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "request_check",
+   "args": {
+    "id": "c003",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1352
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "request_check",
+   "args": {
+    "id": "c005",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1360
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "request_check",
+   "args": {
+    "id": "c010",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1325
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "request_check",
+   "args": {
+    "id": "c011",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1412
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "request_check",
+   "args": {
+    "id": "c012",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1318
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "request_check",
+   "args": {
+    "id": "c013",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1369
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "request_check",
+   "args": {
+    "id": "c014",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1372
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "request_check",
+   "args": {
+    "id": "c015",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1422
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "request_check",
+   "args": {
+    "id": "c016",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1354
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "request_check",
+   "args": {
+    "id": "c017",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1316
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "request_check",
+   "args": {
+    "id": "c018",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1346
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "request_check",
+   "args": {
+    "id": "c019",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1308
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "request_check",
+   "args": {
+    "id": "c004",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1352
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "request_check",
+   "args": {
+    "id": "c008",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1354
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "request_check",
+   "args": {
+    "id": "c009",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1336
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "checks",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 2216
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "checks",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 3038
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "checks",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 3040
+   }
+  },
+  {
+   "turn": 11,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "checks",
+     "tests",
+     "persistence"
+    ],
+    "id": "c000",
+    "reason": "Advisory votes remain split between hardware and natural with unsure physical tests and one date only, so needs second look is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 12,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "persistence"
+    ],
+    "id": "c001",
+    "reason": "All advisory votes describe diffuse mottled texture without crisp outline or raised-body shadow, so likely natural is retained."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  }
+ ],
+ "strip": "ESP_022038_1995",
+ "ids": {
+  "c000": {
+   "row": 9694.7,
+   "col": 10623.7
+  },
+  "c001": {
+   "row": 15937.5,
+   "col": 7848.4
+  },
+  "c002": {
+   "row": 17396.5,
+   "col": 8575.0
+  },
+  "c003": {
+   "row": 11513.7,
+   "col": 4937.9
+  },
+  "c004": {
+   "row": 9229.6,
+   "col": 5819.2
+  },
+  "c005": {
+   "row": 8938.3,
+   "col": 11546.6
+  },
+  "c006": {
+   "row": 16556.1,
+   "col": 6369.6
+  },
+  "c007": {
+   "row": 15471.5,
+   "col": 6996.5
+  },
+  "c008": {
+   "row": 15301.5,
+   "col": 7214.7
+  },
+  "c009": {
+   "row": 16609.5,
+   "col": 7964.5
+  },
+  "c010": {
+   "row": 15560.1,
+   "col": 7829.7
+  },
+  "c011": {
+   "row": 18453.9,
+   "col": 4833.6
+  },
+  "c012": {
+   "row": 17892.4,
+   "col": 5925.2
+  },
+  "c013": {
+   "row": 16618.1,
+   "col": 7805.9
+  },
+  "c014": {
+   "row": 15740.2,
+   "col": 7141.4
+  },
+  "c015": {
+   "row": 18101.0,
+   "col": 7717.0
+  },
+  "c016": {
+   "row": 17151.2,
+   "col": 8711.4
+  },
+  "c017": {
+   "row": 12270.9,
+   "col": 6757.6
+  },
+  "c018": {
+   "row": 13041.3,
+   "col": 2854.4
+  },
+  "c019": {
+   "row": 24092.7,
+   "col": 3639.2
+  }
+ },
+ "checks": [
+  {
+   "id": "c000",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "hardware",
+      "confidence": 0.68,
+      "reason": "The centre shows a compact, sharp-edged cluster of bright white facets paired with a dense black shadow that stands out from the surrounding mottled natural terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 675
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.65,
+      "reason": "The central bright blobs are irregular and match the tone and texture of scattered rocks nearby, with no crisp straight or geometric hardware outline.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 7,
+       "dcol": 21,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 776
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.68,
+      "reason": "The central bright patch has irregular, diffuse edges and a contiguous dark pit matching other rock and crater shadows across the textured terrain, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 17,
+       "dcol": 23,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 657
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 0 natural, 0 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c003",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "unsure",
+      "confidence": 0.55,
+      "reason": "The centre is only a few pixels of dark triangular shading with a bright rim amid similar mottled rocky terrain, with no resolvable crisp manufactured outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 843
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The enlarged centre shows only diffuse mottled texture continuous with the surrounding rough terrain, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -32,
+       "dcol": -25,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 562
+      }
+     },
+     {
+      "verdict": "unsure",
+      "confidence": 0.55,
+      "reason": "The centre is only a few pixels of bright rim and dark core amid similarly mottled terrain, which could be either a sunlit rock with shadow or a small hardware fragment.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 17,
+       "dcol": -8,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 718
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 1 natural, 0 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c005",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "hardware",
+      "confidence": 0.65,
+      "reason": "The enlarged centre shows a saturated-white oval with a crisp outline, central dark dot, and adjacent dark shadow sharply unlike the surrounding mottled gray rocks and rippled terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 681
+      }
+     },
+     {
+      "verdict": "hardware",
+      "confidence": 0.8,
+      "reason": "The centre shows a small, saturated white circular disc with a crisp edge and central dark pixel, sharply unlike the surrounding grey rocky slope and dune terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -11,
+       "dcol": -20,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 675
+      }
+     },
+     {
+      "verdict": "hardware",
+      "confidence": 0.7,
+      "reason": "The centre shows a uniformly saturated white oval with a crisp outline, central dark spot and adjacent shadow, standing out sharply from the surrounding grey rock and rippled terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -7,
+       "dcol": -17,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 1476
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 0 natural, 2 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c010",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The central bright blob has an irregular grainy outline matching other scattered bright rocks in Image 1, with only a small adjacent shadow consistent with a low rock.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 590
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.75,
+      "reason": "The centred feature is an irregular mottled bright-dark speckle blending with identical rocky texture all around, with no crisp geometric outline or raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -14,
+       "dcol": -27,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 557
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The centre shows only mottled grainy texture and small bright specks matching scattered rocks elsewhere, with no crisp outline or raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 8,
+       "dcol": -27,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 763
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c011",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.85,
+      "reason": "The enlarged centre shows an irregular bright patch with diffuse edges matching other light-toned rocky outcrops across the frame, with no straight edges, geometric shape or detached shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 405
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.78,
+      "reason": "The central bright elongated patch has diffuse irregular edges and mottled texture matching other bright natural patches throughout the terrain, with no crisp geometric outline or detached raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -13,
+       "dcol": -24,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 553
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The central bright patch has diffuse irregular edges and the same mottled texture as the surrounding terrain, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -2,
+       "dcol": 23,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 625
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c012",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.68,
+      "reason": "The central bright patch has diffuse, irregular edges blending into the surrounding mottled terrain, with no crisp outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 675
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.8,
+      "reason": "The central bright patch has soft, irregular edges and the same mottled texture as surrounding rocky slopes, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 19,
+       "dcol": -2,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 495
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.76,
+      "reason": "The centre is an amorphous dark smudge blending into the surrounding mottled rocky texture, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 28,
+       "dcol": -3,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 504
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c013",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.75,
+      "reason": "The central bright blotch is a small diffuse pixel cluster identical to numerous other scattered bright specks in the terrain and lacks a crisp outline or cast shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 360
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The central bright patch is an irregular, diffuse blob with no crisp geometric edge or cast shadow and matches many similar bright specks scattered across the terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -4,
+       "dcol": -3,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 538
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.6,
+      "reason": "The central bright spot is a small irregular crescent with no crisp geometric outline or distinct raised-body shadow, matching numerous similar bright rocks scattered across the surrounding terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -17,
+       "dcol": 32,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 583
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c014",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The central dark blotch is a few soft-edged pixels indistinguishable from numerous similar scattered dark spots across the frame, with no crisp geometric outline, metallic glint, or separate raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 564
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.68,
+      "reason": "The centre feature is a soft-edged mottled bright and dark speck matching the surrounding rocky texture, with no crisp straight outline or distinct shadow of a raised body.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -9,
+       "dcol": -12,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 347
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.85,
+      "reason": "The centre shows only diffuse mottled speckle and small dark grains identical to the surrounding terrain, with no crisp outline or raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -8,
+       "dcol": -26,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 399
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c015",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The central bright patch has diffuse, irregular edges matching other sunlit slope and dust patches across the frame, with no crisp geometric outline or discrete raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 530
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The enlarged centre shows only diffuse mottled tonal variations continuous with the surrounding textured terrain, with no crisp straight edges, uniform manufactured albedo, or detached shadow of a raised body.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -18,
+       "dcol": 25,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 450
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The central bright patch with a soft dark edge matches the diffuse light-dark mottling repeated across the surrounding terrain, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -15,
+       "dcol": 5,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 426
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c016",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "hardware",
+      "confidence": 0.72,
+      "reason": "A pitch-black, crisply outlined small body sits centered on an anomalously bright, smooth white patch that is unlike the surrounding mottled gray terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 694
+      }
+     },
+     {
+      "verdict": "unsure",
+      "confidence": 0.6,
+      "reason": "The centre is only a few saturated black pixels on a bright patch, with no resolvable crisp outline or distinct raised-body shadow to separate it from a rock shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 27,
+       "dcol": -5,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 1066
+      }
+     },
+     {
+      "verdict": "unsure",
+      "confidence": 0.65,
+      "reason": "The centre is only a few-pixel irregular black blob on a bright rocky patch, with no crisp geometric outline, metallic contrast, or distinct raised-body shadow to distinguish it from surrounding rock shadows.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -27,
+       "dcol": 6,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 1180
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 0 natural, 1 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c017",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The central bright patch has irregular diffuse margins, no straight or crisp edges, and no cast shadow, blending with similar bright natural terrain in the scene.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 547
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The central bright patch has diffuse, irregular edges blending into the adjacent rippled crater fill with no crisp outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 6,
+       "dcol": -24,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 484
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.75,
+      "reason": "The centre shows only blurry, mottled rocky slope texture continuous with its surroundings, with no crisp geometric outline or distinct shadow of a raised object.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 17,
+       "dcol": 20,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 578
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c018",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The central bright patch has soft, irregular edges, no geometric outline or cast shadow, and resembles other mottled bright spots across the surrounding terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 581
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The centre shows only mottled, low-contrast rocky texture that blends into the surroundings, with no crisp straight edges, distinct material, or raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -18,
+       "dcol": -27,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 496
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The central dark speck lies within a diffuse bright streak and matches many similar dark rocks scattered across the terrain, with no crisp manufactured outline or raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 5,
+       "dcol": 21,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 537
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c019",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "unsure",
+      "confidence": 0.75,
+      "reason": "The centre is only a 1-2 pixel black speck on a bright natural ridge with no resolvable outline, shape, or raised-body shadow to separate a rock or shadow from hardware.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 862
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.65,
+      "reason": "The centre shows only diffuse mottled texture matching the surrounding rough terrain, with no crisp outline, distinct material contrast, or raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 5,
+       "dcol": 21,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 641
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.85,
+      "reason": "The centre blends into the surrounding mottled rocky texture with soft, irregular gradients and no crisp geometric outline or isolated raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 18,
+       "dcol": 13,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 542
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 1 natural, 0 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c004",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The central bright speck has irregular diffuse edges matching numerous similar bright patches in the surrounding mottled terrain, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 421
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The central mottled dark spot has irregular, blurred edges matching the surrounding rocky texture, with no straight outline or isolated cast shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -27,
+       "dcol": 30,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 388
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The central bright spot is a fuzzy, irregular highlight matching many similar sunlit bump tops across the terrain, with no crisp straight edges or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -5,
+       "dcol": 9,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 603
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c008",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.68,
+      "reason": "The central dark blob has irregular, soft mottled edges blending with the surrounding rocky texture, with no crisp geometric outline, bright metal glint, or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 438
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The centre shows only the same irregular mottled granular texture as the surrounding terrain, with no crisp or straight outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -29,
+       "dcol": 7,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 598
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.8,
+      "reason": "The centre shows an irregular, soft-edged dark speckled blob identical to surrounding rock and shadow texture, with no crisp straight outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 9,
+       "dcol": -14,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 562
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c009",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.78,
+      "reason": "The central bright blob has irregular, lobed, non-geometric edges with no distinct raised-body shadow and matches other light-toned patches nearby, consistent with a natural rock outcrop.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 524
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The central bright patch has an irregular, mottled, shadowless outline matching other bright patches scattered across the surrounding terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -26,
+       "dcol": 11,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 759
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The centre is a mottled, irregular bright patch with diffuse blending edges and no crisp outline, shadow, or geometry distinct from surrounding bright natural patches.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -25,
+       "dcol": 31,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 0.2,
+       "hi_pct": 99.8
+      },
+      "tokens": {
+       "input": 373,
+       "output": 400
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  }
+ ],
+ "reasoning": []
+}
