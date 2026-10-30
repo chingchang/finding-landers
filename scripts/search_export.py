@@ -3,6 +3,7 @@
     uv run scripts/search_export.py export [--ids ID ...] [--limit N]
     uv run scripts/search_export.py pieces
     uv run scripts/search_export.py tiles
+    uv run scripts/search_export.py labels
     uv run scripts/search_export.py check
 
 ``export`` takes the search strips first, then the tuning strips, and skips any strip whose index.json exists.
@@ -178,11 +179,15 @@ def export_tiles(a) -> int:
     out.mkdir(parents=True, exist_ok=True)
     t = load(TRANSPLANT_LIST)
     records = []
+    used = {p["tile"] for p in t["placements"]}  # the plan drew more tiles than got a placement; only these were used
     for sid, e in sorted(t["targets"].items()):
         strip = Strip.open(sid)
         ex.copy_label(strip.jp2_path, Path(a.out) / "labels")
         for r0, r1, c0, c1 in e["tiles"]:
             name = f"{sid}_{r0}_{c0}.npz"
+            if f"{sid}:{r0}:{c0}" not in used:
+                (out / name).unlink(missing_ok=True)
+                continue
             if not (out / name).exists():
                 win = strip.read(r0, r1, c0, c1)
                 ex.write_window(out / name, win.data, win.row0, win.col0)
@@ -191,6 +196,19 @@ def export_tiles(a) -> int:
         print(f"{sid}: {len(e['tiles'])} tiles", flush=True)
     (Path(a.out) / "tiles.json").write_text(json.dumps({"source": str(TRANSPLANT_LIST.relative_to(config.REPO_ROOT)), "tiles": records}, indent=1))
     print(f"{len(records)} tiles under {out}")
+    return 0
+
+
+def export_labels(a) -> int:
+    """Every label under the strips directory, except any of a site that is not a tuning site."""
+    sites, _ = controls()
+    blind = {sid for s in sites["sites"] if s["group"] != "tuning" for sid in s["strips"]}
+    n = 0
+    for lbl in sorted(config.strips_dir().rglob("*.LBL")):
+        if lbl.name.split("_RED")[0] not in blind:
+            ex.copy_label(lbl.with_suffix(".JP2"), Path(a.out) / "labels")
+            n += 1
+    print(f"{n} labels under {Path(a.out) / 'labels'}")
     return 0
 
 
@@ -386,6 +404,7 @@ def check(a) -> int:
     gaps = nearest_target_gaps(listed)
     search_rows = [r for r in rows if r["role"] == "search"]
     labels_all = sorted(p.name for p in (root / "labels").glob("*.LBL"))
+    labels_missing = sorted({p.name for p in config.strips_dir().rglob("*.LBL")} - set(labels_all))
     result = {
         "what": "item 12c(b): what was exported per strip and whether it reads back; nothing has been deleted",
         "ok": not any(r["problems"] for r in rows) and not pieces["problems"] and not tiles["problems"] and all(k["identical"] for k in lookup)
@@ -395,7 +414,7 @@ def check(a) -> int:
         "tiles": tiles,
         "lookup_from_export": lookup,
         "nearest_targets": gaps,
-        "labels": {"n": len(labels_all), "names": labels_all},
+        "labels": {"n": len(labels_all), "names": labels_all, "on_disk_not_copied": labels_missing},
         "export_bytes": sum(f.stat().st_size for f in root.rglob("*") if f.is_file()),
         "delete_proposed": {"what": "the .JP2 of each search strip; the .LBL files, the manifest and the tuning strips stay",
                             "strips": [r["strip"] for r in search_rows], "bytes": sum(r.get("jp2_bytes", 0) for r in search_rows)},
@@ -424,11 +443,12 @@ def main(argv=None) -> int:
     p = sub.add_parser("pieces")
     p.add_argument("--piece-size", type=int, default=640)
     sub.add_parser("tiles")
+    sub.add_parser("labels")
     c = sub.add_parser("check")
     c.add_argument("--top", type=int, default=2000)
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     a = ap.parse_args(argv)
-    return {"export": export_crops, "pieces": export_pieces, "tiles": export_tiles, "check": check}[a.cmd](a)
+    return {"export": export_crops, "pieces": export_pieces, "tiles": export_tiles, "labels": export_labels, "check": check}[a.cmd](a)
 
 
 if __name__ == "__main__":

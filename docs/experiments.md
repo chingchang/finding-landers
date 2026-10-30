@@ -59,3 +59,6 @@ One line per idea that did not move the score. Winners go into the main package 
 - 2026-10-30, item 11: whole-strip contrast (overview DN percentiles) to explain the two 2007 strips that neither
   register nor yield candidates: it does not single them out. Nothing kept.
   `experiments/search_strip_contrast.py`, `out/search/strip_contrast.json`.
+- 2026-10-30, item 12c: registering the two 2007 strips with no ground texture at 2 and 4 m per pixel: median
+  correlation 0.016 to 0.051, no pair registered. Nothing to keep; `experiments/strip_signal.py` measures why, and
+  `experiments/retry_summary.py` holds the numbers.
