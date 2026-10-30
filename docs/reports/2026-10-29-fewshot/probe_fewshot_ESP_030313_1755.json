@@ -1,0 +1,358 @@
+{
+ "run": "v03_features",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "natural",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "hardware",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "hardware",
+      "natural",
+      "natural"
+     ]
+    }
+   ],
+   "prompt": "vote-fewshot-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 shows a dark, finely grained surface covered in sub-parallel, wavy ridges, with a single bright white irregular patch at the centre. In the 4x enlargement in image 2 the patch is diffuse and l",
+     "confidence": 0.1,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 shows dark, finely rippled dune-like terrain filling the frame. At the centre is a single bright, white, irregular elongated patch with diffuse, blotchy edges, brightest in its lower-left/left",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Dark, finely rippled/mottled planetary ground at native resolution. An irregular, diffuse, very bright white patch lies north-east of the centre of image 1, visible at the top-right corner of the 4x-c",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "natural",
+      "hardware",
+      "natural"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "hardware",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "natural",
+      "hardware",
+      "hardware"
+     ]
+    }
+   ],
+   "prompt": "vote-fewshot-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 shows dark, finely granular, low-albedo terrain. Near the centre is a large, very bright, mottled white-to-grey patch, roughly triangular in outline, with irregular internal bright and grey cl",
+     "confidence": 0.1,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "A dark, finely grained surface with an irregular, bright, partly saturated patch near the centre. Enlarged, the patch is mottled white and light grey with diffuse, uneven edges and no resolved panels,",
+     "confidence": 0.18,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "A dark, granular surface with a large, irregular, saturated white roughly triangular patch at the centre. At 4x enlargement the patch is mottled white and grey with no resolved straight edges, compact",
+     "confidence": 0.85,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "hardware",
+      "hardware",
+      "natural"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "hardware",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "hardware",
+      "natural",
+      "natural"
+     ]
+    }
+   ],
+   "prompt": "vote-fewshot-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 shows dark, mottled, relatively featureless planetary ground. At the centre is a small, very bright, sharply defined feature, enlarged in image 2. It is roughly triangular to conical, with a c",
+     "confidence": 0.22,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 shows dark, mottled planetary terrain with a small, very bright, sharply defined object near the centre. Enlarged in image 2, the object is roughly triangular to fan-shaped, mostly saturated/\"",
+     "confidence": 0.25,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Dark, mottled, finely textured planetary ground with low-contrast variations and no large crater or other landmark visible. Near the centre, slightly left and below middle, is a single isolated very[1",
+     "confidence": 0.12,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  }
+ ]
+}

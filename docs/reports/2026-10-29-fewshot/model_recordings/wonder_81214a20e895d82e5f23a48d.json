@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 hardware example, image 5 hardware example, image 6 natural example, image 7 natural example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8ab447ae5e9cbe1ee908b08971c7beb19b2f4ed3d1f53bf7931cdab88f90200f",
+        "bytes": 76853
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f6d10f3d575f24007ceb0955ed775fc12751bb07365ed2316613b0328981f588",
+        "bytes": 8222
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f385ba8c8bcef62339081c6460b29303add72e75c83834e8384a9ff29573d05b",
+        "bytes": 82086
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5d41846d0e83b82df4621dc02905890fa4418c437619c5df83d953906fb53dda",
+        "bytes": 7482
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "0205034608b40bb0fb1563547e795cd81c6b57a006452e3581e162927b99e7e2",
+        "bytes": 8417
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ccc74ab8f2dc56a7bfd79120432cd4e7b0768e93dc541df6d86304146b5dbaeb",
+        "bytes": 7897
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c6a6ea2f848436887d8b765c542204b1495dbaf4574077480d8fb4e6cda72b5c",
+        "bytes": 6206
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0,
+   "place": "",
+   "recognised": false,
+   "shows": "A grayscale orbital view of rough, mottled planetary ground with irregular intermingled light and dark textured patches throughout. In the enlarged centre there is only a diffuse bright patch at the r"
+  },
+  "raw": "{\"confidence\": 0, \"place\": \"\", \"recognised\": false, \"shows\": \"A grayscale orbital view of rough, mottled planetary ground with irregular intermingled light and dark textured patches throughout. In the enlarged centre there is only a diffuse bright patch at the r\"}",
+  "input_tokens": 972,
+  "output_tokens": 758
+ }
+}

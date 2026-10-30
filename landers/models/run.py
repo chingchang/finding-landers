@@ -101,20 +101,34 @@ def vote_pass(
     seed: int = 0,
     probe: bool = False,
     rule: wonder.VoteRule | None = None,
+    examples: Callable[[int, int, crops.Augmentation], list[tuple[str, bytes]]] | None = None,
+    only: set[int] | None = None,
+    on_record: Callable[[dict], None] | None = None,
 ) -> list[dict]:
     """Three augmented blind crops per candidate; votes (or the recognition probe) on each. With votes, the
-    grade after ``apply_votes`` is recorded beside the grade before; nothing goes up."""
+    grade after ``apply_votes`` is recorded beside the grade before; nothing goes up.
+
+    ``examples(i, j, aug)`` gives the labelled example views for vote ``j`` of candidate ``i`` (the few-shot
+    prompt, plan item 9d; None keeps the plain prompt). ``only`` votes on those ranks alone and still draws
+    every rank's augmentations, so a vote on rank i is the same request whichever ranks run with it.
+    ``on_record`` is called with each record as it is made, so a long pass can be written as it lands."""
     rng = np.random.default_rng(seed)
     out = []
     for i, c in enumerate(cands):
         augs = crops.draw_augmentations(rng, n_votes, size)
+        if only is not None and i not in only:
+            continue
         data, valid = read(c["row"], c["col"], size + size // 2)
         ref = None
         if reference is not None and reference_at is not None:
             rdata, rvalid = reference(reference_at[0], reference_at[1], size + size // 2)
             ref = (rdata, rvalid, rdata.shape[0] / 2.0, rdata.shape[1] / 2.0)
         views = [crops.build_crop(data, valid, data.shape[0] / 2.0, data.shape[1] / 2.0, size, 4, a, ref) for a in augs]
+        if examples is not None:
+            for j, (v, a) in enumerate(zip(views, augs)):
+                v.examples = examples(i, j, a)
         rec: dict = {"id": candidate_id(i), "branch": c["branch"], "crops": [v.to_json() for v in views]}
+        rec["prompt"] = wonder.FEWSHOT_VERSION if examples is not None else wonder.PLAIN_VERSION
         try:
             if probe:
                 rec["probe"] = wonder.probe(client, views)
@@ -126,6 +140,8 @@ def vote_pass(
         except CapError as e:
             rec["not_run"] = str(e)
         out.append(rec)
+        if on_record is not None:
+            on_record(rec)
     return out
 
 

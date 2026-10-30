@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 hardware example, image 5 natural example, image 6 hardware example, image 7 natural example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c8101f0415f8fa12a9b9fe33d9e3f86ac81a2f54934bccee66dbec092cffc66b",
+        "bytes": 64055
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "93cb7d382c9a56f3d92e70a55ba90183e6761f4da5c5c1bc63b4a8ec82b184b3",
+        "bytes": 7971
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d3c8a25919ce17b503ad2c9710bf27da523a0d17c46c62b9ebf8c323635739fe",
+        "bytes": 6442
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "484777f9e7589b732897e0fb2180219b4bbdaece5a7d67a361501154021a5a9d",
+        "bytes": 7343
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "4041950cb6b753c1f5785c752dcdf3165b2285147b1f9a18f07c8f2815478316",
+        "bytes": 7703
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ca835751ab95dbd0807c32a36f5579a0a3c89ad626c16b2a4930d8e08d02d084",
+        "bytes": 8062
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.1,
+   "place": "",
+   "recognised": false,
+   "shows": "Image 1 shows dark, finely granular, low-albedo terrain. Near the centre is a large, very bright, mottled white-to-grey patch, roughly triangular in outline, with irregular internal bright and grey cl"
+  },
+  "raw": "{\"confidence\": 0.1, \"place\": \"\", \"recognised\": false, \"shows\": \"Image 1 shows dark, finely granular, low-albedo terrain. Near the centre is a large, very bright, mottled white-to-grey patch, roughly triangular in outline, with irregular internal bright and grey cl\" }",
+  "input_tokens": 972,
+  "output_tokens": 888
+ }
+}

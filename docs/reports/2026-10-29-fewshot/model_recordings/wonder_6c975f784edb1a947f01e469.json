@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 hardware example, image 6 natural example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d38adb609be33fd0d3b219d130ffa686bd9e82540efce2470947b91e378a279c",
+        "bytes": 69186
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "3850d8ecffd95ff074ffa693665127c4719101d70cdbe03dc8a5c0309cbe87ac",
+        "bytes": 7461
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8e8188b6f483f6bef2eba3b3dd4f507f8da7cc73894d836e88eaa6e27c34289a",
+        "bytes": 90966
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c560de5f1a6447928a5484a3b94bd3c9320446b326e4006f1817f2ba25e66e1f",
+        "bytes": 8007
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d02ce48323cae632840a578f4be72b242835225a7dd428b7af260cf766f0a68a",
+        "bytes": 8349
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "51527bfbcc71be123ce25e1ba5b6aa73b16b8731ac109e64e005a1d91edab121",
+        "bytes": 6589
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ddecf4f4ac1d84118dc752f83cd15bfde65f80b7ed011c67a85b3f30fc24bbd8",
+        "bytes": 6761
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.18,
+   "place": "",
+   "recognised": false,
+   "shows": "A dark, finely grained surface with an irregular, bright, partly saturated patch near the centre. Enlarged, the patch is mottled white and light grey with diffuse, uneven edges and no resolved panels,"
+  },
+  "raw": "{\"confidence\": 0.18, \"place\": \"\", \"recognised\": false, \"shows\": \"A dark, finely grained surface with an irregular, bright, partly saturated patch near the centre. Enlarged, the patch is mottled white and light grey with diffuse, uneven edges and no resolved panels,\"}",
+  "input_tokens": 972,
+  "output_tokens": 2685
+ }
+}

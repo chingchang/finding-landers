@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 hardware example, image 6 hardware example, image 7 natural example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "57984d8ffe2f23700f87e700dd5d77de2d7ee28fded80f51eb41c693e3e34cf5",
+        "bytes": 63333
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "80583f014c33985c7ad616aec042abcc19f924e80df55b49f09d6754b294bf38",
+        "bytes": 7583
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "353481ff2f8b866d26fe7ae0cd5caa9826091a77d0e4038a34e4b7877f6f78af",
+        "bytes": 6318
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d3c8a25919ce17b503ad2c9710bf27da523a0d17c46c62b9ebf8c323635739fe",
+        "bytes": 6442
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5dd36c6ff6193b4a061dbd88a9a4ac4c6b23d3ccf5d74f76576fcd7c5eaea04a",
+        "bytes": 7801
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "7a648f5033e7581e218820be2bbe1d27f513f20a08a5a0dddfe37e1fbdae47d1",
+        "bytes": 7708
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.22,
+   "place": "",
+   "recognised": false,
+   "shows": "Image 1 shows dark, mottled, relatively featureless planetary ground. At the centre is a small, very bright, sharply defined feature, enlarged in image 2. It is roughly triangular to conical, with a c"
+  },
+  "raw": "{\"confidence\": 0.22, \"place\": \"\", \"recognised\": false, \"shows\": \"Image 1 shows dark, mottled, relatively featureless planetary ground. At the centre is a small, very bright, sharply defined feature, enlarged in image 2. It is roughly triangular to conical, with a c\"}",
+  "input_tokens": 972,
+  "output_tokens": 898
+ }
+}

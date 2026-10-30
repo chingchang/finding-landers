@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 hardware example, image 6 natural example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "b3c524ec276094d412752254b88531ab45f2fc26d6f8f5f425cf7cedd6888883",
+        "bytes": 69207
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a107cf8ab3c6a0f0742c88e23710ed8ac7f80c66f1e3fd4cdabfc7a31b5abfc4",
+        "bytes": 7459
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8b96d390ffb9c00281c322dc77fe4ec94a1ce62da228c1ad2837e721b9aa0410",
+        "bytes": 86628
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8938e5edca9a6d741cf77a6c0a1db6315aa87cd38458c85f6ef15d08d5eeedd1",
+        "bytes": 8414
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "792e21e2758188e21cbaad0badca28860c3dfd0d597b6f2f3fa2386b32fdd895",
+        "bytes": 6554
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "2b12fc59042e53647a00106ed8cb21721e6576975ed5e0e15a28098328f9aeae",
+        "bytes": 7361
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ac617c4fccb6176aaea522c4f14e683ac9727ac91dbe9b069209e2537430fbf7",
+        "bytes": 7833
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.25,
+   "place": "",
+   "recognised": false,
+   "shows": "Image 1 shows dark, mottled planetary terrain with a small, very bright, sharply defined object near the centre. Enlarged in image 2, the object is roughly triangular to fan-shaped, mostly saturated/\""
+  },
+  "raw": "{\"confidence\": 0.25, \"place\": \"\", \"recognised\": false, \"shows\": \"Image 1 shows dark, mottled planetary terrain with a small, very bright, sharply defined object near the centre. Enlarged in image 2, the object is roughly triangular to fan-shaped, mostly saturated/\\\"\"}",
+  "input_tokens": 972,
+  "output_tokens": 1057
+ }
+}

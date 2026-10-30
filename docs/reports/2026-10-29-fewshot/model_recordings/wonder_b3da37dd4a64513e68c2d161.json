@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 hardware example, image 6 natural example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "6fdb9397593f6179060603a157731d53716399bbaa73f8700c81027225866e80",
+        "bytes": 76842
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ef7080f99ef0684544802b4a809353ae0cb49d6e5259d430f6f6e9bb19e2347a",
+        "bytes": 8295
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "263ea0f851cf3b288f8eff45baa57f8f509b09fa7f0de44d120527c7011f20b8",
+        "bytes": 74527
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5755eee89585da91f96e81c1e64fedc4b459b0ff78343d2239aae16719e93b54",
+        "bytes": 6988
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "798993bdde44352c4fafac441f5cf4663ce7bfbc58f663fdc61f48c75f1a9565",
+        "bytes": 6426
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5e173ad9c6ad08aac6926eb883c92c3dbc7048766b5fb00fe4311e0252a83e87",
+        "bytes": 7753
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "156171efe72e154fe2409b334469915dc0de1bc40739fe89079e494a41dce781",
+        "bytes": 7488
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.78,
+   "place": "Not recognised",
+   "recognised": false,
+   "shows": "A grayscale, rough and mottled planetary surface with irregular ridges, depressions and scattered bright specks. At the centre, enlarged in image 2, is only a few-pixel cluster of alternating bright-\\"
+  },
+  "raw": "{\n  \"confidence\": 0.78,\n  \"place\": \"Not recognised\",\n  \"recognised\": false,\n  \"shows\": \"A grayscale, rough and mottled planetary surface with irregular ridges, depressions and scattered bright specks. At the centre, enlarged in image 2, is only a few-pixel cluster of alternating bright-\\\\\"\n}",
+  "input_tokens": 972,
+  "output_tokens": 980
+ }
+}

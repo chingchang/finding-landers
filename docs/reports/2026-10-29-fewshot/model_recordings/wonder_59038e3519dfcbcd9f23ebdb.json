@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 hardware example, image 6 natural example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "0598f30fc5905c20c3ade9b4a82a7a99a0139d4ebd6c19840e9ef508658c7390",
+        "bytes": 76488
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "63d9315f952f10bee7195ef404e84aa036f3dcdc62700e50400909acf0794318",
+        "bytes": 8186
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "263ea0f851cf3b288f8eff45baa57f8f509b09fa7f0de44d120527c7011f20b8",
+        "bytes": 74527
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "16cf075e0277d82901f40d2f0e2d0086a21b009cecc08924a32ba9293f550676",
+        "bytes": 8231
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "cb3f3f681dba00586443de5b6fd6e62dac398b72c3eeb4393fedb8250107783f",
+        "bytes": 6378
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "55c5189781a488ada697bbfefe31bcd8ca13ef10fcb848e2914ca1587b8121a3",
+        "bytes": 8240
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "3e175a4a6f29e4c00543e146783dff7a1040fe12d115e4bfab8a5644c13bd475",
+        "bytes": 8165
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.2,
+   "place": "",
+   "recognised": false,
+   "shows": "Image 1 shows dark, finely rippled dune-like terrain filling the frame. At the centre is a single bright, white, irregular elongated patch with diffuse, blotchy edges, brightest in its lower-left/left"
+  },
+  "raw": "{\"confidence\": 0.2, \"place\": \"\", \"recognised\": false, \"shows\": \"Image 1 shows dark, finely rippled dune-like terrain filling the frame. At the centre is a single bright, white, irregular elongated patch with diffuse, blotchy edges, brightest in its lower-left/left\" }",
+  "input_tokens": 972,
+  "output_tokens": 926
+ }
+}

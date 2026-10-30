@@ -1,0 +1,47 @@
+{
+ "started": "2026-10-29T22:27:51",
+ "backend": "recorded",
+ "caps": {
+  "sam": 0,
+  "wonder": 340,
+  "spark": 0
+ },
+ "units": {
+  "sam": "images",
+  "wonder": "calls",
+  "spark": "turns"
+ },
+ "entries": {
+  "sam": {
+   "units": 0,
+   "attempts": 0,
+   "ok": 0,
+   "failed": 0,
+   "refused": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "cost_usd": 0.0
+  },
+  "wonder": {
+   "units": 15,
+   "attempts": 15,
+   "ok": 15,
+   "failed": 0,
+   "refused": 0,
+   "input_tokens": 14580,
+   "output_tokens": 18429,
+   "cost_usd": 0.4269
+  },
+  "spark": {
+   "units": 0,
+   "attempts": 0,
+   "ok": 0,
+   "failed": 0,
+   "refused": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "cost_usd": 0.0
+  }
+ },
+ "total_cost_usd": 0.4269
+}
