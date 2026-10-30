@@ -207,6 +207,37 @@ def test_frozen_configs_match_detect_py_defaults():
     }
 
 
+def test_survivors_are_the_top_by_score_at_the_bar():
+    from landers.search import persistence as sp
+
+    cands = [{"score": s, "row": 0, "col": i, "branch": "bright", "grade": "needs second look"} for i, s in
+             enumerate([0.1, 3.0, -1.0, 2.0, 1.0])]
+    entry = {"valid_area_km2": 1.6, "candidates": cands}
+    s = sp.survivors(entry, 2.0)
+    assert [c["score"] for c in s] == [3.0, 2.0, 1.0]
+    assert sp.survivor_count(0.4, 2.0) == 0
+
+
+def test_combine_counts_dates_and_never_changes_grades():
+    from landers.search import persistence as sp
+
+    def c(score):
+        return {"row": 1.0, "col": 2.0, "branch": "bright", "score": score, "grade": "needs second look"}
+
+    surv = {"A": [c(3.0), c(2.0)], "B": [c(1.0)], "C": []}
+    pair = {"directions": {
+        "A->B": {"from": "A", "to": "B", "survivors": [{"rank": 1, "seen": True}, {"rank": 2, "seen": None}]},
+        "B->A": {"from": "B", "to": "A", "survivors": [{"rank": 1, "seen": False}]},
+    }}
+    pair2 = {"directions": {"A->C": {"from": "A", "to": "C", "survivors": [{"rank": 1, "seen": False}]}}}
+    rows = {(r["strip"], r["rank"]): r for r in sp.combine(["A", "B", "C"], surv, [pair, pair2])}
+    a1 = rows[("A", 1)]
+    assert (a1["dates_looked"], a1["dates_seen"], a1["seen_in"], a1["not_seen_in"]) == (3, 2, ["B"], ["C"])
+    assert (rows[("A", 2)]["dates_looked"], rows[("A", 2)]["dates_seen"]) == (1, 1)
+    assert (rows[("B", 1)]["dates_looked"], rows[("B", 1)]["dates_seen"]) == (2, 1)
+    assert {r["grade"] for r in rows.values()} == {"needs second look"}
+
+
 def test_code_matches_tag():
     assert run.code_matches_tag("no-such-tag-anywhere") is None
     assert run.code_matches_tag("HEAD") is True

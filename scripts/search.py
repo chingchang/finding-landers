@@ -125,6 +125,128 @@ def run_search(a) -> int:
     return 0
 
 
+def per_km2(a) -> float:
+    return float(json.loads(Path(a.thresholds).read_text())["pass"]["max_false_alarms_per_km2"])
+
+
+def load_entry(cands_dir: Path, sid: str, cache: dict) -> dict:
+    if sid not in cache:
+        if len(cache) >= 3:
+            cache.pop(next(iter(cache)))
+        cache[sid] = json.loads(run.strip_output(cands_dir, sid).read_text())["strips"][sid]
+    return cache[sid]
+
+
+def persist_pairs(a) -> int:
+    from landers import persist as lp
+    from landers.search import persistence as sp
+    from landers.strip import Strip
+
+    cands_dir = Path(a.out) / "candidates"
+    out = Path(a.out) / "persist"
+    out.mkdir(parents=True, exist_ok=True)
+    rate = per_km2(a)
+    pairs = [p for p in json.loads((Path(a.out) / "overlaps.json").read_text())["pairs"] if p["km2"] >= a.min_km2]
+    pairs.sort(key=lambda p: -p["km2"])
+    done = {sid for sid in (p[k] for p in pairs for k in ("a", "b")) if run.strip_output(cands_dir, sid).exists()}
+    todo = [p for p in pairs if p["a"] in done and p["b"] in done and not (out / f"persist_{p['a']}_{p['b']}.json").exists()]
+    if a.limit:
+        todo = todo[: a.limit]
+    print(f"{len(pairs)} pairs sharing at least {a.min_km2} km2; {len(todo)} to run now", flush=True)
+    cache: dict = {}
+    for p in todo:
+        t0 = time.time()
+        ids = (p["a"], p["b"])
+        strips = {sid: Strip.open(sid) for sid in ids}
+        result = {"pair": list(ids), "km2_shared": p["km2"], "per_km2": rate, "radius_px": a.radius_px,
+                  "git": run.git_state(), "directions": {}}
+        for src, dst in (ids, ids[::-1]):
+            ea, eb = load_entry(cands_dir, src, cache), load_entry(cands_dir, dst, cache)
+            nodes = lp.offset_field(strips[src], strips[dst])
+            surv = sp.survivors(ea, rate)
+            recs, counts = sp.look_up(surv, eb["candidates"], strips[src], strips[dst], nodes, a.radius_px)
+            result["directions"][f"{src}->{dst}"] = {
+                "from": src,
+                "to": dst,
+                "registration": lp.nodes_summary(nodes),
+                "nodes": lp.nodes_to_json(nodes),
+                "survivors_of_from": len(surv),
+                "counts": counts,
+                "survivors": recs,
+            }
+            print(f"  {src} -> {dst}: {lp.nodes_summary(nodes)} {counts}", flush=True)
+        result["seconds"] = round(time.time() - t0)
+        path = out / f"persist_{p['a']}_{p['b']}.json"
+        tmp = path.with_suffix(".json.part")
+        tmp.write_text(json.dumps(result, indent=1))
+        tmp.replace(path)
+        print(f"{p['a']} {p['b']} ({p['km2']} km2) in {result['seconds']}s -> {path}", flush=True)
+    return 0
+
+
+def combine_survivors(a) -> int:
+    from landers.search import persistence as sp
+
+    cands_dir = Path(a.out) / "candidates"
+    rate = per_km2(a)
+    plan_ids = [s["observation_id"] for s in json.loads(Path(a.plan).read_text())["strips"]]
+    ids = [sid for sid in plan_ids if run.strip_output(cands_dir, sid).exists()]
+    surv, per_strip = {}, {}
+    for sid in ids:
+        d = json.loads(run.strip_output(cands_dir, sid).read_text())
+        e = d["strips"][sid]
+        surv[sid] = sp.survivors(e, rate)
+        per_strip[sid] = {
+            "tiles": e["tiles"],
+            "valid_area_km2": e["valid_area_km2"],
+            "candidates": len(e["candidates"]),
+            "candidates_per_km2": round(len(e["candidates"]) / e["valid_area_km2"], 2),
+            "survivors": len(surv[sid]),
+            "survivor_min_score": surv[sid][-1]["score"] if surv[sid] else None,
+            "seconds": d["seconds"],
+            "commit": d["git"]["commit"],
+            "same_code_as": d["git"].get("same_code_as"),
+        }
+        del d, e
+    results = [json.loads(f.read_text()) for f in sorted((Path(a.out) / "persist").glob("persist_*.json"))]
+    rows = sp.combine(ids, surv, results)
+    by_looked: dict = {}
+    for r in rows:
+        k = f"{r['dates_seen']} of {r['dates_looked']}"
+        by_looked[k] = by_looked.get(k, 0) + 1
+    out = {
+        "what": "survivors of the frozen-v1 search: top candidates per strip at the adopted false-alarm bar, "
+        "with persistence across every other date that covers them. Grades are the detector's; nothing here "
+        "raises one.",
+        "per_km2": rate,
+        "strips_searched": len(ids),
+        "strips_in_plan": len(plan_ids),
+        "pairs_with_persistence": len(results),
+        "survivors": len(rows),
+        "dates_seen_of_looked": dict(sorted(by_looked.items())),
+        "per_strip": per_strip,
+        "rows": rows,
+    }
+    (Path(a.out) / "survivors.json").write_text(json.dumps(out, indent=1))
+    print(f"{len(rows)} survivors over {len(ids)} strips; seen of looked: {out['dates_seen_of_looked']}")
+    return 0
+
+
+def searched_coverage(a) -> int:
+    cands_dir = Path(a.out) / "candidates"
+    inv = json.loads((Path(a.out) / "inventory.json").read_text())
+    ids = [s["observation_id"] for s in inv["strips"] if run.strip_output(cands_dir, s["observation_id"]).exists()]
+    grid, records, cells, _ = inventory.survey(ids, inv["grid"]["cell_m"], DetectorConfig().tile, DetectorConfig().overlap)
+    c = cov.coverage(cells, grid)
+    j = cov.coverage_json(c)
+    j["what"] = "ground searched by the frozen-v1 detector: number of searched dates per cell"
+    j["strips"] = ids
+    (Path(a.out) / "searched_coverage.json").write_text(json.dumps(j, indent=1))
+    cov.render(c, Path(a.out) / "searched_coverage.png", title="Ground searched by the frozen detector, by number of dates")
+    print(f"searched: {len(ids)} strips, union {c['union_km2']} km2, by dates {c['km2_by_dates']}")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -156,8 +278,23 @@ def main(argv=None) -> int:
         help="run from an untagged commit whose detector files are identical to TAG (recorded in each file)",
     )
     r.add_argument("--out", default=str(DEFAULT_OUT))
+    thresholds = str(config.REPO_ROOT / "controls" / "thresholds.json")
+    q = sub.add_parser("persist", help="register every overlapping pair of searched strips; survivors looked up")
+    q.add_argument("--min-km2", type=float, default=0.0, help="only pairs sharing at least this much ground")
+    q.add_argument("--radius-px", type=float, default=8.0, help="as scripts/persist.py")
+    q.add_argument("--limit", type=int, default=0)
+    q.add_argument("--thresholds", default=thresholds)
+    q.add_argument("--out", default=str(DEFAULT_OUT))
+    v = sub.add_parser("survivors", help="combine the per-strip survivors and the pair files into survivors.json")
+    v.add_argument("--thresholds", default=thresholds)
+    v.add_argument("--plan", default=str(DEFAULT_OUT / "plan.json"))
+    v.add_argument("--out", default=str(DEFAULT_OUT))
+    g = sub.add_parser("coverage", help="coverage of the strips searched so far (searched_coverage.json, .png)")
+    g.add_argument("--out", default=str(DEFAULT_OUT))
     a = ap.parse_args(argv)
-    return survey(a) if a.cmd == "survey" else run_search(a)
+    cmds = {"survey": survey, "run": run_search, "persist": persist_pairs, "survivors": combine_survivors,
+            "coverage": searched_coverage}
+    return cmds[a.cmd](a)
 
 
 if __name__ == "__main__":
