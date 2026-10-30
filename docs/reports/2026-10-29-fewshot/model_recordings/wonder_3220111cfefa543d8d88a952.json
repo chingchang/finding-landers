@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 natural example, image 6 hardware example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a2f6fdd5a345437419fcf62a29b66d40ed139003ccba4a2a0b4914ad600b53f6",
+        "bytes": 69271
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5b9355539c5969fe47a12de820d8f6e1748cd8290d5e6ca7a59b6ee13b81f60f",
+        "bytes": 7078
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8e8188b6f483f6bef2eba3b3dd4f507f8da7cc73894d836e88eaa6e27c34289a",
+        "bytes": 90966
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fe2b7f2c5e4351854e874a89f60902ec139046f3ed3c2a89a55f2404a6e5a793",
+        "bytes": 7633
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "210dd438aa69a014b4e86eaadb95aacfdcf5a2ea888ac9a2a2ec75423b7bd044",
+        "bytes": 6400
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ddecf4f4ac1d84118dc752f83cd15bfde65f80b7ed011c67a85b3f30fc24bbd8",
+        "bytes": 6761
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "99c850387a94aeca1dd55f4bd22d719a0bcc1fad3da1a5c4917b3af0f1c57cf3",
+        "bytes": 8003
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.85,
+   "place": "Not recognised",
+   "recognised": false,
+   "shows": "A dark, granular surface with a large, irregular, saturated white roughly triangular patch at the centre. At 4x enlargement the patch is mottled white and grey with no resolved straight edges, compact"
+  },
+  "raw": "{\"confidence\": 0.85, \"place\": \"Not recognised\", \"recognised\": false, \"shows\": \"A dark, granular surface with a large, irregular, saturated white roughly triangular patch at the centre. At 4x enlargement the patch is mottled white and grey with no resolved straight edges, compact\" }",
+  "input_tokens": 972,
+  "output_tokens": 1573
+ }
+}

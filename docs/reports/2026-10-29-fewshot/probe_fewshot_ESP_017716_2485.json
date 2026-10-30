@@ -1,0 +1,243 @@
+{
+ "run": "v03_features",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "natural",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "hardware",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "hardware",
+      "natural",
+      "natural"
+     ]
+    }
+   ],
+   "prompt": "vote-fewshot-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "Grayscale mottled, ridged and pitted terrain filling the frame. At the centre is a cluster only a few pixels across, made of 3-4 tiny bright specks with darker pixels between them. No resolved shape,\\",
+     "confidence": 0.85,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "A grayscale, rough and mottled planetary surface with irregular ridges, depressions and scattered bright specks. At the centre, enlarged in image 2, is only a few-pixel cluster of alternating bright-\\",
+     "confidence": 0.78,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "A grayscale orbital view of rough, mottled planetary ground with irregular intermingled light and dark textured patches throughout. In the enlarged centre there is only a diffuse bright patch at the r",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "hardware",
+      "natural",
+      "hardware",
+      "natural"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "hardware",
+      "natural",
+      "hardware"
+     ]
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true,
+     "examples": [
+      "natural",
+      "natural",
+      "hardware",
+      "hardware"
+     ]
+    }
+   ],
+   "prompt": "vote-fewshot-v1",
+   "probe": [
+    {
+     "recognised": true,
+     "place": "Isidis Planitia, Mars",
+     "shows": "The ESA [sealed site name] 2 lander on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE: a compact bright piece of manufactured hardware with its dark shadow at the centre of the frame",
+     "confidence": 0.55,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Mottled, rough grey terrain fills the square, with irregular light and dark patches throughout and no large distinct crater or structure at native resolution. At the centre is a small, high-contrast, ",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Mottled grey, rough textured ground. At the centre is a small, sharply dark, roughly rectangular black patch, with two adjacent bright white lobes immediately below it, standing out in contrast and in",
+     "confidence": 0.18,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 1,
+    "max_confidence": 0.55,
+    "claims": [
+     "Isidis Planitia, Mars"
+    ]
+   }
+  }
+ ]
+}

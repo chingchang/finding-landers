@@ -52,3 +52,7 @@ One line per idea that did not move the score. Winners go into the main package 
 - 2026-10-29, item 8 (third session): saturated pixels as data in the sheet branch: the injection detections
   are the same 8119 as without, so no planted canopy is saturated on these tiles and the board cannot judge it.
   Not kept. `out/tune/b4_sheetsat_injection/`.
+- 2026-10-29, item 9d: few-shot Wonder prompt (vote-fewshot-v1, two hardware and two natural examples per vote,
+  other sites only). Stopped at the recognition probe: 1 of 15 answers with examples named a place and a mission
+  (wrong ones) on the Phoenix backshell; no votes cast, nothing to compare. The code stays behind --fewshot, off.
+  `docs/reports/2026-10-29-fewshot/`.

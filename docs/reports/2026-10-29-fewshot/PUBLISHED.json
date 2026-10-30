@@ -1,0 +1,61 @@
+{
+ "source": "out/fewshot",
+ "marker": "[sealed site name]",
+ "files": {
+  "ledger.json": {
+   "redactions": 0
+  },
+  "probe_fewshot_ESP_017716_2485.json": {
+   "redactions": 1
+  },
+  "probe_fewshot_ESP_030313_1755.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_3220111cfefa543d8d88a952.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_430be123a761cbe9a3eb3c4b.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_49ddbd6303166a37c941545a.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_5872bf90d17e2838ab0bf0db.json": {
+   "redactions": 2
+  },
+  "model_recordings/wonder_59038e3519dfcbcd9f23ebdb.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_5f75def093233fe589a6131a.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_6c975f784edb1a947f01e469.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_7892f44b27eb3e3e2b1ccba6.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_81214a20e895d82e5f23a48d.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_ace7310ebce46caf77ab5db5.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_b3da37dd4a64513e68c2d161.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_b916db1ba7a6bef1f6644a5d.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_c8b4e4b8ac55850cf9423f9c.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_d744fea49f0c40846429ed92.json": {
+   "redactions": 0
+  },
+  "model_recordings/wonder_f1a96a8cf447e4a60561ccde.json": {
+   "redactions": 0
+  }
+ },
+ "total_redactions": 3
+}

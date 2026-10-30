@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 hardware example, image 5 hardware example, image 6 natural example, image 7 natural example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "e441c17ceff0790637d42e0d96aec689d57991f743e33448e90b21f6fffb8ee3",
+        "bytes": 78856
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8f1ea1f555a6c78728bb8c637923fdf5fa9c6d99b4c4a942a352e96af463de52",
+        "bytes": 8227
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f385ba8c8bcef62339081c6460b29303add72e75c83834e8384a9ff29573d05b",
+        "bytes": 82086
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d079b30630bd6b1ba3735c18c56da37b2a6332a60f347122c0a03e59009547f5",
+        "bytes": 7502
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5f06e92f1a37e76477a2cf3c41a874350e0fce8e1b57699860a175a9848d5e4b",
+        "bytes": 8459
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9777fa6e38408715f0953db28fe64115eee38de44b538c73f95de392140abf13",
+        "bytes": 7791
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "bc747b3a8bcbe87992bf1181b6328b880455a95651318d3780a5552eac0851a6",
+        "bytes": 7859
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.2,
+   "place": "",
+   "recognised": false,
+   "shows": "Dark, finely rippled/mottled planetary ground at native resolution. An irregular, diffuse, very bright white patch lies north-east of the centre of image 1, visible at the top-right corner of the 4x-c"
+  },
+  "raw": "{\"confidence\": 0.2, \"place\": \"\", \"recognised\": false, \"shows\": \"Dark, finely rippled/mottled planetary ground at native resolution. An irregular, diffuse, very bright white patch lies north-east of the centre of image 1, visible at the top-right corner of the 4x-c\"}",
+  "input_tokens": 972,
+  "output_tokens": 1430
+ }
+}

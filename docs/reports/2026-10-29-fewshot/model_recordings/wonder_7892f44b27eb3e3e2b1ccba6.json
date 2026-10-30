@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 natural example, image 6 hardware example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "58e0e88cdca0a8e3737d917f1a9b5d23edf1b265200f653b606c18fd17935dab",
+        "bytes": 81767
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "7262ceaf0df73d8af6d321e55d7194da272f0196853272ca9b5761c3cd9f2219",
+        "bytes": 8422
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8e8188b6f483f6bef2eba3b3dd4f507f8da7cc73894d836e88eaa6e27c34289a",
+        "bytes": 90966
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "80dd2b023fcaf96d76a0c8449bfbc494b231ec4efaea0ab89d5bcefd4cd9df98",
+        "bytes": 8589
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "eeae6434dae96a5506801fad1ca067a4c7b8b3d4d177adef7137f8b098864073",
+        "bytes": 8570
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "1ee84dd1c60924c6b0fc2a4ce8b6a0eb720e2d9c5138d97ddec0a230f0fa7f18",
+        "bytes": 6707
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c0ad4b0ff317770f8fe9afa35345726f53e3b6555a41aa6a8a95fbbdab599941",
+        "bytes": 8061
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.18,
+   "place": "Not recognised",
+   "recognised": false,
+   "shows": "Mottled grey, rough textured ground. At the centre is a small, sharply dark, roughly rectangular black patch, with two adjacent bright white lobes immediately below it, standing out in contrast and in"
+  },
+  "raw": "{\"confidence\": 0.18, \"place\": \"Not recognised\", \"recognised\": false, \"shows\": \"Mottled grey, rough textured ground. At the centre is a small, sharply dark, roughly rectangular black patch, with two adjacent bright white lobes immediately below it, standing out in contrast and in\" }",
+  "input_tokens": 972,
+  "output_tokens": 1236
+ }
+}

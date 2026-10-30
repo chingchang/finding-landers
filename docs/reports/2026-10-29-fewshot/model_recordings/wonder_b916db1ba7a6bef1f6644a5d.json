@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 hardware example, image 5 natural example, image 6 natural example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c9e850edfb23e0b046027fb7c261c0d98eec0753d59cef7c3d110e697478b25f",
+        "bytes": 76958
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9559ddcfcaad992a6748287b8e070d323cc1992e7923d664b9d4e539736a63f6",
+        "bytes": 8347
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ff92c019ba245f71e9376d51f66306663bb9cbd22f195f87d60af0dc0679ab52",
+        "bytes": 6627
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "27296aaef0f9366c8de3b7623e75b8bb9e9aa80f5643c223f76205a079a31d0b",
+        "bytes": 7900
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "0ceaf7ae966e7ea7173aecdf98b9f4d831cce96c38e5487ab72e3523383dcc58",
+        "bytes": 8239
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "6c3691099f7e121e84e5df20eb73570549ec677e1635aa578843ea2ead6e67e6",
+        "bytes": 7417
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.85,
+   "place": "unknown",
+   "recognised": false,
+   "shows": "Grayscale mottled, ridged and pitted terrain filling the frame. At the centre is a cluster only a few pixels across, made of 3-4 tiny bright specks with darker pixels between them. No resolved shape,\\"
+  },
+  "raw": "{\"confidence\": 0.85, \"place\": \"unknown\", \"recognised\": false, \"shows\": \"Grayscale mottled, ridged and pitted terrain filling the frame. At the centre is a cluster only a few pixels across, made of 3-4 tiny bright specks with darker pixels between them. No resolved shape,\\\\\"}",
+  "input_tokens": 972,
+  "output_tokens": 709
+ }
+}

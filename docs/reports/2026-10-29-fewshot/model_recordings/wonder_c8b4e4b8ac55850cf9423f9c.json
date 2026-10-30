@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 hardware example, image 5 hardware example, image 6 natural example, image 7 natural example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "b39bc94709a43ff4456ebcd929e8cd9e7d5adfe38d2ecf1d21a9f1ebca8ea736",
+        "bytes": 58875
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "1f2074bc92c893bbef6d15954cbaca25b4b40c3bfc617b100f7d98970e60687a",
+        "bytes": 7200
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fcb6ab90a9639e4ed45db064b9ca64b30a2f70aba6bed7eefdd55e4e1213053c",
+        "bytes": 74489
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ad46270da0cdec5f33f4d663a2206526eb31a96726d6f2887c3de285d746c3fe",
+        "bytes": 6912
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c9d58cb318ec6974e059cebee513884e0896e992e3bda02ab4a8432633877de0",
+        "bytes": 7010
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a10cfa06097160deb30627c3c36c9865a702bfd88f4633c3588b00c750de992b",
+        "bytes": 5835
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "65555b79db6df560f16312c3ff23c8ddd4eff00ecf7b12abb5b16e8fb611bbc3",
+        "bytes": 7358
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.12,
+   "place": "",
+   "recognised": false,
+   "shows": "Dark, mottled, finely textured planetary ground with low-contrast variations and no large crater or other landmark visible. Near the centre, slightly left and below middle, is a single isolated very[1"
+  },
+  "raw": "{\"confidence\": 0.12, \"place\": \"\", \"recognised\": false, \"shows\": \"Dark, mottled, finely textured planetary ground with low-contrast variations and no large crater or other landmark visible. Near the centre, slightly left and below middle, is a single isolated very[1\"}",
+  "input_tokens": 972,
+  "output_tokens": 1195
+ }
+}

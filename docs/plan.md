@@ -87,7 +87,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     lowered (by which stage, citing its evidence), false alarms per strip lowered, kept and unassessed, and the
     cost per false alarm removed. Publish the ledger and records with scripts/models_publish.py. No change to
     the detector, thresholds or model prompts in this item: a change found here goes in a later tag.
-9d. [running] Few-shot Wonder, after 9c and judged against it (a person asked for it on 10-29; spend approved up to about
+9d. [done, see docs/reports/2026-10-29-fewshot.md; stopped at the probe by its own rule, no votes cast] Few-shot Wonder, after 9c and judged against it (a person asked for it on 10-29; spend approved up to about
     35 USD; caps LANDERS_CAP_SAM=50, LANDERS_CAP_WONDER=300, LANDERS_CAP_SPARK=120). Each Wonder vote also gets a
     small set of reference crops at the candidate's scale: real pieces from controls/tuning.json and typical false
     alarms from the scored lists, labelled only "hardware example" or "natural example", rotated to the

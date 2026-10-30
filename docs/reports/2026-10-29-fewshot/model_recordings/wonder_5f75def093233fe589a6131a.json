@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 natural example, image 5 hardware example, image 6 natural example, image 7 hardware example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "568e7c44396756b258e523e2b3eae6e12bdcb66112c1211007f0e6114d716d32",
+        "bytes": 80464
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "666f8fd84a4609e8c0e4e28e609eeab86e39577a4b9478c20c5585d360f418fb",
+        "bytes": 8401
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8e8188b6f483f6bef2eba3b3dd4f507f8da7cc73894d836e88eaa6e27c34289a",
+        "bytes": 90966
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "716845d90ead75387e3c8698f1ca85cb31c3bbc57c5017b38fe1369e9a8bc32c",
+        "bytes": 8046
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d38cef19f9d7b7880083b78975e6c89a86cd9ca8436469b5d805eba640055289",
+        "bytes": 8298
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a9a0aadf5e40328f883907fa00c342861351f1b957cd768060e15f0740cf7dba",
+        "bytes": 8471
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "1ee84dd1c60924c6b0fc2a4ce8b6a0eb720e2d9c5138d97ddec0a230f0fa7f18",
+        "bytes": 6707
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.15,
+   "place": "",
+   "recognised": false,
+   "shows": "Mottled, rough grey terrain fills the square, with irregular light and dark patches throughout and no large distinct crater or structure at native resolution. At the centre is a small, high-contrast, "
+  },
+  "raw": "{\"confidence\": 0.15, \"place\": \"\", \"recognised\": false, \"shows\": \"Mottled, rough grey terrain fills the square, with irregular light and dark patches throughout and no large distinct crater or structure at native resolution. At the centre is a small, high-contrast, \"}",
+  "input_tokens": 972,
+  "output_tokens": 792
+ }
+}

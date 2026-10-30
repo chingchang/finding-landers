@@ -1,0 +1,126 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show. Images 4 to 7 are labelled examples from other places, each drawn like image 2 (the centre of a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, in order: image 4 hardware example, image 5 natural example, image 6 hardware example, image 7 natural example."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a183341b64b1d3708413565b91a8d2b4e3147454ffeb90cac882462b4e316781",
+        "bytes": 81749
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "454fa09b99ba572e11e48aa9c20d39ecfac6829230bab86ead8df30addab42c9",
+        "bytes": 8446
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "57d0b84538f6d61d32b0f19f8a5a7a4b8836abcb677001493e2859fd1881cbaf",
+        "bytes": 6489
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "47bac802e791818080ebf2ad76d774259e99c09aa08c93cf36db647a5fce1eb6",
+        "bytes": 7272
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "4966d9743ba1ab7da08f1b42116005e579fcc54b975182601a8dcced0a819787",
+        "bytes": 7781
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "94278ad5a87cbfd72e3a38282668b0915672b71d3ec409e8063a0f7d4a06993f",
+        "bytes": 7497
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.55,
+   "place": "Isidis Planitia, Mars",
+   "recognised": true,
+   "shows": "The ESA [sealed site name] 2 lander on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE: a compact bright piece of manufactured hardware with its dark shadow at the centre of the frame"
+  },
+  "raw": "{\"confidence\": 0.55, \"place\": \"Isidis Planitia, Mars\", \"recognised\": true, \"shows\": \"The ESA [sealed site name] 2 lander on the Martian surface, imaged from orbit by Mars Reconnaissance Orbiter HiRISE: a compact bright piece of manufactured hardware with its dark shadow at the centre of the frame\"}",
+  "input_tokens": 972,
+  "output_tokens": 2338
+ }
+}
