@@ -105,7 +105,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     list at the same places. Three pieces at one site is evidence, not proof: say so in the report. If the pieces
     stand out where the false alarms do not, propose the check for the top MPL candidates on their spring strips.
     Nothing here changes the detector or frozen-v1.
-10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
+10. [done, see docs/reports/2026-10-29-heldout-run.md] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
     Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
     run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
     heldout and final_exam groups, write the candidate files and the run log, commit the code state and a
