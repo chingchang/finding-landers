@@ -3,7 +3,8 @@
 A crop is built from pixel arrays only; this module never takes an observation id, a path, a coordinate
 or a date, so it cannot put one into an image. Each PNG is three identical 8-bit channels with no text
 chunk. A ``BlindCrop`` is the square at native resolution, the same centre at 4x zoom, and, when given, a
-reference crop of similar ground from somewhere else that the prompt labels only as "reference".
+reference crop of similar ground from somewhere else that the prompt labels only as "reference". The
+few-shot prompt (plan item 9d, ``landers.models.fewshot``) adds labelled example views after those.
 
 Augmentations (per vote): a random offset of the centre, horizontal and vertical flips, and a different
 percentile stretch. They are drawn from a seeded generator and recorded, so a vote can be rebuilt.
@@ -45,11 +46,13 @@ class BlindCrop:
     augmentation: Augmentation
     valid_fraction: float
     native_u8: np.ndarray = field(repr=False, default=None)
+    examples: list[tuple[str, bytes]] = field(default_factory=list)  # (label, png), the few-shot prompt only
 
     def images(self) -> list[bytes]:
         out = [self.native_png, self.zoom_png]
         if self.reference_png is not None:
             out.append(self.reference_png)
+        out.extend(png for _, png in self.examples)
         return out
 
     def to_json(self) -> dict:
@@ -59,6 +62,7 @@ class BlindCrop:
             "augmentation": self.augmentation.to_json(),
             "valid_fraction": round(self.valid_fraction, 3),
             "has_reference": self.reference_png is not None,
+            **({"examples": [label for label, _ in self.examples]} if self.examples else {}),
         }
 
 

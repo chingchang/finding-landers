@@ -8,6 +8,12 @@ DATA = Path(os.environ.get("LANDERS_DATA", Path(__file__).resolve().parent.paren
 needs_data = pytest.mark.skipif(not (DATA / "strips").is_dir(), reason="HiRISE strips not on disk (set LANDERS_DATA)")
 
 
+# A person may export run caps (LANDERS_CAP_*) in the shell for a paid run; tests use the defaults unless
+# they set a cap themselves. Cleared at import so module- and session-scoped fixtures see the defaults too.
+for _name in ("LANDERS_CAP_SAM", "LANDERS_CAP_WONDER", "LANDERS_CAP_SPARK"):
+    os.environ.pop(_name, None)
+
+
 @pytest.fixture(scope="session")
 def all_labels():
     if not (DATA / "strips").is_dir():

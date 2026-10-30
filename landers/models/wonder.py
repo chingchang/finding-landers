@@ -58,6 +58,27 @@ REFERENCE_CLAUSE = (
     "Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. "
 )
 
+PLAIN_VERSION = "vote-v1"
+FEWSHOT_VERSION = "vote-fewshot-v1"  # plan item 9d; off unless a caller passes examples
+
+EXAMPLES_CLAUSE = (
+    " Images {first} to {last} are labelled examples from other places, each drawn like image 2 (the centre of "
+    "a native square enlarged 4 times), at the same metres per pixel as image 1 and turned so the sun comes "
+    "from the same side as in images 1 and 2. A hardware example shows a known piece of manufactured "
+    "hardware; a natural example shows a natural feature that a detector flagged. Use them only to calibrate "
+    "how each kind looks at this scale and light; judge the object at the centre of image 1. The examples are, "
+    "in order: {labels}."
+)
+
+
+def examples_clause(labels: list[str], first: int) -> str:
+    """The few-shot sentence: image numbers and labels only, nothing about where an example is from."""
+    if not labels:
+        return ""
+    names = ", ".join(f"image {first + k} {lab} example" for k, lab in enumerate(labels))
+    return EXAMPLES_CLAUSE.format(first=first, last=first + len(labels) - 1, labels=names)
+
+
 PROBE_QUESTION = (
     "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; "
     "image 2 is its centre enlarged 4 times. "
@@ -77,14 +98,20 @@ class VoteRule:
     min_confidence: float = 0.7
 
 
-def vote_request(crop: BlindCrop, effort: str = "low") -> WonderRequest:
+def _question(template: str, crop: BlindCrop) -> str:
+    """The fixed question first (for the prefix cache), then the examples sentence when there are examples.
+    With no examples the text is exactly the plain prompt's, so plain requests hash as before."""
     clause = REFERENCE_CLAUSE if crop.reference_png is not None else ""
-    return WonderRequest(VOTE_QUESTION.format(reference_clause=clause), crop.images(), VOTE_SCHEMA, "vote", effort)
+    first = 4 if crop.reference_png is not None else 3
+    return template.format(reference_clause=clause) + examples_clause([lab for lab, _ in crop.examples], first)
+
+
+def vote_request(crop: BlindCrop, effort: str = "low") -> WonderRequest:
+    return WonderRequest(_question(VOTE_QUESTION, crop), crop.images(), VOTE_SCHEMA, "vote", effort)
 
 
 def probe_request(crop: BlindCrop, effort: str = "low") -> WonderRequest:
-    clause = REFERENCE_CLAUSE if crop.reference_png is not None else ""
-    return WonderRequest(PROBE_QUESTION.format(reference_clause=clause), crop.images(), PROBE_SCHEMA, "probe", effort)
+    return WonderRequest(_question(PROBE_QUESTION, crop), crop.images(), PROBE_SCHEMA, "probe", effort)
 
 
 def parse_vote(data: dict) -> dict:
