@@ -1,0 +1,909 @@
+{
+ "not_blind": "tuning sites; the four sealed for frozen-v1 are not blind; the combined list was chosen after seeing item 13's result",
+ "backend": "dry-run",
+ "ledger_usd": 24.7718,
+ "prior_usd": 8.3289,
+ "key": {
+  "frozen_v1": {
+   "curve": {
+    "10": 8,
+    "20": 8,
+    "50": 10,
+    "100": 11,
+    "250": 13
+   },
+   "n": 32,
+   "interval_95_at_20": [
+    0.133,
+    0.421
+   ]
+  },
+  "combined": {
+   "curve": {
+    "10": 12,
+    "20": 16,
+    "50": 18,
+    "100": 19,
+    "250": 19
+   },
+   "n": 32,
+   "interval_95_at_20": [
+    0.336,
+    0.664
+   ]
+  },
+  "combined_votes": {
+   "curve": {
+    "10": 12,
+    "20": 16,
+    "50": 18,
+    "100": 19,
+    "250": 19
+   },
+   "n": 32,
+   "interval_95_at_20": [
+    0.336,
+    0.664
+   ]
+  },
+  "combined_votes_review": {
+   "curve": {
+    "10": 12,
+    "20": 16,
+    "50": 18,
+    "100": 19,
+    "250": 19
+   },
+   "n": 32,
+   "interval_95_at_20": [
+    0.336,
+    0.664
+   ]
+  }
+ },
+ "rises_into_top_20": [],
+ "drops_from_top_20": [],
+ "pieces_lowered": [],
+ "piece_ranks": {
+  "schiaparelli/crash_scar/ESP_048041_1780": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "schiaparelli/parachute/ESP_048041_1780": {
+   "frozen_v1": 765,
+   "combined": 9,
+   "combined_votes": 9,
+   "combined_votes_review": 9
+  },
+  "schiaparelli/backshell/ESP_048041_1780": {
+   "frozen_v1": 8,
+   "combined": 15,
+   "combined_votes": 15,
+   "combined_votes_review": 15
+  },
+  "schiaparelli/heat_shield/ESP_048041_1780": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "curiosity/parachute/ESP_030313_1755": {
+   "frozen_v1": 3,
+   "combined": 5,
+   "combined_votes": 5,
+   "combined_votes_review": 5
+  },
+  "curiosity/backshell/ESP_030313_1755": {
+   "frozen_v1": 8,
+   "combined": 1,
+   "combined_votes": 1,
+   "combined_votes_review": 1
+  },
+  "curiosity/heat_shield/ESP_030313_1755": {
+   "frozen_v1": 214,
+   "combined": 17,
+   "combined_votes": 17,
+   "combined_votes_review": 17
+  },
+  "curiosity/descent_stage/ESP_030313_1755": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "phoenix/lander/ESP_017716_2485": {
+   "frozen_v1": 704,
+   "combined": 274,
+   "combined_votes": 274,
+   "combined_votes_review": 274
+  },
+  "phoenix/backshell/ESP_017716_2485": {
+   "frozen_v1": 2,
+   "combined": 1,
+   "combined_votes": 1,
+   "combined_votes_review": 1
+  },
+  "phoenix/heat_shield/ESP_017716_2485": {
+   "frozen_v1": 5,
+   "combined": 8,
+   "combined_votes": 8,
+   "combined_votes_review": 8
+  },
+  "viking1/lander/ESP_046170_2025": {
+   "frozen_v1": 3,
+   "combined": 1,
+   "combined_votes": 1,
+   "combined_votes_review": 1
+  },
+  "spirit/lander/ESP_025815_1655": {
+   "frozen_v1": 441,
+   "combined": 15,
+   "combined_votes": 15,
+   "combined_votes_review": 15
+  },
+  "spirit/parachute/ESP_025815_1655": {
+   "frozen_v1": 116,
+   "combined": 5,
+   "combined_votes": 5,
+   "combined_votes_review": 5
+  },
+  "spirit/backshell/ESP_025815_1655": {
+   "frozen_v1": 1,
+   "combined": 1,
+   "combined_votes": 1,
+   "combined_votes_review": 1
+  },
+  "pathfinder/lander/ESP_022038_1995": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "pathfinder/backshell/ESP_022038_1995": {
+   "frozen_v1": 4,
+   "combined": 3,
+   "combined_votes": 3,
+   "combined_votes_review": 3
+  },
+  "pathfinder/parachute/ESP_022038_1995": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "perseverance/parachute/ESP_068822_1985": {
+   "frozen_v1": 25,
+   "combined": 15,
+   "combined_votes": 15,
+   "combined_votes_review": 15
+  },
+  "perseverance/backshell/ESP_068822_1985": {
+   "frozen_v1": 44,
+   "combined": 66,
+   "combined_votes": 66,
+   "combined_votes_review": 66
+  },
+  "perseverance/heat_shield/ESP_068822_1985": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "perseverance/descent_stage/ESP_068822_1985": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "perseverance/rover/ESP_068822_1985": {
+   "frozen_v1": 81,
+   "combined": 2,
+   "combined_votes": 2,
+   "combined_votes_review": 2
+  },
+  "insight/lander/ESP_087360_1845": {
+   "frozen_v1": 469,
+   "combined": 367,
+   "combined_votes": 367,
+   "combined_votes_review": 367
+  },
+  "insight/heat_shield/ESP_087360_1845": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "zhurong/lander/ESP_075625_2055": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "zhurong/parachute/ESP_075625_2055": {
+   "frozen_v1": 1172,
+   "combined": 8,
+   "combined_votes": 8,
+   "combined_votes_review": 8
+  },
+  "zhurong/backshell/ESP_075625_2055": {
+   "frozen_v1": 1824,
+   "combined": 24,
+   "combined_votes": 24,
+   "combined_votes_review": 24
+  },
+  "zhurong/heat_shield/ESP_075625_2055": {
+   "frozen_v1": 596,
+   "combined": 33,
+   "combined_votes": 33,
+   "combined_votes_review": 33
+  },
+  "beagle2/lander/ESP_037145_1915": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  },
+  "beagle2/lander/ESP_039308_1915": {
+   "frozen_v1": 334,
+   "combined": 1,
+   "combined_votes": 1,
+   "combined_votes_review": 1
+  },
+  "beagle2/lander/ESP_040363_1915": {
+   "frozen_v1": null,
+   "combined": null,
+   "combined_votes": null,
+   "combined_votes_review": null
+  }
+ },
+ "per_strip": {
+  "ESP_048041_1780": {
+   "site": "schiaparelli",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "crash_scar",
+     "listed": false
+    },
+    {
+     "piece": "parachute",
+     "listed": true,
+     "rank_before": 9,
+     "false_alarms_above": 8,
+     "voted_above": 8,
+     "cleared_above": 0
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 15,
+     "false_alarms_above": 13,
+     "voted_above": 13,
+     "cleared_above": 0
+    },
+    {
+     "piece": "heat_shield",
+     "listed": false
+    }
+   ]
+  },
+  "ESP_030313_1755": {
+   "site": "curiosity",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "parachute",
+     "listed": true,
+     "rank_before": 5,
+     "false_alarms_above": 3,
+     "voted_above": 3,
+     "cleared_above": 0
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 1,
+     "false_alarms_above": 0,
+     "voted_above": 0,
+     "cleared_above": 0
+    },
+    {
+     "piece": "heat_shield",
+     "listed": true,
+     "rank_before": 17,
+     "false_alarms_above": 14,
+     "voted_above": 14,
+     "cleared_above": 0
+    },
+    {
+     "piece": "descent_stage",
+     "listed": false
+    }
+   ]
+  },
+  "ESP_017716_2485": {
+   "site": "phoenix",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": true,
+     "rank_before": 274,
+     "false_alarms_above": 269,
+     "voted_above": 96,
+     "cleared_above": 0
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 1,
+     "false_alarms_above": 0,
+     "voted_above": 0,
+     "cleared_above": 0
+    },
+    {
+     "piece": "heat_shield",
+     "listed": true,
+     "rank_before": 8,
+     "false_alarms_above": 6,
+     "voted_above": 6,
+     "cleared_above": 0
+    }
+   ]
+  },
+  "ESP_046170_2025": {
+   "site": "viking1",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": true,
+     "rank_before": 1,
+     "false_alarms_above": 0,
+     "voted_above": 0,
+     "cleared_above": 0
+    }
+   ]
+  },
+  "ESP_025815_1655": {
+   "site": "spirit",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": true,
+     "rank_before": 15,
+     "false_alarms_above": 12,
+     "voted_above": 12,
+     "cleared_above": 0
+    },
+    {
+     "piece": "parachute",
+     "listed": true,
+     "rank_before": 5,
+     "false_alarms_above": 3,
+     "voted_above": 3,
+     "cleared_above": 0
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 1,
+     "false_alarms_above": 0,
+     "voted_above": 0,
+     "cleared_above": 0
+    }
+   ]
+  },
+  "ESP_022038_1995": {
+   "site": "pathfinder",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": false
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 3,
+     "false_alarms_above": 2,
+     "voted_above": 2,
+     "cleared_above": 0
+    },
+    {
+     "piece": "parachute",
+     "listed": false
+    }
+   ]
+  },
+  "ESP_068822_1985": {
+   "site": "perseverance",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "parachute",
+     "listed": true,
+     "rank_before": 15,
+     "false_alarms_above": 13,
+     "voted_above": 13,
+     "cleared_above": 0
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 66,
+     "false_alarms_above": 63,
+     "voted_above": 63,
+     "cleared_above": 0
+    },
+    {
+     "piece": "heat_shield",
+     "listed": false
+    },
+    {
+     "piece": "descent_stage",
+     "listed": false
+    },
+    {
+     "piece": "rover",
+     "listed": true,
+     "rank_before": 2,
+     "false_alarms_above": 1,
+     "voted_above": 1,
+     "cleared_above": 0
+    }
+   ]
+  },
+  "ESP_087360_1845": {
+   "site": "insight",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": true,
+     "rank_before": 367,
+     "false_alarms_above": 366,
+     "voted_above": 100,
+     "cleared_above": 0
+    },
+    {
+     "piece": "heat_shield",
+     "listed": false
+    }
+   ]
+  },
+  "ESP_075625_2055": {
+   "site": "zhurong",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": false
+    },
+    {
+     "piece": "parachute",
+     "listed": true,
+     "rank_before": 8,
+     "false_alarms_above": 7,
+     "voted_above": 7,
+     "cleared_above": 0
+    },
+    {
+     "piece": "backshell",
+     "listed": true,
+     "rank_before": 24,
+     "false_alarms_above": 22,
+     "voted_above": 22,
+     "cleared_above": 0
+    },
+    {
+     "piece": "heat_shield",
+     "listed": true,
+     "rank_before": 33,
+     "false_alarms_above": 30,
+     "voted_above": 30,
+     "cleared_above": 0
+    }
+   ]
+  },
+  "ESP_037145_1915": {
+   "site": "beagle2",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": false
+    }
+   ]
+  },
+  "ESP_039308_1915": {
+   "site": "beagle2",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": true,
+     "rank_before": 1,
+     "false_alarms_above": 0,
+     "voted_above": 0,
+     "cleared_above": 0
+    }
+   ]
+  },
+  "ESP_040363_1915": {
+   "site": "beagle2",
+   "voted": 100,
+   "votes": 100,
+   "band": 0,
+   "lowered_by_votes": 0,
+   "share_lowered": 0.0,
+   "flag_over_share": false,
+   "review_stopped": "final answer",
+   "review_verdicts": 20,
+   "lowered_by_review": 0,
+   "pieces": [
+    {
+     "piece": "lander",
+     "listed": false
+    }
+   ]
+  }
+ },
+ "transplant": {
+  "frozen_v1": {
+   "N10": {
+    "found": 15,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 8
+     },
+     "texture": {
+      "n": 85,
+      "found": 7
+     }
+    }
+   },
+   "N20": {
+    "found": 15,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 8
+     },
+     "texture": {
+      "n": 85,
+      "found": 7
+     }
+    }
+   },
+   "N50": {
+    "found": 25,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 9
+     },
+     "texture": {
+      "n": 85,
+      "found": 16
+     }
+    }
+   },
+   "N100": {
+    "found": 34,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 11
+     },
+     "texture": {
+      "n": 85,
+      "found": 23
+     }
+    }
+   },
+   "N250": {
+    "found": 47,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 15
+     },
+     "texture": {
+      "n": 85,
+      "found": 32
+     }
+    }
+   },
+   "board_rate": {
+    "found": 45,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 15
+     },
+     "texture": {
+      "n": 85,
+      "found": 30
+     }
+    }
+   }
+  },
+  "combined": {
+   "N10": {
+    "found": 11,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 3
+     },
+     "texture": {
+      "n": 85,
+      "found": 8
+     }
+    }
+   },
+   "N20": {
+    "found": 21,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 8
+     },
+     "texture": {
+      "n": 85,
+      "found": 13
+     }
+    }
+   },
+   "N50": {
+    "found": 31,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 9
+     },
+     "texture": {
+      "n": 85,
+      "found": 22
+     }
+    }
+   },
+   "N100": {
+    "found": 36,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 10
+     },
+     "texture": {
+      "n": 85,
+      "found": 26
+     }
+    }
+   },
+   "N250": {
+    "found": 56,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 15
+     },
+     "texture": {
+      "n": 85,
+      "found": 41
+     }
+    }
+   },
+   "board_rate": {
+    "found": 53,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 14
+     },
+     "texture": {
+      "n": 85,
+      "found": 39
+     }
+    }
+   }
+  },
+  "combined_votes": {
+   "N10": {
+    "found": 11,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 3
+     },
+     "texture": {
+      "n": 85,
+      "found": 8
+     }
+    }
+   },
+   "N20": {
+    "found": 21,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 8
+     },
+     "texture": {
+      "n": 85,
+      "found": 13
+     }
+    }
+   },
+   "N50": {
+    "found": 31,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 9
+     },
+     "texture": {
+      "n": 85,
+      "found": 22
+     }
+    }
+   },
+   "N100": {
+    "found": 36,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 10
+     },
+     "texture": {
+      "n": 85,
+      "found": 26
+     }
+    }
+   },
+   "N250": {
+    "found": 56,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 15
+     },
+     "texture": {
+      "n": 85,
+      "found": 41
+     }
+    }
+   },
+   "board_rate": {
+    "found": 53,
+    "n": 128,
+    "by_ground": {
+     "no_texture": {
+      "n": 43,
+      "found": 14
+     },
+     "texture": {
+      "n": 85,
+      "found": 39
+     }
+    }
+   }
+  }
+ },
+ "transplant_votes": {
+  "voted": 128,
+  "votes": 128,
+  "lowered": 0
+ },
+ "band_share": 0.0
+}

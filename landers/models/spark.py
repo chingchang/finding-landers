@@ -45,6 +45,13 @@ SYSTEM_PROMPT = (
     "you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven."
 )
 
+# Plan item 14: 9c's reviews spent their turns on fetches and checks, and two recorded no verdict at all.
+ONE_TURN_CLAUSE = (
+    " Work in this order: read the candidates and the thresholds; order any checks; then, in one single turn, call "
+    "record_verdict once for every candidate, all together; then give the final JSON. Do not fetch again after you "
+    "start recording."
+)
+
 TOOLS = [
     {
         "type": "function",
@@ -340,11 +347,14 @@ class ReviewResult:
         }
 
 
-def review(client: ModelClient, store: EvidenceStore, strip_key: str, max_turns: int = MAX_TURNS) -> ReviewResult:
+def review(
+    client: ModelClient, store: EvidenceStore, strip_key: str, max_turns: int = MAX_TURNS, one_turn: bool = False
+) -> ReviewResult:
     """The standard tool loop (docs/models.md): replay the assistant message, then one tool message per
-    call, until a reply has no tool calls or the turn cap is hit."""
+    call, until a reply has no tool calls or the turn cap is hit. ``one_turn`` asks for every verdict in one turn after
+    the fetches and, with two turns left, names the candidates still without one."""
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": SYSTEM_PROMPT + (ONE_TURN_CLAUSE if one_turn else "")},
         {"role": "user", "content": f"Review the candidates for strip key: {strip_key}. Record a verdict for each."},
     ]
     tool_log: list[dict] = []
@@ -354,6 +364,11 @@ def review(client: ModelClient, store: EvidenceStore, strip_key: str, max_turns:
     turns = 0
     for turn in range(1, max_turns + 1):
         turns = turn
+        if one_turn and turn == max_turns - 1:
+            missing = [c for c in store.strips.get(strip_key, []) if c not in store.verdicts]
+            if missing:
+                nudge = f"Two turns remain. Record your verdicts now for: {', '.join(missing)}."
+                messages.append({"role": "user", "content": nudge})
         reply = client.spark(SparkRequest(messages, TOOLS, FINAL_FORMAT))
         if reply.reasoning:
             reasoning.append(reply.reasoning)

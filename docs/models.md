@@ -160,6 +160,14 @@ Decisions taken while building, and what the first real run (9b) must check:
   Spark's `record_verdict` rejects a raise, an empty citation, a cited field that does not exist, a number
   not present in the evidence record, and the words discovered, confirmed and proven.
 
+## As built for the deeper pass (plan item 14; docs/reports/2026-10-30-deep-pass.md)
+
+- The cumulative dollar cap is in the ledger: 120 USD over every run on `docs/reports/ledgers.json`. A real run lists itself
+  before its first call; `LANDERS_CAP_TOTAL_USD` can lower the cap, never raise it.
+- The ledger also holds a pause (a run stops at a named number of calls) and reservations (calls no other stage may spend).
+- `SingleVoteRule` (`docs/proposals/vote-single-v1.md`), `saturated_bright` in the crops and `one_turn` in the review are all
+  off by default and used only by `experiments/deep14_run.py`, so earlier requests hash as before.
+
 ## As run (plan item 9b, the first real calls; docs/reports/2026-10-29-first-real-run.md)
 
 What the real API returned on 2026-10-29, where it differs from the text above:
