@@ -456,7 +456,8 @@ def fold(tb: Table, t: dict, site: str, strips: list[str], targets: list[str], v
     real = np.array([x["row_index"] for x in t["truths"] if x["site"] == site], int)
     sham = np.array([x["row_index"] for x in t["shams"] if x["site"] == site], int)
     fas = np.flatnonzero((tb.source == "tile_fa") & (tb.target != ""))
-    return {"ranks": ranks, "found": found, "paste": paste, "real_over_sham": rm.auc(on[real], on[sham]), "sham_over_fa": rm.auc(on[sham], on[fas])}
+    return {"ranks": ranks, "found": found, "paste": paste, "real_over_sham": rm.auc(on[real], on[sham]), "sham_over_fa": rm.auc(on[sham], on[fas]),
+            "scores_off": off, "scores_on": on}
 
 
 def fit_folds(a) -> int:

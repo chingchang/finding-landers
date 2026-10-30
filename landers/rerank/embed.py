@@ -5,6 +5,7 @@ from __future__ import annotations
 import numpy as np
 
 MODEL = "facebook/dinov2-small"
+REVISION = "ed25f3a31f01632728cabb09d1542f84ab7b0056"
 MAX_CROPS = 80_000  # the protocol's hard cap on one pass
 INPUT_PX = 224
 MEAN = (0.485, 0.456, 0.406)
@@ -24,8 +25,8 @@ class Dino:
 
         self.torch = torch
         self.device = "mps" if torch.backends.mps.is_available() else "cpu"
-        self.model = AutoModel.from_pretrained(MODEL, cache_dir=cache_dir).to(self.device).eval()
-        self.revision = getattr(self.model.config, "_commit_hash", None)
+        self.model = AutoModel.from_pretrained(MODEL, revision=REVISION, cache_dir=cache_dir).to(self.device).eval()
+        self.revision = REVISION
         self.batch, self.max_crops, self.crops = batch, max_crops, 0
         self.mean = torch.tensor(MEAN, device=self.device).reshape(1, 3, 1, 1)
         self.std = torch.tensor(STD, device=self.device).reshape(1, 3, 1, 1)
