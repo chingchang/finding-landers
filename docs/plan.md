@@ -78,7 +78,11 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
    ledger and tool log committed with the report; grades can only go down.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
-    Beagle 2, once. A miss at Beagle 2 is a reported result.
+    Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
+    run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
+    heldout and final_exam groups, write the candidate files and the run log, commit the code state and a
+    short report of what ran (strips, tiles, time), and stop. Do not score: the person runs scripts/score.py
+    --heldout once on those files.
 11. [ ] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
     for every survivor; a coverage map (what was searched on how many dates) as a result in its own right.
 11a. [done, see docs/reports/2026-10-28-search-bookkeeping.md] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
@@ -145,3 +149,12 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 - 2026-10-29 (08:20): landers/shape_v3.json adopted (tile_top withdrawn after the leave-one-site-out check). One
   more tuning session, detector changes only (calibration per terrain, the fabric branch), then the frozen tag
   tonight; the search runs on the frozen detector from Thursday night.
+- 2026-10-29 (16:10): tag frozen-v1 at 4f4253e (detector v0.4 in table mode, landers/shape_v3.json, thresholds
+  v1), pushed. Item 8's third session kept nothing (docs/reports/2026-10-29-tuning-loop-3.md). Item 11 starts now
+  on the frozen detector; item 10 runs after it, once the held-out key is sealed. In item 11 the model calls on
+  survivors cost money: stop before them and mark the item blocked for a person.
+- 2026-10-29 (17:20): held-out key sealed after the tag and before any held-out run: controls/heldout.json (not in
+  git) holds 11 positions over the three held-out sites and the Beagle 2 lander on its three strips; sha256
+  9b54704be5ba929ce996d7b0a77c89ac61565057d9c4e27cfa8448d4283da372. Three pieces have no position and are excluded
+  from recall (two fall in a CCD gap of their strip, one had moved away); the reasons are in the sealed file.
+  Held-out strip crops used to seal it were never seen by an agent.
