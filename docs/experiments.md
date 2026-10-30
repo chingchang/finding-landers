@@ -52,3 +52,6 @@ One line per idea that did not move the score. Winners go into the main package 
 - 2026-10-29, item 8 (third session): saturated pixels as data in the sheet branch: the injection detections
   are the same 8119 as without, so no planted canopy is saturated on these tiles and the board cannot judge it.
   Not kept. `out/tune/b4_sheetsat_injection/`.
+- 2026-10-30, item 11: whole-strip contrast (overview DN percentiles) to explain the two 2007 strips that neither
+  register nor yield candidates: it does not single them out. Nothing kept.
+  `experiments/search_strip_contrast.py`, `out/search/strip_contrast.json`.

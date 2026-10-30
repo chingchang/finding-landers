@@ -215,9 +215,28 @@ def combine_survivors(a) -> int:
     chance = [sp.chance_matches(pr, surv, per_strip) for pr in results]
     chance = [c for pair in chance for c in pair]
     by_looked: dict = {}
+    by_branch: dict = {}
     for r in rows:
         k = f"{r['dates_seen']} of {r['dates_looked']}"
         by_looked[k] = by_looked.get(k, 0) + 1
+        b = by_branch.setdefault(r["branch"], {"survivors": 0, "looked_on_another_date": 0, "seen_on_two_or_more": 0,
+                                               "looked_never_seen_again": 0})
+        b["survivors"] += 1
+        b["looked_on_another_date"] += r["dates_looked"] > 1
+        b["seen_on_two_or_more"] += r["dates_seen"] > 1
+        b["looked_never_seen_again"] += r["dates_looked"] > 1 and r["dates_seen"] == 1
+    registration = [
+        {"from": d["from"], "to": d["to"], **d["registration"], "counts": d["counts"]}
+        for pr in results
+        for d in pr["directions"].values()
+    ]
+    # a pair counts as registered when either direction has at least 4 ok nodes (the outlier test needs 4)
+    pairs = []
+    for pr in results:
+        oks = [d["registration"]["ok"] for d in pr["directions"].values()]
+        pairs.append({"pair": pr["pair"], "km2_shared": pr["km2_shared"], "ok_nodes": oks, "registered": max(oks) >= 4})
+    reg_km2 = round(sum(p["km2_shared"] for p in pairs if p["registered"]), 2)
+    all_km2 = round(sum(p["km2_shared"] for p in pairs), 2)
     out = {
         "what": "survivors of the frozen-v1 search: top candidates per strip at the adopted false-alarm bar, "
         "with persistence across every other date that covers them. Grades are the detector's; nothing here "
@@ -228,6 +247,17 @@ def combine_survivors(a) -> int:
         "pairs_with_persistence": len(results),
         "survivors": len(rows),
         "dates_seen_of_looked": dict(sorted(by_looked.items())),
+        "by_branch": by_branch,
+        "registration": registration,
+        "pairs": {
+            "what": "every overlapping pair; registered when either direction has at least 4 ok nodes. Shared km2 "
+            "is summed over pairs, so ground under three dates counts in three pairs.",
+            "n": len(pairs),
+            "registered": sum(p["registered"] for p in pairs),
+            "km2_shared_all": all_km2,
+            "km2_shared_registered": reg_km2,
+            "list": pairs,
+        },
         "chance": {
             "what": "per pair direction: survivors looked up on the other date, how many were seen, and how many "
             "would be seen by chance if the other date's candidates of the same family were spread evenly over "

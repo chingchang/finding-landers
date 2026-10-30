@@ -111,7 +111,8 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     heldout and final_exam groups, write the candidate files and the run log, commit the code state and a
     short report of what ran (strips, tiles, time), and stop. Do not score: the person runs scripts/score.py
     --heldout once on those files.
-11. [running] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
+11. [blocked: the model calls on the 5,770 survivors need a person (spend, and which survivors); detector,
+    persistence and coverage are done, see docs/reports/2026-10-30-search.md] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
     for every survivor; a coverage map (what was searched on how many dates) as a result in its own right.
 11a. [done, see docs/reports/2026-10-28-search-bookkeeping.md] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
    disk (id, date, Ls, incidence, map scale, valid area), which pairs overlap and by how much, the 2007 PSP
