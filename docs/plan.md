@@ -97,6 +97,11 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     attached first: if examples make Wonder name a site or mission, stop and report. The few-shot prompt is a new
     prompt version behind a flag, default off; adopting it for the search is a person's call and goes in a later
     tag (frozen-v2), shown beside frozen-v1.
+    Note after 9c (10-29 evening): 9c's Wonder cap ran out on review checks, so three strips got few or no
+    votes. Make 9d a votes-only comparison so the arms line up: first fill the missing no-example votes on the
+    top 10 of those three strips, then the few-shot votes on the top 10 of all eight; reserve each strip's vote
+    calls before anything else can spend them; no Spark reviews in this item. Caps: LANDERS_CAP_WONDER=340,
+    LANDERS_CAP_SAM=0, LANDERS_CAP_SPARK=0.
 9e. [ ] Frost test at Phoenix, after 9d (a person asked for it on 10-29; no model calls, no new downloads). Question: in
     the frost season, does hardware look different from the frosted ground, and in which direction? Use the two
     frost-season Phoenix strips named in docs/data.md, for this test only: register each to the summer strip that
