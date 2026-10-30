@@ -31,7 +31,8 @@ from landers.search import inventory, run  # noqa: E402
 from landers.search import persistence as sp  # noqa: E402
 from landers.search import register as rg  # noqa: E402
 from landers.shape import ShapeRules, apply_rules_json  # noqa: E402
-from landers.strip import Strip, Window  # noqa: E402
+from landers.search.export import WindowStrip  # noqa: E402
+from landers.strip import Strip  # noqa: E402
 
 DEFAULT_OUT = config.REPO_ROOT / "out" / "export"
 SEARCH_OUT = config.REPO_ROOT / "out" / "search"
@@ -210,21 +211,6 @@ def export_labels(a) -> int:
             n += 1
     print(f"{n} labels under {Path(a.out) / 'labels'}")
     return 0
-
-
-class WindowStrip:
-    """Enough of a strip for ``cut_piece`` to run from an exported window."""
-
-    def __init__(self, label, win: Window):
-        self.label, self.win = label, win
-
-    def read(self, r0, r1, c0, c1) -> Window:
-        w = self.win
-        i0, j0 = r0 - w.row0, c0 - w.col0
-        if i0 < 0 or j0 < 0 or r1 - w.row0 > w.shape[0] or c1 - w.col0 > w.shape[1]:
-            raise ValueError("outside the exported window")
-        data = w.data[i0 : r1 - w.row0, j0 : c1 - w.col0]
-        return Window(r0, c0, data, w.valid[i0 : r1 - w.row0, j0 : c1 - w.col0])
 
 
 def check_strip(root: Path, sid: str, role: str, top: int, rng: np.random.Generator) -> dict:

@@ -205,5 +205,20 @@ class ExportedStrip:
             return join_bytes(z["low"][i], z["high"][i])
 
 
+class WindowStrip:
+    """Enough of a strip for ``landers.transplant.cut_piece`` to run from an exported window."""
+
+    def __init__(self, label, win: Window):
+        self.label, self.win = label, win
+
+    def read(self, r0, r1, c0, c1) -> Window:
+        w = self.win
+        i0, j0 = r0 - w.row0, c0 - w.col0
+        if i0 < 0 or j0 < 0 or r1 - w.row0 > w.shape[0] or c1 - w.col0 > w.shape[1]:
+            raise ValueError("outside the exported window")
+        data = w.data[i0 : r1 - w.row0, j0 : c1 - w.col0]
+        return Window(r0, c0, data, w.valid[i0 : r1 - w.row0, j0 : c1 - w.col0])
+
+
 def strip_on_disk(observation_id: str) -> Path | None:
     return config.find_strip(observation_id)
