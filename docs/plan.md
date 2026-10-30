@@ -116,8 +116,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     heldout and final_exam groups, write the candidate files and the run log, commit the code state and a
     short report of what ran (strips, tiles, time), and stop. Do not score: the person runs scripts/score.py
     --heldout once on those files.
-11. [blocked: the model calls on the 5,770 survivors need a person (spend, and which survivors); detector,
-    persistence and coverage are done, see docs/reports/2026-10-30-search.md] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
+11. [done for detection and persistence, see docs/reports/2026-10-30-search.md; the model stage on survivors moved to the v2 budget (Decisions 10-30 07:00: votes on search survivors about 35 USD, run on the frozen-v2 list)] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
     for every survivor; a coverage map (what was searched on how many dates) as a result in its own right.
 11a. [done, see docs/reports/2026-10-28-search-bookkeeping.md] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
    disk (id, date, Ls, incidence, map scale, valid area), which pairs overlap and by how much, the 2007 PSP
@@ -127,6 +126,9 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
 12c. [ ] Disk work, after the v1 search pass (item 11) finishes, in this order:
     (a) persistence over the strip pairs sharing 10 km2 or more, caching the registration nodes;
+        item 11 already ran persistence over all 81 pairs (38 registered): reuse it, cache the registration
+        nodes, resample the 0.5 m strip before registering, and retry the failed pairs among those sharing 10 km2 or
+        more;
     (b) crop export for every strip: the top 2,000 candidates, all recorded pieces, the sham cuts and the
         transplant target tiles, native resolution, plus every .LBL; and a check that lists, per strip, what was
         exported and confirms each file reads back;
