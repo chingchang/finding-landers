@@ -124,7 +124,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    figure and a JSON; a tiling plan with tile counts and a time estimate from baseline v1's tiles per
    second (out/baseline_v1/run.log). Outputs under out/search/, a report, and a `scripts/search.py` that
    item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
-12c. [ ] (resume, 10-30 15:45: do only step (d) now; (c) the delete stays on hold for the person; mark the item [paused: ...] when (d) is done (not as blocked)] Disk work, after the v1 search pass (item 11) finishes, in this order:
+12c. [paused: (a), (b) and (d) done, see docs/reports/2026-10-30-disk-work.md and docs/reports/2026-10-30-blind-download.md; (c) the delete stays on hold for the person] Disk work, after the v1 search pass (item 11) finishes, in this order:
     (a) persistence over the strip pairs sharing 10 km2 or more, caching the registration nodes;
         item 11 already ran persistence over all 81 pairs (38 registered): reuse it, cache the registration
         nodes, resample the 0.5 m strip before registering, and retry the failed pairs among those sharing 10 km2 or

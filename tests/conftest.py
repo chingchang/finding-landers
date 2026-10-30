@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 
@@ -18,7 +19,9 @@ for _name in ("LANDERS_CAP_SAM", "LANDERS_CAP_WONDER", "LANDERS_CAP_SPARK"):
 def all_labels():
     if not (DATA / "strips").is_dir():
         pytest.skip("HiRISE strips not on disk (set LANDERS_DATA)")
-    return sorted((DATA / "strips").glob("*/*_RED.LBL"))
+    sites = Path(__file__).resolve().parent.parent / "controls" / "sites.json"
+    blind = {sid for s in json.loads(sites.read_text())["sites"] if s["group"] in ("heldout", "final_exam") for sid in s["strips"]}
+    return sorted(p for p in (DATA / "strips").glob("*/*_RED.LBL") if p.name.split("_RED")[0] not in blind)  # a test never opens a blind strip's label
 
 
 def manifest_ids(case_prefix: str) -> list[str]:
@@ -35,8 +38,6 @@ def manifest_ids(case_prefix: str) -> list[str]:
 
 
 def site_strips(name: str) -> list[str]:
-    import json
-
     sites = Path(__file__).resolve().parent.parent / "controls" / "sites.json"
     if not sites.exists():
         return []

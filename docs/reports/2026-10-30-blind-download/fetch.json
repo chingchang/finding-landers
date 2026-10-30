@@ -1,0 +1,49 @@
+{
+ "what": "item 12c(d): the sealed group's strips, downloaded unopened",
+ "credit": "NASA/JPL/University of Arizona (PDS RDR V1.1, hirise.lpl.arizona.edu/PDS/RDR/)",
+ "free_bytes_before": 6799450112,
+ "files": [
+  {
+   "strip": "ESP_077167_2285",
+   "file": "ESP_077167_2285_RED.LBL",
+   "url": "https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_077100_077199/ESP_077167_2285/ESP_077167_2285_RED.LBL",
+   "bytes_server": 8116,
+   "bytes_disk": 8116,
+   "sha256": "affb39cabc4f22d79e6596c176b89fd652794b9f30501dcd197e2d6376c0f73b",
+   "size_equal": true
+  },
+  {
+   "strip": "ESP_077167_2285",
+   "file": "ESP_077167_2285_RED.JP2",
+   "url": "https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_077100_077199/ESP_077167_2285/ESP_077167_2285_RED.JP2",
+   "bytes_server": 1237915073,
+   "bytes_disk": 1237915073,
+   "sha256": "d0a748ec6ebf9ae0aa0434ff22cbc305c5a36ecb3c70ae9232e1afae0bd57c32",
+   "size_equal": true,
+   "jp2_signature": true,
+   "jp2_end_marker": true
+  },
+  {
+   "strip": "PSP_009141_1780",
+   "file": "PSP_009141_1780_RED.LBL",
+   "url": "https://hirise.lpl.arizona.edu/PDS/RDR/PSP/ORB_009100_009199/PSP_009141_1780/PSP_009141_1780_RED.LBL",
+   "bytes_server": 8129,
+   "bytes_disk": 8129,
+   "sha256": "d14f031c61fde7a911de273df93e0e4645db055f8a1aff2ee6d6612b2d55f306",
+   "size_equal": true
+  },
+  {
+   "strip": "PSP_009141_1780",
+   "file": "PSP_009141_1780_RED.JP2",
+   "url": "https://hirise.lpl.arizona.edu/PDS/RDR/PSP/ORB_009100_009199/PSP_009141_1780/PSP_009141_1780_RED.JP2",
+   "bytes_server": 1167368413,
+   "bytes_disk": 1167368413,
+   "sha256": "12726059e6b4bdc2df96e05a6c0ab8f0720547898b43ec60150c4e8132456fb0",
+   "size_equal": true,
+   "jp2_signature": true,
+   "jp2_end_marker": true
+  }
+ ],
+ "free_bytes_after": 4393967616,
+ "ok": true
+}
