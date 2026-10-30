@@ -284,3 +284,13 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   6. Reporting: every blind score carries its 95 percent interval (3 of 6 is about 12 to 88 percent). The first
      site of the new blind set is the main MPL stand-in in the write-up.
   Cut order if time runs short: item 16, then 15, never the video.
+- 2026-10-30 (10:29), the person: (1) the .JP2 delete in item 12c(c) is approved in advance, on one condition the
+  agent checks itself: the read-back check passes for every strip (every listed crop and every .LBL reads back and
+  the counts match what was asked for). If any strip fails, delete nothing for that strip and stop. Keep every .LBL
+  and the manifest. (2) The blind key for the two new sites is placed by the oracle from published captioned
+  images, as for frozen-v1, and sealed by the person with a hash; no agent sees either strip. (3) Item 13 may start
+  from the exported crops as soon as 12c's export check passes, without waiting for the downloads. (4) Item 14's
+  paid run is approved within the 10-30 07:00 budget rule: price it first, report the ledger total, run with the
+  cumulative cap at 120 USD, stop after the first 100 calls and report for the person to compare with the Billing
+  page before going on. The paid calls need MODEL_API_KEY and LANDERS_REAL_CALLS=1 in the environment of the
+  window that runs item 14; without them the item stops at the price and the dry run.
