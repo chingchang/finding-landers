@@ -2,6 +2,9 @@
 
     uv run scripts/search.py survey [--run-log <detect log>] [--cell-m 100] [--out out/search]
     uv run scripts/search.py run --frozen [--same-code-as TAG] [--jobs 3] [--ids ID ...] [--limit N]
+    uv run scripts/search.py nodes
+    uv run scripts/search.py retry [--min-km2 10] [--limit N]
+    uv run scripts/search.py survivors --persist-dirs persist persist_12c --name survivors_12c.json
 
 ``survey`` reads every search strip's label and overview (no detector) and writes under --out:
 inventory.json (one record per strip), overlaps.json (every pair that shares ground), coverage.json and
@@ -184,6 +187,93 @@ def persist_pairs(a) -> int:
     return 0
 
 
+def cache_nodes(a) -> int:
+    """The registration nodes item 11 measured, per pair, in a form that needs no strip to read back."""
+    from landers.search import register as rg
+
+    count = 0
+    for f in sorted((Path(a.out) / "persist").glob("persist_*.json")):
+        d = json.loads(f.read_text())
+        dirs = {k: {x: v[x] for x in ("from", "to", "registration", "nodes")} for k, v in d["directions"].items()}
+        rg.write_nodes(Path(a.out) / "registration", d["pair"], d["km2_shared"], f"item 11, {f.name}", dirs)
+        count += 1
+    print(f"{count} pairs cached under {Path(a.out) / 'registration'}")
+    return 0
+
+
+def retry_pairs(a) -> int:
+    """The pairs item 11 could not register, sharing at least --min-km2, again with the coarse offset measured
+    at matched scales and the coarser strip resampled. Item 11's files are not touched: the results go to
+    persist_12c/ and the nodes replace that pair's cache only if the retry registered it."""
+    from landers import persist as lp
+    from landers.search import persistence as sp
+    from landers.search import register as rg
+    from landers.strip import Strip
+
+    cands_dir = Path(a.out) / "candidates"
+    out = Path(a.out) / "persist_12c"
+    out.mkdir(parents=True, exist_ok=True)
+    rate = per_km2(a)
+    failed = []
+    for f in sorted((Path(a.out) / "persist").glob("persist_*.json")):
+        d = json.loads(f.read_text())
+        oks = [v["registration"]["ok"] for v in d["directions"].values()]
+        if d["km2_shared"] >= a.min_km2 and not rg.is_registered(oks):
+            failed.append((d["pair"], d["km2_shared"]))
+    failed.sort(key=lambda p: -p[1])
+    todo = [p for p in failed if not (out / f"persist_{p[0][0]}_{p[0][1]}.json").exists()]
+    if a.limit:
+        todo = todo[: a.limit]
+    print(f"{len(failed)} unregistered pairs sharing at least {a.min_km2} km2; {len(todo)} to run now", flush=True)
+    cache: dict = {}
+    for ids, km2 in todo:
+        t0 = time.time()
+        strips = {sid: Strip.open(sid) for sid in ids}
+        result = {"pair": list(ids), "km2_shared": km2, "per_km2": rate, "radius_px": a.radius_px, "radius_m": a.radius_px * 0.25,
+                  "method": "12c retry", "git": run.git_state(), "directions": {}}
+        for src, dst in (ids, ids[::-1]):
+            ea, eb = load_entry(cands_dir, src, cache), load_entry(cands_dir, dst, cache)
+            nodes, how = rg.offset_field(strips[src], strips[dst])
+            surv = sp.survivors(ea, rate)
+            # the same 2 m and the same node reach on the ground as item 11, whatever the two scales
+            radius = a.radius_px * 0.25 / strips[dst].label.scale_m
+            reach = 8192.0 * 0.25 / strips[src].label.scale_m
+            recs, counts = sp.look_up(surv, eb["candidates"], strips[src], strips[dst], nodes, radius, reach)
+            result["directions"][f"{src}->{dst}"] = {
+                "from": src,
+                "to": dst,
+                "radius_px": radius,
+                "how": how,
+                "registration": lp.nodes_summary(nodes),
+                "nodes": lp.nodes_to_json(nodes),
+                "survivors_of_from": len(surv),
+                "counts": counts,
+                "survivors": recs,
+            }
+            print(f"  {src} -> {dst}: {lp.nodes_summary(nodes)} {counts}", flush=True)
+        result["seconds"] = round(time.time() - t0)
+        path = out / f"persist_{ids[0]}_{ids[1]}.json"
+        tmp = path.with_suffix(".json.part")
+        tmp.write_text(json.dumps(result, indent=1))
+        tmp.replace(path)
+        oks = [v["registration"]["ok"] for v in result["directions"].values()]
+        if rg.is_registered(oks):
+            dirs = {k: {x: v[x] for x in ("from", "to", "registration", "nodes")} for k, v in result["directions"].items()}
+            rg.write_nodes(Path(a.out) / "registration", list(ids), km2, f"12c retry, {path.name}", dirs)
+        print(f"{ids[0]} {ids[1]} ({km2} km2) in {result['seconds']}s -> {path}", flush=True)
+    return 0
+
+
+def load_pair_results(root: Path, dirs: list[str]) -> list[dict]:
+    """One result per pair; a pair in a later directory replaces the same pair in an earlier one."""
+    results: dict = {}
+    for name in dirs:
+        for f in sorted((root / name).glob("persist_*.json")):
+            d = json.loads(f.read_text())
+            results[tuple(d["pair"])] = d
+    return [results[k] for k in sorted(results)]
+
+
 def combine_survivors(a) -> int:
     from landers.search import persistence as sp
 
@@ -210,7 +300,7 @@ def combine_survivors(a) -> int:
             "scale_m": e["scale_m"],
         }
         del d, e
-    results = [json.loads(f.read_text()) for f in sorted((Path(a.out) / "persist").glob("persist_*.json"))]
+    results = load_pair_results(Path(a.out), a.persist_dirs)
     rows = sp.combine(ids, surv, results)
     chance = [sp.chance_matches(pr, surv, per_strip) for pr in results]
     chance = [c for pair in chance for c in pair]
@@ -242,6 +332,7 @@ def combine_survivors(a) -> int:
         "with persistence across every other date that covers them. Grades are the detector's; nothing here "
         "raises one.",
         "per_km2": rate,
+        "persist_dirs": a.persist_dirs,
         "strips_searched": len(ids),
         "strips_in_plan": len(plan_ids),
         "pairs_with_persistence": len(results),
@@ -270,7 +361,7 @@ def combine_survivors(a) -> int:
         "per_strip": per_strip,
         "rows": rows,
     }
-    (Path(a.out) / "survivors.json").write_text(json.dumps(out, indent=1))
+    (Path(a.out) / a.name).write_text(json.dumps(out, indent=1))
     print(f"{len(rows)} survivors over {len(ids)} strips; seen of looked: {out['dates_seen_of_looked']}")
     return 0
 
@@ -332,11 +423,21 @@ def main(argv=None) -> int:
     v.add_argument("--thresholds", default=thresholds)
     v.add_argument("--plan", default=str(DEFAULT_OUT / "plan.json"))
     v.add_argument("--out", default=str(DEFAULT_OUT))
+    v.add_argument("--persist-dirs", nargs="+", default=["persist"], help="later directories replace a pair in earlier ones")
+    v.add_argument("--name", default="survivors.json")
+    n = sub.add_parser("nodes", help="cache item 11's registration nodes under <out>/registration")
+    n.add_argument("--out", default=str(DEFAULT_OUT))
+    t = sub.add_parser("retry", help="the unregistered pairs again, across scales; results under <out>/persist_12c")
+    t.add_argument("--min-km2", type=float, default=10.0)
+    t.add_argument("--radius-px", type=float, default=8.0, help="at 0.25 m per pixel; scaled to the other strip's pixels")
+    t.add_argument("--limit", type=int, default=0)
+    t.add_argument("--thresholds", default=thresholds)
+    t.add_argument("--out", default=str(DEFAULT_OUT))
     g = sub.add_parser("coverage", help="coverage of the strips searched so far (searched_coverage.json, .png)")
     g.add_argument("--out", default=str(DEFAULT_OUT))
     a = ap.parse_args(argv)
     cmds = {"survey": survey, "run": run_search, "persist": persist_pairs, "survivors": combine_survivors,
-            "coverage": searched_coverage}
+            "coverage": searched_coverage, "nodes": cache_nodes, "retry": retry_pairs}
     return cmds[a.cmd](a)
 
 

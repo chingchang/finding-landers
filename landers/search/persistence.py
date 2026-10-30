@@ -39,7 +39,8 @@ def in_valid(strip: Strip, row: float, col: float) -> bool:
 
 
 def look_up(
-    surv_a: list[dict], cands_b: list[dict], strip_a: Strip, strip_b: Strip, nodes, radius_px: float
+    surv_a: list[dict], cands_b: list[dict], strip_a: Strip, strip_b: Strip, nodes, radius_px: float,
+    max_node_distance: float = 8192.0,
 ) -> tuple[list[dict], dict]:
     """One record per survivor of A: its rank and position in A and what was found in B. The candidates
     themselves are not changed."""
@@ -54,7 +55,7 @@ def look_up(
         records.append({"rank": i + 1, "row": c["row"], "col": c["col"], "branch": c["branch"], "score": c["score"],
                         "seen": None, "note": "off the other strip's valid ground", "row_b": round(rb, 1),
                         "col_b": round(cb, 1)})
-    persist.annotate(inside, cands_b, strip_a, strip_b, nodes, radius_px)
+    persist.annotate(inside, cands_b, strip_a, strip_b, nodes, radius_px, max_node_distance)
     for i, c in zip(inside_idx, inside):
         p = c["extra"]["persist"]
         rec = records[i]
@@ -86,8 +87,8 @@ def chance_matches(pair_result: dict, survivors_by_strip: dict, per_strip: dict)
     chance if the other date's same-family candidates were spread evenly over its valid ground. Candidates
     cluster on rough ground, so this is a floor on chance, not a ceiling."""
     out = []
-    radius = float(pair_result["radius_px"])
     for d in pair_result["directions"].values():
+        radius = float(d.get("radius_px", pair_result["radius_px"]))
         dst = per_strip[d["to"]]
         area_m2 = dst["valid_area_km2"] * 1e6
         r_m = radius * dst["scale_m"]
