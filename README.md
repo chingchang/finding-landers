@@ -16,13 +16,14 @@ same credit line.
 
 ## Models
 
-The project incorporates Meta's models: the [Muse Spark series](https://dev.meta.ai/models/muse-spark),
-[Muse Wonder](https://dev.meta.ai/models/muse-wonder), [Muse Image](https://dev.meta.ai/models/muse-image),
-[Muse Voice Transcribe](https://dev.meta.ai/models/muse-voice-transcribe) and [SAM 3.1](https://dev.meta.ai/models/sam-3-1)
-through the [Meta Model API](https://dev.meta.ai/products/meta-model-api), the open weights models
-[Muse Glimmer](https://dev.meta.ai/models/muse-glimmer) and [Muse Spark Open](https://dev.meta.ai/models/muse-spark-open),
-and the [Muse Code](https://dev.meta.ai/lp/muse-code) coding agent. In this pipeline: SAM 3.1 for segmentation,
-Muse Wonder for vision, Muse Spark for review.
+The pipeline calls three of Meta's models through the [Meta Model API](https://dev.meta.ai/products/meta-model-api):
+
+- [SAM 3.1](https://dev.meta.ai/models/sam-3-1) outlines each candidate inside a box around it, so its size and
+  shape can be measured and tested.
+- [Muse Wonder](https://dev.meta.ai/models/muse-wonder) looks at a blind crop of each candidate and votes on
+  whether it looks like hardware or natural ground. Its vote can lower a grade, never raise one.
+- [Muse Spark](https://dev.meta.ai/models/muse-spark) reviews each strip's evidence through a fixed set of tools
+  and keeps or lowers each grade, citing the evidence it used.
 
 ## License
 

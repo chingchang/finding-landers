@@ -87,7 +87,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     lowered (by which stage, citing its evidence), false alarms per strip lowered, kept and unassessed, and the
     cost per false alarm removed. Publish the ledger and records with scripts/models_publish.py. No change to
     the detector, thresholds or model prompts in this item: a change found here goes in a later tag.
-9d. [done, see docs/reports/2026-10-29-fewshot.md; stopped at the probe by its own rule, no votes cast] Few-shot Wonder, after 9c and judged against it (a person asked for it on 10-29; spend approved up to about
+9d. [done, see docs/reports/2026-10-29-fewshot.md; stopped at the probe by its own rule, no votes; dropped on 10-30, no further few-shot work, its budget moved to item 14 cast] Few-shot Wonder, after 9c and judged against it (a person asked for it on 10-29; spend approved up to about
     35 USD; caps LANDERS_CAP_SAM=50, LANDERS_CAP_WONDER=300, LANDERS_CAP_SPARK=120). Each Wonder vote also gets a
     small set of reference crops at the candidate's scale: real pieces from controls/tuning.json and typical false
     alarms from the scored lists, labelled only "hardware example" or "natural example", rotated to the
@@ -124,6 +124,57 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    figure and a JSON; a tiling plan with tile counts and a time estimate from baseline v1's tiles per
    second (out/baseline_v1/run.log). Outputs under out/search/, a report, and a `scripts/search.py` that
    item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
+12c. [ ] Disk work, after the v1 search pass (item 11) finishes, in this order:
+    (a) persistence over the strip pairs sharing 10 km2 or more, caching the registration nodes;
+    (b) crop export for every strip: the top 2,000 candidates, all recorded pieces, the sham cuts and the
+        transplant target tiles, native resolution, plus every .LBL; and a check that lists, per strip, what was
+        exported and confirms each file reads back;
+    (c) stop and show the check to the person; after the person approves, delete the .JP2 files only (keep every
+        .LBL and the manifest);
+    (d) download the two strips of the new blind set (the person names them; one is a re-download of a spare
+        strip deleted in the 10-29 cleanup). The person seals the blind key for both before any v2 scoring; no
+        agent looks at either strip.
+    Limit, written here on purpose: after the delete, items 13 and 14 run from the exported crops. Items 15 and 16
+    need full strips, so they can be tested only on the tuning strips that stay on disk; they do not run over the
+    search area unless the person asks for a re-download.
+13. [ ] v2, A: learned re-ranker (first, highest value). Keep the proposer. Crop each candidate, embed it with a
+    frozen pretrained open-weight vision model (say whether it counts toward the hackathon's Meta model
+    requirement), and train a small classifier, logistic regression first: positives are the recorded pieces
+    plus transplanted copies, negatives are the top false alarms of the tuning lists. Evaluate leave one site
+    out over all ten tuning sites; exclude the left-out site's pieces from the transplant positives. Add a
+    per-strip novelty score (distance from that strip's own candidate population) as one input. Decision rule,
+    fixed before any run: adopt only if leave-one-site-out recall@20 beats frozen-v1 on both boards (key and
+    transplant) and no recorded piece drops out of the top 20. Proposal to docs/proposals/, adoption by a
+    person. The Mac has 8 GB: one embedding pass at a time, small crops, results written as they land.
+    Changes after the risk review (10-30 morning): negatives include the sham cuts, so a paste seam alone earns
+    nothing. Positives include the native crops of the real pieces, not only transplanted copies; in the
+    leave-one-site-out results compare each piece's native score with its transplanted copies, and if the copies
+    score clearly higher, report that the model is learning the paste. Logistic regression on a frozen embedding,
+    nothing bigger; report the leave-one-site-out spread, not only the mean. Re-rank the top 1,000 to 2,000 per
+    strip; pieces the proposer never listed count as misses in the completeness map, not as out of scope. The Mac
+    has 8 GB: a small encoder (DINOv2 small or base, or Meta's Perception Encoder at a similar size), small batches,
+    nothing else running. Check in the hackathon guide whether that encoder counts toward the Meta model
+    requirement and quote the line; do not assume.
+14. [ ] v2, B: deeper model pass. Wonder votes on the top 100 to 200 per strip instead of the top 10, each strip's
+    vote calls reserved before any review check can spend them; Spark records all its verdicts in one turn after
+    its fetches; crops draw saturated pixels as bright, not black (the 9d finding). Measure on the tuning strips
+    how many false alarms are cleared above each recorded piece and how many pieces rise into the top 20. Price
+    it from the ledger first; paid calls only after a person approves the spend and caps in that session.
+    Changes on 10-30 morning: run it on item 13's re-ranked list (Saturday if 13 runs long). One vote per
+    candidate, three only in a borderline band; the current rule needs three votes, so this item first writes the
+    single-vote rule and the borderline band into docs/proposals/ as a new pre-declared rule, before any call.
+    Before any call it also adds the cumulative dollar cap (see Decisions, 10-30 07:00), reports the ledger total
+    so far, and stops after the first 100 calls to report again. Price target about 32 USD on the tuning strips.
+15. [ ] v2, C: per-strip calibration with an honest tail: fit the top of each branch on one half of each strip and
+    check it on the other half, instead of extrapolating. Same judging as A.
+16. [ ] v2, D, if time allows (cut first if the schedule slips): a two-sided shadow test for dark candidates (dark
+    on the anti-sun side, not on the sun side), aimed at dust-covered hardware. Same judging as A.
+    For every v2 item: report the full recall-at-N curve (10, 20, 50, 100, 250) for every board, frozen-v1 beside
+    v2; any number on the four sites that were sealed for frozen-v1 is labelled "not blind".
+17. [ ] v2 freeze and blind run (person): tag frozen-v2; run it once on the two new sealed sites (a person scores);
+    then the MPL search on v2 (2007 PSP strips first), persistence over the strip pairs sharing 10 km2 or more,
+    and a completeness map: per area, the chance that MPL-like hardware there would rank in the top N, from
+    transplant recall per strip. The case board is built on the real results.
 12. [ ] Write-up and video: one solved case re-found blind, then the open case with coverage and the graded
     list; every number from a results file.
 12a. [done, see docs/reports/2026-10-28-case-board.md] The case board, parallel with items 6 to 8: a static HTML page built from results files only
@@ -195,3 +246,38 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   20: 0 of 11 at the three held-out sites, 0 of 3 for Beagle 2. Below the pass line; reported as it is. Best
   ranks: 25, 44 and 81 out of about 30,000 candidates on one strip; most others between 300 and 2,100; two pieces
   not detected. Nothing is retuned against this result; any fix goes in a later tag, shown beside frozen-v1.
+- 2026-10-30 (02:30), the person's decisions after the frozen-v1 held-out result:
+  1. History stays: no commit, report or score is rewritten, squashed or deleted.
+  2. The three sites sealed for frozen-v1 and the final-exam site become tuning sites for v2. Their held-out
+     scores stay above as the frozen-v1 result; any v2 number on them is reported as "not blind". The person
+     moves their positions into controls/tuning.json; no agent opens the sealed file.
+  3. A new blind set for v2: the spare site with a lander still on the surface, and one new strip of the other
+     spare site taken with a lower sun than the strip on disk (chosen by the person from label metadata only).
+     The person seals the key for both with a hash before any v2 work is scored. Neither is tuned on or looked
+     at by an agent.
+  4. The README lists only the models the pipeline calls and what each does.
+  Goal: the best detector for MPL plus an honest measure of how much to trust it. Work items 13 to 17, judged on
+  the key and the transplant board against frozen-v1 with each decision rule written before its run; proposals to
+  docs/proposals/, adoption by the person. Item 11 (the search on frozen-v1) finishes and stays as the v1
+  record. Schedule: Fri 13 and 14 on tuning strips; Sat 15 (and 16 if ahead), freeze v2 Saturday night; Sun blind
+  run and start the v2 search; Mon persistence, completeness map, case board; Tue video; Wed buffer, submit by
+  18:00 PT. If something slips, cut 16, then 15, never the video.
+- 2026-10-30 (07:00), the person's addendum:
+  1. Budget, a hard rule: total Meta Model API spend for the whole project stays under the 150 USD credit. A
+     cumulative dollar cap across every run's ledger, not per item: refuse any paid call once the running total
+     would pass 120 USD (the gap covers a possible Wonder token undercount in the ledger). Before any new paid run,
+     report the ledger total so far for the person to check against the Billing page; after the first 100 calls of
+     the next paid run, stop and report again. Item 9d is dropped and its budget moves to item 14. Target
+     allocation: item 14 on the tuning strips about 32 USD, votes on search survivors about 35 USD, the blind run
+     about 5 USD, Spark and SAM about 10 USD. Each item is priced from the ledger before it runs; paid calls only
+     after the person approves in that session. The cheaper contributor model variants are not decided and are
+     not used unless the person says so.
+  2. Disk order: item 12c, after the v1 search pass, with the limit written there (items 15 and 16 on tuning strips
+     only once the search strips are deleted).
+  3. and 4. Changes to items 13 and 14, written into the items.
+  5. Optional, only if the person confirms Modal credits: test Muse Glimmer as a voter, hosted on Modal, on the
+     same tuning candidates Wonder already voted on, compared vote by vote; first confirm Modal serves Glimmer. It
+     cannot run on this Mac (about 20 GB quantized) and spends Modal credits, not the Meta credit.
+  6. Reporting: every blind score carries its 95 percent interval (3 of 6 is about 12 to 88 percent). The first
+     site of the new blind set is the main MPL stand-in in the write-up.
+  Cut order if time runs short: item 16, then 15, never the video.
