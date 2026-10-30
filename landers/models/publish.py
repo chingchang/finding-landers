@@ -23,7 +23,7 @@ NEVER = ("manifest_",)
 
 
 def sealed_names() -> list[str]:
-    """Names of the sealed sites, with their trailing digits dropped as well (``viking2`` and ``viking``)."""
+    """Names of the sealed sites, each also without its trailing digits (``site2`` gives ``site2`` and ``site``)."""
     p = leak.sites_path()
     if not p.exists():
         return []

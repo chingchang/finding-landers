@@ -24,6 +24,7 @@ OBS_ID = re.compile(r"\b(ESP|PSP)_\d{6}_\d{4}\b")
 FILE_NAME = re.compile(r"\b\w+_RED\b|\.(JP2|LBL|IMG|jp2|lbl|img)\b")
 DATE = re.compile(r"\b(19|20)\d{2}-\d{2}-\d{2}\b|\b(19|20)\d{2}-\d{3}T?\b|\b(19|20)\d{2}_\d{3}\b")
 BEARING_COORD = re.compile(r"[-+]?\d{1,3}(\.\d+)?\s*(°|deg|degrees)?\s*[NSEW]\b")
+# leakcheck: begin forbidden-names list (scripts/leakcheck.sh lets sealed-site names stand here and nowhere else)
 MISSION_WORDS = (
     "schiaparelli",
     "exomars",
@@ -55,6 +56,7 @@ MISSION_WORDS = (
     "jpl",
     "pds",
 )
+# leakcheck: end forbidden-names list
 PNG_SIG = b"\x89PNG\r\n\x1a\n"
 PNG_TEXT_CHUNKS = {b"tEXt", b"iTXt", b"zTXt", b"eXIf", b"tIME"}
 

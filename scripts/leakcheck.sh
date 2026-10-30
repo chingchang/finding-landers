@@ -20,6 +20,17 @@ FILES="$(cd "$ROOT" && { git ls-files; git ls-files -o --exclude-standard; } | s
 fail=0
 report() { echo "LEAK ($1):"; echo "$2" | sed 's/^/  /'; fail=1; }
 scan() { (cd "$ROOT" && echo "$FILES" | tr '\n' '\0' | xargs -0 grep -nE "$@" -- 2>/dev/null); }
+# The one exception, for the name rule only: landers/models/leak.py keeps the list of names the model layer must
+# never send, between its "leakcheck: begin forbidden-names list" and "leakcheck: end forbidden-names list"
+# lines. Name hits inside that block are dropped; every other rule, file and line is checked as before.
+NAMES_FILE="landers/models/leak.py"
+allow_marked_names() {
+  local b e
+  b=$(grep -n "leakcheck: begin forbidden-names list" "$ROOT/$NAMES_FILE" 2>/dev/null | head -1 | cut -d: -f1)
+  e=$(grep -n "leakcheck: end forbidden-names list" "$ROOT/$NAMES_FILE" 2>/dev/null | head -1 | cut -d: -f1)
+  if [ -z "$b" ] || [ -z "$e" ]; then cat; return; fi
+  awk -F: -v f="$NAMES_FILE" -v b="$b" -v e="$e" '!($1 == f && $2 + 0 > b && $2 + 0 < e)'
+}
 
 # 1. Observation ids, everywhere but the reports.
 hits=$(scan '\b(ESP|PSP)_[0-9]{6}_[0-9]{4}\b' | grep -Ev '^docs/reports/')
@@ -31,7 +42,7 @@ while IFS=$'\t' read -r name lat lon; do
     hits=$(scan "(^|[^0-9.])${v//./\\.}([^0-9.]|$)")
     [ -n "$hits" ] && report "coordinate $v of sealed site $name" "$hits"
   done
-  hits=$(scan -i "\b${name}\b")
+  hits=$(scan -i "\b${name}\b" | allow_marked_names)
   [ -n "$hits" ] && report "name of sealed site $name" "$hits"
 done < <(python3 -I -c '
 import json,sys

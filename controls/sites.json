@@ -308,7 +308,7 @@
     },
     {
       "name": "viking2",
-      "group": "spare",
+      "group": "heldout",
       "lat": 47.64,
       "lon_e": 134.29,
       "strips": [
@@ -320,7 +320,7 @@
     },
     {
       "name": "opportunity",
-      "group": "spare",
+      "group": "heldout",
       "lat": -1.95,
       "lon_e": 354.47,
       "strips": [
