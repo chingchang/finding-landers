@@ -97,6 +97,14 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     attached first: if examples make Wonder name a site or mission, stop and report. The few-shot prompt is a new
     prompt version behind a flag, default off; adopting it for the search is a person's call and goes in a later
     tag (frozen-v2), shown beside frozen-v1.
+9e. [ ] Frost test at Phoenix, after 9d (a person asked for it on 10-29; no model calls, no new downloads). Question: in
+    the frost season, does hardware look different from the frosted ground, and in which direction? Use the two
+    frost-season Phoenix strips named in docs/data.md, for this test only: register each to the summer strip that
+    holds the key, carry the recorded Phoenix pieces across, and measure each piece against the ground around it
+    (brightness contrast, size, a shadow if any) beside the same numbers for the top false alarms of the summer
+    list at the same places. Three pieces at one site is evidence, not proof: say so in the report. If the pieces
+    stand out where the false alarms do not, propose the check for the top MPL candidates on their spring strips.
+    Nothing here changes the detector or frozen-v1.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
     Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
     run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
@@ -126,7 +134,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   a person, versioned.
 - A frozen tag before the held-out run and before the search. Nothing changes after a frozen run starts; a fix
   goes in a later tag and both numbers are shown.
-- The two frost-season Phoenix strips (named in docs/data.md) are not used. Pathfinder is 50 cm/px.
+- The two frost-season Phoenix strips (named in docs/data.md) are not used, except in item 9e. Pathfinder is 50 cm/px.
 
 ## Backlog (ideas with a when)
 
