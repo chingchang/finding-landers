@@ -1,0 +1,1746 @@
+{
+ "protocol": "docs/proposals/reranker-v1-protocol.md",
+ "encoder": {
+  "model": "facebook/dinov2-small",
+  "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+  "device": "mps",
+  "batch": 16,
+  "crops_last_pass": 32471,
+  "seconds_last_pass": 644,
+  "revision_note": "read from the weights cache after the pass; the pass itself recorded null"
+ },
+ "git": {
+  "commit": "25a0af2ceb7713d71847b9579d381d35653ab911",
+  "dirty": false,
+  "tag": null
+ },
+ "rows": {
+  "": 21641,
+  "copy": 128,
+  "list_fa": 2387,
+  "native": 31,
+  "sham": 128,
+  "tile_fa": 8051
+ },
+ "planted_km2": 16.520265625,
+ "median_target_km2": 99.45,
+ "target_strip_km2": {
+  "ESP_013078_1030": 99.45,
+  "ESP_013368_1035": 82.96,
+  "ESP_013500_1035": 127.46,
+  "ESP_013724_1030": 103.89,
+  "ESP_048734_1035": 56.52,
+  "ESP_057965_1035": 56.28,
+  "PSP_004336_1035": 106.28,
+  "PSP_004402_1030": 100.43,
+  "PSP_004824_1030": 75.55
+ },
+ "rates_per_km2": {
+  "N10": 0.10055304172951232,
+  "N20": 0.20110608345902464,
+  "N50": 0.5027652086475616,
+  "N100": 1.0055304172951232,
+  "N250": 2.513826043237808,
+  "board_rate": 2.0
+ },
+ "no_texture": [
+  "PSP_004336_1035",
+  "PSP_004402_1030"
+ ],
+ "run": {
+  "seed": 0,
+  "skipped": [],
+  "n_placements": 128,
+  "n_sham_placements": 128,
+  "asked": 256,
+  "n_detections": 8183,
+  "area_km2": 16.520265625,
+  "git": {
+   "commit": "6b686efddaa7d7f649ecc537eb873c2e20bcf040",
+   "dirty": true,
+   "tag": null
+  }
+ },
+ "frozen_v1": {
+  "key_curve": {
+   "10": 8,
+   "20": 8,
+   "50": 10,
+   "100": 11,
+   "250": 13
+  },
+  "key_kinds": {
+   "fabric": {
+    "n": 6,
+    "10": 1,
+    "20": 1,
+    "50": 2,
+    "100": 2,
+    "250": 3
+   },
+   "hardware": {
+    "n": 23,
+    "10": 7,
+    "20": 7,
+    "50": 8,
+    "100": 9,
+    "250": 10
+   },
+   "mark": {
+    "n": 3,
+    "10": 0,
+    "20": 0,
+    "50": 0,
+    "100": 0,
+    "250": 0
+   }
+  },
+  "key_by_site": {
+   "schiaparelli": {
+    "n": 4,
+    "found": 1
+   },
+   "curiosity": {
+    "n": 4,
+    "found": 2
+   },
+   "phoenix": {
+    "n": 3,
+    "found": 2
+   },
+   "viking1": {
+    "n": 1,
+    "found": 1
+   },
+   "spirit": {
+    "n": 3,
+    "found": 1
+   },
+   "pathfinder": {
+    "n": 3,
+    "found": 1
+   },
+   "perseverance": {
+    "n": 5,
+    "found": 0
+   },
+   "insight": {
+    "n": 2,
+    "found": 0
+   },
+   "zhurong": {
+    "n": 4,
+    "found": 0
+   },
+   "beagle2": {
+    "n": 3,
+    "found": 0
+   }
+  },
+  "key_spread_at_20": {
+   "sites": 10,
+   "mean": 0.308,
+   "sd": 0.338,
+   "min": 0.0,
+   "max": 1.0
+  },
+  "key_interval_95_at_20": [
+   0.133,
+   0.421
+  ],
+  "transplant": {
+   "N10": {
+    "found": 15,
+    "n": 128,
+    "interval_95": [
+     0.072,
+     0.184
+    ]
+   },
+   "N20": {
+    "found": 15,
+    "n": 128,
+    "interval_95": [
+     0.072,
+     0.184
+    ]
+   },
+   "N50": {
+    "found": 25,
+    "n": 128,
+    "interval_95": [
+     0.136,
+     0.272
+    ]
+   },
+   "N100": {
+    "found": 34,
+    "n": 128,
+    "interval_95": [
+     0.197,
+     0.348
+    ]
+   },
+   "N250": {
+    "found": 47,
+    "n": 128,
+    "interval_95": [
+     0.289,
+     0.453
+    ]
+   },
+   "board_rate": {
+    "found": 45,
+    "n": 128,
+    "interval_95": [
+     0.274,
+     0.438
+    ]
+   }
+  },
+  "transplant_N20": {
+   "n": 128,
+   "found": 15,
+   "by_kind": {
+    "fabric": {
+     "n": 24,
+     "found": 3
+    },
+    "hardware": {
+     "n": 92,
+     "found": 12
+    },
+    "mark": {
+     "n": 12,
+     "found": 0
+    }
+   },
+   "by_site": {
+    "curiosity": {
+     "n": 16,
+     "found": 4
+    },
+    "pathfinder": {
+     "n": 12,
+     "found": 2
+    },
+    "perseverance": {
+     "n": 20,
+     "found": 2
+    },
+    "schiaparelli": {
+     "n": 16,
+     "found": 1
+    },
+    "spirit": {
+     "n": 12,
+     "found": 1
+    },
+    "zhurong": {
+     "n": 16,
+     "found": 3
+    },
+    "beagle2": {
+     "n": 12,
+     "found": 1
+    },
+    "insight": {
+     "n": 8,
+     "found": 0
+    },
+    "phoenix": {
+     "n": 12,
+     "found": 0
+    },
+    "viking1": {
+     "n": 4,
+     "found": 1
+    }
+   },
+   "by_ground": {
+    "no_texture": {
+     "n": 43,
+     "found": 8
+    },
+    "texture": {
+     "n": 85,
+     "found": 7
+    }
+   },
+   "interval_95": [
+    0.072,
+    0.184
+   ]
+  },
+  "transplant_spread_at_20": {
+   "sites": 10,
+   "mean": 0.118,
+   "sd": 0.092,
+   "min": 0.0,
+   "max": 0.25
+  }
+ },
+ "variants": {
+  "primary": {
+   "key_curve": {
+    "10": 14,
+    "20": 16,
+    "50": 18,
+    "100": 19,
+    "250": 21
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.336,
+    0.664
+   ],
+   "transplant": {
+    "N10": {
+     "found": 7,
+     "n": 128,
+     "interval_95": [
+      0.027,
+      0.109
+     ]
+    },
+    "N20": {
+     "found": 11,
+     "n": 128,
+     "interval_95": [
+      0.049,
+      0.147
+     ]
+    },
+    "N50": {
+     "found": 20,
+     "n": 128,
+     "interval_95": [
+      0.103,
+      0.229
+     ]
+    },
+    "N100": {
+     "found": 28,
+     "n": 128,
+     "interval_95": [
+      0.156,
+      0.298
+     ]
+    },
+    "N250": {
+     "found": 45,
+     "n": 128,
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    },
+    "board_rate": {
+     "found": 40,
+     "n": 128,
+     "interval_95": [
+      0.239,
+      0.397
+     ]
+    }
+   },
+   "dropped_from_top_20": [
+    "curiosity/parachute/ESP_030313_1755",
+    "spirit/backshell/ESP_025815_1655"
+   ],
+   "paste": {
+    "n": 32,
+    "median_delta": -0.164,
+    "fraction_higher": 0.438,
+    "learning_the_paste": false
+   },
+   "rule": {
+    "key_beats": true,
+    "transplant_beats": false,
+    "no_piece_dropped": false,
+    "not_learning_the_paste": true,
+    "met": false
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.515,
+    "sd": 0.275,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.087,
+    "sd": 0.098,
+    "min": 0.0,
+    "max": 0.25
+   }
+  },
+  "no_score": {
+   "key_curve": {
+    "10": 14,
+    "20": 16,
+    "50": 18,
+    "100": 19,
+    "250": 21
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.336,
+    0.664
+   ],
+   "transplant": {
+    "N10": {
+     "found": 8,
+     "n": 128,
+     "interval_95": [
+      0.032,
+      0.118
+     ]
+    },
+    "N20": {
+     "found": 10,
+     "n": 128,
+     "interval_95": [
+      0.043,
+      0.138
+     ]
+    },
+    "N50": {
+     "found": 19,
+     "n": 128,
+     "interval_95": [
+      0.097,
+      0.22
+     ]
+    },
+    "N100": {
+     "found": 28,
+     "n": 128,
+     "interval_95": [
+      0.156,
+      0.298
+     ]
+    },
+    "N250": {
+     "found": 42,
+     "n": 128,
+     "interval_95": [
+      0.253,
+      0.413
+     ]
+    },
+    "board_rate": {
+     "found": 40,
+     "n": 128,
+     "interval_95": [
+      0.239,
+      0.397
+     ]
+    }
+   },
+   "dropped_from_top_20": [
+    "curiosity/parachute/ESP_030313_1755",
+    "spirit/backshell/ESP_025815_1655"
+   ],
+   "paste": {
+    "n": 32,
+    "median_delta": -0.505,
+    "fraction_higher": 0.438,
+    "learning_the_paste": false
+   },
+   "rule": {
+    "key_beats": true,
+    "transplant_beats": false,
+    "no_piece_dropped": false,
+    "not_learning_the_paste": true,
+    "met": false
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.515,
+    "sd": 0.275,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.082,
+    "sd": 0.098,
+    "min": 0.0,
+    "max": 0.25
+   }
+  },
+  "no_novelty": {
+   "key_curve": {
+    "10": 6,
+    "20": 11,
+    "50": 16,
+    "100": 18,
+    "250": 19
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.204,
+    0.517
+   ],
+   "transplant": {
+    "N10": {
+     "found": 8,
+     "n": 128,
+     "interval_95": [
+      0.032,
+      0.118
+     ]
+    },
+    "N20": {
+     "found": 13,
+     "n": 128,
+     "interval_95": [
+      0.06,
+      0.166
+     ]
+    },
+    "N50": {
+     "found": 20,
+     "n": 128,
+     "interval_95": [
+      0.103,
+      0.229
+     ]
+    },
+    "N100": {
+     "found": 26,
+     "n": 128,
+     "interval_95": [
+      0.143,
+      0.281
+     ]
+    },
+    "N250": {
+     "found": 43,
+     "n": 128,
+     "interval_95": [
+      0.26,
+      0.421
+     ]
+    },
+    "board_rate": {
+     "found": 37,
+     "n": 128,
+     "interval_95": [
+      0.218,
+      0.373
+     ]
+    }
+   },
+   "dropped_from_top_20": [
+    "curiosity/parachute/ESP_030313_1755",
+    "phoenix/heat_shield/ESP_017716_2485",
+    "spirit/backshell/ESP_025815_1655"
+   ],
+   "paste": {
+    "n": 32,
+    "median_delta": 0.035,
+    "fraction_higher": 0.5,
+    "learning_the_paste": false
+   },
+   "rule": {
+    "key_beats": true,
+    "transplant_beats": false,
+    "no_piece_dropped": false,
+    "not_learning_the_paste": true,
+    "met": false
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.378,
+    "sd": 0.305,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.122,
+    "sd": 0.166,
+    "min": 0.0,
+    "max": 0.5
+   }
+  },
+  "embedding_only": {
+   "key_curve": {
+    "10": 6,
+    "20": 11,
+    "50": 16,
+    "100": 18,
+    "250": 20
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.204,
+    0.517
+   ],
+   "transplant": {
+    "N10": {
+     "found": 8,
+     "n": 128,
+     "interval_95": [
+      0.032,
+      0.118
+     ]
+    },
+    "N20": {
+     "found": 13,
+     "n": 128,
+     "interval_95": [
+      0.06,
+      0.166
+     ]
+    },
+    "N50": {
+     "found": 19,
+     "n": 128,
+     "interval_95": [
+      0.097,
+      0.22
+     ]
+    },
+    "N100": {
+     "found": 26,
+     "n": 128,
+     "interval_95": [
+      0.143,
+      0.281
+     ]
+    },
+    "N250": {
+     "found": 37,
+     "n": 128,
+     "interval_95": [
+      0.218,
+      0.373
+     ]
+    },
+    "board_rate": {
+     "found": 33,
+     "n": 128,
+     "interval_95": [
+      0.19,
+      0.34
+     ]
+    }
+   },
+   "dropped_from_top_20": [
+    "curiosity/parachute/ESP_030313_1755",
+    "phoenix/heat_shield/ESP_017716_2485",
+    "spirit/backshell/ESP_025815_1655"
+   ],
+   "paste": {
+    "n": 32,
+    "median_delta": -0.478,
+    "fraction_higher": 0.438,
+    "learning_the_paste": false
+   },
+   "rule": {
+    "key_beats": true,
+    "transplant_beats": false,
+    "no_piece_dropped": false,
+    "not_learning_the_paste": true,
+    "met": false
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.378,
+    "sd": 0.305,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.122,
+    "sd": 0.166,
+    "min": 0.0,
+    "max": 0.5
+   }
+  },
+  "no_transplanted": {
+   "key_curve": {
+    "10": 15,
+    "20": 18,
+    "50": 19,
+    "100": 20,
+    "250": 20
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.393,
+    0.718
+   ],
+   "transplant": {
+    "N10": {
+     "found": 3,
+     "n": 128,
+     "interval_95": [
+      0.008,
+      0.067
+     ]
+    },
+    "N20": {
+     "found": 11,
+     "n": 128,
+     "interval_95": [
+      0.049,
+      0.147
+     ]
+    },
+    "N50": {
+     "found": 14,
+     "n": 128,
+     "interval_95": [
+      0.066,
+      0.175
+     ]
+    },
+    "N100": {
+     "found": 19,
+     "n": 128,
+     "interval_95": [
+      0.097,
+      0.22
+     ]
+    },
+    "N250": {
+     "found": 25,
+     "n": 128,
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "board_rate": {
+     "found": 25,
+     "n": 128,
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    }
+   },
+   "dropped_from_top_20": [
+    "curiosity/parachute/ESP_030313_1755",
+    "spirit/backshell/ESP_025815_1655"
+   ],
+   "paste": {
+    "n": 32,
+    "median_delta": -2.949,
+    "fraction_higher": 0.281,
+    "learning_the_paste": false
+   },
+   "rule": {
+    "key_beats": true,
+    "transplant_beats": false,
+    "no_piece_dropped": false,
+    "not_learning_the_paste": true,
+    "met": false
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.585,
+    "sd": 0.2,
+    "min": 0.333,
+    "max": 1.0
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.065,
+    "sd": 0.123,
+    "min": 0.0,
+    "max": 0.375
+   }
+  }
+ },
+ "primary": {
+  "key_kinds": {
+   "fabric": {
+    "n": 6,
+    "10": 4,
+    "20": 4,
+    "50": 4,
+    "100": 5,
+    "250": 5
+   },
+   "hardware": {
+    "n": 23,
+    "10": 10,
+    "20": 12,
+    "50": 14,
+    "100": 14,
+    "250": 16
+   },
+   "mark": {
+    "n": 3,
+    "10": 0,
+    "20": 0,
+    "50": 0,
+    "100": 0,
+    "250": 0
+   }
+  },
+  "key_by_site": {
+   "schiaparelli": {
+    "n": 4,
+    "found": 2
+   },
+   "curiosity": {
+    "n": 4,
+    "found": 2
+   },
+   "phoenix": {
+    "n": 3,
+    "found": 2
+   },
+   "viking1": {
+    "n": 1,
+    "found": 1
+   },
+   "spirit": {
+    "n": 3,
+    "found": 2
+   },
+   "pathfinder": {
+    "n": 3,
+    "found": 1
+   },
+   "perseverance": {
+    "n": 5,
+    "found": 2
+   },
+   "insight": {
+    "n": 2,
+    "found": 0
+   },
+   "zhurong": {
+    "n": 4,
+    "found": 3
+   },
+   "beagle2": {
+    "n": 3,
+    "found": 1
+   }
+  },
+  "transplant_N20": {
+   "n": 128,
+   "found": 11,
+   "by_kind": {
+    "fabric": {
+     "n": 24,
+     "found": 1
+    },
+    "hardware": {
+     "n": 92,
+     "found": 9
+    },
+    "mark": {
+     "n": 12,
+     "found": 1
+    }
+   },
+   "by_site": {
+    "schiaparelli": {
+     "n": 16,
+     "found": 2
+    },
+    "curiosity": {
+     "n": 16,
+     "found": 1
+    },
+    "phoenix": {
+     "n": 12,
+     "found": 0
+    },
+    "viking1": {
+     "n": 4,
+     "found": 1
+    },
+    "spirit": {
+     "n": 12,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 12,
+     "found": 0
+    },
+    "perseverance": {
+     "n": 20,
+     "found": 2
+    },
+    "insight": {
+     "n": 8,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 16,
+     "found": 4
+    },
+    "beagle2": {
+     "n": 12,
+     "found": 0
+    }
+   },
+   "by_ground": {
+    "no_texture": {
+     "n": 43,
+     "found": 1
+    },
+    "texture": {
+     "n": 85,
+     "found": 10
+    }
+   },
+   "interval_95": [
+    0.049,
+    0.147
+   ]
+  },
+  "auc_real_over_sham": {
+   "schiaparelli": 0.98,
+   "curiosity": 0.895,
+   "phoenix": 0.597,
+   "viking1": 1.0,
+   "spirit": 0.993,
+   "pathfinder": 0.667,
+   "perseverance": 0.875,
+   "insight": 0.953,
+   "zhurong": 0.977,
+   "beagle2": 0.604
+  },
+  "auc_sham_over_tile_fa": {
+   "schiaparelli": 0.627,
+   "curiosity": 0.698,
+   "phoenix": 0.927,
+   "viking1": 0.766,
+   "spirit": 0.379,
+   "pathfinder": 0.873,
+   "perseverance": 0.718,
+   "insight": 0.545,
+   "zhurong": 0.459,
+   "beagle2": 0.684
+  },
+  "auc_sham_over_tile_fa_median": 0.6910000000000001,
+  "sites_with_shams_above_tile_fa": 8,
+  "auc_real_over_sham_median": 0.9239999999999999
+ },
+ "pieces": [
+  {
+   "piece": "beagle2/lander/ESP_037145_1915",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "beagle2/lander/ESP_039308_1915",
+   "frozen_v1": 334,
+   "primary": 1,
+   "no_transplanted": 1
+  },
+  {
+   "piece": "beagle2/lander/ESP_040363_1915",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "curiosity/backshell/ESP_030313_1755",
+   "frozen_v1": 8,
+   "primary": 1,
+   "no_transplanted": 3
+  },
+  {
+   "piece": "curiosity/descent_stage/ESP_030313_1755",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "curiosity/heat_shield/ESP_030313_1755",
+   "frozen_v1": 214,
+   "primary": 9,
+   "no_transplanted": 1
+  },
+  {
+   "piece": "curiosity/parachute/ESP_030313_1755",
+   "frozen_v1": 3,
+   "primary": 66,
+   "no_transplanted": 49
+  },
+  {
+   "piece": "insight/heat_shield/ESP_087360_1845",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "insight/lander/ESP_087360_1845",
+   "frozen_v1": 469,
+   "primary": 193,
+   "no_transplanted": 15
+  },
+  {
+   "piece": "pathfinder/backshell/ESP_022038_1995",
+   "frozen_v1": 4,
+   "primary": 2,
+   "no_transplanted": 2
+  },
+  {
+   "piece": "pathfinder/lander/ESP_022038_1995",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "pathfinder/parachute/ESP_022038_1995",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "perseverance/backshell/ESP_068822_1985",
+   "frozen_v1": 44,
+   "primary": 34,
+   "no_transplanted": 9
+  },
+  {
+   "piece": "perseverance/descent_stage/ESP_068822_1985",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "perseverance/heat_shield/ESP_068822_1985",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "perseverance/parachute/ESP_068822_1985",
+   "frozen_v1": 25,
+   "primary": 8,
+   "no_transplanted": 1
+  },
+  {
+   "piece": "perseverance/rover/ESP_068822_1985",
+   "frozen_v1": 81,
+   "primary": 1,
+   "no_transplanted": 2
+  },
+  {
+   "piece": "phoenix/backshell/ESP_017716_2485",
+   "frozen_v1": 2,
+   "primary": 1,
+   "no_transplanted": 1
+  },
+  {
+   "piece": "phoenix/heat_shield/ESP_017716_2485",
+   "frozen_v1": 5,
+   "primary": 6,
+   "no_transplanted": 16
+  },
+  {
+   "piece": "phoenix/lander/ESP_017716_2485",
+   "frozen_v1": 704,
+   "primary": 150,
+   "no_transplanted": 576
+  },
+  {
+   "piece": "schiaparelli/backshell/ESP_048041_1780",
+   "frozen_v1": 8,
+   "primary": 8,
+   "no_transplanted": 3
+  },
+  {
+   "piece": "schiaparelli/crash_scar/ESP_048041_1780",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "schiaparelli/heat_shield/ESP_048041_1780",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "schiaparelli/parachute/ESP_048041_1780",
+   "frozen_v1": 765,
+   "primary": 5,
+   "no_transplanted": 5
+  },
+  {
+   "piece": "spirit/backshell/ESP_025815_1655",
+   "frozen_v1": 1,
+   "primary": 30,
+   "no_transplanted": 56
+  },
+  {
+   "piece": "spirit/lander/ESP_025815_1655",
+   "frozen_v1": 441,
+   "primary": 8,
+   "no_transplanted": 3
+  },
+  {
+   "piece": "spirit/parachute/ESP_025815_1655",
+   "frozen_v1": 116,
+   "primary": 3,
+   "no_transplanted": 1
+  },
+  {
+   "piece": "viking1/lander/ESP_046170_2025",
+   "frozen_v1": 3,
+   "primary": 1,
+   "no_transplanted": 4
+  },
+  {
+   "piece": "zhurong/backshell/ESP_075625_2055",
+   "frozen_v1": 1824,
+   "primary": 12,
+   "no_transplanted": 9
+  },
+  {
+   "piece": "zhurong/heat_shield/ESP_075625_2055",
+   "frozen_v1": 596,
+   "primary": 17,
+   "no_transplanted": 11
+  },
+  {
+   "piece": "zhurong/lander/ESP_075625_2055",
+   "frozen_v1": null,
+   "primary": null,
+   "no_transplanted": null
+  },
+  {
+   "piece": "zhurong/parachute/ESP_075625_2055",
+   "frozen_v1": 1172,
+   "primary": 4,
+   "no_transplanted": 4
+  }
+ ],
+ "paste_rows": [
+  {
+   "site": "schiaparelli",
+   "piece": "crash_scar",
+   "strip": "ESP_048041_1780",
+   "kind": "mark",
+   "native": 5.527,
+   "copies_median": 2.74,
+   "copies": 4
+  },
+  {
+   "site": "schiaparelli",
+   "piece": "parachute",
+   "strip": "ESP_048041_1780",
+   "kind": "fabric",
+   "native": 4.703,
+   "copies_median": 5.251,
+   "copies": 4
+  },
+  {
+   "site": "schiaparelli",
+   "piece": "backshell",
+   "strip": "ESP_048041_1780",
+   "kind": "hardware",
+   "native": 4.703,
+   "copies_median": 7.985,
+   "copies": 4
+  },
+  {
+   "site": "schiaparelli",
+   "piece": "heat_shield",
+   "strip": "ESP_048041_1780",
+   "kind": "hardware",
+   "native": 12.395,
+   "copies_median": 12.823,
+   "copies": 4
+  },
+  {
+   "site": "curiosity",
+   "piece": "parachute",
+   "strip": "ESP_030313_1755",
+   "kind": "fabric",
+   "native": 3.532,
+   "copies_median": 2.206,
+   "copies": 4
+  },
+  {
+   "site": "curiosity",
+   "piece": "backshell",
+   "strip": "ESP_030313_1755",
+   "kind": "hardware",
+   "native": 13.298,
+   "copies_median": 6.263,
+   "copies": 4
+  },
+  {
+   "site": "curiosity",
+   "piece": "heat_shield",
+   "strip": "ESP_030313_1755",
+   "kind": "hardware",
+   "native": 7.446,
+   "copies_median": 9.33,
+   "copies": 4
+  },
+  {
+   "site": "curiosity",
+   "piece": "descent_stage",
+   "strip": "ESP_030313_1755",
+   "kind": "mark",
+   "native": 1.795,
+   "copies_median": 0.558,
+   "copies": 4
+  },
+  {
+   "site": "phoenix",
+   "piece": "lander",
+   "strip": "ESP_017716_2485",
+   "kind": "hardware",
+   "native": -1.754,
+   "copies_median": 0.147,
+   "copies": 4
+  },
+  {
+   "site": "phoenix",
+   "piece": "backshell",
+   "strip": "ESP_017716_2485",
+   "kind": "hardware",
+   "native": 10.338,
+   "copies_median": 2.017,
+   "copies": 4
+  },
+  {
+   "site": "phoenix",
+   "piece": "heat_shield",
+   "strip": "ESP_017716_2485",
+   "kind": "hardware",
+   "native": -1.831,
+   "copies_median": 2.896,
+   "copies": 4
+  },
+  {
+   "site": "viking1",
+   "piece": "lander",
+   "strip": "ESP_046170_2025",
+   "kind": "hardware",
+   "native": 5.732,
+   "copies_median": 5.329,
+   "copies": 4
+  },
+  {
+   "site": "spirit",
+   "piece": "lander",
+   "strip": "ESP_025815_1655",
+   "kind": "hardware",
+   "native": 6.879,
+   "copies_median": 7.135,
+   "copies": 4
+  },
+  {
+   "site": "spirit",
+   "piece": "parachute",
+   "strip": "ESP_025815_1655",
+   "kind": "fabric",
+   "native": 7.931,
+   "copies_median": -1.21,
+   "copies": 4
+  },
+  {
+   "site": "spirit",
+   "piece": "backshell",
+   "strip": "ESP_025815_1655",
+   "kind": "hardware",
+   "native": 4.118,
+   "copies_median": 3.933,
+   "copies": 4
+  },
+  {
+   "site": "pathfinder",
+   "piece": "lander",
+   "strip": "ESP_022038_1995",
+   "kind": "hardware",
+   "native": -5.812,
+   "copies_median": -1.589,
+   "copies": 4
+  },
+  {
+   "site": "pathfinder",
+   "piece": "backshell",
+   "strip": "ESP_022038_1995",
+   "kind": "hardware",
+   "native": 4.416,
+   "copies_median": 3.376,
+   "copies": 4
+  },
+  {
+   "site": "pathfinder",
+   "piece": "parachute",
+   "strip": "ESP_022038_1995",
+   "kind": "fabric",
+   "native": 0.693,
+   "copies_median": -0.6,
+   "copies": 4
+  },
+  {
+   "site": "perseverance",
+   "piece": "parachute",
+   "strip": "ESP_068822_1985",
+   "kind": "fabric",
+   "native": 3.478,
+   "copies_median": -2.765,
+   "copies": 4
+  },
+  {
+   "site": "perseverance",
+   "piece": "backshell",
+   "strip": "ESP_068822_1985",
+   "kind": "hardware",
+   "native": 0.648,
+   "copies_median": 3.604,
+   "copies": 4
+  },
+  {
+   "site": "perseverance",
+   "piece": "heat_shield",
+   "strip": "ESP_068822_1985",
+   "kind": "hardware",
+   "native": 5.165,
+   "copies_median": 4.971,
+   "copies": 4
+  },
+  {
+   "site": "perseverance",
+   "piece": "descent_stage",
+   "strip": "ESP_068822_1985",
+   "kind": "mark",
+   "native": -5.017,
+   "copies_median": 3.57,
+   "copies": 4
+  },
+  {
+   "site": "perseverance",
+   "piece": "rover",
+   "strip": "ESP_068822_1985",
+   "kind": "hardware",
+   "native": 5.864,
+   "copies_median": 5.721,
+   "copies": 4
+  },
+  {
+   "site": "insight",
+   "piece": "lander",
+   "strip": "ESP_087360_1845",
+   "kind": "hardware",
+   "native": -1.592,
+   "copies_median": -0.655,
+   "copies": 4
+  },
+  {
+   "site": "insight",
+   "piece": "heat_shield",
+   "strip": "ESP_087360_1845",
+   "kind": "hardware",
+   "native": 5.031,
+   "copies_median": 2.841,
+   "copies": 4
+  },
+  {
+   "site": "zhurong",
+   "piece": "lander",
+   "strip": "ESP_075625_2055",
+   "kind": "hardware",
+   "native": 10.464,
+   "copies_median": 4.973,
+   "copies": 4
+  },
+  {
+   "site": "zhurong",
+   "piece": "parachute",
+   "strip": "ESP_075625_2055",
+   "kind": "fabric",
+   "native": 6.687,
+   "copies_median": 6.613,
+   "copies": 4
+  },
+  {
+   "site": "zhurong",
+   "piece": "backshell",
+   "strip": "ESP_075625_2055",
+   "kind": "hardware",
+   "native": 5.123,
+   "copies_median": 11.443,
+   "copies": 4
+  },
+  {
+   "site": "zhurong",
+   "piece": "heat_shield",
+   "strip": "ESP_075625_2055",
+   "kind": "hardware",
+   "native": 4.63,
+   "copies_median": 7.23,
+   "copies": 4
+  },
+  {
+   "site": "beagle2",
+   "piece": "lander",
+   "strip": "ESP_037145_1915",
+   "kind": "hardware",
+   "native": -3.809,
+   "copies_median": -2.294,
+   "copies": 4
+  },
+  {
+   "site": "beagle2",
+   "piece": "lander",
+   "strip": "ESP_039308_1915",
+   "kind": "hardware",
+   "native": 12.887,
+   "copies_median": 1.753,
+   "copies": 4
+  },
+  {
+   "site": "beagle2",
+   "piece": "lander",
+   "strip": "ESP_040363_1915",
+   "kind": "hardware",
+   "native": 3.588,
+   "copies_median": -5.634,
+   "copies": 4
+  }
+ ],
+ "controls": {
+  "repeat": {
+   "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+   "strip": "ESP_017716_2485",
+   "crops": 100,
+   "max_abs_difference": 0.0,
+   "identical": true
+  },
+  "shuffle": {
+   "what": "key board with shuffled positives, all else as the primary variant",
+   "n": 20,
+   "key_at_20": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    2,
+    2,
+    0
+   ],
+   "median": 1.0,
+   "max": 2,
+   "min": 0,
+   "curves": [
+    {
+     "10": 0,
+     "20": 1,
+     "50": 1,
+     "100": 2,
+     "250": 2
+    },
+    {
+     "10": 0,
+     "20": 1,
+     "50": 1,
+     "100": 2,
+     "250": 3
+    },
+    {
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 3
+    },
+    {
+     "10": 0,
+     "20": 0,
+     "50": 1,
+     "100": 2,
+     "250": 5
+    },
+    {
+     "10": 0,
+     "20": 1,
+     "50": 3,
+     "100": 3,
+     "250": 4
+    },
+    {
+     "10": 0,
+     "20": 0,
+     "50": 1,
+     "100": 2,
+     "250": 4
+    },
+    {
+     "10": 1,
+     "20": 1,
+     "50": 3,
+     "100": 4,
+     "250": 7
+    },
+    {
+     "10": 1,
+     "20": 1,
+     "50": 1,
+     "100": 2,
+     "250": 3
+    },
+    {
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 3,
+     "250": 6
+    },
+    {
+     "10": 0,
+     "20": 1,
+     "50": 2,
+     "100": 3,
+     "250": 4
+    },
+    {
+     "10": 1,
+     "20": 2,
+     "50": 3,
+     "100": 5,
+     "250": 7
+    },
+    {
+     "10": 0,
+     "20": 1,
+     "50": 1,
+     "100": 2,
+     "250": 3
+    },
+    {
+     "10": 0,
+     "20": 1,
+     "50": 1,
+     "100": 2,
+     "250": 2
+    },
+    {
+     "10": 0,
+     "20": 1,
+     "50": 4,
+     "100": 4,
+     "250": 5
+    },
+    {
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    },
+    {
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 4,
+     "250": 8
+    },
+    {
+     "10": 0,
+     "20": 0,
+     "50": 1,
+     "100": 1,
+     "250": 4
+    },
+    {
+     "10": 2,
+     "20": 2,
+     "50": 2,
+     "100": 3,
+     "250": 5
+    },
+    {
+     "10": 1,
+     "20": 2,
+     "50": 2,
+     "100": 2,
+     "250": 6
+    },
+    {
+     "10": 0,
+     "20": 0,
+     "50": 1,
+     "100": 2,
+     "250": 2
+    }
+   ]
+  }
+ },
+ "fusion_exploratory": {
+  "what": "Exploratory, designed after the item 13 result was seen, so it decides nothing: frozen-v1's rank and the primary\nre-ranker's rank merged by taking the better of the two for each candidate (ties to the better second rank). The top\n20 is then roughly the top 10 of each list, so nothing the proposer ranks in its top 10 can leave.",
+  "key_curve": {
+   "10": 12,
+   "20": 16,
+   "50": 18,
+   "100": 19,
+   "250": 19
+  },
+  "key_n": 32,
+  "key_interval_95_at_20": [
+   0.336,
+   0.664
+  ],
+  "dropped_from_top_20": [],
+  "transplant": {
+   "N10": {
+    "found": 11,
+    "n": 128,
+    "interval_95": [
+     0.049,
+     0.147
+    ]
+   },
+   "N20": {
+    "found": 21,
+    "n": 128,
+    "interval_95": [
+     0.11,
+     0.238
+    ]
+   },
+   "N50": {
+    "found": 31,
+    "n": 128,
+    "interval_95": [
+     0.176,
+     0.323
+    ]
+   },
+   "N100": {
+    "found": 36,
+    "n": 128,
+    "interval_95": [
+     0.211,
+     0.365
+    ]
+   },
+   "N250": {
+    "found": 56,
+    "n": 128,
+    "interval_95": [
+     0.355,
+     0.524
+    ]
+   },
+   "board_rate": {
+    "found": 53,
+    "n": 128,
+    "interval_95": [
+     0.332,
+     0.501
+    ]
+   }
+  },
+  "transplant_N20": {
+   "n": 128,
+   "found": 21,
+   "by_kind": {
+    "fabric": {
+     "n": 24,
+     "found": 3
+    },
+    "hardware": {
+     "n": 92,
+     "found": 17
+    },
+    "mark": {
+     "n": 12,
+     "found": 1
+    }
+   },
+   "by_site": {
+    "schiaparelli": {
+     "n": 16,
+     "found": 3
+    },
+    "curiosity": {
+     "n": 16,
+     "found": 5
+    },
+    "phoenix": {
+     "n": 12,
+     "found": 0
+    },
+    "viking1": {
+     "n": 4,
+     "found": 1
+    },
+    "spirit": {
+     "n": 12,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 12,
+     "found": 2
+    },
+    "perseverance": {
+     "n": 20,
+     "found": 3
+    },
+    "insight": {
+     "n": 8,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 16,
+     "found": 5
+    },
+    "beagle2": {
+     "n": 12,
+     "found": 1
+    }
+   },
+   "by_ground": {
+    "no_texture": {
+     "n": 43,
+     "found": 8
+    },
+    "texture": {
+     "n": 85,
+     "found": 13
+    }
+   },
+   "interval_95": [
+    0.11,
+    0.238
+   ]
+  }
+ },
+ "false_alarms_allowed": {
+  "N10": 1,
+  "N20": 3,
+  "N50": 8,
+  "N100": 16,
+  "N250": 41,
+  "board_rate": 33
+ },
+ "pieces_not_in_top_2000": 11
+}

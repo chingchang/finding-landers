@@ -140,7 +140,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     Limit, written here on purpose: after the delete, items 13 and 14 run from the exported crops. Items 15 and 16
     need full strips, so they can be tested only on the tuning strips that stay on disk; they do not run over the
     search area unless the person asks for a re-download.
-13. [running] v2, A: learned re-ranker (first, highest value). Keep the proposer. Crop each candidate, embed it with a
+13. [done, see docs/reports/2026-10-30-reranker.md; the rule is not met and nothing is adopted; item 14's list and the two no-texture strips wait for the person in docs/proposals/reranker-v1.md] v2, A: learned re-ranker (first, highest value). Keep the proposer. Crop each candidate, embed it with a
     frozen pretrained open-weight vision model (say whether it counts toward the hackathon's Meta model
     requirement), and train a small classifier, logistic regression first: positives are the recorded pieces
     plus transplanted copies, negatives are the top false alarms of the tuning lists. Evaluate leave one site

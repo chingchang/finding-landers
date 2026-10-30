@@ -62,3 +62,6 @@ One line per idea that did not move the score. Winners go into the main package 
 - 2026-10-30, item 12c: registering the two 2007 strips with no ground texture at 2 and 4 m per pixel: median
   correlation 0.016 to 0.051, no pair registered. Nothing to keep; `experiments/strip_signal.py` measures why, and
   `experiments/retry_summary.py` holds the numbers.
+- 2026-10-30, item 13: logistic re-ranker on frozen DINOv2 small, leave one site out: key at 20 goes 8 to 16 of 32, but
+  transplant 15 to 11 of 128 and two pieces leave the top 20, so the rule is not met. Not adopted.
+  `docs/reports/2026-10-30-reranker.md`, `docs/reports/2026-10-30-reranker/summary.json`.

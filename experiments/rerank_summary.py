@@ -2,13 +2,16 @@
 
     uv run experiments/rerank_summary.py
 
-Output out/rerank/summary.json.
+Output out/rerank/summary.json, copied to docs/reports/2026-10-30-reranker/summary.json.
 """
 
 import json
+import math
+import statistics
 from pathlib import Path
 
 ROOT = Path("out/rerank")
+REPORT = Path("docs/reports/2026-10-30-reranker")
 NS = ("N10", "N20", "N50", "N100", "N250", "board_rate")
 
 
@@ -36,9 +39,14 @@ out = {
 fusion = json.loads((ROOT / "fusion.json").read_text())
 out["fusion_exploratory"] = {"what": fusion["what"], "key_curve": fusion["key_curve"], "key_n": fusion["key_n"], "key_interval_95_at_20": fusion["key_interval_95_at_20"],
                              "dropped_from_top_20": fusion["dropped_from_top_20"], "transplant": board(fusion["transplant"]), "transplant_N20": fusion["transplant"]["N20"]}
+out["false_alarms_allowed"] = {k: math.floor(v * p["planted_km2"]) for k, v in p["rates_per_km2"].items()}
+out["pieces_not_in_top_2000"] = sum(r["frozen_v1"] is None for r in out["pieces"])
+auc = p["auc_sham_over_tile_fa"]
+out["primary"]["auc_sham_over_tile_fa_median"] = statistics.median(auc.values())
+out["primary"]["sites_with_shams_above_tile_fa"] = sum(v > 0.5 for v in auc.values())
+out["primary"]["auc_real_over_sham_median"] = statistics.median(p["auc_real_over_sham"].values())
 (ROOT / "summary.json").write_text(json.dumps(out, indent=1))
-print(json.dumps({k: out[k] for k in ("rows", "run", "rates_per_km2", "median_target_km2", "frozen_v1")}))
-print(json.dumps(out["variants"]))
-print(json.dumps(out["primary"]))
-print(json.dumps(out["pieces"]))
-print(json.dumps(out["paste_rows"]))
+REPORT.mkdir(parents=True, exist_ok=True)
+(REPORT / "summary.json").write_text(json.dumps(out, indent=1))
+print(json.dumps({k: out[k] for k in ("false_alarms_allowed", "pieces_not_in_top_2000", "fusion_exploratory")}))
+print(json.dumps({k: out["primary"][k] for k in ("auc_sham_over_tile_fa_median", "sites_with_shams_above_tile_fa", "auc_real_over_sham_median")}))
