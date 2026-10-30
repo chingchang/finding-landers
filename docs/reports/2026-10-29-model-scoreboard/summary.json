@@ -1,0 +1,6155 @@
+{
+ "totals": {
+  "strips": 8,
+  "ids": 160,
+  "on_piece_ids": 8,
+  "pieces_in_top20": [
+   "curiosity:backshell",
+   "curiosity:parachute",
+   "pathfinder:backshell",
+   "phoenix:backshell",
+   "phoenix:heat_shield",
+   "schiaparelli:backshell",
+   "schiaparelli:parachute",
+   "spirit:backshell",
+   "viking1:lander"
+  ],
+  "pieces_lowered": [],
+  "false_alarms": 152,
+  "fa_status": {
+   "lowered": 34,
+   "kept by votes only": 12,
+   "unassessed": 62,
+   "kept by review": 44
+  },
+  "fa_lowered_by_votes": 31,
+  "fa_lowered_by_review": 3,
+  "fa_lowered_by_both": 0,
+  "voted_ids": 53,
+  "voted_false_alarms": 47,
+  "checks_ordered": {
+   "zoom_pass": 1,
+   "more_votes": 33,
+   "second_date_check": 3
+  },
+  "more_votes_rule_likely_natural": 20,
+  "more_votes_rule_likely_natural_unacted": 20,
+  "total_cost_usd": 6.7124,
+  "cost_per_fa_lowered_usd": 0.1974,
+  "fa_sam_tests": {
+   "sam_size": {
+    "pass": 18,
+    "unsure": 134
+   },
+   "sam_edge": {
+    "pass": 12,
+    "unsure": 134,
+    "fail": 6
+   },
+   "sam_shape": {
+    "not run": 72,
+    "unsure": 80
+   }
+  },
+  "piece_sam_tests": {
+   "sam_size": {
+    "unsure": 7,
+    "pass": 1
+   },
+   "sam_edge": {
+    "unsure": 7,
+    "pass": 1
+   },
+   "sam_shape": {
+    "not run": 2,
+    "pass": 1,
+    "unsure": 5
+   }
+  }
+ },
+ "strips": [
+  {
+   "strip": "ESP_030313_1755",
+   "review_stopped": "turn cap",
+   "review_turns": 12,
+   "review_verdicts": 5,
+   "review_checks": {
+    "zoom_pass": 1,
+    "more_votes": 1
+   },
+   "voted_ids": 10,
+   "on_piece_ids": 2,
+   "false_alarms": 18,
+   "fa_lowered": 6,
+   "fa_lowered_by_votes": 4,
+   "fa_lowered_by_review": 2,
+   "fa_kept_by_review": 0,
+   "fa_kept_by_votes_only": 2,
+   "fa_unassessed": 10,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "review_stopped": "turn cap",
+   "review_turns": 12,
+   "review_verdicts": 0,
+   "review_checks": {
+    "more_votes": 7
+   },
+   "voted_ids": 10,
+   "on_piece_ids": 1,
+   "false_alarms": 19,
+   "fa_lowered": 3,
+   "fa_lowered_by_votes": 3,
+   "fa_lowered_by_review": 0,
+   "fa_kept_by_review": 0,
+   "fa_kept_by_votes_only": 6,
+   "fa_unassessed": 10,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "review_stopped": "turn cap",
+   "review_turns": 12,
+   "review_verdicts": 2,
+   "review_checks": {
+    "more_votes": 16
+   },
+   "voted_ids": 10,
+   "on_piece_ids": 1,
+   "false_alarms": 19,
+   "fa_lowered": 4,
+   "fa_lowered_by_votes": 4,
+   "fa_lowered_by_review": 0,
+   "fa_kept_by_review": 1,
+   "fa_kept_by_votes_only": 4,
+   "fa_unassessed": 10,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "review_stopped": "turn cap",
+   "review_turns": 12,
+   "review_verdicts": 8,
+   "review_checks": {
+    "more_votes": 1
+   },
+   "voted_ids": 10,
+   "on_piece_ids": 1,
+   "false_alarms": 19,
+   "fa_lowered": 9,
+   "fa_lowered_by_votes": 9,
+   "fa_lowered_by_review": 0,
+   "fa_kept_by_review": 0,
+   "fa_kept_by_votes_only": 0,
+   "fa_unassessed": 10,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "review_stopped": "turn cap",
+   "review_turns": 12,
+   "review_verdicts": 0,
+   "review_checks": {
+    "more_votes": 8
+   },
+   "voted_ids": 10,
+   "on_piece_ids": 0,
+   "false_alarms": 20,
+   "fa_lowered": 10,
+   "fa_lowered_by_votes": 10,
+   "fa_lowered_by_review": 0,
+   "fa_kept_by_review": 0,
+   "fa_kept_by_votes_only": 0,
+   "fa_unassessed": 10,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "review_stopped": "turn cap",
+   "review_turns": 12,
+   "review_verdicts": 8,
+   "review_checks": {
+    "second_date_check": 1
+   },
+   "voted_ids": 3,
+   "on_piece_ids": 2,
+   "false_alarms": 18,
+   "fa_lowered": 2,
+   "fa_lowered_by_votes": 1,
+   "fa_lowered_by_review": 1,
+   "fa_kept_by_review": 4,
+   "fa_kept_by_votes_only": 0,
+   "fa_unassessed": 12,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "review_stopped": "final answer",
+   "review_turns": 10,
+   "review_verdicts": 20,
+   "review_checks": {
+    "second_date_check": 1
+   },
+   "voted_ids": 0,
+   "on_piece_ids": 0,
+   "false_alarms": 20,
+   "fa_lowered": 0,
+   "fa_lowered_by_votes": 0,
+   "fa_lowered_by_review": 0,
+   "fa_kept_by_review": 20,
+   "fa_kept_by_votes_only": 0,
+   "fa_unassessed": 0,
+   "pieces_lowered": 0
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "review_stopped": "final answer",
+   "review_turns": 7,
+   "review_verdicts": 20,
+   "review_checks": {
+    "second_date_check": 1
+   },
+   "voted_ids": 0,
+   "on_piece_ids": 1,
+   "false_alarms": 19,
+   "fa_lowered": 0,
+   "fa_lowered_by_votes": 0,
+   "fa_lowered_by_review": 0,
+   "fa_kept_by_review": 19,
+   "fa_kept_by_votes_only": 0,
+   "fa_unassessed": 0,
+   "pieces_lowered": 0
+  }
+ ],
+ "ids": [
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 1,
+   "id": "c000",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.82
+    ],
+    [
+     "natural",
+     0.65
+    ]
+   ],
+   "vote_note": "lowered by votes: 2 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "persistence"
+    ],
+    "reason": "Diffuse irregular patch with no crisp outline or shadow blending into rippled ground remains consistent with natural frost."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 18.6
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 2,
+   "id": "c001",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.78
+    ],
+    [
+     "natural",
+     0.75
+    ]
+   ],
+   "vote_note": "lowered by votes: 2 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "persistence"
+    ],
+    "reason": "Diffuse mottled patch with fuzzy edges and no crisp outline remains consistent with natural rock or dust."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 19.47
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 3,
+   "id": "c002",
+   "branch": "sheet",
+   "on_piece": [
+    "curiosity:parachute"
+   ],
+   "kinds": [
+    "fabric"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [
+    [
+     "hardware",
+     0.8
+    ],
+    [
+     "hardware",
+     0.86
+    ],
+    [
+     "hardware",
+     0.72
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 3 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests"
+    ],
+    "reason": "Hardware votes describe crisp straight edges and shadow unlike surrounding terrain with passing size and edge tests on zoom."
+   },
+   "checks": [
+    "zoom_pass"
+   ],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 24.31
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 4,
+   "id": "c003",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "review"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "unsure",
+     0.7
+    ],
+    [
+     "natural",
+     0.6
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "tests"
+    ],
+    "reason": "Irregular diffuse patch without crisp outline or raised-body shadow aligns with natural frost or dust."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 15.11
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 5,
+   "id": "c004",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "review"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "unsure",
+     0.7
+    ],
+    [
+     "natural",
+     0.62
+    ],
+    [
+     "natural",
+     0.7
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "tests"
+    ],
+    "reason": "Diffuse irregular blob without crisp outline or raised-body shadow aligns with natural bright rock."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 11.93
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 6,
+   "id": "c005",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.7
+    ],
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.72
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.4
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 7,
+   "id": "c006",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.8
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.82
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 17.02
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 8,
+   "id": "c007",
+   "branch": "bright",
+   "on_piece": [
+    "curiosity:backshell"
+   ],
+   "kinds": [
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "hardware",
+     0.85
+    ],
+    [
+     "natural",
+     0.78
+    ],
+    [
+     "hardware",
+     0.72
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 2 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "natural",
+       0.65
+      ],
+      [
+       "natural",
+       0.65
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "pass",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 6.05
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 9,
+   "id": "c008",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "natural",
+     0.62
+    ],
+    [
+     "natural",
+     0.68
+    ],
+    [
+     "unsure",
+     0.6
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 9.95
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 10,
+   "id": "c009",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "natural",
+     0.7
+    ],
+    [
+     "natural",
+     0.62
+    ],
+    [
+     "natural",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 24.57
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 11,
+   "id": "c010",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.43
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 12,
+   "id": "c011",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "fail"
+   },
+   "sam_equiv_diameter_m": 18.16
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 13,
+   "id": "c012",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 9.66
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 14,
+   "id": "c013",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 35.01
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 15,
+   "id": "c014",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 15.2
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 16,
+   "id": "c015",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 18.23
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 17,
+   "id": "c016",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 15.8
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 18,
+   "id": "c017",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.4
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 19,
+   "id": "c018",
+   "branch": "shadow",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.36
+  },
+  {
+   "strip": "ESP_030313_1755",
+   "rank": 20,
+   "id": "c019",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 20.12
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 1,
+   "id": "c000",
+   "branch": "shadow",
+   "on_piece": [
+    "spirit:backshell"
+   ],
+   "kinds": [
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "hardware",
+     0.7
+    ],
+    [
+     "hardware",
+     0.68
+    ],
+    [
+     "natural",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 1 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 5.37
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 2,
+   "id": "c001",
+   "branch": "shadow",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.74
+    ],
+    [
+     "natural",
+     0.68
+    ],
+    [
+     "natural",
+     0.75
+    ]
+   ],
+   "vote_note": "lowered by votes: 2 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.21
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 3,
+   "id": "c002",
+   "branch": "shadow",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.68
+    ],
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.74
+    ]
+   ],
+   "vote_note": "lowered by votes: 2 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.19
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 4,
+   "id": "c003",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "unsure",
+     0.75
+    ],
+    [
+     "unsure",
+     0.75
+    ],
+    [
+     "natural",
+     0.72
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.89
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 5,
+   "id": "c004",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "hardware",
+     0.7
+    ],
+    [
+     "unsure",
+     0.65
+    ],
+    [
+     "hardware",
+     0.8
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 2 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.6
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 6,
+   "id": "c005",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "unsure",
+     0.65
+    ],
+    [
+     "unsure",
+     0.6
+    ],
+    [
+     "unsure",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.22
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 7,
+   "id": "c006",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "hardware",
+     0.72
+    ],
+    [
+     "hardware",
+     0.72
+    ],
+    [
+     "unsure",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 2 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.55
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 8,
+   "id": "c007",
+   "branch": "shadow",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.78
+    ],
+    [
+     "natural",
+     0.75
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.36
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 9,
+   "id": "c008",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "unsure",
+     0.55
+    ],
+    [
+     "hardware",
+     0.65
+    ],
+    [
+     "hardware",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.91
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 10,
+   "id": "c009",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "unsure",
+     0.7
+    ],
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.7
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.05
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 11,
+   "id": "c010",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "hardware",
+       0.62
+      ],
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "natural",
+       0.72
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.76
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 12,
+   "id": "c011",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.65
+      ],
+      [
+       "natural",
+       0.6
+      ],
+      [
+       "natural",
+       0.72
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.03
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 13,
+   "id": "c012",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "unsure",
+       0.7
+      ],
+      [
+       "unsure",
+       0.6
+      ],
+      [
+       "natural",
+       0.75
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.19
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 14,
+   "id": "c013",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "unsure",
+       0.85
+      ],
+      [
+       "unsure",
+       0.65
+      ],
+      [
+       "natural",
+       0.72
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.13
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 15,
+   "id": "c014",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "unsure",
+       0.6
+      ],
+      [
+       "unsure",
+       0.55
+      ],
+      [
+       "natural",
+       0.6
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.31
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 16,
+   "id": "c015",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "hardware",
+       0.65
+      ],
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "unsure",
+       0.55
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.78
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 17,
+   "id": "c016",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "unsure",
+       0.65
+      ],
+      [
+       "unsure",
+       1.0
+      ],
+      [
+       "unsure",
+       0.6
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.09
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 18,
+   "id": "c017",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.17
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 19,
+   "id": "c018",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.67
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 20,
+   "id": "c019",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.67
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 1,
+   "id": "c000",
+   "branch": "shadow",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [
+    [
+     "hardware",
+     0.8
+    ],
+    [
+     "hardware",
+     0.65
+    ],
+    [
+     "natural",
+     0.7
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 1 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "checks",
+     "tests",
+     "persistence"
+    ],
+    "reason": "Advisory votes remain split between hardware and natural with unsure physical tests and one date only, so needs second look is retained."
+   },
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "hardware",
+       0.68
+      ],
+      [
+       "natural",
+       0.65
+      ],
+      [
+       "natural",
+       0.68
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.41
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 2,
+   "id": "c001",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.75
+    ],
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.72
+    ]
+   ],
+   "vote_note": "lowered by votes: 2 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "persistence"
+    ],
+    "reason": "All advisory votes describe diffuse mottled texture without crisp outline or raised-body shadow, so likely natural is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 6.6
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 3,
+   "id": "c002",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.75
+    ],
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.7
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.57
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 4,
+   "id": "c003",
+   "branch": "bright",
+   "on_piece": [
+    "pathfinder:backshell"
+   ],
+   "kinds": [
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "unsure",
+     0.6
+    ],
+    [
+     "unsure",
+     0.6
+    ],
+    [
+     "hardware",
+     0.82
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 1 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "unsure",
+       0.55
+      ],
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "unsure",
+       0.55
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.89
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 5,
+   "id": "c004",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "natural",
+     0.62
+    ],
+    [
+     "natural",
+     0.75
+    ],
+    [
+     "natural",
+     0.68
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "natural",
+       0.82
+      ],
+      [
+       "natural",
+       0.7
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.57
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 6,
+   "id": "c005",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "hardware",
+     0.68
+    ],
+    [
+     "unsure",
+     0.65
+    ],
+    [
+     "hardware",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "hardware",
+       0.65
+      ],
+      [
+       "hardware",
+       0.8
+      ],
+      [
+       "hardware",
+       0.7
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 5.86
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 7,
+   "id": "c006",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.8
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 24.04
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 8,
+   "id": "c007",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.72
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.57
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 9,
+   "id": "c008",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.62
+    ],
+    [
+     "natural",
+     0.72
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.68
+      ],
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "natural",
+       0.8
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 6.48
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 10,
+   "id": "c009",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by votes only",
+   "votes": [
+    [
+     "natural",
+     0.7
+    ],
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.78
+      ],
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "natural",
+       0.82
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 18.81
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 11,
+   "id": "c010",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "natural",
+       0.75
+      ],
+      [
+       "natural",
+       0.7
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 7.38
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 12,
+   "id": "c011",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.85
+      ],
+      [
+       "natural",
+       0.78
+      ],
+      [
+       "natural",
+       0.82
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 6.33
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 13,
+   "id": "c012",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.68
+      ],
+      [
+       "natural",
+       0.8
+      ],
+      [
+       "natural",
+       0.76
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 5.7
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 14,
+   "id": "c013",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.75
+      ],
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "natural",
+       0.6
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 5.73
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 15,
+   "id": "c014",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "natural",
+       0.68
+      ],
+      [
+       "natural",
+       0.85
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 7.27
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 16,
+   "id": "c015",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "natural",
+       0.82
+      ],
+      [
+       "natural",
+       0.82
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.61
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 17,
+   "id": "c016",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "hardware",
+       0.72
+      ],
+      [
+       "unsure",
+       0.6
+      ],
+      [
+       "unsure",
+       0.65
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 7.14
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 18,
+   "id": "c017",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.72
+      ],
+      [
+       "natural",
+       0.82
+      ],
+      [
+       "natural",
+       0.75
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.99
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 19,
+   "id": "c018",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "natural",
+       0.7
+      ],
+      [
+       "natural",
+       0.7
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.72
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 20,
+   "id": "c019",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "unsure",
+       0.75
+      ],
+      [
+       "natural",
+       0.65
+      ],
+      [
+       "natural",
+       0.85
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.26
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 1,
+   "id": "c000",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.9
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests.sam_edge"
+    ],
+    "reason": "Advisory votes describe crater shading with soft irregular rims and inconclusive edge contrast supports retaining the current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "fail"
+   },
+   "sam_equiv_diameter_m": 24.76
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 2,
+   "id": "c001",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.9
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory votes describe a smooth circular depression with sunlit rim and shadow consistent with retaining the current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.13
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 3,
+   "id": "c002",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.72
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.8
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory votes describe soft edged bright rim with dark interior matching crater shading consistent with current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 23.25
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 4,
+   "id": "c003",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory votes describe a soft gradated bowl with bright crescent rim consistent with retaining the current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "fail"
+   },
+   "sam_equiv_diameter_m": 16.53
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 5,
+   "id": "c004",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.85
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory votes describe a round dark depression with arcuate sunlit rim consistent with retaining the current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 19.06
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 6,
+   "id": "c005",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.82
+    ],
+    [
+     "natural",
+     0.78
+    ],
+    [
+     "natural",
+     0.78
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory votes describe a round dark depression with curved sunlit rim consistent with retaining the current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 17.26
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 7,
+   "id": "c006",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.86
+    ],
+    [
+     "natural",
+     0.8
+    ],
+    [
+     "natural",
+     0.85
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory votes describe a soft curved crescent pair forming a circular depression consistent with retaining the current grade."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 18.19
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 8,
+   "id": "c007",
+   "branch": "sheet",
+   "on_piece": [
+    "schiaparelli:parachute",
+    "schiaparelli:backshell"
+   ],
+   "kinds": [
+    "fabric",
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [
+    [
+     "natural",
+     0.62
+    ],
+    [
+     "hardware",
+     0.88
+    ],
+    [
+     "hardware",
+     0.78
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 2 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "reason": "Hardware-leaning advisory votes are balanced by single-date persistence, so the current grade is retained without raising."
+   },
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "hardware",
+       0.82
+      ],
+      [
+       "hardware",
+       0.8
+      ],
+      [
+       "hardware",
+       0.88
+      ]
+     ],
+     "rule": "needs second look"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 8.37
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 9,
+   "id": "c008",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.72
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 8.17
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 10,
+   "id": "c009",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.9
+    ],
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 21.9
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 11,
+   "id": "c010",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 16.72
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 12,
+   "id": "c011",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "fail"
+   },
+   "sam_equiv_diameter_m": 15.86
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 13,
+   "id": "c012",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 15.56
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 14,
+   "id": "c013",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 17.63
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 15,
+   "id": "c014",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 12.39
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 16,
+   "id": "c015",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 16.15
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 17,
+   "id": "c016",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 18.84
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 18,
+   "id": "c017",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 25.49
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 19,
+   "id": "c018",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.1
+  },
+  {
+   "strip": "ESP_048041_1780",
+   "rank": 20,
+   "id": "c019",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.78
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 1,
+   "id": "c000",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.9
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.85
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 16.62
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 2,
+   "id": "c001",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 23.64
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 3,
+   "id": "c002",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.85
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 21.11
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 4,
+   "id": "c003",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.9
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 18.51
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 5,
+   "id": "c004",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.9
+    ],
+    [
+     "natural",
+     0.78
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 14.96
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 6,
+   "id": "c005",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.84
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 21.14
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 7,
+   "id": "c006",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 17.55
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 8,
+   "id": "c007",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.86
+    ],
+    [
+     "natural",
+     0.8
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 14.01
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 9,
+   "id": "c008",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.9
+    ],
+    [
+     "natural",
+     0.92
+    ],
+    [
+     "natural",
+     0.85
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 20.26
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 10,
+   "id": "c009",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.88
+    ],
+    [
+     "natural",
+     0.85
+    ],
+    [
+     "natural",
+     0.88
+    ]
+   ],
+   "vote_note": "lowered by votes: 3 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "fail"
+   },
+   "sam_equiv_diameter_m": 15.15
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 11,
+   "id": "c010",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.85
+      ],
+      [
+       "natural",
+       0.88
+      ],
+      [
+       "natural",
+       0.88
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 7.67
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 12,
+   "id": "c011",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.82
+      ],
+      [
+       "natural",
+       0.8
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 17.21
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 13,
+   "id": "c012",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.89
+      ],
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.82
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 11.08
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 14,
+   "id": "c013",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.92
+      ],
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.85
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 16.34
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 15,
+   "id": "c014",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.93
+      ],
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.9
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 17.36
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 16,
+   "id": "c015",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.92
+      ],
+      [
+       "natural",
+       0.95
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 25.93
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 17,
+   "id": "c016",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.9
+      ],
+      [
+       "natural",
+       0.85
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 15.09
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 18,
+   "id": "c017",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [
+    "more_votes"
+   ],
+   "more_votes": [
+    {
+     "votes": [
+      [
+       "natural",
+       0.93
+      ],
+      [
+       "natural",
+       0.95
+      ],
+      [
+       "natural",
+       0.75
+      ]
+     ],
+     "rule": "likely natural"
+    }
+   ],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 12.46
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 19,
+   "id": "c018",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.24
+  },
+  {
+   "strip": "ESP_073625_1780",
+   "rank": 20,
+   "id": "c019",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 22.78
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 1,
+   "id": "c000",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [
+    [
+     "unsure",
+     0.85
+    ],
+    [
+     "unsure",
+     0.65
+    ],
+    [
+     "natural",
+     0.75
+    ]
+   ],
+   "vote_note": "kept: 1 natural, 0 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "votes",
+     "sam"
+    ],
+    "reason": "All physical tests remain unsure with only one date available and mixed advisory votes, so continued review is warranted."
+   },
+   "checks": [
+    "second_date_check"
+   ],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.03
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 2,
+   "id": "c001",
+   "branch": "bright",
+   "on_piece": [
+    "phoenix:backshell"
+   ],
+   "kinds": [
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "needs second look",
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [
+    [
+     "hardware",
+     0.75
+    ],
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.65
+    ]
+   ],
+   "vote_note": "kept: 0 natural, 1 hardware at or above 0.7",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "votes"
+    ],
+    "reason": "All physical tests remain unsure with single-date persistence and split advisory votes, so continued review is warranted."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.69
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 3,
+   "id": "c002",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": "likely natural",
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "votes"
+   ],
+   "status": "lowered",
+   "votes": [
+    [
+     "natural",
+     0.65
+    ],
+    [
+     "natural",
+     0.75
+    ],
+    [
+     "natural",
+     0.7
+    ]
+   ],
+   "vote_note": "lowered by votes: 2 natural at or above 0.7, none hardware",
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "votes",
+     "persistence"
+    ],
+    "reason": "All physical tests remain unsure with single-date persistence and consistent natural advisory votes, so the current grade stands."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.57
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 4,
+   "id": "c003",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "likely natural",
+   "lowered_by": [
+    "review"
+   ],
+   "status": "lowered",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "The edge test shows fail with single-date persistence and a fragmented mask, so the grade is lowered."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "fail"
+   },
+   "sam_equiv_diameter_m": 13.68
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 5,
+   "id": "c004",
+   "branch": "dark_compact",
+   "on_piece": [
+    "phoenix:heat_shield"
+   ],
+   "kinds": [
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.81
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 6,
+   "id": "c005",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.76
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 7,
+   "id": "c006",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.74
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 8,
+   "id": "c007",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 10.6
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 9,
+   "id": "c008",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.85
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 10,
+   "id": "c009",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.81
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 11,
+   "id": "c010",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.73
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 12,
+   "id": "c011",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.19
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 13,
+   "id": "c012",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.05
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 14,
+   "id": "c013",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.86
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 15,
+   "id": "c014",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 9.75
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 16,
+   "id": "c015",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.32
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 17,
+   "id": "c016",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 5.14
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 18,
+   "id": "c017",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.88
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 19,
+   "id": "c018",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.93
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 20,
+   "id": "c019",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "unassessed",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": null,
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.31
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 1,
+   "id": "c000",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.19
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 2,
+   "id": "c001",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Size and edge tests show pass outcomes but persistence remains single-date so grade is retained."
+   },
+   "checks": [
+    "second_date_check"
+   ],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 22.62
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 3,
+   "id": "c002",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.88
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 4,
+   "id": "c003",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.78
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 5,
+   "id": "c004",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.2
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 6,
+   "id": "c005",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.81
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 7,
+   "id": "c006",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.78
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 8,
+   "id": "c007",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.76
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 9,
+   "id": "c008",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.41
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 10,
+   "id": "c009",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.6
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 11,
+   "id": "c010",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.69
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 12,
+   "id": "c011",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.85
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 13,
+   "id": "c012",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.87
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 14,
+   "id": "c013",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.81
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 15,
+   "id": "c014",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.78
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 16,
+   "id": "c015",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.91
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 17,
+   "id": "c016",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.83
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 18,
+   "id": "c017",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.75
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 19,
+   "id": "c018",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Size and edge tests show pass outcomes but persistence remains single-date so grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 4.59
+  },
+  {
+   "strip": "ESP_053451_2485",
+   "rank": 20,
+   "id": "c019",
+   "branch": "dark",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence"
+    ],
+    "reason": "Tests are unsure and persistence coverage is limited so the grade is retained."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "not run",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.41
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 1,
+   "id": "c000",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.29
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 2,
+   "id": "c001",
+   "branch": "shadow",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.64
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 3,
+   "id": "c002",
+   "branch": "shadow",
+   "on_piece": [
+    "viking1:lander"
+   ],
+   "kinds": [
+    "hardware"
+   ],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.11
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 4,
+   "id": "c003",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.78
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 5,
+   "id": "c004",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.57
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 6,
+   "id": "c005",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.36
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 7,
+   "id": "c006",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.69
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 8,
+   "id": "c007",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.65
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 9,
+   "id": "c008",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.24
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 10,
+   "id": "c009",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": "wonder: 260 + 1 calls would pass the cap of 260",
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.54
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 11,
+   "id": "c010",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 1.72
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 12,
+   "id": "c011",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.43
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 13,
+   "id": "c012",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 3.06
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 14,
+   "id": "c013",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.52
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 15,
+   "id": "c014",
+   "branch": "sheet",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Physical tests pass with single-date persistence and no second date available, so grade stays."
+   },
+   "checks": [
+    "second_date_check"
+   ],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "pass",
+    "sam_shape": "not run",
+    "sam_edge": "pass"
+   },
+   "sam_equiv_diameter_m": 12.7
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 16,
+   "id": "c015",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.46
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 17,
+   "id": "c016",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.39
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 18,
+   "id": "c017",
+   "branch": "dark_compact",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.63
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 19,
+   "id": "c018",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 2.76
+  },
+  {
+   "strip": "ESP_046170_2025",
+   "rank": 20,
+   "id": "c019",
+   "branch": "bright",
+   "on_piece": [],
+   "kinds": [],
+   "grade_detector": "needs second look",
+   "grade_after_votes": null,
+   "grade_final": "needs second look",
+   "lowered_by": [],
+   "status": "kept by review",
+   "votes": [],
+   "vote_note": null,
+   "vote_not_run": null,
+   "verdict": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "reason": "Tests remain unsure with single-date persistence and edge-touching mask, so grade stays."
+   },
+   "checks": [],
+   "more_votes": [],
+   "sam_tests": {
+    "sam_size": "unsure",
+    "sam_shape": "unsure",
+    "sam_edge": "unsure"
+   },
+   "sam_equiv_diameter_m": 4.9
+  }
+ ]
+}

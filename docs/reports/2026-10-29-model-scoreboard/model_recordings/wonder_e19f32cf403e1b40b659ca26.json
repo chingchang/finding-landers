@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fbd88844f5a5547d4c6dd93ec5e94cb26c0bf708a0055c8755bc402b0922df39",
+        "bytes": 75723
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "e0026856032c32a895d8137e67d1ff62ec677ec974bf0e016120ad18622cf5fa",
+        "bytes": 8368
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.82,
+   "reason": "The centre shows a saturated-white, crisp-edged teardrop body with internal black structure and a separate smaller bright disc below it, sharply unlike the grainy grey terrain and soft dark pits around it.",
+   "verdict": "hardware"
+  },
+  "raw": "{\"confidence\": 0.82, \"reason\": \"The centre shows a saturated-white, crisp-edged teardrop body with internal black structure and a separate smaller bright disc below it, sharply unlike the grainy grey terrain and soft dark pits around it.\", \"verdict\": \"hardware\"}",
+  "input_tokens": 373,
+  "output_tokens": 564
+ }
+}

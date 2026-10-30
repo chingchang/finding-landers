@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "eef23f8d3cdd0a422e6bb2d385a79127ed6c8d3fa75b0056e8ee297c78b703ba",
+        "bytes": 133002
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "7b205d0316bc145fc25bcbec590a49607789ebaa77f6f8c25481e226e8c5acfc",
+        "bytes": 8013
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.82,
+   "reason": "The centre shows an irregular dark shadowed depression with a bright rim on one side, matching the small craters scattered in the surrounding terrain rather than a crisp manufactured outline.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.82, \"reason\": \"The centre shows an irregular dark shadowed depression with a bright rim on one side, matching the small craters scattered in the surrounding terrain rather than a crisp manufactured outline.\", \"verdict\": \"natural\"}",
+  "input_tokens": 373,
+  "output_tokens": 552
+ }
+}

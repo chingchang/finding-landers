@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f38b67017882f84142d85f8ebd477ea2f6bf6becb6d3ce66d557e2a83c88c688",
+        "bytes": 124233
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fb1e4a008c804d9ee7fbb6eaf4b0ba7ee83552d5e30c054f32b1de8d3756caed",
+        "bytes": 8968
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.88,
+   "reason": "The centre shows a roughly circular bright-lit wall and dark shadowed bowl with an irregular grainy rim identical in tone and texture to the smaller crater nearby, with no crisp outline or cast shadow of a raised object.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.88, \"reason\": \"The centre shows a roughly circular bright-lit wall and dark shadowed bowl with an irregular grainy rim identical in tone and texture to the smaller crater nearby, with no crisp outline or cast shadow of a raised object.\", \"verdict\": \"natural\"}",
+  "input_tokens": 373,
+  "output_tokens": 498
+ }
+}

@@ -77,7 +77,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 9b. [done, see docs/reports/2026-10-29-first-real-run.md] First real run, after MODEL_API_KEY is in the environment and a person asks: recognition probe on
    Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
    ledger and tool log committed with the report; grades can only go down.
-9c. [ ] Model-layer scoreboard on the tuning sites (a person asked for it on 10-29 and approved the spend; caps
+9c. [done, see docs/reports/2026-10-29-model-scoreboard.md] Model-layer scoreboard on the tuning sites (a person asked for it on 10-29 and approved the spend; caps
     below). Question: what do SAM, the Wonder votes and the Spark review add on top of the frozen detector, and do
     they ever lower a real piece? Input: the frozen-v1 lists for the eight tuning strips with landers/shape_v3.json
     applied (the data worktree beside this one holds them under out/shape_v3/; rebuild from the tag if needed).

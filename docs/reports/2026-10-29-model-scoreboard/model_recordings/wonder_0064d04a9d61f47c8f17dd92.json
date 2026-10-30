@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "51a3434189959a57ccd8561eca8f90ed5cd1ba96856049ba22af368d321f35c4",
+        "bytes": 87796
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "3fb23c3b10d78a1b38e9140ee6f5d8e9c88209f543f8bb25eb6112bf65f5f24f",
+        "bytes": 8836
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fcb6ab90a9639e4ed45db064b9ca64b30a2f70aba6bed7eefdd55e4e1213053c",
+        "bytes": 74489
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.72,
+   "reason": "The enlarged centre shows a mottled, irregular bright blob with fuzzy granular edges and no straight outlines or crisp manufactured shadow, matching a natural rock or bright surface patch.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.72, \"reason\": \"The enlarged centre shows a mottled, irregular bright blob with fuzzy granular edges and no straight outlines or crisp manufactured shadow, matching a natural rock or bright surface patch.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 581
+ }
+}

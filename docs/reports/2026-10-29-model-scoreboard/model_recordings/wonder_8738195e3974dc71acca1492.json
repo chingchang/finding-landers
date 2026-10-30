@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a9ff9acdcdead7937eab87b7ab2aab2736323e6fff5f1a868f929fa102085ce1",
+        "bytes": 94713
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "3c22fad85ca8f6b8b108169a7b4edec1f25a7a4819316670ce07357b2b854762",
+        "bytes": 8990
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.82,
+   "reason": "The enlarged centre shows only diffuse mottled tonal variations continuous with the surrounding textured terrain, with no crisp straight edges, uniform manufactured albedo, or detached shadow of a raised body.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.82,\"reason\": \"The enlarged centre shows only diffuse mottled tonal variations continuous with the surrounding textured terrain, with no crisp straight edges, uniform manufactured albedo, or detached shadow of a raised body.\",\"verdict\": \"natural\"}",
+  "input_tokens": 373,
+  "output_tokens": 450
+ }
+}

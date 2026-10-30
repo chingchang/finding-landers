@@ -1,0 +1,264 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   },
+   {
+    "role": "assistant",
+    "content": "Grading every strip_a candidate \u2014 collecting the evidence.",
+    "tool_calls": [
+     {
+      "id": "call_5e0db83b-4236-45d2-812d-0230983d8fec",
+      "type": "function",
+      "function": {
+       "name": "list_candidates",
+       "arguments": "{\"strip_key\":\"strip_a\"}"
+      }
+     },
+     {
+      "id": "call_aa0a6f9b-ce8e-4925-aea2-9c637b9d633b",
+      "type": "function",
+      "function": {
+       "name": "read_thresholds",
+       "arguments": "{}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_5e0db83b-4236-45d2-812d-0230983d8fec",
+    "content": "{\"strip_key\": \"strip_a\", \"candidates\": [{\"id\": \"c000\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 6.876, \"area_px\": 2464, \"shape\": {\"raw_score\": 10.81}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.6, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.12, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.71, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.52, \"area_px\": 4347, \"area_m2\": 271.69, \"equiv_diameter_m\": 18.6, \"centroid_row\": 118.4, \"centroid_col\": 118.5, \"pieces\": 21, \"major_m\": 20.21, \"minor_m\": 17.79, \"elongation\": 0.12, \"fill\": 0.625, \"circularity\": 0.354, \"touches_box_edge\": false, \"edge_contrast\": 2.71}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.72, \"reason\": \"The bright central patch has diffuse, irregular, saturated edges with no crisp or geometric outline and no shadow of a raised body, blending into the surrounding rippled ground.\"}, {\"verdict\": \"natural\", \"confidence\": 0.82, \"reason\": \"The bright patch has diffuse, speckled edges with no straight crisp outline or cast shadow, blending into the underlying rippled ground like a surface frost or dust deposit.\"}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows only diffuse mottled ripple texture continuous with the surrounding terrain, with no crisp outline or shadow of a raised body.\"}]}, {\"id\": \"c001\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 6.752, \"area_px\": 3792, \"shape\": {\"raw_score\": 10.697}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 19.47, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.506, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 4.93, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.734, \"area_px\": 4762, \"area_m2\": 297.62, \"equiv_diameter_m\": 19.47, \"centroid_row\": 121.9, \"centroid_col\": 123.3, \"pieces\": 5, \"major_m\": 31.31, \"minor_m\": 15.48, \"elongation\": 0.506, \"fill\": 0.374, \"circularity\": 0.358, \"touches_box_edge\": true, \"edge_contrast\": 4.93}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows a diffuse, mottled bright patch with fuzzy gradational edges and no crisp straight outline or distinct raised-body shadow, consistent with bright rock or dust rather than hardware.\"}, {\"verdict\": \"natural\", \"confidence\": 0.78, \"reason\": \"The centre patch has diffuse, irregular, mottled edges with no straight lines, crisp outline, or distinct raised-body shadow, and similar bright patches occur nearby, consistent with a sunlit natural rock or slope.\"}, {\"verdict\": \"natural\", \"confidence\": 0.75, \"reason\": \"The enlarged centre shows a mottled, irregularly edged white blotch with diffuse boundaries and no straight edges, symmetry, or distinct cast shadow, matching a bright natural rock or frost patch.\"}]}, {\"id\": \"c002\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.586, \"area_px\": 1840, \"shape\": {\"raw_score\": 9.64}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 24.31, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.155, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.94, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.594, \"area_px\": 7429, \"area_m2\": 464.31, \"equiv_diameter_m\": 24.31, \"centroid_row\": 131.4, \"centroid_col\": 127.3, \"pieces\": 13, \"major_m\": 26.78, \"minor_m\": 22.64, \"elongation\": 0.155, \"fill\": 0.832, \"circularity\": 0.41, \"touches_box_edge\": true, \"edge_contrast\": 1.94}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.8, \"reason\": \"The centre shows a large saturated-white sharply-edged triangular form with a curved strap-like appendage separated by a dark shadow, unlike the diffuse small bright rocks in the reference terrain.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.86, \"reason\": \"The centre shows a saturated-white, sharply angular triangular form with straight crisp edges and a dark internal stripe, far brighter and more geometric than any feature in the surrounding or reference terrain.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The centre object has a crisp straight edge, a uniformly bright flat face with an internal fold line, and an adjacent dark shadow, unlike the diffuse mottled terrain around it.\"}]}, {\"id\": \"c003\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.117, \"area_px\": 1376, \"shape\": {\"raw_score\": 9.215}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.11, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.27, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.47, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.59, \"area_px\": 2870, \"area_m2\": 179.38, \"equiv_diameter_m\": 15.11, \"centroid_row\": 123.4, \"centroid_col\": 122.6, \"pieces\": 25, \"major_m\": 18.11, \"minor_m\": 13.22, \"elongation\": 0.27, \"fill\": 0.642, \"circularity\": 0.412, \"touches_box_edge\": false, \"edge_contrast\": 3.47}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch has irregular, diffuse margins and flat saturated albedo with no crisp outline or adjacent raised-body shadow, consistent with a sunlit rock facet or dust/frost patch rather than manufactured hardware.\"}, {\"verdict\": \"unsure\", \"confidence\": 0.7, \"reason\": \"The bright patch is saturated and irregular with soft pixel edges and no clear raised-body shadow or manufactured structure, so the pixels do not distinguish hardware from a natural bright deposit.\"}, {\"verdict\": \"natural\", \"confidence\": 0.6, \"reason\": \"The centre object is an amorphous, uniformly saturated bright patch with a rounded irregular outline and no raised-body shadow or angular geometry, consistent with a frost or dust exposure.\"}]}, {\"id\": \"c004\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 5.029, \"area_px\": 1168, \"shape\": {\"raw_score\": 9.135}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 11.93, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.446, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.58, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.629, \"area_px\": 1788, \"area_m2\": 111.75, \"equiv_diameter_m\": 11.93, \"centroid_row\": 125.1, \"centroid_col\": 125.6, \"pieces\": 12, \"major_m\": 16.64, \"minor_m\": 9.22, \"elongation\": 0.446, \"fill\": 0.542, \"circularity\": 0.374, \"touches_box_edge\": false, \"edge_contrast\": 3.58}, \"votes\": [{\"verdict\": \"unsure\", \"confidence\": 0.7, \"reason\": \"The centre is a saturated white elongated blob with diffuse, pixelated edges and no discernible crisp or rectilinear outline or adjacent raised-body shadow, so the pixels cannot distinguish glinting hardware from a bright rock or frost patch.\"}, {\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The saturated bright patch has an irregular shadowless outline with no straight edges or internal structure, and a similar small bright speck occurs nearby in the rippled terrain, consistent with a natural high-albedo rock or frost/dust patch.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The central bright patch has irregular, fuzzy edges with no crisp or geometric outline and no adjacent shadow of a raised body, blending into the surrounding rippled terrain like a natural bright rock or frost exposure.\"}]}, {\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 3.541, \"area_px\": 1328, \"shape\": {\"raw_score\": 7.786}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.4, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.047, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 0.34, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.715, \"area_px\": 6307, \"area_m2\": 394.19, \"equiv_diameter_m\": 22.4, \"centroid_row\": 127.7, \"centroid_col\": 125.3, \"pieces\": 6, \"major_m\": 23.37, \"minor_m\": 22.28, \"elongation\": 0.047, \"fill\": 0.894, \"circularity\": 0.488, \"touches_box_edge\": true, \"edge_contrast\": 0.34}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The central bright blob has irregular, fuzzy, mottled edges matching the larger bright patch to its northeast, with no straight crisp outline or distinct raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.72, \"reason\": \"The central bright patch has diffuse, mottled, grainy edges and internal texture matching the adjacent bright ground on the left, with no crisp geometric outline or distinct raised-body shadow.\"}, {\"verdict\": \"natural\", \"confidence\": 0.72, \"reason\": \"The enlarged centre shows a mottled, irregular bright blob with fuzzy granular edges and no straight outlines or crisp manufactured shadow, matching a natural rock or bright surface patch.\"}]}, {\"id\": \"c006\", \"branch\": \"sheet\", \"grade\": \"likely natural\", \"score\": 3.487, \"area_px\": 2048, \"shape\": {\"raw_score\": 7.737}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 17.02, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.479, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.6, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.633, \"area_px\": 3639, \"area_m2\": 227.44, \"equiv_diameter_m\": 17.02, \"centroid_row\": 126.0, \"centroid_col\": 123.8, \"pieces\": 45, \"major_m\": 25.47, \"minor_m\": 13.28, \"elongation\": 0.479, \"fill\": 0.471, \"circularity\": 0.136, \"touches_box_edge\": false, \"edge_contrast\": 2.6}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.8, \"reason\": \"The central bright patch has irregular, diffuse, speckled edges that merge with the surrounding ridged texture and shows no crisp outline or cast shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.85, \"reason\": \"The central bright patch is diffuse and irregular with feathery, pixel-graduated edges following the wavy terrain texture, showing no straight outline or distinct cast shadow of a raised object.\"}, {\"verdict\": \"natural\", \"confidence\": 0.82, \"reason\": \"The central bright patch has diffuse, irregular grainy margins blending into the rippled terrain with no crisp geometric outline or cast shadow of a raised body.\"}]}, {\"id\": \"c007\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 3.111, \"area_px\": 148, \"shape\": {\"circularity\": 1.0, \"fill\": 0.705, \"elongation\": 0.258, \"edge_sharpness\": 0.15, \"tile_rank\": 0, \"raw_score\": 14.643}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 6.05, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"pass\", \"value\": 0.116, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 9.0, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.789, \"area_px\": 460, \"area_m2\": 28.75, \"equiv_diameter_m\": 6.05, \"centroid_row\": 127.9, \"centroid_col\": 128.8, \"pieces\": 2, \"major_m\": 6.47, \"minor_m\": 5.72, \"elongation\": 0.116, \"fill\": 0.708, \"circularity\": 1.0, \"touches_box_edge\": false, \"edge_contrast\": 9.0}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.85, \"reason\": \"The centre has a saturated-white, crisp diamond-shaped body surrounding a solid black core, an extreme contrast and regular outline absent from the mottled natural terrain in the reference image.\"}, {\"verdict\": \"natural\", \"confidence\": 0.78, \"reason\": \"The centre shows an irregular bright halo with an off-centre dark pit and dark radiating ejecta streaks, with no straight edges, symmetry, or crisp raised-body shadow, consistent with a fresh impact crater exposing bright subsurface material.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The centre object is a saturated-white, crisp-edged teardrop with a solid black oval interior and a nearby small bright fragment, sharply unlike the mottled grey terrain and the reference ground.\"}]}, {\"id\": \"c008\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.106, \"area_px\": 416, \"shape\": {\"raw_score\": 7.391}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 9.95, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.428, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 1.3, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.57, \"area_px\": 1244, \"area_m2\": 77.75, \"equiv_diameter_m\": 9.95, \"centroid_row\": 126.3, \"centroid_col\": 127.8, \"pieces\": 7, \"major_m\": 13.4, \"minor_m\": 7.67, \"elongation\": 0.428, \"fill\": 0.575, \"circularity\": 0.467, \"touches_box_edge\": false, \"edge_contrast\": 1.3}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The central feature is a saturated, irregularly lobed white patch with fuzzy edges and no straight outline or cast shadow, consistent with a bright natural rock or frost patch rather than raised hardware.\"}, {\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The central bright patch has an irregular amorphous outline with no straight geometric edges or coherent shadow from a raised body, consistent with a flat natural albedo/frost feature.\"}, {\"verdict\": \"unsure\", \"confidence\": 0.6, \"reason\": \"The centre is only a small saturated white blob with pixelated irregular edges and no distinct shadow or geometric outline to separate hardware from a bright natural rock or frost patch.\"}]}, {\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 3.054, \"area_px\": 1888, \"shape\": {\"raw_score\": 7.345}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 24.57, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.31, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.6, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.688, \"area_px\": 7587, \"area_m2\": 474.19, \"equiv_diameter_m\": 24.57, \"centroid_row\": 128.2, \"centroid_col\": 129.0, \"pieces\": 4, \"major_m\": 29.83, \"minor_m\": 20.58, \"elongation\": 0.31, \"fill\": 0.744, \"circularity\": 0.461, \"touches_box_edge\": true, \"edge_contrast\": 1.6}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The enlarged centre shows a diffuse, speckled bright patch with fuzzy irregular edges and a soft adjacent shadow, consistent with a sunlit raised rock and lacking any straight edges or crisp uniform outline.\"}, {\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The centre object is a rounded, irregular, grainy-saturated bright blob with a diffuse north-west edge and only a rock-like south-east shadow, showing no crisp, straight or geometric manufactured outline in the enlarged pixels.\"}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright spot has a diffuse oval edge and soft adjacent shadow that blend into the surrounding grainy natural texture, with no crisp, straight manufactured outline visible in the enlarged view.\"}]}, {\"id\": \"c010\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": 2.913, \"area_px\": 14, \"shape\": {\"circularity\": 1.0, \"fill\": 0.5, \"elongation\": 0.703, \"edge_sharpness\": 0.327, \"tile_rank\": 0, \"raw_score\": 12.744}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 2.43, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.435, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 3.22, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.754, \"area_px\": 74, \"area_m2\": 4.62, \"equiv_diameter_m\": 2.43, \"centroid_row\": 128.2, \"centroid_col\": 127.7, \"pieces\": 1, \"major_m\": 3.26, \"minor_m\": 1.84, \"elongation\": 0.435, \"fill\": 0.673, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 3.22}}, {\"id\": \"c011\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.859, \"area_px\": 1440, \"shape\": {\"raw_score\": 7.167}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.16, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.146, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"fail\", \"value\": 0.79, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.664, \"area_px\": 4142, \"area_m2\": 258.88, \"equiv_diameter_m\": 18.16, \"centroid_row\": 128.4, \"centroid_col\": 132.7, \"pieces\": 11, \"major_m\": 20.41, \"minor_m\": 17.44, \"elongation\": 0.146, \"fill\": 0.664, \"circularity\": 0.364, \"touches_box_edge\": false, \"edge_contrast\": 0.79}}, {\"id\": \"c012\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.611, \"area_px\": 576, \"shape\": {\"raw_score\": 6.943}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 9.66, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.183, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.4, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.645, \"area_px\": 1173, \"area_m2\": 73.31, \"equiv_diameter_m\": 9.66, \"centroid_row\": 131.4, \"centroid_col\": 127.9, \"pieces\": 1, \"major_m\": 10.92, \"minor_m\": 8.92, \"elongation\": 0.183, \"fill\": 0.699, \"circularity\": 0.711, \"touches_box_edge\": false, \"edge_contrast\": 3.4}}, {\"id\": \"c013\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.522, \"area_px\": 4080, \"shape\": {\"raw_score\": 6.862}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 35.01, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.302, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 2.63, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.762, \"area_px\": 15403, \"area_m2\": 962.69, \"equiv_diameter_m\": 35.01, \"centroid_row\": 128.0, \"centroid_col\": 129.5, \"pieces\": 5, \"major_m\": 42.23, \"minor_m\": 29.46, \"elongation\": 0.302, \"fill\": 0.743, \"circularity\": 0.329, \"touches_box_edge\": true, \"edge_contrast\": 2.63}}, {\"id\": \"c014\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.472, \"area_px\": 1648, \"shape\": {\"raw_score\": 6.817}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 15.2, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.221, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.84, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.699, \"area_px\": 2904, \"area_m2\": 181.5, \"equiv_diameter_m\": 15.2, \"centroid_row\": 129.3, \"centroid_col\": 116.1, \"pieces\": 5, \"major_m\": 19.08, \"minor_m\": 14.87, \"elongation\": 0.221, \"fill\": 0.553, \"circularity\": 0.428, \"touches_box_edge\": false, \"edge_contrast\": 2.84}}, {\"id\": \"c015\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.311, \"area_px\": 2240, \"shape\": {\"raw_score\": 6.67}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 18.23, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.596, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 3.79, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.844, \"area_px\": 4175, \"area_m2\": 260.94, \"equiv_diameter_m\": 18.23, \"centroid_row\": 128.3, \"centroid_col\": 119.1, \"pieces\": 2, \"major_m\": 29.82, \"minor_m\": 12.04, \"elongation\": 0.596, \"fill\": 0.488, \"circularity\": 0.674, \"touches_box_edge\": false, \"edge_contrast\": 3.79}}, {\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.108, \"area_px\": 1248, \"shape\": {\"raw_score\": 6.487}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 15.8, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.274, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 2.49, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.707, \"area_px\": 3139, \"area_m2\": 196.19, \"equiv_diameter_m\": 15.8, \"centroid_row\": 126.0, \"centroid_col\": 127.2, \"pieces\": 5, \"major_m\": 20.18, \"minor_m\": 14.65, \"elongation\": 0.274, \"fill\": 0.558, \"circularity\": 0.39, \"touches_box_edge\": true, \"edge_contrast\": 2.49}}, {\"id\": \"c017\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 2.036, \"area_px\": 1936, \"shape\": {\"raw_score\": 6.421}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 22.4, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.328, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.07, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.598, \"area_px\": 6308, \"area_m2\": 394.25, \"equiv_diameter_m\": 22.4, \"centroid_row\": 123.6, \"centroid_col\": 132.3, \"pieces\": 8, \"major_m\": 28.45, \"minor_m\": 19.1, \"elongation\": 0.328, \"fill\": 0.693, \"circularity\": 0.264, \"touches_box_edge\": true, \"edge_contrast\": 1.07}}, {\"id\": \"c018\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": 1.979, \"area_px\": 37, \"shape\": {\"circularity\": 1.0, \"fill\": 0.755, \"elongation\": 0.097, \"edge_sharpness\": 0.292, \"tile_rank\": 0, \"shadow_len_px\": 5.8, \"raw_score\": 25.265}, \"tests\": {\"sam_size\": {\"outcome\": \"unsure\", \"value\": 3.36, \"limit\": [1.0, 10.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"unsure\", \"value\": 0.165, \"limit\": 0.6, \"unit\": \"elongation, 1 - sqrt(minor/major)\"}, \"sam_edge\": {\"outcome\": \"unsure\", \"value\": 1.37, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.688, \"area_px\": 142, \"area_m2\": 8.88, \"equiv_diameter_m\": 3.36, \"centroid_row\": 127.2, \"centroid_col\": 128.4, \"pieces\": 1, \"major_m\": 3.71, \"minor_m\": 3.1, \"elongation\": 0.165, \"fill\": 0.724, \"circularity\": 1.0, \"touches_box_edge\": true, \"edge_contrast\": 1.37}}, {\"id\": \"c019\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": 1.895, \"area_px\": 3504, \"shape\": {\"raw_score\": 6.293}, \"tests\": {\"sam_size\": {\"outcome\": \"pass\", \"value\": 20.12, \"limit\": [8.0, 25.0], \"unit\": \"m, equivalent diameter\"}, \"sam_shape\": {\"outcome\": \"not run\", \"value\": 0.258, \"limit\": null, \"unit\": \"no shape claim for this branch\"}, \"sam_edge\": {\"outcome\": \"pass\", \"value\": 2.17, \"limit\": 1.0, \"unit\": \"sigma of the surrounding ring\"}}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"sam\": {\"found\": true, \"confidence\": 0.754, \"area_px\": 5086, \"area_m2\": 317.88, \"equiv_diameter_m\": 20.12, \"centroid_row\": 128.9, \"centroid_col\": 128.2, \"pieces\": 10, \"major_m\": 25.91, \"minor_m\": 19.23, \"elongation\": 0.258, \"fill\": 0.403, \"circularity\": 0.399, \"touches_box_edge\": false, \"edge_contrast\": 2.17}}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_aa0a6f9b-ce8e-4925-aea2-9c637b9d633b",
+    "content": "{\"version\": 1, \"basis\": \"docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.\", \"match_radius_m\": 5.0, \"match_radius_m_by_kind\": {\"mark\": 20.0}, \"piece_kinds\": {\"hardware\": [\"lander\", \"backshell\", \"heat_shield\", \"rover\"], \"fabric\": [\"parachute\"], \"mark\": [\"crash_scar\", \"descent_stage\"]}, \"top_n\": 20, \"pass\": {\"min_recall_at_n\": 0.8, \"max_false_alarms_per_km2\": 2.0}}"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "I've got the starter grades and thresholds \u2014 now pulling detailed records for the close calls.",
+  "tool_calls": [
+   {
+    "id": "call_61292d14-03a3-4205-b357-e80419bd20a9",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c002\"}"
+    }
+   },
+   {
+    "id": "call_a563a0f4-6cb2-4e86-8a04-56dbf4385642",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c007\"}"
+    }
+   },
+   {
+    "id": "call_4119dfaf-f416-411a-8a56-ef9cc53884fa",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c010\"}"
+    }
+   },
+   {
+    "id": "call_a0a8ebf0-a7df-4179-9562-a6f1c72dba5f",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c003\"}"
+    }
+   },
+   {
+    "id": "call_4f3a9276-5bb6-4c08-8cd3-6af58b5b32dc",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c011\"}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 9819,
+  "output_tokens": 1656
+ }
+}

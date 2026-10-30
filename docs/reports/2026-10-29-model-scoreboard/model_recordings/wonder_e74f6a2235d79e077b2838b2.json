@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "0a6c2ee0695f56d177dbcfe348f88c41286a30cc08ec3e14428f882eca6ae2f0",
+        "bytes": 88866
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "6010ece969814a782b272d9268adc397979e6202888a0513b4d8f32e7f209623",
+        "bytes": 7699
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c2532f1be6e8eaf17abe085c73bfc4ad163f35a7f32c58d44d922efd4e9af710",
+        "bytes": 91308
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.88,
+   "reason": "The centre shows a smooth circular half-black, half-bright crescent with a soft rim and faint halo, typical of a sunlit small crater depression rather than crisp manufactured edges.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.88, \"reason\": \"The centre shows a smooth circular half-black, half-bright crescent with a soft rim and faint halo, typical of a sunlit small crater depression rather than crisp manufactured edges.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 604
+ }
+}

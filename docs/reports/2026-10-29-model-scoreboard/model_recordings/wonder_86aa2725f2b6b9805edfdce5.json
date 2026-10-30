@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "e9eee5eacdefd221b8555b4990b32ab0d4fa94d665f88c11d1c0084165c09f21",
+        "bytes": 74911
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d9ba9a5493420680b275438aeb08e91ae326896b87d3778bc23543d79b55fe50",
+        "bytes": 8355
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.88,
+   "reason": "The centre shows a sharply outlined, exceptionally bright near-circular disc with a separate bright dot above it and dark internal markings, unlike the surrounding grey pitted terrain and dark craters.",
+   "verdict": "hardware"
+  },
+  "raw": "{\"confidence\": 0.88, \"reason\": \"The centre shows a sharply outlined, exceptionally bright near-circular disc with a separate bright dot above it and dark internal markings, unlike the surrounding grey pitted terrain and dark craters.\", \"verdict\": \"hardware\"}",
+  "input_tokens": 373,
+  "output_tokens": 758
+ }
+}

@@ -1,0 +1,933 @@
+{
+ "strip_key": "strip_a",
+ "turns": 12,
+ "stopped": "turn cap",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "tests",
+    "persistence"
+   ],
+   "reason": "Diffuse irregular patch with no crisp outline or shadow blending into rippled ground remains consistent with natural frost."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "tests",
+    "persistence"
+   ],
+   "reason": "Diffuse mottled patch with fuzzy edges and no crisp outline remains consistent with natural rock or dust."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "tests"
+   ],
+   "reason": "Hardware votes describe crisp straight edges and shadow unlike surrounding terrain with passing size and edge tests on zoom."
+  },
+  "c003": {
+   "action": "lower",
+   "cites": [
+    "votes",
+    "tests"
+   ],
+   "reason": "Irregular diffuse patch without crisp outline or raised-body shadow aligns with natural frost or dust."
+  },
+  "c004": {
+   "action": "lower",
+   "cites": [
+    "votes",
+    "tests"
+   ],
+   "reason": "Diffuse irregular blob without crisp outline or raised-body shadow aligns with natural bright rock."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c006": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  }
+ },
+ "final": null,
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 24586
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1596
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 912
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1615
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 824
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1709
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1571
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1643
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 816
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 827
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 820
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 822
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 823
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 823
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 936
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 824
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1503
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1625
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1559
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1530
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "request_check",
+   "args": {
+    "id": "c002",
+    "kind": "zoom_pass"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 677
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "persistence"
+    ],
+    "id": "c000",
+    "reason": "Diffuse irregular patch with no crisp outline or shadow blending into rippled ground remains consistent with natural frost."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "request_check",
+   "args": {
+    "id": "c007",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1350
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests",
+     "persistence"
+    ],
+    "id": "c001",
+    "reason": "Diffuse mottled patch with fuzzy edges and no crisp outline remains consistent with natural rock or dust."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests"
+    ],
+    "id": "c002",
+    "reason": "Hardware votes describe crisp straight edges and shadow unlike surrounding terrain with passing size and edge tests on zoom."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 11,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "tests"
+    ],
+    "id": "c003",
+    "reason": "Irregular diffuse patch without crisp outline or raised-body shadow aligns with natural frost or dust."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 12,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "tests"
+    ],
+    "id": "c004",
+    "reason": "Diffuse irregular blob without crisp outline or raised-body shadow aligns with natural bright rock."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "lower"
+   }
+  }
+ ],
+ "strip": "ESP_030313_1755",
+ "ids": {
+  "c000": {
+   "row": 27926.5,
+   "col": 4266.9
+  },
+  "c001": {
+   "row": 26429.9,
+   "col": 14880.1
+  },
+  "c002": {
+   "row": 11081.1,
+   "col": 5373.5
+  },
+  "c003": {
+   "row": 25924.5,
+   "col": 3270.2
+  },
+  "c004": {
+   "row": 25579.8,
+   "col": 3699.1
+  },
+  "c005": {
+   "row": 17939.6,
+   "col": 13513.3
+  },
+  "c006": {
+   "row": 26558.1,
+   "col": 3499.7
+  },
+  "c007": {
+   "row": 10920.7,
+   "col": 5446.6
+  },
+  "c008": {
+   "row": 27221.4,
+   "col": 3150.8
+  },
+  "c009": {
+   "row": 18771.1,
+   "col": 7972.6
+  },
+  "c010": {
+   "row": 3730.2,
+   "col": 5708.6
+  },
+  "c011": {
+   "row": 17911.1,
+   "col": 13556.7
+  },
+  "c012": {
+   "row": 25394.3,
+   "col": 8132.7
+  },
+  "c013": {
+   "row": 25657.5,
+   "col": 8527.2
+  },
+  "c014": {
+   "row": 25340.0,
+   "col": 8538.2
+  },
+  "c015": {
+   "row": 25692.1,
+   "col": 9697.4
+  },
+  "c016": {
+   "row": 25233.4,
+   "col": 8076.4
+  },
+  "c017": {
+   "row": 18510.7,
+   "col": 9710.7
+  },
+  "c018": {
+   "row": 16539.1,
+   "col": 12384.1
+  },
+  "c019": {
+   "row": 19236.7,
+   "col": 13254.4
+  }
+ },
+ "checks": [
+  {
+   "id": "c002",
+   "kind": "zoom_pass",
+   "result": {
+    "found": true,
+    "confidence": 0.488,
+    "area_px": 6803,
+    "area_m2": 425.19,
+    "equiv_diameter_m": 23.27,
+    "centroid_row": 256.0,
+    "centroid_col": 257.2,
+    "pieces": 19,
+    "major_m": 27.55,
+    "minor_m": 20.92,
+    "elongation": 0.241,
+    "fill": 0.595,
+    "circularity": 0.224,
+    "touches_box_edge": false,
+    "edge_contrast": 2.0,
+    "tests": {
+     "sam_size": {
+      "outcome": "pass",
+      "value": 23.27,
+      "limit": [
+       8.0,
+       25.0
+      ],
+      "unit": "m, equivalent diameter"
+     },
+     "sam_shape": {
+      "outcome": "not run",
+      "value": 0.241,
+      "limit": null,
+      "unit": "no shape claim for this branch"
+     },
+     "sam_edge": {
+      "outcome": "pass",
+      "value": 2.0,
+      "limit": 1.0,
+      "unit": "sigma of the surrounding ring"
+     }
+    }
+   }
+  },
+  {
+   "id": "c007",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The irregular, off-centre black blob inside a soft-edged bright patch matches a shadowed depression or rock with a sunlit rim rather than any straight-edged geometric hardware outline.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 685
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.65,
+      "reason": "The centre shows an irregular bright crescent enclosing a dark pit, consistent with a sunlit crater rim and shadowed interior, with no straight, geometric, or crisp manufactured edges.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -22,
+       "dcol": -1,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 1081
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.65,
+      "reason": "The centre pixels show only diffuse grainy mottling identical to the surrounding terrain, with no crisp geometric outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -27,
+       "dcol": 31,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 989
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 1 natural, 0 hardware at or above 0.7"
+   }
+  }
+ ],
+ "reasoning": []
+}

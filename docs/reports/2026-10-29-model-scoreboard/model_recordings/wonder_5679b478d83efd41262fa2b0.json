@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "53988f796a8004d00d14db418c45375e1e196af727903d737101880da27c3e36",
+        "bytes": 79642
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f32dc6bffb3d90c3de4249ff048ccbd5970dfdb7c89daadcd33ccb299fcf1173",
+        "bytes": 8402
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.85,
+   "reason": "The centre is only a 2\u20133 pixel bright speck with no resolvable crisp outline or raised-body shadow, indistinguishable from surrounding mottled rock and noise pixels.",
+   "verdict": "unsure"
+  },
+  "raw": "{\"confidence\": 0.85, \"reason\": \"The centre is only a 2\\u20133 pixel bright speck with no resolvable crisp outline or raised-body shadow, indistinguishable from surrounding mottled rock and noise pixels.\", \"verdict\": \"unsure\"}",
+  "input_tokens": 373,
+  "output_tokens": 883
+ }
+}

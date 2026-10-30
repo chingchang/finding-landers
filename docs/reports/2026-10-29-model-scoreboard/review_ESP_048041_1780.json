@@ -1,0 +1,737 @@
+{
+ "strip_key": "strip_a",
+ "turns": 12,
+ "stopped": "turn cap",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "tests.sam_edge"
+   ],
+   "reason": "Advisory votes describe crater shading with soft irregular rims and inconclusive edge contrast supports retaining the current grade."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory votes describe a smooth circular depression with sunlit rim and shadow consistent with retaining the current grade."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory votes describe soft edged bright rim with dark interior matching crater shading consistent with current grade."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory votes describe a soft gradated bowl with bright crescent rim consistent with retaining the current grade."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory votes describe a round dark depression with arcuate sunlit rim consistent with retaining the current grade."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory votes describe a round dark depression with curved sunlit rim consistent with retaining the current grade."
+  },
+  "c006": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory votes describe a soft curved crescent pair forming a circular depression consistent with retaining the current grade."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Hardware-leaning advisory votes are balanced by single-date persistence, so the current grade is retained without raising."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c009": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": false
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  }
+ },
+ "final": null,
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 24179
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1680
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 828
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 824
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 825
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 826
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 825
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 826
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 826
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 829
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 823
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 826
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c007",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1440
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "tests.sam_edge"
+    ],
+    "id": "c000",
+    "reason": "Advisory votes describe crater shading with soft irregular rims and inconclusive edge contrast supports retaining the current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "Advisory votes describe a smooth circular depression with sunlit rim and shadow consistent with retaining the current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002",
+    "reason": "Advisory votes describe soft edged bright rim with dark interior matching crater shading consistent with current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "Advisory votes describe a soft gradated bowl with bright crescent rim consistent with retaining the current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Advisory votes describe a round dark depression with arcuate sunlit rim consistent with retaining the current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005",
+    "reason": "Advisory votes describe a round dark depression with curved sunlit rim consistent with retaining the current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 11,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Advisory votes describe a soft curved crescent pair forming a circular depression consistent with retaining the current grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 12,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c007",
+    "reason": "Hardware-leaning advisory votes are balanced by single-date persistence, so the current grade is retained without raising."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  }
+ ],
+ "strip": "ESP_048041_1780",
+ "ids": {
+  "c000": {
+   "row": 23638.1,
+   "col": 6220.4
+  },
+  "c001": {
+   "row": 3106.0,
+   "col": 15376.7
+  },
+  "c002": {
+   "row": 26674.6,
+   "col": 8987.9
+  },
+  "c003": {
+   "row": 15459.0,
+   "col": 13945.3
+  },
+  "c004": {
+   "row": 51923.7,
+   "col": 27600.2
+  },
+  "c005": {
+   "row": 22224.1,
+   "col": 10354.0
+  },
+  "c006": {
+   "row": 33871.5,
+   "col": 9654.3
+  },
+  "c007": {
+   "row": 30000.4,
+   "col": 18114.3
+  },
+  "c008": {
+   "row": 28916.5,
+   "col": 24820.3
+  },
+  "c009": {
+   "row": 30423.0,
+   "col": 23118.6
+  },
+  "c010": {
+   "row": 21513.6,
+   "col": 6576.8
+  },
+  "c011": {
+   "row": 27331.3,
+   "col": 6667.3
+  },
+  "c012": {
+   "row": 7022.1,
+   "col": 9387.8
+  },
+  "c013": {
+   "row": 34999.4,
+   "col": 23060.8
+  },
+  "c014": {
+   "row": 48020.0,
+   "col": 14998.6
+  },
+  "c015": {
+   "row": 13533.4,
+   "col": 14268.0
+  },
+  "c016": {
+   "row": 38963.4,
+   "col": 9710.6
+  },
+  "c017": {
+   "row": 8519.7,
+   "col": 21652.0
+  },
+  "c018": {
+   "row": 27339.7,
+   "col": 24257.5
+  },
+  "c019": {
+   "row": 25389.0,
+   "col": 3872.1
+  }
+ },
+ "checks": [
+  {
+   "id": "c007",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "hardware",
+      "confidence": 0.82,
+      "reason": "The centre shows a saturated-white, crisp-edged teardrop body with internal black structure and a separate smaller bright disc below it, sharply unlike the grainy grey terrain and soft dark pits around it.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 564
+      }
+     },
+     {
+      "verdict": "hardware",
+      "confidence": 0.8,
+      "reason": "The centre shows a saturated-white, sharply bounded round disc with dark internal structural markings and a smaller bright companion piece above it, starkly unlike the surrounding grey cratered regolith.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -22,
+       "dcol": -1,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 1076
+      }
+     },
+     {
+      "verdict": "hardware",
+      "confidence": 0.88,
+      "reason": "The centre shows a sharply outlined, exceptionally bright near-circular disc with a separate bright dot above it and dark internal markings, unlike the surrounding grey pitted terrain and dark craters.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -27,
+       "dcol": 31,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 758
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 0 natural, 3 hardware at or above 0.7"
+   }
+  }
+ ],
+ "reasoning": []
+}

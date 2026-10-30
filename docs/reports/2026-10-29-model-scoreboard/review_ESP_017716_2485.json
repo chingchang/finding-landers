@@ -1,0 +1,902 @@
+{
+ "strip_key": "strip_a",
+ "turns": 12,
+ "stopped": "turn cap",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "votes",
+    "sam"
+   ],
+   "reason": "All physical tests remain unsure with only one date available and mixed advisory votes, so continued review is warranted."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "votes"
+   ],
+   "reason": "All physical tests remain unsure with single-date persistence and split advisory votes, so continued review is warranted."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "votes",
+    "persistence"
+   ],
+   "reason": "All physical tests remain unsure with single-date persistence and consistent natural advisory votes, so the current grade stands."
+  },
+  "c003": {
+   "action": "lower",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "The edge test shows fail with single-date persistence and a fragmented mask, so the grade is lowered."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+  },
+  "c006": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "tests",
+    "persistence",
+    "sam"
+   ],
+   "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "likely natural",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": false
+  }
+ },
+ "final": null,
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 20584
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1631
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1687
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 1681
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 822
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 943
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 945
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 943
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 821
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 944
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 941
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 911
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 947
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 947
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 914
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 821
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 913
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 914
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 950
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 915
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "sam",
+     "score",
+     "shape",
+     "tests"
+    ],
+    "bytes": 914
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c000",
+    "kind": "second_date_check"
+   },
+   "result": {
+    "id": "c000",
+    "kind": "second_date_check",
+    "result": {
+     "available": false,
+     "note": "no second date in this run"
+    }
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "votes",
+     "sam"
+    ],
+    "id": "c000",
+    "reason": "All physical tests remain unsure with only one date available and mixed advisory votes, so continued review is warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 6,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "All physical tests remain unsure with single-date persistence and split advisory votes, so continued review is warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 7,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "votes",
+     "persistence"
+    ],
+    "id": "c002",
+    "reason": "All physical tests remain unsure with single-date persistence and consistent natural advisory votes, so the current grade stands."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 8,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c003",
+    "reason": "The edge test shows fail with single-date persistence and a fragmented mask, so the grade is lowered."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 9,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c004",
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 10,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c005",
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 11,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c006",
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 12,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "tests",
+     "persistence",
+     "sam"
+    ],
+    "id": "c007",
+    "reason": "All physical tests remain unsure with limited persistence and no decisive mask measurement, so continued review is warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  }
+ ],
+ "strip": "ESP_017716_2485",
+ "ids": {
+  "c000": {
+   "row": 29807.3,
+   "col": 33579.6
+  },
+  "c001": {
+   "row": 23503.3,
+   "col": 30929.0
+  },
+  "c002": {
+   "row": 35561.5,
+   "col": 49216.8
+  },
+  "c003": {
+   "row": 36518.3,
+   "col": 37465.9
+  },
+  "c004": {
+   "row": 24188.0,
+   "col": 31504.5
+  },
+  "c005": {
+   "row": 32532.8,
+   "col": 53126.6
+  },
+  "c006": {
+   "row": 38067.4,
+   "col": 50038.2
+  },
+  "c007": {
+   "row": 24351.8,
+   "col": 38883.1
+  },
+  "c008": {
+   "row": 35967.4,
+   "col": 46593.2
+  },
+  "c009": {
+   "row": 31960.5,
+   "col": 38718.0
+  },
+  "c010": {
+   "row": 23051.2,
+   "col": 38907.8
+  },
+  "c011": {
+   "row": 27207.9,
+   "col": 41396.5
+  },
+  "c012": {
+   "row": 41419.0,
+   "col": 48074.0
+  },
+  "c013": {
+   "row": 40486.3,
+   "col": 48077.5
+  },
+  "c014": {
+   "row": 30023.9,
+   "col": 13895.0
+  },
+  "c015": {
+   "row": 28741.0,
+   "col": 26103.2
+  },
+  "c016": {
+   "row": 29719.9,
+   "col": 36854.8
+  },
+  "c017": {
+   "row": 32751.9,
+   "col": 36226.9
+  },
+  "c018": {
+   "row": 38255.5,
+   "col": 50038.9
+  },
+  "c019": {
+   "row": 34767.6,
+   "col": 48851.1
+  }
+ },
+ "checks": [
+  {
+   "id": "c000",
+   "kind": "second_date_check",
+   "result": {
+    "available": false,
+    "note": "no second date in this run"
+   }
+  }
+ ],
+ "reasoning": []
+}
