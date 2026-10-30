@@ -191,3 +191,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   9b54704be5ba929ce996d7b0a77c89ac61565057d9c4e27cfa8448d4283da372. Three pieces have no position and are excluded
   from recall (two fall in a CCD gap of their strip, one had moved away); the reasons are in the sealed file.
   Held-out strip crops used to seal it were never seen by an agent.
+- 2026-10-29 (21:20): held-out scored once by a person (files in docs/reports/2026-10-29-heldout-score/). Recall at
+  20: 0 of 11 at the three held-out sites, 0 of 3 for Beagle 2. Below the pass line; reported as it is. Best
+  ranks: 25, 44 and 81 out of about 30,000 candidates on one strip; most others between 300 and 2,100; two pieces
+  not detected. Nothing is retuned against this result; any fix goes in a later tag, shown beside frozen-v1.
