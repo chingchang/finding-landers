@@ -124,7 +124,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    figure and a JSON; a tiling plan with tile counts and a time estimate from baseline v1's tiles per
    second (out/baseline_v1/run.log). Outputs under out/search/, a report, and a `scripts/search.py` that
    item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
-12c. [paused: (a) and (b) done, see docs/reports/2026-10-30-disk-work.md; (c) the delete waits for the person's word after the three points in that report (rank 2,000 limit, no second copy of out/export, not urgent), the 10:29 advance approval is held until then; (d) the two strips are named in controls/sites.json (heldout group), downloaded after (c)] Disk work, after the v1 search pass (item 11) finishes, in this order:
+12c. [ ] (resume, 10-30 15:45: do only step (d) now; (c) the delete stays on hold for the person; mark the item [paused: ...] when (d) is done, never [blocked]] Disk work, after the v1 search pass (item 11) finishes, in this order:
     (a) persistence over the strip pairs sharing 10 km2 or more, caching the registration nodes;
         item 11 already ran persistence over all 81 pairs (38 registered): reuse it, cache the registration
         nodes, resample the 0.5 m strip before registering, and retry the failed pairs among those sharing 10 km2 or
@@ -158,7 +158,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     has 8 GB: a small encoder (DINOv2 small or base, or Meta's Perception Encoder at a similar size), small batches,
     nothing else running. Check in the hackathon guide whether that encoder counts toward the Meta model
     requirement and quote the line; do not assume.
-14. [ ] v2, B: deeper model pass. Wonder votes on the top 100 to 200 per strip instead of the top 10, each strip's
+14. [ ] v2, B (10-30 15:45: run on the combined list from item 13, each candidate's better rank of frozen-v1 and the re-ranker, labelled everywhere as chosen after seeing item 13's result and judged only by the blind run, shown beside frozen-v1; if MODEL_API_KEY or LANDERS_REAL_CALLS is missing, do the pricing and the dry run, then mark the item [paused: waiting for the key window] rather than [blocked]): deeper model pass. Wonder votes on the top 100 to 200 per strip instead of the top 10, each strip's
     vote calls reserved before any review check can spend them; Spark records all its verdicts in one turn after
     its fetches; crops draw saturated pixels as bright, not black (the 9d finding). Measure on the tuning strips
     how many false alarms are cleared above each recorded piece and how many pieces rise into the top 20. Price
@@ -294,3 +294,9 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   cumulative cap at 120 USD, stop after the first 100 calls and report for the person to compare with the Billing
   page before going on. The paid calls need MODEL_API_KEY and LANDERS_REAL_CALLS=1 in the environment of the
   window that runs item 14; without them the item stops at the price and the dry run.
+- 2026-10-30 (15:45), the oracle deciding for the person, at the person's request, so the Mac does not sit idle:
+  item 14 runs on the combined list (post hoc label, judged only by the blind run, frozen-v1 shown beside it);
+  item 14's pricing and dry run run now, its paid calls wait for the key window; item 12c(d) downloads the two
+  blind strips now (they fit in the free disk without the delete; no agent opens them, the oracle places the key
+  from published captioned images, the person seals it); item 15 runs on the tuning strips after that. The JP2
+  delete and the two no-texture strips stay for the person. Order: 12c(d), 14 (dry), 15.
