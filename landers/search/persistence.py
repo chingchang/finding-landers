@@ -74,6 +74,39 @@ def look_up(
     return records, counts
 
 
+def family_counts(cands: list[dict]) -> dict:
+    out = {"bright": 0, "dark": 0}
+    for c in cands:
+        out[persist.FAMILY.get(c["branch"], "bright")] += 1
+    return out
+
+
+def chance_matches(pair_result: dict, survivors_by_strip: dict, per_strip: dict) -> list[dict]:
+    """For each direction of a pair: the survivors looked up, those seen, and the number expected seen by
+    chance if the other date's same-family candidates were spread evenly over its valid ground. Candidates
+    cluster on rough ground, so this is a floor on chance, not a ceiling."""
+    out = []
+    radius = float(pair_result["radius_px"])
+    for d in pair_result["directions"].values():
+        dst = per_strip[d["to"]]
+        area_m2 = dst["valid_area_km2"] * 1e6
+        r_m = radius * dst["scale_m"]
+        surv = survivors_by_strip[d["from"]]
+        looked = seen = 0
+        expected = 0.0
+        for rec in d["survivors"]:
+            if rec["seen"] is None:
+                continue
+            looked += 1
+            seen += bool(rec["seen"])
+            fam = persist.FAMILY.get(surv[rec["rank"] - 1]["branch"], "bright")
+            density = dst["family_counts"][fam] / area_m2
+            expected += 1.0 - math.exp(-density * math.pi * r_m**2)
+        out.append({"from": d["from"], "to": d["to"], "looked": looked, "seen": seen,
+                    "expected_by_chance": round(expected, 2)})
+    return out
+
+
 def combine(strip_ids: list[str], survivors_by_strip: dict, pair_results: list[dict]) -> list[dict]:
     """One row per survivor: dates looked at (its own plus every other date where it was looked up) and
     dates seen (its own plus every other date where it was seen), with the pairs listed."""

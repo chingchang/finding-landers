@@ -238,6 +238,23 @@ def test_combine_counts_dates_and_never_changes_grades():
     assert {r["grade"] for r in rows.values()} == {"needs second look"}
 
 
+def test_chance_matches_grow_with_the_other_dates_density():
+    from landers.search import persistence as sp
+
+    surv = {"A": [{"branch": "bright"}, {"branch": "dark"}]}
+    pr = {"radius_px": 8.0, "directions": {"A->B": {"from": "A", "to": "B", "survivors": [
+        {"rank": 1, "seen": True}, {"rank": 2, "seen": False}]}}}
+
+    def per_strip(n_bright):
+        return {"B": {"valid_area_km2": 1.0, "scale_m": 0.25, "family_counts": {"bright": n_bright, "dark": 0}}}
+
+    [lo] = sp.chance_matches(pr, surv, per_strip(1000))
+    [hi] = sp.chance_matches(pr, surv, per_strip(100000))
+    assert (lo["looked"], lo["seen"]) == (2, 1)
+    # 1000 per km2 over a 2 m radius: 1 - exp(-0.004 pi), about 0.0126
+    assert lo["expected_by_chance"] == 0.01 and hi["expected_by_chance"] > 0.7
+
+
 def test_code_matches_tag():
     assert run.code_matches_tag("no-such-tag-anywhere") is None
     assert run.code_matches_tag("HEAD") is True

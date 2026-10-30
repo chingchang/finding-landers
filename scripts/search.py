@@ -206,10 +206,14 @@ def combine_survivors(a) -> int:
             "seconds": d["seconds"],
             "commit": d["git"]["commit"],
             "same_code_as": d["git"].get("same_code_as"),
+            "family_counts": sp.family_counts(e["candidates"]),
+            "scale_m": e["scale_m"],
         }
         del d, e
     results = [json.loads(f.read_text()) for f in sorted((Path(a.out) / "persist").glob("persist_*.json"))]
     rows = sp.combine(ids, surv, results)
+    chance = [sp.chance_matches(pr, surv, per_strip) for pr in results]
+    chance = [c for pair in chance for c in pair]
     by_looked: dict = {}
     for r in rows:
         k = f"{r['dates_seen']} of {r['dates_looked']}"
@@ -224,6 +228,15 @@ def combine_survivors(a) -> int:
         "pairs_with_persistence": len(results),
         "survivors": len(rows),
         "dates_seen_of_looked": dict(sorted(by_looked.items())),
+        "chance": {
+            "what": "per pair direction: survivors looked up on the other date, how many were seen, and how many "
+            "would be seen by chance if the other date's candidates of the same family were spread evenly over "
+            "its valid ground (sum over survivors of 1 - exp(-density * pi * radius^2))",
+            "looked": sum(c["looked"] for c in chance),
+            "seen": sum(c["seen"] for c in chance),
+            "expected_by_chance": round(sum(c["expected_by_chance"] for c in chance), 1),
+            "directions": chance,
+        },
         "per_strip": per_strip,
         "rows": rows,
     }
