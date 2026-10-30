@@ -87,6 +87,16 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     lowered (by which stage, citing its evidence), false alarms per strip lowered, kept and unassessed, and the
     cost per false alarm removed. Publish the ledger and records with scripts/models_publish.py. No change to
     the detector, thresholds or model prompts in this item: a change found here goes in a later tag.
+9d. [ ] Few-shot Wonder, after 9c and judged against it (a person asked for it on 10-29; spend approved up to about
+    35 USD; caps LANDERS_CAP_SAM=50, LANDERS_CAP_WONDER=300, LANDERS_CAP_SPARK=120). Each Wonder vote also gets a
+    small set of reference crops at the candidate's scale: real pieces from controls/tuning.json and typical false
+    alarms from the scored lists, labelled only "hardware example" or "natural example", rotated to the
+    candidate's sun direction, with no ids, names or positions anywhere in the prompt. Leave one site out: when a
+    strip is voted on, every example comes from the other five sites. Same candidates and same scoring as 9c, so
+    the two tables line up; report the change per stage and the cost. Rerun the recognition probe with examples
+    attached first: if examples make Wonder name a site or mission, stop and report. The few-shot prompt is a new
+    prompt version behind a flag, default off; adopting it for the search is a person's call and goes in a later
+    tag (frozen-v2), shown beside frozen-v1.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
     Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
     run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
