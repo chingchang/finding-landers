@@ -1,7 +1,7 @@
 """Search bookkeeping and, later, the search itself.
 
     uv run scripts/search.py survey [--run-log <detect log>] [--cell-m 100] [--out out/search]
-    uv run scripts/search.py run --frozen [--jobs 3] [--ids ID ...] [--limit N]
+    uv run scripts/search.py run --frozen [--same-code-as TAG] [--jobs 3] [--ids ID ...] [--limit N]
 
 ``survey`` reads every search strip's label and overview (no detector) and writes under --out:
 inventory.json (one record per strip), overlaps.json (every pair that shares ground), coverage.json and
@@ -27,6 +27,8 @@ from landers.search import inventory, plan, run  # noqa: E402
 
 DEFAULT_OUT = config.REPO_ROOT / "out" / "search"
 DEFAULT_CAL = config.REPO_ROOT / "landers" / "calibration_v0.json"
+_RULE_FILES = sorted((config.REPO_ROOT / "landers").glob("shape_v*.json"))
+DEFAULT_RULES = _RULE_FILES[-1] if _RULE_FILES else config.REPO_ROOT / "landers" / "shape_v1.json"
 
 
 def survey(a) -> int:
@@ -77,8 +79,20 @@ def run_search(a) -> int:
     if state["dirty"]:
         print("working tree is dirty; commit first", file=sys.stderr)
         return 3
-    if not state["tag"] and not a.untagged:
-        print("HEAD has no exact tag; the search runs from a frozen tag (--untagged rehearses)", file=sys.stderr)
+    same = None
+    if a.same_code_as:
+        match = run.code_matches_tag(a.same_code_as)
+        if not match:
+            what = "is not a known tag" if match is None else "differs from HEAD in the detector's files"
+            print(f"{a.same_code_as} {what} ({' '.join(run.FROZEN_PATHS)})", file=sys.stderr)
+            return 3
+        same = a.same_code_as
+    if not state["tag"] and not same and not a.untagged:
+        print(
+            "HEAD has no exact tag; the search runs from a frozen tag, or with --same-code-as <tag> when the "
+            "detector's files are identical to it (--untagged rehearses)",
+            file=sys.stderr,
+        )
         return 3
     out = Path(a.out) / "candidates"
     if a.ids:
@@ -94,14 +108,20 @@ def run_search(a) -> int:
         todo = todo[: a.limit]
     print(f"{len(ids)} strips, {len(ids) - len(run.pending(ids, out))} done, {len(todo)} to run now")
     cal = None if a.no_calibration else a.calibration
-    cfg = DetectorConfig(frozen=True, calibration=cal)
+    rules = None if a.no_shape_rules else a.shape_rules
+    rec_cfg, cfg = run.frozen_configs(cal, rules)
     for sid in todo:
         if config.find_strip(sid) is None:
             print(f"{sid}: not on disk, skipped")
             continue
+        t = time.time()
         prog = lambda n, k, sid=sid: print(f"\r{sid} tiles={n} cands={k}", end="", flush=True)  # noqa: E731
-        path, entry = run.run_strip(sid, cfg, out, jobs=a.jobs, progress=prog)
-        print(f"\r{sid}: {len(entry['candidates'])} candidates from {entry['tiles']} tiles -> {path}")
+        path, entry = run.run_strip(sid, cfg, out, jobs=a.jobs, progress=prog, record_cfg=rec_cfg, same_code_as=same)
+        print(
+            f"\r{sid}: {len(entry['candidates'])} candidates from {entry['tiles']} tiles "
+            f"in {time.time() - t:.0f}s -> {path}",
+            flush=True,
+        )
     return 0
 
 
@@ -123,6 +143,18 @@ def main(argv=None) -> int:
     r.add_argument("--jobs", type=int, default=1)
     r.add_argument("--calibration", default=str(DEFAULT_CAL) if DEFAULT_CAL.exists() else None)
     r.add_argument("--no-calibration", action="store_true")
+    r.add_argument(
+        "--shape-rules",
+        default=str(DEFAULT_RULES) if DEFAULT_RULES.exists() else None,
+        help="as scripts/detect.py: the newest landers/shape_v*.json by default",
+    )
+    r.add_argument("--no-shape-rules", action="store_true")
+    r.add_argument(
+        "--same-code-as",
+        default=None,
+        metavar="TAG",
+        help="run from an untagged commit whose detector files are identical to TAG (recorded in each file)",
+    )
     r.add_argument("--out", default=str(DEFAULT_OUT))
     a = ap.parse_args(argv)
     return survey(a) if a.cmd == "survey" else run_search(a)

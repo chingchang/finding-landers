@@ -31,12 +31,69 @@ def git_state() -> dict:
     return {"commit": commit, "dirty": dirty, "tag": run("describe", "--tags", "--exact-match")}
 
 
+# What the held-out run compared against the tag (docs/reports/2026-10-29-heldout-run.md): the detector, its
+# driver, the thresholds and the locked dependencies. This package is left out: nothing outside it imports
+# it, and it only drives the detector and writes the files.
+FROZEN_PATHS = (
+    "landers",
+    ":(exclude)landers/search",
+    "scripts/detect.py",
+    "controls/thresholds.json",
+    "pyproject.toml",
+    "uv.lock",
+)
+
+
+def code_matches_tag(tag: str, paths=FROZEN_PATHS) -> bool | None:
+    """True when HEAD's ``paths`` are byte for byte the tag's; None when the tag is unknown."""
+    try:
+        known = subprocess.run(["git", "rev-parse", "--verify", "--quiet", f"{tag}^{{commit}}"],
+                               capture_output=True, cwd=config.REPO_ROOT)
+        if known.returncode != 0:
+            return None
+        r = subprocess.run(["git", "diff", "--quiet", f"{tag}^{{commit}}", "HEAD", "--", *paths],
+                           capture_output=True, cwd=config.REPO_ROOT)
+    except OSError:
+        return None
+    return r.returncode == 0
+
+
+def repo_relative(path: str | None) -> str | None:
+    if path is None:
+        return None
+    p = Path(path).resolve()
+    return str(p.relative_to(config.REPO_ROOT)) if p.is_relative_to(config.REPO_ROOT) else str(path)
+
+
+def frozen_configs(calibration: str | None, shape_rules: str | None) -> tuple[DetectorConfig, DetectorConfig]:
+    """The frozen detector as scripts/detect.py --frozen builds it with its defaults (table calibration, the
+    newest shape rules, saturated pixels as data): one config to record (paths inside the repo), one to run
+    (absolute paths, so the workers find the files from any directory)."""
+    rec = DetectorConfig(frozen=True, calibration=repo_relative(calibration), shape_rules=repo_relative(shape_rules))
+    run_cfg = DetectorConfig(
+        frozen=True,
+        calibration=str(Path(calibration).resolve()) if calibration else None,
+        shape_rules=str(Path(shape_rules).resolve()) if shape_rules else None,
+    )
+    return rec, run_cfg
+
+
 def strip_output(out_dir: Path, observation_id: str) -> Path:
     return Path(out_dir) / f"candidates_{observation_id}.json"
 
 
-def run_strip(observation_id: str, cfg: DetectorConfig, out_dir: Path, jobs: int = 1, detector=None, progress=None):
-    """Detect over one strip and write its file. ``detector`` replaces the real pass in tests."""
+def run_strip(
+    observation_id: str,
+    cfg: DetectorConfig,
+    out_dir: Path,
+    jobs: int = 1,
+    detector=None,
+    progress=None,
+    record_cfg: DetectorConfig | None = None,
+    same_code_as: str | None = None,
+):
+    """Detect over one strip and write its file. ``detector`` replaces the real pass in tests; ``record_cfg``
+    is what the file records when it differs from ``cfg`` only by where the files are."""
     strip = Strip.open(observation_id)
     t = time.time()
     if detector is not None:
@@ -47,8 +104,8 @@ def run_strip(observation_id: str, cfg: DetectorConfig, out_dir: Path, jobs: int
         entry = detect_strip(strip, cfg, progress=progress)
     result = {
         "run": "search",
-        "detector": cfg.to_json(),
-        "git": git_state(),
+        "detector": (record_cfg or cfg).to_json(),
+        "git": {**git_state(), **({"same_code_as": same_code_as} if same_code_as else {})},
         "started": time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime(t)),
         "seconds": round(time.time() - t),
         "strips": {observation_id: entry},

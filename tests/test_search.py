@@ -194,6 +194,34 @@ def test_run_refuses_without_frozen(tmp_path):
     assert r.returncode == 3 and "frozen" in r.stderr
 
 
+def test_frozen_configs_match_detect_py_defaults():
+    rules = ROOT / "landers" / "shape_v3.json"
+    cal = ROOT / "landers" / "calibration_v0.json"
+    rec, cfg = run.frozen_configs(str(cal), str(rules))
+    r = rec.to_json()
+    assert r["frozen"] is True and r["calibration_mode"] == "table" and r["saturated_is_data"] is True
+    assert r["shape_rules"] == "landers/shape_v3.json" and r["calibration"] == "landers/calibration_v0.json"
+    assert Path(cfg.shape_rules).is_absolute() and Path(cfg.shape_rules).name == "shape_v3.json"
+    assert {k: v for k, v in cfg.to_json().items() if k not in ("calibration", "shape_rules")} == {
+        k: v for k, v in r.items() if k not in ("calibration", "shape_rules")
+    }
+
+
+def test_code_matches_tag():
+    assert run.code_matches_tag("no-such-tag-anywhere") is None
+    assert run.code_matches_tag("HEAD") is True
+
+
+def test_run_refuses_an_unknown_same_code_tag(tmp_path):
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "search.py"), "run", "--frozen", "--same-code-as",
+         "no-such-tag-anywhere", "--out", str(tmp_path), "--ids", "X"],
+        capture_output=True,
+        text=True,
+    )
+    assert r.returncode == 3
+
+
 # --- on real strips ---------------------------------------------------------------------------------------
 
 MPL = manifest_ids("mpl_summer")
