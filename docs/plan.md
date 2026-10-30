@@ -124,7 +124,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    figure and a JSON; a tiling plan with tile counts and a time estimate from baseline v1's tiles per
    second (out/baseline_v1/run.log). Outputs under out/search/, a report, and a `scripts/search.py` that
    item 11 will run with the frozen detector. Touches only landers/search/, scripts/search*.py, tests, docs.
-12c. [ ] (resume, 10-30 15:45: do only step (d) now; (c) the delete stays on hold for the person; mark the item [paused: ...] when (d) is done, never [blocked]] Disk work, after the v1 search pass (item 11) finishes, in this order:
+12c. [ ] (resume, 10-30 15:45: do only step (d) now; (c) the delete stays on hold for the person; mark the item [paused: ...] when (d) is done (not as blocked)] Disk work, after the v1 search pass (item 11) finishes, in this order:
     (a) persistence over the strip pairs sharing 10 km2 or more, caching the registration nodes;
         item 11 already ran persistence over all 81 pairs (38 registered): reuse it, cache the registration
         nodes, resample the 0.5 m strip before registering, and retry the failed pairs among those sharing 10 km2 or
@@ -158,7 +158,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     has 8 GB: a small encoder (DINOv2 small or base, or Meta's Perception Encoder at a similar size), small batches,
     nothing else running. Check in the hackathon guide whether that encoder counts toward the Meta model
     requirement and quote the line; do not assume.
-14. [ ] v2, B (10-30 15:45: run on the combined list from item 13, each candidate's better rank of frozen-v1 and the re-ranker, labelled everywhere as chosen after seeing item 13's result and judged only by the blind run, shown beside frozen-v1; if MODEL_API_KEY or LANDERS_REAL_CALLS is missing, do the pricing and the dry run, then mark the item [paused: waiting for the key window] rather than [blocked]): deeper model pass. Wonder votes on the top 100 to 200 per strip instead of the top 10, each strip's
+14. [ ] v2, B (10-30 15:45: run on the combined list from item 13, each candidate's better rank of frozen-v1 and the re-ranker, labelled everywhere as chosen after seeing item 13's result and judged only by the blind run, shown beside frozen-v1; if MODEL_API_KEY or LANDERS_REAL_CALLS is missing, do the pricing and the dry run, then mark the item [paused: waiting for the key window] (not as blocked)): deeper model pass. Wonder votes on the top 100 to 200 per strip instead of the top 10, each strip's
     vote calls reserved before any review check can spend them; Spark records all its verdicts in one turn after
     its fetches; crops draw saturated pixels as bright, not black (the 9d finding). Measure on the tuning strips
     how many false alarms are cleared above each recorded piece and how many pieces rise into the top 20. Price
