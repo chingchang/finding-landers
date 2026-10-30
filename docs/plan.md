@@ -78,7 +78,11 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
    Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
    ledger and tool log committed with the report; grades can only go down.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
-    Beagle 2, once. A miss at Beagle 2 is a reported result.
+    Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
+    run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
+    heldout and final_exam groups, write the candidate files and the run log, commit the code state and a
+    short report of what ran (strips, tiles, time), and stop. Do not score: the person runs scripts/score.py
+    --heldout once on those files.
 11. [ ] The search: 2007 PSP strips first, then the rest of the 34 MPL summer strips; persistence across dates
     for every survivor; a coverage map (what was searched on how many dates) as a result in its own right.
 11a. [done, see docs/reports/2026-10-28-search-bookkeeping.md] Search bookkeeping, no detector runs, parallel with items 6 to 8: an inventory of the MPL strips on
