@@ -77,7 +77,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 9b. [done, see docs/reports/2026-10-29-first-real-run.md] First real run, after MODEL_API_KEY is in the environment and a person asks: recognition probe on
    Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
    ledger and tool log committed with the report; grades can only go down.
-10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
+10. [running] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
     Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
     run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
     heldout and final_exam groups, write the candidate files and the run log, commit the code state and a
