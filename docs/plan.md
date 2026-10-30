@@ -151,6 +151,6 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   survivors cost money: stop before them and mark the item blocked for a person.
 - 2026-10-29 (17:20): held-out key sealed after the tag and before any held-out run: controls/heldout.json (not in
   git) holds 11 positions over the three held-out sites and the Beagle 2 lander on its three strips; sha256
-  9b54704be5ba929ce996d7b0a77c89ac61565057d9c4e27cfa8448d4283da372. Pieces with no position, excluded from
-  recall: the InSight backshell and parachute (they fall in a CCD gap of the held-out strip) and the Zhurong rover
-  (it had driven off). Held-out strip crops used to seal it were never seen by an agent.
+  9b54704be5ba929ce996d7b0a77c89ac61565057d9c4e27cfa8448d4283da372. Three pieces have no position and are excluded
+  from recall (two fall in a CCD gap of their strip, one had moved away); the reasons are in the sealed file.
+  Held-out strip crops used to seal it were never seen by an agent.
