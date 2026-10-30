@@ -240,9 +240,199 @@
           "note": ""
         }
       ]
+    },
+    {
+      "name": "perseverance",
+      "strips": [
+        "ESP_068822_1985"
+      ],
+      "lat_published": 18.44,
+      "lon_e_published": 77.45,
+      "pieces": [
+        {
+          "piece": "parachute",
+          "strip": "ESP_068822_1985",
+          "line": 2700,
+          "sample": 7835,
+          "size_m": 21.5,
+          "note": "bright canopy; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip (HiRISE labelled image of the hardware one day after landing, SIFT 311 inliers, then local refinement)"
+        },
+        {
+          "piece": "backshell",
+          "strip": "ESP_068822_1985",
+          "line": 2807,
+          "sample": 7758,
+          "size_m": 4.5,
+          "note": "bright dot with radial impact streaks 30 m from the parachute; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "heat_shield",
+          "strip": "ESP_068822_1985",
+          "line": 1949,
+          "sample": 17537,
+          "size_m": 4.5,
+          "note": "dark pit about 4 m across; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "descent_stage",
+          "strip": "ESP_068822_1985",
+          "line": 2661,
+          "sample": 10006,
+          "size_m": 20.0,
+          "note": "crash scar, faint in this strip; position from local registration of the labelled image, about 10 m precision; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "rover",
+          "strip": "ESP_068822_1985",
+          "line": 4445,
+          "sample": 12162,
+          "size_m": 3.0,
+          "note": "bright compact object 13 m from the centre of the landing blast pattern (the rover had moved since the labelled image); caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        }
+      ]
+    },
+    {
+      "name": "insight",
+      "strips": [
+        "ESP_087360_1845"
+      ],
+      "lat_published": 4.5,
+      "lon_e_published": 135.62,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": "ESP_087360_1845",
+          "line": 15285,
+          "sample": 9932,
+          "size_m": 6.0,
+          "note": "dark dusty lander with panels, centre of the faded blast zone; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "backshell",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": "falls in this strip's CCD gap (no data) by the same vector"
+        },
+        {
+          "piece": "parachute",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": "falls in this strip's CCD gap (no data) by the same vector"
+        },
+        {
+          "piece": "heat_shield",
+          "strip": "ESP_087360_1845",
+          "line": 13871,
+          "sample": 12642,
+          "size_m": 2.65,
+          "note": "ring-shaped object just south of a crater rim, about 750 m north-east of the lander; placed from the 2018 labelled image registered to that strip's map-projected browse (75 inliers) and the browse vector from the lander; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        }
+      ]
+    },
+    {
+      "name": "zhurong",
+      "strips": [
+        "ESP_075625_2055"
+      ],
+      "lat_published": 25.07,
+      "lon_e_published": 109.93,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": "ESP_075625_2055",
+          "line": 27287,
+          "sample": 14240,
+          "size_m": 4.0,
+          "note": "centre of the north-south bright blast streaks; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "parachute",
+          "strip": "ESP_075625_2055",
+          "line": 28622,
+          "sample": 13813,
+          "size_m": 15.0,
+          "note": "bright elongated patch, 340 m south of the lander; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "backshell",
+          "strip": "ESP_075625_2055",
+          "line": 28615,
+          "sample": 13777,
+          "size_m": 3.5,
+          "note": "bright round object 9 m west of the parachute; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "heat_shield",
+          "strip": "ESP_075625_2055",
+          "line": 31063,
+          "sample": 8994,
+          "size_m": 3.4,
+          "note": "isolated bright dot among wind ripples; placed from the labelled cutout and the 2021 strip's map-projected browse (same map grid), confirmed by eye; caption registration by the oracle after the frozen-v1 tag; position checked by eye on a full-resolution crop of this strip"
+        },
+        {
+          "piece": "rover",
+          "strip": null,
+          "line": null,
+          "sample": null,
+          "size_m": null,
+          "note": "the rover drove away after the labelled images; no captioned position for this date"
+        }
+      ]
+    },
+    {
+      "name": "beagle2",
+      "strips": [
+        "ESP_037145_1915",
+        "ESP_039308_1915",
+        "ESP_040363_1915"
+      ],
+      "lat_published": 11.53,
+      "lon_e_published": 90.43,
+      "pieces": [
+        {
+          "piece": "lander",
+          "strip": "ESP_037145_1915",
+          "line": 24794,
+          "sample": 19044,
+          "size_m": 1.0,
+          "note": "map-projected pixel positions published by The Planetary Society (2015-01-16) for the bright glint, confirmed by eye"
+        },
+        {
+          "piece": "lander",
+          "strip": "ESP_039308_1915",
+          "line": 15959,
+          "sample": 9542,
+          "size_m": 1.0,
+          "note": "map-projected pixel positions published by The Planetary Society (2015-01-16) for the bright glint, confirmed by eye"
+        },
+        {
+          "piece": "lander",
+          "strip": "ESP_040363_1915",
+          "line": 18256,
+          "sample": 10036,
+          "size_m": 1.0,
+          "note": "registered from ESP_039308_1915 (SIFT 483 inliers) to the same glint, confirmed by eye"
+        }
+      ]
     }
   ],
   "filled_on": "2026-10-28",
   "filled_by": "Ching Chang, by eye from raw-pixel crops; Schiaparelli and Phoenix positions checked by registering the HiRISE captioned images to the strips",
-  "pieces_filled": 18
+  "pieces_filled": 32,
+  "moved_from_heldout": {
+    "on": "2026-10-30",
+    "by": "Ching Chang",
+    "sites": [
+      "perseverance",
+      "insight",
+      "zhurong",
+      "beagle2"
+    ],
+    "source_sha256": "9b54704be5ba929ce996d7b0a77c89ac61565057d9c4e27cfa8448d4283da372",
+    "note": "Sealed for frozen-v1 and scored once (plan, Decisions 2026-10-29 21:20). Moved here by the person under the decision of 2026-10-30 02:30: tuning sites for v2; any v2 number on these four sites is reported as not blind. Positions copied unchanged from the sealed file, whose hash matches the one recorded at sealing."
+  }
 }
