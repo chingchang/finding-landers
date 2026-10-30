@@ -194,6 +194,82 @@ def test_run_refuses_without_frozen(tmp_path):
     assert r.returncode == 3 and "frozen" in r.stderr
 
 
+def test_frozen_configs_match_detect_py_defaults():
+    rules = ROOT / "landers" / "shape_v3.json"
+    cal = ROOT / "landers" / "calibration_v0.json"
+    rec, cfg = run.frozen_configs(str(cal), str(rules))
+    r = rec.to_json()
+    assert r["frozen"] is True and r["calibration_mode"] == "table" and r["saturated_is_data"] is True
+    assert r["shape_rules"] == "landers/shape_v3.json" and r["calibration"] == "landers/calibration_v0.json"
+    assert Path(cfg.shape_rules).is_absolute() and Path(cfg.shape_rules).name == "shape_v3.json"
+    assert {k: v for k, v in cfg.to_json().items() if k not in ("calibration", "shape_rules")} == {
+        k: v for k, v in r.items() if k not in ("calibration", "shape_rules")
+    }
+
+
+def test_survivors_are_the_top_by_score_at_the_bar():
+    from landers.search import persistence as sp
+
+    cands = [{"score": s, "row": 0, "col": i, "branch": "bright", "grade": "needs second look"} for i, s in
+             enumerate([0.1, 3.0, -1.0, 2.0, 1.0])]
+    entry = {"valid_area_km2": 1.6, "candidates": cands}
+    s = sp.survivors(entry, 2.0)
+    assert [c["score"] for c in s] == [3.0, 2.0, 1.0]
+    assert sp.survivor_count(0.4, 2.0) == 0
+
+
+def test_combine_counts_dates_and_never_changes_grades():
+    from landers.search import persistence as sp
+
+    def c(score):
+        return {"row": 1.0, "col": 2.0, "branch": "bright", "score": score, "grade": "needs second look"}
+
+    surv = {"A": [c(3.0), c(2.0)], "B": [c(1.0)], "C": []}
+    pair = {"directions": {
+        "A->B": {"from": "A", "to": "B", "survivors": [{"rank": 1, "seen": True}, {"rank": 2, "seen": None}]},
+        "B->A": {"from": "B", "to": "A", "survivors": [{"rank": 1, "seen": False}]},
+    }}
+    pair2 = {"directions": {"A->C": {"from": "A", "to": "C", "survivors": [{"rank": 1, "seen": False}]}}}
+    rows = {(r["strip"], r["rank"]): r for r in sp.combine(["A", "B", "C"], surv, [pair, pair2])}
+    a1 = rows[("A", 1)]
+    assert (a1["dates_looked"], a1["dates_seen"], a1["seen_in"], a1["not_seen_in"]) == (3, 2, ["B"], ["C"])
+    assert (rows[("A", 2)]["dates_looked"], rows[("A", 2)]["dates_seen"]) == (1, 1)
+    assert (rows[("B", 1)]["dates_looked"], rows[("B", 1)]["dates_seen"]) == (2, 1)
+    assert {r["grade"] for r in rows.values()} == {"needs second look"}
+
+
+def test_chance_matches_grow_with_the_other_dates_density():
+    from landers.search import persistence as sp
+
+    surv = {"A": [{"branch": "bright"}, {"branch": "dark"}]}
+    pr = {"radius_px": 8.0, "directions": {"A->B": {"from": "A", "to": "B", "survivors": [
+        {"rank": 1, "seen": True}, {"rank": 2, "seen": False}]}}}
+
+    def per_strip(n_bright):
+        return {"B": {"valid_area_km2": 1.0, "scale_m": 0.25, "family_counts": {"bright": n_bright, "dark": 0}}}
+
+    [lo] = sp.chance_matches(pr, surv, per_strip(1000))
+    [hi] = sp.chance_matches(pr, surv, per_strip(100000))
+    assert (lo["looked"], lo["seen"]) == (2, 1)
+    # 1000 per km2 over a 2 m radius: 1 - exp(-0.004 pi), about 0.0126
+    assert lo["expected_by_chance"] == 0.01 and hi["expected_by_chance"] > 0.7
+
+
+def test_code_matches_tag():
+    assert run.code_matches_tag("no-such-tag-anywhere") is None
+    assert run.code_matches_tag("HEAD") is True
+
+
+def test_run_refuses_an_unknown_same_code_tag(tmp_path):
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "search.py"), "run", "--frozen", "--same-code-as",
+         "no-such-tag-anywhere", "--out", str(tmp_path), "--ids", "X"],
+        capture_output=True,
+        text=True,
+    )
+    assert r.returncode == 3
+
+
 # --- on real strips ---------------------------------------------------------------------------------------
 
 MPL = manifest_ids("mpl_summer")

@@ -56,3 +56,6 @@ One line per idea that did not move the score. Winners go into the main package 
   other sites only). Stopped at the recognition probe: 1 of 15 answers with examples named a place and a mission
   (wrong ones) on the Phoenix backshell; no votes cast, nothing to compare. The code stays behind --fewshot, off.
   `docs/reports/2026-10-29-fewshot/`.
+- 2026-10-30, item 11: whole-strip contrast (overview DN percentiles) to explain the two 2007 strips that neither
+  register nor yield candidates: it does not single them out. Nothing kept.
+  `experiments/search_strip_contrast.py`, `out/search/strip_contrast.json`.
