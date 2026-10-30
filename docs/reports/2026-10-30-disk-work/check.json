@@ -1103,7 +1103,7 @@
   ],
   "on_disk_not_copied": []
  },
- "export_bytes": 9716501528,
+ "export_bytes": 9716544071,
  "delete_proposed": {
   "what": "the .JP2 of each search strip; the .LBL files, the manifest and the tuning strips stay",
   "strips": [
@@ -1146,8 +1146,8 @@
  },
  "free_gb_now": 6.9,
  "git": {
-  "commit": "7dc570875e700e066d2b731f2b40c27e2d09931e",
-  "dirty": true,
+  "commit": "3e34d781b8c71832fe8d8072fb0a46caed61ba07",
+  "dirty": false,
   "tag": null
  }
 }
