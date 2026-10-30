@@ -1,0 +1,58 @@
+{
+ "requests": 1373,
+ "by_kind": {
+  "spark": 37,
+  "wonder": 1336
+ },
+ "leak_hits": {
+  "observation id": 0,
+  "date": 0,
+  "file name": 0,
+  "site name": 0
+ },
+ "leak_examples": {
+  "observation id": [],
+  "date": [],
+  "file name": [],
+  "site name": []
+ },
+ "distinct_wonder_questions": {
+  "You are looking at orbital images of planetary ground at about 25 to 50 cm per p": 1318,
+  "You are looking at orbital images of planetary ground. Image 1 is a square at na": 18
+ },
+ "images_per_wonder_request": {
+  "3": 1336
+ },
+ "export_equals_strip": {
+  "compared": 36,
+  "same_pixels": 36
+ },
+ "crops_with_saturated_pixels_in_centre_64px": {
+  "ESP_048041_1780": 2,
+  "ESP_030313_1755": 2,
+  "ESP_017716_2485": 1,
+  "ESP_046170_2025": 5,
+  "ESP_025815_1655": 75,
+  "ESP_022038_1995": 17,
+  "ESP_068822_1985": 2,
+  "ESP_087360_1845": 0,
+  "ESP_075625_2055": 6,
+  "ESP_037145_1915": 4,
+  "ESP_039308_1915": 1,
+  "ESP_040363_1915": 5
+ },
+ "crops_voted": {
+  "ESP_048041_1780": 100,
+  "ESP_030313_1755": 100,
+  "ESP_017716_2485": 100,
+  "ESP_046170_2025": 100,
+  "ESP_025815_1655": 100,
+  "ESP_022038_1995": 100,
+  "ESP_068822_1985": 100,
+  "ESP_087360_1845": 100,
+  "ESP_075625_2055": 100,
+  "ESP_037145_1915": 100,
+  "ESP_039308_1915": 100,
+  "ESP_040363_1915": 100
+ }
+}

@@ -8,6 +8,11 @@ few-shot prompt (plan item 9d, ``landers.models.fewshot``) adds labelled example
 
 Augmentations (per vote): a random offset of the centre, horizontal and vertical flips, and a different
 percentile stretch. They are drawn from a seeded generator and recorded, so a vote can be rebuilt.
+
+Saturated pixels are not valid data and stay out of the stretch's percentiles. Until plan item 14 they were also drawn
+black, so a bright object with a saturated core showed as a black dot in a white ring (the finding in
+docs/reports/2026-10-29-fewshot.md). ``saturated_bright`` draws them white; it is off by default, so earlier requests
+hash as they did.
 """
 
 from __future__ import annotations
@@ -19,6 +24,7 @@ import numpy as np
 from PIL import Image
 
 from landers.models import leak
+from landers.strip import SATURATED
 
 STRETCHES = ((0.5, 99.5), (1.0, 99.0), (2.0, 98.0), (0.2, 99.8))
 
@@ -81,9 +87,12 @@ def square_crop(
     return out, ok
 
 
-def stretch(arr: np.ndarray, valid: np.ndarray, lo_pct: float, hi_pct: float) -> np.ndarray:
-    """One global percentile stretch over the valid pixels to uint8; invalid pixels become 0."""
+def stretch(arr: np.ndarray, valid: np.ndarray, lo_pct: float, hi_pct: float, saturated_bright: bool = False) -> np.ndarray:
+    """One global percentile stretch over the valid pixels to uint8; invalid pixels become 0, or 255 for saturated
+    pixels under ``saturated_bright``."""
     u8 = np.zeros(arr.shape, np.uint8)
+    if saturated_bright:
+        u8[arr >= SATURATED] = 255
     if valid.sum() < 2:
         return u8
     lo, hi = np.percentile(arr[valid], [lo_pct, hi_pct])
@@ -147,16 +156,17 @@ def build_crop(
     zoom: int = 4,
     aug: Augmentation | None = None,
     reference: tuple[np.ndarray, np.ndarray, float, float] | None = None,
+    saturated_bright: bool = False,
 ) -> BlindCrop:
     """A blind crop of ``data`` around (row, col). ``reference`` is (data, valid, row, col) of other ground,
     stretched the same way and flipped the same way, so the two views differ only in content."""
     aug = aug or Augmentation()
     arr, ok = square_crop(data, valid, row + aug.drow, col + aug.dcol, size)
-    u8 = stretch(arr, ok, aug.lo_pct, aug.hi_pct)
+    u8 = stretch(arr, ok, aug.lo_pct, aug.hi_pct, saturated_bright)
     ref_png = None
     if reference is not None:
         rarr, rok = square_crop(reference[0], reference[1], reference[2], reference[3], size)
-        ru8 = stretch(rarr, rok, aug.lo_pct, aug.hi_pct)
+        ru8 = stretch(rarr, rok, aug.lo_pct, aug.hi_pct, saturated_bright)
         ref_png = to_png(_flip(ru8, aug))
     u8 = _flip(u8, aug)
     return BlindCrop(

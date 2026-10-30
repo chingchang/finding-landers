@@ -1,0 +1,122 @@
+{
+ "cumulative": {
+  "ledgers": [
+   {
+    "item": "9b",
+    "path": "docs/reports/2026-10-29-first-real-run/ledger.json",
+    "usd": 1.1896
+   },
+   {
+    "item": "9c",
+    "path": "docs/reports/2026-10-29-model-scoreboard/ledger.json",
+    "usd": 6.7124
+   },
+   {
+    "item": "9d",
+    "path": "docs/reports/2026-10-29-fewshot/ledger.json",
+    "usd": 0.4269
+   }
+  ],
+  "total_usd": 8.3289,
+  "cap_usd": 120.0
+ },
+ "per_wonder_vote_usd": 0.01604,
+ "tokens_per_vote_9c": {
+  "n": 159,
+  "input_mean": 497.0,
+  "output_mean": 702.4276729559748,
+  "output_max": 1864,
+  "input_max": 497
+ },
+ "first_votes_9c": 53,
+ "first_votes_in_band_9c": 13,
+ "band_share_9c": 0.245,
+ "votes_per_candidate": 1.491,
+ "spark_usd_per_turn_9c": 0.0265,
+ "strips": 12,
+ "transplant_vote_set": 128,
+ "probe_calls": 18,
+ "checks_per_strip": 3,
+ "review_turns": 6,
+ "rows": [
+  {
+   "top_per_strip": 50,
+   "candidates": 600,
+   "wonder_calls": 1211,
+   "votes_and_probe_usd": 17.69,
+   "spark_and_check_votes_usd": 3.64,
+   "total_usd": 21.33,
+   "all_three_votes_usd": 38.95,
+   "if_wonder_bill_is_double_usd": 40.75,
+   "all_runs_after_usd": 29.66
+  },
+  {
+   "top_per_strip": 100,
+   "candidates": 1200,
+   "wonder_calls": 2105,
+   "votes_and_probe_usd": 32.03,
+   "spark_and_check_votes_usd": 3.64,
+   "total_usd": 35.67,
+   "all_three_votes_usd": 67.82,
+   "if_wonder_bill_is_double_usd": 69.44,
+   "all_runs_after_usd": 44.0
+  },
+  {
+   "top_per_strip": 150,
+   "candidates": 1800,
+   "wonder_calls": 3000,
+   "votes_and_probe_usd": 46.37,
+   "spark_and_check_votes_usd": 3.64,
+   "total_usd": 50.02,
+   "all_three_votes_usd": 96.68,
+   "if_wonder_bill_is_double_usd": 98.12,
+   "all_runs_after_usd": 58.34
+  },
+  {
+   "top_per_strip": 200,
+   "candidates": 2400,
+   "wonder_calls": 3894,
+   "votes_and_probe_usd": 60.72,
+   "spark_and_check_votes_usd": 3.64,
+   "total_usd": 64.36,
+   "all_three_votes_usd": 125.55,
+   "if_wonder_bill_is_double_usd": 126.81,
+   "all_runs_after_usd": 72.69
+  }
+ ],
+ "dry_run": {
+  "ledger": {
+   "sam": {
+    "units": 0,
+    "attempts": 0,
+    "ok": 0,
+    "failed": 0,
+    "refused": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+   },
+   "wonder": {
+    "units": 1346,
+    "attempts": 1346,
+    "ok": 1346,
+    "failed": 0,
+    "refused": 0,
+    "input_tokens": 5923760,
+    "output_tokens": 53840,
+    "cost_usd": 24.7718
+   },
+   "spark": {
+    "units": 48,
+    "attempts": 48,
+    "ok": 48,
+    "failed": 0,
+    "refused": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+   }
+  },
+  "requests_written": 1373
+ }
+}

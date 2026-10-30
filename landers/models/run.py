@@ -18,7 +18,7 @@ import numpy as np
 from landers.detect import DetectorConfig
 from landers.models import crops, sam, wonder
 from landers.models.backend import ModelClient, make_backend
-from landers.models.ledger import CapError, Ledger
+from landers.models.ledger import CapError, Ledger, register_run, spent_usd
 from landers.models.spark import EvidenceStore, evidence_record
 
 Reader = Callable[[float, float, int], tuple[np.ndarray, np.ndarray]]
@@ -28,15 +28,21 @@ def candidate_id(i: int) -> str:
     return f"c{i:03d}"
 
 
-def open_client(kind: str, out_dir: Path, ledger_name: str = "ledger.json") -> ModelClient:
-    """A client on backend ``kind`` with the ledger continued from ``out_dir/ledger.json``."""
+def open_client(kind: str, out_dir: Path, ledger_name: str = "ledger.json", item: str = "") -> ModelClient:
+    """A client on backend ``kind`` with the ledger continued from ``out_dir/ledger.json``. A real run's ledger goes on the
+    register before anything is sent (``item`` names it there), and the cumulative dollar cap counts every other ledger on
+    the register."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     directory = {"dry-run": out_dir / "model_requests", "recorded": out_dir / "model_recordings"}.get(kind)
     if kind == "real":
         directory = out_dir / "model_recordings"
     backend = make_backend(kind, directory)
-    return ModelClient(backend, Ledger.load(out_dir / ledger_name))
+    ledger = Ledger.load(out_dir / ledger_name)
+    if kind == "real":
+        register_run(ledger.path, item or out_dir.name)
+    ledger.prior_usd = spent_usd(exclude=ledger.path)
+    return ModelClient(backend, ledger)
 
 
 def top_candidates(cands: list[dict], n: int) -> list[dict]:
@@ -104,6 +110,7 @@ def vote_pass(
     examples: Callable[[int, int, crops.Augmentation], list[tuple[str, bytes]]] | None = None,
     only: set[int] | None = None,
     on_record: Callable[[dict], None] | None = None,
+    saturated_bright: bool = False,
 ) -> list[dict]:
     """Three augmented blind crops per candidate; votes (or the recognition probe) on each. With votes, the
     grade after ``apply_votes`` is recorded beside the grade before; nothing goes up.
@@ -123,7 +130,10 @@ def vote_pass(
         if reference is not None and reference_at is not None:
             rdata, rvalid = reference(reference_at[0], reference_at[1], size + size // 2)
             ref = (rdata, rvalid, rdata.shape[0] / 2.0, rdata.shape[1] / 2.0)
-        views = [crops.build_crop(data, valid, data.shape[0] / 2.0, data.shape[1] / 2.0, size, 4, a, ref) for a in augs]
+        views = [
+            crops.build_crop(data, valid, data.shape[0] / 2.0, data.shape[1] / 2.0, size, 4, a, ref, saturated_bright)
+            for a in augs
+        ]
         if examples is not None:
             for j, (v, a) in enumerate(zip(views, augs)):
                 v.examples = examples(i, j, a)
@@ -143,6 +153,43 @@ def vote_pass(
         if on_record is not None:
             on_record(rec)
     return out
+
+
+def single_vote(
+    client: ModelClient,
+    read: Reader,
+    cand: dict,
+    index: int,
+    reference: tuple[np.ndarray, np.ndarray, float, float] | None = None,
+    rule: wonder.SingleVoteRule | None = None,
+    size: int = 256,
+    seed: int = 0,
+) -> dict:
+    """One vote on the plain view; two more on augmented views when the first falls in the rule's borderline band. The
+    augmentations hang on the seed and the rank alone, so a rank's requests do not depend on what ran before it. Saturated
+    pixels are drawn bright. A CapError goes to the caller."""
+    rule = rule or wonder.SingleVoteRule()
+    augs = crops.draw_augmentations(np.random.default_rng([seed, index]), 3, size)
+    data, valid = read(cand["row"], cand["col"], size + size // 4)
+    views = [
+        crops.build_crop(data, valid, data.shape[0] / 2.0, data.shape[1] / 2.0, size, 4, a, reference, True) for a in augs
+    ]
+    votes = wonder.cast_votes(client, views[:1])
+    if rule.borderline(votes[0]):
+        votes += wonder.cast_votes(client, views[1:])
+    grade, note = rule.apply(cand["grade"], votes)
+    return {
+        "id": candidate_id(index),
+        "branch": cand["branch"],
+        "crops": [v.to_json() for v in views[: len(votes)]],
+        "prompt": wonder.PLAIN_VERSION,
+        "crop_draw": "saturated-bright",
+        "rule": rule.version,
+        "votes": votes,
+        "grade_before": cand["grade"],
+        "grade_after": grade,
+        "note": note,
+    }
 
 
 def build_store(
@@ -167,7 +214,13 @@ def build_store(
 
 
 def check_runner(
-    client: ModelClient, read: Reader, cands: list[dict], scale_m: float, seed: int = 1, persist: dict | None = None
+    client: ModelClient,
+    read: Reader,
+    cands: list[dict],
+    scale_m: float,
+    seed: int = 1,
+    persist: dict | None = None,
+    saturated_bright: bool = False,
 ):
     """The bounded checks Spark may order. ``zoom_pass``: SAM on a 512 px crop. ``more_votes``: three more
     votes with a new seed. ``second_date_check``: the persistence record when the run has one. Each is
@@ -187,7 +240,7 @@ def check_runner(
                 "tests": rec["tests"],
             }
         if kind == "more_votes":
-            rec = vote_pass(client, read, [c], n_votes=3, seed=seed + 1000 + i)[0]
+            rec = vote_pass(client, read, [c], n_votes=3, seed=seed + 1000 + i, saturated_bright=saturated_bright)[0]
             if rec.get("not_run"):
                 raise CapError(rec["not_run"])
             return {"votes": rec["votes"], "grade_after": rec["grade_after"], "note": rec["note"]}

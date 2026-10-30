@@ -98,6 +98,34 @@ class VoteRule:
     min_confidence: float = 0.7
 
 
+@dataclass
+class SingleVoteRule:
+    """docs/proposals/vote-single-v1.md: one vote per candidate, three only in a borderline band. A first vote of natural
+    at ``lower_alone`` or above lowers by itself; natural from ``band_low`` up to ``lower_alone`` earns two more votes and
+    then ``VoteRule`` decides on the three; anything else keeps the grade and costs nothing more."""
+
+    lower_alone: float = 0.85
+    band_low: float = 0.70
+    version: str = "vote-single-v1"
+
+    def borderline(self, first: dict) -> bool:
+        return first["verdict"] == "natural" and self.band_low <= first["confidence"] < self.lower_alone
+
+    def apply(self, grade: str, votes: list[dict]) -> tuple[str, str]:
+        """The grade after one vote or three: the same or one step lower."""
+        if len(votes) > 1:
+            return apply_votes(grade, votes, VoteRule(min_confidence=self.band_low))
+        first = votes[0]
+        if first["verdict"] != "natural" or first["confidence"] < self.lower_alone:
+            return grade, f"kept: first vote {first['verdict']} {first['confidence']}"
+        if grade not in GRADES:
+            return grade, "not assessed: votes recorded only"
+        i = GRADES.index(grade)
+        if i + 1 < len(GRADES):
+            return GRADES[i + 1], f"lowered by one vote: natural at or above {self.lower_alone}"
+        return grade, "already the lowest grade"
+
+
 def _question(template: str, crop: BlindCrop) -> str:
     """The fixed question first (for the prefix cache), then the examples sentence when there are examples.
     With no examples the text is exactly the plain prompt's, so plain requests hash as before."""
