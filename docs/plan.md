@@ -77,6 +77,16 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
 9b. [done, see docs/reports/2026-10-29-first-real-run.md] First real run, after MODEL_API_KEY is in the environment and a person asks: recognition probe on
    Curiosity and Phoenix first, then one tuning site, 20 SAM calls, 9 Wonder votes, one Spark review;
    ledger and tool log committed with the report; grades can only go down.
+9c. [ ] Model-layer scoreboard on the tuning sites (a person asked for it on 10-29 and approved the spend; caps
+    below). Question: what do SAM, the Wonder votes and the Spark review add on top of the frozen detector, and do
+    they ever lower a real piece? Input: the frozen-v1 lists for the eight tuning strips with landers/shape_v3.json
+    applied (the data worktree beside this one holds them under out/shape_v3/; rebuild from the tag if needed).
+    Per strip: SAM on the top 20, three Wonder votes on the top 10, one Spark review; real backend, one ledger,
+    caps LANDERS_CAP_SAM=200, LANDERS_CAP_WONDER=260, LANDERS_CAP_SPARK=120, about 20 USD at docs/models.md
+    prices. Score before and after against controls/tuning.json: recorded pieces in the top 20 whose grade was
+    lowered (by which stage, citing its evidence), false alarms per strip lowered, kept and unassessed, and the
+    cost per false alarm removed. Publish the ledger and records with scripts/models_publish.py. No change to
+    the detector, thresholds or model prompts in this item: a change found here goes in a later tag.
 10. [ ] Held-out run: detector and thresholds frozen (tag), a person triggers it, three sites, once. Then
     Beagle 2, once. A miss at Beagle 2 is a reported result. Triggered by a person on 10-29 through the queue:
     run the detector as it is at frozen-v1 (no code change in this item) with --frozen over the strips of the
