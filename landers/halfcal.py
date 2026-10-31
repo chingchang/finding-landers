@@ -65,7 +65,9 @@ def capped_scores(cal: Calibration, branches: np.ndarray, raw: np.ndarray, table
     return out
 
 
-def cross_fit(branches: np.ndarray, raw: np.ndarray, colours: np.ndarray, areas: tuple[float, float]) -> tuple[Calibration, Calibration]:
+def cross_fit(
+    branches: np.ndarray, raw: np.ndarray, colours: np.ndarray, areas: tuple[float, float]
+) -> tuple[Calibration, Calibration]:
     """The two colours' curves, element k fitted on colour k."""
     fitted = []
     for k in (0, 1):
@@ -76,7 +78,9 @@ def cross_fit(branches: np.ndarray, raw: np.ndarray, colours: np.ndarray, areas:
     return fitted[0], fitted[1]
 
 
-def score_by_other(cals: tuple[Calibration, Calibration], branches: np.ndarray, raw: np.ndarray, table: np.ndarray, colours: np.ndarray) -> np.ndarray:
+def score_by_other(
+    cals: tuple[Calibration, Calibration], branches: np.ndarray, raw: np.ndarray, table: np.ndarray, colours: np.ndarray
+) -> np.ndarray:
     """Each candidate scored by the curve of the colour it does not sit on."""
     out = np.zeros(len(raw), np.float64)
     for k in (0, 1):
@@ -85,7 +89,9 @@ def score_by_other(cals: tuple[Calibration, Calibration], branches: np.ndarray, 
     return out
 
 
-def realised_rates(scores: np.ndarray, branches: np.ndarray, area_km2: float, levels: tuple[float, ...], cap: float | None = None) -> dict:
+def realised_rates(
+    scores: np.ndarray, branches: np.ndarray, area_km2: float, levels: tuple[float, ...], cap: float | None = None
+) -> dict:
     """Candidates at or above each calibrated level per km2, per branch and over all branches. A level at or above
     ``cap`` says nothing and is left out."""
     names = [str(b) for b in np.unique(branches)]

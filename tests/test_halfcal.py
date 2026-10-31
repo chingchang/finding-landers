@@ -1,6 +1,8 @@
 """The honest tail of plan item 15: the split, the cross-fit and the cap. No data on disk needed."""
 
 import math
+import sys
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -81,6 +83,30 @@ def test_realised_rates_leave_out_levels_at_the_cap():
     assert sorted(r) == [0.0, 1.0]
     assert r[0.0]["all"] == 1.5
     assert r[1.0]["branches"] == {"a": 0.5, "b": 0.5}
+
+
+def test_the_runner_refuses_a_strip_of_a_blind_site(monkeypatch, tmp_path):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import halfcal as script
+    import rerank as rr
+
+    sites, _, _ = rr.controls()
+    blind = next(sid for s in sites["sites"] if s["group"] != "tuning" for sid in s["strips"])
+    monkeypatch.setattr(script, "POP", tmp_path)
+    monkeypatch.setattr(script, "LISTS", ())
+    monkeypatch.setattr(script, "target_strips", lambda: [blind])
+    with pytest.raises(ValueError):
+        script.population(None)
+
+
+def test_better_rank_keeps_each_lists_first_candidates():
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import halfcal as script
+
+    first = np.array([3.0, 2.0, 1.0, 0.0])
+    second = np.array([0.0, 1.0, 2.0, 3.0])
+    order = np.argsort(-script.fused(first, second)).tolist()
+    assert set(order[:2]) == {0, 3}, "each list's best candidate comes first"
 
 
 def test_exchangeable_ground_gives_the_nominal_rate_on_the_other_half():

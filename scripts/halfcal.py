@@ -11,7 +11,6 @@ paid model is called.
 from __future__ import annotations
 
 import argparse
-import json
 import statistics
 import sys
 import time
@@ -38,7 +37,10 @@ TILES = OUT / "t10"
 SEARCH = config.REPO_ROOT / "out" / "search" / "candidates"
 FROZEN_REFERENCE = config.REPO_ROOT / "docs" / "reports" / "2026-10-30-reranker" / "summary.json"
 LISTS = (  # the frozen-v1 lists of the tuning strips, as the export took them
-    (config.REPO_ROOT / "out" / "shape_v3" / "candidates_v03_features.json", config.REPO_ROOT / "landers" / "shape_v3.json"),
+    (
+        config.REPO_ROOT / "out" / "shape_v3" / "candidates_v03_features.json",
+        config.REPO_ROOT / "landers" / "shape_v3.json",
+    ),
     (config.REPO_ROOT / "out" / "heldout_v1" / "candidates_heldout_v1.json", None),
     (config.REPO_ROOT / "out" / "heldout_v1" / "candidates_final_exam_v1.json", None),
 )
@@ -73,8 +75,15 @@ def save_population(sid: str, cands: list[dict], rules=None) -> None:
         gain.append(x.get("shape_gain", 0.0))
         raw.append(x["raw_score"])
         branch.append(c["branch"])
-    rr.save_npz(POP / f"{sid}.npz", row=np.array(rows, np.float64), col=np.array(cols, np.float64), score=np.array(score, np.float64),
-                gain=np.array(gain, np.float64), raw=np.array(raw, np.float64), branch=np.array(branch))
+    rr.save_npz(
+        POP / f"{sid}.npz",
+        row=np.array(rows, np.float64),
+        col=np.array(cols, np.float64),
+        score=np.array(score, np.float64),
+        gain=np.array(gain, np.float64),
+        raw=np.array(raw, np.float64),
+        branch=np.array(branch),
+    )
     print(f"{sid}: {len(rows)} candidates", flush=True)
 
 
@@ -110,7 +119,10 @@ def redetect(a) -> int:
     cuts, _ = rr.build_cuts(meta, sites)
     per_tile, _ = rr.allocate(cuts, tiles)
     cfg = rr.tp.TransplantConfig(**meta["config"])
-    dcfg = DetectorConfig(calibration=str(config.REPO_ROOT / "landers/calibration_v0.json"), shape_rules=str(config.REPO_ROOT / "landers/shape_v3.json"))
+    dcfg = DetectorConfig(
+        calibration=str(config.REPO_ROOT / "landers/calibration_v0.json"),
+        shape_rules=str(config.REPO_ROOT / "landers/shape_v3.json"),
+    )
     cal, rules = load_calibration(dcfg), load_shape_rules(dcfg)
     TILES.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
@@ -127,11 +139,25 @@ def redetect(a) -> int:
         if [p.to_json() for p in placed] != rec["placements"]:
             raise RuntimeError(f"{t['file']}: the placements differ from item 13's record")
         cands = finish_tile(detect_tile(planted, rr.label_of(t["strip"]), dcfg), dcfg, cal, rules)
-        now = [{"row": round(c.row - t["row0"], 1), "col": round(c.col - t["col0"], 1), "score": round(c.score, 4), "branch": c.branch} for c in cands]
+        now = [
+            {
+                "row": round(c.row - t["row0"], 1),
+                "col": round(c.col - t["col0"], 1),
+                "score": round(c.score, 4),
+                "branch": c.branch,
+            }
+            for c in cands
+        ]
         was = [{k: d[k] for k in ("row", "col", "score", "branch")} for d in rec["detections"]]
         if now != was:
             raise RuntimeError(f"{t['file']}: the rerun differs from item 13's record")
-        rr.write_json(out, [{**x, "raw": c.extra["raw_score"], "gain": c.extra.get("shape_gain", 0.0)} for x, c in zip(now, cands, strict=True)])
+        rr.write_json(
+            out,
+            [
+                {**x, "raw": c.extra["raw_score"], "gain": c.extra.get("shape_gain", 0.0)}
+                for x, c in zip(now, cands, strict=True)
+            ],
+        )
         print(f"{t['file']}: {len(now)} detections agree, {time.time() - t0:.0f}s", flush=True)
     print("all tiles agree with item 13's records")
     return 0
@@ -154,13 +180,18 @@ class Strip:
         valid, step = es.overview.valid, es.overview_step
         self.area = {s: hc.colour_areas(valid, step, self.scale, s) for s in (0.0, SHIFT_M)}
         self.total = sum(self.area[0.0])
-        self.cals = {s: hc.cross_fit(self.branch, self.raw, hc.colour(self.row, self.col, self.scale, s), self.area[s]) for s in self.area}
+        self.cals = {
+            s: hc.cross_fit(self.branch, self.raw, hc.colour(self.row, self.col, self.scale, s), self.area[s])
+            for s in self.area
+        }
         self.whole = hc.fit_population(self.branch, self.raw, self.total)
         by_branch = {str(b): self.raw[self.branch == b].tolist() for b in np.unique(self.branch)}
         self.extrap = fit_scores(by_branch, self.total, "item8_tail", top_exclude=20)
 
     def half(self, q: dict, shift: float = 0.0) -> np.ndarray:
-        return hc.score_by_other(self.cals[shift], q["branch"], q["raw"], q["table"], hc.colour(q["row"], q["col"], self.scale, shift))
+        return hc.score_by_other(
+            self.cals[shift], q["branch"], q["raw"], q["table"], hc.colour(q["row"], q["col"], self.scale, shift)
+        )
 
     def arm(self, name: str, q: dict) -> np.ndarray:
         """Each arm's score of the candidates in ``q``, rule gains added except for ``no_rules``."""
@@ -171,17 +202,28 @@ class Strip:
         if name == "whole_strip":
             return hc.capped_scores(self.whole, q["branch"], q["raw"], q["table"]) + q["gain"]
         if name == "extrapolated":
-            return np.array([self.extrap.calibrated(str(b), float(r)) for b, r in zip(q["branch"], q["raw"], strict=True)]) + q["gain"]
+            return (
+                np.array([self.extrap.calibrated(str(b), float(r)) for b, r in zip(q["branch"], q["raw"], strict=True)])
+                + q["gain"]
+            )
         if name == "no_rules":
             return self.half(q)
         raise ValueError(name)
 
     def query(self) -> dict:
-        return {"row": self.row, "col": self.col, "branch": self.branch, "raw": self.raw, "table": self.table, "gain": self.gain}
+        return {
+            "row": self.row,
+            "col": self.col,
+            "branch": self.branch,
+            "raw": self.raw,
+            "table": self.table,
+            "gain": self.gain,
+        }
 
 
 def fused(first: np.ndarray, second: np.ndarray) -> np.ndarray:
     """The better of two ranks, as experiments/rerank_fusion.py. Both inputs and the output: higher is better."""
+
     def rank(x):
         r = np.zeros(len(x))
         r[np.argsort(-x, kind="stable")] = np.arange(1, len(x) + 1)
@@ -196,9 +238,16 @@ def fused(first: np.ndarray, second: np.ndarray) -> np.ndarray:
 
 def key_board(strips: dict[str, Strip], piece_strips: list[str], answers: dict, thresholds: dict) -> dict:
     def rows(s: Strip, values: np.ndarray) -> list[dict]:
-        return [{"row": float(r), "col": float(c), "score": float(v), "branch": str(b)} for r, c, v, b in zip(s.row, s.col, values, s.branch, strict=True)]
+        return [
+            {"row": float(r), "col": float(c), "score": float(v), "branch": str(b)}
+            for r, c, v, b in zip(s.row, s.col, values, s.branch, strict=True)
+        ]
 
-    out = {"frozen_v1": rr.key_ranks({sid: rows(strips[sid], strips[sid].score) for sid in piece_strips}, answers, thresholds)}
+    out = {
+        "frozen_v1": rr.key_ranks(
+            {sid: rows(strips[sid], strips[sid].score) for sid in piece_strips}, answers, thresholds
+        )
+    }
     for arm in ARMS:
         lists = {}
         for sid in piece_strips:
@@ -215,16 +264,37 @@ def board_tiles(thresholds: dict) -> tuple[list[dict], list[dict]]:
     for t in listed_tiles():
         key = rr.tile_key(t)
         for d in rr.load(TILES / f"{t['file'][:-4]}.json"):
-            dets.append({**d, "tile": key, "strip": t["strip"], "row_abs": d["row"] + t["row0"], "col_abs": d["col"] + t["col0"]})
+            dets.append(
+                {
+                    **d,
+                    "tile": key,
+                    "strip": t["strip"],
+                    "row_abs": d["row"] + t["row0"],
+                    "col_abs": d["col"] + t["col0"],
+                }
+            )
         for p in rr.load(rr.RUN / "tiles" / f"{t['file'][:-4]}.json")["placements"]:
             if not p["sham"]:
                 cut = cuts[p["cut_index"]]
-                truths.append({"tile": p["tile"], "row": p["row"], "col": p["col"], "kind": p["kind"], "site": p["site"], "piece": p["piece"], "size_m": cut["size_m"],
-                               "radius_px": match_radius_px(thresholds, cut["scale_m"], p["kind"]), "target": t["strip"]})
+                truths.append(
+                    {
+                        "tile": p["tile"],
+                        "row": p["row"],
+                        "col": p["col"],
+                        "kind": p["kind"],
+                        "site": p["site"],
+                        "piece": p["piece"],
+                        "size_m": cut["size_m"],
+                        "radius_px": match_radius_px(thresholds, cut["scale_m"], p["kind"]),
+                        "target": t["strip"],
+                    }
+                )
     return dets, truths
 
 
-def transplant_board(strips: dict[str, Strip], dets: list[dict], truths: list[dict], area: float, rates: list, no_texture: set[str]) -> dict:
+def transplant_board(
+    strips: dict[str, Strip], dets: list[dict], truths: list[dict], area: float, rates: list, no_texture: set[str]
+) -> dict:
     by_strip: dict[str, list[int]] = {}
     for i, d in enumerate(dets):
         by_strip.setdefault(d["strip"], []).append(i)
@@ -242,8 +312,14 @@ def transplant_board(strips: dict[str, Strip], dets: list[dict], truths: list[di
             sel = [dets[i] for i in idx]
             raw = np.array([x["raw"] for x in sel])
             gain = np.array([x["gain"] for x in sel])
-            q = {"row": np.array([x["row_abs"] for x in sel]), "col": np.array([x["col_abs"] for x in sel]), "branch": np.array([x["branch"] for x in sel]),
-                 "raw": raw, "table": np.array([x["score"] for x in sel]) - gain, "gain": gain}
+            q = {
+                "row": np.array([x["row_abs"] for x in sel]),
+                "col": np.array([x["col_abs"] for x in sel]),
+                "branch": np.array([x["branch"] for x in sel]),
+                "raw": raw,
+                "table": np.array([x["score"] for x in sel]) - gain,
+                "gain": gain,
+            }
             values[idx] = strips[sid].arm(arm, q)
         out[arm] = scored(values)
         if arm == "primary":
@@ -261,26 +337,47 @@ def rate_rows(strips: dict[str, Strip], sids: list[str]) -> dict:
         s = strips[sid]
         q = s.query()
         caps = [hc.cap_of(x) for x in s.area[0.0]]
-        arms = {"halves": (s.half(q), min(caps)),
-                "table_frozen_v1": (s.table, None),
-                "extrapolated": (s.arm("extrapolated", {**q, "gain": np.zeros(len(s.raw))}), None)}
+        arms = {
+            "halves": (s.half(q), min(caps)),
+            "table_frozen_v1": (s.table, None),
+            "extrapolated": (s.arm("extrapolated", {**q, "gain": np.zeros(len(s.raw))}), None),
+        }
         n_b = len(np.unique(s.branch))
         for arm, (values, cap) in arms.items():
             r = hc.realised_rates(values, s.branch, s.total, LEVELS, cap)
             for lv, d in r.items():
                 nominal = 10.0**-lv
                 ratio_b = [v / nominal for v in d["branches"].values()]
-                per.setdefault(arm, {}).setdefault(str(lv), []).append({"strip": sid, "all_per_km2": round(d["all"], 4), "ratio_all": round(d["all"] / (n_b * nominal), 3),
-                                                                         "ratio_branch_median": round(statistics.median(ratio_b), 3), "n": d["n"]})
+                per.setdefault(arm, {}).setdefault(str(lv), []).append(
+                    {
+                        "strip": sid,
+                        "all_per_km2": round(d["all"], 4),
+                        "ratio_all": round(d["all"] / (n_b * nominal), 3),
+                        "ratio_branch_median": round(statistics.median(ratio_b), 3),
+                        "n": d["n"],
+                    }
+                )
     out: dict = {}
     for arm, levels in per.items():
         out[arm] = {}
         for lv, rows in levels.items():
             ratios = [x["ratio_all"] for x in rows]
             med_b = [x["ratio_branch_median"] for x in rows]
-            out[arm][lv] = {"strips": len(rows), "ratio_all_min": min(ratios), "ratio_all_median": round(statistics.median(ratios), 3), "ratio_all_max": max(ratios),
-                            "ratio_branch_median_min": min(med_b), "ratio_branch_median_max": max(med_b), "rows": rows}
+            out[arm][lv] = {
+                "strips": len(rows),
+                "ratio_all_min": min(ratios),
+                "ratio_all_median": round(statistics.median(ratios), 3),
+                "ratio_all_max": max(ratios),
+                "ratio_branch_median_min": min(med_b),
+                "ratio_branch_median_max": max(med_b),
+                "rows": rows,
+            }
     return out
+
+
+def top_branches(branches: np.ndarray, values: np.ndarray) -> dict[str, int]:
+    names, counts = np.unique(branches[np.argsort(-values, kind="stable")[:20]], return_counts=True)
+    return {str(a): int(b) for a, b in zip(names, counts, strict=True)}
 
 
 def top20_makeup(strips: dict[str, Strip], piece_strips: list[str]) -> dict:
@@ -290,14 +387,16 @@ def top20_makeup(strips: dict[str, Strip], piece_strips: list[str]) -> dict:
         half = s.half(s.query())
         primary = half + s.gain
         cap = min(hc.cap_of(x) for x in s.area[0.0])
-        def branches(values):
-            top = np.argsort(-values, kind="stable")[:20]
-            names, counts = np.unique(s.branch[top], return_counts=True)
-            return {str(a): int(b) for a, b in zip(names, counts, strict=True)}
-
         top = np.argsort(-primary, kind="stable")[:20]
-        out[sid] = {"frozen_v1": branches(s.score), "primary": branches(primary), "at_cap_in_primary_top_20": int((half[top] >= cap).sum()),
-                    "at_cap_in_strip": int((half >= cap).sum()), "candidates": len(s.raw), "area_km2": round(s.total, 2), "cap": round(cap, 3)}
+        out[sid] = {
+            "frozen_v1": top_branches(s.branch, s.score),
+            "primary": top_branches(s.branch, primary),
+            "at_cap_in_primary_top_20": int((half[top] >= cap).sum()),
+            "at_cap_in_strip": int((half >= cap).sum()),
+            "candidates": len(s.raw),
+            "area_km2": round(s.total, 2),
+            "cap": round(cap, 3),
+        }
     return out
 
 
@@ -318,7 +417,9 @@ def score_all(a) -> int:
     dets, truths = board_tiles(thresholds)
     area = float(rr.load(rr.RUN / "run.json")["area_km2"])
     median_km2 = statistics.median(rr.target_areas(targets).values())
-    rates = [(f"N{n}", n / median_km2) for n in rr.TOP_NS] + [("board_rate", float(thresholds["pass"]["max_false_alarms_per_km2"]))]
+    rates = [(f"N{n}", n / median_km2) for n in rr.TOP_NS] + [
+        ("board_rate", float(thresholds["pass"]["max_false_alarms_per_km2"]))
+    ]
     board = transplant_board(strips, dets, truths, area, rates, set(a.no_texture))
     print(f"transplant board, {time.time() - t0:.0f}s", flush=True)
 
@@ -327,7 +428,10 @@ def score_all(a) -> int:
     tp_frozen = {k: v["found"] for k, v in board["frozen_v1"].items()}
     ref_tp = {k: v["found"] for k, v in ref["transplant"].items()}
     if key_frozen != ref["key_curve"] or tp_frozen != ref_tp:
-        print(f"frozen-v1 differs from item 13's: key {key_frozen} against {ref['key_curve']}, transplant {tp_frozen} against {ref_tp}", file=sys.stderr)
+        print(
+            f"frozen-v1 differs from item 13's: key {key_frozen} against {ref['key_curve']}, transplant {tp_frozen} against {ref_tp}",
+            file=sys.stderr,
+        )
         return 2
 
     at = str(rr.PRIMARY_N)
@@ -336,25 +440,54 @@ def score_all(a) -> int:
         ranks = key[arm]
         k_curve = rr.curve(ranks.values())
         by_site = rr.site_curve(ranks)
-        arms[arm] = {"key_curve": k_curve, "key_n": len(ranks), "key_interval_95_at_20": rm.wilson(k_curve[at], len(ranks)), "key_kinds": rr.kind_curve(ranks, pieces),
-                     "key_by_site": by_site, "key_spread_at_20": rr.spread(by_site), "key_ranks": ranks,
-                     "transplant": board[arm], "transplant_curve": {k: v["found"] for k, v in board[arm].items()},
-                     "transplant_spread_at_20": rr.spread(board[arm][f"N{at}"]["by_site"])}
+        arms[arm] = {
+            "key_curve": k_curve,
+            "key_n": len(ranks),
+            "key_interval_95_at_20": rm.wilson(k_curve[at], len(ranks)),
+            "key_kinds": rr.kind_curve(ranks, pieces),
+            "key_by_site": by_site,
+            "key_spread_at_20": rr.spread(by_site),
+            "key_ranks": ranks,
+            "transplant": board[arm],
+            "transplant_curve": {k: v["found"] for k, v in board[arm].items()},
+            "transplant_spread_at_20": rr.spread(board[arm][f"N{at}"]["by_site"]),
+        }
         if arm != "frozen_v1":
-            arms[arm]["dropped_from_top_20"] = sorted(k for k, v in key["frozen_v1"].items() if v is not None and v <= rr.PRIMARY_N and not (ranks.get(k) is not None and ranks[k] <= rr.PRIMARY_N))
+            arms[arm]["dropped_from_top_20"] = sorted(
+                k
+                for k, v in key["frozen_v1"].items()
+                if v is not None and v <= rr.PRIMARY_N and not (ranks.get(k) is not None and ranks[k] <= rr.PRIMARY_N)
+            )
             arms[arm]["key_beats"] = k_curve[at] > key_frozen[at]
             arms[arm]["transplant_beats"] = board[arm][f"N{at}"]["found"] > board["frozen_v1"][f"N{at}"]["found"]
     p = arms["primary"]
-    rule = {"key_beats": p["key_beats"], "transplant_beats": p["transplant_beats"], "no_piece_dropped": not p["dropped_from_top_20"]}
+    rule = {
+        "key_beats": p["key_beats"],
+        "transplant_beats": p["transplant_beats"],
+        "no_piece_dropped": not p["dropped_from_top_20"],
+    }
     rule["met"] = bool(all(rule.values()))
-    res = {"protocol": "docs/proposals/halfcal-v1-protocol.md", "git": run.git_state(), "not_blind": "every number here is on tuning sites; perseverance, insight, zhurong and beagle2 were sealed for frozen-v1 and are not blind",
-           "rule": rule, "planted_km2": area, "median_target_km2": median_km2, "rates_per_km2": dict(rates), "no_texture": sorted(a.no_texture),
-           "false_alarms_allowed": {name: int(fa * area) for name, fa in rates}, "arms": arms,
-           "check": {"tuning": rate_rows(strips, tuning), "targets": rate_rows(strips, targets)}, "top20_makeup": top20_makeup(strips, piece_strips),
-           "seconds": round(time.time() - t0)}
+    res = {
+        "protocol": "docs/proposals/halfcal-v1-protocol.md",
+        "git": run.git_state(),
+        "not_blind": "every number here is on tuning sites; perseverance, insight, zhurong and beagle2 were sealed for frozen-v1 and are not blind",
+        "rule": rule,
+        "planted_km2": area,
+        "median_target_km2": median_km2,
+        "rates_per_km2": dict(rates),
+        "no_texture": sorted(a.no_texture),
+        "false_alarms_allowed": {name: int(fa * area) for name, fa in rates},
+        "arms": arms,
+        "check": {"tuning": rate_rows(strips, tuning), "targets": rate_rows(strips, targets)},
+        "top20_makeup": top20_makeup(strips, piece_strips),
+        "seconds": round(time.time() - t0),
+    }
     rr.write_json(OUT / "results.json", res)
     for arm in ("frozen_v1", *ARMS):
-        print(f"{arm}: key {arms[arm]['key_curve']} transplant {arms[arm]['transplant_curve']} dropped {arms[arm].get('dropped_from_top_20')}", flush=True)
+        print(
+            f"{arm}: key {arms[arm]['key_curve']} transplant {arms[arm]['transplant_curve']} dropped {arms[arm].get('dropped_from_top_20')}",
+            flush=True,
+        )
     print(f"rule {rule}; written {OUT / 'results.json'}")
     return 0
 

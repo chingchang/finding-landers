@@ -168,7 +168,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     single-vote rule and the borderline band into docs/proposals/ as a new pre-declared rule, before any call.
     Before any call it also adds the cumulative dollar cap (see Decisions, 10-30 07:00), reports the ledger total
     so far, and stops after the first 100 calls to report again. Price target about 32 USD on the tuning strips.
-15. [running] v2, C: per-strip calibration with an honest tail: fit the top of each branch on one half of each strip and
+15. [done, see docs/reports/2026-10-30-halfcal.md; the rule is not met and nothing is adopted; one question for the person in docs/proposals/halfcal-v1.md] v2, C: per-strip calibration with an honest tail: fit the top of each branch on one half of each strip and
     check it on the other half, instead of extrapolating. Same judging as A.
 16. [ ] v2, D, if time allows (cut first if the schedule slips): a two-sided shadow test for dark candidates (dark
     on the anti-sun side, not on the sun side), aimed at dust-covered hardware. Same judging as A.
