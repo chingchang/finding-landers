@@ -1,0 +1,135 @@
+{
+ "what": "item 16a: the files and numbers the tag frozen-v2 would freeze; nothing is tagged",
+ "git": {
+  "commit": "61263f22388f64140db9832395151bc62e255c94",
+  "dirty": false,
+  "tag": null
+ },
+ "checked_against_the_tag_by_scripts_v2": [
+  "landers",
+  "scripts/v2.py",
+  "controls/thresholds.json",
+  "uv.lock"
+ ],
+ "config": {
+  "version": "v2",
+  "list_label": "combined ranking: each candidate's better rank of frozen-v1 and the re-ranker; chosen after seeing item 13's result and judged only by the blind run",
+  "detector": {
+   "calibration": "landers/calibration_v0.json",
+   "shape_rules": "landers/shape_v3.json"
+  },
+  "rerank": {
+   "model": "landers/rerank_v2.npz",
+   "top": 2000,
+   "crop_px": 320,
+   "chunk": 100,
+   "batch": 16
+  },
+  "model_stage": {
+   "on": false,
+   "reference": "landers/v2_reference.npz",
+   "top": 100,
+   "checks": 3,
+   "review_top": 20,
+   "review_turns": 6,
+   "seed": 0
+  }
+ },
+ "model": {
+  "sha256": "addd7624ed5ddf46fcc06bd130dd29bc6e23e2e29f8299fcd0ae9553c53dc278",
+  "rows": {
+   "copy": 128,
+   "list_fa": 2387,
+   "native": 31,
+   "sham": 128,
+   "tile_fa": 8051
+  },
+  "git": {
+   "commit": "94debf1dc648992725063ffc1df36db6047eb63f",
+   "dirty": false,
+   "tag": null
+  }
+ },
+ "numbers_in_code": {
+  "encoder": "facebook/dinov2-small",
+  "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+  "encoder_input_px": 224,
+  "crop_windows_m": [
+   16.0,
+   56.0
+  ],
+  "crop_clip": 6.0,
+  "crop_mad_floor": 0.02,
+  "components": 64,
+  "c": 0.1,
+  "novelty_k": 10,
+  "novelty_min_population": 12,
+  "top_negatives": 200,
+  "vote_lower_alone": 0.85,
+  "vote_band_low": 0.7,
+  "vote_rule": "vote-single-v1",
+  "cumulative_cap_usd": 120.0
+ },
+ "sha256": {
+  "landers/__init__.py": "7192f103070ff1e1f8a6f3897957d64d00aa9befb1dfab3ff57dd6824172e01a",
+  "landers/board/__init__.py": "120892480829d98d9358fa2c02b133cc978a6ea02a316be36bec4c3257b0e851",
+  "landers/board/demo.py": "5fd61fb591959912ef39f9a260bb0018b2007ccd28481b451b62f69aba1b3afe",
+  "landers/board/load.py": "d9b0174e8c800536d7d9c3074a66aa887eeefd3c0801d6bc9a2a91824612bdac",
+  "landers/board/render.py": "55d62c156ae548fa443e96f96266da23c485c04460006710e7dbdb539622641e",
+  "landers/calibrate.py": "a6db721328a16828fcbf264bcbc7919555fd70e4641901449e1796c58740a840",
+  "landers/calibration_v0.json": "1cdc01b06558dd21d9b0f255c605de64c0fd80e771602e4b0160d45f252cf84f",
+  "landers/config.py": "eebdad16a6f1e7ed3af1782179fe1b50f83dfc87c81775caabba72e0b91dfcde",
+  "landers/detect.py": "58749cfa7b81c873c97a73e8cb24a40ccb93c616b96d2166149de393f22616d4",
+  "landers/features_eval.py": "1e905e47fc043da3c47ca97092266c18a284ea097b94d4696782ab41e1101ab9",
+  "landers/geo.py": "2d9a9d2f50261152a336cfd2b1b278c8bf5e1b4c56813896e914b147601dac50",
+  "landers/halfcal.py": "215af5771990f3710e464f3153c2cad900007a68ad47d5a2372f1b8b2543937c",
+  "landers/inject.py": "7a755eb929c09503ded8184d9e1cf89890990e2d257fe0b6a913a24c8d812e09",
+  "landers/label.py": "c4052ceca6505e900d00b476bde8ddb0897cc5cc8f670b09f8afd3806812baa3",
+  "landers/loso.py": "30d14defa2ded4a6350bace2ef59d8a9006e4157a27ba149a4a731a6ea1a8df5",
+  "landers/models/__init__.py": "33ef6ebd49e8739e9977cd801c9aadc18c340c7c038abb3d8bfb0e8ef75e3a73",
+  "landers/models/backend.py": "8afa24997611cc955a4952f6f07affc090d0ab2efa75608c21567ec9bdd7f3c5",
+  "landers/models/crops.py": "7a7c4466d8701ae4c74a455b589343c3ca6dfab8773b1c4b04bf8404d0d70a34",
+  "landers/models/fewshot.py": "bea860c7861f7cd12078f2f74e71152a6cfb3782f7339bc64e857a819fbf8761",
+  "landers/models/leak.py": "59563af9435f2e031c307857bb309394ac8f925c8997dca9fdd5e7aa9a7a2d90",
+  "landers/models/ledger.py": "202d9d19228b28e547a1c9d3708cd7c8b92f1c96598c3cb1126532564b26498e",
+  "landers/models/publish.py": "c1c5f5bea7865987a504f79e50788305ff45991be1f246eb7ebc4e6356f676db",
+  "landers/models/run.py": "d13c2d33a6efd352cbc1565fabdaaca00b5811a8a58e6733396649ca801014c4",
+  "landers/models/sam.py": "43c06d9754bf3daa04e32fe433dce35d12f77c01a4699bdf86ab9aaca682e964",
+  "landers/models/spark.py": "353f09374d57f7b9b0d6f782d73a7fa01e3589d72eea1fdec46fe58af32fffdd",
+  "landers/models/wonder.py": "33ad8b5995e607853d1029a979603064b030871910133b7b9b649d881ff9cce7",
+  "landers/persist.py": "83a36e17cf85d75cea74f586fddc10bf47b70b15481c5ea8df7d9e80528e3720",
+  "landers/relief.py": "e316133d96e01f19e2734db34356fc2336b6639dfe4a7956030d312096338cd6",
+  "landers/rerank/__init__.py": "75b71a8851ccc1772d919060dfd7dd8edee62963b14572576dd2e12d968bc12e",
+  "landers/rerank/crops.py": "71d95e53e3a20cb631086e3d16989825bec029c04e814de4bf9b2f134da87865",
+  "landers/rerank/embed.py": "5a74a2824a3446a541f60d4484aaa9969ee2560e2f48d518e924e1275a055cdb",
+  "landers/rerank/model.py": "cd7d60401a6b75e89867d98708fc89c39ecbb4af05296dbec6d1311ae535075b",
+  "landers/rerank_v2.npz": "addd7624ed5ddf46fcc06bd130dd29bc6e23e2e29f8299fcd0ae9553c53dc278",
+  "landers/score.py": "8e7cb60516d0325189d26f1c7b2e3ac4550d3049266ad97a4bca9c6151b5f36c",
+  "landers/search/__init__.py": "e3c88e018568b698a5fd822b81c0eb2bf3fb3f78641f5789cff21b609fc0b636",
+  "landers/search/coverage.py": "1ef5853ef00499039cc27c4bfe4e7e1e4434c7e9b9f866c472473db19dc98ee7",
+  "landers/search/export.py": "9abf64d56e60150d3bd7ea370994c8fadaf071eb3848edbd8d4ac86cdf99e3fc",
+  "landers/search/grid.py": "50c8e9830e9671fe678a25b312bee48df051b09723d536c9ecd09b9d5b046d8c",
+  "landers/search/inventory.py": "971fc77f919239d2d78f92de7356fa8ebf5c9e106be4ac67e5ccfc23a0e4b723",
+  "landers/search/persistence.py": "de4c1e4db1638afe9fc0ce900ec3e04e2b4d62e008bca380e6f3d441bcc2d1f1",
+  "landers/search/plan.py": "5e2db87021680cf171fc966433ca02d56ded2662ae1b770575dcc3552ea4adbb",
+  "landers/search/register.py": "3c6a8b9ab93699255a36ac4f6060f8296c12c027a891354e3962c89a6e531095",
+  "landers/search/run.py": "7a32c3152f5b1edd8b9dbc6a6e078600d5e38028b371c1e3bfa29781e7b6fa9a",
+  "landers/shape.py": "a6df3165a66fadf8440d6c4b0aece8024714b2d157f1a0e503e2a062e1632d8c",
+  "landers/shape_v1.json": "078417a1a4a40b891aff8b3df9b1bf62038b2e7377597b446446ae7a59ce70a8",
+  "landers/shape_v2.json": "b9a98a016c0f55c3807818e7d97068ffafe36a95f208e1ff66d1491737c3279b",
+  "landers/shape_v3.json": "bbf63d7022411b914c3538d58a8de26bc942cf2c397ab6a92be6117ab3c2e676",
+  "landers/sheets.py": "445fbabf198ab2b1f6018cb040b6964865ed6d15392c03011a0df1a3f3f2aa8f",
+  "landers/strip.py": "a5d44e0403ad8e9e9bd4197f260c6a825f8623178599b558ae93684da439c885",
+  "landers/transplant.py": "313b26309b9cf00a03fcacaa0d1b2e3eab90520ec0766cfafe311488bf1432da",
+  "landers/tune.py": "a0831e7f40235bc7f33b010ff3fa7c5254db7ccf528ee757352de2dc850a6042",
+  "landers/v2.json": "42c6e0aa1e866fdfc328a885332af47f84210a5730bb35ea5fab23cbcb95c3f8",
+  "landers/v2.py": "912b39fbd8817954fbb23324c42a75b55c05e9a7b82c471d60060005a517e8ea",
+  "landers/v2_reference.npz": "786cf353df8b687d67680696e3b11ad863a44db317a5bad93c30d42740bc5d4a",
+  "scripts/v2.py": "f1bacac92bd8298198dcdcdc0bf5b3f8f5e1d15f6e5f92d9c0b84c2e0f82f3d3",
+  "controls/thresholds.json": "13fb86810eba4a95952933f4a70456650c934962f100d39c50e0275f6ef8241e",
+  "uv.lock": "e7d23ea1b3f623a6e30955b71b9139e1010dc6ca2e0530efaead8a707707033d"
+ },
+ "proposal_the_vote_rule_comes_from": {
+  "docs/proposals/vote-single-v1.md": "1408e381d552e0279412b92b652912b7290d930ee9cccbced8d5fc5a2bd6d4d8"
+ }
+}

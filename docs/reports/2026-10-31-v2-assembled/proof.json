@@ -1,0 +1,522 @@
+{
+ "what": "item 16a: v2 against item 13's combined list and item 15a's column, position by position",
+ "git": {
+  "commit": "94debf1dc648992725063ffc1df36db6047eb63f",
+  "dirty": false,
+  "tag": null
+ },
+ "strips": {
+  "ESP_068822_1985, from the full strip": {
+   "site": "perseverance",
+   "not_blind": true,
+   "detection": "fresh, frozen-v1 detector on the full strip",
+   "detection_against_item_13": {
+    "item_13_took_it_from": {
+     "file": "out/heldout_v1/candidates_heldout_v1.json",
+     "detector": "v0.4",
+     "commit": "f24fae007f20d061565c6224bdd00e04b5690c2a",
+     "rules_applied_here": null
+    },
+    "candidates": 29714,
+    "candidates_in_item_13": 29714,
+    "rows_at_the_same_rank_differing": 0,
+    "top_2000_only_here": [],
+    "top_2000_only_in_item_13": [],
+    "top_2000_in_both": 2000,
+    "in_both_with_another_value": 0
+   },
+   "against_item_13_combined": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 0
+   },
+   "against_item_15a_column": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 0
+   },
+   "key_ranks": {
+    "perseverance/parachute/ESP_068822_1985": 15,
+    "perseverance/backshell/ESP_068822_1985": 66,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": null,
+    "perseverance/rover/ESP_068822_1985": 2
+   },
+   "key_ranks_differing_from_item_14": {},
+   "fake_stage": {
+    "same_list_as_off": true,
+    "calls": 104,
+    "votes": 100,
+    "review_stopped": "final answer"
+   },
+   "dry_run_requests": {
+    "files": 104,
+    "also_in_item_14_dry_run": 104
+   },
+   "files_read_stage_off": [
+    "data:strips/control_perseverance/ESP_068822_1985_RED.JP2",
+    "data:strips/control_perseverance/ESP_068822_1985_RED.LBL",
+    "repo:landers/shape_v3.json",
+    "repo:out/rerank/hf/models--facebook--dinov2-small/snapshots/ed25f3a31f01632728cabb09d1542f84ab7b0056/config.json",
+    "repo:out/v2/folds/perseverance.npz",
+    "repo:out/v2/prove/off_ESP_068822_1985/candidates_v2.json.part",
+    "repo:out/v2/prove/strips_/ESP_068822_1985/detect.json.part",
+    "repo:out/v2/prove/strips_/ESP_068822_1985/emb.part.npz",
+    "repo:out/v2/prove/strips_/ESP_068822_1985/list.json.part"
+   ],
+   "files_read_stage_fake": [
+    "data:strips/control_perseverance/ESP_068822_1985_RED.JP2",
+    "data:strips/control_perseverance/ESP_068822_1985_RED.LBL",
+    "repo:controls/sites.json",
+    "repo:controls/thresholds.json",
+    "repo:docs/reports/2026-10-29-fewshot/ledger.json",
+    "repo:docs/reports/2026-10-29-first-real-run/ledger.json",
+    "repo:docs/reports/2026-10-29-model-scoreboard/ledger.json",
+    "repo:docs/reports/ledgers.json",
+    "repo:landers/v2_reference.npz",
+    "repo:out/deep14/ledger.json",
+    "repo:out/v2/folds/perseverance.npz",
+    "repo:out/v2/prove/fake_ESP_068822_1985/candidates_v2.json.part",
+    "repo:out/v2/prove/fake_ESP_068822_1985/ledger.json",
+    "repo:out/v2/prove/fake_ESP_068822_1985/manifest_ESP_068822_1985.json.part",
+    "repo:out/v2/prove/fake_ESP_068822_1985/review_ESP_068822_1985.json",
+    "repo:out/v2/prove/fake_ESP_068822_1985/review_ESP_068822_1985.json.part",
+    "repo:out/v2/prove/fake_ESP_068822_1985/votes_ESP_068822_1985.json",
+    "repo:out/v2/prove/fake_ESP_068822_1985/votes_ESP_068822_1985.json.part",
+    "repo:out/v2/prove/strips_/ESP_068822_1985/list.json"
+   ]
+  },
+  "ESP_087360_1845, from the full strip": {
+   "site": "insight",
+   "not_blind": true,
+   "detection": "fresh, frozen-v1 detector on the full strip",
+   "detection_against_item_13": {
+    "item_13_took_it_from": {
+     "file": "out/heldout_v1/candidates_heldout_v1.json",
+     "detector": "v0.4",
+     "commit": "f24fae007f20d061565c6224bdd00e04b5690c2a",
+     "rules_applied_here": null
+    },
+    "candidates": 68312,
+    "candidates_in_item_13": 68312,
+    "rows_at_the_same_rank_differing": 0,
+    "top_2000_only_here": [],
+    "top_2000_only_in_item_13": [],
+    "top_2000_in_both": 2000,
+    "in_both_with_another_value": 0
+   },
+   "against_item_13_combined": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 0
+   },
+   "against_item_15a_column": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 0
+   },
+   "key_ranks": {
+    "insight/lander/ESP_087360_1845": 367,
+    "insight/heat_shield/ESP_087360_1845": null
+   },
+   "key_ranks_differing_from_item_14": {},
+   "fake_stage": {
+    "same_list_as_off": true,
+    "calls": 104,
+    "votes": 100,
+    "review_stopped": "final answer"
+   },
+   "dry_run_requests": {
+    "files": 104,
+    "also_in_item_14_dry_run": 104
+   },
+   "files_read_stage_off": [
+    "data:strips/control_insight/ESP_087360_1845_RED.JP2",
+    "data:strips/control_insight/ESP_087360_1845_RED.LBL",
+    "repo:landers/shape_v3.json",
+    "repo:out/rerank/hf/models--facebook--dinov2-small/snapshots/ed25f3a31f01632728cabb09d1542f84ab7b0056/config.json",
+    "repo:out/v2/folds/insight.npz",
+    "repo:out/v2/prove/off_ESP_087360_1845/candidates_v2.json.part",
+    "repo:out/v2/prove/strips_/ESP_087360_1845/detect.json.part",
+    "repo:out/v2/prove/strips_/ESP_087360_1845/emb.part.npz",
+    "repo:out/v2/prove/strips_/ESP_087360_1845/list.json.part"
+   ],
+   "files_read_stage_fake": [
+    "data:strips/control_insight/ESP_087360_1845_RED.JP2",
+    "data:strips/control_insight/ESP_087360_1845_RED.LBL",
+    "repo:controls/thresholds.json",
+    "repo:docs/reports/2026-10-29-fewshot/ledger.json",
+    "repo:docs/reports/2026-10-29-first-real-run/ledger.json",
+    "repo:docs/reports/2026-10-29-model-scoreboard/ledger.json",
+    "repo:docs/reports/ledgers.json",
+    "repo:landers/v2_reference.npz",
+    "repo:out/deep14/ledger.json",
+    "repo:out/v2/folds/insight.npz",
+    "repo:out/v2/prove/fake_ESP_087360_1845/candidates_v2.json.part",
+    "repo:out/v2/prove/fake_ESP_087360_1845/ledger.json",
+    "repo:out/v2/prove/fake_ESP_087360_1845/manifest_ESP_087360_1845.json.part",
+    "repo:out/v2/prove/fake_ESP_087360_1845/review_ESP_087360_1845.json",
+    "repo:out/v2/prove/fake_ESP_087360_1845/review_ESP_087360_1845.json.part",
+    "repo:out/v2/prove/fake_ESP_087360_1845/votes_ESP_087360_1845.json",
+    "repo:out/v2/prove/fake_ESP_087360_1845/votes_ESP_087360_1845.json.part",
+    "repo:out/v2/prove/strips_/ESP_087360_1845/list.json"
+   ]
+  },
+  "ESP_030313_1755, from the full strip": {
+   "site": "curiosity",
+   "not_blind": true,
+   "detection": "fresh, frozen-v1 detector on the full strip",
+   "detection_against_item_13": {
+    "item_13_took_it_from": {
+     "file": "out/shape_v3/candidates_v03_features.json",
+     "detector": "v0.3",
+     "commit": "0c9e3d4227a254549ad2103cd6311fd3184453aa",
+     "rules_applied_here": "shape_v3.json"
+    },
+    "candidates": 14006,
+    "candidates_in_item_13": 14005,
+    "rows_at_the_same_rank_differing": 1979,
+    "top_2000_only_here": [
+     {
+      "row": 1590.8,
+      "col": 2499.4,
+      "score": 0.601,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 5,
+      "rank": 78
+     },
+     {
+      "row": 2742.4,
+      "col": 10529.2,
+      "score": 0.68,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 5,
+      "rank": 67
+     },
+     {
+      "row": 4295.2,
+      "col": 12741.6,
+      "score": 0.677,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 5,
+      "rank": 68
+     },
+     {
+      "row": 5672.8,
+      "col": 10730.0,
+      "score": 0.947,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 21,
+      "rank": 43
+     },
+     {
+      "row": 6481.9,
+      "col": 6697.1,
+      "score": 1.769,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 27,
+      "rank": 22
+     },
+     {
+      "row": 10302.9,
+      "col": 7238.7,
+      "score": 0.817,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 10,
+      "rank": 53
+     },
+     {
+      "row": 10502.5,
+      "col": 3302.9,
+      "score": 0.947,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 32,
+      "rank": 42
+     },
+     {
+      "row": 10944.5,
+      "col": 4005.5,
+      "score": 0.919,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 8,
+      "rank": 45
+     },
+     {
+      "row": 11262.0,
+      "col": 4905.1,
+      "score": 0.613,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 32,
+      "rank": 77
+     },
+     {
+      "row": 13328.2,
+      "col": 6927.1,
+      "score": 0.779,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 13,
+      "rank": 59
+     },
+     {
+      "row": 15562.5,
+      "col": 1959.1,
+      "score": 0.874,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 11,
+      "rank": 47
+     }
+    ],
+    "top_2000_only_in_item_13": [
+     {
+      "row": 1575.8,
+      "col": 2256.5,
+      "score": -1.182,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 37,
+      "rank": 2000
+     },
+     {
+      "row": 2721.0,
+      "col": 1154.0,
+      "score": -1.181,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 60,
+      "rank": 1998
+     },
+     {
+      "row": 4221.2,
+      "col": 1128.9,
+      "score": -1.181,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 89,
+      "rank": 1994
+     },
+     {
+      "row": 6482.5,
+      "col": 6698.2,
+      "score": -0.335,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 50,
+      "rank": 307
+     },
+     {
+      "row": 8657.9,
+      "col": 1510.1,
+      "score": -1.18,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 53,
+      "rank": 1992
+     },
+     {
+      "row": 9496.6,
+      "col": 2771.9,
+      "score": -1.181,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 62,
+      "rank": 1993
+     },
+     {
+      "row": 10079.8,
+      "col": 2233.1,
+      "score": -1.181,
+      "branch": "dark_compact",
+      "grade": "needs second look",
+      "area_px": 22,
+      "rank": 1995
+     },
+     {
+      "row": 10943.1,
+      "col": 4007.6,
+      "score": -1.167,
+      "branch": "dark",
+      "grade": "needs second look",
+      "area_px": 46,
+      "rank": 1935
+     },
+     {
+      "row": 14215.1,
+      "col": 7071.3,
+      "score": -1.181,
+      "branch": "sheet",
+      "grade": "needs second look",
+      "area_px": 720,
+      "rank": 1999
+     },
+     {
+      "row": 15093.3,
+      "col": 7466.9,
+      "score": -1.181,
+      "branch": "sheet",
+      "grade": "needs second look",
+      "area_px": 384,
+      "rank": 1997
+     },
+     {
+      "row": 24594.0,
+      "col": 12400.4,
+      "score": -1.181,
+      "branch": "bright",
+      "grade": "needs second look",
+      "area_px": 113,
+      "rank": 1996
+     }
+    ],
+    "top_2000_in_both": 1989,
+    "in_both_with_another_value": 0
+   },
+   "against_item_13_combined": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 1985
+   },
+   "against_item_15a_column": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 1985
+   },
+   "key_ranks": {
+    "curiosity/parachute/ESP_030313_1755": 5,
+    "curiosity/backshell/ESP_030313_1755": 1,
+    "curiosity/heat_shield/ESP_030313_1755": 17,
+    "curiosity/descent_stage/ESP_030313_1755": null
+   },
+   "key_ranks_differing_from_item_14": {},
+   "fake_stage": {
+    "same_list_as_off": true,
+    "calls": 104,
+    "votes": 100,
+    "review_stopped": "final answer"
+   },
+   "dry_run_requests": {
+    "files": 104,
+    "also_in_item_14_dry_run": 94
+   },
+   "files_read_stage_off": [
+    "data:strips/control_curiosity/ESP_030313_1755_RED.JP2",
+    "data:strips/control_curiosity/ESP_030313_1755_RED.LBL",
+    "repo:landers/shape_v3.json",
+    "repo:out/rerank/hf/models--facebook--dinov2-small/snapshots/ed25f3a31f01632728cabb09d1542f84ab7b0056/config.json",
+    "repo:out/v2/folds/curiosity.npz",
+    "repo:out/v2/prove/off_ESP_030313_1755/candidates_v2.json.part",
+    "repo:out/v2/prove/strips_/ESP_030313_1755/detect.json.part",
+    "repo:out/v2/prove/strips_/ESP_030313_1755/emb.part.npz",
+    "repo:out/v2/prove/strips_/ESP_030313_1755/list.json.part"
+   ],
+   "files_read_stage_fake": [
+    "data:strips/control_curiosity/ESP_030313_1755_RED.JP2",
+    "data:strips/control_curiosity/ESP_030313_1755_RED.LBL",
+    "repo:controls/thresholds.json",
+    "repo:docs/reports/2026-10-29-fewshot/ledger.json",
+    "repo:docs/reports/2026-10-29-first-real-run/ledger.json",
+    "repo:docs/reports/2026-10-29-model-scoreboard/ledger.json",
+    "repo:docs/reports/ledgers.json",
+    "repo:landers/v2_reference.npz",
+    "repo:out/deep14/ledger.json",
+    "repo:out/v2/folds/curiosity.npz",
+    "repo:out/v2/prove/fake_ESP_030313_1755/candidates_v2.json.part",
+    "repo:out/v2/prove/fake_ESP_030313_1755/ledger.json",
+    "repo:out/v2/prove/fake_ESP_030313_1755/manifest_ESP_030313_1755.json.part",
+    "repo:out/v2/prove/fake_ESP_030313_1755/review_ESP_030313_1755.json",
+    "repo:out/v2/prove/fake_ESP_030313_1755/review_ESP_030313_1755.json.part",
+    "repo:out/v2/prove/fake_ESP_030313_1755/votes_ESP_030313_1755.json",
+    "repo:out/v2/prove/fake_ESP_030313_1755/votes_ESP_030313_1755.json.part",
+    "repo:out/v2/prove/strips_/ESP_030313_1755/list.json"
+   ]
+  },
+  "ESP_030313_1755, from item 13's list": {
+   "site": "curiosity",
+   "not_blind": true,
+   "detection": "item 13's list",
+   "detection_against_item_13": {
+    "item_13_took_it_from": {
+     "file": "out/shape_v3/candidates_v03_features.json",
+     "detector": "v0.3",
+     "commit": "0c9e3d4227a254549ad2103cd6311fd3184453aa",
+     "rules_applied_here": "shape_v3.json"
+    },
+    "candidates": 14005,
+    "candidates_in_item_13": 14005,
+    "rows_at_the_same_rank_differing": 0,
+    "top_2000_only_here": [],
+    "top_2000_only_in_item_13": [],
+    "top_2000_in_both": 2000,
+    "in_both_with_another_value": 0
+   },
+   "against_item_13_combined": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 0
+   },
+   "against_item_15a_column": {
+    "rows": 2000,
+    "rows_expected": 2000,
+    "rows_differing": 0
+   },
+   "key_ranks": {
+    "curiosity/parachute/ESP_030313_1755": 5,
+    "curiosity/backshell/ESP_030313_1755": 1,
+    "curiosity/heat_shield/ESP_030313_1755": 17,
+    "curiosity/descent_stage/ESP_030313_1755": null
+   },
+   "key_ranks_differing_from_item_14": {},
+   "fake_stage": {
+    "same_list_as_off": true,
+    "calls": 104,
+    "votes": 100,
+    "review_stopped": "final answer"
+   },
+   "dry_run_requests": {
+    "files": 104,
+    "also_in_item_14_dry_run": 104
+   },
+   "files_read_stage_off": [
+    "data:strips/control_curiosity/ESP_030313_1755_RED.JP2",
+    "data:strips/control_curiosity/ESP_030313_1755_RED.LBL",
+    "repo:out/rerank/hf/models--facebook--dinov2-small/snapshots/ed25f3a31f01632728cabb09d1542f84ab7b0056/config.json",
+    "repo:out/v2/folds/curiosity.npz",
+    "repo:out/v2/prove/item_13_list_ESP_030313_1755.json",
+    "repo:out/v2/prove/off_item_13_list_ESP_030313_1755/candidates_v2.json.part",
+    "repo:out/v2/prove/strips_item_13_list_/ESP_030313_1755/emb.part.npz",
+    "repo:out/v2/prove/strips_item_13_list_/ESP_030313_1755/list.json.part"
+   ],
+   "files_read_stage_fake": [
+    "data:strips/control_curiosity/ESP_030313_1755_RED.JP2",
+    "data:strips/control_curiosity/ESP_030313_1755_RED.LBL",
+    "repo:controls/sites.json",
+    "repo:controls/thresholds.json",
+    "repo:docs/reports/2026-10-29-fewshot/ledger.json",
+    "repo:docs/reports/2026-10-29-first-real-run/ledger.json",
+    "repo:docs/reports/2026-10-29-model-scoreboard/ledger.json",
+    "repo:docs/reports/ledgers.json",
+    "repo:landers/v2_reference.npz",
+    "repo:out/deep14/ledger.json",
+    "repo:out/v2/folds/curiosity.npz",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/candidates_v2.json.part",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/ledger.json",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/manifest_ESP_030313_1755.json.part",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/review_ESP_030313_1755.json",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/review_ESP_030313_1755.json.part",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/votes_ESP_030313_1755.json",
+    "repo:out/v2/prove/fake_item_13_list_ESP_030313_1755/votes_ESP_030313_1755.json.part",
+    "repo:out/v2/prove/strips_item_13_list_/ESP_030313_1755/list.json"
+   ]
+  }
+ }
+}

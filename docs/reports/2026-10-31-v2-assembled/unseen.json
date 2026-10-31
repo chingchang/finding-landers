@@ -1,0 +1,26 @@
+{
+ "what": "item 16a: the frozen files on a tuning strip item 13 never embedded, one process so the read guard covers the detector; no score, and the strip's site is in the model's training set",
+ "strip": "ESP_073625_1780",
+ "git": {
+  "commit": "94debf1dc648992725063ffc1df36db6047eb63f",
+  "dirty": false,
+  "tag": null
+ },
+ "candidates_total": 75626,
+ "listed": 2000,
+ "rows_with_a_measured_rate": 1992,
+ "rows_with_only_a_bound": 8,
+ "ranks_are_a_permutation": true,
+ "files_read": [
+  "data:strips/control_schiaparelli/ESP_073625_1780_RED.JP2",
+  "data:strips/control_schiaparelli/ESP_073625_1780_RED.LBL",
+  "repo:landers/calibration_v0.json",
+  "repo:landers/rerank_v2.npz",
+  "repo:landers/shape_v3.json",
+  "repo:out/rerank/hf/models--facebook--dinov2-small/snapshots/ed25f3a31f01632728cabb09d1542f84ab7b0056/config.json",
+  "repo:out/v2/unseen_ESP_073625_1780/candidates_v2.json.part",
+  "repo:out/v2/unseen_ESP_073625_1780/strips/ESP_073625_1780/detect.json.part",
+  "repo:out/v2/unseen_ESP_073625_1780/strips/ESP_073625_1780/emb.part.npz",
+  "repo:out/v2/unseen_ESP_073625_1780/strips/ESP_073625_1780/list.json.part"
+ ]
+}

@@ -19,9 +19,9 @@ print({k: v for k, v in u.items() if k != "files_read"})
 print("unseen files", [f for f in u["files_read"] if "hf/" not in f], "hf files", sum("hf/" in f for f in u["files_read"]))
 f = json.loads((R / "freeze.json").read_text())
 print(f["git"], f["model"], f["numbers_in_code"], {k: v for k, v in f["sha256"].items() if not k.endswith(".py")}, len(f["sha256"]))
-for s in ("ESP_030313_1755", "ESP_068822_1985", "ESP_087360_1845"):
-    x = json.loads((R / f"detect_diff_{s}.json").read_text())
-    print(s, {k: v for k, v in x.items() if not k.startswith("only_")}, len(x["only_fresh"]), len(x["only_source"]))
+for path in sorted(R.glob("detect_diff_*.json")):
+    x = json.loads(path.read_text())
+    print(path.name, {k: v for k, v in x.items() if not k.startswith("only_")}, len(x["only_fresh"]), len(x["only_source"]))
 plan = json.loads(Path("out/search/plan.json").read_text())["strips"]
 ids = [s["observation_id"] for s in plan]
 lines = [
