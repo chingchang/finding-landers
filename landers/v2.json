@@ -1,0 +1,24 @@
+{
+ "version": "v2",
+ "list_label": "combined ranking: each candidate's better rank of frozen-v1 and the re-ranker; chosen after seeing item 13's result and judged only by the blind run",
+ "detector": {
+  "calibration": "landers/calibration_v0.json",
+  "shape_rules": "landers/shape_v3.json"
+ },
+ "rerank": {
+  "model": "landers/rerank_v2.npz",
+  "top": 2000,
+  "crop_px": 320,
+  "chunk": 100,
+  "batch": 16
+ },
+ "model_stage": {
+  "on": false,
+  "reference": "landers/v2_reference.npz",
+  "top": 100,
+  "checks": 3,
+  "review_top": 20,
+  "review_turns": 6,
+  "seed": 0
+ }
+}
