@@ -6,6 +6,8 @@
     uv run --group rerank scripts/v2_build.py prove STRIP [STRIP ...] [--from-item-13-list]
                                             run v2 with the strip's fold and compare, off, fake, dry-run
     uv run --group rerank scripts/v2_build.py unseen STRIP      run v2 with the all-sites weights on a tuning strip item 13 never embedded
+    uv run scripts/v2_build.py frozen-list OUT      frozen-v1's whole list from that run's detection, to score beside v2
+    uv run scripts/v2_build.py freeze       the list of what the tag would freeze
 
 This is the only v2 code that reads the key, and only in ``model`` and when comparing after a run. Strips of a site that is
 not a tuning site are refused. No paid model is called: the backends here are fake and dry-run.
@@ -197,6 +199,44 @@ def unseen(a) -> int:
     return 0
 
 
+def frozen_list(a) -> int:
+    """frozen-v1's whole list from a v2 run's own detection, so a person can score it beside v2 from the same pass."""
+    run_dir = Path(a.dir)
+    d = v2.load_json(run_dir / "candidates_v2.json")
+    strips = {sid: v2.load_json(run_dir / "strips" / sid / "detect.json") for sid in d["strips"]}
+    path = run_dir / "candidates_frozen_v1.json"
+    rr.write_json(path, {"run": f"{d['run']}_frozen_v1", "detector": d["detector"], "git": d["git"], "strips": strips})
+    print(f"{path}: {sum(len(e['candidates']) for e in strips.values())} candidates on {len(strips)} strips")
+    return 0
+
+
+def freeze(a) -> int:
+    """What the tag would freeze: every file ``scripts/v2.py`` checks against it, by hash, and the numbers inside the code."""
+    from landers.models import wonder
+    from landers.models.ledger import Ledger
+    from landers.rerank import crops as rc
+    from landers.rerank import embed
+
+    root = config.REPO_ROOT
+    files = sorted(p for p in (root / "landers").rglob("*") if p.is_file() and "__pycache__" not in p.parts)
+    files += [root / "scripts" / "v2.py", root / "controls" / "thresholds.json", root / "uv.lock"]
+    rule = wonder.SingleVoteRule()
+    write_proof("freeze.json", {
+        "what": "item 16a: the files and numbers the tag frozen-v2 would freeze; nothing is tagged",
+        "git": git_state(), "checked_against_the_tag_by_scripts_v2": list(v2.FROZEN_PATHS),
+        "config": v2.load_config(), "model": rr.load(OUT / "model.json"),
+        "numbers_in_code": {
+            "encoder": embed.MODEL, "revision": embed.REVISION, "encoder_input_px": embed.INPUT_PX, "crop_windows_m": list(rc.WINDOWS_M), "crop_clip": rc.CLIP, "crop_mad_floor": rc.MAD_FLOOR,
+            "components": rm.N_COMPONENTS, "c": rm.C, "novelty_k": rm.K_NOVELTY, "novelty_min_population": rm.MIN_POPULATION, "top_negatives": rm.TOP_NEGATIVES,
+            "vote_lower_alone": rule.lower_alone, "vote_band_low": rule.band_low, "vote_rule": rule.version, "cumulative_cap_usd": Ledger(path=OUT / "none.json").total_cap_usd,
+        },
+        "sha256": {str(p.relative_to(root)): v2.sha256_of(p) for p in files},
+        "proposal_the_vote_rule_comes_from": {"docs/proposals/vote-single-v1.md": v2.sha256_of(root / "docs" / "proposals" / "vote-single-v1.md")},
+    })  # fmt: skip
+    print(f"{len(files)} files")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -209,8 +249,11 @@ def main(argv=None) -> int:
     p.add_argument("--from-item-13-list", action="store_true", help="take detection from the list item 13 took instead of the full strip")
     u = sub.add_parser("unseen")
     u.add_argument("id")
+    f = sub.add_parser("frozen-list")
+    f.add_argument("dir", help="a v2 run that detected its strips")
+    sub.add_parser("freeze")
     a = ap.parse_args(argv)
-    return {"model": build_models, "reference": build_reference, "prove": prove, "unseen": unseen}[a.cmd](a)
+    return {"model": build_models, "reference": build_reference, "prove": prove, "unseen": unseen, "frozen-list": frozen_list, "freeze": freeze}[a.cmd](a)
 
 
 if __name__ == "__main__":
