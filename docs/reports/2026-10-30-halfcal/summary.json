@@ -1,7 +1,7 @@
 {
  "protocol": "docs/proposals/halfcal-v1-protocol.md",
  "git": {
-  "commit": "222cc7ac037eaf2b63b10bf40cf840d71d4d1961",
+  "commit": "565a608e34966de50b2d78367c5cb5d12d4517c8",
   "dirty": false,
   "tag": null
  },
@@ -6972,5 +6972,5 @@
    "cap": 1.481
   }
  },
- "seconds": 28
+ "seconds": 27
 }
