@@ -40,6 +40,10 @@ RETRIES="${RETRIES:-8}"             # resumes per item after a network drop or a
 NET_WAIT_MIN="${NET_WAIT_MIN:-240}" # how long to wait for the network before giving up
 LIMIT_WAIT_MIN="${LIMIT_WAIT_MIN:-20}"
 mkdir -p out/plan_runs out/queue
+# Item 17e is the one paid item left (person, 10-31 11:46): load the key from the person's own env file for it only.
+if [ "${ITEM:-}" = "17e" ] && [ -f "$HOME/.config/finding-landers/env" ]; then
+  set -a; . "$HOME/.config/finding-landers/env"; set +a; export LANDERS_REAL_CALLS=1
+fi
 TOOLS='Read,Edit,Write,Grep,Glob,Bash(uv run *),Bash(uv sync*),Bash(python3 *),Bash(scripts/*),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(git add *),Bash(git commit *),Bash(git merge main*),Bash(git merge --no-edit main*),Bash(ls *),Bash(mkdir *),Bash(wc *),Bash(cat *),Bash(head *),Bash(tail *)'
 
 pick_model() {  # sets MNAME and MARGS (--model X) when a model is chosen: the environment first, then out/queue/model
