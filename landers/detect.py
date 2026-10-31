@@ -72,6 +72,7 @@ class DetectorConfig:
     # A fully saturated sheet is then invisible to this branch; that case waits for transplant injection.
     sheet_saturated_is_data: bool = False
     band_dark_z: float = -2.0  # a band mean below this counts as shadow in shape.shadow_features
+    relief_features: bool = False  # plan item 16: record shape.relief_features on dark candidates; no score moves
     tile: int = 2048
     overlap: int = 128
     background_px: int = 65  # annulus outer size for the local mean and std
@@ -332,6 +333,12 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
         extra["tile_count"] = len(dark_compact)
         extra["isolation_px"] = dc_iso[i]
         extra.update(side_feats(k))
+        if cfg.relief_features and can_shadow:
+            extra.update(
+                shape.relief_features(
+                    dc_lab, k.label, dc_slices[k.label - 1], z, k.row, k.col, drow, dcol, lmax, scale, lbl.incidence_deg
+                )
+            )
         score = k.peak
         if can_shadow:
             align = _principal_axis_alignment(dc_lab, k, drow, dcol, dc_slices[k.label - 1])
@@ -346,6 +353,12 @@ def detect_tile(win: Window, lbl: StripLabel, cfg: DetectorConfig) -> list[Candi
         extra["tile_count"] = len(dark)
         extra["isolation_px"] = d_iso[i]
         extra.update(side_feats(k))
+        if cfg.relief_features and can_shadow:
+            extra.update(
+                shape.relief_features(
+                    d_lab, k.label, d_slices[k.label - 1], z, k.row, k.col, drow, dcol, lmax, scale, lbl.incidence_deg
+                )
+            )
         out.append(Candidate(win.row0 + k.row, win.col0 + k.col, k.peak * 0.5, "dark", GRADE_LOOK, k.area, extra))
 
     # sheets at reduced resolution
