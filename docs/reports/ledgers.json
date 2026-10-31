@@ -1,8 +1,22 @@
 {
  "what": "Every run that spent Meta Model API money, one ledger each. landers.models.ledger sums these for the cumulative dollar cap (docs/plan.md, Decisions of 2026-10-30 07:00). A real run adds itself before its first call. A published ledger replaces its out/ path here when it is committed.",
  "ledgers": [
-  {"item": "9b", "path": "docs/reports/2026-10-29-first-real-run/ledger.json"},
-  {"item": "9c", "path": "docs/reports/2026-10-29-model-scoreboard/ledger.json"},
-  {"item": "9d", "path": "docs/reports/2026-10-29-fewshot/ledger.json"}
+  {
+   "item": "9b",
+   "path": "docs/reports/2026-10-29-first-real-run/ledger.json"
+  },
+  {
+   "item": "9c",
+   "path": "docs/reports/2026-10-29-model-scoreboard/ledger.json"
+  },
+  {
+   "item": "9d",
+   "path": "docs/reports/2026-10-29-fewshot/ledger.json"
+  },
+  {
+   "item": "14",
+   "path": "out/deep14/ledger.json",
+   "live": true
+  }
  ]
 }
