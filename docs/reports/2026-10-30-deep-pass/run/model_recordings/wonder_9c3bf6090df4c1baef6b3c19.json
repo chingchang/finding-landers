@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f6a56b70f532ae761005eef960b77eb52dbd4fe80c716ea348447a58a9454b8a",
+        "bytes": 95848
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "650600f5ea105d80273707bd527182876c6e4ff6eaa89fcbd5ec9c9eed4d600a",
+        "bytes": 9309
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8e8188b6f483f6bef2eba3b3dd4f507f8da7cc73894d836e88eaa6e27c34289a",
+        "bytes": 90966
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.72,
+   "reason": "The centre pixels are soft, irregular bright speckles identical in size and tone to scattered bright rocks throughout image 1 and the reference, with no crisp geometric outline or distinct raised-body shadow.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.72, \"reason\": \"The centre pixels are soft, irregular bright speckles identical in size and tone to scattered bright rocks throughout image 1 and the reference, with no crisp geometric outline or distinct raised-body shadow.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 472
+ }
+}

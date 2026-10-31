@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "989a110ca6498572fecf494ea5b1d2a8c58c7ce75296faa42644ae45a8b5d268",
+        "bytes": 92900
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "32d42b24761c145d0c41ae707f323356065dec46d36e75cbd98a4df9ec1642bc",
+        "bytes": 8354
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "c2532f1be6e8eaf17abe085c73bfc4ad163f35a7f32c58d44d922efd4e9af710",
+        "bytes": 91308
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.85,
+   "reason": "The centre shows a circular dark bowl with a bright sunlit rim in the same orientation as the smaller crater just northwest of it, consistent with a natural impact crater in the rippled terrain.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.85, \"reason\": \"The centre shows a circular dark bowl with a bright sunlit rim in the same orientation as the smaller crater just northwest of it, consistent with a natural impact crater in the rippled terrain.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 672
+ }
+}

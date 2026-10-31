@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "50826f79371bf794f081e26d526b6d1b28a8ecf601aa27f99810d3d31f5db37e",
+        "bytes": 85957
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fdeb06e804bc755d6c71811e2449633f78fc321799aee5c888eddcbbbe2bf4b5",
+        "bytes": 8702
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "0767ce5ffe337db1a8e5b5a1bc729f59cf38b9bcc1f9fa1304105457f171e27d",
+        "bytes": 84032
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.7,
+   "reason": "The centre object is a saturated-white, crisp-edged compact blob with a distinct dark shadow to its southeast, sharply unlike the mottled low-contrast surrounding rocks.",
+   "verdict": "hardware"
+  },
+  "raw": "{\"confidence\": 0.7, \"reason\": \"The centre object is a saturated-white, crisp-edged compact blob with a distinct dark shadow to its southeast, sharply unlike the mottled low-contrast surrounding rocks.\", \"verdict\": \"hardware\"}",
+  "input_tokens": 497,
+  "output_tokens": 975
+ }
+}

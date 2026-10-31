@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "0c2316f8dfc94252c50c0821d99a6c3771411c8f7369f222f12a41b549fc2c31",
+        "bytes": 90853
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "2e926169705730acb9d3302f94fe0001a6cce076829c5d57b8b2b5bc286f780b",
+        "bytes": 8634
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.25,
+   "place": "unknown",
+   "recognised": false,
+   "shows": "A mottled grey, grainy planetary surface with a small, saturated white, roughly diamond-shaped feature near the centre, a darker patch immediately below it, and a few much smaller bright specks nearby"
+  },
+  "raw": "{\"confidence\": 0.25, \"place\": \"unknown\", \"recognised\": false, \"shows\": \"A mottled grey, grainy planetary surface with a small, saturated white, roughly diamond-shaped feature near the centre, a darker patch immediately below it, and a few much smaller bright specks nearby\"}",
+  "input_tokens": 424,
+  "output_tokens": 1252
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ce667f129d0bdcb4320b1e4ec3fb3f04f9b4a0158454f1adba3691f7762888ad",
+        "bytes": 52619
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "b02fe97de9d68f0cbc2b6324491714773e086cabf28c0426f948f40479b1929b",
+        "bytes": 6337
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "31c68eea57889e2bf2b44e20a18b1f787eedee3a5cab3615c5cca362ff7892b0",
+        "bytes": 87635
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.75,
+   "reason": "The enlarged centre shows diffuse, irregular bright-to-dark shading with no straight edges, crisp outline, or distinct raised-body shadow, blending into the surrounding mottled texture like the reference terrain.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.75, \"reason\": \"The enlarged centre shows diffuse, irregular bright-to-dark shading with no straight edges, crisp outline, or distinct raised-body shadow, blending into the surrounding mottled texture like the reference terrain.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 394
+ }
+}

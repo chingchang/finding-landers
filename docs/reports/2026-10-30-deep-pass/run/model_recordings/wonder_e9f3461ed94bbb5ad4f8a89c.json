@@ -1,0 +1,80 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "bf179b85e3eff1dc36a360e7de3826c092b670266ed8c431ff836e1e22affef7",
+        "bytes": 49957
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "4a0557fc9c2d7b5ad3d42b2e1a248543eeccef01ff9e87dc2a02dd16f944109c",
+        "bytes": 6305
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.7,
+   "reason": "The centre shows an irregular, fuzzy bright lobe abutting a rounded dark shadow with no straight edges or crisp geometric outline, blending into the surrounding cratered terrain like a sunlit rock.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.7, \"reason\": \"The centre shows an irregular, fuzzy bright lobe abutting a rounded dark shadow with no straight edges or crisp geometric outline, blending into the surrounding cratered terrain like a sunlit rock.\", \"verdict\": \"natural\"}",
+  "input_tokens": 373,
+  "output_tokens": 598
+ }
+}

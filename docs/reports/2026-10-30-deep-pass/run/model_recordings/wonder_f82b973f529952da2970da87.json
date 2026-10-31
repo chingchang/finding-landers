@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "b9363f17aeaa6240691e486bb4d2c1fbc5d893c9cf73629af6b32908cb24a809",
+        "bytes": 88527
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d4b4aef20e79e3e7917f05f66888339dfe67a9432f1f09badce7a39df383a030",
+        "bytes": 8750
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fcb6ab90a9639e4ed45db064b9ca64b30a2f70aba6bed7eefdd55e4e1213053c",
+        "bytes": 74489
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.1,
+   "place": "Not recognised - unknown planetary surface",
+   "recognised": false,
+   "shows": "Grayscale orbital views of mottled, granular, ridged / lightly cratered terrain. Image 1 shows a single small, bright, few-pixel spot left of and slightly below centre, with a very faint linear streak"
+  },
+  "raw": "{\"confidence\": 0.1, \"place\": \"Not recognised - unknown planetary surface\", \"recognised\": false, \"shows\": \"Grayscale orbital views of mottled, granular, ridged / lightly cratered terrain. Image 1 shows a single small, bright, few-pixel spot left of and slightly below centre, with a very faint linear streak\" }",
+  "input_tokens": 424,
+  "output_tokens": 965
+ }
+}

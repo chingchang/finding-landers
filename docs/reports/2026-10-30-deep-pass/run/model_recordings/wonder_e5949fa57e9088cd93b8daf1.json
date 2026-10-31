@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a51ff1fc67cfe724fe3da6bb634ce14eaa40e1ef2a4c19d610da2e3eb9817ab5",
+        "bytes": 68570
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "664a03786da9f23f0b0cda67a9a0df36b172b5e8ad70fa974f2e2b1df29ebef5",
+        "bytes": 7851
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "322b1399a8002d66bd1b9848b20cc13b1fee34d1371c10d006689173f0cf77a5",
+        "bytes": 75169
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.65,
+   "reason": "The bright form is a smooth, sinuous, lens-shaped crest tapering and fading at both tips with a narrow lee shadow, consistent with a wind-formed dust/sand ridge and showing no straight edges, corners, or internal hardware structure.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.65, \"reason\": \"The bright form is a smooth, sinuous, lens-shaped crest tapering and fading at both tips with a narrow lee shadow, consistent with a wind-formed dust/sand ridge and showing no straight edges, corners, or internal hardware structure.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 1141
+ }
+}

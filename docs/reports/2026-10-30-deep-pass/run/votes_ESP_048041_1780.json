@@ -1,0 +1,6591 @@
+{
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.715,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 0.679,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.839,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch is a soft, irregular blob with no crisp outline or cast shadow and matches numerous similar bright speckles scattered across image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 559
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre spot is a soft-edged, shadowless saturated blob identical in character to smaller bright specks scattered across image 1, with no crisp geometric outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 515
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows only amorphous granular speckle blending into the surrounding texture, with no crisp or straight outline and no paired highlight-and-shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 625
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c001",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a dark bowl with a soft bright crescent on one side matching a sunlit crater rim and shadowed interior, with no crisp straight edges or detached shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 501
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c002",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a circular sunken bowl with a bright sun-facing rim arc and dark interior shadow and no crisp straight edges or detached raised-body shadow, matching a small natural crater in the rippled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 425
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c003",
+   "branch": "dark",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 5,
+      "dcol": -12,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre shows an irregular black-white pixel dipole with no straight edges or crisp outline, consistent with a sunlit rock and its shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 541
+     }
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.85,
+     "reason": "The enlarged centre shows only uniform grainy speckle with no crisp outline, contrasting material, or raised-body shadow distinct from the surrounding texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 846
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows an irregular bright lobe adjacent to an irregular dark shadow with no straight or crisp edges, matching other rock-like spots in the speckled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 5,
+      "dcol": -12,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 553
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c004",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a curved sunlit rim opposite a dark bowl-like shadow with soft, irregular, grainy edges and no straight or crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 500
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c005",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -8,
+      "dcol": 22,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -12,
+      "dcol": -9,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre object is a soft-edged bright blob with an adjacent dark shadow matching the numerous rock-and-shadow pairs in the reference terrain, with no crisp straight or manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 587
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright blob is an irregular rounded grainy patch with an adjacent dark shadow, matching other scattered bright/dark rock-like pairs in image 1 and in the reference terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -8,
+      "dcol": 22,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 716
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central spot is a fuzzy, irregular bright blob with a soft adjacent dark shadow, matching the many similar bright rock-and-shadow pairs scattered across image 1 and the reference terrain, with no crisp or geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -12,
+      "dcol": -9,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 678
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c006",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.86,
+     "reason": "The centre shows a round depression with a dark shadowed interior on one side and a bright sunlit rim on the other that merges gradually into the surrounding rippled ground, as expected for a small crater rather than a crisp-edged raised object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 502
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c007",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre shows a rounded, pixel-mottled bright patch directly beside a compact dark shadow with no straight edges or geometric outline, consistent with a sunlit rock and its cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1598
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c008",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.999,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.85,
+     "reason": "The centre shows two separate, saturated-white, sharply-edged blobs with dark shadowing, unlike the diffuse low-contrast bright mottling in the reference terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 796
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.85"
+  },
+  {
+   "id": "c009",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -18,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -2,
+      "dcol": 11,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows a round dark pit/boulder with a smooth bright crescent on one side and no straight edges, seams, or distinct cast shadow, matching sunlit natural relief rather than manufactured hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 916
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a bright sunlit inner wall on one side and a dark shadowed interior on the other inside a round rim, matching a small bowl-shaped crater rather than a raised object casting an external shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -18,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 564
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows a smooth bright crescent immediately beside a round black pit, matching a sunlit crater wall and shadowed bowl with no straight edges or separate cast shadow of raised hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -2,
+      "dcol": 11,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 700
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c010",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.725,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre shows a round bowl-like depression with a soft bright rim and dark shadowed interior consistent with a sunlit crater, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 416
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c011",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 1,
+      "dcol": -19,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a roughly circular depression with a dark shadowed interior abutting a bright sunlit inner rim, with soft grainy edges matching the surrounding terrain and no crisp manufactured outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 706
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows a dark bowl with a bright sunlit crescent rim and fuzzy edges merging into the surrounding grain, consistent with a small crater rather than a crisp-edged object with a detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 1,
+      "dcol": -19,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 534
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a soft bright crescent on one side of a dark oval bowl with diffuse edges and two smaller similar dark pits nearby, consistent with sunlit and shadowed crater walls and no crisp straight manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 553
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c012",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a dark bowl interior with a bright sun-facing crescent rim, matching the small craters pockmarking image 1 and the reference terrain, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 451
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c013",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch in the enlargement has irregular, diffuse edges blending into the surrounding speckled texture with no straight outline or paired cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 517
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c014",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.999,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.9,
+     "reason": "The centre shows two saturated-white, crisp-edged lobes vertically paired with a dark connecting shadow, sharply unlike the grey cratered granular terrain in the reference image.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1233
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.9"
+  },
+  {
+   "id": "c015",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 8,
+      "dcol": -6,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -6,
+      "dcol": -20,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a diffuse, irregular circular dark depression with a bright crescent on one side, matching a shadowed crater interior and sunlit rim with no crisp straight or metallic edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 586
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.86,
+     "reason": "The centre shows a circular dark bowl with a bright sunlit crescent rim on one side and no crisp rectilinear outline or detached raised-body shadow, matching a small crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 8,
+      "dcol": -6,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 478
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a round dark bowl with a bright crescent rim on one side only, consistent with a small crater's sunlit wall and shadowed interior and with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -6,
+      "dcol": -20,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 443
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c016",
+   "branch": "dark",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.65,
+     "reason": "The centre is a crisp, near-perfect circular disk with a uniformly bright sunlit half and a deep attached shadow, sharply unlike the surrounding fine grey rippled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1540
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.65"
+  },
+  {
+   "id": "c017",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -9,
+      "dcol": 1,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": -22,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre feature has a diffuse circular bright rim and offset dark interior with the same grainy texture as the surroundings and no crisp straight edges or detached raised-body shadow, consistent with a small crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 396
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre forms a round bowl with a bright sunlit rim on one side and diffuse dark shadowing on the opposite inner wall, with grainy texture matching the surroundings and no crisp straight edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -9,
+      "dcol": 1,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 501
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular depression with a dark shadowed interior on one side and a bright sunlit rim on the opposite side, with soft gradational fuzzy edges in the 4x enlargement and no crisp straight or manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 9,
+      "dcol": -22,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 611
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c018",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.87,
+     "reason": "The centre shows a circular dark pit with a diffuse bright sunlit crescent on its right rim and no crisp straight edges or separate raised-body shadow, consistent with a small natural crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 428
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c019",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a soft oval rim with a bright sunlit inner wall grading into a dark shadowed bowl, with no straight edges, crisp outline, or detached shadow of raised hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 517
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c020",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a soft oval bowl with a dark shadow on one inner wall and a bright sunlit opposite rim blending gradually into the surrounding grainy terrain, with no crisp straight edges or distinct cast shadow of a raised manufactured body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 610
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c021",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular bowl with a smooth dark shadow on one side and a bright sunlit inner rim on the other, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 467
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c022",
+   "branch": "dark",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre object is a smooth oval split into featureless black shadow and white sunlit halves with no straight edges, corners, or separate cast shadow, consistent with a small rock or crater in the surrounding grainy terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 762
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c023",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a rounded depression with a dark shadowed interior and bright sunlit inner rim that blend irregularly into the surrounding textured ground, consistent with a small natural crater rather than crisp-edged hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 636
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c024",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch has diffuse, irregular, speckled edges merging into the surrounding granular texture, with no crisp geometric outline or coherent shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 600
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c025",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular dark depression with a bright sunlit rim on the opposite side and no crisp straight edges or detached raised-body shadow, consistent with a small crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 387
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c026",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The soft dark bowl with a bright sunlit rim arc and no crisp edges or external cast shadow matches a small crater depression.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 446
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c027",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 18,
+      "dcol": 4,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 26,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows an irregular rounded bright blob with an adjacent dark shadow and no straight edges or geometric symmetry, matching the sunlit rocks scattered in the surrounding pixels.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 544
+     }
+    },
+    {
+     "verdict": "hardware",
+     "confidence": 0.7,
+     "reason": "The centre shows a saturated-white compact body with a crisp outline and an adjacent pitch-black cast shadow, an albedo and shadow contrast absent from the speckled surrounding terrain and the natural reference ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 18,
+      "dcol": 4,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1105
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows only an amorphous saturated white blob with a short rock-like shadow, lacking crisp or geometric edges and matching numerous similar bright spots scattered across image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 26,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 996
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 1 hardware at or above 0.7"
+  },
+  {
+   "id": "c028",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central feature is a circular dark depression with a soft bright crescent on one side, matching a sunlit crater rim and shadowed interior with no crisp manufactured edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 596
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c029",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -32,
+      "dcol": 2,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 31,
+      "dcol": 18,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central feature is a soft-edged circular pit with dark shadow on one side and a bright sunlit opposite wall, blending into the surrounding grainy ground with no straight or crisp manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 584
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre is a dark, round depression with a bright, diffuse sunlit rim on its lower-right side and no crisp straight edges or detached shadow, blending gradually into the surrounding grainy terrain like a small crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -32,
+      "dcol": 2,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 498
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a soft-edged dark pit with a bright sunlit rim blending into the grainy terrain, with no straight edges, crisp outline, or detached raised-body shadow in the 4x enlargement.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 31,
+      "dcol": 18,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 500
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c030",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a dark oval interior with a bright sunlit rim on one side and gradual shading consistent with a small crater depression, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 471
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c031",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular dark bowl with a soft bright crescent sunlit rim matching the smaller pits nearby, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 426
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c032",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows a diffuse, irregular dark pit with a soft bright rim blending into the streaky terrain, with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 480
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a diffuse, irregular dark depression with a bright sunlit crescent on one side blending into the rippled surroundings, with no crisp straight edges, metallic glint, or distinct raised-body shadow in the enlarged pixels.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 533
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central feature is a diffuse bright crescent beside an amorphous dark pit with no straight edges, crisp outline, or distinct raised-body shadow, matching a small crater in the streaked terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 633
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c033",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a soft bright crescent rim grading into a dark bowl, consistent with sunlit crater wall and shadowed interior, with no straight edges, crisp outline, or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 435
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c034",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright patch has irregular, diffuse edges blending into the grainy surroundings and a curved dark shadow consistent with a low rock or slope, with no straight, crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 620
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c035",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The central bright patch has diffuse, irregular, noisy edges with no crisp straight outline or distinct cast shadow of a raised body, blending into the surrounding mottled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 514
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c036",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a circular dark bowl with a smooth bright sunlit rim arc matching smaller craters nearby, with no straight edges, crisp outline, or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 557
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c037",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre shows a circular bowl with smooth gradation from a dark shadowed interior to a bright sunlit rim, characteristic of a small crater and lacking any crisp, straight, or angular manufactured edge.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 398
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c038",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 20,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -5,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has irregular, diffuse edges and the same grainy texture as the surrounding striated ground, with no crisp straight outline or distinct cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 613
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright patch has irregular, diffuse edges with no straight lines, crisp outline, or adjacent raised-body shadow, and its mottled pixels blend with the surrounding ground texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 20,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 972
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows an irregular, diffuse bright patch with pixelated merging edges and no straight outline or paired raised-body shadow, matching a natural bright rock or dust/frost spot.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -5,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 467
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c039",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 16,
+      "dcol": 24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 14,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre feature is an irregular bright-and-shadow oval with grainy, soft edges matching smaller nearby rock/crater features, with no crisp straight or geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 555
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The central dark depression paired with a bright sunlit arc mirrors other small craters and rocks in the frame and shows the same grainy texture with no crisp manufactured edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 16,
+      "dcol": 24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 683
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a dark pit with a bright sunlit crescent rim identical to other small craters scattered in image 1, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 14,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 508
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c040",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The circular dark pit with a bright crescent on one interior wall and a diffuse rim grading into the surrounding grainy terrain matches a small crater, with no straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 510
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c041",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a soft-edged circular pit with a dark interior and a bright sunlit rim that disrupts but blends into the surrounding rippled terrain, with no crisp rectilinear outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 481
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c042",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.86,
+     "reason": "The centre shows a dark oval pit with a bright crescent rim on one side and soft pixel gradients blending into the grainy terrain, matching a small sunlit crater with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 450
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c043",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a round dark depression with a bright sunlit crescent rim that blends into the surrounding rippled terrain, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 433
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c044",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre feature is a circular dark bowl with a bright sunlit crescent rim on one side, matching the smaller adjacent crater and natural crater lighting with no crisp manufactured edges or detached body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 449
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c045",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.5,
+     "reason": "The centre object is a saturated white amorphous blob with fuzzy pixel-grain edges and no crisp geometric outline or distinct raised-body shadow to distinguish it from bright rock or frost.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 807
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.5"
+  },
+  {
+   "id": "c046",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre shows a circular dark bowl with a bright sunlit crescent rim, matching a small crater's illumination and lacking crisp manufactured edges or a detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 448
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c047",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 2,
+      "dcol": -15,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The enlarged centre shows a soft, irregular bright-to-dark gradient consistent with a sunlit crater/depression rim and shadowed interior, with no crisp straight edges or material contrast distinct from the surrounding small pits and rippled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 477
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a circular dark depression with a bright sunlit rim that grades into the surrounding rippled terrain, with no crisp straight edges or detached shadow of a raised object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 374
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows a soft, irregular bright rim fading into a dark interior with the same grainy texture as the surrounding rippled ground, and no crisp straight edges or detached shadow of a raised manufactured body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 2,
+      "dcol": -15,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 446
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c048",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The central feature is a smooth circular depression with a dark shadowed interior and a bright crescent sunlit inner rim, blending into surrounding rippled ground with no crisp angular outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 440
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c049",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a soft-edged circular depression with a dark shadowed interior and a bright sunlit rim blending into the surrounding rippled ground, matching a small natural crater rather than a crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 479
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c050",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 18,
+      "dcol": 5,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 28,
+      "dcol": -1,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a soft bright rim curving around a grainy irregular dark bowl with no straight edges or distinct raised-body shadow, consistent with a small natural crater/depression.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 477
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre is a soft-edged dark oval with a bright rim on one side that blends into the surrounding rippled ground, matching a small crater depression with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 18,
+      "dcol": 5,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 555
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows an irregular dark bowl with a bright irregular rim blending into the same grainy striated texture, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 28,
+      "dcol": -1,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 437
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c051",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 1.0,
+     "reason": "The centre shows a round depression with a bright crescent on one inner wall and deep shadow on the opposite wall, matching crater illumination with no straight or crisp hardware edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 432
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c052",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre shows a circular sunlit rim and shadowed bowl matching the smaller crater at lower right, with no crisp manufactured edges or detached shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 457
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c053",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The perfectly circular centre shows a bright sunlit inner wall opposite a shadow-filled bowl interior, with no external cast shadow or crisp manufactured edge, matching a small crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 819
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c054",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 19,
+      "dcol": -25,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 30,
+      "dcol": -6,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows an irregular bright crescent merging into grainy terrain around a soft dark bowl, matching a sunlit crater rim and shadow with no crisp straight or geometric hardware edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 516
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre shows an irregular, fuzzy-edged black-and-white pair consistent with a shadowed and sunlit natural rock or crater, with no crisp straight outline or distinct manufactured shape.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 19,
+      "dcol": -25,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 741
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows an irregular, fuzzy bright crescent paired with a diffuse black blob and grainy edges, matching a sunlit and shadowed crater or rock with no crisp geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 30,
+      "dcol": -6,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 696
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c055",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a dark circular pit paired with a smooth bright crescent rim that blends into the rippled terrain, with no crisp straight or angular edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 559
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c056",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre feature is a circular bowl with a bright sunlit wall opposite a dark shadowed wall and the same grainy texture as surrounding small pits, with no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 504
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c057",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 3,
+      "dcol": 13,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -23,
+      "dcol": 12,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has diffuse, irregular edges and matches the similar bright-ringed dark pits nearby, with no crisp outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 437
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has diffuse, irregular, speckled edges and dark pits identical to other crater-like spots in the frame, with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 3,
+      "dcol": 13,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 585
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre feature is an irregular dark pit with a diffuse bright rim, identical to several other small craters scattered across image 1 and lacking any crisp geometric outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -23,
+      "dcol": 12,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 475
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c058",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central feature is a soft-edged round depression with a bright sunlit rim on one side and dark shadow filling its interior, with no straight edges, crisp outline, or external cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 634
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c059",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -17,
+      "dcol": 14,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -19,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has irregular, diffuse, pixel-blurred edges merging with the streaky terrain and paired dark shading consistent with a rock, with no straight edges, symmetry, or crisp raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 620
+     }
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.7,
+     "reason": "The enlarged centre is only a few diffuse black-and-white pixels with no crisp or straight outline and no coherent raised-body shadow to separate hardware from a rock or slope.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -17,
+      "dcol": 14,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1079
+     }
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.55,
+     "reason": "The enlarged centre shows only soft-edged bright and dark amorphous blobs without a crisp manufactured outline or a distinct raised-body shadow, so the pixels do not separate hardware from a shadowed rock.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -19,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 911
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c060",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a soft, grainy bright sunlit arc around a dark bowl with no straight edges, crisp outline, or detached raised-body shadow, matching a small natural crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 447
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c061",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a roughly circular black shadowed pit with a bright crescent sunlit inner wall, matching a small bowl-shaped crater with no straight or crisp manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 431
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c062",
+   "branch": "dark",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre shows an irregular, mottled bright blob with a diffuse adjacent shadow and no crisp straight edges or geometric manufactured outline, consistent with a sunlit rock.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1054
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c063",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a soft-edged dark bowl with a bright sunlit crescent rim that blends into the surrounding grainy terrain, typical of a small crater and lacking any crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 608
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c064",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre feature is a dark bowl with a bright sunlit rim on one side and fuzzy granular edges matching the smaller pits around it, with no crisp geometric outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 550
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c065",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a soft, irregular white crescent beside a dark bowl-like interior, matching an illuminated natural crater/depression with no crisp geometric edge or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 515
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c066",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.93,
+     "reason": "The centre forms a round bowl with a bright sunlit rim on the right and shadowed interior on the left, consistent with a small crater in the rippled terrain and showing no straight or crisp manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 536
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c067",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -5,
+      "dcol": 23,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": 18,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The dark bowl with a soft bright crescent rim on one side, matched by a smaller similar feature nearby, matches sunlit-shadowed craters with no crisp manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 502
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre feature is a bright sunlit crescent paired with a dark bowl, identical in lighting and shape to the smaller crater just southwest of it in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -5,
+      "dcol": 23,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 581
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre feature is a dark bowl with a soft bright crescent rim identical to the crater above it and blending into the grainy terrain, with no crisp straight edges or separate raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 4,
+      "dcol": 18,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 461
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c068",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a circular dark bowl enclosed by a smooth bright rim arc with gradual topographic shading, consistent with a small crater and lacking any crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 452
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c069",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": -19,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 25,
+      "dcol": 27,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre feature is a soft-edged, teardrop-shaped depression with a bright sunlit rim and dark interior that grades into the surrounding rippled ground, with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 464
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a smooth oval bright-sunlit and dark-shadowed pair with soft gradational edges blending into the surrounding rippled ground, with no straight, crisp, or angular outline or detached cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": -19,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 546
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The central feature is a soft-edged oval depression with a dark shadowed interior and bright sunlit rim merging into the surrounding rippled ground, with no crisp, straight, or angular outline in the enlarged pixels.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 25,
+      "dcol": 27,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 641
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c070",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a fuzzy circular dark pit with a bright crescent on its sunward rim, matching a small crater's shadowed bowl rather than a crisp-edged raised hardware object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 592
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c071",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre feature is a circular bowl with a smooth bright sunlit rim on one side grading into deep shadow on the opposite interior, with no crisp straight edges or detached shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 592
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c072",
+   "branch": "dark",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.62,
+     "reason": "The centre shows a saturated-white, sharply bounded blob directly abutting a round saturated-black shadow, a high-contrast paired signature absent from the surrounding mottled ground and the reference image.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1625
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.62"
+  },
+  {
+   "id": "c073",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -17,
+      "dcol": -5,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 25,
+      "dcol": 32,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre is a rounded black-and-bright crescent with irregular, pixelated edges consistent with a shadowed crater or rock, lacking any straight, crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 592
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows an irregular fuzzy black-and-bright crescent pair merging with the surrounding grain, consistent with a small crater or rock rather than a crisp geometric outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -17,
+      "dcol": -5,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 577
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows only noisy mottled grey speckle matching the reference terrain, with no crisp straight edges or paired raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 25,
+      "dcol": 32,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 908
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c074",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows a diffuse, irregular bright patch blending into the surrounding speckled texture with no crisp geometric outline or cast shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 533
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c075",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -19,
+      "dcol": -8,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 17,
+      "dcol": -32,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The enlarged centre shows a diffuse, irregular bright patch with feathered speckled edges and no crisp geometric outline or coherent cast shadow, consistent with a natural bright soil or frost exposure.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 578
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The central bright patch has diffuse, mottled, irregular edges blending into the surrounding grainy terrain, with no straight edges, crisp geometric outline, or coherent raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -19,
+      "dcol": -8,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 734
+     }
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.5,
+     "reason": "The enlarged central bright patch has diffuse, grainy, irregular edges with no crisp geometric outline or coherent raised-body shadow to distinguish hardware from a natural bright rock or frost patch.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 17,
+      "dcol": -32,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1362
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c076",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -17,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -17,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.84,
+     "reason": "The centre shows an irregular dark pit with a soft, bright crescent rim matching the smaller pit below it, with no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 507
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular dark pit with a bright sunlit crescent rim, matching the smaller craters above it and lacking any crisp straight or manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -17,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 491
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright crescent and dark pit have irregular, fuzzy, grain-blended edges like the other small craters and rocks in the frame, with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -17,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 568
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c077",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a circular dark bowl with a bright sunlit crescent rim blending into the speckled terrain, matching a small crater with no crisp straight manufactured edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 462
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c078",
+   "branch": "dark",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central black oval has irregular, pixelated edges with a bright adjacent face and matches smaller dark rock/shadow spots elsewhere in image 1, showing no straight or geometric hardware outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 806
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c079",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -22,
+      "dcol": -4,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": -24,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows a soft-edged dark pit paired with a bright crescent rim consistent with shadowed and sunlit walls of a small crater in the rippled terrain, with no crisp straight outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 669
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows only a smooth white crescent paired with a soft-edged black oval, consistent with a sunlit crater wall and shadowed bowl in the rippled ground, with no straight edges, crisp geometric outline, or anomalous material brightness.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -22,
+      "dcol": -4,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 733
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a soft-edged oval with a bright sunlit western rim blending into a dark bowl interior, with no straight edges or detached cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 9,
+      "dcol": -24,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 650
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c080",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 14,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -32,
+      "dcol": -18,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a soft circular dark pit with a bright sunlit crescent rim on one side and no straight edges, crisp outline, or detached raised-body shadow, matching a small crater in the rippled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 485
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The central feature is a smooth oval dark pit with a soft bright crescent on its sunlit side that grades into the surrounding rippled ground, with no crisp straight edges or detached shadow of a raised object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 14,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 505
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre feature is a circular dark depression with a diffuse bright rim that blends into the surrounding rippled terrain, with no crisp straight edges or detached shadow of a raised manufactured body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -32,
+      "dcol": -18,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 439
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c081",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre feature has a soft, rounded bright crescent and dark bowl that grade grainily into the surrounding textured ground, consistent with a small crater or rock rather than a crisp manufactured outline or cast hardware shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 498
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c082",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a diffuse dark bowl with a soft bright crescent rim blending into the surrounding grain, consistent with a sunlit crater slope and shadowed interior rather than a crisp-edged raised object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 416
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c083",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a round dark pit with a smooth bright crescent rim on one side and a soft shadow gradient, matching a small crater and lacking any crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 426
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c084",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a diffuse bright rim and dark bowl with irregular, grainy edges blending into the surrounding terrain, typical of a small crater or depression and lacking any crisp manufactured outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 426
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c085",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular bright rim around a dark bowl with gradual sunlit shading and no straight edges or crisp raised-body shadow, matching a small natural crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 439
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c086",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a circular dark pit with a bright crescent sunlit rim blending into the surrounding rippled ground, with no crisp straight manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 675
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c087",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 30,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 23,
+      "dcol": 21,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a fuzzy oval dark pit with a bright crescent rim blending into the rippled terrain, matching a small crater's shadowed interior and sunlit wall with no crisp straight or geometric hardware edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 561
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows a smooth oval depression with a dark shadowed interior and a soft, irregular bright sunlit rim blending into the surrounding grainy terrain, lacking crisp straight edges or a detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 30,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 718
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a smooth oval with a bright crescent on one side and a dark interior blending into the surrounding texture, with no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 23,
+      "dcol": 21,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 492
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c088",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a dark circular pit with a bright irregular crescent on its sunlit side, matching a shadowed small crater and rim with no crisp straight edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 539
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c089",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 18,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 31,
+      "dcol": 21,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows an irregular dark shadowed depression with a bright sunlit rim and no crisp straight or geometric edges, matching a small natural crater in the pitted surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 671
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows only an irregular black-and-white shading pair with soft, mottled edges matching the surrounding terrain texture, with no straight or crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 18,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 598
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.74,
+     "reason": "The central dark pit has diffuse, irregular edges and a bright crescent on one side that merges into the mottled terrain, with no crisp straight outline or distinct raised-body shadow in the enlarged view.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 31,
+      "dcol": 21,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 699
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c090",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre is a fuzzy, irregular bright-and-dark pair with no straight edges or crisp geometric outline, matching a sunlit rock and its shadow in the speckled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 749
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c091",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre shows a smooth circular bowl with a bright sunlit rim on one side and dark interior shadow on the opposite side, consistent with a small crater and lacking any crisp artificial edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 417
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c092",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.55,
+     "reason": "The centre shows an irregular, fuzzy-edged bright patch merging into the grainy terrain with an amorphous dark depression below and no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1081
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.55"
+  },
+  {
+   "id": "c093",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular depression with dark interior shadow on one side and a bright sunlit inner-rim crescent on the other, with no straight edges or external cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 486
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c094",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -11,
+      "dcol": 9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": 26,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a dark oval pit with a bright sunlit crescent rim on one side and irregular edges blending into the surrounding grainy terrain, with no straight or crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 472
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.9,
+     "reason": "The centre shows a dark oval bowl with a bright crescent on its sunlit inner rim and no crisp straight edges or detached raised-body shadow, matching a small impact crater in the surrounding pitted terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -11,
+      "dcol": 9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 448
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The bright crescent adjoining a smooth dark oval has irregular, grainy edges consistent with a sunlit crater rim and shadowed interior, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 4,
+      "dcol": 26,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 669
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c095",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 24,
+      "dcol": -7,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -2,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows an irregular dark pit with a fuzzy bright crescent on one side and no straight edges or crisp geometric outline, consistent with a small natural crater or rock shadow in the rippled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 615
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The central dark patch has soft, irregular, pixel-blurred edges and a single bright rim on one side that merges into the surrounding rippled texture, consistent with a small crater or rock shadow rather than a crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 24,
+      "dcol": -7,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 499
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre shows only an irregular bright crescent beside a soft dark blob, consistent with a sunlit rock and its shadow, with no straight, crisp, or geometric manufactured edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -2,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 630
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c096",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 31,
+      "dcol": -10,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -23,
+      "dcol": 18,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre forms a single round black-and-white crescent pair, consistent with a shadowed and sunlit side of a small crater or rock, with no crisp angular or manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 809
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a circular dark bowl with a bright sunlit rim in the same orientation as the smaller crater just northwest of it, consistent with a natural impact crater in the rippled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 31,
+      "dcol": -10,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 672
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a round dark depression with a bright crescent rim, matching a smaller nearby pit and showing no crisp straight edges or distinct raised-body shadow, consistent with a small crater.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -23,
+      "dcol": 18,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 611
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c097",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 12,
+      "dcol": -2,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 7,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows a rounded dark pit with an adjacent bright crescent and no straight edges or detached raised-body shadow, matching a small natural crater or rock.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 611
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows a dark oval paired with a single bright crescent on its sunlit side and a soft, grainy edge, consistent with shadow and illuminated wall inside a small crater rather than a crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 12,
+      "dcol": -2,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 626
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre is a circular dark pit with a smooth bright crescent on its sunlit inner side and no crisp, straight or rectilinear manufactured edges, matching a small crater or rock shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 7,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 722
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c098",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The centre shows a circular dark depression with a diffuse bright sunlit rim blending into the rippled terrain, with no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 424
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c099",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 2,
+      "dcol": 1,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows a soft-edged dark depression with a diffuse bright rim arc matching natural crater and rock shadows in the reference terrain, with no crisp or straight manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 448
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.92,
+     "reason": "The centre shows a circular dark bowl paired with a bright sunlit crescent rim grading into the surrounding texture, consistent with crater shading and with no crisp straight or geometric edges.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 388
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows an irregular, diffuse bright rim around a dark bowl-like interior that blends into the speckled cratered terrain, with no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 2,
+      "dcol": 1,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 437
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  }
+ ],
+ "strip": "ESP_048041_1780",
+ "backend": "recorded",
+ "seed": 0
+}

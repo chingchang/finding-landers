@@ -1,0 +1,1284 @@
+{
+ "strip": "ESP_025815_1655",
+ "backend": "recorded",
+ "ranks": [
+  0,
+  2,
+  4,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  13,
+  14,
+  16,
+  17,
+  18,
+  19,
+  20,
+  22,
+  24,
+  25,
+  26
+ ],
+ "strip_key": "strip_a",
+ "turns": 5,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "branch"
+   ],
+   "reason": "Retains needs second look because the vote describes a crisp blob with adjacent shadow and persistence remains one date only."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no resolved outline or shadow and persistence remains one date only."
+  },
+  "c002": {
+   "action": "lower",
+   "cites": [
+    "votes",
+    "branch"
+   ],
+   "reason": "Lowers toward likely natural because the vote describes an irregular soft-edged patch with no cast shadow consistent with natural exposure."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no distinct manufactured outline and persistence remains one date only."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "branch"
+   ],
+   "reason": "Retains needs second look because the vote describes a crisp straight-edged body with adjacent shadow and persistence remains one date only."
+  },
+  "c006": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no crisp outline or cast shadow and persistence remains one date only."
+  },
+  "c009": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no straight edges or distinct shadow and persistence remains one date only."
+  },
+  "c010": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "branch"
+   ],
+   "reason": "Retains needs second look because the vote describes a crisp-edged blob with distinct shadow and persistence remains one date only."
+  },
+  "c011": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Lowers toward likely natural because the vote describes a mottled ring with no crisp outline or shadow consistent with surrounding texture."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no geometric outline or shadow and persistence remains one date only."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+  },
+  "c014": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "branch"
+   ],
+   "reason": "Retains needs second look because the vote describes a crisp rectangular block with sharp edge and persistence remains one date only."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no resolved outline or shadow and persistence remains one date only."
+  },
+  "c016": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no crisp outline or distinct shadow and persistence remains one date only."
+  },
+  "c017": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Lowers toward likely natural because repeated votes describe diffuse grainy texture with no crisp outline or shadow matching surrounding terrain."
+  },
+  "c018": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with too few pixels for outline or shadow and persistence remains one date only."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Retains needs second look because the vote remains unsure with no crisp outline or shadow and persistence remains one date only."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "branch"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 9349
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 469
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "id": "c001",
+    "branch": "bright",
+    "grade": "needs second look",
+    "score": -2.037490627343164,
+    "area_px": 5,
+    "shape": {},
+    "tests": {},
+    "persistence": {
+     "seen": null,
+     "note": "one date only"
+    },
+    "votes": [
+     {
+      "verdict": "unsure",
+      "confidence": 0.6,
+      "reason": "The centre is only a few-pixel saturated white spot with no resolved crisp outline or raised-body shadow against the dark rippled crater floor."
+     }
+    ]
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 434
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 417
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 435
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 450
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 416
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 482
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 404
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 460
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 428
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 458
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 440
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 424
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 457
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 416
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 461
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 954
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 453
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 412
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c000",
+    "reason": "Retains needs second look because the vote describes a crisp blob with adjacent shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c001",
+    "reason": "Retains needs second look because the vote remains unsure with no resolved outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "branch"
+    ],
+    "id": "c002",
+    "reason": "Lowers toward likely natural because the vote describes an irregular soft-edged patch with no cast shadow consistent with natural exposure."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c003",
+    "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c004",
+    "reason": "Retains needs second look because the vote remains unsure with no distinct manufactured outline and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c005",
+    "reason": "Retains needs second look because the vote describes a crisp straight-edged body with adjacent shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c006",
+    "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c007",
+    "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c008",
+    "reason": "Retains needs second look because the vote remains unsure with no crisp outline or cast shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c009",
+    "reason": "Retains needs second look because the vote remains unsure with no straight edges or distinct shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c010",
+    "reason": "Retains needs second look because the vote describes a crisp-edged blob with distinct shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011",
+    "reason": "Lowers toward likely natural because the vote describes a mottled ring with no crisp outline or shadow consistent with surrounding texture."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c012",
+    "reason": "Retains needs second look because the vote remains unsure with no geometric outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c013",
+    "reason": "Retains needs second look because the vote remains unsure with no resolvable outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "branch"
+    ],
+    "id": "c014",
+    "reason": "Retains needs second look because the vote describes a crisp rectangular block with sharp edge and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c015",
+    "reason": "Retains needs second look because the vote remains unsure with no resolved outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c016",
+    "reason": "Retains needs second look because the vote remains unsure with no crisp outline or distinct shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017",
+    "reason": "Lowers toward likely natural because repeated votes describe diffuse grainy texture with no crisp outline or shadow matching surrounding terrain."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c018",
+    "reason": "Retains needs second look because the vote remains unsure with too few pixels for outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c019",
+    "reason": "Retains needs second look because the vote remains unsure with no crisp outline or shadow and persistence remains one date only."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "checks": []
+}

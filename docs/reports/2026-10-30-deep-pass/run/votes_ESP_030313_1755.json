@@ -1,0 +1,7423 @@
+{
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.999,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.74,
+     "reason": "The centre is a uniformly saturated, crisp-edged diamond-shaped white block with an associated dark streak below it, sharply unlike the soft, irregular mottled terrain in the reference image.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 671
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.74"
+  },
+  {
+   "id": "c001",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The centre patch has a diffuse, irregular margin with no crisp geometric edges or offset shadow from a raised body, blending into the surrounding ripple texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1014
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c002",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The centre is an irregular rounded bright blob with an adjacent dark patch and no straight edges or geometric structure, matching a bright rock casting a shadow in the speckled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 899
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c003",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The bright triangular patch has a mottled, granular interior and irregular fuzzy edges with no crisp outline or distinct raised-body shadow, consistent with a natural bright rock, slope, or frost/dust patch.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 851
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c004",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.65,
+     "reason": "The centre shows a saturated-white, sharply bounded triangular body with a curved loop-like extension and adjacent dark shadow, unlike any feature in the mottled reference terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 753
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.65"
+  },
+  {
+   "id": "c005",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.85,
+     "reason": "The centre shows a saturated-white, sharply bounded oval with a compact dark shadow immediately to its east and a pale streak trailing southwest, standing out sharply from the dark rippled sand that surrounds it.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 800
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.85"
+  },
+  {
+   "id": "c006",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre object is an irregular, fuzzy-edged bright blob with no straight geometric outline or cast shadow, consistent with a bright natural rock or dust/frost exposure in the dark rippled sand.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 988
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c007",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.75,
+     "reason": "The centre is only a few saturated white pixels with no crisp outline or cast shadow, indistinguishable from the bright frost or rock patches elsewhere in the frame.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 739
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.75"
+  },
+  {
+   "id": "c008",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The centre object is a small diffuse irregular bright blob with soft edges and no crisp geometric outline or cast shadow of a raised body in the enlarged pixels.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 848
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c009",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The enlarged centre shows a diffuse-edged, saturated bright patch with no crisp outline or offset shadow on the rippled dark ground, consistent with a flat natural bright deposit or rock rather than raised hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 632
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c010",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 25,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 20,
+      "dcol": -12,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre bright patch has a fuzzy, irregular, grainy edge and texture matching the similar bright patch to its northeast, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 486
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The central bright patch has diffuse speckled edges and the same grainy bright texture as the larger outcrop immediately to its right, with no straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 25,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 488
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch is speckled and irregular, blending into a larger bright area to the right with no crisp straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 20,
+      "dcol": -12,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 496
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c011",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 1,
+      "dcol": -19,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, speckled edges matching the mottled texture of many similar bright patches across image 1, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 536
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright blob in the enlarged view has fuzzy irregular edges, no straight or crisp outline and no paired raised-body shadow, matching similar mottled bright patches scattered across the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 1,
+      "dcol": -19,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 538
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre shows only amorphous mottled bright and dark grain blending into the surrounding texture, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 679
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c012",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.72,
+     "reason": "The centre shows a compact saturated-white blob with a crisp edge and an adjacent dense black shadow of a raised body, unlike the diffuse ripples and speckled natural ground around it.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 698
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.72"
+  },
+  {
+   "id": "c013",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 3,
+      "dcol": -6,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows a ragged, diffuse bright streak with grainy soft edges, no straight or geometric outline, and no dark shadow from a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 568
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The bright patch has fuzzy, irregular edges aligned with surrounding ripple crests and lacks a crisp straight outline or a distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 680
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The bright patch has irregular, diffuse edges aligned with the surrounding ripple crests and casts no shadow of a raised body, consistent with sunlit dust or frost on a slope rather than crisp hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 3,
+      "dcol": -6,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 666
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c014",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre object is a small soft-edged bright blob with no crisp outline or raised-body shadow, matching the diffuse bright frost/dust patches elsewhere in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 587
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c015",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.711,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre feature is an amorphous, saturated bright patch with irregular soft edges and no geometric outline or cast shadow from a raised body, consistent with a natural bright deposit or rock.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 818
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c016",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.72,
+     "reason": "The centre shows a crisp, saturated white rounded body with a sharp dark shadow against it, standing out from the diffuse mottled texture and small rock shadows in the reference terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 777
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.72"
+  },
+  {
+   "id": "c017",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre is a soft-edged bright pixel blob with no crisp geometric outline or paired raised-body shadow, and similar bright speckles occur elsewhere in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 476
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c018",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 23,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -14,
+      "dcol": -15,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows a diffuse, speckled bright patch with fuzzy irregular edges and no crisp geometric outline or distinct raised-body shadow, consistent with a sunlit rock or dust surface.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 567
+     }
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.65,
+     "reason": "The centre is a saturated, diffuse bright patch with an adjacent dark patch, but the 4x enlargement shows no crisp outline or distinct structure beyond the same grainy texture as the surrounding terrain, so hardware cannot be distinguished from a raised rock or illuminated slope.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 23,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1139
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The bright patch has a diffuse, speckled, feathered edge blending into the rippled terrain, with no crisp outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -14,
+      "dcol": -15,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1063
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c019",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "hardware",
+     "confidence": 0.72,
+     "reason": "The centre pixels form an isolated, straight-edged, uniformly saturated white bar sharply contrasting with the dark mottled terrain and absent from the reference ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 748
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote hardware 0.72"
+  },
+  {
+   "id": "c020",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The centre is only a few-pixel bright speckle identical to scattered bright specks in the surrounding terrain, with no crisp outline or cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 755
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c021",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -6,
+      "dcol": -28,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -11,
+      "dcol": 9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has feathered, speckled edges and the same grainy texture as the surrounding ground, with no crisp straight outline or distinct cast shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 799
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch has diffuse, mottled edges blending into the rippled dark terrain with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -6,
+      "dcol": -28,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 693
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre shows a diffuse, mottled bright patch with grainy texture and feathered edges merging into the surrounding ground, with no crisp outline or distinct raised-body shadow in the 4x enlargement.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -11,
+      "dcol": 9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 543
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c022",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -7,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -20,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has diffuse, irregular, saturated edges with no crisp outline or raised-body shadow, and similar bright patches recur elsewhere on the rippled ground, indicating a natural frost or dust exposure.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 622
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "Image 1 shows several similar diffuse bright patches scattered over the rippled ground, and the enlarged centre is a soft-edged irregular white blob with no crisp straight outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -7,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 683
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright blob has soft, irregular, saturated edges with no crisp geometric outline or cast shadow, and matches similar bright patches scattered across the rippled ground elsewhere in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -20,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 544
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c023",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre is only a soft, irregular bright patch beside a dark spot with no straight or crisp manufactured edges, matching bright-dark rock and shadow pairs in the reference ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 773
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c024",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The bright centre has diffuse, mottled edges fading into the surrounding dark ground, with no straight crisp outline or consistent raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 837
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c025",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -11,
+      "dcol": 24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -13,
+      "dcol": -32,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright blob has soft grainy edges, no raised-body shadow, and matches other similar bright patches on the ripple crests in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 597
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The 4x enlargement shows only continuous grainy ripple texture at the centre, with no crisp manufactured edges or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -11,
+      "dcol": 24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 609
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The enlarged centre shows only soft, grainy diagonal ripple shading continuous with the surrounding dunes, with no crisp geometric outline, specular facet, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -13,
+      "dcol": -32,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 558
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c026",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 31,
+      "dcol": -14,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 28,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has soft, irregular, mottled edges blending into the grainy terrain like the other bright spots in image 1, with no crisp geometric outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 530
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central bright patch has diffuse, irregular, speckled edges blending into the grainy surrounding texture, similar to other bright patches in the frame, with no crisp outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 31,
+      "dcol": -14,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 633
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright patch has diffuse, irregular fading edges and no crisp outline, straight edge, or raised-body shadow, with grainy texture continuous with the surrounding rippled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 28,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 517
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c027",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.87,
+     "reason": "The central bright patch has diffuse, irregular, blotchy edges with no crisp geometric outline or cast shadow, matching other similar bright patches elsewhere in the frame.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 506
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c028",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 32,
+      "dcol": -29,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -21,
+      "dcol": 15,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has soft, mottled, irregular margins blending into similar bright ground patches, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 590
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The bright central patch has diffuse, irregular margins with the same grainy ripple texture continuing across it and no crisp geometric edge or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 32,
+      "dcol": -29,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 724
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows a soft, speckled, irregular brightness boundary with no straight or crisp geometric edges and texture matching the surrounding terrain, consistent with an illuminated natural slope or rock rather than manufactured hardware.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -21,
+      "dcol": 15,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 595
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c029",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.55,
+     "reason": "The enlarged centre shows only a few-pixel white speck with no crisp outline or raised-body shadow, matching the surrounding grain and small bright natural clasts.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 631
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.55"
+  },
+  {
+   "id": "c030",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -24,
+      "dcol": 6,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 19,
+      "dcol": 14,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The enlarged centre is an irregular, diffuse-edged bright patch with mottled pixels, no crisp geometric outline or paired shadow, and similar bright patches occur nearby in image 1, consistent with a natural bright deposit.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 452
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The central bright patch has irregular, diffuse edges matching other scattered bright patches in the frame, with no crisp geometric outline or cast shadow from a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -24,
+      "dcol": 6,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1063
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright patches have amorphous, diffuse, grainy edges with no crisp straight outline or cast shadow of a raised body against the dark rippled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 19,
+      "dcol": 14,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 520
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c031",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows an irregular, fuzzy-edged bright blob with only a small adjacent dark speck, lacking any straight crisp outline or coherent raised-body shadow and resembling the mottled bright rocks in the reference.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 619
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c032",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright spot has diffuse, irregular edges and the same grainy texture as the surrounding terrain, with no crisp outline or cast shadow from a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 533
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The enlarged centre shows only a diffuse speckled albedo gradient with no crisp geometric outline or discrete raised-body shadow, matching natural terrain texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 572
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The bright central patch has diffuse irregular edges, grainy texture matching the surroundings, and no crisp straight outline or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 483
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c033",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -4,
+      "dcol": 29,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 32,
+      "dcol": 5,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre bright cluster has soft, irregular, diffuse edges with no crisp geometric outline or raised-body shadow, and similar bright specks occur elsewhere in the rippled terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 684
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The enlarged centre shows an irregular, diffuse bright patch with no crisp straight outline or detached raised-body shadow, blending into the surrounding rippled slope like a sunlit rock.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -4,
+      "dcol": 29,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 591
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central feature has soft irregular edges matching other bright slope exposures in the frame, with ripple texture continuing through it and no crisp outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 32,
+      "dcol": 5,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 893
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c034",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The saturated bright blob has irregular, diffuse edges merging with the surrounding rippled terrain and no straight or geometric outline, consistent with a sunlit natural rock or slope casting the dark adjacent shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 827
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c035",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -12,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 24,
+      "dcol": -20,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch is soft-edged, irregular and shadowless, matching other bright exposures on the rippled ground at left.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 526
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has soft, irregular, blotchy edges with no crisp geometric outline or cast shadow and merges into the surrounding rippled texture like a frost or dust deposit.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -24,
+      "dcol": -12,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 689
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows only diffuse grainy texture continuous with the surrounding ripple ridges, with no crisp outline, straight edge, or detached shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 24,
+      "dcol": -20,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 717
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c036",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central bright patch has diffuse, gradational edges with no crisp outline or raised-body shadow and matches other similar bright patches in the frame.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 485
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c037",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The centre bright patch has diffuse, irregular lobed edges, saturates without a crisp geometric outline or cast shadow, and a similar bright patch recurs in the upper right over the same ripple texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 535
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c038",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.55,
+     "reason": "The enlarged centre shows a diffuse, irregular bright blob blending into the grainy terrain, with no crisp geometric outline or distinct cast shadow of a raised manufactured body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 907
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.55"
+  },
+  {
+   "id": "c039",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 16,
+      "dcol": 24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 14,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has irregular, diffuse edges that blend into similar mottled bright patches around it, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 562
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The central bright patch has diffuse, irregular, mottled edges blending into the surrounding grainy terrain, with no straight lines, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 16,
+      "dcol": 24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 494
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows only a diffuse, irregular bright-to-dark boundary with the same grainy texture as the surrounding terrain and no crisp geometric outline or paired raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 14,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 544
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c040",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre is a fuzzy, irregular bright blob with a small adjacent dark shadow like the sunlit rocks in the reference, with no straight edges, crisp geometric outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 674
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c041",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The centre feature is a grainy, bright curved slope with a soft diffuse boundary and the same texture as the surrounding terrain, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 506
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c042",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 28,
+      "dcol": -10,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -23,
+      "dcol": 28,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre is a diffuse, irregular bright smudge a few pixels across with no straight edges or cast shadow, matching other bright speckles and ripple crests in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 493
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre shows only a diffuse irregular bright speck within the dark ripple texture, with no crisp straight outline or distinct shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 28,
+      "dcol": -10,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 962
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "Image 2 shows only grainy, diagonal ripple crests continuous with the surrounding rippled terrain in Image 1, with no crisp outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -23,
+      "dcol": 28,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 447
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c043",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 8,
+      "dcol": 12,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -22,
+      "dcol": 20,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has irregular rounded grainy edges, a diffuse bright tail blending into the rippled ground, and a soft boulder-like shadow with no straight crisp geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 654
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright blob has soft, irregular, pixel-fuzzy edges and a diffuse tail merging into the rippled ground, matching other bright patches nearby with no crisp geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 8,
+      "dcol": 12,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 586
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright blob has an irregular, fuzzy, rounded edge with a diffuse dark patch beside it, matching other bright patches in the rippled terrain and showing no straight or crisp geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -22,
+      "dcol": 20,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 736
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c044",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch has diffuse grainy edges, no crisp or straight outline, and no paired shadow from a raised body, matching other bright ground patches in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 558
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c045",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "Image 2 shows a soft-edged amorphous bright smudge with no crisp geometric outline or cast shadow, matching the larger natural bright patch at the right edge of image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 529
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c046",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 28,
+      "dcol": -7,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 11,
+      "dcol": -15,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright blob has fuzzy, irregular, grainy margins with no crisp straight outline or cast shadow and matches other scattered bright patches in the frame, consistent with a frost or dust pattern.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 497
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central bright patches have irregular, diffuse, speckled edges matching similar bright frost-like patches elsewhere in the frame, with no crisp geometric outline or cast shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 28,
+      "dcol": -7,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 580
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The central bright patch has irregular diffuse edges, no crisp geometric outline or raised-body shadow, and similar bright patches repeat across the surrounding terrain, consistent with a natural frost or dust pattern.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 11,
+      "dcol": -15,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 498
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c047",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 2,
+      "dcol": -15,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows only diffuse, irregular bright blobs with soft edges and no shadow or crisp outline, matching identical bright patches scattered elsewhere over the rippled dark ground in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 500
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central bright patch has diffuse, irregular, blotchy edges matching other bright patches across the image, with no crisp outline, straight edges, or shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 479
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre target is a diffuse, irregular bright patch with soft merging edges and no crisp outline or raised-body shadow, matching other similar bright clusters elsewhere in image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 2,
+      "dcol": -15,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 494
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c048",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 5,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 32,
+      "dcol": -31,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright spot is diffuse, irregular and shadowless, blending into the rippled terrain like natural bright speckles in the reference image.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 647
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows only two diffuse, soft-edged bright specks with no crisp geometric outline or raised-body shadow, matching the grainy ripple texture and natural bright specks elsewhere.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 26,
+      "dcol": 5,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 678
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows only diffuse grainy mottling and a sinuous dark slope boundary continuous with the surrounding rippled and smooth terrain, with no crisp outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 32,
+      "dcol": -31,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 459
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c049",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -2,
+      "dcol": -17,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -3,
+      "dcol": -9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright patch has irregular, grain-blended edges and a simple sunlit-face/dark-shadow pairing matching a low rock, with no straight or crisp manufactured outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 519
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The enlarged centre shows a diffuse, irregular bright blob with a soft shadow and speckled texture merging into the surrounding grain, lacking any straight or crisp manufactured edge.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -2,
+      "dcol": -17,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 777
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The enlarged centre shows an irregular, fuzzy-edged bright patch with an adjacent diffuse shadow grading into the surrounding grainy texture, with no straight edges, symmetry, or crisp geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -3,
+      "dcol": -9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 520
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c050",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright spot in the enlarged view has diffuse, irregular edges, no crisp geometric outline or paired shadow, and resembles other bright patches and speckle in the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 511
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c051",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -2,
+      "dcol": 24,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 14,
+      "dcol": -26,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows a soft-edged, mottled bright blob continuous in texture with the light outcrop above it, with no straight edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 525
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch merges into an irregular mottled bright outcrop above it and has a soft, irregular rock-like edge with grain matching the surrounding terrain, with no straight or geometric hardware outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -2,
+      "dcol": 24,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 952
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The bright central patch has irregular, grainy edges and mottled texture matching surrounding light-toned rocks, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 14,
+      "dcol": -26,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 572
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c052",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 7,
+      "dcol": -10,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 28,
+      "dcol": 16,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The bright elongated patch has blotchy irregular margins and a mottled granular interior with no straight edges, crisp outline, or distinct cast shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 624
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows a granular, mottled bright patch with irregular, diffuse edges and no crisp geometric outline or distinct raised-body shadow, consistent with a natural bright rock or dust feature.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 7,
+      "dcol": -10,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 417
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The bright patch has an irregular, mottled outline and grainy texture blending into the surrounding ground, with no straight crisp edges or distinct shadow of a raised manufactured body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 28,
+      "dcol": 16,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 748
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c053",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -31,
+      "dcol": -12,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -4,
+      "dcol": 11,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre mark in the 4x enlargement is a small irregular fuzzy dark speckle with no crisp geometric outline or paired highlight-and-shadow of a raised body, matching similar speckles across the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 529
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "Image 2 shows only mottled pixel grain matching the surrounding texture, with no crisp or geometric outline and no distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -31,
+      "dcol": -12,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 612
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre shows only two small irregular dark specks matching other scattered dark spots in Image 1, with no crisp straight outline or distinct raised-body highlight-shadow pair.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -4,
+      "dcol": 11,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 562
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c054",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.8,
+     "reason": "The enlarged centre is only a 1-2 pixel grainy bright speck with no crisp geometric outline or distinct raised-body shadow separable from the surrounding noise.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 828
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.8"
+  },
+  {
+   "id": "c055",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.63,
+     "reason": "The centre bright spot in the enlarged view is a diffuse few-pixel speckle merging with the surrounding grain, with no crisp geometric outline or offset dark shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 760
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.63"
+  },
+  {
+   "id": "c056",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.709,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 6,
+      "dcol": 31,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 0.591,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 11,
+      "dcol": 5,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.695,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows only irregular, soft-edged dark speckles matching scattered pits and rocks elsewhere, with no crisp geometric outline, uniform reflectance, or detached raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 497
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows only diffuse mottled tones and small dark pits blending into the surrounding terrain and matching the reference texture, with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 6,
+      "dcol": 31,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 420
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "Image 2 shows only irregular, soft-edged dark mottling that blends into the surrounding grainy texture, with no straight edges, specular facet, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 11,
+      "dcol": 5,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 603
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c057",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The saturated white patch merges into a fainter curving bright streak to the southwest and matches other sunlit slope patches in the frame, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 717
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c058",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 3,
+      "dcol": 32,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 6,
+      "dcol": 28,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows only an irregular dark blob beside a diffuse bright smudge merging into the surrounding bright streaks, with no crisp straight edge or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 813
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The center shows only diffuse, irregular bright and dark patches merging into the surrounding terrain with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 3,
+      "dcol": 32,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 401
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows only diffuse, grainy tonal mottling with soft irregular edges blending into the surrounding rippled texture, with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 6,
+      "dcol": 28,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 540
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c059",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.75,
+     "reason": "The centre of image 2 is only a diffuse few-pixel bright speckle with no crisp outline, raised-body shadow, or shape distinct from the surrounding grain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 725
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.75"
+  },
+  {
+   "id": "c060",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 32,
+      "dcol": 23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -5,
+      "dcol": -31,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright blob in the enlarged view has diffuse pixelated edges, no crisp outline or cast shadow, and blends into similar mottled bright patches scattered across image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 539
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The centre shows only grainy mottling continuous with the surrounding texture, with no crisp straight outline or distinct shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 32,
+      "dcol": 23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 522
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows only grainy mottling continuous with the surrounding texture, with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -5,
+      "dcol": -31,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 578
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c061",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The central bright patches have irregular, diffuse pixel-blurred edges with no geometric outline or paired cast shadow, resembling natural bright frost or dust mottling.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 693
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c062",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 30,
+      "dcol": 6,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -3,
+      "dcol": -21,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, grainy, irregular edges matching other bright patches in the frame, with no crisp geometric outline or cast shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 655
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre feature is a diffuse, irregular bright patch merging into the mottled background with no crisp straight edges or paired dark shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 30,
+      "dcol": 6,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 476
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has irregular diffuse edges, no crisp geometric outline or cast shadow of a raised body, and matches other similar bright mottled patches elsewhere in Image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -3,
+      "dcol": -21,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 583
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c063",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.576,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central bright patches have soft, irregular, diffuse edges that merge into the surrounding ripple crests, with no crisp geometric outline or distinct shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 552
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c064",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 17,
+      "dcol": -12,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 13,
+      "dcol": -11,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows an irregular, fuzzy-edged dark blob matching the mottled rocky texture in the reference, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 560
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre shows an irregular bright mottled patch beside a diffuse round dark pit like the other rock shadows and crater pits across image 1 and the reference, with no crisp straight or geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 17,
+      "dcol": -12,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 730
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre feature is an irregular dark pit with an adjacent bright patch matching other small craters and rock shadows scattered across image 1, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 13,
+      "dcol": -11,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 658
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c065",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.5,
+     "reason": "The enlarged centre is only a soft round saturated bright spot with no crisp or angular outline or accompanying raised-body shadow, indistinguishable from a bright rock or dust/frost speckle like others nearby.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1273
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.5"
+  },
+  {
+   "id": "c066",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright patch has irregular, diffuse, speckled edges with no straight outline or raised-body shadow and breaks into multiple soft spots in the enlargement, like a natural bright rock or frost exposure among the ripples.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 563
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c067",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.85,
+     "reason": "The central bright patch has diffuse, grainy edges matching nearby bright patches, with no crisp outline, geometric shape, or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 438
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c068",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -19,
+      "dcol": 24,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -8,
+      "dcol": -11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The enlarged centre shows only grainy speckled texture with scattered bright pixels and no crisp outline, geometric edge, or cast shadow distinct from the surrounding bright deposit.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 487
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows only diffuse grainy mottling with no crisp outline or cast shadow, matching the surrounding bright deposit and rough terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -19,
+      "dcol": 24,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 534
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows only diffuse grainy speckling with no crisp edge, geometric outline, or cast shadow, consistent with a bright frost or dust patch.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -8,
+      "dcol": -11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 528
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c069",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The bright central patch has diffuse, irregular, blotchy edges with no crisp geometric outline or distinct shadow of a raised body, consistent with a natural frost or dust deposit blending into the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 389
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by one vote: natural at or above 0.85"
+  },
+  {
+   "id": "c070",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.7,
+     "reason": "The centre is only a few-pixel saturated bright spot with no crisp geometric outline or raised-body shadow, indistinguishable from a natural rock or frost glint.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 865
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.7"
+  },
+  {
+   "id": "c071",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 16,
+      "dcol": 14,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 27,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre feature is an irregular, fuzzy-edged dark clump with no straight edges, crisp outline, or distinct raised-body shadow, blending into the same grainy rocky texture as the reference terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 456
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The centre shows only irregular, fuzzy dark blobs merging with the grainy terrain, with no straight edges, uniform bright facet, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 16,
+      "dcol": 14,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 573
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The enlarged centre shows only irregular, diffuse-edged dark blobs merging with the grainy rocky texture seen in the reference, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -31,
+      "dcol": 27,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 677
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c072",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -21,
+      "dcol": 8,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 5,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre bright blob has fuzzy, irregular edges with a soft adjacent dark shadow matching rock light-shadow pairs in the reference, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 460
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The enlarged centre shows only an irregular dark-bright pixel pair with no straight edges or distinct raised-body shadow, blending into the surrounding speckled rocky texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -21,
+      "dcol": 8,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 554
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The center is a few-pixel irregular bright blob with an adjacent dark shadow identical in scale, texture, and contrast to other rock-and-shadow pairs scattered across Image 1 and the reference terrain, with no crisp geometric outline.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 5,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 657
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c073",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The central pixels form an irregular, diffuse dark cluster with no straight edges, crisp outline, or distinct raised-body shadow, consistent with a rock or small crater shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1251
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c074",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 29,
+      "dcol": 29,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -20,
+      "dcol": 30,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has soft, irregular, mottled edges with no straight lines, crisp outline, or distinct cast shadow, and matches the similar bright outcrop in the lower-left of Image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 575
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright patch has soft, irregular edges and the same bright texture as the larger bright outcrop at lower left, with no crisp outline or cast shadow of a raised object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 29,
+      "dcol": 29,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1504
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch has soft, irregular, pixel-blurred edges and no geometric outline or raised-body shadow, matching the larger bright natural patch at the top left.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -20,
+      "dcol": 30,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 706
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c075",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -19,
+      "dcol": -8,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 17,
+      "dcol": -32,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.74,
+     "reason": "The centre bright blob has soft, irregular, fragmented edges with no crisp outline or raised-body shadow, and matches the similar bright patches at the bottom of image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 521
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "Similar saturated bright patches appear elsewhere at the top of image 1, and the centre blob is an irregular bright patch with no distinct geometric structure or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -19,
+      "dcol": -8,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 723
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The central bright patch has soft, irregular edges matching the larger bright frost/dust patches at the bottom of image 1, with no crisp outline or distinct raised-body shadow in the enlarged pixels.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 17,
+      "dcol": -32,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1190
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: 1 natural, 0 hardware at or above 0.7"
+  },
+  {
+   "id": "c076",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The centre object is a small irregular bright pixel cluster with no crisp outline or cast shadow, and similar bright specks occur nearby and in the reference terrain, consistent with a reflective rock.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 564
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c077",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -13,
+      "dcol": -17,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -32,
+      "dcol": 4,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The bright central crescent has diffuse, irregular, grainy edges blending into the surrounding texture, with no straight lines, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 509
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.84,
+     "reason": "The bright centre forms an irregular curved arc with a diffuse, grainy edge and mottled dark interior matching surrounding terrain, consistent with a sunlit crater rim rather than a crisp manufactured outline or cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -13,
+      "dcol": -17,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 434
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows only diffuse, mottled grain matching the reference terrain, with the bright arc having a soft, irregular rim and no crisp straight edges, metallic highlights, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -32,
+      "dcol": 4,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 515
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c078",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre is only a few diffuse bright pixels in the enlarged view, with no crisp or straight outline and no shadow of a raised body, matching other bright rock/grain specks in the surrounding texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 658
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c079",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The centre object is a soft-edged, irregular bright speck with no crisp geometric outline or directional cast shadow, matching the granular bright mottling elsewhere in the frame.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 804
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c080",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 14,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -32,
+      "dcol": -18,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre is a cluster of irregular, amorphous dark blotches with no crisp or straight outline and no coherent shadow of a raised body, matching dark rocks and pits scattered elsewhere in the frame.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 500
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre is a diffuse cluster of irregular dark speckles with no crisp straight outline or distinct raised-body shadow, blending with the mottled rocky texture around it.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 14,
+      "dcol": 16,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 572
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central dark specks are irregular and diffuse with no straight edges, crisp outline, or coherent raised-body shadow, blending into the mottled terrain like the reference ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -32,
+      "dcol": -18,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 363
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c081",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 25,
+      "dcol": -18,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -17,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "Image 2 shows only soft-edged, amorphous bright speckles identical to the extensive bright deposit across the bottom of Image 1, with no crisp geometric outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 728
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.88,
+     "reason": "The central bright patches have diffuse, irregular edges blending into the surrounding bright terrain, with no crisp outline or consistent raised-body shadow in the enlarged view.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 25,
+      "dcol": -18,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 547
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows only diffuse grainy ripple texture continuous with the surrounding dunes, with no crisp outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -17,
+      "dcol": -23,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 687
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c082",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -16,
+      "dcol": -24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 28,
+      "dcol": 32,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre is an irregular, fuzzy-edged dark blotch matching other scattered specks in the frame, with no straight edges, crisp geometric outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 588
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows only diffuse mottled texture matching the surrounding ground, with no crisp outline, straight edges, or distinct shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -16,
+      "dcol": -24,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 483
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre shows only mottled, low-contrast speckling continuous with the surrounding terrain, with no crisp or straight edges, bright facet, or paired cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 28,
+      "dcol": 32,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 679
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c083",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central dark patch has soft, irregular, grainy edges blending into the surrounding mottled texture with no crisp geometric outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 436
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c084",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright blob is amorphous with no crisp outline or raised-body shadow and matches similar bright mottling scattered across the left side of image 1.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 651
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c085",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central dark patches have soft, irregular, grainy edges that blend into the surrounding mottled texture, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 614
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.68"
+  },
+  {
+   "id": "c086",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -30,
+      "dcol": -22,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -11,
+      "dcol": -14,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The bright patch has an irregular, diffuse and mottled margin that blends into the surrounding terrain, with no straight or geometric edges or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 653
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows only diffuse, grainy tonal mottling that blends into the surrounding terrain with no crisp outline or cast shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -30,
+      "dcol": -22,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 532
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, grainy, irregular edges with no crisp geometric outline or distinct cast shadow, consistent with a natural bright rock or frost exposure.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -11,
+      "dcol": -14,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 543
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c087",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 30,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 23,
+      "dcol": 21,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows irregular, fuzzy dark blotches merging into the mottled terrain with no crisp straight outline or coherent raised-body shadow, matching rock and pit textures in the reference image.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 601
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central dark patches have irregular, diffuse edges matching surrounding shadowed rough terrain, with no straight outline, crisp edge, or distinct cast shadow of a raised manufactured body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 5,
+      "dcol": 30,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 600
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows only irregular, soft-edged dark blobs blending into the surrounding mottled terrain, with no crisp geometric outline, straight edges, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 23,
+      "dcol": 21,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 524
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c088",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.996,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -17,
+      "dcol": 11,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 7,
+      "dcol": 32,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 0.977,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The enlarged centre is a soft few-pixel bright blob identical to scattered speckles elsewhere in the image, with no crisp outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 565
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The enlarged centre shows only diffuse 1-2 pixel bright speckles identical to the speckling across image 1, with no crisp outline, geometric edge, or cast shadow of a raised body.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -17,
+      "dcol": 11,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 863
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre pixels in the enlargement are grainy dark terrain blending indistinguishably into the surrounding shadowed speckled ground, with no crisp outline, bright facet, or isolated raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 7,
+      "dcol": 32,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 537
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c089",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.75,
+     "reason": "The centre is only a few amorphous bright pixels with no crisp geometric outline or distinct raised-body shadow separating it from the surrounding mottled ground.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 1018
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.75"
+  },
+  {
+   "id": "c090",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -6,
+      "dcol": 19,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -15,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The bright central patch has diffuse, irregular, grainy margins blending into the surrounding terrain, with no crisp straight edges, geometric outline, or distinct cast shadow of a raised object.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 497
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows diffuse, irregular bright blobs with soft pixel-gradual edges and no crisp straight outline or distinct cast shadow, blending into the grainy surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -6,
+      "dcol": 19,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 459
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, irregular, pixel-mottled edges with no straight lines, crisp outline, or coherent raised-body shadow, blending into similar bright mottling around it.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -15,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 444
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c091",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre is only an indistinct few-pixel bright speckle with no crisp outline or paired shadow, matching similar speckles and mottled texture elsewhere in the frame.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 590
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.62"
+  },
+  {
+   "id": "c092",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 6,
+      "dcol": -12,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 30,
+      "dcol": -9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre is an irregular, soft-edged black blob matching other dark rock shadows and pits scattered across image 1 and the reference, with no straight edges, crisp geometric outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 511
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows an irregular, fuzzy-edged dark blotch with no straight edges, bright manufactured highlight, or distinct raised-body shadow, matching other dark rock and shadow specks in the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 6,
+      "dcol": -12,
+      "flip_h": true,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 622
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central dark pixel cluster lacks any crisp geometric outline, metallic brightness, or paired cast shadow and blends into the same mottled rock texture seen throughout the reference image.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 30,
+      "dcol": -9,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "tokens": {
+      "input": 497,
+      "output": 472
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c093",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.55,
+     "reason": "The centre is a soft-edged few-pixel bright speckle with no crisp outline or raised-body shadow, and similar bright speckles occur throughout the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 652
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.55"
+  },
+  {
+   "id": "c094",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright patch in the enlargement is an irregular few-pixel speckle indistinguishable from the grain throughout the frame, with no crisp outline or raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 675
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.65"
+  },
+  {
+   "id": "c095",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.8,
+     "reason": "The centre is only a few-pixel soft bright blob with no crisp outline or cast shadow to distinguish hardware from a small bright rock or glint.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 730
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.8"
+  },
+  {
+   "id": "c096",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The centre is only a few-pixel bright speckle with no crisp outline or raised-body shadow, and similar speckles occur across the surrounding terrain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 746
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote natural 0.6"
+  },
+  {
+   "id": "c097",
+   "branch": "dark_compact",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 12,
+      "dcol": -2,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 7,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has diffuse, irregular edges and two irregular dark patches matching the rock-and-shadow mottling throughout the reference image, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 631
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch has diffuse irregular edges and associated dark spots matching scattered rock shadows elsewhere in the frame, with no crisp straight outline or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 12,
+      "dcol": -2,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 540
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre shows a soft-edged, irregular bright patch with adjacent dark pits matching the surrounding cratered and rocky texture, with no crisp straight outline or isolated raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 7,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 629
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 2 natural at or above 0.7, none hardware"
+  },
+  {
+   "id": "c098",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "unsure",
+     "confidence": 0.45,
+     "reason": "The centre is only a few diffuse bright pixels with no crisp outline or paired raised-body shadow distinct from the surrounding speckle.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 857
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "needs second look",
+   "note": "kept: first vote unsure 0.45"
+  },
+  {
+   "id": "c099",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 2,
+      "dcol": 1,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "crop_draw": "saturated-bright",
+   "rule": "vote-single-v1",
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central dark blob has irregular, grainy edges merging with the surrounding ripple-crest shading and the adjacent bright patch follows the terrain texture, with no straight edges, crisp outline, or distinct raised-body shadow.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 568
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "Enlarged centre shows an irregular, fuzzy bright-dark pair with no straight edges, crisp outline, or distinct raised-body shadow, blending with the surrounding rocky grain.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": -16,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "tokens": {
+      "input": 497,
+      "output": 512
+     }
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows a grainy, irregular dark patch grading into a soft bright smudge with no straight edges, geometric outline, or distinct raised-body shadow, matching the surrounding rippled rocky texture.",
+     "off_schema": false,
+     "augmentation": {
+      "drow": 2,
+      "dcol": 1,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "tokens": {
+      "input": 497,
+      "output": 531
+     }
+    }
+   ],
+   "grade_before": "needs second look",
+   "grade_after": "likely natural",
+   "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+  }
+ ],
+ "strip": "ESP_030313_1755",
+ "backend": "recorded",
+ "seed": 0
+}

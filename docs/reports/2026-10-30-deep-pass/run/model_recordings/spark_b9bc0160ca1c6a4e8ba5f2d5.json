@@ -1,0 +1,232 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven. Work in this order: read the candidates and the thresholds; order any checks; then, in one single turn, call record_verdict once for every candidate, all together; then give the final JSON. Do not fetch again after you start recording."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   },
+   {
+    "role": "assistant",
+    "content": "Grading every strip_a candidate \u2014 pulling the evidence first.",
+    "tool_calls": [
+     {
+      "id": "call_1dd6a54b-10e6-424f-8b33-88941962cce8",
+      "type": "function",
+      "function": {
+       "name": "list_candidates",
+       "arguments": "{\"strip_key\":\"strip_a\"}"
+      }
+     },
+     {
+      "id": "call_17aae263-1d9b-46a3-a2d6-ed868dbf49a2",
+      "type": "function",
+      "function": {
+       "name": "read_thresholds",
+       "arguments": "{}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_1dd6a54b-10e6-424f-8b33-88941962cce8",
+    "content": "{\"strip_key\": \"strip_a\", \"candidates\": [{\"id\": \"c000\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": -1.0029992501874532, \"area_px\": 12, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.65, \"reason\": \"The centre shows a saturated-white angular facet abutting a dense black, sharply-outlined shadowed body, a high-contrast pairing absent from the mottled natural texture in the reference image.\"}]}, {\"id\": \"c001\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -1.0402399400149962, \"area_px\": 46, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The centre shows an isolated cluster of saturated-white, crisp-edged lobes casting a small dark shadow on otherwise smooth uniform ground, unlike the diffuse grey rocky texture in the reference.\"}]}, {\"id\": \"c002\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -2.0009997500624843, \"area_px\": 15, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright spot is small, fuzzy and irregular with no crisp geometric outline or distinct raised-body shadow, and similar bright speckles occur across the surrounding terrain.\"}]}, {\"id\": \"c003\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -3.1207198200449886, \"area_px\": 6, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The enlarged centre shows diffuse mottled bright and dark pixels blending into the surrounding rough terrain, with no crisp straight outline, uniform surface, or distinct raised-body shadow.\"}]}, {\"id\": \"c004\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -3.2626843289177705, \"area_px\": 9, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.68, \"reason\": \"The centre shows an isolated cluster of saturated-white, crisp-edged lobes with small dark shadows on smooth gray regolith, unlike the mottled gray rocks in the reference image.\"}]}, {\"id\": \"c005\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -4.129967508122969, \"area_px\": 39, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre shows an irregular bright patch beside an amorphous dark shadow with no straight edges or crisp outline, matching rock-and-shadow texture in the surrounding and reference terrain.\"}]}, {\"id\": \"c006\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -5.009747563109222, \"area_px\": 26, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.62, \"reason\": \"The centre is a saturated-white, sharply bounded multi-lobed cluster that stands out from the speckled grey terrain and has no comparable bright patch in the reference image.\"}]}, {\"id\": \"c007\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -6.043739065233692, \"area_px\": 21, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"unsure\", \"confidence\": 0.65, \"reason\": \"The centre is a saturated, featureless white oval with no resolvable manufactured edges, internal structure, or distinct raised-body shadow, so the pixels do not distinguish hardware from a glinting rock or frost patch.\"}]}, {\"id\": \"c008\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": -6.1019745063734065, \"area_px\": 8, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.7, \"reason\": \"The centre shows a compact, uniformly saturated white oval with a crisp edge and an adjacent sharply defined dark shadow, unlike the diffuse mottled texture in the reference terrain.\"}]}, {\"id\": \"c009\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -8.219945013746564, \"area_px\": 11, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.65, \"reason\": \"The centre shows a compact cluster of uniformly bright, sharply-edged angular fragments unlike the diffuse speckled bright rocks in the reference terrain.\"}]}, {\"id\": \"c010\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": -9.136215946013497, \"area_px\": 30, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"unsure\", \"confidence\": 0.5, \"reason\": \"The centre feature is only a few saturated pixels forming a bright facet with an adjacent dark facet/shadow, a geometry equally compatible with an angular boulder and a small piece of debris and lacking resolving texture or material detail.\"}]}, {\"id\": \"c011\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -10.005748562859285, \"area_px\": 432, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright blob has an irregular lobate outline with no straight edges or distinct raised-body shadow, and a similar bright patch occurs just to its northeast in the same terrain.\"}]}, {\"id\": \"c012\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -10.015746063484128, \"area_px\": 74, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.78, \"reason\": \"The centre shows a saturated white, roughly rectangular block with straight sharp edges and an adjacent dark shadow, unlike the mottled low-contrast natural texture in the reference image.\"}]}, {\"id\": \"c013\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -11.024993751562109, \"area_px\": 41, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.62, \"reason\": \"The centre feature is an irregular bright blob with a short dark shadow matching a similar bright rock at upper right in image 1, with no straight edges or geometric outline.\"}]}, {\"id\": \"c014\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -12.455636090977256, \"area_px\": 30, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The bright central patch has soft, mottled, gradational edges matching repeated sunlit ridge crests across image 1, with no crisp outline or separate cast shadow.\"}]}, {\"id\": \"c015\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -14.017245688577855, \"area_px\": 13, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre is only a soft 1-2 pixel bright spot with an adjacent dark speck matching similar rock-and-shadow specks elsewhere in the frame, with no crisp geometric outline or distinct raised-body shadow.\"}]}, {\"id\": \"c016\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -14.156960759810048, \"area_px\": 23, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright blob is only a few soft-edged pixels with no geometric outline or raised-body shadow and matches numerous similar bright speckles scattered across Image 1.\"}]}, {\"id\": \"c017\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -15.35391152211947, \"area_px\": 31, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre object is a small diffuse dark blob indistinguishable from many similar speckles in image 1, with no crisp geometric outline, bright facet, or raised-body shadow in the enlargement.\"}]}, {\"id\": \"c018\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -19.019245188702826, \"area_px\": 14, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"unsure\", \"confidence\": 0.5, \"reason\": \"The centre is only a few-pixel bright elongated blob with no resolvable crisp manufactured outline or distinct raised-body shadow, so it is indistinguishable from a bright natural rock.\"}]}, {\"id\": \"c019\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": -21.197200699825043, \"area_px\": 5, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"unsure\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows only a blurry bright triangle paired with an irregular dark patch, with no crisp straight edges or distinct raised-body shadow separable from nearby rock-and-shadow pixels.\"}]}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_17aae263-1d9b-46a3-a2d6-ed868dbf49a2",
+    "content": "{\"version\": 1, \"basis\": \"docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.\", \"match_radius_m\": 5.0, \"match_radius_m_by_kind\": {\"mark\": 20.0}, \"piece_kinds\": {\"hardware\": [\"lander\", \"backshell\", \"heat_shield\", \"rover\"], \"fabric\": [\"parachute\"], \"mark\": [\"crash_scar\", \"descent_stage\"]}, \"top_n\": 20, \"pass\": {\"min_recall_at_n\": 0.8, \"max_false_alarms_per_km2\": 2.0}}"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "I've mapped the strip's candidates \u2014 now examining the detailed evidence for each.",
+  "tool_calls": [
+   {
+    "id": "call_144f7ef7-af1e-4209-b358-404ee3ee9d14",
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "arguments": "{\"id\":\"c000\"}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 4143,
+  "output_tokens": 635
+ }
+}

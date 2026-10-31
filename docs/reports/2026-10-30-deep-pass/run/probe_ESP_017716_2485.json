@@ -1,0 +1,304 @@
+{
+ "strip": "ESP_017716_2485",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Grayscale, mottled and rough-textured planetary terrain fills the frame. Near the centre is a very small high-contrast feature, enlarged in image 2: a bright white irregular patch immediately above a ",
+     "confidence": 0.0,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not identifiable from the pixels alone",
+     "shows": "Grayscale orbital views of mottled, rough, light-and-dark textured planetary terrain. At the centre of the first image, enlarged in the second, is a very small high-contrast feature: two bright white,",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not identified - cannot be determined from the pixels alone",
+     "shows": "Image 1: a square grayscale orbital view of mottled, rough, pitted/undulating terrain, with a small compact dark patch and an adjacent small bright speck slightly above and right of centre. Image 2: a",
+     "confidence": 0.1,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Grayscale orbital view of rough, mottled, hummocky planetary terrain with no distinct crater, channel or resolved structure. Near the centre are two very small bright spots; at 4x enlargement the main",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale orbital views of rough, mottled planetary terrain with irregular light and dark patches and pitted, rocky texture. Image 2 enlarges the centre of Image 1 and shows, near the lower centre, a,",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Coarse grayscale orbital views of rough, mottled planetary terrain. The first image shows densely textured, irregular light-and-dark rocky or regolith-like ground, with a tiny bright cluster near the\n",
+     "confidence": 0.22,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 shows mottled, rough grey planetary terrain with irregular wavy/ridged texture over most of the frame and a coarser, lighter nodular texture along the bottom edge. Image 2 is a blurred 4x enl\u200b",
+     "confidence": 0.12,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale orbital views of rough, mottled planetary terrain with small bumps, depressions, and shadowing. The enlarged centre view shows a dark irregular patch and, northwest of it, a small bright few",
+     "confidence": 0.32,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Grayscale, rough and mottled planetary regolith/rocky terrain with irregular pits, bumps and shadows. In the centre of image 1 there is a single tiny bright white speck, visible as a small bright blob",
+     "confidence": 0.15,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  }
+ ]
+}

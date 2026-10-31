@@ -1,0 +1,1326 @@
+{
+ "strip": "ESP_039308_1915",
+ "backend": "recorded",
+ "ranks": [
+  0,
+  2,
+  5,
+  6,
+  9,
+  10,
+  12,
+  14,
+  16,
+  19,
+  21,
+  22,
+  24,
+  28,
+  31,
+  32,
+  35,
+  37,
+  41,
+  42
+ ],
+ "strip_key": "strip_a",
+ "turns": 4,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote remains unsure with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c002": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Repeated advisory votes consistently describe irregular natural texture with no crisp geometric outline."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c006": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Repeated advisory votes consistently describe irregular natural texture with no crisp geometric outline."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c009": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c010": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory votes are mixed with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c011": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote remains unsure with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c014": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c016": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c017": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c018": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence",
+    "tests"
+   ],
+   "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 10465
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "id": "c000",
+    "branch": "bright",
+    "grade": "needs second look",
+    "score": -1.0834791302174456,
+    "area_px": 6,
+    "shape": {},
+    "tests": {},
+    "persistence": {
+     "seen": null,
+     "note": "one date only"
+    },
+    "votes": [
+     {
+      "verdict": "unsure",
+      "confidence": 0.7,
+      "reason": "The centre is only a few bright pixels with no crisp geometric outline or raised-body shadow distinct from the surrounding speckled terrain."
+     }
+    ]
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 481
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 958
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 450
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 452
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 492
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 879
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 483
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 484
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 454
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 855
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 426
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 467
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 430
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 422
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 445
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 457
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 443
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 455
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 455
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c000",
+    "reason": "Advisory vote remains unsure with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c001",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002",
+    "reason": "Repeated advisory votes consistently describe irregular natural texture with no crisp geometric outline."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c003",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c004",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c005",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Repeated advisory votes consistently describe irregular natural texture with no crisp geometric outline."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c007",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c008",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c009",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c010",
+    "reason": "Advisory votes are mixed with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c011",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c012",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c013",
+    "reason": "Advisory vote remains unsure with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c014",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c015",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c016",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c017",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c018",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence",
+     "tests"
+    ],
+    "id": "c019",
+    "reason": "Advisory vote leans natural at modest confidence with limited persistence and no physical test outcome so further look remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "checks": []
+}

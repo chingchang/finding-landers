@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "750a4196ea49f8b04ef535b4f2f7f020f0a9e3aae87e667a3dae7c94dbdd37d2",
+        "bytes": 80111
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "670b081d06da3ca33cf92318af7f112330da3cf5705ea06610840db61eb461fa",
+        "bytes": 8116
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.25,
+   "place": "Not recognised",
+   "recognised": false,
+   "shows": "Image 1: dark grey to black, finely textured ground covered with roughly parallel, sinuous ridges and grooves running approximately north-south, with a small, bright white, irregular patch near thever"
+  },
+  "raw": "{\"confidence\": 0.25, \"place\": \"Not recognised\", \"recognised\": false, \"shows\": \"Image 1: dark grey to black, finely textured ground covered with roughly parallel, sinuous ridges and grooves running approximately north-south, with a small, bright white, irregular patch near thever\"}",
+  "input_tokens": 424,
+  "output_tokens": 1160
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "events": [
+  {
+   "at": "2026-10-30T18:40:56",
+   "note": "wonder: cannot reserve 1328 calls, 340 remain under the cap",
+   "calls_this_run": 0,
+   "this_run_usd": 0.0,
+   "other_runs_usd": 8.3289,
+   "all_runs_usd": 8.3289
+  },
+  {
+   "at": "2026-10-30T21:24:10",
+   "note": "a person read 8.5 USD on the Billing page; going on",
+   "calls_this_run": 0,
+   "this_run_usd": 0.0,
+   "other_runs_usd": 8.3289,
+   "all_runs_usd": 8.3289
+  },
+  {
+   "at": "2026-10-31T01:33:07",
+   "note": "this run reached its limit of 36.0 USD",
+   "calls_this_run": 2362,
+   "this_run_usd": 36.025,
+   "other_runs_usd": 8.3289,
+   "all_runs_usd": 44.3539
+  },
+  {
+   "at": "2026-10-31T06:22:16",
+   "note": "a person read 44.35 USD on the Billing page; going on",
+   "calls_this_run": 2362,
+   "this_run_usd": 36.025,
+   "other_runs_usd": 8.3289,
+   "all_runs_usd": 44.3539
+  }
+ ]
+}

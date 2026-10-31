@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "a183341b64b1d3708413565b91a8d2b4e3147454ffeb90cac882462b4e316781",
+        "bytes": 81749
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "454fa09b99ba572e11e48aa9c20d39ecfac6829230bab86ead8df30addab42c9",
+        "bytes": 8446
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "240d58cbde472ce18491318f27adde3d0f3cd511e9a495d029f4c961803a9afe",
+        "bytes": 81343
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.0,
+   "place": "Not recognised",
+   "recognised": false,
+   "shows": "Grayscale, mottled and rough-textured planetary terrain fills the frame. Near the centre is a very small high-contrast feature, enlarged in image 2: a bright white irregular patch immediately above a "
+  },
+  "raw": "{\"confidence\": 0.0, \"place\": \"Not recognised\", \"recognised\": false, \"shows\": \"Grayscale, mottled and rough-textured planetary terrain fills the frame. Near the centre is a very small high-contrast feature, enlarged in image 2: a bright white irregular patch immediately above a \"}",
+  "input_tokens": 424,
+  "output_tokens": 2042
+ }
+}

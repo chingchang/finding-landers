@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9acc5ac87f516c646f569e6457b0dfc2d8b49b4a26af78a617111c9276bede47",
+        "bytes": 82504
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "5d17290aa3d0a883ebfd4fb454671ccdfcf9412f8f5b262311d9a1f33ed72f7c",
+        "bytes": 7293
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "8e8188b6f483f6bef2eba3b3dd4f507f8da7cc73894d836e88eaa6e27c34289a",
+        "bytes": 90966
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.1,
+   "place": "",
+   "recognised": false,
+   "shows": "Image 1 is a grayscale orbital view of dark, grainy, closely spaced wavy parallel ridges running roughly vertically, with a small saturated white irregular bilobed/roughly heart-shaped patch in the.rf"
+  },
+  "raw": "{\"confidence\": 0.1, \"place\": \"\", \"recognised\": false, \"shows\": \"Image 1 is a grayscale orbital view of dark, grainy, closely spaced wavy parallel ridges running roughly vertically, with a small saturated white irregular bilobed/roughly heart-shaped patch in the.rf\"}",
+  "input_tokens": 424,
+  "output_tokens": 674
+ }
+}

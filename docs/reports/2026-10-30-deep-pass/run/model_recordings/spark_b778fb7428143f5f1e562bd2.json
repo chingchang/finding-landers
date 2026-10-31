@@ -1,0 +1,208 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven. Work in this order: read the candidates and the thresholds; order any checks; then, in one single turn, call record_verdict once for every candidate, all together; then give the final JSON. Do not fetch again after you start recording."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "Grading every strip_a candidate \u2014 pulling the evidence first.",
+  "tool_calls": [
+   {
+    "id": "call_1dd6a54b-10e6-424f-8b33-88941962cce8",
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "arguments": "{\"strip_key\":\"strip_a\"}"
+    }
+   },
+   {
+    "id": "call_17aae263-1d9b-46a3-a2d6-ed868dbf49a2",
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "arguments": "{}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 1271,
+  "output_tokens": 154
+ }
+}

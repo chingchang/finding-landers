@@ -1,0 +1,1230 @@
+{
+ "strip": "ESP_017716_2485",
+ "backend": "recorded",
+ "ranks": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  6,
+  7,
+  8,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  19,
+  20,
+  21,
+  22,
+  24,
+  25
+ ],
+ "strip_key": "strip_a",
+ "turns": 4,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single hardware advisory vote with one date only warrants continued review as needs second look."
+  },
+  "c001": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes irregular bright pixels matching surrounding terrain with no geometric outline."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Unsure advisory vote with one date only warrants continued review as needs second look."
+  },
+  "c003": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes irregular bright blob matching surroundings with no crisp outline."
+  },
+  "c004": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes soft irregular mottling with no crisp outline or raised-body shadow."
+  },
+  "c005": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes soft irregular edges blending into terrain with no manufactured surface."
+  },
+  "c006": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes diffuse dark blob merging into terrain consistent with rock and shadow."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single hardware advisory vote describing crisp circular dome warrants continued review as needs second look."
+  },
+  "c008": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes amorphous dark oval matching rock-shadow pairs with no geometric outline."
+  },
+  "c009": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Three advisory votes consistently describe diffuse mottling with no crisp outline or shadow."
+  },
+  "c010": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes irregular soft-edged blob matching depression or rock shadow."
+  },
+  "c011": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single hardware advisory vote describing sharply outlined oval with bright facet warrants continued review."
+  },
+  "c012": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes diffuse-edged blob merging into texture with no straight edges."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Unsure advisory vote with one date only warrants continued review as needs second look."
+  },
+  "c014": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes soft irregular blotch consistent with natural depression."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single hardware advisory vote describing crisply outlined blob with glint warrants continued review."
+  },
+  "c016": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Three advisory votes consistently describe irregular soft-edged patch matching surrounding terrain."
+  },
+  "c017": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes soft-edged blotch matching mottling with no crisp outline."
+  },
+  "c018": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes mottled bright patch and dark shape consistent with natural rock shadow."
+  },
+  "c019": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes amorphous blurred blob matching surrounding shadow patches."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 10055
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 472
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 449
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 430
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 460
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 459
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 454
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 501
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 447
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 467
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 885
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 450
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 440
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 480
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 440
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 420
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 428
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 955
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 439
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 447
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 452
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c000",
+    "reason": "Single hardware advisory vote with one date only warrants continued review as needs second look."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "Advisory vote describes irregular bright pixels matching surrounding terrain with no geometric outline."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c002",
+    "reason": "Unsure advisory vote with one date only warrants continued review as needs second look."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "Advisory vote describes irregular bright blob matching surroundings with no crisp outline."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Advisory vote describes soft irregular mottling with no crisp outline or raised-body shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005",
+    "reason": "Advisory vote describes soft irregular edges blending into terrain with no manufactured surface."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Advisory vote describes diffuse dark blob merging into terrain consistent with rock and shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c007",
+    "reason": "Single hardware advisory vote describing crisp circular dome warrants continued review as needs second look."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008",
+    "reason": "Advisory vote describes amorphous dark oval matching rock-shadow pairs with no geometric outline."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009",
+    "reason": "Three advisory votes consistently describe diffuse mottling with no crisp outline or shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010",
+    "reason": "Advisory vote describes irregular soft-edged blob matching depression or rock shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c011",
+    "reason": "Single hardware advisory vote describing sharply outlined oval with bright facet warrants continued review."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012",
+    "reason": "Advisory vote describes diffuse-edged blob merging into texture with no straight edges."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c013",
+    "reason": "Unsure advisory vote with one date only warrants continued review as needs second look."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014",
+    "reason": "Advisory vote describes soft irregular blotch consistent with natural depression."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c015",
+    "reason": "Single hardware advisory vote describing crisply outlined blob with glint warrants continued review."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016",
+    "reason": "Three advisory votes consistently describe irregular soft-edged patch matching surrounding terrain."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017",
+    "reason": "Advisory vote describes soft-edged blotch matching mottling with no crisp outline."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018",
+    "reason": "Advisory vote describes mottled bright patch and dark shape consistent with natural rock shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019",
+    "reason": "Advisory vote describes amorphous blurred blob matching surrounding shadow patches."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "lower"
+   }
+  }
+ ],
+ "checks": []
+}

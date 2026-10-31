@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f9fa9f7f2baa5f9bb0a996bcac9c6ec024c7b03e209874e3f7cce72ea8696950",
+        "bytes": 44196
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "58cbbf9c3d99563033bc80024c6e5cac0f2d6a5a90c0a4d45ad5b00b43d47c8a",
+        "bytes": 6485
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "7b54f4af96581d7706791625bfeaa048c027e09a76e77a2e495b2d914acba50f",
+        "bytes": 87719
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.65,
+   "reason": "The central bright patch has irregular, speckled, diffuse edges merging with the rippled terrain and an amorphous dark shadow, with no straight or crisp geometric outline.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.65, \"reason\": \"The central bright patch has irregular, speckled, diffuse edges merging with the rippled terrain and an amorphous dark shadow, with no straight or crisp geometric outline.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 841
+ }
+}
