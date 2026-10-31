@@ -171,7 +171,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     so far, and stops after the first 100 calls to report again. Price target about 32 USD on the tuning strips.
 15. [done, see docs/reports/2026-10-30-halfcal.md; the rule is not met and nothing is adopted; one question for the person in docs/proposals/halfcal-v1.md] v2, C: per-strip calibration with an honest tail: fit the top of each branch on one half of each strip and
     check it on the other half, instead of extrapolating. Same judging as A.
-16. [running] v2, D, if time allows (cut first if the schedule slips): a two-sided shadow test for dark candidates (dark
+16. [done, see docs/reports/2026-10-30-darkrelief.md; the rule is not met and nothing is adopted; no question for the person] v2, D, if time allows (cut first if the schedule slips): a two-sided shadow test for dark candidates (dark
     on the anti-sun side, not on the sun side), aimed at dust-covered hardware. Same judging as A.
     For every v2 item: report the full recall-at-N curve (10, 20, 50, 100, 250) for every board, frozen-v1 beside
     v2; any number on the four sites that were sealed for frozen-v1 is labelled "not blind".

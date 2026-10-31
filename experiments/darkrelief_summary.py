@@ -2,7 +2,7 @@
 
     uv run experiments/darkrelief_summary.py
 
-Reads out/darkrelief/results.json. Output docs/reports/2026-10-31-darkrelief/summary.json.
+Reads out/darkrelief/results.json. Output docs/reports/2026-10-30-darkrelief/summary.json.
 """
 
 import json
@@ -47,7 +47,7 @@ for k in sorted(arms["frozen_v1"]["key_ranks"]):
     if len(set(row)) > 1:
         print(k, *row)
 
-dest = ROOT / "docs" / "reports" / "2026-10-31-darkrelief" / "summary.json"
+dest = ROOT / "docs" / "reports" / "2026-10-30-darkrelief" / "summary.json"
 dest.parent.mkdir(parents=True, exist_ok=True)
 dest.write_text(json.dumps(d, indent=1))
 print("\nwritten", dest, dest.stat().st_size)

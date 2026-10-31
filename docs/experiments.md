@@ -69,3 +69,7 @@ One line per idea that did not move the score. Winners go into the main package 
   on the other half, but key 8 to 9 of 32 and transplant 15 to 17 of 128 at 20 do not survive a 500 m shift of the split,
   and two pieces leave the top 20. Not adopted. `docs/reports/2026-10-30-halfcal.md`,
   `docs/reports/2026-10-30-halfcal/summary.json`.
+- 2026-10-30, item 16: two-sided relief test on dark candidates (a lit side on the sun side of the darkness, measured beyond the
+  patch's own edges): key 8 of 32 and transplant 15 of 128 at 20, both ties; no recorded piece's dark candidate passes, and a
+  sun-on-the-wrong-side placebo does as well. Not adopted. `docs/reports/2026-10-30-darkrelief.md`,
+  `docs/reports/2026-10-30-darkrelief/summary.json`.

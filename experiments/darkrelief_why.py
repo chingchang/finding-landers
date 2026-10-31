@@ -4,7 +4,7 @@ what passes the whole fit on the planted tiles, and what enters each strip's top
 
     uv run --env-file out/landers.env experiments/darkrelief_why.py
 
-Reads out/darkrelief and out/halfcal. Output docs/reports/2026-10-31-darkrelief/why.json.
+Reads out/darkrelief and out/halfcal. Output docs/reports/2026-10-30-darkrelief/why.json.
 """
 
 import json
@@ -158,6 +158,6 @@ for sid in sorted(hs.tuning_strips(sites)):
     top[sid] = {"site_passing": int((gain > 0).sum()), "passing_in_top_20": int((gain[best] > 0).sum())}
     print(sid, top[sid])
 
-dest = ROOT / "docs" / "reports" / "2026-10-31-darkrelief" / "why.json"
+dest = ROOT / "docs" / "reports" / "2026-10-30-darkrelief" / "why.json"
 dest.write_text(json.dumps({"pieces": out, "planted_tiles": tile, "top_20": top}, indent=1))
 print("written", dest)
