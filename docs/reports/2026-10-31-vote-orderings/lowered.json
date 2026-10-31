@@ -1,0 +1,1359 @@
+{
+ "price_check": {
+  "key_candidates": 1200,
+  "key_votes": 2328,
+  "votes_per_candidate": 1.94,
+  "band_share": 0.47,
+  "wonder_calls": 2572,
+  "wonder_usd": 39.4859,
+  "usd_per_wonder_call": 0.01535,
+  "spark_usd": 0.8655,
+  "this_run_usd": 40.3514,
+  "all_runs_usd": 48.6803
+ },
+ "review_totals": {
+  "verdicts": 240,
+  "lowered_beyond_votes": 106
+ },
+ "shams": {
+  "placements_on_tiles_with_a_detection": 128,
+  "detections_on_a_sham": 20
+ },
+ "what": "item 14's lowered transplant detections and Spark's lowered rows on recorded pieces; 128 is both the number of planted pieces and, separately, the number of detections voted on",
+ "transplant_voted": 128,
+ "transplant_lowered": 34,
+ "lowered_on_planted": 12,
+ "lowered_on_sham": 0,
+ "planted_pieces": 128,
+ "distinct_planted_pieces_under_a_lowered_detection": 9,
+ "planted_pieces_with_a_voted_detection": 60,
+ "first_votes_transplant": {
+  "other/hardware": 7,
+  "other/natural": 36,
+  "other/unsure": 5,
+  "planted/hardware": 27,
+  "planted/natural": 36,
+  "planted/unsure": 17
+ },
+ "first_votes_key_lists": {
+  "other/hardware": 65,
+  "other/natural": 1004,
+  "other/unsure": 110,
+  "piece/hardware": 16,
+  "piece/natural": 4,
+  "piece/unsure": 1
+ },
+ "lowered": [
+  {
+   "detection": 3242,
+   "tile": "ESP_013500_1035:19200:19200",
+   "row": 97.1,
+   "col": 1767.2,
+   "branch": "bright",
+   "area_px": 8,
+   "on_planted": [
+    {
+     "site": "beagle2",
+     "piece": "lander",
+     "kind": "hardware",
+     "size_m": 1.0,
+     "target": "ESP_013500_1035",
+     "truth": 27296,
+     "distance_px": 2.9,
+     "radius_px": 20.0,
+     "found_combined": [
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 94,
+   "best_depth_any_fold": 3,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright area is a diffuse, speckled patch with irregular fading edges and no crisp geometric outline or coherent cast shadow, matching the surrounding rippled natural texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch is diffuse and speckled with no crisp or geometric outline or distinct raised-body shadow, blending into the surrounding rippled terrain."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows a diffuse speckled bright patch whose edges merge into the continuing ripple texture, with no crisp straight outline or cast shadow of a raised body."
+    }
+   ],
+   "valid_fraction": 0.879
+  },
+  {
+   "detection": 3718,
+   "tile": "ESP_013500_1035:74880:49920",
+   "row": 1827.1,
+   "col": 648.9,
+   "branch": "bright",
+   "area_px": 8,
+   "on_planted": [
+    {
+     "site": "beagle2",
+     "piece": "lander",
+     "kind": "hardware",
+     "size_m": 1.0,
+     "target": "ESP_013500_1035",
+     "truth": 27783,
+     "distance_px": 3.9,
+     "radius_px": 20.0,
+     "found_combined": [
+      "N20",
+      "N50",
+      "N100",
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 18,
+   "best_depth_any_fold": 8,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has diffuse irregular edges, no straight boundaries or paired cast shadow, and the same speckled grain continues across it as in the surrounding terrain."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The enlarged centre shows only the same speckled grain as the surrounding ground, with no crisp outline or paired shadow of a raised object."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The enlarged centre shows only a diffuse speckled bright patch blending into the surrounding grain with no crisp straight outline or paired shadow of a raised object."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 4354,
+   "tile": "ESP_048734_1035:13440:15360",
+   "row": 1213.9,
+   "col": 711.7,
+   "branch": "bright",
+   "area_px": 7,
+   "on_planted": [
+    {
+     "site": "perseverance",
+     "piece": "descent_stage",
+     "kind": "mark",
+     "size_m": 20.0,
+     "target": "ESP_048734_1035",
+     "truth": 28435,
+     "distance_px": 57.6,
+     "radius_px": 80.0,
+     "found_combined": [
+      "N100",
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": [
+      "N250",
+      "board_rate"
+     ]
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 49,
+   "best_depth_any_fold": 24,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows diffuse, speckled bright-and-dark mottling with irregular soft edges blending into the rippled terrain, with no crisp straight outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central dark patch has a diffuse, irregular, mottled boundary matching the surrounding rippled texture, with no straight or crisp edges and no distinct cast shadow of a raised body."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The enlarged centre shows only an amorphous, grain-blended bright spot with diffuse darkening below and no crisp geometric outline or distinct raised-body shadow, matching the mottled rock and crater texture in the reference image."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 7258,
+   "tile": "ESP_057965_1035:17280:13440",
+   "row": 1598.1,
+   "col": 1397.2,
+   "branch": "bright",
+   "area_px": 19,
+   "on_planted": [
+    {
+     "site": "pathfinder",
+     "piece": "backshell",
+     "kind": "hardware",
+     "size_m": 2.6,
+     "target": "ESP_057965_1035",
+     "truth": 31364,
+     "distance_px": 1.1,
+     "radius_px": 10.0,
+     "found_combined": [
+      "N20",
+      "N50",
+      "N100",
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 27,
+   "best_depth_any_fold": 26,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has diffuse, irregular edges blending into similarly bright textured terrain, with no straight outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright speck is a few soft, irregular pixels like the scattered bright rocks in the reference image, with no crisp geometric outline or distinct raised-body shadow in the enlargement."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central bright patch has soft, irregular, pixel-mottled edges with no straight or geometric outline and no paired cast shadow, matching the surrounding natural albedo texture."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 2635,
+   "tile": "ESP_013368_1035:42240:24960",
+   "row": 1784.3,
+   "col": 913.3,
+   "branch": "dark_compact",
+   "area_px": 30,
+   "on_planted": [
+    {
+     "site": "schiaparelli",
+     "piece": "crash_scar",
+     "kind": "mark",
+     "size_m": 20.0,
+     "target": "ESP_013368_1035",
+     "truth": 26733,
+     "distance_px": 17.5,
+     "radius_px": 80.0,
+     "found_combined": [
+      "N250"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 105,
+   "best_depth_any_fold": 45,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre is a few-pixel diffuse dark blotch with soft, irregular edges and no crisp geometric outline, bright facet, or distinct raised-body shadow, blending with the surrounding polygonal patterned ground."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows only a diffuse, irregular dark smudge blending into the mottled surroundings, with no crisp or straight edges or offset shadow of a raised body."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The central dark area has blurred, irregular edges and the same grainy texture as the surrounding wavy terrain, with no crisp straight outline or isolated hardware-like shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 2007,
+   "tile": "ESP_013368_1035:9600:9600",
+   "row": 474.6,
+   "col": 1313.1,
+   "branch": "dark",
+   "area_px": 94,
+   "on_planted": [
+    {
+     "site": "phoenix",
+     "piece": "backshell",
+     "kind": "hardware",
+     "size_m": 2.6,
+     "target": "ESP_013368_1035",
+     "truth": 25822,
+     "distance_px": 7.3,
+     "radius_px": 20.0,
+     "found_combined": [
+      "N100",
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": [
+      "N50",
+      "N100",
+      "N250",
+      "board_rate"
+     ]
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 140,
+   "best_depth_any_fold": 46,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre shows an irregular dark pit with a small bright rim spot and a speckled halo blending into the surrounding mottled ground, with no crisp straight or geometric outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre is a fuzzy, irregular dark mottled patch with diffuse bright speckles and no crisp straight outline or distinct raised-body shadow, matching a natural shadowed depression/rock texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre is an irregular, diffuse-edged dark mottled patch with speckled bright spots similar to the surrounding and reference rocky texture, with no crisp geometric outline or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 2698,
+   "tile": "ESP_013368_1035:42240:24960",
+   "row": 1784.2,
+   "col": 913.2,
+   "branch": "dark",
+   "area_px": 50,
+   "on_planted": [
+    {
+     "site": "schiaparelli",
+     "piece": "crash_scar",
+     "kind": "mark",
+     "size_m": 20.0,
+     "target": "ESP_013368_1035",
+     "truth": 26733,
+     "distance_px": 17.6,
+     "radius_px": 80.0,
+     "found_combined": [
+      "N250"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 116,
+   "best_depth_any_fold": 49,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre is a few-pixel diffuse dark blotch with soft, irregular edges and no crisp geometric outline, bright facet, or distinct raised-body shadow, blending with the surrounding polygonal patterned ground."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows only a diffuse dark mottling with no crisp straight outline or distinct raised-body shadow, blending into the surrounding rippled natural texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre feature is an amorphous dark patch with diffuse, irregular edges blending into the surrounding patterned ground, with no crisp geometric outline, straight edge, or paired bright body and cast shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 3278,
+   "tile": "ESP_013500_1035:19200:19200",
+   "row": 163.1,
+   "col": 222.2,
+   "branch": "dark_compact",
+   "area_px": 94,
+   "on_planted": [
+    {
+     "site": "zhurong",
+     "piece": "lander",
+     "kind": "hardware",
+     "size_m": 4.0,
+     "target": "ESP_013500_1035",
+     "truth": 27451,
+     "distance_px": 6.1,
+     "radius_px": 20.0,
+     "found_combined": [
+      "N250"
+     ],
+     "found_with_vote_rule": [
+      "N250",
+      "board_rate"
+     ]
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 96,
+   "best_depth_any_fold": 60,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows an irregular dark pit with a bright curved rim on one side, matching natural crater/rock shading in the rippled terrain with no straight edges, crisp geometric outline, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre object is a round bright-rimmed depression with a dark shadowed half, matching small craters/rocks in the reference and showing no straight, crisp manufactured edges."
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows only a blurred black blob with an adjacent bright crescent and no crisp geometric edge or manufactured shape distinguishable from a rock or small-crater shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 2789,
+   "tile": "ESP_013368_1035:49920:36480",
+   "row": 1812.9,
+   "col": 203.6,
+   "branch": "dark_compact",
+   "area_px": 79,
+   "on_planted": [
+    {
+     "site": "phoenix",
+     "piece": "lander",
+     "kind": "hardware",
+     "size_m": 2.5,
+     "target": "ESP_013368_1035",
+     "truth": 26887,
+     "distance_px": 6.1,
+     "radius_px": 20.0,
+     "found_combined": [
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 62,
+   "best_depth_any_fold": 62,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows an irregular dark pit surrounded by a diffuse speckled bright halo that blends into the mottled terrain, with no crisp straight edges or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central feature is an irregular, speckled bright halo around a dark pit with diffuse blurred margins and no straight edges, crisp outline, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows an irregular bright-speckled rim around a dark pit with no crisp straight edges, geometric outline, or distinct raised-body shadow, matching a small natural crater/rock depression."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 2843,
+   "tile": "ESP_013368_1035:49920:36480",
+   "row": 1812.9,
+   "col": 203.6,
+   "branch": "dark",
+   "area_px": 86,
+   "on_planted": [
+    {
+     "site": "phoenix",
+     "piece": "lander",
+     "kind": "hardware",
+     "size_m": 2.5,
+     "target": "ESP_013368_1035",
+     "truth": 26887,
+     "distance_px": 6.1,
+     "radius_px": 20.0,
+     "found_combined": [
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 65,
+   "best_depth_any_fold": 65,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows an irregular dark pit surrounded by a diffuse speckled bright halo that blends into the mottled terrain, with no crisp straight edges or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows only a diffuse bright patch with soft, irregular edges and the same mottled texture as the surrounding terrain, with no crisp geometric outline or cast shadow of a raised body."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows an irregular, pixel-mottled dark pit with diffuse bright speckling and no straight edges, geometric outline, or distinct raised-body shadow, matching the surrounding rocky terrain."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 4552,
+   "tile": "ESP_048734_1035:24960:23040",
+   "row": 561.3,
+   "col": 274.3,
+   "branch": "bright",
+   "area_px": 15,
+   "on_planted": [
+    {
+     "site": "perseverance",
+     "piece": "descent_stage",
+     "kind": "mark",
+     "size_m": 20.0,
+     "target": "ESP_048734_1035",
+     "truth": 28634,
+     "distance_px": 55.8,
+     "radius_px": 80.0,
+     "found_combined": [
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": []
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 92,
+   "best_depth_any_fold": 92,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, irregular edges with no crisp geometric outline or distinct cast shadow, blending into the surrounding fractured rock texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The centre shows only grainy, mottled albedo blending into the surrounding fractured rock and a soft crevice shadow, with no crisp straight edges, uniform bright surface, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The enlarged centre shows a diffuse, irregular diagonal ridge and a soft bright patch with pixelated gradations merging into the surrounding rocky texture, with no crisp straight edges, geometric outline, or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 4355,
+   "tile": "ESP_048734_1035:13440:15360",
+   "row": 1241.9,
+   "col": 656.7,
+   "branch": "bright",
+   "area_px": 9,
+   "on_planted": [
+    {
+     "site": "perseverance",
+     "piece": "descent_stage",
+     "kind": "mark",
+     "size_m": 20.0,
+     "target": "ESP_048734_1035",
+     "truth": 28435,
+     "distance_px": 30.8,
+     "radius_px": 80.0,
+     "found_combined": [
+      "N100",
+      "N250",
+      "board_rate"
+     ],
+     "found_with_vote_rule": [
+      "N250",
+      "board_rate"
+     ]
+    }
+   ],
+   "on_sham": [],
+   "depth_in_own_fold": 115,
+   "best_depth_any_fold": 100,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central blob has irregular, diffuse margins and mottled bright-dark texture blending into the rippled surroundings, with no straight edges, geometric symmetry, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The centre object has diffuse, irregular, mottled edges and grainy texture matching the surrounding rippled ground, with no crisp straight outline, geometric shape, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central dark patch has a fuzzy, irregular outline with mottled bright speckles matching the reference ground and no crisp straight edges or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 2113,
+   "tile": "ESP_013368_1035:21120:9600",
+   "row": 525.0,
+   "col": 233.3,
+   "branch": "bright",
+   "area_px": 95,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 9,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The center shows an irregular, soft-edged bright blob nestled in a diffuse dark depression with no straight edges, crisp outline, or distinct cast shadow of a raised object."
+    },
+    {
+     "verdict": "unsure",
+     "confidence": 0.5,
+     "reason": "The enlarged centre shows only an irregular saturated white blob with an adjacent dark patch and no crisp geometric edges or distinct raised-body shadow to separate hardware from a bright rock or frost patch."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre pixels show a fuzzy bright crescent around a shaded bowl-like interior with no straight edges, crisp outline, or separate cast shadow, consistent with a sunlit small crater/rock rim in the surrounding terrain."
+    }
+   ],
+   "valid_fraction": 0.997
+  },
+  {
+   "detection": 2114,
+   "tile": "ESP_013368_1035:21120:9600",
+   "row": 523.2,
+   "col": 223.2,
+   "branch": "bright",
+   "area_px": 5,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 23,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre feature is a soft-edged bright crescent with a darker bowl interior whose shading matches a small crater/frost patch, with a similar smaller bright spot nearby and no straight edges or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The enlarged centre shows an irregular, mottled, pixel-soft bright blob with no crisp or geometric outline, matching other bright rock outcrops in Image 1."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre bright patch has an irregular, saturated blob shape with a mottled interior and an adjacent dark depression, similar to other bright spots in the frame and with no straight edges, symmetry, or crisp raised-body shadow."
+    }
+   ],
+   "valid_fraction": 0.997
+  },
+  {
+   "detection": 3269,
+   "tile": "ESP_013500_1035:19200:19200",
+   "row": 1951.9,
+   "col": 1287.6,
+   "branch": "bright",
+   "area_px": 9,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 28,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows only diffuse, ripple-aligned light-and-dark mottling with soft gradients and no crisp geometric edge or detached shadow, matching the surrounding terrain texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central feature in the enlarged view is a soft, diffuse diagonal bright streak blending into the surrounding ripple texture, with no crisp outline or distinct cast shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch is small, diffuse, and matches the repeated bright ripple crests and dark troughs across Image 1, with no crisp geometric outline or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 0.875
+  },
+  {
+   "detection": 3561,
+   "tile": "ESP_013500_1035:49920:40320",
+   "row": 555.1,
+   "col": 820.1,
+   "branch": "bright",
+   "area_px": 8,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 49,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre shows only diffuse bright spots and mottled texture matching surrounding rocks and the reference terrain, with no crisp geometric outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The central feature in the enlarged view is a blurry, irregular bright-mottled patch with no crisp geometric outline or distinct raised-body shadow, matching the natural rocky texture in the surroundings and reference."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows only a diffuse, irregular dark mottled patch with soft margins and the same grainy texture as the surrounding terrain, with no crisp geometric outline, straight edge, or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 1810,
+   "tile": "ESP_013368_1035:9600:9600",
+   "row": 1674.4,
+   "col": 1146.7,
+   "branch": "bright",
+   "area_px": 142,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 55,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows a diffuse, saturated bright patch around a soft dark pit with no crisp straight outline or cast shadow of a raised body, consistent with bright natural material exposed in the surrounding textured ground."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has irregular, diffuse pixelated edges with no straight or crisp outline and no distinct raised-body shadow, merging into the surrounding mottled terrain like a bright rock or frost deposit."
+    },
+    {
+     "verdict": "hardware",
+     "confidence": 0.65,
+     "reason": "The centre shows compact saturated-white objects, including a near-circular disc with a crisp edge and contact darkening, unlike the mottled grey terrain and softer bright patches in the reference image."
+    }
+   ],
+   "valid_fraction": 0.999
+  },
+  {
+   "detection": 5374,
+   "tile": "ESP_057965_1035:3840:5760",
+   "row": 2022.0,
+   "col": 975.7,
+   "branch": "dark_compact",
+   "area_px": 22,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 59,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows only an irregular dark curving fissure with diffuse bright mottling matching the surrounding fractured ground, with no crisp straight outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows only soft, irregular mottling and curvilinear dark cracks blending into the surrounding textured terrain, with no crisp straight outline, uniform albedo, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central feature has diffuse, irregular edges, mottled texture matching the surrounding terrain, and no straight outline or detached shadow of a raised object."
+    }
+   ],
+   "valid_fraction": 0.602
+  },
+  {
+   "detection": 3569,
+   "tile": "ESP_013500_1035:49920:40320",
+   "row": 665.3,
+   "col": 918.8,
+   "branch": "bright",
+   "area_px": 6,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 61,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has irregular, soft edges and mottled texture matching surrounding sunlit rocks, with no straight crisp outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright patch has irregular, diffuse edges and the same speckled texture as surrounding rock, with no crisp geometric outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.76,
+     "reason": "The central feature has irregular, gradational margins and the same mottled texture as surrounding rocks, with no crisp straight edges or distinct cast shadow of a raised body."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 490,
+   "tile": "ESP_013078_1030:40320:17280",
+   "row": 1950.5,
+   "col": 1259.1,
+   "branch": "bright",
+   "area_px": 34,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 66,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has soft, irregular, speckled edges blending into the surrounding grainy texture, with no crisp straight outline or distinct cast shadow of a raised body."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The centre shows irregular, fuzzy mottled bright and dark patches of the same grain and scale as the surrounding terrain, with no crisp straight outline or coherent raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows only a diffuse bright-dark pixel pair with irregular, soft edges matching the mottled diagonal texture across the whole frame, with no straight or crisp outline or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 0.883
+  },
+  {
+   "detection": 2777,
+   "tile": "ESP_013368_1035:49920:36480",
+   "row": 1457.0,
+   "col": 1652.2,
+   "branch": "dark_compact",
+   "area_px": 10,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 67,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows a soft, irregular, grainy dark patch with no straight or crisp outline, symmetrical shape, or distinct raised-body shadow, blending with the surrounding rocky slope shading."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre shows only diffuse mottled gray texture with no crisp outline or distinct raised-body shadow, matching the surrounding and reference terrain."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "Image 2 shows an irregular, soft-edged dark patch with grainy gradation matching surrounding terrain shadows, with no straight edges, crisp outline, or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 608,
+   "tile": "ESP_013078_1030:59520:46080",
+   "row": 284.7,
+   "col": 1319.9,
+   "branch": "bright",
+   "area_px": 51,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 70,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows a soft-edged, irregular bright blob identical to many similar bright patches scattered across image 1, with no crisp straight outline or distinct shadow of a raised body."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows an irregular, diffuse-edged bright patch similar to other bright exposures nearby, with no straight edges, geometric outline, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows only diffuse mottled speckle blending into the surrounding terrain, with no crisp geometric outline or paired cast shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 7460,
+   "tile": "PSP_004824_1030:28800:19200",
+   "row": 175.7,
+   "col": 1627.6,
+   "branch": "bright",
+   "area_px": 11,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 73,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.74,
+     "reason": "The centre bright patch is diffuse, irregular and grainy with no crisp straight edge or raised-body shadow, matching the numerous similar bright frost/dust speckles scattered across the surrounding terrain."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central dark feature has irregular, branching, diffuse edges blending into the mottled rocky texture seen in the reference, with no crisp straight outline or isolated raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The enlarged centre shows only diffuse, amorphous bright speckles merging with the surrounding mottled terrain, with no crisp geometric outline or paired shadow of a raised body."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 48,
+   "tile": "ESP_013078_1030:11520:13440",
+   "row": 770.8,
+   "col": 1793.4,
+   "branch": "bright",
+   "area_px": 10,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 79,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The centre is a small amorphous bright blotch with no crisp or straight edge or paired shadow, matching numerous similar bright specks across Image 1."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre shows only grainy texture continuous with its surroundings, with no crisp or straight outline and no paired shadow of a raised body in the enlarged view."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre pixels show the same diffuse speckled grain as the surroundings, with no crisp geometric outline, distinct material contrast, or cast shadow from a raised body."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 89,
+   "tile": "ESP_013078_1030:11520:13440",
+   "row": 481.6,
+   "col": 266.5,
+   "branch": "sheet",
+   "area_px": 528,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 79,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has an irregular, speckled, soft-edged shape identical to other bright spots in the frame and shows no straight edges or distinct cast shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, irregular, grainy edges matching similar bright rocks elsewhere in image 1, with no crisp geometric outline or distinct cast shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has irregular, fuzzy edges with no crisp geometric outline or paired shadow from a raised body, matching other scattered bright patches in the surrounding terrain."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 1777,
+   "tile": "ESP_013078_1030:59520:46080",
+   "row": 92.5,
+   "col": 590.3,
+   "branch": "sheet",
+   "area_px": 368,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 81,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, irregular pixel edges and no cast shadow or geometric outline, matching other similar bright patches in the frame."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The enlarged centre shows an irregular, diffuse bright patch with no straight edges, crisp outline, or paired raised-body shadow, and similar bright patches recur elsewhere in the natural mottled texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central bright patch in the enlarged view has diffuse, feathered edges and the same speckled texture as the surrounding terrain, with no crisp geometric outline or adjacent shadow of a raised body."
+    }
+   ],
+   "valid_fraction": 0.859
+  },
+  {
+   "detection": 223,
+   "tile": "ESP_013078_1030:28800:13440",
+   "row": 1509.7,
+   "col": 358.4,
+   "branch": "sheet",
+   "area_px": 320,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 82,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has irregular, fuzzy edges and similar bright rocky patches appear nearby, with no straight outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.62,
+     "reason": "The centre is an irregular, fuzzy-edged bright patch with no straight geometric outline or distinct cast shadow, similar to bright natural patches in the reference image."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patches have irregular, fuzzy margins and speckled texture matching scattered bright clasts across image 1, with no straight edges, geometric outline, or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 5689,
+   "tile": "ESP_057965_1035:3840:5760",
+   "row": 379.3,
+   "col": 2033.8,
+   "branch": "sheet",
+   "area_px": 784,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 85,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows a diffuse bright elongated patch with feathered margins and no crisp straight outline or distinct cast shadow, blending into the surrounding ripple texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has diffuse, gradational edges, no crisp geometric outline or cast shadow, and its mottled texture is continuous with the surrounding terrain."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.6,
+     "reason": "The enlarged centre shows only a soft, irregular bright-and-dark mottling that blends into the surrounding bumpy terrain, with no straight edges, geometric outline, or detached shadow of a raised body."
+    }
+   ],
+   "valid_fraction": 0.555
+  },
+  {
+   "detection": 5712,
+   "tile": "ESP_057965_1035:3840:5760",
+   "row": 1020.7,
+   "col": 1312.0,
+   "branch": "sheet",
+   "area_px": 80,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 87,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The enlarged centre shows only irregular, diffuse bright and dark mottling with no crisp straight edges or distinct raised-body shadow, matching the surrounding natural rocky texture."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The central feature has irregular, soft-edged bright and dark mottling with the same knobby texture as the surrounding terrain and no straight edges, crisp outline, or distinct cast shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has irregular, diffuse edges and the same mottled texture as the surrounding rippled ground, with no crisp geometric outline or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 1782,
+   "tile": "ESP_013078_1030:59520:46080",
+   "row": 373.2,
+   "col": 910.6,
+   "branch": "sheet",
+   "area_px": 480,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 90,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The central bright patch has an irregular, diffuse margin with no crisp geometric outline or cast shadow and resembles smaller bright spots elsewhere in the frame."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.7,
+     "reason": "The central bright patch has an irregular, diffuse-edged shape identical to other scattered bright spots in the frame, with no straight edges, crisp outline, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.65,
+     "reason": "The central blob has a diffuse, speckled texture identical to the surrounding ground, with no crisp or straight outline and no paired shadow of a raised body."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 4059,
+   "tile": "ESP_013724_1030:42240:15360",
+   "row": 1519.8,
+   "col": 1781.1,
+   "branch": "dark",
+   "area_px": 56,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 91,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central dark patch has soft, irregular edges and a mottled interior matching other shadowed depressions in images 1 and 3, with no straight edges, geometric outline, or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.68,
+     "reason": "The central dark patch has soft, irregular, grainy edges blending into the surrounding mottled terrain like features in the reference, with no crisp straight outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.82,
+     "reason": "The central dark patch has soft, irregular, blurred edges blending into the surrounding rippled texture with no crisp straight outline or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 1789,
+   "tile": "ESP_013078_1030:59520:46080",
+   "row": 631.0,
+   "col": 1938.9,
+   "branch": "sheet",
+   "area_px": 464,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 92,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "Image 2 shows a diffuse, irregular grainy bright patch with fading edges and no straight outline or attached raised-body shadow, matching the smaller bright spots scattered naturally across Image 1."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has irregular grainy edges matching many similar bright spots scattered across image 1, with no straight outline or distinct raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.75,
+     "reason": "The central bright patch has diffuse, irregular edges blending into the mottled terrain and resembling other scattered bright spots, with no crisp geometric outline or distinct raised-body shadow."
+    }
+   ],
+   "valid_fraction": 0.926
+  },
+  {
+   "detection": 5692,
+   "tile": "ESP_057965_1035:3840:5760",
+   "row": 433.4,
+   "col": 357.3,
+   "branch": "sheet",
+   "area_px": 160,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 92,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The central bright patch has diffuse, irregular edges and the same pitted texture as the surrounding terrain, with no crisp geometric outline or detached shadow of a raised body."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.78,
+     "reason": "The centre shows the same mottled, pitted texture and diffuse shading as the surrounding ridged terrain, with no crisp geometric outline, distinct hardware tone, or detached raised-body shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre feature has soft, irregular margins and the same speckled texture as the surrounding ground, with no crisp geometric outline or isolated raised-body shadow."
+    }
+   ],
+   "valid_fraction": 1.0
+  },
+  {
+   "detection": 3532,
+   "tile": "ESP_013500_1035:49920:40320",
+   "row": 87.0,
+   "col": 1223.0,
+   "branch": "bright",
+   "area_px": 13,
+   "on_planted": [],
+   "on_sham": [],
+   "depth_in_own_fold": null,
+   "best_depth_any_fold": 100,
+   "votes": [
+    {
+     "verdict": "natural",
+     "confidence": 0.8,
+     "reason": "The centre is a soft, few-pixel bright speckle matching numerous identical bright patches across Image 1, with no crisp outline, straight edge, or cast shadow."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre bright blob in the enlargement has diffuse, irregular edges and no straight outline or paired shadow, matching the mottled bright rocks and dust seen throughout image 1 and the reference."
+    },
+    {
+     "verdict": "natural",
+     "confidence": 0.72,
+     "reason": "The centre shows only a diffuse, mottled bright-dark patch with grainy texture and no crisp geometric edge or distinct raised-body shadow, matching the bright rocks and texture in the reference image."
+    }
+   ],
+   "valid_fraction": 0.84
+  }
+ ],
+ "review_lowered_recorded_rows": [
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 8,
+   "pieces": [
+    "heat_shield"
+   ],
+   "branch": "dark_compact",
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory vote describes diffuse dark blob merging into terrain consistent with rock and shadow."
+   },
+   "first_vote": {
+    "verdict": "natural",
+    "confidence": 0.68
+   }
+  },
+  {
+   "strip": "ESP_017716_2485",
+   "rank": 11,
+   "pieces": [
+    "heat_shield"
+   ],
+   "branch": "dark",
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory vote describes amorphous dark oval matching rock-shadow pairs with no geometric outline."
+   },
+   "first_vote": {
+    "verdict": "natural",
+    "confidence": 0.62
+   }
+  },
+  {
+   "strip": "ESP_025815_1655",
+   "rank": 5,
+   "pieces": [
+    "parachute"
+   ],
+   "branch": "sheet",
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "votes",
+     "branch"
+    ],
+    "reason": "Lowers toward likely natural because the vote describes an irregular soft-edged patch with no cast shadow consistent with natural exposure."
+   },
+   "first_vote": {
+    "verdict": "natural",
+    "confidence": 0.65
+   }
+  },
+  {
+   "strip": "ESP_022038_1995",
+   "rank": 3,
+   "pieces": [
+    "backshell"
+   ],
+   "branch": "bright",
+   "verdict": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "reason": "Advisory vote reports natural with fuzzy irregular spot and similar speckles across terrain, supporting a lower grade."
+   },
+   "first_vote": {
+    "verdict": "natural",
+    "confidence": 0.65
+   }
+  }
+ ]
+}
