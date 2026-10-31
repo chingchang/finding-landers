@@ -65,3 +65,7 @@ One line per idea that did not move the score. Winners go into the main package 
 - 2026-10-30, item 13: logistic re-ranker on frozen DINOv2 small, leave one site out: key at 20 goes 8 to 16 of 32, but
   transplant 15 to 11 of 128 and two pieces leave the top 20, so the rule is not met. Not adopted.
   `docs/reports/2026-10-30-reranker.md`, `docs/reports/2026-10-30-reranker/summary.json`.
+- 2026-10-30, item 15: per-strip calibration on a checkerboard, cross-fitted, capped above the fitted top: the scale holds
+  on the other half, but key 8 to 9 of 32 and transplant 15 to 17 of 128 at 20 do not survive a 500 m shift of the split,
+  and two pieces leave the top 20. Not adopted. `docs/reports/2026-10-30-halfcal.md`,
+  `docs/reports/2026-10-30-halfcal/summary.json`.

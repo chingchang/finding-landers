@@ -1,0 +1,6976 @@
+{
+ "protocol": "docs/proposals/halfcal-v1-protocol.md",
+ "git": {
+  "commit": "565a608e34966de50b2d78367c5cb5d12d4517c8",
+  "dirty": false,
+  "tag": null
+ },
+ "not_blind": "every number here is on tuning sites; perseverance, insight, zhurong and beagle2 were sealed for frozen-v1 and are not blind",
+ "rule": {
+  "key_beats": true,
+  "transplant_beats": true,
+  "no_piece_dropped": false,
+  "met": false
+ },
+ "planted_km2": 16.520265625,
+ "median_target_km2": 99.45,
+ "rates_per_km2": {
+  "N10": 0.10055304172951232,
+  "N20": 0.20110608345902464,
+  "N50": 0.5027652086475616,
+  "N100": 1.0055304172951232,
+  "N250": 2.513826043237808,
+  "board_rate": 2.0
+ },
+ "no_texture": [
+  "PSP_004336_1035",
+  "PSP_004402_1030"
+ ],
+ "false_alarms_allowed": {
+  "N10": 1,
+  "N20": 3,
+  "N50": 8,
+  "N100": 16,
+  "N250": 41,
+  "board_rate": 33
+ },
+ "arms": {
+  "frozen_v1": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 10,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 8,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 765,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 441,
+    "spirit/parachute/ESP_025815_1655": 116,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 25,
+    "perseverance/backshell/ESP_068822_1985": 44,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8578,
+    "perseverance/rover/ESP_068822_1985": 81,
+    "insight/lander/ESP_087360_1845": 469,
+    "insight/heat_shield/ESP_087360_1845": 44317,
+    "zhurong/lander/ESP_075625_2055": 2096,
+    "zhurong/parachute/ESP_075625_2055": 1172,
+    "zhurong/backshell/ESP_075625_2055": 1824,
+    "zhurong/heat_shield/ESP_075625_2055": 596,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 32
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 47,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   }
+  },
+  "primary": {
+   "key_curve": {
+    "10": 8,
+    "20": 9,
+    "50": 10,
+    "100": 14,
+    "250": 17
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.156,
+    0.454
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 2,
+     "20": 2,
+     "50": 2,
+     "100": 3,
+     "250": 4
+    },
+    "hardware": {
+     "n": 23,
+     "10": 6,
+     "20": 7,
+     "50": 8,
+     "100": 11,
+     "250": 13
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 1
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 1
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 1
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.333,
+    "sd": 0.281,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 80720,
+    "schiaparelli/parachute/ESP_048041_1780": 1,
+    "schiaparelli/backshell/ESP_048041_1780": 84,
+    "schiaparelli/heat_shield/ESP_048041_1780": 52010,
+    "curiosity/parachute/ESP_030313_1755": 5,
+    "curiosity/backshell/ESP_030313_1755": 1,
+    "curiosity/heat_shield/ESP_030313_1755": 362,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 1462,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 22,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 550,
+    "spirit/parachute/ESP_025815_1655": 133,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 69,
+    "perseverance/backshell/ESP_068822_1985": 122,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 10022,
+    "perseverance/rover/ESP_068822_1985": 124,
+    "insight/lander/ESP_087360_1845": 100,
+    "insight/heat_shield/ESP_087360_1845": 22882,
+    "zhurong/lander/ESP_075625_2055": 377,
+    "zhurong/parachute/ESP_075625_2055": 6006,
+    "zhurong/backshell/ESP_075625_2055": 61,
+    "zhurong/heat_shield/ESP_075625_2055": 3,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 20,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 13,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 13
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 2
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 2
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 6
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.06,
+      0.166
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 17,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 17
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 3
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 1
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 2
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 7
+      },
+      "texture": {
+       "n": 85,
+       "found": 10
+      }
+     },
+     "interval_95": [
+      0.085,
+      0.202
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 24,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 1
+      },
+      "hardware": {
+       "n": 92,
+       "found": 23
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 10
+      },
+      "texture": {
+       "n": 85,
+       "found": 14
+      }
+     },
+     "interval_95": [
+      0.129,
+      0.264
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 30,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 25
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 7
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 6
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 12
+      },
+      "texture": {
+       "n": 85,
+       "found": 18
+      }
+     },
+     "interval_95": [
+      0.169,
+      0.315
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 52,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 35
+      },
+      "mark": {
+       "n": 12,
+       "found": 4
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 9
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 12
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 7
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 21
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.325,
+      0.493
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 48,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 3
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 8
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 11
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 19
+      },
+      "texture": {
+       "n": 85,
+       "found": 29
+      }
+     },
+     "interval_95": [
+      0.296,
+      0.461
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 13,
+    "N20": 17,
+    "N50": 24,
+    "N100": 30,
+    "N250": 52,
+    "board_rate": 48
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.15,
+    "sd": 0.156,
+    "min": 0.0,
+    "max": 0.5
+   },
+   "dropped_from_top_20": [
+    "phoenix/heat_shield/ESP_017716_2485",
+    "schiaparelli/backshell/ESP_048041_1780"
+   ],
+   "key_beats": true,
+   "transplant_beats": true
+  },
+  "shift": {
+   "key_curve": {
+    "10": 7,
+    "20": 8,
+    "50": 10,
+    "100": 13,
+    "250": 17
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 3,
+     "250": 4
+    },
+    "hardware": {
+     "n": 23,
+     "10": 6,
+     "20": 7,
+     "50": 8,
+     "100": 10,
+     "250": 13
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 1
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 1
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 1
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 1
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.275,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 79504,
+    "schiaparelli/parachute/ESP_048041_1780": 1,
+    "schiaparelli/backshell/ESP_048041_1780": 58,
+    "schiaparelli/heat_shield/ESP_048041_1780": 53116,
+    "curiosity/parachute/ESP_030313_1755": 30,
+    "curiosity/backshell/ESP_030313_1755": 1,
+    "curiosity/heat_shield/ESP_030313_1755": 325,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 1375,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 21,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 544,
+    "spirit/parachute/ESP_025815_1655": 129,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 2,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 88,
+    "perseverance/backshell/ESP_068822_1985": 120,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 9998,
+    "perseverance/rover/ESP_068822_1985": 236,
+    "insight/lander/ESP_087360_1845": 112,
+    "insight/heat_shield/ESP_087360_1845": 22600,
+    "zhurong/lander/ESP_075625_2055": 461,
+    "zhurong/parachute/ESP_075625_2055": 5856,
+    "zhurong/backshell/ESP_075625_2055": 62,
+    "zhurong/heat_shield/ESP_075625_2055": 3,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 12,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 10,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 10
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 3
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 1
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 0
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 4
+      },
+      "texture": {
+       "n": 85,
+       "found": 6
+      }
+     },
+     "interval_95": [
+      0.043,
+      0.138
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 14,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 14
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 3
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 2
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 7
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.066,
+      0.175
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 23,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 23
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 14
+      }
+     },
+     "interval_95": [
+      0.123,
+      0.255
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 30,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 25
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 7
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 6
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 12
+      },
+      "texture": {
+       "n": 85,
+       "found": 18
+      }
+     },
+     "interval_95": [
+      0.169,
+      0.315
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 51,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 34
+      },
+      "mark": {
+       "n": 12,
+       "found": 4
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 9
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 12
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 7
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 20
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.318,
+      0.485
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 31
+      },
+      "mark": {
+       "n": 12,
+       "found": 3
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 8
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 11
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 5
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 19
+      },
+      "texture": {
+       "n": 85,
+       "found": 28
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 10,
+    "N20": 14,
+    "N50": 23,
+    "N100": 30,
+    "N250": 51,
+    "board_rate": 47
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.129,
+    "sd": 0.168,
+    "min": 0.0,
+    "max": 0.5
+   },
+   "dropped_from_top_20": [
+    "curiosity/parachute/ESP_030313_1755",
+    "phoenix/heat_shield/ESP_017716_2485",
+    "schiaparelli/backshell/ESP_048041_1780"
+   ],
+   "key_beats": false,
+   "transplant_beats": false
+  },
+  "whole_strip": {
+   "key_curve": {
+    "10": 8,
+    "20": 9,
+    "50": 11,
+    "100": 13,
+    "250": 17
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.156,
+    0.454
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 2,
+     "50": 2,
+     "100": 3,
+     "250": 4
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 9,
+     "100": 10,
+     "250": 13
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 1
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 1
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 1
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.333,
+    "sd": 0.281,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 79025,
+    "schiaparelli/parachute/ESP_048041_1780": 1,
+    "schiaparelli/backshell/ESP_048041_1780": 43,
+    "schiaparelli/heat_shield/ESP_048041_1780": 53294,
+    "curiosity/parachute/ESP_030313_1755": 20,
+    "curiosity/backshell/ESP_030313_1755": 1,
+    "curiosity/heat_shield/ESP_030313_1755": 260,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 1411,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 22,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 489,
+    "spirit/parachute/ESP_025815_1655": 122,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 59,
+    "perseverance/backshell/ESP_068822_1985": 105,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 10313,
+    "perseverance/rover/ESP_068822_1985": 123,
+    "insight/lander/ESP_087360_1845": 103,
+    "insight/heat_shield/ESP_087360_1845": 22002,
+    "zhurong/lander/ESP_075625_2055": 369,
+    "zhurong/parachute/ESP_075625_2055": 5974,
+    "zhurong/backshell/ESP_075625_2055": 63,
+    "zhurong/heat_shield/ESP_075625_2055": 3,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 9,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 10,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 10
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 2
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 0
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 4
+      },
+      "texture": {
+       "n": 85,
+       "found": 6
+      }
+     },
+     "interval_95": [
+      0.043,
+      0.138
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 16,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 0
+      },
+      "hardware": {
+       "n": 92,
+       "found": 16
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 3
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 1
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 0
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 2
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 6
+      },
+      "texture": {
+       "n": 85,
+       "found": 10
+      }
+     },
+     "interval_95": [
+      0.078,
+      0.193
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 24,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 1
+      },
+      "hardware": {
+       "n": 92,
+       "found": 23
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 10
+      },
+      "texture": {
+       "n": 85,
+       "found": 14
+      }
+     },
+     "interval_95": [
+      0.129,
+      0.264
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 26
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 6
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 8
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 19
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 55,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 38
+      },
+      "mark": {
+       "n": 12,
+       "found": 4
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 9
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 12
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 5
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 21
+      },
+      "texture": {
+       "n": 85,
+       "found": 34
+      }
+     },
+     "interval_95": [
+      0.347,
+      0.516
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 48,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 3
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 8
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 11
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 19
+      },
+      "texture": {
+       "n": 85,
+       "found": 29
+      }
+     },
+     "interval_95": [
+      0.296,
+      0.461
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 10,
+    "N20": 16,
+    "N50": 24,
+    "N100": 34,
+    "N250": 55,
+    "board_rate": 48
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.145,
+    "sd": 0.157,
+    "min": 0.0,
+    "max": 0.5
+   },
+   "dropped_from_top_20": [
+    "phoenix/heat_shield/ESP_017716_2485",
+    "schiaparelli/backshell/ESP_048041_1780"
+   ],
+   "key_beats": true,
+   "transplant_beats": true
+  },
+  "extrapolated": {
+   "key_curve": {
+    "10": 6,
+    "20": 11,
+    "50": 11,
+    "100": 14,
+    "250": 17
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.204,
+    0.517
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 2,
+     "50": 2,
+     "100": 3,
+     "250": 4
+    },
+    "hardware": {
+     "n": 23,
+     "10": 5,
+     "20": 9,
+     "50": 9,
+     "100": 11,
+     "250": 13
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 2
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 1
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 1
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.392,
+    "sd": 0.299,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 79025,
+    "schiaparelli/parachute/ESP_048041_1780": 8,
+    "schiaparelli/backshell/ESP_048041_1780": 15,
+    "schiaparelli/heat_shield/ESP_048041_1780": 53317,
+    "curiosity/parachute/ESP_030313_1755": 12,
+    "curiosity/backshell/ESP_030313_1755": 2,
+    "curiosity/heat_shield/ESP_030313_1755": 251,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 1409,
+    "phoenix/backshell/ESP_017716_2485": 4,
+    "phoenix/heat_shield/ESP_017716_2485": 20,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 500,
+    "spirit/parachute/ESP_025815_1655": 126,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 16,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 58,
+    "perseverance/backshell/ESP_068822_1985": 109,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 10313,
+    "perseverance/rover/ESP_068822_1985": 114,
+    "insight/lander/ESP_087360_1845": 89,
+    "insight/heat_shield/ESP_087360_1845": 21995,
+    "zhurong/lander/ESP_075625_2055": 366,
+    "zhurong/parachute/ESP_075625_2055": 5964,
+    "zhurong/backshell/ESP_075625_2055": 61,
+    "zhurong/heat_shield/ESP_075625_2055": 5,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 12,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 10,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 7
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 2
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 1
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 0
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 4
+      },
+      "texture": {
+       "n": 85,
+       "found": 6
+      }
+     },
+     "interval_95": [
+      0.043,
+      0.138
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 24,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 18
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 1
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 12
+      },
+      "texture": {
+       "n": 85,
+       "found": 12
+      }
+     },
+     "interval_95": [
+      0.129,
+      0.264
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 28,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 22
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 5
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 13
+      },
+      "texture": {
+       "n": 85,
+       "found": 15
+      }
+     },
+     "interval_95": [
+      0.156,
+      0.298
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 37,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 9
+      },
+      "hardware": {
+       "n": 92,
+       "found": 26
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 9
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 5
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 6
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 22
+      }
+     },
+     "interval_95": [
+      0.218,
+      0.373
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 52,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 35
+      },
+      "mark": {
+       "n": 12,
+       "found": 4
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 9
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 12
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 7
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 21
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.325,
+      0.493
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 48,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 13
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 3
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 8
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 11
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 19
+      },
+      "texture": {
+       "n": 85,
+       "found": 29
+      }
+     },
+     "interval_95": [
+      0.296,
+      0.461
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 10,
+    "N20": 24,
+    "N50": 28,
+    "N100": 37,
+    "N250": 52,
+    "board_rate": 48
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.213,
+    "sd": 0.246,
+    "min": 0.0,
+    "max": 0.75
+   },
+   "dropped_from_top_20": [],
+   "key_beats": true,
+   "transplant_beats": true
+  },
+  "no_rules": {
+   "key_curve": {
+    "10": 2,
+    "20": 2,
+    "50": 5,
+    "100": 9,
+    "250": 10
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.017,
+    0.201
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 3,
+     "100": 3,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 6,
+     "250": 7
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 0
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 1
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 0
+    },
+    "viking1": {
+     "n": 1,
+     "found": 0
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 0
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.058,
+    "sd": 0.125,
+    "min": 0.0,
+    "max": 0.333
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 80678,
+    "schiaparelli/parachute/ESP_048041_1780": 732,
+    "schiaparelli/backshell/ESP_048041_1780": 77,
+    "schiaparelli/heat_shield/ESP_048041_1780": 51954,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 86,
+    "curiosity/heat_shield/ESP_030313_1755": 351,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 1456,
+    "phoenix/backshell/ESP_017716_2485": 24,
+    "phoenix/heat_shield/ESP_017716_2485": 1868,
+    "viking1/lander/ESP_046170_2025": 75,
+    "spirit/lander/ESP_025815_1655": 371,
+    "spirit/parachute/ESP_025815_1655": 29,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 993,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 48,
+    "perseverance/backshell/ESP_068822_1985": 3264,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 10013,
+    "perseverance/rover/ESP_068822_1985": 100,
+    "insight/lander/ESP_087360_1845": 769,
+    "insight/heat_shield/ESP_087360_1845": 22843,
+    "zhurong/lander/ESP_075625_2055": 243,
+    "zhurong/parachute/ESP_075625_2055": 5871,
+    "zhurong/backshell/ESP_075625_2055": 10505,
+    "zhurong/heat_shield/ESP_075625_2055": 332,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 2276,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 14,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 10
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 0
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 7
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.066,
+      0.175
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 14,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 10
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 0
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 7
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.066,
+      0.175
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 14,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 10
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 0
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 0
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 7
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.066,
+      0.175
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 33,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 1
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 6
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 1
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 6
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 0
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 2
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 14
+      },
+      "texture": {
+       "n": 85,
+       "found": 19
+      }
+     },
+     "interval_95": [
+      0.19,
+      0.34
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 1
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 9
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 8
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 5
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 6
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 5
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 20
+      },
+      "texture": {
+       "n": 85,
+       "found": 25
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 43,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 31
+      },
+      "mark": {
+       "n": 12,
+       "found": 1
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 9
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 7
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 5
+      },
+      "spirit": {
+       "n": 12,
+       "found": 5
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 6
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 19
+      },
+      "texture": {
+       "n": 85,
+       "found": 24
+      }
+     },
+     "interval_95": [
+      0.26,
+      0.421
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 14,
+    "N20": 14,
+    "N50": 14,
+    "N100": 33,
+    "N250": 45,
+    "board_rate": 43
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.091,
+    "sd": 0.115,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [
+    "curiosity/backshell/ESP_030313_1755",
+    "pathfinder/backshell/ESP_022038_1995",
+    "phoenix/backshell/ESP_017716_2485",
+    "phoenix/heat_shield/ESP_017716_2485",
+    "schiaparelli/backshell/ESP_048041_1780",
+    "viking1/lander/ESP_046170_2025"
+   ],
+   "key_beats": false,
+   "transplant_beats": false
+  },
+  "better_rank": {
+   "key_curve": {
+    "10": 9,
+    "20": 10,
+    "50": 12,
+    "100": 13,
+    "250": 17
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.18,
+    0.486
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 2,
+     "20": 2,
+     "50": 3,
+     "100": 3,
+     "250": 4
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 8,
+     "50": 9,
+     "100": 10,
+     "250": 13
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 2
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 1
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.358,
+    "sd": 0.324,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 65333,
+    "schiaparelli/parachute/ESP_048041_1780": 2,
+    "schiaparelli/backshell/ESP_048041_1780": 14,
+    "schiaparelli/heat_shield/ESP_048041_1780": 42561,
+    "curiosity/parachute/ESP_030313_1755": 5,
+    "curiosity/backshell/ESP_030313_1755": 2,
+    "curiosity/heat_shield/ESP_030313_1755": 262,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 921,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 7,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 508,
+    "spirit/parachute/ESP_025815_1655": 128,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 5,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 40,
+    "perseverance/backshell/ESP_068822_1985": 62,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 10313,
+    "perseverance/rover/ESP_068822_1985": 103,
+    "insight/lander/ESP_087360_1845": 168,
+    "insight/heat_shield/ESP_087360_1845": 26729,
+    "zhurong/lander/ESP_075625_2055": 704,
+    "zhurong/parachute/ESP_075625_2055": 2133,
+    "zhurong/backshell/ESP_075625_2055": 115,
+    "zhurong/heat_shield/ESP_075625_2055": 6,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 36,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 20,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 17
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 1
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 9
+      }
+     },
+     "interval_95": [
+      0.103,
+      0.229
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 22,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 19
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 4
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 11
+      }
+     },
+     "interval_95": [
+      0.116,
+      0.247
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 28,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 24
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 6
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 4
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 12
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.156,
+      0.298
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 39,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 7
+      },
+      "hardware": {
+       "n": 92,
+       "found": 30
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 6
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 9
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 7
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 14
+      },
+      "texture": {
+       "n": 85,
+       "found": 25
+      }
+     },
+     "interval_95": [
+      0.232,
+      0.389
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 50,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "hardware": {
+       "n": 92,
+       "found": 35
+      },
+      "mark": {
+       "n": 12,
+       "found": 3
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 9
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 4
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 19
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.31,
+      0.477
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 44,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 10
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 9
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 29
+      }
+     },
+     "interval_95": [
+      0.267,
+      0.43
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 20,
+    "N20": 22,
+    "N50": 28,
+    "N100": 39,
+    "N250": 50,
+    "board_rate": 44
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.205,
+    "sd": 0.211,
+    "min": 0.0,
+    "max": 0.75
+   },
+   "dropped_from_top_20": [],
+   "key_beats": true,
+   "transplant_beats": true
+  }
+ },
+ "check": {
+  "tuning": {
+   "halves": {
+    "0.0": {
+     "strips": 14,
+     "ratio_all_min": 0.856,
+     "ratio_all_median": 1.036,
+     "ratio_all_max": 1.091,
+     "ratio_branch_median_min": 0.986,
+     "ratio_branch_median_max": 1.101,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 4.3735,
+       "ratio_all": 0.875,
+       "ratio_branch_median": 0.986,
+       "n": 368
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 5.4532,
+       "ratio_all": 1.091,
+       "ratio_branch_median": 1.064,
+       "n": 410
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 5.4245,
+       "ratio_all": 1.085,
+       "ratio_branch_median": 1.101,
+       "n": 276
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 5.2236,
+       "ratio_all": 1.045,
+       "ratio_branch_median": 1.027,
+       "n": 117
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 5.1473,
+       "ratio_all": 1.029,
+       "ratio_branch_median": 1.034,
+       "n": 478
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 5.1854,
+       "ratio_all": 1.037,
+       "ratio_branch_median": 1.042,
+       "n": 229
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 5.1344,
+       "ratio_all": 1.027,
+       "ratio_branch_median": 1.044,
+       "n": 246
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 5.3131,
+       "ratio_all": 1.063,
+       "ratio_branch_median": 1.08,
+       "n": 556
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 4.7865,
+       "ratio_all": 0.957,
+       "ratio_branch_median": 1.032,
+       "n": 487
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 4.2799,
+       "ratio_all": 0.856,
+       "ratio_branch_median": 1.007,
+       "n": 489
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 5.3727,
+       "ratio_all": 1.075,
+       "ratio_branch_median": 1.075,
+       "n": 150
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 4.3184,
+       "ratio_all": 0.864,
+       "ratio_branch_median": 0.994,
+       "n": 139
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 5.2791,
+       "ratio_all": 1.056,
+       "ratio_branch_median": 1.042,
+       "n": 370
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 5.1766,
+       "ratio_all": 1.035,
+       "ratio_branch_median": 1.016,
+       "n": 158
+      }
+     ]
+    },
+    "0.5": {
+     "strips": 14,
+     "ratio_all_min": 0.858,
+     "ratio_all_median": 0.968,
+     "ratio_all_max": 1.355,
+     "ratio_branch_median_min": 0.906,
+     "ratio_branch_median_max": 1.412,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 1.4974,
+       "ratio_all": 0.947,
+       "ratio_branch_median": 0.94,
+       "n": 126
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 1.5163,
+       "ratio_all": 0.959,
+       "ratio_branch_median": 0.925,
+       "n": 114
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 1.7885,
+       "ratio_all": 1.131,
+       "ratio_branch_median": 1.057,
+       "n": 91
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 2.143,
+       "ratio_all": 1.355,
+       "ratio_branch_median": 1.412,
+       "n": 48
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 1.5399,
+       "ratio_all": 0.974,
+       "ratio_branch_median": 0.988,
+       "n": 143
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 1.4718,
+       "ratio_all": 0.931,
+       "ratio_branch_median": 0.931,
+       "n": 65
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 1.4401,
+       "ratio_all": 0.911,
+       "ratio_branch_median": 0.924,
+       "n": 69
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 1.6436,
+       "ratio_all": 1.04,
+       "ratio_branch_median": 1.027,
+       "n": 172
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 1.9166,
+       "ratio_all": 1.212,
+       "ratio_branch_median": 0.995,
+       "n": 195
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 1.3566,
+       "ratio_all": 0.858,
+       "ratio_branch_median": 0.941,
+       "n": 155
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 1.4685,
+       "ratio_all": 0.929,
+       "ratio_branch_median": 0.906,
+       "n": 41
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 1.5223,
+       "ratio_all": 0.963,
+       "ratio_branch_median": 1.081,
+       "n": 49
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 1.6693,
+       "ratio_all": 1.056,
+       "ratio_branch_median": 1.038,
+       "n": 117
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 1.5726,
+       "ratio_all": 0.995,
+       "ratio_branch_median": 0.932,
+       "n": 48
+      }
+     ]
+    },
+    "1.0": {
+     "strips": 14,
+     "ratio_all_min": 0.86,
+     "ratio_all_median": 1.058,
+     "ratio_all_max": 1.415,
+     "ratio_branch_median_min": 0.856,
+     "ratio_branch_median_max": 1.147,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.4754,
+       "ratio_all": 0.951,
+       "ratio_branch_median": 0.951,
+       "n": 40
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.5985,
+       "ratio_all": 1.197,
+       "ratio_branch_median": 1.064,
+       "n": 45
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.5307,
+       "ratio_all": 1.061,
+       "ratio_branch_median": 0.983,
+       "n": 27
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 0.4911,
+       "ratio_all": 0.982,
+       "ratio_branch_median": 0.893,
+       "n": 11
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 0.5276,
+       "ratio_all": 1.055,
+       "ratio_branch_median": 1.077,
+       "n": 49
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 0.5887,
+       "ratio_all": 1.177,
+       "ratio_branch_median": 1.132,
+       "n": 26
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 0.5009,
+       "ratio_all": 1.002,
+       "ratio_branch_median": 1.044,
+       "n": 24
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.5829,
+       "ratio_all": 1.166,
+       "ratio_branch_median": 1.147,
+       "n": 61
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 0.7077,
+       "ratio_all": 1.415,
+       "ratio_branch_median": 0.885,
+       "n": 72
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.4814,
+       "ratio_all": 0.963,
+       "ratio_branch_median": 0.875,
+       "n": 55
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.4298,
+       "ratio_all": 0.86,
+       "ratio_branch_median": 1.075,
+       "n": 12
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 0.6835,
+       "ratio_all": 1.367,
+       "ratio_branch_median": 0.932,
+       "n": 22
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 0.4566,
+       "ratio_all": 0.913,
+       "ratio_branch_median": 0.856,
+       "n": 32
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 0.6553,
+       "ratio_all": 1.311,
+       "ratio_branch_median": 0.983,
+       "n": 20
+      }
+     ]
+    },
+    "1.5": {
+     "strips": 11,
+     "ratio_all_min": 0.681,
+     "ratio_all_median": 0.907,
+     "ratio_all_max": 2.554,
+     "ratio_branch_median_min": 0.622,
+     "ratio_branch_median_max": 1.432,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.1307,
+       "ratio_all": 0.827,
+       "ratio_branch_median": 0.752,
+       "n": 11
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.2926,
+       "ratio_all": 1.851,
+       "ratio_branch_median": 1.262,
+       "n": 22
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.1179,
+       "ratio_all": 0.746,
+       "ratio_branch_median": 0.622,
+       "n": 6
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 0.1077,
+       "ratio_all": 0.681,
+       "ratio_branch_median": 0.681,
+       "n": 10
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 0.3623,
+       "ratio_all": 2.291,
+       "ratio_branch_median": 1.432,
+       "n": 16
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 0.1461,
+       "ratio_all": 0.924,
+       "ratio_branch_median": 0.66,
+       "n": 7
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.1433,
+       "ratio_all": 0.907,
+       "ratio_branch_median": 0.907,
+       "n": 15
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 0.3047,
+       "ratio_all": 1.927,
+       "ratio_branch_median": 1.243,
+       "n": 31
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.1225,
+       "ratio_all": 0.775,
+       "ratio_branch_median": 0.83,
+       "n": 14
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 0.4039,
+       "ratio_all": 2.554,
+       "ratio_branch_median": 0.982,
+       "n": 13
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 0.1427,
+       "ratio_all": 0.902,
+       "ratio_branch_median": 0.902,
+       "n": 10
+      }
+     ]
+    },
+    "2.0": {
+     "strips": 3,
+     "ratio_all_min": 2.101,
+     "ratio_all_median": 2.102,
+     "ratio_all_max": 3.931,
+     "ratio_branch_median_min": 0.956,
+     "ratio_branch_median_max": 1.966,
+     "rows": [
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.1051,
+       "ratio_all": 2.102,
+       "ratio_branch_median": 0.956,
+       "n": 11
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 0.1966,
+       "ratio_all": 3.931,
+       "ratio_branch_median": 1.966,
+       "n": 20
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.105,
+       "ratio_all": 2.101,
+       "ratio_branch_median": 1.75,
+       "n": 12
+      }
+     ]
+    }
+   },
+   "table_frozen_v1": {
+    "0.0": {
+     "strips": 14,
+     "ratio_all_min": 0.017,
+     "ratio_all_median": 4.691,
+     "ratio_all_max": 21.642,
+     "ratio_branch_median_min": 0.018,
+     "ratio_branch_median_max": 15.254,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.0832,
+       "ratio_all": 0.017,
+       "ratio_branch_median": 0.024,
+       "n": 7
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.266,
+       "ratio_all": 0.053,
+       "ratio_branch_median": 0.067,
+       "n": 20
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 22.9165,
+       "ratio_all": 4.583,
+       "ratio_branch_median": 3.695,
+       "n": 1166
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 7.0541,
+       "ratio_all": 1.411,
+       "ratio_branch_median": 1.563,
+       "n": 158
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 39.9614,
+       "ratio_all": 7.992,
+       "ratio_branch_median": 10.607,
+       "n": 3711
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 24.0024,
+       "ratio_all": 4.8,
+       "ratio_branch_median": 1.087,
+       "n": 1060
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 25.7137,
+       "ratio_all": 5.143,
+       "ratio_branch_median": 3.861,
+       "n": 1232
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 1.6245,
+       "ratio_all": 0.325,
+       "ratio_branch_median": 0.057,
+       "n": 170
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 32.4541,
+       "ratio_all": 6.491,
+       "ratio_branch_median": 1.828,
+       "n": 3302
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 1.4091,
+       "ratio_all": 0.282,
+       "ratio_branch_median": 0.018,
+       "n": 161
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 5.2652,
+       "ratio_all": 1.053,
+       "ratio_branch_median": 0.645,
+       "n": 147
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 108.2081,
+       "ratio_all": 21.642,
+       "ratio_branch_median": 15.254,
+       "n": 3483
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 90.0158,
+       "ratio_all": 18.003,
+       "ratio_branch_median": 8.989,
+       "n": 6309
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 44.6893,
+       "ratio_all": 8.938,
+       "ratio_branch_median": 8.191,
+       "n": 1364
+      }
+     ]
+    },
+    "0.5": {
+     "strips": 14,
+     "ratio_all_min": 0.017,
+     "ratio_all_median": 5.591,
+     "ratio_all_max": 35.572,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 18.47,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.0357,
+       "ratio_all": 0.023,
+       "ratio_branch_median": 0.0,
+       "n": 3
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.1064,
+       "ratio_all": 0.067,
+       "ratio_branch_median": 0.042,
+       "n": 8
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 7.6847,
+       "ratio_all": 4.86,
+       "ratio_branch_median": 4.661,
+       "n": 391
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 2.8127,
+       "ratio_all": 1.779,
+       "ratio_branch_median": 0.847,
+       "n": 63
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 12.6313,
+       "ratio_all": 7.989,
+       "ratio_branch_median": 10.386,
+       "n": 1173
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 10.5294,
+       "ratio_all": 6.659,
+       "ratio_branch_median": 0.931,
+       "n": 465
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 9.9975,
+       "ratio_all": 6.323,
+       "ratio_branch_median": 2.64,
+       "n": 479
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.0669,
+       "ratio_all": 0.042,
+       "ratio_branch_median": 0.0,
+       "n": 7
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 13.6421,
+       "ratio_all": 8.628,
+       "ratio_branch_median": 0.715,
+       "n": 1388
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.0263,
+       "ratio_all": 0.017,
+       "ratio_branch_median": 0.028,
+       "n": 3
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 1.8984,
+       "ratio_all": 1.201,
+       "ratio_branch_median": 1.019,
+       "n": 53
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 26.5316,
+       "ratio_all": 16.78,
+       "ratio_branch_median": 18.47,
+       "n": 854
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 56.2438,
+       "ratio_all": 35.572,
+       "ratio_branch_median": 7.715,
+       "n": 3942
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 16.2507,
+       "ratio_all": 10.278,
+       "ratio_branch_median": 5.18,
+       "n": 496
+      }
+     ]
+    },
+    "1.0": {
+     "strips": 14,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 8.35,
+     "ratio_all_max": 76.818,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 5.11,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.0238,
+       "ratio_all": 0.048,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 2.6533,
+       "ratio_all": 5.307,
+       "ratio_branch_median": 5.11,
+       "n": 135
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 1.4287,
+       "ratio_all": 2.857,
+       "ratio_branch_median": 0.446,
+       "n": 32
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 5.6965,
+       "ratio_all": 11.393,
+       "ratio_branch_median": 0.0,
+       "n": 529
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 6.5214,
+       "ratio_all": 13.043,
+       "ratio_branch_median": 0.0,
+       "n": 288
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 5.8232,
+       "ratio_all": 11.646,
+       "ratio_branch_median": 0.0,
+       "n": 279
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.0096,
+       "ratio_all": 0.019,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 10.3987,
+       "ratio_all": 20.797,
+       "ratio_branch_median": 0.098,
+       "n": 1058
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.0175,
+       "ratio_all": 0.035,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.7522,
+       "ratio_all": 1.504,
+       "ratio_branch_median": 0.0,
+       "n": 21
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 14.6328,
+       "ratio_all": 29.266,
+       "ratio_branch_median": 0.0,
+       "n": 471
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 38.409,
+       "ratio_all": 76.818,
+       "ratio_branch_median": 1.427,
+       "n": 2692
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 9.9601,
+       "ratio_all": 19.92,
+       "ratio_branch_median": 0.655,
+       "n": 304
+      }
+     ]
+    },
+    "1.5": {
+     "strips": 14,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 9.835,
+     "ratio_all_max": 180.385,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 4.351,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.8648,
+       "ratio_all": 5.469,
+       "ratio_branch_median": 4.351,
+       "n": 44
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 1.0269,
+       "ratio_all": 6.494,
+       "ratio_branch_median": 0.0,
+       "n": 23
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 2.2829,
+       "ratio_all": 14.438,
+       "ratio_branch_median": 0.0,
+       "n": 212
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 2.0832,
+       "ratio_all": 13.175,
+       "ratio_branch_median": 0.0,
+       "n": 92
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 2.1706,
+       "ratio_all": 13.728,
+       "ratio_branch_median": 0.0,
+       "n": 104
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 6.8309,
+       "ratio_all": 43.202,
+       "ratio_branch_median": 0.0,
+       "n": 695
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.0175,
+       "ratio_all": 0.111,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.2865,
+       "ratio_all": 1.812,
+       "ratio_branch_median": 0.0,
+       "n": 8
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 8.4504,
+       "ratio_all": 53.445,
+       "ratio_branch_median": 0.0,
+       "n": 272
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 28.5214,
+       "ratio_all": 180.385,
+       "ratio_branch_median": 1.805,
+       "n": 1999
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 3.9316,
+       "ratio_all": 24.866,
+       "ratio_branch_median": 0.0,
+       "n": 120
+      }
+     ]
+    },
+    "2.0": {
+     "strips": 14,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 15.069,
+     "ratio_all_max": 421.187,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 5.896,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.4127,
+       "ratio_all": 8.255,
+       "ratio_branch_median": 5.896,
+       "n": 21
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 0.7143,
+       "ratio_all": 14.287,
+       "ratio_branch_median": 0.0,
+       "n": 16
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 0.9153,
+       "ratio_all": 18.306,
+       "ratio_branch_median": 0.0,
+       "n": 85
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 0.7925,
+       "ratio_all": 15.851,
+       "ratio_branch_median": 0.0,
+       "n": 35
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 0.9601,
+       "ratio_all": 19.202,
+       "ratio_branch_median": 0.0,
+       "n": 46
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 4.2165,
+       "ratio_all": 84.329,
+       "ratio_branch_median": 0.0,
+       "n": 429
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.0175,
+       "ratio_all": 0.35,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.0716,
+       "ratio_all": 1.433,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 5.4368,
+       "ratio_all": 108.736,
+       "ratio_branch_median": 0.0,
+       "n": 175
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 21.0593,
+       "ratio_all": 421.187,
+       "ratio_branch_median": 2.854,
+       "n": 1476
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 2.0641,
+       "ratio_all": 41.282,
+       "ratio_branch_median": 0.0,
+       "n": 63
+      }
+     ]
+    }
+   },
+   "extrapolated": {
+    "0.0": {
+     "strips": 14,
+     "ratio_all_min": 0.842,
+     "ratio_all_median": 1.003,
+     "ratio_all_max": 1.03,
+     "ratio_branch_median_min": 0.982,
+     "ratio_branch_median_max": 1.042,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 4.2547,
+       "ratio_all": 0.851,
+       "ratio_branch_median": 0.986,
+       "n": 358
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 5.0276,
+       "ratio_all": 1.006,
+       "ratio_branch_median": 1.011,
+       "n": 378
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 5.1493,
+       "ratio_all": 1.03,
+       "ratio_branch_median": 1.042,
+       "n": 262
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 4.9557,
+       "ratio_all": 0.991,
+       "ratio_branch_median": 0.982,
+       "n": 111
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 5.0934,
+       "ratio_all": 1.019,
+       "ratio_branch_median": 1.001,
+       "n": 473
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 5.0043,
+       "ratio_all": 1.001,
+       "ratio_branch_median": 0.996,
+       "n": 221
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 5.03,
+       "ratio_all": 1.006,
+       "ratio_branch_median": 1.023,
+       "n": 241
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 5.0455,
+       "ratio_all": 1.009,
+       "ratio_branch_median": 1.013,
+       "n": 528
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 4.5506,
+       "ratio_all": 0.91,
+       "ratio_branch_median": 1.032,
+       "n": 463
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 4.2098,
+       "ratio_all": 0.842,
+       "ratio_branch_median": 1.007,
+       "n": 481
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 5.0145,
+       "ratio_all": 1.003,
+       "ratio_branch_median": 1.003,
+       "n": 140
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 4.2252,
+       "ratio_all": 0.845,
+       "ratio_branch_median": 0.994,
+       "n": 136
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 5.1507,
+       "ratio_all": 1.03,
+       "ratio_branch_median": 1.027,
+       "n": 361
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 5.0128,
+       "ratio_all": 1.003,
+       "ratio_branch_median": 1.016,
+       "n": 153
+      }
+     ]
+    },
+    "0.5": {
+     "strips": 14,
+     "ratio_all_min": 0.622,
+     "ratio_all_median": 0.99,
+     "ratio_all_max": 1.042,
+     "ratio_branch_median_min": 0.622,
+     "ratio_branch_median_max": 1.271,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 1.5212,
+       "ratio_all": 0.962,
+       "ratio_branch_median": 0.977,
+       "n": 128
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 1.5695,
+       "ratio_all": 0.993,
+       "ratio_branch_median": 1.009,
+       "n": 118
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 1.5527,
+       "ratio_all": 0.982,
+       "ratio_branch_median": 0.932,
+       "n": 79
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 1.5626,
+       "ratio_all": 0.988,
+       "ratio_branch_median": 1.271,
+       "n": 35
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 1.5722,
+       "ratio_all": 0.994,
+       "ratio_branch_median": 0.988,
+       "n": 146
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 1.6304,
+       "ratio_all": 1.031,
+       "ratio_branch_median": 1.002,
+       "n": 72
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 1.5236,
+       "ratio_all": 0.964,
+       "ratio_branch_median": 0.99,
+       "n": 73
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 1.5767,
+       "ratio_all": 0.997,
+       "ratio_branch_median": 0.997,
+       "n": 165
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 1.5726,
+       "ratio_all": 0.995,
+       "ratio_branch_median": 0.995,
+       "n": 160
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 1.4179,
+       "ratio_all": 0.897,
+       "ratio_branch_median": 0.996,
+       "n": 162
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 1.6476,
+       "ratio_all": 1.042,
+       "ratio_branch_median": 1.133,
+       "n": 46
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 1.5534,
+       "ratio_all": 0.982,
+       "ratio_branch_median": 1.179,
+       "n": 50
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 1.6123,
+       "ratio_all": 1.02,
+       "ratio_branch_median": 1.038,
+       "n": 113
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 0.9829,
+       "ratio_all": 0.622,
+       "ratio_branch_median": 0.622,
+       "n": 30
+      }
+     ]
+    },
+    "1.0": {
+     "strips": 14,
+     "ratio_all_min": 0.197,
+     "ratio_all_median": 0.954,
+     "ratio_all_max": 1.518,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 2.232,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.3803,
+       "ratio_all": 0.761,
+       "ratio_branch_median": 0.832,
+       "n": 32
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.4921,
+       "ratio_all": 0.984,
+       "ratio_branch_median": 1.064,
+       "n": 37
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.5307,
+       "ratio_all": 1.061,
+       "ratio_branch_median": 1.179,
+       "n": 27
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 0.759,
+       "ratio_all": 1.518,
+       "ratio_branch_median": 2.232,
+       "n": 17
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 0.3554,
+       "ratio_all": 0.711,
+       "ratio_branch_median": 0.754,
+       "n": 33
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 0.4302,
+       "ratio_all": 0.86,
+       "ratio_branch_median": 0.906,
+       "n": 19
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 0.3966,
+       "ratio_all": 0.793,
+       "ratio_branch_median": 1.044,
+       "n": 19
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.4969,
+       "ratio_all": 0.994,
+       "ratio_branch_median": 1.051,
+       "n": 52
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 0.4718,
+       "ratio_all": 0.944,
+       "ratio_branch_median": 0.786,
+       "n": 48
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.4814,
+       "ratio_all": 0.963,
+       "ratio_branch_median": 0.963,
+       "n": 55
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.7522,
+       "ratio_all": 1.504,
+       "ratio_branch_median": 1.433,
+       "n": 21
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 0.4971,
+       "ratio_all": 0.994,
+       "ratio_branch_median": 0.932,
+       "n": 16
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 0.4138,
+       "ratio_all": 0.828,
+       "ratio_branch_median": 0.999,
+       "n": 29
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 0.0983,
+       "ratio_all": 0.197,
+       "ratio_branch_median": 0.0,
+       "n": 3
+      }
+     ]
+    },
+    "1.5": {
+     "strips": 14,
+     "ratio_all_min": 0.207,
+     "ratio_all_median": 1.177,
+     "ratio_all_max": 1.977,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 1.682,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.1545,
+       "ratio_all": 0.977,
+       "ratio_branch_median": 0.752,
+       "n": 13
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.2793,
+       "ratio_all": 1.767,
+       "ratio_branch_median": 1.682,
+       "n": 21
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.2162,
+       "ratio_all": 1.367,
+       "ratio_branch_median": 1.243,
+       "n": 11
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 0.3125,
+       "ratio_all": 1.977,
+       "ratio_branch_median": 1.412,
+       "n": 7
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 0.1723,
+       "ratio_all": 1.09,
+       "ratio_branch_median": 1.022,
+       "n": 16
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 0.1812,
+       "ratio_all": 1.146,
+       "ratio_branch_median": 1.432,
+       "n": 8
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 0.0835,
+       "ratio_all": 0.528,
+       "ratio_branch_median": 0.0,
+       "n": 4
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.1911,
+       "ratio_all": 1.209,
+       "ratio_branch_median": 1.209,
+       "n": 20
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 0.2162,
+       "ratio_all": 1.368,
+       "ratio_branch_median": 1.243,
+       "n": 22
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.2538,
+       "ratio_all": 1.605,
+       "ratio_branch_median": 1.661,
+       "n": 29
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.1791,
+       "ratio_all": 1.133,
+       "ratio_branch_median": 1.133,
+       "n": 5
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 0.2796,
+       "ratio_all": 1.768,
+       "ratio_branch_median": 0.982,
+       "n": 9
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 0.1141,
+       "ratio_all": 0.722,
+       "ratio_branch_median": 0.451,
+       "n": 8
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 0.0328,
+       "ratio_all": 0.207,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      }
+     ]
+    },
+    "2.0": {
+     "strips": 14,
+     "ratio_all_min": 0.655,
+     "ratio_all_median": 2.034,
+     "ratio_all_max": 4.256,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 5.32,
+     "rows": [
+      {
+       "strip": "ESP_017716_2485",
+       "all_per_km2": 0.107,
+       "ratio_all": 2.139,
+       "ratio_branch_median": 1.188,
+       "n": 9
+      },
+      {
+       "strip": "ESP_022038_1995",
+       "all_per_km2": 0.2128,
+       "ratio_all": 4.256,
+       "ratio_branch_median": 5.32,
+       "n": 16
+      },
+      {
+       "strip": "ESP_025815_1655",
+       "all_per_km2": 0.0983,
+       "ratio_all": 1.965,
+       "ratio_branch_median": 0.0,
+       "n": 5
+      },
+      {
+       "strip": "ESP_030313_1755",
+       "all_per_km2": 0.1339,
+       "ratio_all": 2.679,
+       "ratio_branch_median": 0.0,
+       "n": 3
+      },
+      {
+       "strip": "ESP_037145_1915",
+       "all_per_km2": 0.0538,
+       "ratio_all": 1.077,
+       "ratio_branch_median": 1.077,
+       "n": 5
+      },
+      {
+       "strip": "ESP_039308_1915",
+       "all_per_km2": 0.0453,
+       "ratio_all": 0.906,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_040363_1915",
+       "all_per_km2": 0.0417,
+       "ratio_all": 0.835,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_046170_2025",
+       "all_per_km2": 0.1051,
+       "ratio_all": 2.102,
+       "ratio_branch_median": 0.956,
+       "n": 11
+      },
+      {
+       "strip": "ESP_048041_1780",
+       "all_per_km2": 0.1179,
+       "ratio_all": 2.359,
+       "ratio_branch_median": 0.983,
+       "n": 12
+      },
+      {
+       "strip": "ESP_053451_2485",
+       "all_per_km2": 0.1225,
+       "ratio_all": 2.451,
+       "ratio_branch_median": 1.75,
+       "n": 14
+      },
+      {
+       "strip": "ESP_068822_1985",
+       "all_per_km2": 0.0716,
+       "ratio_all": 1.433,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_073625_1780",
+       "all_per_km2": 0.1553,
+       "ratio_all": 3.107,
+       "ratio_branch_median": 3.107,
+       "n": 5
+      },
+      {
+       "strip": "ESP_075625_2055",
+       "all_per_km2": 0.0571,
+       "ratio_all": 1.141,
+       "ratio_branch_median": 0.0,
+       "n": 4
+      },
+      {
+       "strip": "ESP_087360_1845",
+       "all_per_km2": 0.0328,
+       "ratio_all": 0.655,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      }
+     ]
+    }
+   }
+  },
+  "targets": {
+   "halves": {
+    "0.0": {
+     "strips": 9,
+     "ratio_all_min": 0.129,
+     "ratio_all_median": 0.82,
+     "ratio_all_max": 1.027,
+     "ratio_branch_median_min": 0.028,
+     "ratio_branch_median_max": 1.025,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 5.1181,
+       "ratio_all": 1.024,
+       "ratio_branch_median": 0.985,
+       "n": 509
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 4.0742,
+       "ratio_all": 0.815,
+       "ratio_branch_median": 1.025,
+       "n": 338
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 4.8014,
+       "ratio_all": 0.96,
+       "ratio_branch_median": 1.012,
+       "n": 612
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 4.1004,
+       "ratio_all": 0.82,
+       "ratio_branch_median": 1.001,
+       "n": 426
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 4.0338,
+       "ratio_all": 0.807,
+       "ratio_branch_median": 0.973,
+       "n": 228
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 5.1347,
+       "ratio_all": 1.027,
+       "ratio_branch_median": 0.995,
+       "n": 289
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 1.0538,
+       "ratio_all": 0.351,
+       "ratio_branch_median": 0.028,
+       "n": 112
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.3883,
+       "ratio_all": 0.129,
+       "ratio_branch_median": 0.1,
+       "n": 39
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 4.143,
+       "ratio_all": 0.829,
+       "ratio_branch_median": 0.979,
+       "n": 313
+      }
+     ]
+    },
+    "0.5": {
+     "strips": 9,
+     "ratio_all_min": 0.409,
+     "ratio_all_median": 0.846,
+     "ratio_all_max": 1.037,
+     "ratio_branch_median_min": 0.089,
+     "ratio_branch_median_max": 1.018,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 1.639,
+       "ratio_all": 1.037,
+       "ratio_branch_median": 1.018,
+       "n": 163
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 1.338,
+       "ratio_all": 0.846,
+       "ratio_branch_median": 0.915,
+       "n": 111
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 1.5691,
+       "ratio_all": 0.992,
+       "ratio_branch_median": 0.968,
+       "n": 200
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 1.2802,
+       "ratio_all": 0.81,
+       "ratio_branch_median": 0.913,
+       "n": 133
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 1.2031,
+       "ratio_all": 0.761,
+       "ratio_branch_median": 0.895,
+       "n": 68
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 1.6346,
+       "ratio_all": 1.034,
+       "ratio_branch_median": 0.955,
+       "n": 92
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.4234,
+       "ratio_all": 0.446,
+       "ratio_branch_median": 0.089,
+       "n": 45
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.3883,
+       "ratio_all": 0.409,
+       "ratio_branch_median": 0.315,
+       "n": 39
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 1.5089,
+       "ratio_all": 0.954,
+       "ratio_branch_median": 0.963,
+       "n": 114
+      }
+     ]
+    },
+    "1.0": {
+     "strips": 9,
+     "ratio_all_min": 0.502,
+     "ratio_all_median": 0.866,
+     "ratio_all_max": 1.279,
+     "ratio_branch_median_min": 0.282,
+     "ratio_branch_median_max": 1.244,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 0.4625,
+       "ratio_all": 0.925,
+       "ratio_branch_median": 0.905,
+       "n": 46
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.6389,
+       "ratio_all": 1.278,
+       "ratio_branch_median": 1.085,
+       "n": 53
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.5335,
+       "ratio_all": 1.067,
+       "ratio_branch_median": 0.941,
+       "n": 68
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.4331,
+       "ratio_all": 0.866,
+       "ratio_branch_median": 0.866,
+       "n": 45
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.3892,
+       "ratio_all": 0.778,
+       "ratio_branch_median": 0.885,
+       "n": 22
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.6396,
+       "ratio_all": 1.279,
+       "ratio_branch_median": 1.244,
+       "n": 36
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.1505,
+       "ratio_all": 0.502,
+       "ratio_branch_median": 0.282,
+       "n": 16
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.1892,
+       "ratio_all": 0.631,
+       "ratio_branch_median": 0.797,
+       "n": 19
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.4236,
+       "ratio_all": 0.847,
+       "ratio_branch_median": 0.794,
+       "n": 32
+      }
+     ]
+    },
+    "1.5": {
+     "strips": 9,
+     "ratio_all_min": 0.67,
+     "ratio_all_median": 0.89,
+     "ratio_all_max": 2.023,
+     "ratio_branch_median_min": 0.559,
+     "ratio_branch_median_max": 1.686,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 0.1408,
+       "ratio_all": 0.89,
+       "ratio_branch_median": 0.636,
+       "n": 14
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.1326,
+       "ratio_all": 0.839,
+       "ratio_branch_median": 0.762,
+       "n": 11
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.2589,
+       "ratio_all": 1.637,
+       "ratio_branch_median": 1.489,
+       "n": 33
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.1059,
+       "ratio_all": 0.67,
+       "ratio_branch_median": 0.609,
+       "n": 11
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.2123,
+       "ratio_all": 1.343,
+       "ratio_branch_median": 0.559,
+       "n": 12
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.3198,
+       "ratio_all": 2.023,
+       "ratio_branch_median": 1.686,
+       "n": 18
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0659,
+       "ratio_all": 0.694,
+       "ratio_branch_median": 0.595,
+       "n": 7
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.0697,
+       "ratio_all": 0.735,
+       "ratio_branch_median": 0.63,
+       "n": 7
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.1721,
+       "ratio_all": 1.088,
+       "ratio_branch_median": 0.837,
+       "n": 13
+      }
+     ]
+    },
+    "2.0": {
+     "strips": 3,
+     "ratio_all_min": 1.54,
+     "ratio_all_median": 2.195,
+     "ratio_all_max": 2.354,
+     "ratio_branch_median_min": 0.963,
+     "ratio_branch_median_max": 1.882,
+     "rows": [
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.1177,
+       "ratio_all": 2.354,
+       "ratio_branch_median": 1.569,
+       "n": 15
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.077,
+       "ratio_all": 1.54,
+       "ratio_branch_median": 0.963,
+       "n": 8
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0659,
+       "ratio_all": 2.195,
+       "ratio_branch_median": 1.882,
+       "n": 7
+      }
+     ]
+    }
+   },
+   "table_frozen_v1": {
+    "0.0": {
+     "strips": 9,
+     "ratio_all_min": 0.006,
+     "ratio_all_median": 0.084,
+     "ratio_all_max": 2.341,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 0.142,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 6.1638,
+       "ratio_all": 1.233,
+       "ratio_branch_median": 0.01,
+       "n": 613
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.4219,
+       "ratio_all": 0.084,
+       "ratio_branch_median": 0.0,
+       "n": 35
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 11.7053,
+       "ratio_all": 2.341,
+       "ratio_branch_median": 0.031,
+       "n": 1492
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.2214,
+       "ratio_all": 0.044,
+       "ratio_branch_median": 0.0,
+       "n": 23
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.8846,
+       "ratio_all": 0.177,
+       "ratio_branch_median": 0.0,
+       "n": 50
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.6396,
+       "ratio_all": 0.128,
+       "ratio_branch_median": 0.142,
+       "n": 36
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0188,
+       "ratio_all": 0.006,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.1195,
+       "ratio_all": 0.04,
+       "ratio_branch_median": 0.0,
+       "n": 12
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.0662,
+       "ratio_all": 0.013,
+       "ratio_branch_median": 0.0,
+       "n": 5
+      }
+     ]
+    },
+    "0.5": {
+     "strips": 9,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 0.022,
+     "ratio_all_max": 3.89,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 0.0,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 3.469,
+       "ratio_all": 2.194,
+       "ratio_branch_median": 0.0,
+       "n": 345
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.0121,
+       "ratio_all": 0.008,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 6.1508,
+       "ratio_all": 3.89,
+       "ratio_branch_median": 0.0,
+       "n": 784
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.0193,
+       "ratio_all": 0.012,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.0354,
+       "ratio_all": 0.022,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.0711,
+       "ratio_all": 0.045,
+       "ratio_branch_median": 0.0,
+       "n": 4
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0094,
+       "ratio_all": 0.01,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.0996,
+       "ratio_all": 0.105,
+       "ratio_branch_median": 0.0,
+       "n": 10
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      }
+     ]
+    },
+    "1.0": {
+     "strips": 9,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 0.0,
+     "ratio_all_max": 6.402,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 0.0,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 2.3529,
+       "ratio_all": 4.706,
+       "ratio_branch_median": 0.0,
+       "n": 234
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 3.2009,
+       "ratio_all": 6.402,
+       "ratio_branch_median": 0.0,
+       "n": 408
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.0177,
+       "ratio_all": 0.035,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.0355,
+       "ratio_all": 0.071,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      }
+     ]
+    },
+    "1.5": {
+     "strips": 9,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 0.0,
+     "ratio_all_max": 9.775,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 0.0,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 1.2267,
+       "ratio_all": 7.759,
+       "ratio_branch_median": 0.0,
+       "n": 122
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 1.5455,
+       "ratio_all": 9.775,
+       "ratio_branch_median": 0.0,
+       "n": 197
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.0177,
+       "ratio_all": 0.112,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      }
+     ]
+    },
+    "2.0": {
+     "strips": 9,
+     "ratio_all_min": 0.0,
+     "ratio_all_median": 0.0,
+     "ratio_all_max": 14.906,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 0.0,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 0.6636,
+       "ratio_all": 13.273,
+       "ratio_branch_median": 0.0,
+       "n": 66
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.7453,
+       "ratio_all": 14.906,
+       "ratio_branch_median": 0.0,
+       "n": 95
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.0,
+       "ratio_all": 0.0,
+       "ratio_branch_median": 0.0,
+       "n": 0
+      }
+     ]
+    }
+   },
+   "extrapolated": {
+    "0.0": {
+     "strips": 9,
+     "ratio_all_min": 0.129,
+     "ratio_all_median": 0.82,
+     "ratio_all_max": 1.013,
+     "ratio_branch_median_min": 0.028,
+     "ratio_branch_median_max": 1.02,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 5.0376,
+       "ratio_all": 1.008,
+       "ratio_branch_median": 1.016,
+       "n": 501
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 4.0983,
+       "ratio_all": 0.82,
+       "ratio_branch_median": 1.0,
+       "n": 340
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 4.8092,
+       "ratio_all": 0.962,
+       "ratio_branch_median": 1.02,
+       "n": 613
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 4.0812,
+       "ratio_all": 0.816,
+       "ratio_branch_median": 1.001,
+       "n": 424
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 4.0869,
+       "ratio_all": 0.817,
+       "ratio_branch_median": 1.008,
+       "n": 231
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 5.0636,
+       "ratio_all": 1.013,
+       "ratio_branch_median": 1.013,
+       "n": 285
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 1.0256,
+       "ratio_all": 0.342,
+       "ratio_branch_median": 0.028,
+       "n": 109
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.3883,
+       "ratio_all": 0.129,
+       "ratio_branch_median": 0.1,
+       "n": 39
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 4.1959,
+       "ratio_all": 0.839,
+       "ratio_branch_median": 0.993,
+       "n": 317
+      }
+     ]
+    },
+    "0.5": {
+     "strips": 9,
+     "ratio_all_min": 0.377,
+     "ratio_all_median": 0.852,
+     "ratio_all_max": 1.023,
+     "ratio_branch_median_min": 0.089,
+     "ratio_branch_median_max": 1.018,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 1.5887,
+       "ratio_all": 1.005,
+       "ratio_branch_median": 1.018,
+       "n": 158
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 1.3259,
+       "ratio_all": 0.839,
+       "ratio_branch_median": 0.991,
+       "n": 110
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 1.6005,
+       "ratio_all": 1.012,
+       "ratio_branch_median": 1.017,
+       "n": 204
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 1.3476,
+       "ratio_all": 0.852,
+       "ratio_branch_median": 1.004,
+       "n": 140
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 1.2562,
+       "ratio_all": 0.794,
+       "ratio_branch_median": 0.951,
+       "n": 71
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 1.6168,
+       "ratio_all": 1.023,
+       "ratio_branch_median": 1.011,
+       "n": 91
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.3575,
+       "ratio_all": 0.377,
+       "ratio_branch_median": 0.089,
+       "n": 38
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.3883,
+       "ratio_all": 0.409,
+       "ratio_branch_median": 0.315,
+       "n": 39
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 1.4825,
+       "ratio_all": 0.938,
+       "ratio_branch_median": 1.005,
+       "n": 112
+      }
+     ]
+    },
+    "1.0": {
+     "strips": 9,
+     "ratio_all_min": 0.47,
+     "ratio_all_median": 0.925,
+     "ratio_all_max": 1.279,
+     "ratio_branch_median_min": 0.282,
+     "ratio_branch_median_max": 1.066,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 0.4625,
+       "ratio_all": 0.925,
+       "ratio_branch_median": 0.905,
+       "n": 46
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.3013,
+       "ratio_all": 0.603,
+       "ratio_branch_median": 0.482,
+       "n": 25
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.4864,
+       "ratio_all": 0.973,
+       "ratio_branch_median": 0.941,
+       "n": 62
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.5005,
+       "ratio_all": 1.001,
+       "ratio_branch_median": 1.059,
+       "n": 52
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.4777,
+       "ratio_all": 0.955,
+       "ratio_branch_median": 0.531,
+       "n": 27
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.6396,
+       "ratio_all": 1.279,
+       "ratio_branch_median": 1.066,
+       "n": 36
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.1411,
+       "ratio_all": 0.47,
+       "ratio_branch_median": 0.282,
+       "n": 15
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.2489,
+       "ratio_all": 0.83,
+       "ratio_branch_median": 0.996,
+       "n": 25
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.3839,
+       "ratio_all": 0.768,
+       "ratio_branch_median": 0.662,
+       "n": 29
+      }
+     ]
+    },
+    "1.5": {
+     "strips": 9,
+     "ratio_all_min": 0.445,
+     "ratio_all_median": 0.837,
+     "ratio_all_max": 1.784,
+     "ratio_branch_median_min": 0.318,
+     "ratio_branch_median_max": 1.218,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 0.0704,
+       "ratio_all": 0.445,
+       "ratio_branch_median": 0.318,
+       "n": 7
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.0844,
+       "ratio_all": 0.534,
+       "ratio_branch_median": 0.381,
+       "n": 7
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.1334,
+       "ratio_all": 0.844,
+       "ratio_branch_median": 0.992,
+       "n": 17
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.1925,
+       "ratio_all": 1.218,
+       "ratio_branch_median": 1.218,
+       "n": 20
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.1238,
+       "ratio_all": 0.783,
+       "ratio_branch_median": 0.559,
+       "n": 7
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.1599,
+       "ratio_all": 1.011,
+       "ratio_branch_median": 1.124,
+       "n": 9
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0565,
+       "ratio_all": 0.595,
+       "ratio_branch_median": 0.595,
+       "n": 6
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.1693,
+       "ratio_all": 1.784,
+       "ratio_branch_median": 0.945,
+       "n": 17
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.1324,
+       "ratio_all": 0.837,
+       "ratio_branch_median": 0.837,
+       "n": 10
+      }
+     ]
+    },
+    "2.0": {
+     "strips": 9,
+     "ratio_all_min": 0.201,
+     "ratio_all_median": 0.627,
+     "ratio_all_max": 3.319,
+     "ratio_branch_median_min": 0.0,
+     "ratio_branch_median_max": 1.925,
+     "rows": [
+      {
+       "strip": "ESP_013078_1030",
+       "all_per_km2": 0.0101,
+       "ratio_all": 0.201,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "ESP_013368_1035",
+       "all_per_km2": 0.0121,
+       "ratio_all": 0.241,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      },
+      {
+       "strip": "ESP_013500_1035",
+       "all_per_km2": 0.0157,
+       "ratio_all": 0.314,
+       "ratio_branch_median": 0.0,
+       "n": 2
+      },
+      {
+       "strip": "ESP_013724_1030",
+       "all_per_km2": 0.077,
+       "ratio_all": 1.54,
+       "ratio_branch_median": 1.925,
+       "n": 8
+      },
+      {
+       "strip": "ESP_048734_1035",
+       "all_per_km2": 0.0708,
+       "ratio_all": 1.415,
+       "ratio_branch_median": 0.0,
+       "n": 4
+      },
+      {
+       "strip": "ESP_057965_1035",
+       "all_per_km2": 0.0711,
+       "ratio_all": 1.421,
+       "ratio_branch_median": 1.777,
+       "n": 4
+      },
+      {
+       "strip": "PSP_004336_1035",
+       "all_per_km2": 0.0188,
+       "ratio_all": 0.627,
+       "ratio_branch_median": 0.941,
+       "n": 2
+      },
+      {
+       "strip": "PSP_004402_1030",
+       "all_per_km2": 0.0996,
+       "ratio_all": 3.319,
+       "ratio_branch_median": 0.996,
+       "n": 10
+      },
+      {
+       "strip": "PSP_004824_1030",
+       "all_per_km2": 0.0132,
+       "ratio_all": 0.265,
+       "ratio_branch_median": 0.0,
+       "n": 1
+      }
+     ]
+    }
+   }
+  }
+ },
+ "top20_makeup": {
+  "ESP_017716_2485": {
+   "frozen_v1": {
+    "bright": 2,
+    "dark": 6,
+    "dark_compact": 9,
+    "sheet": 3
+   },
+   "primary": {
+    "bright": 4,
+    "dark": 4,
+    "dark_compact": 4,
+    "shadow": 4,
+    "sheet": 4
+   },
+   "at_cap_in_primary_top_20": 8,
+   "at_cap_in_strip": 8,
+   "candidates": 17703,
+   "area_km2": 84.14,
+   "cap": 1.923
+  },
+  "ESP_022038_1995": {
+   "frozen_v1": {
+    "bright": 14,
+    "dark": 1,
+    "dark_compact": 2,
+    "shadow": 1,
+    "sheet": 2
+   },
+   "primary": {
+    "bright": 6,
+    "dark": 2,
+    "dark_compact": 7,
+    "shadow": 3,
+    "sheet": 2
+   },
+   "at_cap_in_primary_top_20": 13,
+   "at_cap_in_strip": 21,
+   "candidates": 10374,
+   "area_km2": 75.19,
+   "cap": 1.875
+  },
+  "ESP_025815_1655": {
+   "frozen_v1": {
+    "bright": 16,
+    "shadow": 4
+   },
+   "primary": {
+    "bright": 19,
+    "shadow": 1
+   },
+   "at_cap_in_primary_top_20": 2,
+   "at_cap_in_strip": 6,
+   "candidates": 70402,
+   "area_km2": 50.88,
+   "cap": 1.706
+  },
+  "ESP_030313_1755": {
+   "frozen_v1": {
+    "bright": 2,
+    "shadow": 1,
+    "sheet": 17
+   },
+   "primary": {
+    "bright": 5,
+    "dark": 2,
+    "dark_compact": 6,
+    "shadow": 4,
+    "sheet": 3
+   },
+   "at_cap_in_primary_top_20": 10,
+   "at_cap_in_strip": 10,
+   "candidates": 14005,
+   "area_km2": 22.4,
+   "cap": 1.349
+  },
+  "ESP_037145_1915": {
+   "frozen_v1": {
+    "dark_compact": 12,
+    "sheet": 8
+   },
+   "primary": {
+    "bright": 8,
+    "dark_compact": 4,
+    "shadow": 7,
+    "sheet": 1
+   },
+   "at_cap_in_primary_top_20": 1,
+   "at_cap_in_strip": 9,
+   "candidates": 107069,
+   "area_km2": 92.86,
+   "cap": 1.967
+  },
+  "ESP_039308_1915": {
+   "frozen_v1": {
+    "dark_compact": 2,
+    "sheet": 18
+   },
+   "primary": {
+    "bright": 3,
+    "dark": 6,
+    "dark_compact": 2,
+    "shadow": 7,
+    "sheet": 2
+   },
+   "at_cap_in_primary_top_20": 16,
+   "at_cap_in_strip": 16,
+   "candidates": 35590,
+   "area_km2": 44.16,
+   "cap": 1.643
+  },
+  "ESP_040363_1915": {
+   "frozen_v1": {
+    "dark_compact": 9,
+    "sheet": 11
+   },
+   "primary": {
+    "bright": 5,
+    "dark_compact": 5,
+    "shadow": 10
+   },
+   "at_cap_in_primary_top_20": 1,
+   "at_cap_in_strip": 7,
+   "candidates": 39518,
+   "area_km2": 47.91,
+   "cap": 1.678
+  },
+  "ESP_046170_2025": {
+   "frozen_v1": {
+    "bright": 7,
+    "dark_compact": 10,
+    "shadow": 2,
+    "sheet": 1
+   },
+   "primary": {
+    "bright": 8,
+    "dark": 3,
+    "dark_compact": 6,
+    "shadow": 2,
+    "sheet": 1
+   },
+   "at_cap_in_primary_top_20": 11,
+   "at_cap_in_strip": 11,
+   "candidates": 46004,
+   "area_km2": 104.65,
+   "cap": 2.019
+  },
+  "ESP_048041_1780": {
+   "frozen_v1": {
+    "sheet": 20
+   },
+   "primary": {
+    "bright": 12,
+    "dark": 2,
+    "dark_compact": 1,
+    "shadow": 4,
+    "sheet": 1
+   },
+   "at_cap_in_primary_top_20": 19,
+   "at_cap_in_strip": 20,
+   "candidates": 134784,
+   "area_km2": 101.74,
+   "cap": 2.005
+  },
+  "ESP_068822_1985": {
+   "frozen_v1": {
+    "bright": 2,
+    "dark_compact": 6,
+    "shadow": 6,
+    "sheet": 6
+   },
+   "primary": {
+    "bright": 3,
+    "dark": 2,
+    "dark_compact": 12,
+    "shadow": 2,
+    "sheet": 1
+   },
+   "at_cap_in_primary_top_20": 9,
+   "at_cap_in_strip": 9,
+   "candidates": 29714,
+   "area_km2": 27.92,
+   "cap": 1.442
+  },
+  "ESP_075625_2055": {
+   "frozen_v1": {
+    "sheet": 20
+   },
+   "primary": {
+    "bright": 4,
+    "dark": 3,
+    "dark_compact": 9,
+    "shadow": 2,
+    "sheet": 2
+   },
+   "at_cap_in_primary_top_20": 8,
+   "at_cap_in_strip": 8,
+   "candidates": 104270,
+   "area_km2": 70.09,
+   "cap": 1.844
+  },
+  "ESP_087360_1845": {
+   "frozen_v1": {
+    "dark_compact": 7,
+    "sheet": 13
+   },
+   "primary": {
+    "bright": 1,
+    "dark": 1,
+    "dark_compact": 7,
+    "shadow": 9,
+    "sheet": 2
+   },
+   "at_cap_in_primary_top_20": 12,
+   "at_cap_in_strip": 12,
+   "candidates": 68312,
+   "area_km2": 30.52,
+   "cap": 1.481
+  }
+ },
+ "seconds": 27
+}
