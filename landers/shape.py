@@ -32,6 +32,9 @@ object plus a margin.
 - ``sun_max_z``: brightest band value on the sun side (for a dark candidate: is there an object that
   could cast it).
 
+Relief features (``relief_features``), on dark components, only when ``DetectorConfig.relief_features`` is on (plan item
+16): ``relief_dipole``, ``relief_sun_min_z``, ``relief_anti_min_z``, ``relief_height_m``, ``relief_width_m``.
+
 Other:
 
 - ``isolation_px``: distance to the nearest other component of the same branch family in the tile, capped
@@ -177,6 +180,49 @@ def shadow_features(
         "shadow_run_px": int(run),
         "shadow_height_m": round(height, 2),
         "sun_max_z": round(sun_max, 2),
+    }
+
+
+def relief_features(
+    lab: np.ndarray,
+    label: int,
+    sl: tuple,
+    z: np.ndarray,
+    r: float,
+    c: float,
+    drow: float,
+    dcol: float,
+    reach_px: float,
+    scale_m: float,
+    incidence_deg: float,
+) -> dict:
+    """The sign of the relief around a dark component, docs/proposals/darkrelief-v1-protocol.md. The bands start beyond the
+    component's own edges along the shadow direction ``(drow, dcol)``, so a patch stretched along the sun axis, which is
+    what a cast shadow is, does not measure itself as ``shadow_features`` does. An object lifts a lit face on the sun side
+    of its shadow; a depression has its lit wall on the anti-sun side."""
+    rr, cc = np.nonzero(lab[sl] == label)
+    if len(rr) == 0:
+        return {}
+    v_r, v_c = rr + sl[0].start - r, cc + sl[1].start - c
+    along = v_r * drow + v_c * dcol
+    across = v_r * -dcol + v_c * drow
+    width = float(across.max() - across.min()) + 1.0
+    half = max(1, int(round(width / 2)))
+    reach = int(math.ceil(reach_px)) + 2
+    anti_start = int(math.ceil(along.max())) + 1
+    sun_start = int(math.ceil(-along.min())) + 1
+    anti = band_profile(z, r, c, drow, dcol, half, anti_start, anti_start + reach)
+    sun = band_profile(z, r, c, -drow, -dcol, half, sun_start, sun_start + reach)
+    if np.all(np.isnan(anti)) or np.all(np.isnan(sun)):
+        return {}
+    tan_i = math.tan(math.radians(incidence_deg))
+    length = float(along.max() - along.min()) + 1.0
+    return {
+        "relief_dipole": round(float(np.nanmax(sun)) - float(np.nanmax(anti)), 2),
+        "relief_sun_min_z": round(float(np.nanmin(sun)), 2),
+        "relief_anti_min_z": round(float(np.nanmin(anti)), 2),
+        "relief_height_m": round(length * scale_m / tan_i, 2) if tan_i > 0 else 0.0,
+        "relief_width_m": round(width * scale_m, 2),
     }
 
 

@@ -1,0 +1,5977 @@
+{
+ "protocol": "docs/proposals/darkrelief-v1-protocol.md",
+ "git": {
+  "commit": "6245637e9041b13d903e1b90564221c0de55e9da",
+  "dirty": true,
+  "tag": null
+ },
+ "not_blind": "every number here is on tuning sites; perseverance, insight, zhurong and beagle2 were sealed for frozen-v1 and are not blind",
+ "rule": {
+  "key_beats": false,
+  "transplant_beats": false,
+  "no_piece_dropped": true,
+  "met": false
+ },
+ "planted_km2": 16.520265625,
+ "median_target_km2": 99.45,
+ "rates_per_km2": {
+  "N10": 0.10055304172951232,
+  "N20": 0.20110608345902464,
+  "N50": 0.5027652086475616,
+  "N100": 1.0055304172951232,
+  "N250": 2.513826043237808,
+  "board_rate": 2.0
+ },
+ "false_alarms_allowed": {
+  "N10": 1,
+  "N20": 3,
+  "N50": 8,
+  "N100": 16,
+  "N250": 41,
+  "board_rate": 33
+ },
+ "no_texture": [
+  "PSP_004336_1035",
+  "PSP_004402_1030"
+ ],
+ "arms": {
+  "frozen_v1": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 10,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 8,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 765,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 441,
+    "spirit/parachute/ESP_025815_1655": 116,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 25,
+    "perseverance/backshell/ESP_068822_1985": 44,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8578,
+    "perseverance/rover/ESP_068822_1985": 81,
+    "insight/lander/ESP_087360_1845": 469,
+    "insight/heat_shield/ESP_087360_1845": 44317,
+    "zhurong/lander/ESP_075625_2055": 2096,
+    "zhurong/parachute/ESP_075625_2055": 1172,
+    "zhurong/backshell/ESP_075625_2055": 1824,
+    "zhurong/heat_shield/ESP_075625_2055": 596,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 32
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 47,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false
+  },
+  "primary_loso": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 9,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 7,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "insight/lander/ESP_087360_1845": 566,
+    "insight/heat_shield/ESP_087360_1845": 44327,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 35,
+    "perseverance/backshell/ESP_068822_1985": 57,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8584,
+    "perseverance/rover/ESP_068822_1985": 95,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 766,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "spirit/lander/ESP_025815_1655": 582,
+    "spirit/parachute/ESP_025815_1655": 184,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "viking1/lander/ESP_046170_2025": 3,
+    "zhurong/lander/ESP_075625_2055": 2357,
+    "zhurong/parachute/ESP_075625_2055": 1352,
+    "zhurong/backshell/ESP_075625_2055": 2059,
+    "zhurong/heat_shield/ESP_075625_2055": 694
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 32
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 47,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false
+  },
+  "whole_fit": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 9,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 7,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 766,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 564,
+    "spirit/parachute/ESP_025815_1655": 174,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 35,
+    "perseverance/backshell/ESP_068822_1985": 57,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8584,
+    "perseverance/rover/ESP_068822_1985": 95,
+    "insight/lander/ESP_087360_1845": 552,
+    "insight/heat_shield/ESP_087360_1845": 44326,
+    "zhurong/lander/ESP_075625_2055": 2253,
+    "zhurong/parachute/ESP_075625_2055": 1281,
+    "zhurong/backshell/ESP_075625_2055": 1963,
+    "zhurong/heat_shield/ESP_075625_2055": 658,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 46,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.281,
+      0.445
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 46,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark": {
+     "threshold": 6.03,
+     "fraction": 0.001002,
+     "gain": 2.999,
+     "n": 134720,
+     "passed": 135
+    },
+    "dark_compact": {
+     "threshold": 5.65,
+     "fraction": 0.001002,
+     "gain": 2.999,
+     "n": 375433,
+     "passed": 376
+    }
+   }
+  },
+  "p0005": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 9,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 7,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 766,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 515,
+    "spirit/parachute/ESP_025815_1655": 164,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 32,
+    "perseverance/backshell/ESP_068822_1985": 51,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8580,
+    "perseverance/rover/ESP_068822_1985": 88,
+    "insight/lander/ESP_087360_1845": 504,
+    "insight/heat_shield/ESP_087360_1845": 44323,
+    "zhurong/lander/ESP_075625_2055": 2188,
+    "zhurong/parachute/ESP_075625_2055": 1229,
+    "zhurong/backshell/ESP_075625_2055": 1902,
+    "zhurong/heat_shield/ESP_075625_2055": 635,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 32
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 47,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark": {
+     "threshold": 6.77,
+     "fraction": 0.000497,
+     "gain": 3.303,
+     "n": 134720,
+     "passed": 67
+    },
+    "dark_compact": {
+     "threshold": 6.56,
+     "fraction": 0.000498,
+     "gain": 3.303,
+     "n": 375433,
+     "passed": 187
+    }
+   }
+  },
+  "p002": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 9,
+    "100": 10,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 7,
+     "100": 8,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 767,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 217,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 4,
+    "spirit/lander/ESP_025815_1655": 644,
+    "spirit/parachute/ESP_025815_1655": 208,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 8,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 37,
+    "perseverance/backshell/ESP_068822_1985": 62,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8587,
+    "perseverance/rover/ESP_068822_1985": 104,
+    "insight/lander/ESP_087360_1845": 606,
+    "insight/heat_shield/ESP_087360_1845": 44337,
+    "zhurong/lander/ESP_075625_2055": 2353,
+    "zhurong/parachute/ESP_075625_2055": 1356,
+    "zhurong/backshell/ESP_075625_2055": 2051,
+    "zhurong/heat_shield/ESP_075625_2055": 658,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 46,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.281,
+      0.445
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 46,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark": {
+     "threshold": 5.16,
+     "fraction": 0.002004,
+     "gain": 2.698,
+     "n": 134720,
+     "passed": 270
+    },
+    "dark_compact": {
+     "threshold": 4.78,
+     "fraction": 0.002016,
+     "gain": 2.695,
+     "n": 375433,
+     "passed": 757
+    }
+   }
+  },
+  "flipped": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 10,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 8,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 765,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 441,
+    "spirit/parachute/ESP_025815_1655": 116,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 25,
+    "perseverance/backshell/ESP_068822_1985": 44,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8578,
+    "perseverance/rover/ESP_068822_1985": 81,
+    "insight/lander/ESP_087360_1845": 474,
+    "insight/heat_shield/ESP_087360_1845": 44320,
+    "zhurong/lander/ESP_075625_2055": 2343,
+    "zhurong/parachute/ESP_075625_2055": 1203,
+    "zhurong/backshell/ESP_075625_2055": 1989,
+    "zhurong/heat_shield/ESP_075625_2055": 596,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 32
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 47,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark": {
+     "threshold": 8.73,
+     "fraction": 0.000995,
+     "gain": 3.002,
+     "n": 134720,
+     "passed": 134
+    },
+    "dark_compact": {
+     "threshold": 7.06,
+     "fraction": 0.001002,
+     "gain": 2.999,
+     "n": 375433,
+     "passed": 376
+    }
+   }
+  },
+  "recorded": {
+   "key_curve": {
+    "10": 5,
+    "20": 8,
+    "50": 11,
+    "100": 12,
+    "250": 14
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 4,
+     "20": 7,
+     "50": 9,
+     "100": 10,
+     "250": 11
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 0
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 1
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.325,
+    "sd": 0.343,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51755,
+    "schiaparelli/parachute/ESP_048041_1780": 790,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31879,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 14,
+    "curiosity/heat_shield/ESP_030313_1755": 217,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 4,
+    "phoenix/heat_shield/ESP_017716_2485": 7,
+    "viking1/lander/ESP_046170_2025": 15,
+    "spirit/lander/ESP_025815_1655": 456,
+    "spirit/parachute/ESP_025815_1655": 148,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 30,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 30,
+    "perseverance/backshell/ESP_068822_1985": 48,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8580,
+    "perseverance/rover/ESP_068822_1985": 85,
+    "insight/lander/ESP_087360_1845": 16,
+    "insight/heat_shield/ESP_087360_1845": 44317,
+    "zhurong/lander/ESP_075625_2055": 2111,
+    "zhurong/parachute/ESP_075625_2055": 1191,
+    "zhurong/backshell/ESP_075625_2055": 1843,
+    "zhurong/heat_shield/ESP_075625_2055": 614,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 337,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 24,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 20
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.129,
+      0.264
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 46,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.281,
+      0.445
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 44,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 31
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 29
+      }
+     },
+     "interval_95": [
+      0.267,
+      0.43
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 24,
+    "N100": 34,
+    "N250": 46,
+    "board_rate": 44
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [
+    "pathfinder/backshell/ESP_022038_1995"
+   ],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark": {
+     "threshold": 3.18,
+     "fraction": 0.001002,
+     "gain": 2.999,
+     "n": 134720,
+     "passed": 135
+    },
+    "dark_compact": {
+     "threshold": 4.29,
+     "fraction": 0.000999,
+     "gain": 3.001,
+     "n": 375433,
+     "passed": 375
+    }
+   }
+  },
+  "compact_only": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 9,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 7,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 766,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 532,
+    "spirit/parachute/ESP_025815_1655": 145,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 34,
+    "perseverance/backshell/ESP_068822_1985": 56,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8584,
+    "perseverance/rover/ESP_068822_1985": 94,
+    "insight/lander/ESP_087360_1845": 537,
+    "insight/heat_shield/ESP_087360_1845": 44326,
+    "zhurong/lander/ESP_075625_2055": 2176,
+    "zhurong/parachute/ESP_075625_2055": 1220,
+    "zhurong/backshell/ESP_075625_2055": 1887,
+    "zhurong/heat_shield/ESP_075625_2055": 632,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 46,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 31
+      }
+     },
+     "interval_95": [
+      0.281,
+      0.445
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 46,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark_compact": {
+     "threshold": 5.65,
+     "fraction": 0.001002,
+     "gain": 2.999,
+     "n": 375433,
+     "passed": 376
+    }
+   }
+  },
+  "dark_only": {
+   "key_curve": {
+    "10": 8,
+    "20": 8,
+    "50": 10,
+    "100": 11,
+    "250": 13
+   },
+   "key_n": 32,
+   "key_interval_95_at_20": [
+    0.133,
+    0.421
+   ],
+   "key_kinds": {
+    "fabric": {
+     "n": 6,
+     "10": 1,
+     "20": 1,
+     "50": 2,
+     "100": 2,
+     "250": 3
+    },
+    "hardware": {
+     "n": 23,
+     "10": 7,
+     "20": 7,
+     "50": 8,
+     "100": 9,
+     "250": 10
+    },
+    "mark": {
+     "n": 3,
+     "10": 0,
+     "20": 0,
+     "50": 0,
+     "100": 0,
+     "250": 0
+    }
+   },
+   "key_by_site": {
+    "schiaparelli": {
+     "n": 4,
+     "found": 1
+    },
+    "curiosity": {
+     "n": 4,
+     "found": 2
+    },
+    "phoenix": {
+     "n": 3,
+     "found": 2
+    },
+    "viking1": {
+     "n": 1,
+     "found": 1
+    },
+    "spirit": {
+     "n": 3,
+     "found": 1
+    },
+    "pathfinder": {
+     "n": 3,
+     "found": 1
+    },
+    "perseverance": {
+     "n": 5,
+     "found": 0
+    },
+    "insight": {
+     "n": 2,
+     "found": 0
+    },
+    "zhurong": {
+     "n": 4,
+     "found": 0
+    },
+    "beagle2": {
+     "n": 3,
+     "found": 0
+    }
+   },
+   "key_spread_at_20": {
+    "sites": 10,
+    "mean": 0.308,
+    "sd": 0.338,
+    "min": 0.0,
+    "max": 1.0
+   },
+   "key_ranks": {
+    "schiaparelli/crash_scar/ESP_048041_1780": 51752,
+    "schiaparelli/parachute/ESP_048041_1780": 765,
+    "schiaparelli/backshell/ESP_048041_1780": 8,
+    "schiaparelli/heat_shield/ESP_048041_1780": 31873,
+    "curiosity/parachute/ESP_030313_1755": 3,
+    "curiosity/backshell/ESP_030313_1755": 8,
+    "curiosity/heat_shield/ESP_030313_1755": 214,
+    "curiosity/descent_stage/ESP_030313_1755": null,
+    "phoenix/lander/ESP_017716_2485": 704,
+    "phoenix/backshell/ESP_017716_2485": 2,
+    "phoenix/heat_shield/ESP_017716_2485": 5,
+    "viking1/lander/ESP_046170_2025": 3,
+    "spirit/lander/ESP_025815_1655": 473,
+    "spirit/parachute/ESP_025815_1655": 145,
+    "spirit/backshell/ESP_025815_1655": 1,
+    "pathfinder/lander/ESP_022038_1995": null,
+    "pathfinder/backshell/ESP_022038_1995": 4,
+    "pathfinder/parachute/ESP_022038_1995": null,
+    "perseverance/parachute/ESP_068822_1985": 26,
+    "perseverance/backshell/ESP_068822_1985": 45,
+    "perseverance/heat_shield/ESP_068822_1985": null,
+    "perseverance/descent_stage/ESP_068822_1985": 8578,
+    "perseverance/rover/ESP_068822_1985": 82,
+    "insight/lander/ESP_087360_1845": 484,
+    "insight/heat_shield/ESP_087360_1845": 44317,
+    "zhurong/lander/ESP_075625_2055": 2173,
+    "zhurong/parachute/ESP_075625_2055": 1233,
+    "zhurong/backshell/ESP_075625_2055": 1900,
+    "zhurong/heat_shield/ESP_075625_2055": 622,
+    "beagle2/lander/ESP_037145_1915": null,
+    "beagle2/lander/ESP_039308_1915": 334,
+    "beagle2/lander/ESP_040363_1915": null
+   },
+   "transplant": {
+    "N10": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N20": {
+     "n": 128,
+     "found": 15,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 3
+      },
+      "hardware": {
+       "n": 92,
+       "found": 12
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 4
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 2
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 2
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 1
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 3
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 8
+      },
+      "texture": {
+       "n": 85,
+       "found": 7
+      }
+     },
+     "interval_95": [
+      0.072,
+      0.184
+     ]
+    },
+    "N50": {
+     "n": 128,
+     "found": 25,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 4
+      },
+      "hardware": {
+       "n": 92,
+       "found": 21
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 3
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 1
+      },
+      "spirit": {
+       "n": 12,
+       "found": 6
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 5
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 0
+      },
+      "viking1": {
+       "n": 4,
+       "found": 1
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 9
+      },
+      "texture": {
+       "n": 85,
+       "found": 16
+      }
+     },
+     "interval_95": [
+      0.136,
+      0.272
+     ]
+    },
+    "N100": {
+     "n": 128,
+     "found": 34,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 6
+      },
+      "hardware": {
+       "n": 92,
+       "found": 28
+      },
+      "mark": {
+       "n": 12,
+       "found": 0
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 5
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 3
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 4
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 7
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 1
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 11
+      },
+      "texture": {
+       "n": 85,
+       "found": 23
+      }
+     },
+     "interval_95": [
+      0.197,
+      0.348
+     ]
+    },
+    "N250": {
+     "n": 128,
+     "found": 47,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 12
+      },
+      "hardware": {
+       "n": 92,
+       "found": 33
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 3
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 9
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 32
+      }
+     },
+     "interval_95": [
+      0.289,
+      0.453
+     ]
+    },
+    "board_rate": {
+     "n": 128,
+     "found": 45,
+     "by_kind": {
+      "fabric": {
+       "n": 24,
+       "found": 11
+      },
+      "hardware": {
+       "n": 92,
+       "found": 32
+      },
+      "mark": {
+       "n": 12,
+       "found": 2
+      }
+     },
+     "by_site": {
+      "curiosity": {
+       "n": 16,
+       "found": 7
+      },
+      "pathfinder": {
+       "n": 12,
+       "found": 4
+      },
+      "perseverance": {
+       "n": 20,
+       "found": 10
+      },
+      "schiaparelli": {
+       "n": 16,
+       "found": 2
+      },
+      "spirit": {
+       "n": 12,
+       "found": 8
+      },
+      "zhurong": {
+       "n": 16,
+       "found": 8
+      },
+      "beagle2": {
+       "n": 12,
+       "found": 2
+      },
+      "insight": {
+       "n": 8,
+       "found": 0
+      },
+      "phoenix": {
+       "n": 12,
+       "found": 1
+      },
+      "viking1": {
+       "n": 4,
+       "found": 3
+      }
+     },
+     "by_ground": {
+      "no_texture": {
+       "n": 43,
+       "found": 15
+      },
+      "texture": {
+       "n": 85,
+       "found": 30
+      }
+     },
+     "interval_95": [
+      0.274,
+      0.438
+     ]
+    }
+   },
+   "transplant_curve": {
+    "N10": 15,
+    "N20": 15,
+    "N50": 25,
+    "N100": 34,
+    "N250": 47,
+    "board_rate": 45
+   },
+   "transplant_spread_at_20": {
+    "sites": 10,
+    "mean": 0.118,
+    "sd": 0.092,
+    "min": 0.0,
+    "max": 0.25
+   },
+   "dropped_from_top_20": [],
+   "key_beats": false,
+   "transplant_beats": false,
+   "rules": {
+    "dark": {
+     "threshold": 6.03,
+     "fraction": 0.001002,
+     "gain": 2.999,
+     "n": 134720,
+     "passed": 135
+    }
+   }
+  }
+ },
+ "folds": {
+  "beagle2": {
+   "dark": {
+    "threshold": 6.07,
+    "fraction": 0.000996,
+    "gain": 3.002,
+    "n": 123513,
+    "passed": 123
+   },
+   "dark_compact": {
+    "threshold": 5.83,
+    "fraction": 0.001003,
+    "gain": 2.999,
+    "n": 304214,
+    "passed": 305
+   }
+  },
+  "curiosity": {
+   "dark": {
+    "threshold": 6.04,
+    "fraction": 0.001005,
+    "gain": 2.998,
+    "n": 132347,
+    "passed": 133
+   },
+   "dark_compact": {
+    "threshold": 5.66,
+    "fraction": 0.001003,
+    "gain": 2.998,
+    "n": 369716,
+    "passed": 371
+   }
+  },
+  "insight": {
+   "dark": {
+    "threshold": 5.9,
+    "fraction": 0.000998,
+    "gain": 3.001,
+    "n": 132278,
+    "passed": 132
+   },
+   "dark_compact": {
+    "threshold": 5.36,
+    "fraction": 0.001011,
+    "gain": 2.995,
+    "n": 364806,
+    "passed": 369
+   }
+  },
+  "pathfinder": {
+   "dark": {
+    "threshold": 6.04,
+    "fraction": 0.001011,
+    "gain": 2.995,
+    "n": 131544,
+    "passed": 133
+   },
+   "dark_compact": {
+    "threshold": 5.65,
+    "fraction": 0.001002,
+    "gain": 2.999,
+    "n": 375086,
+    "passed": 376
+   }
+  },
+  "perseverance": {
+   "dark": {
+    "threshold": 6.03,
+    "fraction": 0.000997,
+    "gain": 3.001,
+    "n": 134457,
+    "passed": 134
+   },
+   "dark_compact": {
+    "threshold": 5.61,
+    "fraction": 0.001014,
+    "gain": 2.994,
+    "n": 373664,
+    "passed": 379
+   }
+  },
+  "phoenix": {
+   "dark": {
+    "threshold": 6.14,
+    "fraction": 0.000992,
+    "gain": 3.003,
+    "n": 120961,
+    "passed": 120
+   },
+   "dark_compact": {
+    "threshold": 5.99,
+    "fraction": 0.000998,
+    "gain": 3.001,
+    "n": 285453,
+    "passed": 285
+   }
+  },
+  "schiaparelli": {
+   "dark": {
+    "threshold": 7.06,
+    "fraction": 0.000999,
+    "gain": 3.001,
+    "n": 56084,
+    "passed": 56
+   },
+   "dark_compact": {
+    "threshold": 6.13,
+    "fraction": 0.001006,
+    "gain": 2.997,
+    "n": 254512,
+    "passed": 256
+   }
+  },
+  "spirit": {
+   "dark": {
+    "threshold": 5.7,
+    "fraction": 0.000993,
+    "gain": 3.003,
+    "n": 127857,
+    "passed": 127
+   },
+   "dark_compact": {
+    "threshold": 5.4,
+    "fraction": 0.001008,
+    "gain": 2.996,
+    "n": 351048,
+    "passed": 354
+   }
+  },
+  "viking1": {
+   "dark": {
+    "threshold": 6.09,
+    "fraction": 0.000995,
+    "gain": 3.002,
+    "n": 126662,
+    "passed": 126
+   },
+   "dark_compact": {
+    "threshold": 5.7,
+    "fraction": 0.001009,
+    "gain": 2.996,
+    "n": 352985,
+    "passed": 356
+   }
+  },
+  "zhurong": {
+   "dark": {
+    "threshold": 5.11,
+    "fraction": 0.001002,
+    "gain": 2.999,
+    "n": 126777,
+    "passed": 127
+   },
+   "dark_compact": {
+    "threshold": 5.16,
+    "fraction": 0.001002,
+    "gain": 2.999,
+    "n": 347413,
+    "passed": 348
+   }
+  }
+ },
+ "per_strip": {
+  "ESP_017716_2485": {
+   "site": "phoenix",
+   "dark": {
+    "n": 738,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 340,
+    "dipole_negative": 393,
+    "measured": 738
+   },
+   "dark_compact": {
+    "n": 14739,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 8192,
+    "dipole_negative": 6503,
+    "measured": 14739
+   }
+  },
+  "ESP_022038_1995": {
+   "site": "pathfinder",
+   "dark": {
+    "n": 3176,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 2759,
+    "dipole_negative": 414,
+    "measured": 3176
+   },
+   "dark_compact": {
+    "n": 347,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 259,
+    "dipole_negative": 86,
+    "measured": 347
+   }
+  },
+  "ESP_025815_1655": {
+   "site": "spirit",
+   "dark": {
+    "n": 6863,
+    "passing": 34,
+    "fraction": 0.00495,
+    "dipole_positive": 4316,
+    "dipole_negative": 2524,
+    "measured": 6863
+   },
+   "dark_compact": {
+    "n": 24385,
+    "passing": 98,
+    "fraction": 0.00402,
+    "dipole_positive": 16768,
+    "dipole_negative": 7543,
+    "measured": 24385
+   }
+  },
+  "ESP_030313_1755": {
+   "site": "curiosity",
+   "dark": {
+    "n": 2373,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 1617,
+    "dipole_negative": 752,
+    "measured": 2373
+   },
+   "dark_compact": {
+    "n": 5717,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 3928,
+    "dipole_negative": 1769,
+    "measured": 5717
+   }
+  },
+  "ESP_037145_1915": {
+   "site": "beagle2",
+   "dark": {
+    "n": 7447,
+    "passing": 4,
+    "fraction": 0.00054,
+    "dipole_positive": 3977,
+    "dipole_negative": 3457,
+    "measured": 7447
+   },
+   "dark_compact": {
+    "n": 52567,
+    "passing": 9,
+    "fraction": 0.00017,
+    "dipole_positive": 37391,
+    "dipole_negative": 15007,
+    "measured": 52567
+   }
+  },
+  "ESP_039308_1915": {
+   "site": "beagle2",
+   "dark": {
+    "n": 1399,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 618,
+    "dipole_negative": 778,
+    "measured": 1399
+   },
+   "dark_compact": {
+    "n": 8671,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 5124,
+    "dipole_negative": 3527,
+    "measured": 8671
+   }
+  },
+  "ESP_040363_1915": {
+   "site": "beagle2",
+   "dark": {
+    "n": 2361,
+    "passing": 3,
+    "fraction": 0.00127,
+    "dipole_positive": 1009,
+    "dipole_negative": 1351,
+    "measured": 2361
+   },
+   "dark_compact": {
+    "n": 9981,
+    "passing": 11,
+    "fraction": 0.0011,
+    "dipole_positive": 6308,
+    "dipole_negative": 3644,
+    "measured": 9981
+   }
+  },
+  "ESP_046170_2025": {
+   "site": "viking1",
+   "dark": {
+    "n": 8058,
+    "passing": 1,
+    "fraction": 0.00012,
+    "dipole_positive": 5907,
+    "dipole_negative": 2124,
+    "measured": 8058
+   },
+   "dark_compact": {
+    "n": 22448,
+    "passing": 6,
+    "fraction": 0.00027,
+    "dipole_positive": 16002,
+    "dipole_negative": 6376,
+    "measured": 22448
+   }
+  },
+  "ESP_048041_1780": {
+   "site": "schiaparelli",
+   "dark": {
+    "n": 51174,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 4573,
+    "dipole_negative": 46484,
+    "measured": 51174
+   },
+   "dark_compact": {
+    "n": 75306,
+    "passing": 1,
+    "fraction": 1e-05,
+    "dipole_positive": 20021,
+    "dipole_negative": 54959,
+    "measured": 75306
+   }
+  },
+  "ESP_053451_2485": {
+   "site": "phoenix",
+   "dark": {
+    "n": 13021,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 8442,
+    "dipole_negative": 4512,
+    "measured": 13021
+   },
+   "dark_compact": {
+    "n": 75241,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 49574,
+    "dipole_negative": 25343,
+    "measured": 75241
+   }
+  },
+  "ESP_068822_1985": {
+   "site": "perseverance",
+   "dark": {
+    "n": 263,
+    "passing": 1,
+    "fraction": 0.0038,
+    "dipole_positive": 205,
+    "dipole_negative": 58,
+    "measured": 263
+   },
+   "dark_compact": {
+    "n": 1769,
+    "passing": 14,
+    "fraction": 0.00791,
+    "dipole_positive": 1459,
+    "dipole_negative": 309,
+    "measured": 1769
+   }
+  },
+  "ESP_073625_1780": {
+   "site": "schiaparelli",
+   "dark": {
+    "n": 27462,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 4375,
+    "dipole_negative": 22959,
+    "measured": 27462
+   },
+   "dark_compact": {
+    "n": 45615,
+    "passing": 0,
+    "fraction": 0.0,
+    "dipole_positive": 16036,
+    "dipole_negative": 29324,
+    "measured": 45615
+   }
+  },
+  "ESP_075625_2055": {
+   "site": "zhurong",
+   "dark": {
+    "n": 7943,
+    "passing": 77,
+    "fraction": 0.00969,
+    "dipole_positive": 2609,
+    "dipole_negative": 5326,
+    "measured": 7943
+   },
+   "dark_compact": {
+    "n": 28020,
+    "passing": 148,
+    "fraction": 0.00528,
+    "dipole_positive": 17815,
+    "dipole_negative": 10143,
+    "measured": 28020
+   }
+  },
+  "ESP_087360_1845": {
+   "site": "insight",
+   "dark": {
+    "n": 2442,
+    "passing": 15,
+    "fraction": 0.00614,
+    "dipole_positive": 1002,
+    "dipole_negative": 1436,
+    "measured": 2442
+   },
+   "dark_compact": {
+    "n": 10627,
+    "passing": 89,
+    "fraction": 0.00837,
+    "dipole_positive": 5749,
+    "dipole_negative": 4858,
+    "measured": 10627
+   }
+  }
+ },
+ "piece_candidates": [
+  {
+   "piece": "schiaparelli/crash_scar/ESP_048041_1780",
+   "kind": "mark",
+   "branch": "dark",
+   "frozen_score": -1.409,
+   "value": -1.0,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "schiaparelli/heat_shield/ESP_048041_1780",
+   "kind": "hardware",
+   "branch": "dark",
+   "frozen_score": -1.143,
+   "value": 0.53,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "phoenix/lander/ESP_017716_2485",
+   "kind": "hardware",
+   "branch": "dark",
+   "frozen_score": -1.133,
+   "value": 1.0,
+   "passes_fixed": true,
+   "gain": 0.0
+  },
+  {
+   "piece": "phoenix/backshell/ESP_017716_2485",
+   "kind": "hardware",
+   "branch": "dark",
+   "frozen_score": -0.343,
+   "value": 0.44,
+   "passes_fixed": true,
+   "gain": 0.0
+  },
+  {
+   "piece": "phoenix/heat_shield/ESP_017716_2485",
+   "kind": "hardware",
+   "branch": "dark",
+   "frozen_score": -1.318,
+   "value": 1.29,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "phoenix/heat_shield/ESP_017716_2485",
+   "kind": "hardware",
+   "branch": "dark_compact",
+   "frozen_score": 1.029,
+   "value": 1.49,
+   "passes_fixed": true,
+   "gain": 0.0
+  },
+  {
+   "piece": "viking1/lander/ESP_046170_2025",
+   "kind": "hardware",
+   "branch": "dark_compact",
+   "frozen_score": -1.89,
+   "value": 4.98,
+   "passes_fixed": true,
+   "gain": 0.0
+  },
+  {
+   "piece": "spirit/backshell/ESP_025815_1655",
+   "kind": "hardware",
+   "branch": "dark_compact",
+   "frozen_score": -2.161,
+   "value": 29.46,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "insight/lander/ESP_087360_1845",
+   "kind": "hardware",
+   "branch": "dark_compact",
+   "frozen_score": 0.681,
+   "value": 1.27,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "insight/lander/ESP_087360_1845",
+   "kind": "hardware",
+   "branch": "dark",
+   "frozen_score": 0.233,
+   "value": 0.31,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "insight/heat_shield/ESP_087360_1845",
+   "kind": "hardware",
+   "branch": "dark_compact",
+   "frozen_score": -1.954,
+   "value": -1.17,
+   "passes_fixed": true,
+   "gain": 0.0
+  },
+  {
+   "piece": "zhurong/lander/ESP_075625_2055",
+   "kind": "hardware",
+   "branch": "dark_compact",
+   "frozen_score": 1.449,
+   "value": 0.93,
+   "passes_fixed": false,
+   "gain": 0.0
+  },
+  {
+   "piece": "zhurong/backshell/ESP_075625_2055",
+   "kind": "hardware",
+   "branch": "dark",
+   "frozen_score": -1.307,
+   "value": 3.46,
+   "passes_fixed": true,
+   "gain": 0.0
+  }
+ ],
+ "sham_at_N20": {
+  "frozen_v1": 0,
+  "n": 128,
+  "whole_fit": 0
+ },
+ "seconds": 7
+}

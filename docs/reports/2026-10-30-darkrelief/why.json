@@ -1,0 +1,282 @@
+{
+ "pieces": [
+  {
+   "piece": "schiaparelli/crash_scar/ESP_048041_1780",
+   "branch": "dark",
+   "relief_dipole": -1.0,
+   "relief_sun_min_z": -2.28,
+   "relief_anti_min_z": -2.37,
+   "relief_height_m": 2.01,
+   "relief_width_m": 2.61,
+   "fails": [
+    "dark on the sun side"
+   ],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.55538
+  },
+  {
+   "piece": "schiaparelli/heat_shield/ESP_048041_1780",
+   "branch": "dark",
+   "relief_dipole": 0.53,
+   "relief_sun_min_z": -2.36,
+   "relief_anti_min_z": -2.29,
+   "relief_height_m": 2.16,
+   "relief_width_m": 3.09,
+   "fails": [
+    "dark on the sun side"
+   ],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.0198
+  },
+  {
+   "piece": "phoenix/lander/ESP_017716_2485",
+   "branch": "dark",
+   "relief_dipole": 1.0,
+   "relief_sun_min_z": -1.3,
+   "relief_anti_min_z": -2.34,
+   "relief_height_m": 1.72,
+   "relief_width_m": 3.26,
+   "fails": [],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.11518
+  },
+  {
+   "piece": "phoenix/backshell/ESP_017716_2485",
+   "branch": "dark",
+   "relief_dipole": 0.44,
+   "relief_sun_min_z": -0.45,
+   "relief_anti_min_z": -1.4,
+   "relief_height_m": 2.16,
+   "relief_width_m": 3.01,
+   "fails": [],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.30352
+  },
+  {
+   "piece": "phoenix/heat_shield/ESP_017716_2485",
+   "branch": "dark",
+   "relief_dipole": 1.29,
+   "relief_sun_min_z": -3.1,
+   "relief_anti_min_z": -1.68,
+   "relief_height_m": 1.47,
+   "relief_width_m": 2.01,
+   "fails": [
+    "dark on the sun side"
+   ],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.05827
+  },
+  {
+   "piece": "phoenix/heat_shield/ESP_017716_2485",
+   "branch": "dark_compact",
+   "relief_dipole": 1.49,
+   "relief_sun_min_z": -0.91,
+   "relief_anti_min_z": -4.94,
+   "relief_height_m": 0.86,
+   "relief_width_m": 0.75,
+   "fails": [],
+   "threshold": 5.65,
+   "share_of_strip_branch_at_or_above": 0.08895
+  },
+  {
+   "piece": "viking1/lander/ESP_046170_2025",
+   "branch": "dark_compact",
+   "relief_dipole": 4.98,
+   "relief_sun_min_z": -1.39,
+   "relief_anti_min_z": -2.36,
+   "relief_height_m": 0.98,
+   "relief_width_m": 1.2,
+   "fails": [],
+   "threshold": 5.65,
+   "share_of_strip_branch_at_or_above": 0.00089
+  },
+  {
+   "piece": "spirit/backshell/ESP_025815_1655",
+   "branch": "dark_compact",
+   "relief_dipole": 29.46,
+   "relief_sun_min_z": -2.2,
+   "relief_anti_min_z": -2.79,
+   "relief_height_m": 0.4,
+   "relief_width_m": 0.8,
+   "fails": [
+    "dark on the sun side",
+    "height"
+   ],
+   "threshold": 5.65,
+   "share_of_strip_branch_at_or_above": 4e-05
+  },
+  {
+   "piece": "insight/lander/ESP_087360_1845",
+   "branch": "dark_compact",
+   "relief_dipole": 1.27,
+   "relief_sun_min_z": -2.33,
+   "relief_anti_min_z": -6.57,
+   "relief_height_m": 0.72,
+   "relief_width_m": 0.58,
+   "fails": [
+    "dark on the sun side"
+   ],
+   "threshold": 5.65,
+   "share_of_strip_branch_at_or_above": 0.287
+  },
+  {
+   "piece": "insight/lander/ESP_087360_1845",
+   "branch": "dark",
+   "relief_dipole": 0.31,
+   "relief_sun_min_z": -2.19,
+   "relief_anti_min_z": 0.06,
+   "relief_height_m": 2.87,
+   "relief_width_m": 3.76,
+   "fails": [
+    "dark on the sun side"
+   ],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.35627
+  },
+  {
+   "piece": "insight/heat_shield/ESP_087360_1845",
+   "branch": "dark_compact",
+   "relief_dipole": -1.17,
+   "relief_sun_min_z": -0.43,
+   "relief_anti_min_z": -2.79,
+   "relief_height_m": 1.11,
+   "relief_width_m": 1.37,
+   "fails": [],
+   "threshold": 5.65,
+   "share_of_strip_branch_at_or_above": 0.73652
+  },
+  {
+   "piece": "zhurong/lander/ESP_075625_2055",
+   "branch": "dark_compact",
+   "relief_dipole": 0.93,
+   "relief_sun_min_z": -2.08,
+   "relief_anti_min_z": -1.24,
+   "relief_height_m": 1.78,
+   "relief_width_m": 3.45,
+   "fails": [
+    "dark on the sun side"
+   ],
+   "threshold": 5.65,
+   "share_of_strip_branch_at_or_above": 0.42077
+  },
+  {
+   "piece": "zhurong/backshell/ESP_075625_2055",
+   "branch": "dark",
+   "relief_dipole": 3.46,
+   "relief_sun_min_z": 0.09,
+   "relief_anti_min_z": -1.74,
+   "relief_height_m": 2.33,
+   "relief_width_m": 2.63,
+   "fails": [],
+   "threshold": 6.03,
+   "share_of_strip_branch_at_or_above": 0.05892
+  }
+ ],
+ "planted_tiles": {
+  "detections": 8183,
+  "dark_detections": 4731,
+  "passing": 4,
+  "passing_on_a_planted_piece": 3,
+  "passers": [
+   {
+    "branch": "dark_compact",
+    "frozen_score": -2.175,
+    "with_gain": 0.825,
+    "dipole": 11.19,
+    "planted_piece": "spirit/backshell",
+    "best_other_detection": {
+     "branch": "shadow",
+     "score": 2.555
+    }
+   },
+   {
+    "branch": "dark_compact",
+    "frozen_score": -2.204,
+    "with_gain": 0.795,
+    "dipole": 11.34,
+    "planted_piece": "spirit/backshell",
+    "best_other_detection": {
+     "branch": "shadow",
+     "score": 2.726
+    }
+   },
+   {
+    "branch": "dark_compact",
+    "frozen_score": -1.927,
+    "with_gain": 1.072,
+    "dipole": 6.6,
+    "planted_piece": "perseverance/rover",
+    "best_other_detection": {
+     "branch": "shadow",
+     "score": 1.747
+    }
+   },
+   {
+    "branch": "dark_compact",
+    "frozen_score": -2.25,
+    "with_gain": 0.749,
+    "dipole": 6.11,
+    "planted_piece": null,
+    "best_other_detection": null
+   }
+  ]
+ },
+ "top_20": {
+  "ESP_017716_2485": {
+   "site_passing": 0,
+   "passing_in_top_20": 0
+  },
+  "ESP_022038_1995": {
+   "site_passing": 0,
+   "passing_in_top_20": 0
+  },
+  "ESP_025815_1655": {
+   "site_passing": 132,
+   "passing_in_top_20": 12
+  },
+  "ESP_030313_1755": {
+   "site_passing": 0,
+   "passing_in_top_20": 0
+  },
+  "ESP_037145_1915": {
+   "site_passing": 13,
+   "passing_in_top_20": 5
+  },
+  "ESP_039308_1915": {
+   "site_passing": 0,
+   "passing_in_top_20": 0
+  },
+  "ESP_040363_1915": {
+   "site_passing": 14,
+   "passing_in_top_20": 6
+  },
+  "ESP_046170_2025": {
+   "site_passing": 7,
+   "passing_in_top_20": 4
+  },
+  "ESP_048041_1780": {
+   "site_passing": 1,
+   "passing_in_top_20": 0
+  },
+  "ESP_053451_2485": {
+   "site_passing": 0,
+   "passing_in_top_20": 0
+  },
+  "ESP_068822_1985": {
+   "site_passing": 15,
+   "passing_in_top_20": 9
+  },
+  "ESP_073625_1780": {
+   "site_passing": 0,
+   "passing_in_top_20": 0
+  },
+  "ESP_075625_2055": {
+   "site_passing": 225,
+   "passing_in_top_20": 0
+  },
+  "ESP_087360_1845": {
+   "site_passing": 104,
+   "passing_in_top_20": 18
+  }
+ }
+}
