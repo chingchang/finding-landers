@@ -27,6 +27,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from landers.halfcal import BELOW_FIELD, RATE_FIELD
 from landers.models.run import candidate_id
 
 GRADES = ("candidate", "needs second look", "likely natural")  # best to worst
@@ -190,6 +191,8 @@ class CandidateCase:
     verdict: dict[str, Ref] | None = None
     checks: list[Ref] = field(default_factory=list)
     not_run: list[Ref] = field(default_factory=list)
+    half_rate: Ref | None = None  # plan item 15a, beside the score; never read into a grade or an order
+    half_rate_below: Ref | None = None
 
 
 @dataclass
@@ -309,6 +312,8 @@ def _candidate(
         chain,
         "",
         [],
+        half_rate=cands.get(*base, RATE_FIELD),
+        half_rate_below=cands.get(*base, BELOW_FIELD),
     )
     if pers is not None:
         src, dpath = pers

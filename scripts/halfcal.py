@@ -3,9 +3,11 @@
     uv run scripts/halfcal.py pop                     raw scores of the frozen-v1 lists, strip by strip; rerun to resume
     uv run scripts/halfcal.py redetect                the detector on item 13's saved planted tiles; rerun to resume
     uv run scripts/halfcal.py score                   both boards, every arm, and the check on the other half
+    uv run scripts/halfcal.py column LIST.json ...    a copy of each list with the half-fitted rate beside each score
+                                                      (item 15a; the order and every other field stay); rerun to resume
 
-Writes under out/halfcal. A strip of a site that is not a tuning site, other than a listed target strip, is refused. No
-paid model is called.
+Writes under out/halfcal. A strip of a site that is not a tuning site, other than a listed target strip, is refused; column
+refuses a strip of a blind site. No paid model is called.
 """
 
 from __future__ import annotations
@@ -492,6 +494,78 @@ def score_all(a) -> int:
     return 0
 
 
+def raws_of(s: Strip, candidates: list[dict]) -> np.ndarray:
+    """Each row's raw score, joined on position and branch to the strip's whole population: a list such as item 14's holds
+    only the top of a strip and no raw scores, and a curve fitted on the top alone would claim the wrong rates."""
+    raw_at: dict[tuple, float] = {}
+    for key in zip(s.row.tolist(), s.col.tolist(), s.branch.tolist(), s.raw.tolist(), strict=True):
+        if raw_at.setdefault(key[:3], key[3]) != key[3]:
+            raise ValueError(f"{s.sid}: two raw scores at one position and branch")
+    return np.array([raw_at[(c["row"], c["col"], c["branch"])] for c in candidates], np.float64)
+
+
+def strip_column(sid: str, entry: dict, reference: dict) -> tuple[list[dict], dict]:
+    """One strip's rows with the column, and its record. The whole-population count at the cap must equal item 15's."""
+    if not (POP / f"{sid}.npz").exists():
+        save_population(sid, entry["candidates"])
+    s = Strip(sid)
+    cals = s.cals[0.0]
+    at_cap = int(np.isnan(hc.rates_by_other(cals, s.branch, s.raw, hc.colour(s.row, s.col, s.scale))[0]).sum())
+    if sid in reference and reference[sid]["at_cap_in_strip"] != at_cap:
+        raise RuntimeError(f"{sid}: {at_cap} at the cap, item 15 counted {reference[sid]['at_cap_in_strip']}")
+    cands = entry["candidates"]
+    raw = raws_of(s, cands)
+    colours = hc.colour([c["row"] for c in cands], [c["col"] for c in cands], s.scale)
+    rate, below = hc.rates_by_other(cals, np.array([c["branch"] for c in cands]), raw, colours)
+    out = hc.with_rate_column(cands, rate, below)
+    if not hc.only_the_column_differs(cands, out):
+        raise RuntimeError(f"{sid}: the column changed something else in the list")
+    measured = rate[np.isfinite(rate)]
+    return out, {
+        "rows": len(out),
+        "rows_at_cap": int(np.isnan(rate).sum()),
+        "population": len(s.raw),
+        "population_at_cap": at_cap,
+        "checked_against_item_15": sid in reference,
+        "area_km2_by_colour": [round(x, 2) for x in s.area[0.0]],
+        "rate_per_km2_min_median_max": (
+            [float(f"{x:.3g}") for x in (measured.min(), np.median(measured), measured.max())] if len(measured) else None
+        ),
+    }
+
+
+def rate_column(a) -> int:
+    sites, _, _ = rr.controls()
+    out_dir = OUT / "column"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    summary_path = out_dir / "summary.json"
+    summary = rr.load(summary_path) if summary_path.exists() else {"lists": {}}
+    reference = rr.load(OUT / "results.json")["top20_makeup"]
+    for path in map(Path, a.lists):
+        out = out_dir / path.name
+        if path.name in summary["lists"] and out.exists():
+            continue
+        d = rr.load(path)
+        for sid in d["strips"]:
+            ex.refuse_blind(sites, sid)
+        record = {}
+        for sid, entry in d["strips"].items():
+            entry["candidates"], record[sid] = strip_column(sid, entry, reference)
+        d["half_rate_column"] = {
+            "what": f"{hc.RATE_FIELD}: candidates per km2 of this strip, in this candidate's branch, at or above its raw "
+            f"score, measured on the half of the strip it does not sit on; no rule gain. {hc.BELOW_FIELD}: above the top "
+            "of that curve, where the data say only that the rate is below this. Beside the score only: no order and no "
+            "grade comes from it.",
+            "git": run.git_state(),
+        }
+        rr.write_json(out, d)
+        summary["git"] = run.git_state()
+        summary["lists"][path.name] = record
+        rr.write_json(summary_path, summary)
+        print(f"{path.name}: {sum(r['rows'] for r in record.values())} rows", flush=True)
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -499,8 +573,10 @@ def main(argv=None) -> int:
     sub.add_parser("redetect")
     f = sub.add_parser("score")
     f.add_argument("--no-texture", nargs="*", default=[], help="target strips with no ground texture, reported apart")
+    c = sub.add_parser("column")
+    c.add_argument("lists", nargs="+", help="candidates files, each with a strips section")
     a = ap.parse_args(argv)
-    return {"pop": population, "redetect": redetect, "score": score_all}[a.cmd](a)
+    return {"pop": population, "redetect": redetect, "score": score_all, "column": rate_column}[a.cmd](a)
 
 
 if __name__ == "__main__":

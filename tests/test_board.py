@@ -8,10 +8,12 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
+import numpy as np
 import pytest
 
 from landers.board import demo, load, render
 from landers.board.load import ALL_GRADES, JoinError, Source, VocabularyError
+from landers.halfcal import BELOW_FIELD, RATE_FIELD, with_rate_column
 
 ROOT = Path(__file__).resolve().parent.parent
 BANNED = ("found", "discovered", "confirmed", "proven")
@@ -232,6 +234,39 @@ def test_manifest_mismatch_unjoins_the_model_files(files, tmp_path):
     st = case.strips[0]
     assert st.manifest_note and "c000" in st.manifest_note and st.model_files == {}
     assert st.candidates[0].sam is None
+
+
+def test_the_rate_column_shows_beside_the_score_and_moves_nothing(files, tmp_path):
+    d, p = files
+    data = json.loads(p["candidates"].read_text())
+    sid = next(iter(data["strips"]))
+    before = data["strips"][sid]["candidates"]
+    n = len(before)
+    rate = np.array([0.25 if i % 2 else np.nan for i in range(n)])
+    below = np.array([np.nan if i % 2 else 0.125 for i in range(n)])
+    data["strips"][sid]["candidates"] = with_rate_column(before, rate, below)
+    with_col = tmp_path / "candidates_with_column.json"
+    with_col.write_text(json.dumps(data))
+
+    plain = load.load_case(p["candidates"], p["models"], [], p["coverage"], None, None, top=6)
+    col = load.load_case(with_col, p["models"], [], p["coverage"], None, None, top=6)
+    for a, b in zip(plain.strips[0].candidates, col.strips[0].candidates, strict=True):
+        assert (a.cid, a.rank, a.index, a.final, a.chain[-1].after.value) == (
+            b.cid,
+            b.rank,
+            b.index,
+            b.final,
+            b.chain[-1].after.value,
+        )
+    assert all(c.half_rate is None and c.half_rate_below is None for c in plain.strips[0].candidates)
+
+    page, _ = render.render(col)
+    r = read(page)
+    assert not re.search(r"\d", re.sub(r"\bc\d{3}\b", "", "\n".join(r.loose))), "both numbers are traced spans"
+    assert "like it per km²" in page and "below <span" in page
+    assert {RATE_FIELD, BELOW_FIELD} <= {s["path"][-1] for s in r.spans if s["path"]}
+    blind, _ = render.render(col, blind=True)
+    assert "below <span" in blind
 
 
 def test_blind_page_carries_no_id_or_position(tmp_path):

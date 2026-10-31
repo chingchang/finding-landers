@@ -18,6 +18,8 @@ from landers.calibrate import TIE_BREAK, Calibration, fit_scores
 
 BLOCK_M = 1000.0
 ORDER_SPAN = 0.1
+RATE_FIELD = "half_rate_per_km2"
+BELOW_FIELD = "half_rate_below_per_km2"
 
 
 def colour(rows, cols, scale_m: float, shift_m: float = 0.0) -> np.ndarray:
@@ -87,6 +89,45 @@ def score_by_other(
         sel = colours == k
         out[sel] = capped_scores(cals[1 - k], branches[sel], raw[sel], table[sel])
     return out
+
+
+def rates_by_other(
+    cals: tuple[Calibration, Calibration], branches: np.ndarray, raw: np.ndarray, colours: np.ndarray
+) -> tuple[np.ndarray, np.ndarray]:
+    """What a candidate's rate says, per km2 of this strip, in its own branch, from the colour it does not sit on, with
+    no rule gain. Two arrays: the measured rate, NaN above the curve; and there, the most the data can say, a rate below
+    one in the other colour's area. Below the curve's lowest knot the rate is that knot's, as in ``capped_scores``."""
+    rate = np.full(len(raw), np.nan)
+    below = np.full(len(raw), np.nan)
+    for k in (0, 1):
+        cal = cals[1 - k]
+        sel = colours == k
+        below[sel] = 1.0 / cal.area_km2
+        for b, curve in cal.branches.items():
+            if not curve.scores:
+                continue
+            inside = sel & (branches == b) & (raw <= curve.scores[0])
+            rate[inside] = 10.0 ** np.interp(raw[inside], curve.scores[::-1], curve.log_rates[::-1])
+    below[np.isfinite(rate)] = np.nan
+    return rate, below
+
+
+def with_rate_column(candidates: list[dict], rate: np.ndarray, below: np.ndarray) -> list[dict]:
+    """New rows in the same order, each with the two rate fields added; nothing else in a row changes and no rate is
+    ever read back into a score or a sort."""
+
+    def cell(x: float) -> float | None:
+        return None if math.isnan(x) else float(f"{x:.4g}")
+
+    return [
+        {**c, RATE_FIELD: cell(float(r)), BELOW_FIELD: cell(float(b))}
+        for c, r, b in zip(candidates, rate, below, strict=True)
+    ]
+
+
+def only_the_column_differs(before: list[dict], after: list[dict]) -> bool:
+    """Same rows in the same positions once the two rate fields are taken away."""
+    return before == [{k: v for k, v in c.items() if k not in (RATE_FIELD, BELOW_FIELD)} for c in after]
 
 
 def realised_rates(
