@@ -90,7 +90,9 @@ def measure(a) -> int:
     sites, _, _ = rr.controls()
     FEATURES.mkdir(parents=True, exist_ok=True)
     rules = shape.ShapeRules.load(SHAPE_V3)
-    first_group = set(rr.load(hs.LISTS[0][0])["strips"])  # scored without rules in the run, the rules applied afterwards
+    first_group = set(
+        rr.load(hs.LISTS[0][0])["strips"]
+    )  # scored without rules in the run, the rules applied afterwards
     tuning = sorted(hs.tuning_strips(sites))
     for sid in tuning:
         out = FEATURES / f"{sid}.npz"
@@ -204,7 +206,9 @@ def sham_hits(dets: list[dict], values: np.ndarray, shams: list[dict], allowed: 
     n_fa, threshold = 0, -np.inf
     for i in order:
         d = dets[i]
-        if not any(np.hypot(d["row"] - t["row"], d["col"] - t["col"]) <= t["radius_px"] for t in by_tile.get(d["tile"], [])):
+        if not any(
+            np.hypot(d["row"] - t["row"], d["col"] - t["col"]) <= t["radius_px"] for t in by_tile.get(d["tile"], [])
+        ):
             n_fa += 1
             if n_fa > allowed:
                 threshold = float(values[i])
@@ -212,7 +216,11 @@ def sham_hits(dets: list[dict], values: np.ndarray, shams: list[dict], allowed: 
     hit = 0
     for s in shams:
         for d, v in zip(dets, values, strict=True):
-            if v > threshold and d["tile"] == s["tile"] and np.hypot(d["row"] - s["row"], d["col"] - s["col"]) <= s["radius_px"]:
+            if (
+                v > threshold
+                and d["tile"] == s["tile"]
+                and np.hypot(d["row"] - s["row"], d["col"] - s["col"]) <= s["radius_px"]
+            ):
                 hit += 1
                 break
     return hit
@@ -318,11 +326,18 @@ def score_all(a) -> int:
         others = [pops[sid] for sid in tuning if site_of[sid] != site]
         rules = fit(others, "primary", relief.P_TARGET)
         folds[site] = rules_json(rules)
-        here = {sid: rows(sid, lists[sid]["score"] + gain_of(pops[sid], "primary", rules)) for sid in piece_strips if site_of[sid] == site}
+        here = {
+            sid: rows(sid, lists[sid]["score"] + gain_of(pops[sid], "primary", rules))
+            for sid in piece_strips
+            if site_of[sid] == site
+        }
         loso_ranks.update(
             rr.key_ranks(here, {**answers, "sites": [s for s in answers["sites"] if s["name"] == site]}, thresholds)
         )
-        ds = [{**d, "score": float(v)} for d, v in zip(dets, frozen_tile + gain_of(tile_pop, "primary", rules), strict=True)]
+        ds = [
+            {**d, "score": float(v)}
+            for d, v in zip(dets, frozen_tile + gain_of(tile_pop, "primary", rules), strict=True)
+        ]
         for name, fa in rates:
             for x in rr.transplant_rows(ds, truths, area, fa, no_texture):
                 if x["site"] != site:
@@ -403,7 +418,10 @@ def score_all(a) -> int:
     }
     rr.write_json(OUT / "results.json", res)
     for arm, v in arms.items():
-        print(f"{arm}: key {v['key_curve']} transplant {v['transplant_curve']} dropped {v['dropped_from_top_20']}", flush=True)
+        print(
+            f"{arm}: key {v['key_curve']} transplant {v['transplant_curve']} dropped {v['dropped_from_top_20']}",
+            flush=True,
+        )
     print(f"sham {sham}; rule {rule}; written {OUT / 'results.json'}")
     return 0
 
