@@ -140,6 +140,7 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
     Limit, written here on purpose: after the delete, items 13 and 14 run from the exported crops. Items 15 and 16
     need full strips, so they can be tested only on the tuning strips that stay on disk; they do not run over the
     search area unless the person asks for a re-download.
+12d. [ ] Download the replaced strip of the blind set (10-30 17:17, person: one blind strip did not contain its target, so controls/sites.json now names a different one; the old file is deleted). Run scripts/fetch_blind.py with a new record, docs/reports/2026-10-30-blind-download-2/fetch.json; it skips files already complete. Same rules as 12c(d): bytes only, nothing opened or parsed, no agent looks at the strip. If its free-disk floor refuses the download, stop and say how many bytes are missing; do not delete anything. Short report, then mark done.
 13. [done, see docs/reports/2026-10-30-reranker.md; the rule is not met and nothing is adopted; item 14's list and the two no-texture strips wait for the person in docs/proposals/reranker-v1.md] v2, A: learned re-ranker (first, highest value). Keep the proposer. Crop each candidate, embed it with a
     frozen pretrained open-weight vision model (say whether it counts toward the hackathon's Meta model
     requirement), and train a small classifier, logistic regression first: positives are the recorded pieces
@@ -300,3 +301,5 @@ ideas from conversations land here, not in chat. Nothing in this file is a resul
   blind strips now (they fit in the free disk without the delete; no agent opens them, the oracle places the key
   from published captioned images, the person seals it); item 15 runs on the tuning strips after that. The JP2
   delete and the two no-texture strips stay for the person. Order: 12c(d), 14 (dry), 15.
+
+- 10-30 17:17 (person, then oracle in the person's absence): one strip of the blind set did not contain its target (its footprint missed the site by several km); the person approved a replacement, chosen by the oracle from the HiRISE index (footprint polygon contains the site, the CCD holding the target present, late-summer season, sun angle close to the other blind strip), and the delete of the old file. controls/sites.json updated; item 12d downloads it. Item 15's result stands as reported; nothing adopted.

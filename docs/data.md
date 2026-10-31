@@ -84,7 +84,7 @@ Which site is in which group is decided by a person before the first tuning run 
 | Perseverance | ESP_068822_1985 | held out | parachute, backshell, heat shield, descent stage, rover |
 | InSight | ESP_087360_1845 | held out | lander, backshell, parachute, heat shield |
 | Zhurong | ESP_075625_2055 | held out | lander, parachute, backshell, heat shield, rover |
-| Viking 2 | ESP_077167_2285 | spare | lander; not scored, not tuned on; a replacement if a tuning site fails |
+| Viking 2 | ESP_046150_2280 | heldout (v2 blind) | lander; replaced ESP_077167_2285 on 10-30, whose footprint missed the lander |
 | Opportunity | ESP_050177_1780 | spare | heat shield, parachute, backshell; sun too high for shadows |
 | Beagle 2 | ESP_037145_1915, ESP_039308_1915, ESP_040363_1915 | final exam | lander, 1.5 m, partly deployed |
 

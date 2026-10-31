@@ -309,10 +309,10 @@
     {
       "name": "viking2",
       "group": "heldout",
-      "lat": 47.64,
+      "lat": 47.67,
       "lon_e": 134.29,
       "strips": [
-        "ESP_077167_2285"
+        "ESP_046150_2280"
       ],
       "pieces": [
         "lander"
