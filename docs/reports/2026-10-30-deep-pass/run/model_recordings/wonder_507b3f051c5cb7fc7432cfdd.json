@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f0293992aa67dd89956845e12ec63c80c3526e1ef0fd79ea05880d1ba9c0abd8",
+        "bytes": 75413
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "9bbff0bea916a58b00b29ac7aa149a68edee874b3027f4e66a069937ffcabfba",
+        "bytes": 8130
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "1d1bcd322e0a25493233b8f5baf93fe2a41d63938860d9510da5fbe616a38fbf",
+        "bytes": 86532
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.6,
+   "reason": "The centre shows only an irregular, soft-edged bright-dark pair like the rock and crater shadows in the reference image, with no straight edges or distinct geometric outline.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.6, \"reason\": \"The centre shows only an irregular, soft-edged bright-dark pair like the rock and crater shadows in the reference image, with no straight edges or distinct geometric outline.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 980
+ }
+}

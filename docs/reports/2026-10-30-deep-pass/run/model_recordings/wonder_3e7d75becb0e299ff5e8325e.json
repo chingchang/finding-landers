@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "56c2c56d6f8d24e974972af1c128828e80c3ee882a87e26e64848d643078520b",
+        "bytes": 112344
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ef583fe43ee20dec84bffb8fe24edbbc3b0a05514e4d3e7b88f97819bb619f2c",
+        "bytes": 8889
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "4dc4e42006e2cc4e00888b8ca152d8752152ff7baf51273af97d74d41a046d29",
+        "bytes": 92417
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.78,
+   "reason": "The bright feature is a tapered, slightly curved band with soft gradational edges and no paired shadow or straight crisp outline, matching a sunlit natural slope rather than raised hardware.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.78, \"reason\": \"The bright feature is a tapered, slightly curved band with soft gradational edges and no paired shadow or straight crisp outline, matching a sunlit natural slope rather than raised hardware.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 536
+ }
+}

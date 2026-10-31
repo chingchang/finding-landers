@@ -1,0 +1,15 @@
+{
+ "what": "item 16a: fresh frozen-v1 detection against the list item 13 took, compared on row, col and branch",
+ "source": "out/heldout_v1/candidates_heldout_v1.json",
+ "source_detector_version": "v0.4",
+ "source_commit": "f24fae007f20d061565c6224bdd00e04b5690c2a",
+ "rules_applied_afterwards": null,
+ "fresh": 68312,
+ "source_rows": 68312,
+ "in_both": 68312,
+ "in_both_with_another_score": 0,
+ "in_both_with_another_raw_score": 0,
+ "in_both_same_order": true,
+ "only_fresh": [],
+ "only_source": []
+}

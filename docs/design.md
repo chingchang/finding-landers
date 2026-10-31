@@ -100,6 +100,14 @@ added is the scoring machinery around it.
    raise flagged, the ledger, the coverage map as item 11a writes it, and a blind variant that passes the leak
    guard and can be published.
 
+### v2 (plan item 16a)
+
+`scripts/v2.py`, on strips by observation id, once the tag `frozen-v2` exists: frozen-v1's detector and thresholds, unchanged;
+the top of each strip re-ranked by a logistic regression on a frozen DINOv2 embedding, and each candidate listed at its better
+rank of the two (chosen after seeing item 13's result, judged only by the blind run); the half-fitted rate beside each score;
+then Wonder's votes and Spark's review if `landers/v2.json` turns them on. The weights are a file, so the run reads no key or
+index, and `landers/v2.py` refuses to open one while a strip runs. SAM is not in this stage.
+
 ## Who sees the answers
 
 | what | detector and tests | SAM, Wonder, Spark | scoring script | tuning loop | person |

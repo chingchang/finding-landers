@@ -1,0 +1,1212 @@
+{
+ "strip": "ESP_037145_1915",
+ "backend": "recorded",
+ "ranks": [
+  0,
+  4,
+  5,
+  8,
+  12,
+  13,
+  14,
+  16,
+  22,
+  23,
+  25,
+  27,
+  28,
+  30,
+  31,
+  32,
+  34,
+  35,
+  36,
+  37
+ ],
+ "strip_key": "strip_a",
+ "turns": 4,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Hardware advisory vote alone cannot raise grade."
+  },
+  "c001": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c002": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Hardware advisory vote alone cannot raise grade."
+  },
+  "c004": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Hardware advisory vote alone cannot raise grade."
+  },
+  "c006": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Hardware advisory vote alone cannot raise grade."
+  },
+  "c008": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c009": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c010": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c011": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Hardware advisory vote alone cannot raise grade."
+  },
+  "c012": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory votes describing diffuse irregular terrain support lowering."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Hardware advisory vote alone cannot raise grade."
+  },
+  "c014": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Unsure advisory vote leaves grade unchanged."
+  },
+  "c015": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory votes describing diffuse irregular terrain support lowering."
+  },
+  "c016": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Unsure advisory vote leaves grade unchanged."
+  },
+  "c017": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Unsure advisory vote leaves grade unchanged."
+  },
+  "c018": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Unsure advisory vote leaves grade unchanged."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 10427
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 427
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 483
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 487
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 491
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 536
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 453
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 474
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 469
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 461
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 489
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 447
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 464
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 959
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 457
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 455
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 931
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 442
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 512
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 479
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 431
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c000",
+    "reason": "Hardware advisory vote alone cannot raise grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "Hardware advisory vote alone cannot raise grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005",
+    "reason": "Hardware advisory vote alone cannot raise grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007",
+    "reason": "Hardware advisory vote alone cannot raise grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011",
+    "reason": "Hardware advisory vote alone cannot raise grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012",
+    "reason": "Natural advisory votes describing diffuse irregular terrain support lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013",
+    "reason": "Hardware advisory vote alone cannot raise grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014",
+    "reason": "Unsure advisory vote leaves grade unchanged."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015",
+    "reason": "Natural advisory votes describing diffuse irregular terrain support lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016",
+    "reason": "Unsure advisory vote leaves grade unchanged."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017",
+    "reason": "Unsure advisory vote leaves grade unchanged."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018",
+    "reason": "Natural advisory vote describing diffuse irregular terrain supports lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019",
+    "reason": "Unsure advisory vote leaves grade unchanged."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "checks": []
+}

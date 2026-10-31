@@ -1,0 +1,1227 @@
+{
+ "strip": "ESP_068822_1985",
+ "backend": "recorded",
+ "ranks": [
+  1,
+  2,
+  4,
+  6,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24
+ ],
+ "strip_key": "strip_a",
+ "turns": 5,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Advisory vote describes compact crisply outlined body with adjacent shadow unlike terrain while persistence note shows limited coverage."
+  },
+  "c001": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes irregular blurred dark blob identical to scattered spots with no straight edges or distinct shadow."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Advisory vote describes bright sharply rectangular patch with contiguous shadow unlike mottled reference while persistence note shows limited coverage."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote remains unsure with blurred irregular edges and no resolvable outline or shadow to distinguish from rock."
+  },
+  "c004": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes diffuse irregular blob with soft mottled edges and no crisp outline or paired shadow."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Advisory vote describes smooth bright shape with crisp edge and adjacent shadow markedly sharper than surrounding terrain while persistence note shows limited coverage."
+  },
+  "c006": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Multiple advisory votes describe irregular fuzzy-edged blob with no straight edges or distinct shadow consistent with natural rock."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote remains unsure with tiny bright spot and no resolvable outline or shadow indistinguishable from speckles."
+  },
+  "c008": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes tiny irregular grainy blob with no crisp edges or paired shadow resembling speckles elsewhere."
+  },
+  "c009": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes diffuse irregular blob with no crisp edges and no cast shadow blending into mottled terrain."
+  },
+  "c010": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Advisory vote describes saturated sharply angular quadrilateral unlike dark streaked terrain while persistence note shows limited coverage."
+  },
+  "c011": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Majority advisory votes describe soft round blob matching scattered pebbles with no crisp outline despite dissenting hardware vote."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Advisory vote describes crisp saturated elliptical body with contiguous shadow unlike mottled texture while persistence note shows limited coverage."
+  },
+  "c013": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes irregular diffuse cluster with no straight edges or crisp outline blending into speckled terrain."
+  },
+  "c014": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes irregular fuzzy blob with adjacent speckle matching rocky texture and no crisp straight edges."
+  },
+  "c015": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes fuzzy irregular blob matching sunlit speckles with no crisp edge or distinct raised-body shadow."
+  },
+  "c016": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes diffuse irregular blob with soft adjacent patch and no crisp edges matching speckling across terrain."
+  },
+  "c017": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes diffuse irregular blob matching other patches with no crisp outline or distinct shadow."
+  },
+  "c018": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote describes soft small bright blob with no crisp outline or shadow resembling other bright speckles."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote remains unsure with irregular cluster and no crisp outline indistinguishable from surrounding noise."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 9947
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 470
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 467
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 442
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 430
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 446
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 475
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 956
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 425
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 414
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 430
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 423
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 971
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 446
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 428
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 455
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 449
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 477
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 420
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 407
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 436
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c000",
+    "reason": "Advisory vote describes compact crisply outlined body with adjacent shadow unlike terrain while persistence note shows limited coverage."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "Advisory vote describes irregular blurred dark blob identical to scattered spots with no straight edges or distinct shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c002",
+    "reason": "Advisory vote describes bright sharply rectangular patch with contiguous shadow unlike mottled reference while persistence note shows limited coverage."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "Advisory vote remains unsure with blurred irregular edges and no resolvable outline or shadow to distinguish from rock."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Advisory vote describes diffuse irregular blob with soft mottled edges and no crisp outline or paired shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c005",
+    "reason": "Advisory vote describes smooth bright shape with crisp edge and adjacent shadow markedly sharper than surrounding terrain while persistence note shows limited coverage."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Multiple advisory votes describe irregular fuzzy-edged blob with no straight edges or distinct shadow consistent with natural rock."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007",
+    "reason": "Advisory vote remains unsure with tiny bright spot and no resolvable outline or shadow indistinguishable from speckles."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008",
+    "reason": "Advisory vote describes tiny irregular grainy blob with no crisp edges or paired shadow resembling speckles elsewhere."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009",
+    "reason": "Advisory vote describes diffuse irregular blob with no crisp edges and no cast shadow blending into mottled terrain."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c010",
+    "reason": "Advisory vote describes saturated sharply angular quadrilateral unlike dark streaked terrain while persistence note shows limited coverage."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011",
+    "reason": "Majority advisory votes describe soft round blob matching scattered pebbles with no crisp outline despite dissenting hardware vote."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c012",
+    "reason": "Advisory vote describes crisp saturated elliptical body with contiguous shadow unlike mottled texture while persistence note shows limited coverage."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013",
+    "reason": "Advisory vote describes irregular diffuse cluster with no straight edges or crisp outline blending into speckled terrain."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014",
+    "reason": "Advisory vote describes irregular fuzzy blob with adjacent speckle matching rocky texture and no crisp straight edges."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015",
+    "reason": "Advisory vote describes fuzzy irregular blob matching sunlit speckles with no crisp edge or distinct raised-body shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016",
+    "reason": "Advisory vote describes diffuse irregular blob with soft adjacent patch and no crisp edges matching speckling across terrain."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017",
+    "reason": "Advisory vote describes diffuse irregular blob matching other patches with no crisp outline or distinct shadow."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018",
+    "reason": "Advisory vote describes soft small bright blob with no crisp outline or shadow resembling other bright speckles."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019",
+    "reason": "Advisory vote remains unsure with irregular cluster and no crisp outline indistinguishable from surrounding noise."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "checks": []
+}

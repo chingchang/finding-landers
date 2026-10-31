@@ -1,0 +1,89 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground at about 25 to 50 cm per pixel. Image 1 is a square at native resolution centred on an object a detector flagged. Image 2 is the centre of image 1 enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: is the object at the centre of image 1 more consistent with a piece of manufactured hardware (a metal or fabric object with a crisp outline, a shadow of a raised body, unlike its surroundings) or with a natural feature (a rock, a crater rim, a slope, a ripple crest, a frost or dust pattern)? Answer with the schema: verdict hardware, natural or unsure; confidence 0 to 1; reason, one sentence naming what in the pixels decided it. Say unsure when the pixels do not decide it."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "32a2ab2a6b1d609218786b8ad465c3a1bfd777f1b25c3de39454931dd813a8ec",
+        "bytes": 55735
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "534e0b1b78d4c52ff8068249240a4802a5cd05b988c590cd810c1fc012d09feb",
+        "bytes": 6650
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "1d1bcd322e0a25493233b8f5baf93fe2a41d63938860d9510da5fbe616a38fbf",
+        "bytes": 86532
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "vote",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdict",
+      "confidence",
+      "reason"
+     ],
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "hardware",
+        "natural",
+        "unsure"
+       ]
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "reason": {
+       "type": "string",
+       "maxLength": 300
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.8,
+   "reason": "The central feature is a soft, irregular circular bright-to-dark bowl with no straight edges, crisp manufactured outline, or detached raised-body shadow, matching the surrounding cratered rocky terrain.",
+   "verdict": "natural"
+  },
+  "raw": "{\"confidence\": 0.8, \"reason\": \"The central feature is a soft, irregular circular bright-to-dark bowl with no straight edges, crisp manufactured outline, or detached raised-body shadow, matching the surrounding cratered rocky terrain.\", \"verdict\": \"natural\"}",
+  "input_tokens": 497,
+  "output_tokens": 551
+ }
+}

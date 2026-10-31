@@ -1,0 +1,1325 @@
+{
+ "strip": "ESP_048041_1780",
+ "backend": "recorded",
+ "ranks": [
+  0,
+  7,
+  8,
+  13,
+  14,
+  16,
+  22,
+  24,
+  27,
+  34,
+  35,
+  38,
+  45,
+  59,
+  62,
+  72,
+  74,
+  75,
+  78,
+  90
+ ],
+ "strip_key": "strip_a",
+ "turns": 6,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "All advisory votes are natural with no hardware dissent."
+  },
+  "c001": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+  },
+  "c003": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+  },
+  "c006": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c007": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+  },
+  "c009": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c010": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c011": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "All advisory votes are natural with no hardware dissent."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes an unsure verdict so natural consensus is absent."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes unsure verdicts so natural consensus is absent."
+  },
+  "c014": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+  },
+  "c016": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c017": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory includes an unsure verdict so natural consensus is absent."
+  },
+  "c018": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  },
+  "c019": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "The advisory vote is natural with no hardware dissent."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 11460
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 903
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 448
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 423
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 426
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 437
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 429
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 482
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 439
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 977
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 456
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 439
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 932
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 447
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 967
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 433
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 466
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 430
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 965
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 455
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 426
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c008",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1395
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c004",
+    "kind": "second_date_check"
+   },
+   "result": {
+    "refused": "second_date_check is not available in this run; more_votes is"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "request_check",
+   "args": {
+    "id": "c002",
+    "kind": "second_date_check"
+   },
+   "result": {
+    "refused": "second_date_check is not available in this run; more_votes is"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c000",
+    "reason": "All advisory votes are natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002",
+    "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005",
+    "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008",
+    "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011",
+    "reason": "All advisory votes are natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012",
+    "reason": "Advisory includes an unsure verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013",
+    "reason": "Advisory includes unsure verdicts so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015",
+    "reason": "Advisory includes a hardware verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017",
+    "reason": "Advisory includes an unsure verdict so natural consensus is absent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 5,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019",
+    "reason": "The advisory vote is natural with no hardware dissent."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "lower"
+   }
+  }
+ ],
+ "checks": [
+  {
+   "id": "c008",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.68,
+      "reason": "The centre object is an irregular bright blob with an adjacent dark shadow matching the other scattered bright rocks in the scene, with no straight edges, crisp geometric outline, or anomalous structure.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 470
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.75,
+      "reason": "The central black-and-white pair has an irregular, grainy outline matching surrounding rocky bright spots, with no straight edges or distinct manufactured shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -29,
+       "dcol": 7,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 610
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.68,
+      "reason": "The centre object is a rounded, irregular bright blob with a simple adjacent shadow, similar in tone to other scattered bright speckles in the terrain and lacking straight edges or manufactured geometry.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 9,
+       "dcol": -14,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 595
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 1 natural, 0 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c004",
+   "kind": "second_date_check",
+   "refused": "second_date_check is not available in this run; more_votes is"
+  },
+  {
+   "id": "c002",
+   "kind": "second_date_check",
+   "refused": "second_date_check is not available in this run; more_votes is"
+  }
+ ]
+}

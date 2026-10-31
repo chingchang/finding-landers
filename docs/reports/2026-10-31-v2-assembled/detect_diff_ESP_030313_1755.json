@@ -1,0 +1,178 @@
+{
+ "what": "item 16a: fresh frozen-v1 detection against the list item 13 took, compared on row, col and branch",
+ "source": "out/shape_v3/candidates_v03_features.json",
+ "source_detector_version": "v0.3",
+ "source_commit": "0c9e3d4227a254549ad2103cd6311fd3184453aa",
+ "rules_applied_afterwards": "landers/shape_v3.json",
+ "fresh": 14006,
+ "source_rows": 14005,
+ "in_both": 13994,
+ "in_both_with_another_score": 0,
+ "in_both_with_another_raw_score": 0,
+ "in_both_same_order": true,
+ "only_fresh": [
+  {
+   "row": 6481.9,
+   "col": 6697.1,
+   "branch": "dark_compact",
+   "score": 1.769,
+   "rank_in_its_list": 22
+  },
+  {
+   "row": 10502.5,
+   "col": 3302.9,
+   "branch": "dark_compact",
+   "score": 0.947,
+   "rank_in_its_list": 42
+  },
+  {
+   "row": 5672.8,
+   "col": 10730.0,
+   "branch": "dark_compact",
+   "score": 0.947,
+   "rank_in_its_list": 43
+  },
+  {
+   "row": 10944.5,
+   "col": 4005.5,
+   "branch": "dark_compact",
+   "score": 0.919,
+   "rank_in_its_list": 45
+  },
+  {
+   "row": 15562.5,
+   "col": 1959.1,
+   "branch": "dark_compact",
+   "score": 0.874,
+   "rank_in_its_list": 47
+  },
+  {
+   "row": 10302.9,
+   "col": 7238.7,
+   "branch": "dark_compact",
+   "score": 0.817,
+   "rank_in_its_list": 53
+  },
+  {
+   "row": 13328.2,
+   "col": 6927.1,
+   "branch": "dark_compact",
+   "score": 0.779,
+   "rank_in_its_list": 59
+  },
+  {
+   "row": 2742.4,
+   "col": 10529.2,
+   "branch": "dark_compact",
+   "score": 0.68,
+   "rank_in_its_list": 67
+  },
+  {
+   "row": 4295.2,
+   "col": 12741.6,
+   "branch": "dark_compact",
+   "score": 0.677,
+   "rank_in_its_list": 68
+  },
+  {
+   "row": 11262.0,
+   "col": 4905.1,
+   "branch": "dark_compact",
+   "score": 0.613,
+   "rank_in_its_list": 77
+  },
+  {
+   "row": 1590.8,
+   "col": 2499.4,
+   "branch": "dark_compact",
+   "score": 0.601,
+   "rank_in_its_list": 78
+  },
+  {
+   "row": 10497.9,
+   "col": 3307.7,
+   "branch": "dark_compact",
+   "score": -2.021,
+   "rank_in_its_list": 9850
+  }
+ ],
+ "only_source": [
+  {
+   "row": 6482.5,
+   "col": 6698.2,
+   "branch": "dark",
+   "score": -0.335,
+   "rank_in_its_list": 307
+  },
+  {
+   "row": 10943.1,
+   "col": 4007.6,
+   "branch": "dark",
+   "score": -1.167,
+   "rank_in_its_list": 1935
+  },
+  {
+   "row": 10500.1,
+   "col": 3305.0,
+   "branch": "dark",
+   "score": -1.273,
+   "rank_in_its_list": 2441
+  },
+  {
+   "row": 5668.5,
+   "col": 10729.9,
+   "branch": "dark",
+   "score": -1.273,
+   "rank_in_its_list": 2443
+  },
+  {
+   "row": 15559.3,
+   "col": 1960.0,
+   "branch": "dark",
+   "score": -1.351,
+   "rank_in_its_list": 2929
+  },
+  {
+   "row": 13328.7,
+   "col": 6933.1,
+   "branch": "dark_compact",
+   "score": -1.418,
+   "rank_in_its_list": 3393
+  },
+  {
+   "row": 11262.4,
+   "col": 4906.1,
+   "branch": "dark",
+   "score": -1.662,
+   "rank_in_its_list": 5776
+  },
+  {
+   "row": 1590.9,
+   "col": 2503.0,
+   "branch": "dark",
+   "score": -1.676,
+   "rank_in_its_list": 5905
+  },
+  {
+   "row": 4295.6,
+   "col": 12747.0,
+   "branch": "dark_compact",
+   "score": -1.799,
+   "rank_in_its_list": 7006
+  },
+  {
+   "row": 2742.9,
+   "col": 10533.1,
+   "branch": "dark_compact",
+   "score": -1.828,
+   "rank_in_its_list": 7304
+  },
+  {
+   "row": 10302.5,
+   "col": 7243.1,
+   "branch": "dark_compact",
+   "score": -1.834,
+   "rank_in_its_list": 7386
+  }
+ ]
+}

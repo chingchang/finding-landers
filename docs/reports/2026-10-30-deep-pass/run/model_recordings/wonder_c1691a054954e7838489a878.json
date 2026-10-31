@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "48ab9fafa19000527e2547684dcaf2ca893e44c02e5b8aba4a9e14b53eaa8087",
+        "bytes": 75242
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d30ed70eee86c4ad5ff2a6dbf6ec26a76dfbbd6d715d446ce2530361e6b5a7f6",
+        "bytes": 8170
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "fcb6ab90a9639e4ed45db064b9ca64b30a2f70aba6bed7eefdd55e4e1213053c",
+        "bytes": 74489
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.15,
+   "place": "",
+   "recognised": false,
+   "shows": "Grayscale, rough and mottled planetary regolith/rocky terrain with irregular pits, bumps and shadows. In the centre of image 1 there is a single tiny bright white speck, visible as a small bright blob"
+  },
+  "raw": "{\"confidence\": 0.15, \"place\": \"\", \"recognised\": false, \"shows\": \"Grayscale, rough and mottled planetary regolith/rocky terrain with irregular pits, bumps and shadows. In the centre of image 1 there is a single tiny bright white speck, visible as a small bright blob\" }",
+  "input_tokens": 424,
+  "output_tokens": 823
+ }
+}

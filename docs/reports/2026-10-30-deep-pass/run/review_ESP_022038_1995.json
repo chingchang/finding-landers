@@ -1,0 +1,1212 @@
+{
+ "strip": "ESP_022038_1995",
+ "backend": "recorded",
+ "ranks": [
+  0,
+  1,
+  2,
+  4,
+  5,
+  6,
+  7,
+  9,
+  10,
+  13,
+  16,
+  17,
+  18,
+  19,
+  21,
+  24,
+  25,
+  27,
+  34,
+  39
+ ],
+ "strip_key": "strip_a",
+ "turns": 5,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with angular facet and sharp shadow absent from surrounding texture, so further review remains warranted."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with crisp-edged lobes and shadow on smooth ground unlike reference texture, so further review remains warranted."
+  },
+  "c002": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with fuzzy irregular spot and similar speckles across terrain, supporting a lower grade."
+  },
+  "c003": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with diffuse mottled pixels blending into rough terrain and no crisp outline, supporting a lower grade."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with crisp-edged lobes and shadows on smooth regolith unlike mottled rocks, so further review remains warranted."
+  },
+  "c005": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with irregular patch and amorphous shadow matching surrounding rock texture, supporting a lower grade."
+  },
+  "c006": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with sharply bounded multi-lobed cluster standing out from speckled terrain, so further review remains warranted."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports unsure with featureless oval and no resolvable manufactured edges, so further review remains warranted."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with crisp-edged oval and adjacent sharp shadow unlike diffuse texture, so further review remains warranted."
+  },
+  "c009": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with sharply edged angular fragments unlike diffuse speckled rocks, so further review remains warranted."
+  },
+  "c010": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports unsure with bright and dark facets equally compatible with boulder or debris, so further review remains warranted."
+  },
+  "c011": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with irregular lobate outline and similar nearby patch and no straight edges, supporting a lower grade."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports hardware with rectangular block and straight sharp edges plus adjacent shadow, so further review remains warranted."
+  },
+  "c013": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with irregular blob matching similar bright rock and no geometric outline, supporting a lower grade."
+  },
+  "c014": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with soft mottled edges matching repeated ridge crests and no crisp outline, supporting a lower grade."
+  },
+  "c015": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with soft spot matching similar specks and no crisp geometric outline, supporting a lower grade."
+  },
+  "c016": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with soft-edged blob matching numerous similar speckles and no shadow, supporting a lower grade."
+  },
+  "c017": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports natural with diffuse dark blob indistinguishable from many similar speckles, supporting a lower grade."
+  },
+  "c018": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports unsure with few-pixel blob and no crisp outline indistinguishable from rock, so further review remains warranted."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Advisory vote reports unsure with blurry triangle and irregular patch separable from nearby pixels, so further review remains warranted."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 9022
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c000"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 453
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c001"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 455
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c002"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 443
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c003"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 449
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c004"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 437
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c005"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 447
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c006"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 434
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c007"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 477
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c008"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 441
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c009"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 414
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c010"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 497
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c011"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 447
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c012"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 449
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c013"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 434
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c014"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 422
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c015"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 461
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c016"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 434
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c017"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 449
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c018"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 443
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "get_candidate",
+   "args": {
+    "id": "c019"
+   },
+   "result": {
+    "keys": [
+     "area_px",
+     "branch",
+     "grade",
+     "id",
+     "persistence",
+     "score",
+     "shape",
+     "tests",
+     "votes"
+    ],
+    "bytes": 456
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c000",
+    "reason": "Advisory vote reports hardware with angular facet and sharp shadow absent from surrounding texture, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c001",
+    "reason": "Advisory vote reports hardware with crisp-edged lobes and shadow on smooth ground unlike reference texture, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c002",
+    "reason": "Advisory vote reports natural with fuzzy irregular spot and similar speckles across terrain, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "Advisory vote reports natural with diffuse mottled pixels blending into rough terrain and no crisp outline, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Advisory vote reports hardware with crisp-edged lobes and shadows on smooth regolith unlike mottled rocks, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005",
+    "reason": "Advisory vote reports natural with irregular patch and amorphous shadow matching surrounding rock texture, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Advisory vote reports hardware with sharply bounded multi-lobed cluster standing out from speckled terrain, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007",
+    "reason": "Advisory vote reports unsure with featureless oval and no resolvable manufactured edges, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c008",
+    "reason": "Advisory vote reports hardware with crisp-edged oval and adjacent sharp shadow unlike diffuse texture, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c009",
+    "reason": "Advisory vote reports hardware with sharply edged angular fragments unlike diffuse speckled rocks, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010",
+    "reason": "Advisory vote reports unsure with bright and dark facets equally compatible with boulder or debris, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c011",
+    "reason": "Advisory vote reports natural with irregular lobate outline and similar nearby patch and no straight edges, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c012",
+    "reason": "Advisory vote reports hardware with rectangular block and straight sharp edges plus adjacent shadow, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013",
+    "reason": "Advisory vote reports natural with irregular blob matching similar bright rock and no geometric outline, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c014",
+    "reason": "Advisory vote reports natural with soft mottled edges matching repeated ridge crests and no crisp outline, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c015",
+    "reason": "Advisory vote reports natural with soft spot matching similar specks and no crisp geometric outline, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c016",
+    "reason": "Advisory vote reports natural with soft-edged blob matching numerous similar speckles and no shadow, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c017",
+    "reason": "Advisory vote reports natural with diffuse dark blob indistinguishable from many similar speckles, supporting a lower grade."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018",
+    "reason": "Advisory vote reports unsure with few-pixel blob and no crisp outline indistinguishable from rock, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 4,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c019",
+    "reason": "Advisory vote reports unsure with blurry triangle and irregular patch separable from nearby pixels, so further review remains warranted."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "checks": []
+}

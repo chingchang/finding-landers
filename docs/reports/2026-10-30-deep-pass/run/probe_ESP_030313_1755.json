@@ -1,0 +1,304 @@
+{
+ "strip": "ESP_030313_1755",
+ "backend": "recorded",
+ "seed": 0,
+ "records": [
+  {
+   "id": "c000",
+   "branch": "bright",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.999,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 0.999,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 0.999,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "unknown",
+     "shows": "A mottled grey, grainy planetary surface with a small, saturated white, roughly diamond-shaped feature near the centre, a darker patch immediately below it, and a few much smaller bright specks nearby",
+     "confidence": 0.25,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Image 1 shows dark, mottled, low-contrast grayscale planetary ground with a small, intensely bright, irregular central feature, a smaller bright speck just north-west of it, and a diffuse dark streak/",
+     "confidence": 0.18,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 1,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Grayscale, grainy mottled terrain with varied dark and light patches. In Image 1 there is a small, irregular, saturated-white patch slightly right and above centre, with two much smaller bright specks",
+     "confidence": 0.12,
+     "augmentation": {
+      "drow": -28,
+      "dcol": -31,
+      "flip_h": false,
+      "flip_v": true,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c001",
+   "branch": "sheet",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Image 1: dark grey to black, finely textured ground covered with roughly parallel, sinuous ridges and grooves running approximately north-south, with a small, bright white, irregular patch near thever",
+     "confidence": 0.25,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "",
+     "shows": "Image 1 is a grayscale orbital view of dark, grainy, closely spaced wavy parallel ridges running roughly vertically, with a small saturated white irregular bilobed/roughly heart-shaped patch in the.rf",
+     "confidence": 0.1,
+     "augmentation": {
+      "drow": 27,
+      "dcol": 0,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Grayscale orbital ground views. Image 1 shows dark, grainy, diagonally ridged/rippled terrain with a small, saturated, irregular roughly heart-shaped white patch at the centre and no visible internal,",
+     "confidence": 0.18,
+     "augmentation": {
+      "drow": 9,
+      "dcol": 3,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 2.0,
+      "hi_pct": 98.0
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  },
+  {
+   "id": "c002",
+   "branch": "shadow",
+   "crops": [
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    },
+    {
+     "size": 256,
+     "zoom": 4,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     },
+     "valid_fraction": 1.0,
+     "has_reference": true
+    }
+   ],
+   "prompt": "vote-v1",
+   "probe": [
+    {
+     "recognised": false,
+     "place": "Not recognised",
+     "shows": "Grayscale orbital views of rough, mottled planetary terrain with fine-scale textured ground. At the centre of Image 1, enlarged in Image 2, is a small, bright, roughly rounded white blob a few pixels\u8f68",
+     "confidence": 0.2,
+     "augmentation": {
+      "drow": 0,
+      "dcol": 0,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 0.5,
+      "hi_pct": 99.5
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Unknown - not recognised; only a rough, mottled planetary surface in orbital view is visible",
+     "shows": "Grayscale orbital imagery of finely textured, uneven, speckled ground. Near the centre of Image 1 is a single small, compact, very bright spot. Image 2, the 4x enlargement, shows it as an irregular ~8",
+     "confidence": 0.18,
+     "augmentation": {
+      "drow": 21,
+      "dcol": 11,
+      "flip_h": false,
+      "flip_v": false,
+      "lo_pct": 1.0,
+      "hi_pct": 99.0
+     }
+    },
+    {
+     "recognised": false,
+     "place": "Not recognised - unknown planetary surface",
+     "shows": "Grayscale orbital views of mottled, granular, ridged / lightly cratered terrain. Image 1 shows a single small, bright, few-pixel spot left of and slightly below centre, with a very faint linear streak",
+     "confidence": 0.1,
+     "augmentation": {
+      "drow": 4,
+      "dcol": -30,
+      "flip_h": true,
+      "flip_v": true,
+      "lo_pct": 0.2,
+      "hi_pct": 99.8
+     }
+    }
+   ],
+   "summary": {
+    "n": 3,
+    "recognised": 0,
+    "max_confidence": 0.0,
+    "claims": []
+   }
+  }
+ ]
+}

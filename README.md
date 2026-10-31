@@ -25,6 +25,11 @@ The pipeline calls three of Meta's models through the [Meta Model API](https://d
 - [Muse Spark](https://dev.meta.ai/models/muse-spark) reviews each strip's evidence through a fixed set of tools
   and keeps or lowers each grade, citing the evidence it used.
 
+v2's ranking also runs one open-weight model on this machine, not through the API:
+
+- [DINOv2](https://huggingface.co/facebook/dinov2-small) (small) embeds a crop of each candidate for the re-ranker, a
+  logistic regression whose rank is merged with the detector's. It adds no grade and reads nothing but the crop.
+
 ## License
 
 Code: Apache-2.0 (see LICENSE). Data: public domain with the credit above. Model outputs: subject to Meta's

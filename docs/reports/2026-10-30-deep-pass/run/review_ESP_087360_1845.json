@@ -1,0 +1,1069 @@
+{
+ "strip": "ESP_087360_1845",
+ "backend": "recorded",
+ "ranks": [
+  2,
+  3,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  17,
+  19,
+  21,
+  30,
+  36,
+  37,
+  38,
+  40,
+  41,
+  42
+ ],
+ "strip_key": "strip_a",
+ "turns": 4,
+ "stopped": "final answer",
+ "verdicts": {
+  "c000": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c001": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c002": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c003": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Mixed unsure and low-confidence natural votes without strong consensus support keeping for further review."
+  },
+  "c004": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Single hardware advisory alone cannot raise the grade and does not support lowering."
+  },
+  "c005": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Single hardware advisory alone cannot raise the grade and does not support lowering."
+  },
+  "c006": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Three additional consistent natural votes with strong confidence support lowering to likely natural."
+  },
+  "c007": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Single hardware advisory alone cannot raise the grade and does not support lowering."
+  },
+  "c008": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c009": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c010": {
+   "action": "lower",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Additional consistent natural votes outweigh the earlier mixed votes and support lowering."
+  },
+  "c011": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c012": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c013": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Three natural votes without high-confidence consensus are insufficient to lower without further checks."
+  },
+  "c014": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c015": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c016": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c017": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  },
+  "c018": {
+   "action": "keep",
+   "cites": [
+    "votes"
+   ],
+   "reason": "Three natural votes without high-confidence consensus are insufficient to lower without further checks."
+  },
+  "c019": {
+   "action": "keep",
+   "cites": [
+    "votes",
+    "persistence"
+   ],
+   "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+  }
+ },
+ "grades": {
+  "c000": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c001": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c002": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c003": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c004": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c005": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c006": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c007": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c008": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c009": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c010": {
+   "before": "needs second look",
+   "after": "likely natural",
+   "reviewed": true
+  },
+  "c011": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c012": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c013": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c014": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c015": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c016": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c017": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c018": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  },
+  "c019": {
+   "before": "needs second look",
+   "after": "needs second look",
+   "reviewed": true
+  }
+ },
+ "final": {
+  "verdicts": [
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c000"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c001"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c002"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c008"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c009"
+   },
+   {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c011"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c012"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c014"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c015"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c016"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c017"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018"
+   },
+   {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c019"
+   }
+  ],
+  "unrecorded": []
+ },
+ "tool_log": [
+  {
+   "turn": 1,
+   "tool": "list_candidates",
+   "args": {
+    "strip_key": "strip_a"
+   },
+   "result": {
+    "keys": [
+     "candidates",
+     "strip_key"
+    ],
+    "bytes": 10801
+   }
+  },
+  {
+   "turn": 1,
+   "tool": "read_thresholds",
+   "args": {},
+   "result": {
+    "keys": [
+     "basis",
+     "match_radius_m",
+     "match_radius_m_by_kind",
+     "pass",
+     "piece_kinds",
+     "top_n",
+     "version"
+    ],
+    "bytes": 728
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "request_check",
+   "args": {
+    "id": "c003",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1360
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "request_check",
+   "args": {
+    "id": "c006",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1380
+   }
+  },
+  {
+   "turn": 2,
+   "tool": "request_check",
+   "args": {
+    "id": "c010",
+    "kind": "more_votes"
+   },
+   "result": {
+    "keys": [
+     "id",
+     "kind",
+     "result"
+    ],
+    "bytes": 1433
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c000",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c000",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c001",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c001",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c002",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c002",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c003",
+    "reason": "Mixed unsure and low-confidence natural votes without strong consensus support keeping for further review."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c003",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c004",
+    "reason": "Single hardware advisory alone cannot raise the grade and does not support lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c004",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c005",
+    "reason": "Single hardware advisory alone cannot raise the grade and does not support lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c005",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c006",
+    "reason": "Three additional consistent natural votes with strong confidence support lowering to likely natural."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c006",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c007",
+    "reason": "Single hardware advisory alone cannot raise the grade and does not support lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c007",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c008",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c008",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c009",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c009",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "lower",
+    "cites": [
+     "votes"
+    ],
+    "id": "c010",
+    "reason": "Additional consistent natural votes outweigh the earlier mixed votes and support lowering."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c010",
+    "action": "lower"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c011",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c011",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c012",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c012",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c013",
+    "reason": "Three natural votes without high-confidence consensus are insufficient to lower without further checks."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c013",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c014",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c014",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c015",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c015",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c016",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c016",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c017",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c017",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes"
+    ],
+    "id": "c018",
+    "reason": "Three natural votes without high-confidence consensus are insufficient to lower without further checks."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c018",
+    "action": "keep"
+   }
+  },
+  {
+   "turn": 3,
+   "tool": "record_verdict",
+   "args": {
+    "action": "keep",
+    "cites": [
+     "votes",
+     "persistence"
+    ],
+    "id": "c019",
+    "reason": "Single low-confidence natural vote with one-date-only persistence is insufficient to lower."
+   },
+   "result": {
+    "recorded": true,
+    "id": "c019",
+    "action": "keep"
+   }
+  }
+ ],
+ "checks": [
+  {
+   "id": "c003",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.62,
+      "reason": "The centre shows irregular, soft-edged bright patches similar to bright mottling elsewhere in the frame, with no straight edges, symmetry, or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 641
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.62,
+      "reason": "The central bright patch has soft, irregular, forked edges blending into similar bright mottling scattered across the terrain, with no crisp straight outline or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -32,
+       "dcol": -25,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 844
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.75,
+      "reason": "The central bright patches have irregular, diffuse, blotchy edges blending into the mottled terrain, with no straight edges, crisp outline, or distinct raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 17,
+       "dcol": -8,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 402
+      }
+     }
+    ],
+    "grade_after": "needs second look",
+    "note": "kept: 1 natural, 0 hardware at or above 0.7"
+   }
+  },
+  {
+   "id": "c006",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The central bright patch has diffuse, irregular, soft-edged boundaries merging with the surrounding terrain and no crisp geometric outline or cast shadow of a raised object.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 454
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.82,
+      "reason": "The enlarged centre shows only diffuse mottled grey terrain merging into the bright sunlit rim at top and the dark crater interior, with no crisp outline or cast shadow of a raised object.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -28,
+       "dcol": 14,
+       "flip_h": true,
+       "flip_v": true,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 532
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.88,
+      "reason": "The centre shows an irregular bright-rimmed, shadow-filled bowl with gradational edges blending into the surrounding terrain and no straight edges or detached raised-body shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -27,
+       "dcol": -20,
+       "flip_h": false,
+       "flip_v": true,
+       "lo_pct": 2.0,
+       "hi_pct": 98.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 380
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  },
+  {
+   "id": "c010",
+   "kind": "more_votes",
+   "result": {
+    "votes": [
+     {
+      "verdict": "natural",
+      "confidence": 0.7,
+      "reason": "The centre shows an irregular, fuzzy bright lobe abutting a rounded dark shadow with no straight edges or crisp geometric outline, blending into the surrounding cratered terrain like a sunlit rock.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 0,
+       "dcol": 0,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 598
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.78,
+      "reason": "The central bright blob has an irregular, amorphous outline with an adjacent rock-like shadow and no straight edges, symmetry, or crisp manufactured geometry against the cratered terrain.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": -14,
+       "dcol": -27,
+       "flip_h": true,
+       "flip_v": false,
+       "lo_pct": 1.0,
+       "hi_pct": 99.0
+      },
+      "tokens": {
+       "input": 373,
+       "output": 534
+      }
+     },
+     {
+      "verdict": "natural",
+      "confidence": 0.72,
+      "reason": "The bright irregular patch with an adjacent dark lobe lacks straight edges or a crisp geometric outline and blends with the surrounding cratered, mottled terrain, consistent with a sunlit rock and its shadow.",
+      "off_schema": false,
+      "augmentation": {
+       "drow": 8,
+       "dcol": -27,
+       "flip_h": false,
+       "flip_v": false,
+       "lo_pct": 0.5,
+       "hi_pct": 99.5
+      },
+      "tokens": {
+       "input": 373,
+       "output": 573
+      }
+     }
+    ],
+    "grade_after": "likely natural",
+    "note": "lowered by votes: 3 natural at or above 0.7, none hardware"
+   }
+  }
+ ]
+}

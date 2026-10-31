@@ -1,0 +1,708 @@
+{
+ "request": {
+  "model": "muse-spark-1.3",
+  "reasoning_effort": "medium",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the reviewer in a search of orbital imagery for lost spacecraft hardware. You never see pixels. You read structured evidence through tools: for each candidate, the detector branch and score, the physical test outcomes (pass, fail, unsure, not run), persistence across two dates, mask measurements from a segmentation model, and advisory votes from a vision model. Grades are: candidate, needs second look, likely natural, not assessed. You may keep a grade or lower it; you can never raise one, and no model opinion raises one. For every candidate you review, call record_verdict with the action, the evidence fields your reason rests on, and a one-sentence reason. Every number in a reason must be copied from the evidence record; do not compute, round or estimate. When a bounded check would decide a case, call request_check first and read the result. Finish with the final JSON listing the verdicts you recorded. Use only the vocabulary above; never use found, discovered, confirmed or proven. Work in this order: read the candidates and the thresholds; order any checks; then, in one single turn, call record_verdict once for every candidate, all together; then give the final JSON. Do not fetch again after you start recording."
+   },
+   {
+    "role": "user",
+    "content": "Review the candidates for strip key: strip_a. Record a verdict for each."
+   },
+   {
+    "role": "assistant",
+    "content": "Grading every strip_a candidate \u2014 pulling the evidence first.",
+    "tool_calls": [
+     {
+      "id": "call_1dd6a54b-10e6-424f-8b33-88941962cce8",
+      "type": "function",
+      "function": {
+       "name": "list_candidates",
+       "arguments": "{\"strip_key\":\"strip_a\"}"
+      }
+     },
+     {
+      "id": "call_17aae263-1d9b-46a3-a2d6-ed868dbf49a2",
+      "type": "function",
+      "function": {
+       "name": "read_thresholds",
+       "arguments": "{}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_1dd6a54b-10e6-424f-8b33-88941962cce8",
+    "content": "{\"strip_key\": \"strip_a\", \"candidates\": [{\"id\": \"c000\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": -1.0007498125468632, \"area_px\": 12, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.68, \"reason\": \"The centre shows a saturated, crisp-edged white angular patch with a compact adjacent black shadow, a high-contrast raised-body signature unlike the mottled low-contrast surroundings and reference terrain.\"}]}, {\"id\": \"c001\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -1.002749312671832, \"area_px\": 11, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch has irregular, diffuse margins and a paired dark shadow like the numerous similar rock outcrops in image 1 and the reference, with no straight or crisp geometric outline.\"}]}, {\"id\": \"c002\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -3.493376655836041, \"area_px\": 75, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.78, \"reason\": \"The centre feature shows a soft, irregular bright face beside a diffuse dark shadow identical to nearby rocks and ripple crests, with no crisp straight or geometric edges.\"}, {\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The central bright speck and adjacent dark triangle have soft, irregular edges blending into the surrounding rippled texture, consistent with a small rock and its shadow rather than a crisp geometric hardware outline.\"}, {\"verdict\": \"unsure\", \"confidence\": 0.7, \"reason\": \"The centre is only a few blurred pixels\\u2014a bright blob beside a dark blob on rippled ground\\u2014with no crisp geometric outline or distinct shadow shape that separates hardware from a rock.\"}]}, {\"id\": \"c003\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -5.079480129967508, \"area_px\": 14, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright blob has soft, irregular edges and adjacent dark speckling matching the mottled rock and frost texture across the frame, with no crisp straight outline or distinct raised-body shadow.\"}]}, {\"id\": \"c004\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -5.2726818295426146, \"area_px\": 112, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The enlarged centre shows irregular, soft-edged bright clumps merging with the mottled terrain and an irregular dark shadow, with no crisp, straight, or geometric manufactured outline.\"}]}, {\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -7.394651337165708, \"area_px\": 352, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows an irregular, soft-edged bright patch with an adjacent dark shadow, matching a sunlit raised rock in the reference terrain and lacking any straight or crisp manufactured outline.\"}]}, {\"id\": \"c006\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -8.072481879530118, \"area_px\": 65, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The enlarged centre shows a fuzzy, irregular dark patch with amorphous bright edges blending into the mottled terrain, with no crisp geometric outline or distinct raised-body shadow.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.78, \"reason\": \"The centre shows a crisp-edged dark oval shadow abutted by two stark white glints, a contrast and shape absent from the mottled natural texture in the reference image.\"}, {\"verdict\": \"natural\", \"confidence\": 0.6, \"reason\": \"The centre shows only an irregular, soft-edged bright-dark pair like the rock and crater shadows in the reference image, with no straight edges or distinct geometric outline.\"}]}, {\"id\": \"c007\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -11.14596350912272, \"area_px\": 6, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre bright blob has soft, irregular edges blending into the mottled ground with an irregular adjacent dark shadow like the rock-and-shadow pairs in the reference, with no straight or crisp manufactured outline.\"}]}, {\"id\": \"c008\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -13.168207948012997, \"area_px\": 21, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch with an adjacent dark blob has irregular, diffuse edges and matches numerous similar sunlit-rock and shadow pairs in the surrounding and reference terrain.\"}]}, {\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -13.292676830792303, \"area_px\": 320, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The centre shows an irregular, diffuse bright patch contiguous with an oval dark patch and no straight or crisp geometric edges, consistent with a sunlit rock or slope casting a shadow like those in the reference terrain.\"}]}, {\"id\": \"c010\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -14.45213696575856, \"area_px\": 15, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre shows only an irregular, blurry dark blotch with soft edges matching the pitted rock and shadow textures in the reference, with no crisp geometric outline or distinct raised-body shadow.\"}]}, {\"id\": \"c011\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -15.054486378405398, \"area_px\": 119, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre feature is an irregular, roughly circular bright-and-dark pair with soft, blobby edges and no straight lines or geometric outline, consistent with a sunlit rock or crater rim and its shadow.\"}]}, {\"id\": \"c012\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -16.320919770057486, \"area_px\": 54, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.65, \"reason\": \"The centre is a sharply edged, uniformly black, roughly square diamond with a single bright interior pixel, unlike the amorphous mottled texture surrounding it.\"}]}, {\"id\": \"c013\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -17.083979005248686, \"area_px\": 69, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The centre is a soft-edged dark blob paired with a bright facet, matching rock-shadow and mottled frost patterns seen elsewhere in the frame with no crisp straight manufactured outline.\"}]}, {\"id\": \"c014\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -17.219945013746564, \"area_px\": 14, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.55, \"reason\": \"The central bright streak has an irregular, pixel-blended outline and a dark shadow similar in tone and shape to other small rock shadows in the surrounding mottled terrain.\"}]}, {\"id\": \"c015\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -20.08847788052987, \"area_px\": 86, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The centre feature is an irregular, soft-edged bright blob with no geometric outline or distinct raised-body shadow, resembling bright rock or frost patches in the surrounding terrain.\"}]}, {\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -21.172206948262936, \"area_px\": 976, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch has diffuse, irregular edges with no straight lines, crisp outline, or coherent raised-body shadow, and its mottled texture merges into the surrounding terrain.\"}]}, {\"id\": \"c017\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -22.023744063984005, \"area_px\": 10, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"Image 2 shows an irregular, mottled bright patch with diffuse jagged edges blending into the surrounding texture and an adjacent dark shadow, with no straight edges, uniform albedo, or geometric outline.\"}]}, {\"id\": \"c018\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -22.480879780054988, \"area_px\": 75, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.82, \"reason\": \"The centre bright lobe with its adjacent dark shadow matches the sun-facing highlight/shadow pattern of numerous small rocks in the reference image, with soft irregular edges blending into the mottled ground.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The centre shows a soft, irregular bright oval with a contiguous dark shadow on one side, matching a sunlit raised rock or crater rim with no straight, geometric manufactured outline.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The centre object is an isolated, saturated-white, sharply bounded raised body with a compact dark shadow, unlike any bright feature in the mottled natural reference terrain.\"}]}, {\"id\": \"c019\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -23.26718320419895, \"area_px\": 75, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright blob has soft, irregular edges and a paired dark shadow matching other rock-and-shadow pairs in image 1 and the reference terrain, with no crisp straight geometry.\"}]}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_17aae263-1d9b-46a3-a2d6-ed868dbf49a2",
+    "content": "{\"version\": 1, \"basis\": \"docs/proposals/thresholds-v0.md and docs/proposals/scoring-v1.md: one candidate matches at most one piece; hardware, fabric and marks reported apart; a mark gets a 20 m match radius because its recorded point is one place on a 20 to 40 m feature. Version 0 (5 m for everything, any candidate could serve several pieces) was used for the first score of baseline v1 and that number is kept beside the rescored one.\", \"match_radius_m\": 5.0, \"match_radius_m_by_kind\": {\"mark\": 20.0}, \"piece_kinds\": {\"hardware\": [\"lander\", \"backshell\", \"heat_shield\", \"rover\"], \"fabric\": [\"parachute\"], \"mark\": [\"crash_scar\", \"descent_stage\"]}, \"top_n\": 20, \"pass\": {\"min_recall_at_n\": 0.8, \"max_false_alarms_per_km2\": 2.0}}"
+   },
+   {
+    "role": "assistant",
+    "content": "I\u2019ve mapped the strip overview \u2014 now gathering detailed records for each candidate.",
+    "tool_calls": [
+     {
+      "id": "call_43ed4518-7f5a-4e0b-827e-c56d61ab280a",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c000\"}"
+      }
+     },
+     {
+      "id": "call_d03c005e-87b5-4204-af98-c4143eea3805",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c001\"}"
+      }
+     },
+     {
+      "id": "call_6c83c246-615d-4cca-bb1d-ec6d40a00be0",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c002\"}"
+      }
+     },
+     {
+      "id": "call_699d19b1-eb8e-4977-8381-3086f5557b2d",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c003\"}"
+      }
+     },
+     {
+      "id": "call_13c08ad6-0281-4f4f-8116-14955576c428",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c004\"}"
+      }
+     },
+     {
+      "id": "call_cc404e43-6dc8-461b-8fe7-94e917a4ed9f",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c005\"}"
+      }
+     },
+     {
+      "id": "call_4cac58de-9668-41fc-b942-1e96f24d12f1",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c006\"}"
+      }
+     },
+     {
+      "id": "call_705c8495-0d62-4865-a3d1-69931352afcf",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c007\"}"
+      }
+     },
+     {
+      "id": "call_b5c1d644-6b5c-473c-a039-097087d1c7d6",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c008\"}"
+      }
+     },
+     {
+      "id": "call_a1156900-5996-4be0-9f3a-0c51d85b0475",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c009\"}"
+      }
+     },
+     {
+      "id": "call_b6c6fb21-8b4b-4a56-b3f1-8677b85c68e9",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c010\"}"
+      }
+     },
+     {
+      "id": "call_623a3dbd-6ffa-48bf-b7a3-30a41de9806a",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c011\"}"
+      }
+     },
+     {
+      "id": "call_b7c0c839-086b-4f96-9d91-15f724a6c429",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c012\"}"
+      }
+     },
+     {
+      "id": "call_4ebc175f-83a6-4ce8-ac87-0dfcba077a3b",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c013\"}"
+      }
+     },
+     {
+      "id": "call_990b49d4-f2b2-4e85-a511-d2b81e50129e",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c014\"}"
+      }
+     },
+     {
+      "id": "call_2ec7dd1a-14c6-441c-9669-ff350334bd99",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c015\"}"
+      }
+     },
+     {
+      "id": "call_a473dc1a-6c45-4dc8-88a9-fdbfd172868c",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c016\"}"
+      }
+     },
+     {
+      "id": "call_4402a2b5-53df-4a0c-94a4-e0f5f5b334d9",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c017\"}"
+      }
+     },
+     {
+      "id": "call_b6e1dbee-4111-4c7f-8d42-fdb3c3ec1eb2",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c018\"}"
+      }
+     },
+     {
+      "id": "call_7cce25b9-6160-48b3-9791-287761011a84",
+      "type": "function",
+      "function": {
+       "name": "get_candidate",
+       "arguments": "{\"id\":\"c019\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_43ed4518-7f5a-4e0b-827e-c56d61ab280a",
+    "content": "{\"id\": \"c000\", \"branch\": \"shadow\", \"grade\": \"needs second look\", \"score\": -1.0007498125468632, \"area_px\": 12, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.68, \"reason\": \"The centre shows a saturated, crisp-edged white angular patch with a compact adjacent black shadow, a high-contrast raised-body signature unlike the mottled low-contrast surroundings and reference terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_d03c005e-87b5-4204-af98-c4143eea3805",
+    "content": "{\"id\": \"c001\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -1.002749312671832, \"area_px\": 11, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch has irregular, diffuse margins and a paired dark shadow like the numerous similar rock outcrops in image 1 and the reference, with no straight or crisp geometric outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_6c83c246-615d-4cca-bb1d-ec6d40a00be0",
+    "content": "{\"id\": \"c002\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -3.493376655836041, \"area_px\": 75, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.78, \"reason\": \"The centre feature shows a soft, irregular bright face beside a diffuse dark shadow identical to nearby rocks and ripple crests, with no crisp straight or geometric edges.\"}, {\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The central bright speck and adjacent dark triangle have soft, irregular edges blending into the surrounding rippled texture, consistent with a small rock and its shadow rather than a crisp geometric hardware outline.\"}, {\"verdict\": \"unsure\", \"confidence\": 0.7, \"reason\": \"The centre is only a few blurred pixels\\u2014a bright blob beside a dark blob on rippled ground\\u2014with no crisp geometric outline or distinct shadow shape that separates hardware from a rock.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_699d19b1-eb8e-4977-8381-3086f5557b2d",
+    "content": "{\"id\": \"c003\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -5.079480129967508, \"area_px\": 14, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright blob has soft, irregular edges and adjacent dark speckling matching the mottled rock and frost texture across the frame, with no crisp straight outline or distinct raised-body shadow.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_13c08ad6-0281-4f4f-8116-14955576c428",
+    "content": "{\"id\": \"c004\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -5.2726818295426146, \"area_px\": 112, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The enlarged centre shows irregular, soft-edged bright clumps merging with the mottled terrain and an irregular dark shadow, with no crisp, straight, or geometric manufactured outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_cc404e43-6dc8-461b-8fe7-94e917a4ed9f",
+    "content": "{\"id\": \"c005\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -7.394651337165708, \"area_px\": 352, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The enlarged centre shows an irregular, soft-edged bright patch with an adjacent dark shadow, matching a sunlit raised rock in the reference terrain and lacking any straight or crisp manufactured outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_4cac58de-9668-41fc-b942-1e96f24d12f1",
+    "content": "{\"id\": \"c006\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -8.072481879530118, \"area_px\": 65, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The enlarged centre shows a fuzzy, irregular dark patch with amorphous bright edges blending into the mottled terrain, with no crisp geometric outline or distinct raised-body shadow.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.78, \"reason\": \"The centre shows a crisp-edged dark oval shadow abutted by two stark white glints, a contrast and shape absent from the mottled natural texture in the reference image.\"}, {\"verdict\": \"natural\", \"confidence\": 0.6, \"reason\": \"The centre shows only an irregular, soft-edged bright-dark pair like the rock and crater shadows in the reference image, with no straight edges or distinct geometric outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_705c8495-0d62-4865-a3d1-69931352afcf",
+    "content": "{\"id\": \"c007\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -11.14596350912272, \"area_px\": 6, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre bright blob has soft, irregular edges blending into the mottled ground with an irregular adjacent dark shadow like the rock-and-shadow pairs in the reference, with no straight or crisp manufactured outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_b5c1d644-6b5c-473c-a039-097087d1c7d6",
+    "content": "{\"id\": \"c008\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -13.168207948012997, \"area_px\": 21, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch with an adjacent dark blob has irregular, diffuse edges and matches numerous similar sunlit-rock and shadow pairs in the surrounding and reference terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_a1156900-5996-4be0-9f3a-0c51d85b0475",
+    "content": "{\"id\": \"c009\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -13.292676830792303, \"area_px\": 320, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The centre shows an irregular, diffuse bright patch contiguous with an oval dark patch and no straight or crisp geometric edges, consistent with a sunlit rock or slope casting a shadow like those in the reference terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_b6c6fb21-8b4b-4a56-b3f1-8677b85c68e9",
+    "content": "{\"id\": \"c010\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -14.45213696575856, \"area_px\": 15, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre shows only an irregular, blurry dark blotch with soft edges matching the pitted rock and shadow textures in the reference, with no crisp geometric outline or distinct raised-body shadow.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_623a3dbd-6ffa-48bf-b7a3-30a41de9806a",
+    "content": "{\"id\": \"c011\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -15.054486378405398, \"area_px\": 119, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"The centre feature is an irregular, roughly circular bright-and-dark pair with soft, blobby edges and no straight lines or geometric outline, consistent with a sunlit rock or crater rim and its shadow.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_b7c0c839-086b-4f96-9d91-15f724a6c429",
+    "content": "{\"id\": \"c012\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -16.320919770057486, \"area_px\": 54, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"hardware\", \"confidence\": 0.65, \"reason\": \"The centre is a sharply edged, uniformly black, roughly square diamond with a single bright interior pixel, unlike the amorphous mottled texture surrounding it.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_4ebc175f-83a6-4ce8-ac87-0dfcba077a3b",
+    "content": "{\"id\": \"c013\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -17.083979005248686, \"area_px\": 69, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The centre is a soft-edged dark blob paired with a bright facet, matching rock-shadow and mottled frost patterns seen elsewhere in the frame with no crisp straight manufactured outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_990b49d4-f2b2-4e85-a511-d2b81e50129e",
+    "content": "{\"id\": \"c014\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -17.219945013746564, \"area_px\": 14, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.55, \"reason\": \"The central bright streak has an irregular, pixel-blended outline and a dark shadow similar in tone and shape to other small rock shadows in the surrounding mottled terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_2ec7dd1a-14c6-441c-9669-ff350334bd99",
+    "content": "{\"id\": \"c015\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -20.08847788052987, \"area_px\": 86, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The centre feature is an irregular, soft-edged bright blob with no geometric outline or distinct raised-body shadow, resembling bright rock or frost patches in the surrounding terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_a473dc1a-6c45-4dc8-88a9-fdbfd172868c",
+    "content": "{\"id\": \"c016\", \"branch\": \"sheet\", \"grade\": \"needs second look\", \"score\": -21.172206948262936, \"area_px\": 976, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright patch has diffuse, irregular edges with no straight lines, crisp outline, or coherent raised-body shadow, and its mottled texture merges into the surrounding terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_4402a2b5-53df-4a0c-94a4-e0f5f5b334d9",
+    "content": "{\"id\": \"c017\", \"branch\": \"bright\", \"grade\": \"needs second look\", \"score\": -22.023744063984005, \"area_px\": 10, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.68, \"reason\": \"Image 2 shows an irregular, mottled bright patch with diffuse jagged edges blending into the surrounding texture and an adjacent dark shadow, with no straight edges, uniform albedo, or geometric outline.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_b6e1dbee-4111-4c7f-8d42-fdb3c3ec1eb2",
+    "content": "{\"id\": \"c018\", \"branch\": \"dark\", \"grade\": \"needs second look\", \"score\": -22.480879780054988, \"area_px\": 75, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.82, \"reason\": \"The centre bright lobe with its adjacent dark shadow matches the sun-facing highlight/shadow pattern of numerous small rocks in the reference image, with soft irregular edges blending into the mottled ground.\"}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The centre shows a soft, irregular bright oval with a contiguous dark shadow on one side, matching a sunlit raised rock or crater rim with no straight, geometric manufactured outline.\"}, {\"verdict\": \"hardware\", \"confidence\": 0.72, \"reason\": \"The centre object is an isolated, saturated-white, sharply bounded raised body with a compact dark shadow, unlike any bright feature in the mottled natural reference terrain.\"}]}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_7cce25b9-6160-48b3-9791-287761011a84",
+    "content": "{\"id\": \"c019\", \"branch\": \"dark_compact\", \"grade\": \"needs second look\", \"score\": -23.26718320419895, \"area_px\": 75, \"shape\": {}, \"tests\": {}, \"persistence\": {\"seen\": null, \"note\": \"one date only\"}, \"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The central bright blob has soft, irregular edges and a paired dark shadow matching other rock-and-shadow pairs in image 1 and the reference terrain, with no crisp straight geometry.\"}]}"
+   },
+   {
+    "role": "assistant",
+    "content": "First pass done \u2014 ordering targeted follow-up checks on the ambiguous cases.",
+    "tool_calls": [
+     {
+      "id": "call_c62aa93f-0c23-4d47-b5ca-b6428e59d2db",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c000\",\"kind\":\"second_date_check\"}"
+      }
+     },
+     {
+      "id": "call_ffa15542-f47c-4abd-b7f1-caa180b40cb9",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c006\",\"kind\":\"more_votes\"}"
+      }
+     },
+     {
+      "id": "call_b7638e4e-91b5-4023-b163-1d6a6e16fdd3",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c012\",\"kind\":\"second_date_check\"}"
+      }
+     },
+     {
+      "id": "call_798ce437-1970-480b-8e12-af61edde1496",
+      "type": "function",
+      "function": {
+       "name": "request_check",
+       "arguments": "{\"id\":\"c018\",\"kind\":\"more_votes\"}"
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_c62aa93f-0c23-4d47-b5ca-b6428e59d2db",
+    "content": "{\"refused\": \"second_date_check is not available in this run; more_votes is\"}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_ffa15542-f47c-4abd-b7f1-caa180b40cb9",
+    "content": "{\"id\": \"c006\", \"kind\": \"more_votes\", \"result\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The central dark irregular blob with adjacent bright pixels resembles a small rock and its shadow blending into the mottled surrounding terrain, with no crisp straight or geometric manufactured edges.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 556}}, {\"verdict\": \"natural\", \"confidence\": 0.7, \"reason\": \"The centre pixels are diffuse mottled dark and light patches identical to the surrounding terrain, with no crisp geometric outline or isolated raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": -28, \"dcol\": 14, \"flip_h\": true, \"flip_v\": true, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 529}}, {\"verdict\": \"natural\", \"confidence\": 0.72, \"reason\": \"The central speck has soft, irregular edges that blend into the surrounding mottled terrain, with no crisp straight outline or distinct raised-body shadow.\", \"off_schema\": false, \"augmentation\": {\"drow\": -27, \"dcol\": -20, \"flip_h\": false, \"flip_v\": true, \"lo_pct\": 2.0, \"hi_pct\": 98.0}, \"tokens\": {\"input\": 373, \"output\": 484}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 3 natural at or above 0.7, none hardware\"}}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_b7638e4e-91b5-4023-b163-1d6a6e16fdd3",
+    "content": "{\"refused\": \"second_date_check is not available in this run; more_votes is\"}"
+   },
+   {
+    "role": "tool",
+    "tool_call_id": "call_798ce437-1970-480b-8e12-af61edde1496",
+    "content": "{\"id\": \"c018\", \"kind\": \"more_votes\", \"result\": {\"votes\": [{\"verdict\": \"natural\", \"confidence\": 0.72, \"reason\": \"The centre is a rounded bright crescent paired with a dark crescent, with soft irregular edges matching the sunlit and shadowed sides of a small crater or boulder, and no straight or crisp manufactured outline.\", \"off_schema\": false, \"augmentation\": {\"drow\": 0, \"dcol\": 0, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 0.5, \"hi_pct\": 99.5}, \"tokens\": {\"input\": 373, \"output\": 681}}, {\"verdict\": \"natural\", \"confidence\": 0.72, \"reason\": \"The centre object is a small irregular bright oval with a contiguous dark shadow, matching a sunlit boulder in the surrounding mottled rocky terrain with no straight edges or crisp manufactured outline.\", \"off_schema\": false, \"augmentation\": {\"drow\": -18, \"dcol\": -27, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 1.0, \"hi_pct\": 99.0}, \"tokens\": {\"input\": 373, \"output\": 405}}, {\"verdict\": \"natural\", \"confidence\": 0.65, \"reason\": \"The small saturated-white oval has a soft, irregular edge and an attached dark shadow consistent with a sunlit raised rock, with no straight edges or geometric manufactured outline.\", \"off_schema\": false, \"augmentation\": {\"drow\": 5, \"dcol\": 21, \"flip_h\": false, \"flip_v\": false, \"lo_pct\": 1.0, \"hi_pct\": 99.0}, \"tokens\": {\"input\": 373, \"output\": 900}}], \"grade_after\": \"likely natural\", \"note\": \"lowered by votes: 2 natural at or above 0.7, none hardware\"}}"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "list_candidates",
+     "description": "Candidates of one strip key: grade, test outcomes, persistence, mask measurements, votes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "strip_key": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "strip_key"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_candidate",
+     "description": "The full evidence record of one candidate.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_thresholds",
+     "description": "The adopted thresholds file, as is.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "request_check",
+     "description": "Order one bounded check on a candidate: zoom_pass, second_date_check or more_votes. Refused when the ledger cap would be passed. The result is added to the evidence.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "zoom_pass",
+         "second_date_check",
+         "more_votes"
+        ]
+       }
+      },
+      "required": [
+       "id",
+       "kind"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "description": "Record keep or lower for a candidate, citing evidence fields. Rejected when it cites nothing, cites a field that does not exist, or uses a number not in the record.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "action": {
+        "type": "string",
+        "enum": [
+         "keep",
+         "lower"
+        ]
+       },
+       "cites": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 400
+       }
+      },
+      "required": [
+       "id",
+       "action",
+       "cites",
+       "reason"
+      ],
+      "additionalProperties": false
+     }
+    }
+   }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true,
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "review",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "verdicts"
+     ],
+     "properties": {
+      "verdicts": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "id",
+         "action",
+         "cites"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "action": {
+          "type": "string",
+          "enum": [
+           "keep",
+           "lower"
+          ]
+         },
+         "cites": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "content": "Evidence review complete \u2014 now recording final verdicts for all 20 candidates.",
+  "tool_calls": [
+   {
+    "id": "call_552e3b20-e798-4d9e-9715-bdfb4c44eafb",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c000\",\"reason\":\"Advisory vote alone with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_ee01ef53-80c6-4877-93fc-00e5c9a255f3",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c001\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_7c32db48-4878-433e-a6fa-8ef5eac4df0a",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c002\",\"reason\":\"Mixed natural and unsure advisory votes with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_bb59f85e-b746-420f-8cd1-3637d56ae9dd",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c003\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_0ce617c5-c7a9-4de6-92bc-aacc802c073c",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c004\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_7a96bb2f-0285-4a0d-8d91-c6f18026d74d",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c005\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_d2077a44-4c54-47b4-ae22-68b0621e5401",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c006\",\"reason\":\"Additional natural advisory votes with one date only and no tests support the current grade.\"}"
+    }
+   },
+   {
+    "id": "call_09aa06bd-2b8e-4b18-8d8a-904e05d76682",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c007\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_dd5736e3-c752-4bb7-9bd5-487eba87e8d0",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c008\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_51821001-84e3-48e1-9cf1-f4720774014d",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c009\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_ddaba9b7-bfbc-48fb-9566-c15c613bc03c",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c010\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_2deb3244-89c7-4f5e-a451-0b2debc8cbb1",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c011\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_cdba88d8-e565-425b-b993-6ffa562d8104",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c012\",\"reason\":\"Advisory vote alone with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_fd27d942-b0f0-494b-a802-0a5024e5fae3",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c013\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_9593ef9f-00bc-4237-a87e-4f9e70ea61d2",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c014\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_48cb8df1-9ecd-4be9-ac14-73359afbaba3",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c015\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_211273e2-9730-46ae-80d9-c97303445396",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c016\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_1bc39706-1adb-4325-ae66-0e616f986dd5",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c017\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   },
+   {
+    "id": "call_567e69f7-71f1-43ea-99e5-be3eadd50876",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c018\",\"reason\":\"Additional natural advisory votes with one date only and no tests support the current grade.\"}"
+    }
+   },
+   {
+    "id": "call_ae6be85d-aadf-4ad8-bf54-7026a728b2c9",
+    "type": "function",
+    "function": {
+     "name": "record_verdict",
+     "arguments": "{\"action\":\"keep\",\"cites\":[\"votes\",\"persistence\",\"tests\"],\"id\":\"c019\",\"reason\":\"Single natural advisory vote with one date only and no tests leaves the grade unchanged.\"}"
+    }
+   }
+  ],
+  "reasoning": null,
+  "input_tokens": 9958,
+  "output_tokens": 6269
+ }
+}

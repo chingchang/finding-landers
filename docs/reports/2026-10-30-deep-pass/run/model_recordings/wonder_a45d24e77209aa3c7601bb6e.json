@@ -1,0 +1,90 @@
+{
+ "request": {
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "low",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are looking at orbital images of planetary ground. Image 1 is a square at native resolution; image 2 is its centre enlarged 4 times. Image 3 is a reference: similar ground from elsewhere, with no flagged object, stretched the same way. Question: do you recognise this place, or what it shows? If you believe you know the location, the mission or the object, say so in the place and shows fields and set recognised true with your confidence. If not, set recognised false and describe only what the pixels show."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "d785af91ed531683d39dd67557093a3a5412054aa2db4738722125331ebe83b4",
+        "bytes": 82242
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "ae8bae4c671ee6c31da2e14daaf46def4deeb75aaa724c67d37aed2debdd350d",
+        "bytes": 8535
+       }
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": {
+        "sha256": "f385ba8c8bcef62339081c6460b29303add72e75c83834e8384a9ff29573d05b",
+        "bytes": 82086
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "response_format": {
+   "type": "json_schema",
+   "json_schema": {
+    "name": "probe",
+    "strict": true,
+    "schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "recognised",
+      "place",
+      "shows",
+      "confidence"
+     ],
+     "properties": {
+      "recognised": {
+       "type": "boolean"
+      },
+      "place": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "shows": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "confidence": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     }
+    }
+   }
+  }
+ },
+ "result": {
+  "data": {
+   "confidence": 0.1,
+   "place": "Not identified - cannot be determined from the pixels alone",
+   "recognised": false,
+   "shows": "Image 1: a square grayscale orbital view of mottled, rough, pitted/undulating terrain, with a small compact dark patch and an adjacent small bright speck slightly above and right of centre. Image 2: a"
+  },
+  "raw": "{\"confidence\": 0.1, \"place\": \"Not identified - cannot be determined from the pixels alone\", \"recognised\": false, \"shows\": \"Image 1: a square grayscale orbital view of mottled, rough, pitted/undulating terrain, with a small compact dark patch and an adjacent small bright speck slightly above and right of centre. Image 2: a\"}",
+  "input_tokens": 424,
+  "output_tokens": 920
+ }
+}
