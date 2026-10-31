@@ -13,6 +13,7 @@ control_perseverance ESP_068822_1985 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/
 control_schiaparelli ESP_073625_1780 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_073600_073699/ESP_073625_1780/ESP_073625_1780_RED
 control_zhurong ESP_075625_2055 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_075600_075699/ESP_075625_2055/ESP_075625_2055_RED
 control_viking2 ESP_077167_2285 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_077100_077199/ESP_077167_2285/ESP_077167_2285_RED
+control_viking2 ESP_046150_2280 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_046100_046199/ESP_046150_2280/ESP_046150_2280_RED
 control_opportunity PSP_009141_1780 https://hirise.lpl.arizona.edu/PDS/RDR/PSP/ORB_009100_009199/PSP_009141_1780/PSP_009141_1780_RED
 control_insight ESP_087360_1845 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_087300_087399/ESP_087360_1845/ESP_087360_1845_RED
 mpl_summer ESP_013078_1030 https://hirise.lpl.arizona.edu/PDS/RDR/ESP/ORB_013000_013099/ESP_013078_1030/ESP_013078_1030_RED
