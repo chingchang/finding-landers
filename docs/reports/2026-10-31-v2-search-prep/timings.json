@@ -1,0 +1,174 @@
+{
+ "strips": {
+  "PSP_004336_1035": {
+   "embedded_s": 211.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 214.0
+  },
+  "PSP_004402_1030": {
+   "embedded_s": 22.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 24.0
+  },
+  "PSP_004824_1030": {
+   "embedded_s": 222.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 224.0
+  },
+  "PSP_004969_1035": {
+   "embedded_s": 305.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 307.0
+  },
+  "PSP_005035_1030": {
+   "embedded_s": 253.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 255.0
+  },
+  "PSP_005114_1035": {
+   "embedded_s": 324.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 327.0
+  },
+  "PSP_005180_1035": {
+   "embedded_s": 116.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 118.0
+  },
+  "PSP_005325_1035": {
+   "embedded_s": 136.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 138.0
+  },
+  "PSP_005391_1030": {
+   "embedded_s": 289.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 295.0
+  },
+  "PSP_005470_1035": {
+   "embedded_s": 286.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 288.0
+  },
+  "PSP_005536_1030": {
+   "embedded_s": 244.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 247.0
+  },
+  "PSP_005602_1035": {
+   "embedded_s": 257.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 260.0
+  },
+  "PSP_005747_1035": {
+   "embedded_s": 154.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 156.0
+  },
+  "PSP_005813_1030": {
+   "embedded_s": 98.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 100.0
+  },
+  "PSP_005958_1025": {
+   "embedded_s": 266.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 269.0
+  },
+  "ESP_013078_1030": {
+   "embedded_s": 216.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 218.0
+  },
+  "ESP_013223_1025": {
+   "embedded_s": 158.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 161.0
+  },
+  "ESP_013289_1035": {
+   "embedded_s": 266.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 269.0
+  },
+  "ESP_013368_1035": {
+   "embedded_s": 195.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 197.0
+  },
+  "ESP_013500_1035": {
+   "embedded_s": 216.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 219.0
+  },
+  "ESP_013711_1030": {
+   "embedded_s": 296.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 300.0
+  },
+  "ESP_013724_1030": {
+   "embedded_s": 301.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 304.0
+  },
+  "ESP_013790_1035": {
+   "embedded_s": 350.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 353.0
+  },
+  "ESP_013935_1030": {
+   "embedded_s": 158.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 159.0
+  },
+  "ESP_014001_1040": {
+   "embedded_s": 219.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 222.0
+  },
+  "ESP_014423_1040": {
+   "embedded_s": 204.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 206.0
+  },
+  "ESP_031196_1035": {
+   "embedded_s": 103.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 103.0
+  },
+  "ESP_039662_1035": {
+   "embedded_s": 138.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 140.0
+  },
+  "ESP_048734_1035": {
+   "embedded_s": 135.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 136.0
+  },
+  "ESP_049789_1030": {
+   "embedded_s": 139.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 141.0
+  },
+  "ESP_058400_1040": {
+   "embedded_s": 143.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 145.0
+  },
+  "ESP_075571_1040": {
+   "embedded_s": 123.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 124.0
+  },
+  "ESP_075663_1040": {
+   "embedded_s": 138.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 139.0
+  },
+  "ESP_057965_1035": {
+   "embedded_s": 63.0,
+   "git": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+   "listed_s": 63.0
+  }
+ }
+}

@@ -1,0 +1,391 @@
+{
+ "what": "item 16b: shape of each search strip's v2 list; no row, score or rank is recorded here",
+ "git": {
+  "commit": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+  "dirty": false,
+  "tag": null
+ },
+ "model_sha256": "addd7624ed5ddf46fcc06bd130dd29bc6e23e2e29f8299fcd0ae9553c53dc278",
+ "stage_on": false,
+ "frozen": false,
+ "frozen_files_against_item_16a": {
+  "files": 57,
+  "differing": []
+ },
+ "strips": {
+  "PSP_004336_1035": {
+   "candidates_on_the_frozen_v1_list": 300,
+   "candidates_recorded": 300,
+   "listed": 300,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 293,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "PSP_004402_1030": {
+   "candidates_on_the_frozen_v1_list": 39,
+   "candidates_recorded": 39,
+   "listed": 39,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 34,
+   "rows_with_only_a_bound": 5,
+   "rows_with_neither": 0
+  },
+  "PSP_004824_1030": {
+   "candidates_on_the_frozen_v1_list": 160690,
+   "candidates_recorded": 160690,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1993,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "PSP_004969_1035": {
+   "candidates_on_the_frozen_v1_list": 68199,
+   "candidates_recorded": 68199,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1989,
+   "rows_with_only_a_bound": 11,
+   "rows_with_neither": 0
+  },
+  "PSP_005035_1030": {
+   "candidates_on_the_frozen_v1_list": 127522,
+   "candidates_recorded": 127522,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1992,
+   "rows_with_only_a_bound": 8,
+   "rows_with_neither": 0
+  },
+  "PSP_005114_1035": {
+   "candidates_on_the_frozen_v1_list": 43923,
+   "candidates_recorded": 43923,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1994,
+   "rows_with_only_a_bound": 6,
+   "rows_with_neither": 0
+  },
+  "PSP_005180_1035": {
+   "candidates_on_the_frozen_v1_list": 142658,
+   "candidates_recorded": 142658,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1997,
+   "rows_with_only_a_bound": 3,
+   "rows_with_neither": 0
+  },
+  "PSP_005325_1035": {
+   "candidates_on_the_frozen_v1_list": 76940,
+   "candidates_recorded": 76940,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1994,
+   "rows_with_only_a_bound": 6,
+   "rows_with_neither": 0
+  },
+  "PSP_005391_1030": {
+   "candidates_on_the_frozen_v1_list": 428905,
+   "candidates_recorded": 428905,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1999,
+   "rows_with_only_a_bound": 1,
+   "rows_with_neither": 0
+  },
+  "PSP_005470_1035": {
+   "candidates_on_the_frozen_v1_list": 45511,
+   "candidates_recorded": 45511,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1990,
+   "rows_with_only_a_bound": 10,
+   "rows_with_neither": 0
+  },
+  "PSP_005536_1030": {
+   "candidates_on_the_frozen_v1_list": 77038,
+   "candidates_recorded": 77038,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1990,
+   "rows_with_only_a_bound": 10,
+   "rows_with_neither": 0
+  },
+  "PSP_005602_1035": {
+   "candidates_on_the_frozen_v1_list": 41263,
+   "candidates_recorded": 41263,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1990,
+   "rows_with_only_a_bound": 10,
+   "rows_with_neither": 0
+  },
+  "PSP_005747_1035": {
+   "candidates_on_the_frozen_v1_list": 36442,
+   "candidates_recorded": 36442,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1983,
+   "rows_with_only_a_bound": 17,
+   "rows_with_neither": 0
+  },
+  "PSP_005813_1030": {
+   "candidates_on_the_frozen_v1_list": 117281,
+   "candidates_recorded": 117281,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1993,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "PSP_005958_1025": {
+   "candidates_on_the_frozen_v1_list": 295248,
+   "candidates_recorded": 295248,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1999,
+   "rows_with_only_a_bound": 1,
+   "rows_with_neither": 0
+  },
+  "ESP_013078_1030": {
+   "candidates_on_the_frozen_v1_list": 69173,
+   "candidates_recorded": 69173,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1990,
+   "rows_with_only_a_bound": 10,
+   "rows_with_neither": 0
+  },
+  "ESP_013223_1025": {
+   "candidates_on_the_frozen_v1_list": 54388,
+   "candidates_recorded": 54388,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 2000,
+   "rows_with_only_a_bound": 0,
+   "rows_with_neither": 0
+  },
+  "ESP_013289_1035": {
+   "candidates_on_the_frozen_v1_list": 33283,
+   "candidates_recorded": 33283,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1991,
+   "rows_with_only_a_bound": 9,
+   "rows_with_neither": 0
+  },
+  "ESP_013368_1035": {
+   "candidates_on_the_frozen_v1_list": 41145,
+   "candidates_recorded": 41145,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1992,
+   "rows_with_only_a_bound": 8,
+   "rows_with_neither": 0
+  },
+  "ESP_013500_1035": {
+   "candidates_on_the_frozen_v1_list": 83943,
+   "candidates_recorded": 83943,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1986,
+   "rows_with_only_a_bound": 14,
+   "rows_with_neither": 0
+  },
+  "ESP_013711_1030": {
+   "candidates_on_the_frozen_v1_list": 220945,
+   "candidates_recorded": 220945,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1993,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "ESP_013724_1030": {
+   "candidates_on_the_frozen_v1_list": 40983,
+   "candidates_recorded": 40983,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1993,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "ESP_013790_1035": {
+   "candidates_on_the_frozen_v1_list": 48795,
+   "candidates_recorded": 48795,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1988,
+   "rows_with_only_a_bound": 12,
+   "rows_with_neither": 0
+  },
+  "ESP_013935_1030": {
+   "candidates_on_the_frozen_v1_list": 43859,
+   "candidates_recorded": 43859,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1993,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "ESP_014001_1040": {
+   "candidates_on_the_frozen_v1_list": 37284,
+   "candidates_recorded": 37284,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1992,
+   "rows_with_only_a_bound": 8,
+   "rows_with_neither": 0
+  },
+  "ESP_014423_1040": {
+   "candidates_on_the_frozen_v1_list": 24143,
+   "candidates_recorded": 24143,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1993,
+   "rows_with_only_a_bound": 7,
+   "rows_with_neither": 0
+  },
+  "ESP_031196_1035": {
+   "candidates_on_the_frozen_v1_list": 20972,
+   "candidates_recorded": 20972,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1994,
+   "rows_with_only_a_bound": 6,
+   "rows_with_neither": 0
+  },
+  "ESP_039662_1035": {
+   "candidates_on_the_frozen_v1_list": 13627,
+   "candidates_recorded": 13627,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1984,
+   "rows_with_only_a_bound": 16,
+   "rows_with_neither": 0
+  },
+  "ESP_048734_1035": {
+   "candidates_on_the_frozen_v1_list": 24977,
+   "candidates_recorded": 24977,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1990,
+   "rows_with_only_a_bound": 10,
+   "rows_with_neither": 0
+  },
+  "ESP_049789_1030": {
+   "candidates_on_the_frozen_v1_list": 19861,
+   "candidates_recorded": 19861,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1988,
+   "rows_with_only_a_bound": 12,
+   "rows_with_neither": 0
+  },
+  "ESP_058400_1040": {
+   "candidates_on_the_frozen_v1_list": 22125,
+   "candidates_recorded": 22125,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1992,
+   "rows_with_only_a_bound": 8,
+   "rows_with_neither": 0
+  },
+  "ESP_075571_1040": {
+   "candidates_on_the_frozen_v1_list": 31379,
+   "candidates_recorded": 31379,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1994,
+   "rows_with_only_a_bound": 6,
+   "rows_with_neither": 0
+  },
+  "ESP_075663_1040": {
+   "candidates_on_the_frozen_v1_list": 37537,
+   "candidates_recorded": 37537,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1992,
+   "rows_with_only_a_bound": 8,
+   "rows_with_neither": 0
+  },
+  "ESP_057965_1035": {
+   "candidates_on_the_frozen_v1_list": 14251,
+   "candidates_recorded": 14251,
+   "listed": 2000,
+   "same_rows_as_the_frozen_v1_top": true,
+   "frozen_ranks_whole": true,
+   "rerank_ranks_whole": true,
+   "rows_with_a_measured_rate": 1982,
+   "rows_with_only_a_bound": 18,
+   "rows_with_neither": 0
+  }
+ }
+}

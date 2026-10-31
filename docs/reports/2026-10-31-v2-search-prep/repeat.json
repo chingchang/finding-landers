@@ -1,0 +1,11 @@
+{
+ "what": "item 16b: one strip's list computed twice from its frozen-v1 list",
+ "strip": "ESP_031196_1035",
+ "git": {
+  "commit": "216d17f0800461a488bbbdd8e003701b7db7b6d3",
+  "dirty": false,
+  "tag": null
+ },
+ "byte_identical": true,
+ "seconds": 107
+}
