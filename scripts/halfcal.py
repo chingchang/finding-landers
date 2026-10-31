@@ -6,8 +6,8 @@
     uv run scripts/halfcal.py column LIST.json ...    a copy of each list with the half-fitted rate beside each score
                                                       (item 15a; the order and every other field stay); rerun to resume
 
-Writes under out/halfcal. A strip of a site that is not a tuning site, other than a listed target strip, is refused; column
-refuses a strip of a blind site. No paid model is called.
+Writes under out/halfcal. A strip of a site that is not a tuning site, other than a listed target strip, is refused;
+column refuses a strip of a blind site. No paid model is called.
 """
 
 from __future__ import annotations
@@ -495,8 +495,8 @@ def score_all(a) -> int:
 
 
 def raws_of(s: Strip, candidates: list[dict]) -> np.ndarray:
-    """Each row's raw score, joined on position and branch to the strip's whole population: a list such as item 14's holds
-    only the top of a strip and no raw scores, and a curve fitted on the top alone would claim the wrong rates."""
+    """Each row's raw score, joined on position and branch to the strip's whole population: a list such as item 14's
+    holds only the top of a strip and no raw scores, and a curve fitted on the top alone would claim the wrong rates."""
     raw_at: dict[tuple, float] = {}
     for key in zip(s.row.tolist(), s.col.tolist(), s.branch.tolist(), s.raw.tolist(), strict=True):
         if raw_at.setdefault(key[:3], key[3]) != key[3]:
@@ -529,7 +529,9 @@ def strip_column(sid: str, entry: dict, reference: dict) -> tuple[list[dict], di
         "checked_against_item_15": sid in reference,
         "area_km2_by_colour": [round(x, 2) for x in s.area[0.0]],
         "rate_per_km2_min_median_max": (
-            [float(f"{x:.3g}") for x in (measured.min(), np.median(measured), measured.max())] if len(measured) else None
+            [float(f"{x:.3g}") for x in (measured.min(), np.median(measured), measured.max())]
+            if len(measured)
+            else None
         ),
     }
 
@@ -552,10 +554,10 @@ def rate_column(a) -> int:
         for sid, entry in d["strips"].items():
             entry["candidates"], record[sid] = strip_column(sid, entry, reference)
         d["half_rate_column"] = {
-            "what": f"{hc.RATE_FIELD}: candidates per km2 of this strip, in this candidate's branch, at or above its raw "
-            f"score, measured on the half of the strip it does not sit on; no rule gain. {hc.BELOW_FIELD}: above the top "
-            "of that curve, where the data say only that the rate is below this. Beside the score only: no order and no "
-            "grade comes from it.",
+            "what": f"{hc.RATE_FIELD}: candidates per km2 of this strip, in this candidate's branch, at or above its "
+            "raw score, measured on the half of the strip it does not sit on; no rule gain. "
+            f"{hc.BELOW_FIELD}: above the top of that curve, where the data say only that the rate is below this. "
+            "Beside the score only: no order and no grade comes from it.",
             "git": run.git_state(),
         }
         rr.write_json(out, d)
